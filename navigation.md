@@ -10,7 +10,7 @@ Vasakult paremale sisaldab ülemine päis järgmist:
 
 Peamenüüst saate alustada uut projekti, avada olemasoleva projekti või avada projekti kausta.
 
-### <img src=".gitbook/assets/image (2).png" alt="" data-size="line"> Esitus-/käivitusnupp
+### <img src=".gitbook/assets/image (2).png" alt="" data-size="line"> Esita/Alusta nupp
 
 Kui nupp on aktiveeritud, käivitab see pilditöötluse protsessi.
 
@@ -28,7 +28,7 @@ Vasakul külgribal asuv menüü sisaldab mitmesuguseid ikoone, millega saab suhe
 
 #### <img src=".gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> [Projekti seaded](project-settings/project-settings.md)
 
-Projekti seaded-vahekaardil saate muuta projekti üldseadeid ja projekti töötlemise seadeid. Muutke neid enne failide töötlemise alustamist.
+Projekti seaded-vahekaardil saate reguleerida projekti üldseadeid ja projekti töötlemise seadeid. Reguleerige need enne failide töötlemise alustamist.
 
 #### <img src=".gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> Failibrauser
 

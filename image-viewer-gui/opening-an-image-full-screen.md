@@ -9,7 +9,7 @@ Chloros pildivaataja pakub spetsiaalset täisekraani liidest multispektraalsete 
 Kõige tavalisem viis pildi avamiseks pildivaatajas:
 
 1. Veenduge, et olete **Failibrauseri** vahekaardil <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">
-2. Klõpsake mis tahes **pildi pisipilti** pildiristis
+2. Klõpsake mis tahes **pildi pisipilti** pildirastris
 3. Pilt avatakse **peamises eelvaatealas** (ekraani keskel)
 4. Pilt on nüüd laaditud ja valmis täisekraanil vaatamiseks
 
@@ -18,8 +18,8 @@ Kõige tavalisem viis pildi avamiseks pildivaatajas:
 Kui pilt on eelvaatealasse laaditud:
 
 1. Klõpsake **Pildivaataja** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> ikooni vasakul külgribal
-2. Pildivaataja vahekaart avatakse ja kuvab valitud pildi täisekraanil
-3. Vasakul külgribal muutuvad kättesaadavaks täiustatud vaatamis- ja analüüsitööriistad
+2. Pildivaataja vahekaart avaneb ja kuvab valitud pildi täisekraanil
+3. Vasakul külgribal muutuvad kättesaadavaks täiustatud vaatamis- ja analüüsivahendid
 
 ***
 
@@ -38,11 +38,11 @@ Suurim osa ekraanist näitab teie pilti:
 
 ## Vaatevalikud
 
-### Pildi navigeerimise põhitõed
+### Pildi põhinaavigatsioon
 
 #### Piltide sirvimine
 
-Navigeerige pildikogus klaviatuurilühendite või nuppude abil:
+Navigeerige pildikogus klahvikombinatsioonide või nuppude abil:
 
 * **Järgmine pilt**: klõpsake nuppu → või vajutage klahvi **→** (parem nooleklahv)
 * **Eelmine pilt**: klõpsake nuppu ← või vajutage klahvi **←** (vasak nooleklahv)
@@ -114,15 +114,15 @@ Kui liigutate hiirekursorit pildi kohale, kuvatakse pikselväärtused reaalajas:
 
 * Vignette korrigeeritud
 * Peegeldus kalibreeritud
-* Mitme sagedusega TIFF (Red, Green, NIR jne)
+* Mitme sagedusriba TIFF (Red, Green, NIR jne)
 * Analüüsiks valmis teadusandmed
 
 ### Indeksipildid
 
 **NDVI, NDRE, GNDVI jne (\_NDVI.tif failid):**
 
-* Üheribalised halltoonilised pildid
-* Pikseliväärtused esindavad indeksite arvutamise tulemusi
+* Ühe sagedusriba halltoonilised pildid
+* Pikselväärtused esindavad indeksite arvutamise tulemusi
 * Normaliseeritud indeksite vahemik on tavaliselt -1 kuni +1
 * Visualiseerimiseks saab rakendada värvi LUT-e
 
@@ -142,7 +142,7 @@ Täpsemad juhised leiate [Indeks/LUT Sandboxist](index-lut-sandbox.md).
 
 ***
 
-## Klaviatuurikombinatsioonid
+## Klaviatuurilühendid
 
 ### Navigeerimine
 
@@ -155,12 +155,12 @@ Täpsemad juhised leiate [Indeks/LUT Sandboxist](index-lut-sandbox.md).
 
 * **+** või **=**: suumimine
 * **−**: suumimine
-* **0** (null): ekraanile sobivaks
-* **Hiirerattaga**: suumimine
+* **0** (null): ekraanile sobivaks kohandamine
+* **Hiirerattaga**: suumimine/suumimine
 
 ### Vaate juhtimise nuppud
 
-* **P**: Pikselprotsendi režiimi lülitamine
+* **P**: Pikseliprotsendi režiimi lülitamine
 * **L**: Kihtide paneeli lülitamine
 * **Esc**: Täisekraani sulgemine või tagasipöördumine failibrauserisse
 
@@ -215,7 +215,7 @@ Kontrollige, et indeksid on arvutatud õigesti:
 
 1. Kontrollige pikseliväärtusi – kui need on kõik väga madalad või väga kõrged, reguleerige kuvamisvahemikku.
 2. Proovige avada QGIS-is või sarnases rakenduses, mis reguleerib vahemikku automaatselt.
-3. Kontrollige töötlemise veaotsingulogi vead.
+3. Kontrollige töötlemise vealogi, et leida vigu.
 
 ### Pikseliväärtused tunduvad valed
 
@@ -223,13 +223,13 @@ Kontrollige, et indeksid on arvutatud õigesti:
 
 * Vale pildi vaatamine (originaal vs töödeldud)
 * Kalibreerimine ei rakendunud õigesti
-* Valgusanduri andmed ei olnud sisendisse lisatud
+* Valgusanduri andmed ei olnud sisestatud
 * Protsendimoodus lülitati valesti sisse
 
 **Lahendused:**
 
 1. Veenduge, et vaatate töödeldud väljundit (kontrollige failinime laiendit)
-2. Kontrollige protsendimooduse nupu seisundit
+2. Kontrollige protsendimooduse nupu olekut
 3. Võrrelge sama andmekogumi teadaolevalt heade piltidega
 
 ***
@@ -239,7 +239,7 @@ Kontrollige, et indeksid on arvutatud õigesti:
 Nüüd, kui saate pilte täisekraanil vaadata:
 
 * [**Pildikihtide**](image-layers.md) – Tutvuge mitme sagedusriba visualiseerimisega
-* [**Indeks/LUT Sandbox**](index-lut-sandbox.md) – Rakendage kohandatud indekseid ja värvide kaardistamist
+* [**Indeksi/LUT-liivakast**](index-lut-sandbox.md) – Rakendage kohandatud indekseid ja värvide kaardistamist
 * [**Multispektraalsed indeksivalemid**](../project-settings/multispectral-index-formulas.md) – tutvuge kättesaadavate indeksitega
 
 Töötlemise töövoo kohta vaadake:

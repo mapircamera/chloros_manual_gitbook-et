@@ -83,7 +83,7 @@ Määrake keele parameeter SDK algseadistamisel, et saada sõnumeid ja väljunde
 
 ## Katvus
 
-Kõiki 38 keelt toetatakse täielikult järgmistes rakendustes:
+Kõik 38 keelt on täielikult toetatud järgmistes rakendustes:
 
 * **Chloros Desktop** - täielik GUI tõlge
 * **Chloros Browser** - veebiliides kõigis keeltes

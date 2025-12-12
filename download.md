@@ -15,7 +15,7 @@ Laadige alla Chloros uusim versioon Windows jaoks, et alustada multispektraalset
 | **Operatsioonisüsteem** | Windows 10 (64-bitine)             | Windows 11 (64-bitine)             |
 | **Protsessor**        | Intel Core i5 või samaväärne     | Intel Core i7 või parem         |
 | **Mälu (RAM)**     | 8 GB                             | 16 GB või rohkem                    |
-| **Graafikakaart**    | DirectX 11-ga ühilduv           | NVIDIA GPU 4 GB+ VRAM-iga       |
+| **Graafikakaart**    | DirectX 11 ühilduv           | NVIDIA GPU 4 GB+ VRAM-iga       |
 | **Salvestusruum**          | 2 GB vaba ruumi                  | SSD 10 GB+ vaba ruumiga       |
 | **Ekraan**          | 1920x1080                       | 2560x1440 või suurem             |
 | **Internet**         | Vajalik litsentsi aktiveerimiseks | Vajalik litsentsi aktiveerimiseks |
@@ -32,7 +32,7 @@ Laadige alla Chloros uusim versioon Windows jaoks, et alustada multispektraalset
 
 ### Viimane stabiilne versioon
 
-**Chloros paigaldaja Windows jaoks**
+**Chloros installija Windows jaoks**
 
 * **Versioon**: 1.0.3
 * **Väljalaske kuupäev**: detsember ?, 2025
@@ -42,13 +42,13 @@ Laadige alla Chloros uusim versioon Windows jaoks, et alustada multispektraalset
 #### **Paigaldamise sammud:**
 
 1. Lae alla fail `CHLOROS INSTALLER - CURRENT VERSION.exe`.
-2. Paigaldamise alustamiseks topeltklõpsa paigaldaja ikoonil.
+2. Paigaldamise alustamiseks topeltklõpsa paigaldusprogrammi.
 3. Järgi paigaldusviisardi juhiseid.
 4. Vali paigalduskataloog (vaikimisi: `C:\Program Files\Chloros\`).
 5. Viima paigaldamine lõpule ja käivita Chloros.
 6. Logige sisse oma MAPIR Cloud Chloros+ kontoga (või jätkake tasuta versiooniga)
 
-{% vihje style=&quot;success&quot; %}
+{% hint style=&quot;success&quot; %}
 Installija lisab automaatselt `chloros-cli` teie süsteemi PATH-i, et võimaldada juurdepääsu käsureale.
 {% endhint %}
 
@@ -77,7 +77,7 @@ Chloros installatsioon sisaldab:
 * ✅ **Chloros Desktop GUI** – täisfunktsionaalne graafiline liides
 * ✅ **Chloros (brauser)** – veebipõhine liides madalama spetsifikatsiooniga süsteemidele
 * ✅ **Chloros CLI** – käsurealiides (nõuab Chloros+ litsentsi)
-* ✅ **Backend Engine** – pilditöötluse torustik
+* ✅ **Backend Engine** – pilditöötlusprotsess
 * ✅ **Kaameraprofiilid** - Eelkonfigureeritud MAPIR kaameramallid
 
 ***
@@ -102,23 +102,23 @@ Avage täiustatud funktsioonid Chloros+ tellimusega:
 **Installimine ebaõnnestub veateatega:**
 
 * Veenduge, et teil on administraatori õigused
-* Lülitage ajutiselt välja viirusetõrje tarkvara
+* Lülitage ajutiselt välja viirusetõrjeprogramm
 * Kontrollige, kas teie süsteem vastab miinimumnõuetele
 
 **Rakendus ei käivitu:**
 
-* Proovige Chloros (brauser) versiooni
+* Proovige Chloros (brauseri) versiooni
 * Veenduge, et Windows 10/11 (64-bitine) on installitud
 * Uuendage graafikadraiverid
-* Kontrollige Windows sündmustevaataja veateateid
+* Kontrollige Windows sündmustevaatajat vea üksikasjade leidmiseks
 * Võtke ühendust tugiteenistusega ja saatke vea logid
 
 **Litsentsi aktiveerimise probleemid:**
 
 * Veenduge, et internetiühendus on aktiivne
-* Kontrollige oma kasutajatunnuseid [https://cloud.mapir.camera](https://cloud.mapir.camera)
+* Kontrollige oma kasutajatunnust [https://cloud.mapir.camera](https://cloud.mapir.camera)
 * Kontrollige, et tulemüür ei blokeeri Chloros
-* Vaadake üksikasjalikke juhiseid [Chloros+ Login](chloros+-login.md)
+* Vaadake [Chloros+ Login](chloros+-login.md) üksikasjalikke juhiseid
 
 ### Abi saamine
 

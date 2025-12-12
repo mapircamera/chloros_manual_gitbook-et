@@ -2,7 +2,7 @@
 
 Kalibreerimise sihtmärkide sisaldavate piltide märkimine on oluline samm, mis kiirendab oluliselt Chloros töötlemisprotsessi. Sihtpiltide eelvalikuga ei pea Chloros skannima kõiki andmekogus olevaid pilte kalibreerimise sihtmärkide leidmiseks.
 
-## Miks sihtpilte märkida?
+## Miks märkida sihtpilte?
 
 ### Töötlemise kiirus
 
@@ -10,7 +10,7 @@ Sihtpilte märkimata peab Chloros:
 
 * Skaneerima iga projekti pildi
 * Käivitama sihtmärgi tuvastamise algoritmid iga pildi puhul
-* Kontrollima sadu või tuhandeid pilte asjatult
+* Kontrollima sadu või tuhandeid pilte, mis pole vajalik
 
 **Tulemus**: Töötlemine võib võtta oluliselt kauem aega, eriti suurte andmekogumite puhul.
 
@@ -23,7 +23,7 @@ Kui märgite sihtmärgi veerus konkreetsed pildid:
 * Üldine töötlemisaeg lüheneb oluliselt
 
 {% vihje style=&quot;success&quot; %}
-**Kiiruse paranemine**: 500 pildist koosnevas andmekogus 2–3 sihtpildi märkimine võib sihtmärgi tuvastamise aega lühendada 30+ minutilt alla 1 minuti.
+**Kiiruse paranemine**: 500 pildist koosnevas andmekogus 2–3 sihtpildi märkimine võib sihtmärgi tuvastamise aega vähendada 30+ minutilt alla 1 minuti.
 {% endhint %}
 
 ***
@@ -46,7 +46,7 @@ Vaadake failibrauseris imporditud pilte ja tuvastage, millised pildid sisaldavad
 Iga kalibreerimise sihtmärki sisaldava pildi puhul:
 
 1. Leidke pilt failibrauseri tabelist.
-2. Leidke **Sihtmärk** veerg (parempoolseim veerg).
+2. Leidke veerg **Sihtmärk** (parempoolseim veerg).
 3. Klõpsake selle pildi sihtmärgi veerus olevale märkeruudule.
 4. Korrake seda kõigi sihtmärke sisaldavate piltide puhul.
 
@@ -72,8 +72,8 @@ Enne töötlemist kontrollige veel kord:
 
 **Kaamera asend:**
 
-* Hoia kaamera sihtmärgi kohal nii, et see oleks keskel ja täidaks umbes 40–60% pildi keskosast.
-* Hoia kaamera sihtmärgi pinnaga paralleelselt/nadiril
+* Hoidke kaamerat sihtmärgi kohal nii, et see oleks keskel ja täidaks umbes 40–60% pildi keskosast.
+* Hoidke kaamera sihtmärgi pinnaga paralleelselt/nadiril
 
 **Valgustamine:**
 
@@ -86,7 +86,7 @@ Enne töötlemist kontrollige veel kord:
 
 * Hoidke sihtmärgi paneelid puhtad ja kuivad.
 * Kõik 4 paneeli peavad olema selgelt nähtavad ja takistusteta.
-* Sihtmärgid peaksid olema võimaluse korral valgusallikaga risti/nadir.
+* Sihtmärgid võimaluse korral risti/nadiriga valgusallikaga.
 
 ### Kui palju sihtmärgi pilte?
 
@@ -100,7 +100,7 @@ Enne töötlemist kontrollige veel kord:
 
 ***
 
-## Töö mitme kaameraga
+## Mitme kaameraga töötamine
 
 ### Kahe kaameraga seadistused
 
@@ -133,8 +133,8 @@ Kui Chloros ei tuvasta teie sihtmärke õigesti, reguleerige neid seadeid [proje
 **Minimaalne kalibreerimise valimi pindala:**
 
 * **Vaikimisi**: 25 pikslit
-* **Suurendage**, kui väikeste artefaktide puhul tekivad valed tuvastused.
-* **Vähendage**, kui sihtmärke ei tuvastata.
+* **Suurendage**, kui väikeste artefaktide puhul tekivad valed tuvastused
+* **Vähendage**, kui sihtmärke ei tuvastata
 
 **Minimaalne sihtmärkide klastrite arv:**
 
@@ -160,9 +160,9 @@ Kui Chloros ei tuvasta teie sihtmärke õigesti, reguleerige neid seadeid [proje
 1. Kontrollige, et sihtmärgi veerg on märgitud õigete piltide jaoks
 2. Vaadake sihtmärgi pildi kvaliteeti eelvaates
 3. Kui kvaliteet on halb, pildistage sihtmärgid uuesti
-4. Vajadusel reguleerige sihtmärgi tuvastamise seadeid
+4. Vajadusel kohandage sihtmärgi tuvastamise seadeid
 
-### Probleem: vale sihtmärgi tuvastamine
+### Probleem: valed sihtmärgi tuvastused
 
 **Võimalikud põhjused:**
 
@@ -175,7 +175,7 @@ Kui Chloros ei tuvasta teie sihtmärke õigesti, reguleerige neid seadeid [proje
 1. Märkige ainult tegelikud sihtmärgi pildid, et piirata tuvastamise ulatust
 2. Suurendage minimaalse kalibreerimise valimi pindala
 3. Suurendage minimaalse sihtmärgi klastri väärtust
-4. Veenduge, et sihtmärgi pildid näitavad ainult sihtmärki (minimaalne taustakülg)
+4. Veenduge, et sihtmärgi pildid näitavad ainult sihtmärki (minimaalne taustakärar)
 
 ***
 
@@ -204,7 +204,7 @@ Kuigi teadustööks ei ole see soovitatav, võite töötlemist teha ka ilma siht
 3. Vignette&#x27;i korrigeerimine jääb endiselt kehtima.
 4. Väljundit ei kalibreerita absoluutse peegeldusvõime jaoks.
 
-{% vihje style=&quot;warning&quot; %}
+{% hint style=&quot;warning&quot; %}
 **Ei soovitata**: ilma peegeldusvõime kalibreerimiseta esindavad pikseliväärtused ainult suhtelist heledust, mitte teaduslikke peegeldusvõime mõõtmisi. Täpsete ja korratavate tulemuste saamiseks kasutage kalibreerimise sihtmärke.
 {% endhint %}
 
@@ -212,7 +212,7 @@ Kuigi teadustööks ei ole see soovitatav, võite töötlemist teha ka ilma siht
 
 ## Järgmised sammud
 
-Kui olete märkinud sihtpildid:
+Kui olete märkinud oma sihtpildid:
 
 1. **Vaadake oma seaded üle** – vt [Projekti seadeid kohandamine](adjusting-project-settings.md)
 2. **Alustage töötlemist** – vt [Töötlemise alustamine](starting-the-processing.md)

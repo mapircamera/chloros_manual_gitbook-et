@@ -2,9 +2,9 @@
 
 ## Chloros ja Chloros (brauser) sisselogimine
 
-Kasutaja <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> külgribamenüü võimaldab teil sisse logida oma Chloros+ kontosse ja avada lisafunktsioone.
+Kasutaja <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> külgriba menüü võimaldab teil sisse logida oma Chloros+ kontosse ja avada lisafunktsioone.
 
-Sisse logimisel kuvatakse teie konto andmed:
+Sisselogimisel kuvatakse teie konto andmed:
 
 <figure><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>
 
@@ -34,7 +34,7 @@ chloros-cli login user@example.com 'MyP@ssw0rd123'
 
 ### Paketi kehtivusaeg
 
-Paketi kehtivusaeg GUI-s näitab, millal teie litsents kehtivuse kaotab. Kuu jooksul korduvate tellimuste puhul on kehtivusaeg kuu lõpus. Aastaste tellimuste puhul on kehtivusaeg aasta pärast tellimuse algust. Litsentsi kontrollimiseks on vaja igakuist internetiühendust, mille puhul on 30-päevane ajapikendus.
+GUI-s kuvatakse paketi kehtivusaeg, mis näitab, millal teie litsents kaotab kehtivuse. Kuu-põhiste korduvate tellimuste puhul on kehtivusaeg kuu lõpus. Aastapõhiste tellimuste puhul on kehtivusaeg aasta pärast tellimuse algust. Litsentsi kontrollimiseks on vaja igakuist internetiühendust, mille puhul on 30-päevane ajapikendus.
 
 ### Seadmete piirang
 

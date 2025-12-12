@@ -16,7 +16,7 @@ metaLinks:
 
 ### **JPG (8-bitine)**
 
-8-bitine (pikseli digitaalne number 0–255) JPG (.jpg) formaadis väljund.
+8-bitine (piksli digitaalne number 0–255) JPG (.jpg) formaadis väljund.
 
 ### **PNG (8-bitine)**
 

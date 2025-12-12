@@ -1,4 +1,4 @@
-# Projekti seadete kohandamine
+# Projekti seadeid kohandamine
 
 Enne piltide töötlemist on oluline konfigureerida projekti seaded vastavalt oma töövoo nõuetele. Projekti seaded <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> paneel võimaldab kalibreerimise, töötlemisvalikute, multispektraalsete indeksite ja ekspordivormingute põhjalikku juhtimist.
 
@@ -16,7 +16,7 @@ Enne piltide töötlemist on oluline konfigureerida projekti seaded vastavalt om
 
 ## Kiirhäälestus tavaliste töövoogude jaoks
 
-### Vaikesätted (soovitatav enamikule kasutajatele)
+### Vaikimisi seaded (soovitatav enamikule kasutajatele)
 
 Tüüpiliste MAPIR Survey3 kaameratöövoogude puhul sobivad hästi vaikimisi seaded:
 
@@ -35,7 +35,7 @@ Projekti seaded on jagatud mitmesse kategooriasse. Allpool on iga sektsiooni kok
 
 ### Sihtmärgi tuvastamine
 
-Kontrollib, kuidas Chloros tuvastab kalibreerimise sihtmärke teie piltidel.
+Reguleerib, kuidas Chloros tuvastab kalibreerimise sihtmärke teie piltidel.
 
 **Peamised seaded:**
 
@@ -54,16 +54,16 @@ Peamised pilditöötlus- ja kalibreerimisvalikud.
 
 **Peamised seaded:**
 
-* **Vignette&#x27;i korrigeerimine**: kompenseerib objektiivi tumenemist servades ✅ Soovitatav
+* **Vignette&#x27;i korrigeerimine**: kompenseerib objektiivi tumenemise servades ✅ Soovitatav
 * **Peegelduskalibreerimine**: normaliseerib väärtused kalibreerimise sihtmärkide abil ✅ Soovitatav
-* **Debayer-meetod**: algoritm RAW-vormingu teisendamiseks 3-kanaliliseks multispektraalseks
+* **Debayer-meetod**: algoritm RAW-failide teisendamiseks 3-kanaliliseks multispektraalseks
 * **Minimaalne kalibreerimise intervall**: aeg kalibreerimise sihtmärkide kasutamise vahel (0 = kasuta kõiki)
 
 **Täpsemad seaded:**
 
 * **Valgusanduri ajavööndi nihke**: PPK aja sünkroniseerimiseks (vaikimisi: 0)
-* **Rakenda PPK parandusi**: kasutab GPS/eksponeerimise pin-andmeid .daq-failidest
-* **Exposure Pin 1/2**: Määrab kaamerad ekspositsioonipinnidele kahe kaameraga seadistuste jaoks
+* **Rakenda PPK parandusi**: kasutab .daq failide GPS/eksponeerimise pin andmeid
+* **Exposure Pin 1/2**: määrab kaamerad ekspositsioonipinnidele kahe kaameraga seadistuste jaoks
 
 ### Indeks (multispektraalsed indeksid)
 
@@ -90,16 +90,16 @@ Konfigureerige, milliseid taimestiku indekseid arvutada ja eksportida.
 * Kasutage ribamatemaatikat kõigi pildikanalitega
 * Salvesta kohandatud valemid taaskasutamiseks
 
-Kõikide saadaval olevate indeksite ja valemite kohta vaadake [Multispektraalsed indeksivalemid](../project-settings/multispectral-index-formulas.md).
+Kõikide kättesaadavate indeksite ja valemite kohta vaadake [Multispektraalsed indeksivalemid](../project-settings/multispectral-index-formulas.md).
 
 ### Eksport
 
 Kontrollib väljundfaili formaati ja kvaliteeti.
 
-**Saadaval olevad formaadid:**
+**Kättesaadavad formaadid:**
 
 * **TIFF (16-bitine)**: soovitatav GIS-i ja teaduslikuks analüüsiks (vahemik 0–65 535)
-* **TIFF (32-bitine, protsent)**: ujukomaga peegeldusväärtused (vahemik 0,0–1,0)
+* **TIFF (32-bitine, protsent)**: ujukomaarvulised peegeldusväärtused (vahemik 0,0–1,0)
 * **PNG (8-bitine)**: kaotuseta pakkimine visualiseerimiseks (vahemik 0–255)
 * **JPG (8-bitine)**: väikseimad failid, kaotusega pakkimine (vahemik 0–255)
 
@@ -118,17 +118,17 @@ Looge korduvkasutatavad mallid ühtsete töövoogude jaoks:
 
 **Eelised:**
 
-* Rakenda identseid seadeid mitmes projektis.
-* Jaga konfiguratsioone meeskonnaliikmetega.
-* Säilita järjepidevus korduvate uuringute puhul.
+* Rakendage identseid seadeid mitmes projektis.
+* Jagage konfiguratsioone meeskonnaliikmetega.
+* Säilitage järjepidevus korduvate uuringute puhul.
 
-### Lae mall uude projekti
+### Mallide laadimine uude projekti
 
 Uue projekti loomisel:
 
-1. Vali peamenüüst **„Uus projekt”**.
-2. Vali valik **„Lae mallist”**.
-3. Vali salvestatud mall.
+1. Valige peamenüüst **„Uus projekt”**.
+2. Valige **„Laadi mallist”**.
+3. Valige salvestatud mall.
 4. Kõik seaded rakenduvad automaatselt.
 
 ### Töökataloog
@@ -151,23 +151,23 @@ Kui kasutate MAPIR DAQ salvestusseadmeid koos GPS-iga täpse geolokatsiooni jaok
 ### Eeltingimused
 
 * MAPIR DAQ koos GPS (GNSS) mooduliga
-* .daq logifail koos ekspositsiooni pin-koodidega
-* Kaamera ühendatud DAQ eksponeerimispinnidega salvestamise ajal
+* .daq logifail koos ekspositsiooni pin-sisestustega
+* Kaamera ühendatud DAQ ekspositsioonipinnidega salvestamise ajal
 
 ### Konfiguratsiooni sammud
 
-1. Paigutage .daq logifail oma projekti kausta.
-2. Projektiseadetes aktiveerige **&quot;Kohalda PPK parandusi&quot;** valikukast.
-3. Seadke vajadusel **&quot;Valgusanduri ajavööndi nihke&quot;** (vaikimisi: 0 UTC jaoks).
-4. Määrake kaamerad eksponeerimispinnidele:
-   * **Üks kaamera**: Määratakse automaatselt pistikule 1.
-   * **Kaks kaamerat**: Määrake iga kaamera käsitsi õigele pistikule.
+1. Paigutage .daq logifail oma projekti kausta
+2. Projektiseadetes aktiveerige **&quot;Kohalda PPK parandusi&quot;** valikukast
+3. Seadke vajadusel **&quot;Valgusanduri ajavööndi nihke&quot;** (vaikimisi: 0 UTC jaoks)
+4. Määrake kaamerad ekspositsioonipinnidele:
+   * **Üks kaamera**: Määratakse automaatselt kontaktile 1.
+   * **Kaks kaamerat**: Määrake iga kaamera käsitsi õigele kontaktile.
 
-**Pistikute määramine:**
+**Valgustuse kontaktide määramine:**
 
-* **Pistik 1**: Valige kaameramudel rippmenüüst.
-* **Pistik 2**: Valige teine kaamera või „Ära kasuta”.
-* Sama kaamerat ei saa määrata mõlemale pistikule.
+* **Valgustuse kontakt 1**: Valige kaameramudel rippmenüüst.
+* **Valgustuse kontakt 2**: Valige teine kaamera või „Ära kasuta”.
+* Sama kaamerat ei saa määrata mõlemale kontaktile.
 
 {% vihje style=&quot;warning&quot; %}
 **Oluline**: Eksponeerimispinnid peavad olema õigesti määratud vastavatele kaameratele. Vale määramine põhjustab valesid geolokatsiooniandmeid.
@@ -183,26 +183,26 @@ Kui töödeldakse ühes projektis mitme MAPIR kaamera pilte:
 
 1. Chloros tuvastab automaatselt iga kaamera mudeli
 2. Iga kaamera saab sobiva töötlusprofiili
-3. PPK: määrake igale kaamerale käsitsi õige eksponeerimise pin
-4. Kõik kaamerad kasutavad sama ekspordivormingut ja indekseid
+3. PPK: määrake igale kaamerale käsitsi õige ekspositsioonipunkt
+4. Kõik kaamerad kasutavad sama ekspordiformaati ja indekseid
 
-**Näide**: Survey3W RGN + Survey3N OCN kahe kaameraga rig
+**Näide**: Survey3W RGN + Survey3N OCN kahe kaameraga seadmestik
 
 ### Aeg-lapse või mitme kuupäeva uuringud
 
 Sama ala korduvate uuringute jaoks aja jooksul:
 
-1. Looge mall oma standardseadete abil
-2. Kasutage igas sessioonis ühtset kalibreerimise sihtmärgi seadistust
-3. Töötlege iga kuupäeva eraldi projektina
-4. Kasutage võrreldavate tulemuste saamiseks identseid seadeid
-5. Eksportige ajalise analüüsi jaoks samas formaadis
+1. Looge mall oma standardseadete abil.
+2. Kasutage igas sessioonis ühtset kalibreerimise sihtmärgi seadistust.
+3. Töötlege iga kuupäeva eraldi projektina.
+4. Kasutage võrreldavate tulemuste saamiseks identseid seadeid.
+5. Eksportige ajalise analüüsi jaoks samas formaadis.
 
 ### Suured andmekogumid
 
 Projektide puhul, kus on palju pilte (500+):
 
-* Kaaluge jagamist väiksemateks projektideks kuupäeva või piirkonna järgi.
+* Kaaluge jagamist väiksemateks projektideks kuupäeva või ala järgi.
 * Kasutage Chloros+ paralleelset töötlemist kiiremate tulemuste saamiseks.
 * Kaaluge CLI või API kasutamist partiide automatiseerimiseks.
 * Reguleerige minimaalne kalibreerimise intervall, et vähendada sihtmärgi tuvastamise aega.
@@ -214,12 +214,12 @@ Projektide puhul, kus on palju pilte (500+):
 Enne töötlemise alustamist kontrollige järgmisi olulisi seadeid:
 
 * [ ] Kaamera mudel on failibrauseris õigesti tuvastatud
-* [ ] Vignette&#x27;i korrigeerimine on lubatud
-* [ ] Peegelduskalibreerimine on lubatud
+* [ ] Vignette&#x27;i korrigeerimine on aktiveeritud
+* [ ] Peegelduskalibreerimine on aktiveeritud
 * [ ] Vähemalt üks kalibreerimise sihtmärgi pilt on imporditud
 * [ ] Soovitud multispektraalsed indeksid on lisatud
 * [ ] Ekspordivorming sobib teie töövooguga
-* [ ] PPK seaded on konfigureeritud (kui kasutate .daq koos eksponeerimissündmustega)
+* [ ] PPK-seaded on konfigureeritud (kui kasutate .daq koos eksponeerimissündmustega)
 
 ***
 

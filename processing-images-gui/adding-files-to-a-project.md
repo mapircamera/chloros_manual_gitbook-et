@@ -29,7 +29,7 @@ Kasutage seda valikut üksikute pildifailide või väikese valiku failide import
 
 ### Meetod 2: kausta lisamine
 
-Kasutage seda valikut, et importida kõik pildid kausta korraga.
+Seda valikut saab kasutada kogu kausta piltide importimiseks korraga.
 
 1. Klõpsake failibrauseri paneeli ülaosas nuppu **„Lisa kaust”**.
 2. Leidke ja valige kaust, mis sisaldab teie pildistamissessiooni pilte.
@@ -67,7 +67,7 @@ Pärast piltide importimist kuvatakse need tabelis, millel on järgmised veerud:
 
 * Märkige see kast piltide puhul, mis sisaldavad kalibreerimise sihtmärke
 * Kiirendab oluliselt sihtmärgi tuvastamist töötlemise ajal
-* Täpsemad andmed leiate jaotisest [Sihtmärgi piltide valimine](choosing-target-images.md)
+* Täpsema teabe saamiseks vaadake [Sihtmärgi piltide valimine](choosing-target-images.md)
 
 ***
 
@@ -84,7 +84,7 @@ Soovimatute piltide eemaldamiseks projektist:
 ### Sorteerimine ja filtreerimine
 
 * **Sorteeri veeru järgi**: klõpsake mis tahes veeru pealkirjal, et pilte sorteerida.
-* **Sorteerimine ajamärgise järgi**: kasulik kronoloogiliste pildistamisseeriate korraldamiseks
+* **Sorteerimine ajamärgete järgi**: kasulik kronoloogiliste pildistamisseeriate korraldamiseks
 * **Kaameramudeli filter**: rühmitage pildid kaameratüübi järgi, kui kasutate mitut kaamerat
 
 ***
@@ -101,20 +101,20 @@ Klõpsake failibrauseris mis tahes pildi pisipildil, et kuvada see peamises eelv
 
 ### Kiirnavigatsioon
 
-* **Eelmine pilt**: klõpsa vasakule nooleklahvile või vajuta ← klahvile
-* **Järgmine pilt**: klõpsa paremale nooleklahvile või vajuta → klahvile
-* **Suurenda/vähenda**: kasuta hiirerattat või suumiklahve
-* **Panoraam**: suumitud pildil klõpsa ja lohista
+* **Eelmine pilt**: klõpsa vasakule nooleklahvile või vajuta ← klahvi
+* **Järgmine pilt**: klõpsa paremale nooleklahvile või vajuta → klahvi
+* **Suurendamine/vähendamine**: kasuta hiirerattat või suumiklahve
+* **Panorameerimine**: klõpsa ja lohista pilti, kui see on suurendatud
 
 ***
 
 ## Duplikaatfailide käitlemine
 
-Chloros tuvastab ja ignoreerib automaatselt duplikaatfailid:
+Chloros tuvastab ja ignoreerib automaatselt dubleeritud faile:
 
 * Failid, millel on identne failinimi, jäetakse vahele.
-* Takistab juhuslikku topeltkäsitlemist.
-* Duplikaatide tuvastamisel kuvatakse hoiatus.
+* Vältib juhuslikku topeltkäsitlemist.
+* Dubleeritud failide tuvastamisel kuvatakse hoiatus.
 
 {% hint style=&quot;warning&quot; %}
 **Oluline**: Ärge nimetage ümber ega muudake originaalseid pildifaile enne importimist. Chloros tugineb õigeks töötlemiseks originaalsetele failinimedele ja metaandmetele.
@@ -199,6 +199,6 @@ Kui failid on imporditud:
 2. **Kontrollige kaameramudeleid** – veenduge, et kaamera on õigesti tuvastatud
 3. **Märkige sihtpildid** – vt [Sihtpiltide valimine](choosing-target-images.md)
 4. **Kohandage seadeid** – konfigureerige töötlemisvalikud [Projekti seaded](adjusting-project-settings.md)
-5. **Alustage töötlemist** – vt [Töötlemise alustamine](starting-the-processing.md)
+5. **Alustage töötlemist** – vaadake [Töötlemise alustamine](starting-the-processing.md).
 
-Täpsemat teavet projekti konfigureerimise kohta leiate jaotisest [Projekti seaded](adjusting-project-settings.md).
+Projektide konfigureerimise kohta leiate üksikasjalikku teavet jaotisest [Projekti seaded](adjusting-project-settings.md).

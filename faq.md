@@ -19,7 +19,7 @@ Ei, Chloros toetab ainult MAPIR kaamerate piltide töötlemist. Lisateabe saamis
 
 <summary>Kas ma saan kalibreerida oma pilte peegeldusvõime jaoks ilma kalibreerimise sihtmärgita?</summary>
 
-Ei. Ilma kalibreerimise sihtmärgi pildita, mis on pildistatud umbes samal ajal kui sihtmärgita pildid, ei ole võimalik seostada pildi pikseliväärtusi teadaoleva peegeldusprotsendiga. Kui te ei lisa ka MAPIR valgussensori logi, siis ümbritseva valguse spektrit ei mõõdeta ja peegeldustulemused ei ole täpsed.
+Ei. Ilma kalibreerimise sihtmärgi pildita, mis on pildistatud umbes samal ajal kui sihtmärgita pildid, ei ole võimalik seostada pildi pikselväärtusi teadaoleva peegeldusprotsendiga. Kui te ei lisa ka MAPIR valgussensori logi, siis ümbritseva valguse spektrit ei mõõdeta ja peegeldustulemused ei ole täpsed.
 
 </details>
 
@@ -43,7 +43,7 @@ Ei. Survey3 pildikogumitel peab olema fikseeritud/lukustatud säritus, seega ei 
 
 <summary>Kas Chloros saab töödelda või analüüsida ortomosaikpilte?</summary>
 
-Ei. Toetatakse ainult üksikuid MAPIR kaamerapilte, mitte ortomoosaiikkaardi taolisi ühendatud pilte.
+Ei. Toetatakse ainult üksikuid MAPIR kaamerapilte, mitte ortomosaik-kaardi taolisi ühendatud pilte.
 
 </details>
 
@@ -57,9 +57,9 @@ Kui failibrauseri tabelis valite eelnevalt sihtmärgi pildid paremas veerus, sii
 
 <details>
 
-<summary>Kui ma laadin oma pildid üles <a href="https://www.mapir.camera/collections/software/products/mapir-cloud-subscription">MAPIR Cloud</a>&#x27;i, kas ma peaksin need enne üleslaadimist töötlema Chloros-is?</summary>
+<summary>Kui ma laadin oma pildid üles <a href="https://www.mapir.camera/collections/software/products/mapir-cloud-subscription">MAPIR pilve,</a> kas ma peaksin need enne üleslaadimist töötlema Chloros-is?</summary>
 
-Kui kavatsete need üles laadida meie veebipõhisele töötlemisplatvormile [MAPIR Cloud](https://www.mapir.camera/collections/software/products/mapir-cloud-subscription), siis ärge pildid enne üleslaadimist redigeerige. Cloud teostab kõik samad töötlemistoimingud ja veelgi enam.
+Kui kavatsete need üles laadida meie veebipõhisele töötlemisplatvormile [MAPIR Cloud](https://www.mapir.camera/collections/software/products/mapir-cloud-subscription), siis ärge pilte enne üleslaadimist redigeerige. Cloud teeb kogu sama töötlemise ja veelgi enam.
 
 </details>
 
@@ -67,6 +67,6 @@ Kui kavatsete need üles laadida meie veebipõhisele töötlemisplatvormile [MAP
 
 <summary>Kas MAPIR hakkab kunagi toetama X funktsiooni? Ma sooviksin väga, et MAPIR pakuks X funktsiooni.</summary>
 
-Oleme alati huvitatud tagasisidest meie toodete kohta. Kui leiate meie toodetes probleemi või teil on ettepanekuid, kuidas saaksime oma tooteid parandada, palun [VÕTKE MEiega ÜHENDUST](https://www.mapir.camera/community/contact), et jagada oma mõtteid. Suurem osa meie uurimis- ja arendustegevusest lähtub klientide suurimatest vajadustest.
+Oleme alati huvitatud tagasisidest meie toodete kohta. Kui leiate meie toodetes viga või teil on ettepanekuid, kuidas saaksime oma tooteid parandada, palun [VÕTKE MEiega ÜHENDUST](https://www.mapir.camera/community/contact), et jagada oma mõtteid. Suurem osa meie uurimis- ja arendustegevusest lähtub klientide suurimatest vajadustest.
 
 </details>
