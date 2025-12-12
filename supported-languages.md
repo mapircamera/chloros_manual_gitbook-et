@@ -4,57 +4,78 @@ Chloros pakub täielikku liidese tuge **38 keeles üle maailma**, muutes selle k
 
 Chloros toetab järgmisi keeli:
 
-1. 🇺🇸 **inglise keel**
-2. 🇪🇸 **Español** (hispaania keel)
-3. 🇵🇹 **Português** (portugali keel)
-4. 🇫🇷 **Français** (prantsuse keel)
-5. 🇩🇪 **Deutsch** (saksa keel)
-6. 🇮🇹 **Italiano** (itaalia keel)
-7. 🇯🇵 **日本語** (jaapani keel)
-8. 🇰🇷 **한국어** (korea keel)
-9. 🇨🇳 **简体中文** (lihtsustatud hiina keel)
-10. 🇹🇼 **繁體中文** (traditsiooniline hiina keel)
-11. 🇷🇺 **Русский** (vene keel)
-12. 🇳🇱 **Nederlands** (hollandi keel)
-13. 🇸🇦 **العربية** (araabia keel)
-14. 🇵🇱 **Polski** (poola keel)
-15. 🇹🇷 **Türkçe** (türgi keel)
-16. 🇮🇳 **हिंदी** (hindi keel)
-17. 🇮🇩 **Bahasa Indonesia** (indoneesia keel)
-18. 🇻🇳 **Tiếng Việt** (vietnami keel)
-19. 🇹🇭 **ไทย** (tai keel)
-20. 🇸🇪 **Svenska** (rootsi keel)
-21. 🇩🇰 **Dansk** (taani keel)
-22. 🇳🇴 **Norsk** (norra keel)
-23. 🇫🇮 **Suomi** (soome keel)
-24. 🇬🇷 **Ελληνικά** (kreeka keel)
-25. 🇨🇿 **Čeština** (tšehhi keel)
-26. 🇭🇺 **Magyar** (ungari keel)
-27. 🇷🇴 **Română** (rumeenia keel)
-28. 🇺🇦 **Українська** (ukraina keel)
-29. 🇧🇷 **Português Brasileiro** (Brasiilia portugali keel)
-30. 🇭🇰 **粵語** (kantoni keel)
-31. 🇲🇾 **Bahasa Melayu** (malai keel)
-32. 🇸🇰 **Slovenčina** (slovaki keel)
-33. 🇧🇬 **Български** (bulgaaria keel)
-34. 🇭🇷 **Hrvatski** (horvaadi keel)
-35. 🇱🇹 **Lietuvių** (leedu keel)
-36. 🇱🇻 **Latviešu** (läti keel)
-37. 🇪🇪 **Eesti** (eesti keel)
-38. 🇸🇮 **Slovenščina** (sloveeni keel)
+| # | Keel | Emakeel | CLI kood |
+|---|----------|-------------|----------|
+| 1 | 🇺🇸 inglise keel | inglise keel | `en` |
+| 2 | 🇪🇸 Hispaania | Español | `es` |
+| 3 | 🇵🇹 Portugali | Português | `pt` |
+| 4 | 🇫🇷 Prantsuse | Français | `fr` |
+| 5 | 🇩🇪 Saksa keel | Deutsch | `de` |
+| 6 | 🇮🇹 Itaalia keel | Italiano | `it` |
+| 7 | 🇯🇵 Jaapani keel | 日本語 | `ja` |
+| 8 | 🇰🇷 Korea keel | 한국어 | `ko` |
+| 9 | 🇨🇳 Hiina keel (lihtsustatud) | 简体中文 | `zh` |
+| 10 | 🇹🇼 Hiina (traditsiooniline) | 繁體中文 | `zh-TW` |
+| 11 | 🇷🇺 Vene | Русский | `ru` |
+| 12 | 🇳🇱 Hollandi keel | Nederlands | `nl` |
+| 13 | 🇸🇦 Araabia keel | العربية | `ar` |
+| 14 | 🇵🇱 Poola keel | Polski | `pl` |
+| 15 | 🇹🇷 türgi keel | Türkçe | `tr` |
+| 16 | 🇮🇳 hindi keel | हिंदी | `hi` |
+| 17 | 🇮🇩 Indoneesia keel | Bahasa Indonesia | `id` |
+| 18 | 🇻🇳 Vietnami keel | Tiếng Việt | `vi` |
+| 19 | 🇹🇭 Tai | ไทย | `th` |
+| 20 | 🇸🇪 Rootsi | Svenska | `sv` |
+| 21 | 🇩🇰 Taani | Dansk | `da` |
+| 22 | 🇳🇴 Norra | Norsk | `no` |
+| 23 | 🇫🇮 Soome | Suomi | `fi` |
+| 24 | 🇬🇷 Kreeka keel | Ελληνικά | `el` |
+| 25 | 🇨🇿 Tšehhi keel | Čeština | `cs` |
+| 26 | 🇭🇺 Ungari | Magyar | `hu` |
+| 27 | 🇷🇴 Rumeenia | Română | `ro` |
+| 28 | 🇺🇦 Ukraina | Українська | `uk` |
+| 29 | 🇧🇷 Brasiilia portugali keel | Português Brasileiro | `pt-BR` |
+| 30 | 🇭🇰 Kantoni keel | 粵語 | `zh-HK` |
+| 31 | 🇲🇾 Malai keel | Bahasa Melayu | `ms` |
+| 32 | 🇸🇰 Slovaki keel | Slovenčina | `sk` |
+| 33 | 🇧🇬 Bulgaaria keel | Български | `bg` |
+| 34 | 🇭🇷 Horvaadi keel | Hrvatski | `hr` |
+| 35 | 🇱🇹 Leedu keel | Lietuvių | `lt` |
+| 36 | 🇱🇻 Läti keel | Latviešu | `lv` |
+| 37 | 🇪🇪 Eesti | Eesti | `et` |
+| 38 | 🇸🇮 Sloveenia | Slovenščina | `sl` |
 
 ## Keele muutmine
 
 ### Chloros töölaual/brauseris
 
-1. Avage rakenduse seaded
-2. Navigeerige keelevaliku menüüsse
-3. Valige loendist soovitud keel
-4. Kasutajaliides uueneb kohe
+1. Avage rakenduse seaded.
+2. Navigeerige keelevaliku menüüsse.
+3. Valige loendist soovitud keel.
+4. Kasutajaliides uueneb kohe.
 
 ### Chloros CLI
 
-Kasutage keeleparameetrit koos käskudega, et määrata kasutajaliidese keel.
+Kasutage käsku `language`, et vaadata või muuta CLI kasutajaliidese keelt:
+
+```bash
+# View current language
+chloros-cli language
+
+# Change to Spanish
+chloros-cli language es
+
+# Change to Chinese (Simplified)
+chloros-cli language zh
+
+# Change to Brazilian Portuguese
+chloros-cli language pt-BR
+
+# List all available languages
+chloros-cli language --list
+```
+
+Täpsema teabe saamiseks vaadake [CLI dokumentatsiooni](CLI.md).
 
 ### Chloros Python SDK
 
@@ -67,6 +88,6 @@ Kõiki 38 keelt toetatakse täielikult järgmistes rakendustes:
 * **Chloros Desktop** - täielik GUI tõlge
 * **Chloros Browser** - veebiliides kõigis keeltes
 * **Chloros CLI** - käsurealiides ja väljundsõnumid
-* **Chloros Python SDK** – API sõnumid ja dokumentatsioon
+* **Chloros Python SDK** - API sõnumid ja dokumentatsioon
 
 Keelte tugi tagab, et kasutajad üle kogu maailma saavad tõhusalt töötada oma emakeeles ilma takistusteta.
