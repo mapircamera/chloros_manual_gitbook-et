@@ -4,7 +4,9 @@ metaLinks: {}
 
 # Alustamine
 
-<div data-full-width="false"><figure><img src=".gitbook/assets/chloros_logo_transparent.png" alt=""><figcaption></figcaption></figure></div>Chloros on [MAPIR](https://www.mapir.camera) tarkvararakendus piltide ja muude andurite andmete töötlemiseks.
+<div data-full-width="false"><figure><img src=".gitbook/assets/chloros_logo_transparent.png" alt=""><figcaption></figcaption></figure></div>
+
+Chloros on [MAPIR](https://www.mapir.camera) tarkvararakendus piltide ja muude andurite andmete töötlemiseks.
 
 ***
 
