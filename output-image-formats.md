@@ -4,21 +4,21 @@ metaLinks:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/output-image-formats
 ---
 
-# Output Image Formats
+# Väljundpildi formaadid
 
-### TIFF (16-bit)
+### TIFF (16-bitine)
 
-16-bit (pixel digital number 0 - 65535) TIFF (.tif) format output.
+16-bitine (piksli digitaalne number 0–65535) TIFF (.tif) formaadis väljund.
 
-### TIFF (32-bit, Percent %)
+### TIFF (32-bitine, protsent %)
 
-32-bit (pixel float 0.0 - 1.0) TIFF (.tif) format output. Pixel values represent reflectance percentages where 0.0 = 0% and 1.0 = 100%.
+32-bitine (pikseli ujukomaarv 0,0–1,0) TIFF (.tif) formaadis väljund. Pikseli väärtused esindavad peegeldusprotsente, kus 0,0 = 0% ja 1,0 = 100%.
 
-### **JPG (8-bit)**
+### **JPG (8-bitine)**
 
-8-bit (pixel digital number 0 -255) JPG (.jpg) format output.
+8-bitine (piksli digitaalne number 0–255) JPG (.jpg) formaadis väljund.
 
-### **PNG (8-bit)**
+### **PNG (8-bitine)**
 
-8-bit (pixel digital number 0 - 255) PNG (.png) format output. Lossless compression suitable for web viewing and visualization.
+8-bitine (piksli digitaalne number 0–255) PNG (.png) formaadis väljund. Kaotuseta pakkimine, mis sobib veebis vaatamiseks ja visualiseerimiseks.
 

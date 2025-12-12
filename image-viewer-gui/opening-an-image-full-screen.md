@@ -1,247 +1,247 @@
-# Opening an Image Full Screen
+# Pildi avamine täisekraanil
 
-The Chloros Image Viewer provides a dedicated full-screen interface for viewing, analyzing, and manipulating your multispectral images. Whether viewing original images or processed outputs, the Image Viewer offers powerful tools for inspection and analysis.
+Chloros pildivaataja pakub spetsiaalset täisekraani liidest multispektraalsete piltide vaatamiseks, analüüsimiseks ja töötlemiseks. Olgu tegemist originaalpiltide või töödeldud väljunditega, pakub pildivaataja võimsaid tööriistu kontrollimiseks ja analüüsimiseks.
 
-## Accessing the Image Viewer
+## Pildivaataja avamine
 
-### From the File Browser
+### Failibrauserist
 
-The most common way to open an image in the Image Viewer:
+Kõige tavalisem viis pildi avamiseks pildivaatajas:
 
-1. Ensure you're in the **File Browser** tab <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">
-2. Click any **image thumbnail** in the image grid
-3. The image opens in the **main preview area** (center of screen)
-4. The image is now loaded and ready for full-screen viewing
+1. Veenduge, et olete **Failibrauseri** vahekaardil <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">
+2. Klõpsake mis tahes **pildi pisipilti** pildiristis
+3. Pilt avatakse **peamises eelvaatealas** (ekraani keskel)
+4. Pilt on nüüd laaditud ja valmis täisekraanil vaatamiseks
 
-### Opening the Image Viewer Tab
+### Pildivaataja vahekaardi avamine
 
-Once an image is loaded in the preview area:
+Kui pilt on eelvaatealasse laaditud:
 
-1. Click the **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> icon in the left sidebar
-2. The Image Viewer tab opens, displaying the selected image full-screen
-3. Advanced viewing and analysis tools become available in the left sidebar
-
-***
-
-## Image Viewer Interface Overview
-
-### Main Display Area
-
-The largest portion of the screen shows your image:
-
-* **Full resolution**: Images displayed at native resolution
-* **Zoomable**: Use controls or mouse wheel to zoom
-* **Pannable**: Click and drag to move around when zoomed
-* **Aspect ratio maintained**: Images scale proportionally
+1. Klõpsake **Pildivaataja** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> ikooni vasakul külgribal.
+2. Pildivaataja vahekaart avatakse ja kuvab valitud pildi täisekraanil.
+3. Vasakul külgribal muutuvad kättesaadavaks täiustatud vaatamis- ja analüüsitööriistad.
 
 ***
 
-## Viewing Options
+## Pildivaataja liidese ülevaade
 
-### Basic Image Navigation
+### Peamine kuvamisala
 
-#### Browse Through Images
+Suurim osa ekraanist näitab teie pilti:
 
-Navigate through your image set using keyboard shortcuts or buttons:
-
-* **Next image**: Click → button or press **→** (Right Arrow) key
-* **Previous image**: Click ← button or press **←** (Left Arrow) key
-* **Jump to specific image**: Return to File Browser and click desired thumbnail
-
-#### Zoom Controls
-
-Adjust magnification to inspect image details:
-
-**Zoom In:**
-
-* Click **+** (Plus) button
-* Press **+** or **=** key
-* Scroll mouse wheel **up**
-
-**Zoom Out:**
-
-* Click **−** (Minus) button
-* Press **−** (Minus) key
-* Scroll mouse wheel **down**
-
-**Fit to Screen:**
-
-* Click **↔** (Fit) button
-* Press **0** (Zero) key
-* Double-click on image
-
-#### Pan When Zoomed
-
-When zoomed in beyond screen size:
-
-1. Move mouse cursor over image
-2. Click and **hold left mouse button**
-3. **Drag** to move image around
-4. Release to stop panning
-
-**Alternative**: Use arrow keys to pan in small increments
+* **Täisresolutsioon**: pildid kuvatakse algresolutsioonis.
+* **Suumitav**: kasutage suumimiseks juhtnuppe või hiirerattat
+* **Pööratav**: suumimisel klõpsake ja lohistage, et pilti liigutada
+* **Kuvasuhe säilitatakse**: pildid skaleeritakse proportsionaalselt
 
 ***
 
-## Pixel Value Inspection
+## Vaatevalikud
 
-### Viewing Pixel Values at Cursor
+### Pildi põhiline navigeerimine
 
-As you move your mouse cursor over the image, pixel values display in real-time:
+#### Piltide sirvimine
 
-**Value display location:**
+Navigeerige pildikogus klaviatuurilühendite või nuppude abil:
 
-* **Floating number and red line in right side index LUT gradient legend**
-* **When zoomed in further, floating value near cursor and highlighted pixel**
-* Shows values for pixel **under cursor or highlighted**
-* Updates as you move mouse
+* **Järgmine pilt**: klõpsake nuppu → või vajutage klahvi **→** (parem nooleklahv)
+* **Eelmine pilt**: klõpsake nuppu ← või vajutage klahvi **←** (vasak nooleklahv)
+* **Hüppake konkreetsele pildile**: naaske failibrauserisse ja klõpsake soovitud pisipildil
 
-***
+#### Suumikontrollid
 
-## Image Types You Can View
+Reguleerige suurendust, et vaadata pildi detaile:
 
-### Original Images (Pre-Processing)
+**Suurendamine:**
 
-**RAW + JPG images from camera:**
+* Klõpsake nuppu **+** (pluss)
+* Vajutage klahvi **+** või **=**
+* Kerige hiirerattaga **üles**
 
-* Display RAW data as previewed
-* Show original, uncorrected values
-* Useful for checking image quality before processing
+**Vähendamine:**
 
-### Calibrated Reflectance Images
+* Klõpsake nuppu **−** (miinus)
+* Vajutage klahvi **−** (miinus)
+* Kerige hiirerattaga **alla**
 
-**After processing:**
+**Ekraanile sobivaks:**
 
-* Vignette corrected
-* Reflectance calibrated
-* Multi-band TIFF (Red, Green, NIR, etc.)
-* Scientific data ready for analysis
+* Klõpsake nuppu **↔** (Sobivaks)
+* Vajutage klahvi **0** (null)
+* Klõpsake pildil topeltklõpsuga
 
-### Index Images
+#### Suumimisel pildi nihutamine
 
-**NDVI, NDRE, GNDVI, etc. (\_NDVI.tif files):**
+Kui suum on suurem kui ekraani suurus:
 
-* Single-band grayscale images
-* Pixel values represent index calculation results
-* Range typically -1 to +1 for normalized indices
-* Can apply color LUTs for visualization
+1. Liigutage hiirekursor pildi kohale
+2. Klõpsake ja **hoidke hiire vasakut nuppu all**
+3. **Lohistage**, et pilti liigutada
+4. Vabastage, et pildil liigutamine lõpetada
 
-***
-
-## Index and LUT Application
-
-Apply multispectral indices and color Look-Up Tables:
-
-1. Locate **Index/LUT Sandbox** in **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> sidebar
-2. Select vegetation index (NDVI, NDRE, etc.)
-3. Select multispectral formula, or create your own custom one (Chloros+ only)
-4. Apply color LUT gradient for visualization
-5. Adjust value ranges and thresholds
-
-See [Index/LUT Sandbox](index-lut-sandbox.md) for detailed instructions.
+**Alternatiiv**: kasutage nooleklahve, et pilti väikeste sammude kaupa liigutada
 
 ***
 
-## Keyboard Shortcuts
+## Pikselväärtuste kontrollimine
 
-### Navigation
+### Pikselväärtuste vaatamine kursori juures
 
-* **→** (Right Arrow): Next image
-* **←** (Left Arrow): Previous image
-* **Home**: First image in list
-* **End**: Last image in list
+Kui liigutate hiirekursorit pildi kohale, kuvatakse pikselväärtused reaalajas:
 
-### Zoom
+**Väärtuste kuvamise asukoht:**
 
-* **+** or **=**: Zoom in
-* **−**: Zoom out
-* **0** (Zero): Fit to screen
-* **Mouse Wheel**: Zoom in/out
-
-### View Controls
-
-* **P**: Toggle pixel percent mode
-* **L**: Toggle layers panel
-* **Esc**: Close full-screen or return to File Browser
-
-### Other
-
-* **Ctrl+S**: Save current image
-* **F**: Full-screen mode (if available)
+* **Ujuv number ja punane joon parempoolse indeksi LUT gradiendi legendis**
+* **Suurendamisel ujuv väärtus kursori lähedal ja esiletõstetud piksel**
+* Näitab väärtusi pikseli **kursori all või esiletõstetud**
+* Uuendatakse hiire liigutamisel
 
 ***
 
-### Verifying Index Calculations
+## Vaadeldavad pilditüübid
 
-Check that indices calculated correctly:
+### Originaalpildid (eeltöötlus)
 
-1. Open NDVI or other index image
-2. Check vegetation areas:
-   * **NDVI**: Should show 0.4-0.9 for healthy plants
-   * **NDRE**: Higher values for vigorous growth
-   * **GNDVI**: Similar to NDVI but chlorophyll-sensitive
-3. Check non-vegetation:
-   * **Soil**: Near 0 or slightly negative
-   * **Water**: Negative values (-0.5 to 0)
+**RAW + JPG pildid kaamerast:**
 
-***
+* Näitab RAW-andmeid eelvaatena
+* Näitab originaalseid, korrigeerimata väärtusi
+* Kasulik pildi kvaliteedi kontrollimiseks enne töötlemist
 
-## Troubleshooting Viewing Issues
+### Kalibreeritud peegeldusvõime pildid
 
-### Image Won't Open
+**Pärast töötlemist:**
 
-**Possible causes:**
+* Vignette korrigeeritud
+* Peegeldus kalibreeritud
+* Mitme sagedusega TIFF (Red, Green, NIR jne)
+* Analüüsiks valmis teadusandmed
 
-* File corrupted during processing
-* Unsupported file format
-* Insufficient memory for large image
+### Indeksipildid
 
-**Solutions:**
+**NDVI, NDRE, GNDVI jne (\_NDVI.tif failid):**
 
-1. Try opening in external viewer to verify file integrity
-2. Check file format matches expected type
-3. Close other applications to free memory
-4. Try smaller/different image
-
-### Black or White Image Display
-
-**Possible causes:**
-
-* Value range outside display capability
-* 32-bit float image with unusual values
-* Index calculation error
-
-**Solutions:**
-
-1. Check pixel values - if all very low or very high, adjust display range
-2. Try opening in QGIS or similar with auto-range adjustment
-3. Check Debug Log from processing for errors
-
-### Pixel Values Seem Wrong
-
-**Possible causes:**
-
-* Viewing wrong image (original vs processed)
-* Calibration didn't apply correctly
-* Light sensor data wasn't included in input
-* Percent mode toggled incorrectly
-
-**Solutions:**
-
-1. Verify you're viewing processed output (check filename suffix)
-2. Check percent mode button state
-3. Compare with known-good images from same dataset
+* Ühe sagedusriba halltoonilised pildid
+* Pikselväärtused esindavad indeksite arvutamise tulemusi
+* Normaliseeritud indeksite vahemik on tavaliselt -1 kuni +1
+* Visualiseerimiseks saab rakendada värvi LUT-e
 
 ***
 
-## Next Steps
+## Indeksi ja LUT-i rakendamine
 
-Now that you can view images full-screen:
+Rakenda multispektraalsed indeksid ja värvi Look-Up tabelid:
 
-* [**Image Layers**](image-layers.md) - Learn about multi-band visualization
-* [**Index/LUT Sandbox**](index-lut-sandbox.md) - Apply custom indices and color mapping
-* [**Multispectral Index Formulas**](../project-settings/multispectral-index-formulas.md) - Understand available indices
+1. Leia **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> külgribal
+2. Valige taimestiku indeks (NDVI, NDRE jne)
+3. Valige multispektraalne valem või looge oma kohandatud valem (ainult Chloros+)
+4. Rakendage visualiseerimiseks värvi LUT gradiendi
+5. Reguleerige väärtuste vahemikke ja künniseid
 
-For processing workflow, see:
+Täpsemad juhised leiate [Indeks/LUT Sandboxist](index-lut-sandbox.md).
 
-* [**Processing Images (GUI)**](../processing-images-gui/page-1.md) - Complete processing guide
+***
+
+## Klaviatuurilühendid
+
+### Navigeerimine
+
+* **→** (parem nooleklahv): järgmine pilt
+* **←** (vasak nooleklahv): eelmine pilt
+* **Home**: esimene pilt nimekirjas
+* **End**: nimekirja viimane pilt
+
+### Suum
+
+* **+** või **=**: suumimine
+* **−**: suumimine
+* **0** (null): ekraanile sobivaks kohandamine
+* **Hiirerattaga**: suumimine/suumimine
+
+### Vaate juhtimise nuppud
+
+* **P**: Pikselprotsendi režiimi lülitamine
+* **L**: Kihtide paneeli lülitamine
+* **Esc**: Täisekraani sulgemine või tagasipöördumine failibrauserisse
+
+### Muu
+
+* **Ctrl+S**: Praeguse pildi salvestamine
+* **F**: Täisekraani režiim (kui saadaval)
+
+***
+
+### Indeksi arvutuste kontrollimine
+
+Kontrollige, et indeksid on arvutatud õigesti:
+
+1. Avage NDVI või muu indeksipilt.
+2. Kontrollige taimestikualasid:
+   * **NDVI**: Tervete taimede puhul peaks näitama 0,4–0,9.
+   * **NDRE**: jõulise kasvu korral peaks näitama kõrgemaid väärtusi
+   * **GNDVI**: sarnane NDVI-ga, kuid klorofüllitundlik
+3. Kontrollige taimestikuväliseid alasid:
+   * **Muld**: ligi 0 või veidi negatiivne
+   * **Vesi**: negatiivsed väärtused (-0,5 kuni 0)
+
+***
+
+## Vaadeldavuse probleemide lahendamine
+
+### Pilt ei avane
+
+**Võimalikud põhjused:**
+
+* Fail on töötlemise käigus rikutud
+* Failivormingut ei toetata
+* Suure pildi jaoks ei ole piisavalt mälu
+
+**Lahendused:**
+
+1. Proovige avada välises vaatajas, et kontrollida faili terviklikkust.
+2. Kontrollige, kas failivorming vastab oodatavale tüübile.
+3. Sulgege teised rakendused, et vabastada mälu.
+4. Proovige väiksemat/teistsugust pilti.
+
+### Must või valge pildi kuvamine
+
+**Võimalikud põhjused:**
+
+* Väärtuste vahemik väljaspool kuvamisvõimalusi.
+* 32-bitine ujukomapilt ebatavaliste väärtustega.
+* Indeksi arvutamise viga.
+
+**Lahendused:**
+
+1. Kontrollige pikseliväärtusi – kui need on kõik väga madalad või väga kõrged, reguleerige kuvamisvahemikku.
+2. Proovige avada QGIS-is või sarnases rakenduses, mis reguleerib vahemikku automaatselt.
+3. Kontrollige töötlemise veaotsingulogi vead.
+
+### Pikseliväärtused tunduvad valed
+
+**Võimalikud põhjused:**
+
+* Vale pildi vaatamine (originaal vs töödeldud)
+* Kalibreerimine ei rakendunud õigesti
+* Valgusanduri andmed ei olnud sisestatud
+* Protsendimoodus lülitati valesti sisse
+
+**Lahendused:**
+
+1. Veenduge, et vaatate töödeldud väljundit (kontrollige failinime laiendit)
+2. Kontrollige protsendimooduse nupu seisundit
+3. Võrrelge sama andmekogumi teadaolevalt heade piltidega
+
+***
+
+## Järgmised sammud
+
+Nüüd, kui saate pilte täisekraanil vaadata:
+
+* [**Pildikihtide**](image-layers.md) – Tutvuge mitme sagedusriba visualiseerimisega
+* [**Indeksi/LUT-liivakast**](index-lut-sandbox.md) – Rakendage kohandatud indekseid ja värvide kaardistamist
+* [**Multispektraalsed indeksivalemid**](../project-settings/multispectral-index-formulas.md) – tutvuge kättesaadavate indeksitega
+
+Töötlemise töövoo kohta vaadake:
+
+* [**Piltide töötlemine (GUI)**](../processing-images-gui/adding-files-to-a-project.md) – täielik töötlemise juhend

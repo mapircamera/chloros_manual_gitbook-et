@@ -1,234 +1,234 @@
-# Adjusting Project Settings
+# Projekti seadeid kohandamine
 
-Before processing your images, it's important to configure your project settings to match your workflow requirements. The Project Settings <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> panel provides comprehensive control over calibration, processing options, multispectral indices, and export formats.
+Enne piltide töötlemist on oluline konfigureerida projekti seaded vastavalt oma töövoo nõuetele. Projekti seaded <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> paneel võimaldab kalibreerimise, töötlemisvalikute, multispektraalsete indeksite ja ekspordiformaatide põhjalikku juhtimist.
 
-## Accessing Project Settings
+## Projektiseadete avamine
 
-1. Open your project in Chloros
-2. Click the **Project Settings** <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> icon in the left sidebar
-3. The Project Settings panel displays all configuration options
+1. Avage oma projekt Chloros-is
+2. Klõpsake **Projektiseaded** <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> ikoonile vasakul külgribal
+3. Projekti seaded paneel kuvab kõik konfiguratsiooni valikud
 
-{% hint style="info" %}
-**Settings are saved automatically** with your project. When you reopen a project, all settings are restored.
+{% vihje style=&quot;info&quot; %}
+**Seaded salvestatakse automaatselt** koos projektiga. Kui projekt uuesti avada, taastatakse kõik seaded.
 {% endhint %}
 
 ***
 
-## Quick Setup for Common Workflows
+## Kiire seadistamine tavaliste töövoogude jaoks
 
-### Default Settings (Recommended for Most Users)
+### Vaikesätted (soovitatav enamikule kasutajatele)
 
-For typical MAPIR Survey3 camera workflows, the default settings work well:
+Tüüpiliste MAPIR Survey3 kaameratöövoogude puhul sobivad hästi vaikimisi seaded:
 
 * ✅ **Vignette correction**: Enabled
-* ✅ **Reflectance calibration**: Enabled (requires images of MAPIR targets)
-* ✅ **Debayer method**: High Quality (Faster)
-* ✅ **Export format**: TIFF (16-bit)
+* ✅ **Reflectance calibration**: Enabled (nõuab MAPIR sihtmärkide pilte)
+* ✅ **Debayer-meetod**: kõrge kvaliteet (kiirem)
+* ✅ **Ekspordivorming**: TIFF (16-bitine)
 
-Simply import your images and start processing with these defaults.
-
-***
-
-## Project Settings Overview
-
-The Project Settings panel is organized into several categories. Below is a summary of each section. For complete documentation, see [Project Settings](../project-settings/page-2.md).
-
-### Target Detection
-
-Controls how Chloros identifies calibration targets in your images.
-
-**Key settings:**
-
-* **Minimum calibration sample area**: Size threshold for target detection (default: 25 pixels)
-* **Minimum target clustering**: Similarity threshold for grouping target regions (default: 60)
-
-**When to adjust:**
-
-* Increase sample area if getting false detections
-* Decrease if targets aren't being detected
-* Adjust clustering if targets are being split into multiple detections
-
-### Processing
-
-Main image processing and calibration options.
-
-**Key settings:**
-
-* **Vignette correction**: Compensates for lens darkening at edges ✅ Recommended
-* **Reflectance calibration**: Normalizes values using calibration targets ✅ Recommended
-* **Debayer method**: Algorithm for converting RAW to 3-channels multi-spectral
-* **Minimum recalibration interval**: Time between using calibration targets (0 = use all)
-
-**Advanced settings:**
-
-* **Light sensor timezone offset**: For PPK time synchronization (default: 0)
-* **Apply PPK corrections**: Uses GPS/exposure pin data from .daq files
-* **Exposure Pin 1/2**: Assigns cameras to exposure pins for dual-camera setups
-
-### Index (Multispectral Indices)
-
-Configure which vegetation indices to calculate and export.
-
-**How to add indices:**
-
-1. Click **"Add index"** button
-2. Select an index from the dropdown menu (NDVI, NDRE, GNDVI, etc.)
-3. Configure visualization settings (LUT colors, value ranges)
-4. Add multiple indices as needed
-
-**Popular indices:**
-
-* **NDVI**: General vegetation health (most common)
-* **NDRE**: Early stress detection with RedEdge
-* **GNDVI**: Chlorophyll concentration sensitive
-* **OSAVI**: Works well with visible soil
-* **EVI**: High leaf area index (LAI) regions
-
-**Custom formulas (Chloros+ only):**
-
-* Create custom multispectral index formulas
-* Use band math with all image channels
-* Save custom formulas for reuse
-
-For all available indices and formulas, see [Multispectral Index Formulas](../project-settings/multispectral-index-formulas.md).
-
-### Export
-
-Controls output file format and quality.
-
-**Available formats:**
-
-* **TIFF (16-bit)**: Recommended for GIS and scientific analysis (0-65,535 range)
-* **TIFF (32-bit, Percent)**: Floating-point reflectance values (0.0-1.0 range)
-* **PNG (8-bit)**: Lossless compression for visualization (0-255 range)
-* **JPG (8-bit)**: Smallest files, lossy compression (0-255 range)
+Importige lihtsalt oma pildid ja alustage töötlemist nende vaikimisi seadetega.
 
 ***
 
-## Saving and Loading Settings
+## Projekti seaded ülevaade
 
-### Save Project Template
+Projekti seaded on jagatud mitmesse kategooriasse. Allpool on iga sektsiooni kokkuvõte. Täieliku dokumentatsiooni leiate [Projekti seaded](../project-settings/project-settings.md).
 
-Create reusable templates for consistent workflows:
+### Sihtmärgi tuvastamine
 
-1. Configure all desired settings in the Project Settings panel
-2. Scroll to **"Save Project Template"** section at the bottom
-3. Enter a descriptive template name (e.g., "Survey3N\_RGN\_Agriculture")
-4. Click the save icon
+Kontrollib, kuidas Chloros tuvastab kalibreerimise sihtmärke teie piltidel.
 
-**Benefits:**
+**Peamised seaded:**
 
-* Apply identical settings across multiple projects
-* Share configurations with team members
-* Maintain consistency for repeated surveys
+* **Minimaalne kalibreerimisnäidise pindala**: sihtmärgi tuvastamise suuruslävi (vaikimisi: 25 pikslit)
+* **Minimaalne sihtmärgi klastrite arv**: sihtmärgi piirkondade rühmitamise sarnasuse lävi (vaikimisi: 60)
 
-### Load Template on New Project
+**Millal kohandada:**
 
-When creating a new project:
+* Suurendage näidise pindala, kui tekivad valed tuvastused.
+* Vähendage, kui sihtmärke ei tuvastata.
+* Kohandage klastrite arvu, kui sihtmärgid jagunevad mitmeks tuvastuseks.
 
-1. Select **"New Project"** from main menu
-2. Choose **"Load from template"** option
-3. Select your saved template
-4. All settings are automatically applied
+### Töötlemine
 
-### Working Directory
+Peamised pilditöötlus- ja kalibreerimisvalikud.
 
-The **"Save Project Folder"** setting specifies where new projects are created by default:
+**Peamised seaded:**
 
-* **Default location**: `C:\Users\[Username]\Chloros Projects`
-* **Change location**: Click edit icon and select new folder
-* **When to change**:
-  * Network drive for team collaboration
-  * Different drive with more storage space
-  * Organized folder structure by year/client
+* **Vignette&#x27;i korrigeerimine**: kompenseerib objektiivi tumenemise servades ✅ Soovitatav
+* **Peegelduskalibreerimine**: normaliseerib väärtused kalibreerimise sihtmärkide abil ✅ Soovitatav
+* **Debayer-meetod**: algoritm RAW-vormingu teisendamiseks 3-kanaliliseks multispektraalseks
+* **Minimaalne kalibreerimise intervall**: aeg kalibreerimise sihtmärkide kasutamise vahel (0 = kasuta kõiki)
+
+**Täpsemad seaded:**
+
+* **Valgusanduri ajavööndi nihke**: PPK aja sünkroniseerimiseks (vaikimisi: 0)
+* **Rakenda PPK parandusi**: kasutab .daq failide GPS/eksponeerimise pin andmeid
+* **Exposure Pin 1/2**: määrab kaamerad ekspositsioonipinnidele kahe kaameraga seadistuste jaoks
+
+### Indeks (multispektraalsed indeksid)
+
+Konfigureerige, milliseid taimestiku indekseid arvutada ja eksportida.
+
+**Indeksite lisamine:**
+
+1. Klõpsake nuppu **„Lisa indeks”**
+2. Valige indeks rippmenüüst (NDVI, NDRE, GNDVI jne)
+3. Konfigureerige visualiseerimise seaded (LUT värvid, väärtuste vahemikud)
+4. Lisage vajadusel mitu indeksit
+
+**Populaarsed indeksid:**
+
+* **NDVI**: üldine taimestiku tervis (kõige levinum)
+* **NDRE**: varajane stressi tuvastamine koos RedEdge-ga
+* **GNDVI**: klorofülli kontsentratsioonile tundlik
+* **OSAVI**: toimib hästi nähtava pinnasega
+* **EVI**: kõrge lehepinna indeksiga (LAI) piirkonnad
+
+**Kohandatud valemid (ainult Chloros+):**
+
+* Looge kohandatud multispektraalsed indeksivalemid
+* Kasutage ribamatemaatikat kõigi pildikanalitega
+* Salvesta kohandatud valemid taaskasutamiseks
+
+Kõikide saadaval olevate indeksite ja valemite kohta vaadake [Multispektraalsed indeksivalemid](../project-settings/multispectral-index-formulas.md).
+
+### Eksport
+
+Kontrollib väljundfaili formaati ja kvaliteeti.
+
+**Saadaval olevad formaadid:**
+
+* **TIFF (16-bitine)**: soovitatav GIS-i ja teadusliku analüüsi jaoks (vahemik 0–65 535)
+* **TIFF (32-bitine, protsent)**: ujukomaga peegeldusväärtused (vahemik 0,0–1,0)
+* **PNG (8-bitine)**: kaotuseta pakkimine visualiseerimiseks (vahemik 0–255)
+* **JPG (8-bitine)**: väikseimad failid, kaotusega pakkimine (vahemik 0–255)
 
 ***
 
-## PPK (Post-Processed Kinematic) Setup
+## Seadete salvestamine ja laadimine
 
-If using MAPIR DAQ recorders with GPS for precise geolocation:
+### Projekti malli salvestamine
 
-### Prerequisites
+Looge korduvkasutatavad mallid ühtse töövoo jaoks:
 
-* MAPIR DAQ with GPS (GNSS) module
-* .daq log file with exposure pin entries
-* Camera connected to DAQ exposure pins during capture session
+1. Konfigureerige kõik soovitud seaded projekti seadeid paneelis.
+2. Kerige alla **„Salvesta projekti mall”** sektsioonini.
+3. Sisestage kirjeldav malli nimi (nt „Survey3N\_RGN\_Agriculture”).
+4. Klõpsake salvestamise ikooni.
 
-### Configuration Steps
+**Eelised:**
 
-1. Place the .daq log file in your project folder
-2. In Project Settings, enable **"Apply PPK corrections"** checkbox
-3. Set **"Light sensor timezone offset"** if needed (default: 0 for UTC)
-4. Assign cameras to exposure pins:
-   * **Single camera**: Automatically assigned to Pin 1
-   * **Dual cameras**: Manually assign each camera to correct pin
+* Rakendage identseid seadeid mitmes projektis.
+* Jagage konfiguratsioone meeskonnaliikmetega.
+* Säilitage järjepidevus korduvate uuringute puhul.
 
-**Exposure Pin Assignment:**
+### Mallide laadimine uude projekti
 
-* **Exposure Pin 1**: Select camera model from dropdown
-* **Exposure Pin 2**: Select second camera or "Do Not Use"
-* Same camera cannot be assigned to both pins
+Uue projekti loomisel:
 
-{% hint style="warning" %}
-**Important**: Exposure pins must be correctly assigned to their respective cameras. Incorrect assignment will result in wrong geolocation data.
+1. Valige peamenüüst **„Uus projekt”**.
+2. Valige **„Laadi mallist”**.
+3. Valige salvestatud mall.
+4. Kõik seaded rakenduvad automaatselt.
+
+### Töökataloog
+
+Seade **„Salvesta projekti kaust”** määrab, kuhu uued projektid vaikimisi loodakse:
+
+* **Vaikimisi asukoht**: `C:\Users\[Username]\Chloros Projects`
+* **Asukoha muutmine**: klõpsake redigeerimisikooni ja valige uus kaust
+* **Millal muuta**:
+  * Võrguketas meeskonnatööks
+  * Teine ketas, millel on rohkem salvestusruumi
+  * Aastate/klientide järgi organiseeritud kausta struktuur
+
+***
+
+## PPK (järelkäsitletud kinemaatika) seadistamine
+
+Kui kasutate MAPIR DAQ salvestusseadmeid koos GPS-iga täpse geolokatsiooni jaoks:
+
+### Eeltingimused
+
+* MAPIR DAQ koos GPS (GNSS) mooduliga
+* .daq logifail koos ekspositsiooni pin-sisestustega
+* Kaamera ühendatud DAQ ekspositsioonipinnidega salvestamise ajal
+
+### Konfiguratsiooni sammud
+
+1. Paigutage .daq logifail oma projekti kausta
+2. Projektiseadetes aktiveerige **&quot;Kohalda PPK parandusi&quot;** valikukast
+3. Seadke vajadusel **&quot;Valgusanduri ajavööndi nihke&quot;** (vaikimisi: 0 UTC jaoks)
+4. Määrake kaamerad ekspositsioonipinnidele:
+   * **Üks kaamera**: Määratakse automaatselt kontaktile 1.
+   * **Kaks kaamerat**: Määrake iga kaamera käsitsi õigele kontaktile.
+
+**Valgustuse kontaktide määramine:**
+
+* **Valgustuse kontakt 1**: Valige rippmenüüst kaamera mudel.
+* **Valgustuse kontakt 2**: Valige teine kaamera või „Ära kasuta”.
+* Sama kaamerat ei saa määrata mõlemale kontaktile.
+
+{% vihje style=&quot;warning&quot; %}
+**Oluline**: Eksponeerimispinnid peavad olema õigesti määratud vastavatele kaameratele. Vale määramine põhjustab vale geolokatsiooniandmeid.
 {% endhint %}
 
 ***
 
-## Advanced Scenarios
+## Täpsemad stsenaariumid
 
-### Multi-Camera Projects
+### Mitme kaameraga projektid
 
-When processing images from multiple MAPIR cameras in one project:
+Kui töödeldakse ühes projektis mitme MAPIR kaamera pilte:
 
-1. Chloros automatically detects each camera model
-2. Each camera gets appropriate processing profile
-3. PPK: Manually assign each camera to correct exposure pin
-4. All cameras use same export format and indices
+1. Chloros tuvastab automaatselt iga kaamera mudeli
+2. Iga kaamera saab sobiva töötlusprofiili
+3. PPK: määrake igale kaamerale käsitsi õige eksponeerimise pin
+4. Kõik kaamerad kasutavad sama ekspordiformaati ja indekseid
 
-**Example**: Survey3W RGN + Survey3N OCN dual-camera rig
+**Näide**: Survey3W RGN + Survey3N OCN kahe kaameraga rig
 
-### Time-Lapse or Multi-Date Surveys
+### Aeg-lapse või mitme kuupäeva uuringud
 
-For repeated surveys of the same area over time:
+Sama ala korduvate uuringute jaoks aja jooksul:
 
-1. Create a template with your standard settings
-2. Use consistent calibration target setup each session
-3. Process each date as a separate project
-4. Use identical settings for comparable results
-5. Export in same format for temporal analysis
+1. Looge mall oma standardseadete abil.
+2. Kasutage igas sessioonis ühtset kalibreerimise sihtmärgi seadistust.
+3. Töötlege iga kuupäeva eraldi projektina.
+4. Kasutage võrreldavate tulemuste saamiseks identseid seadeid.
+5. Eksportige ajalise analüüsi jaoks samas formaadis.
 
-### Large Datasets
+### Suured andmekogumid
 
-For projects with many images (500+):
+Projektide puhul, kus on palju pilte (500+):
 
-* Consider breaking into smaller projects by date or area
-* Use Chloros+ parallel processing for faster results
-* Consider CLI or API for batch automation
-* Adjust minimum recalibration interval to reduce target detection time
-
-***
-
-## Verifying Your Settings
-
-Before starting to process, review these key settings:
-
-* [ ] Camera model correctly detected in File Browser
-* [ ] Vignette correction enabled
-* [ ] Reflectance calibration enabled
-* [ ] At least one calibration target image imported
-* [ ] Desired multispectral indices added
-* [ ] Export format appropriate for your workflow
-* [ ] PPK settings configured (if using .daq with expposure events)
+* Kaaluge jagamist väiksemateks projektideks kuupäeva või piirkonna järgi.
+* Kasutage Chloros+ paralleelset töötlemist kiiremate tulemuste saamiseks.
+* Kaaluge CLI või API kasutamist partiide automatiseerimiseks.
+* Reguleerige minimaalne kalibreerimise intervall, et vähendada sihtmärgi tuvastamise aega.
 
 ***
 
-## Next Steps
+## Seadete kontrollimine
 
-Once your settings are configured:
+Enne töötlemise alustamist kontrollige järgmisi olulisi seadeid:
 
-1. **Mark calibration target images** - See [Choosing Target Images](choosing-target-images.md)
-2. **Start processing** - See [Starting the Processing](starting-the-processing.md)
-3. **Monitor progress** - See [Monitoring the Processing](monitoring-the-processing.md)
+* [ ] Kaamera mudel on failibrauseris õigesti tuvastatud
+* [ ] Vignette&#x27;i korrigeerimine on lubatud
+* [ ] Peegelduskalibreerimine on lubatud
+* [ ] Vähemalt üks kalibreerimise sihtmärgi pilt on imporditud
+* [ ] Soovitud multispektraalsed indeksid on lisatud
+* [ ] Ekspordivorming sobib teie töövooguga
+* [ ] PPK-seaded on konfigureeritud (kui kasutate .daq koos eksponeerimissündmustega)
 
-For complete details on all available settings, see the [Project Settings](../project-settings/page-2.md) reference documentation.
+***
+
+## Järgmised sammud
+
+Kui seaded on konfigureeritud:
+
+1. **Märkige kalibreerimise sihtpildid** – vt [Sihtpiltide valimine](choosing-target-images.md)
+2. **Alustage töötlemist** – vt [Töötlemise alustamine](starting-the-processing.md)
+3. **Jälgige protsessi kulgu** – vt [Töötlemise jälgimine](monitoring-the-processing.md)
+
+Kõigi saadaval olevate seadete täielikud üksikasjad leiate [Projekti seaded](../project-settings/project-settings.md) viitedokumendist.

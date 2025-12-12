@@ -1,221 +1,221 @@
-# Choosing Target Images
+# Sihtpiltide valimine
 
-Marking which images contain calibration targets is a crucial step that significantly speeds up the Chloros processing pipeline. By pre-selecting target images, you eliminate the need for Chloros to scan every image in your dataset for calibration targets.
+Kalibreerimise sihtmärkide sisaldavate piltide märkimine on oluline samm, mis kiirendab oluliselt Chloros töötlemisprotsessi. Sihtpiltide eelvalikuga ei pea Chloros skannima kõiki andmekogus olevaid pilte kalibreerimise sihtmärkide leidmiseks.
 
-## Why Mark Target Images?
+## Miks märkida sihtpilte?
 
-### Processing Speed
+### Töötlemise kiirus
 
-Without marking target images, Chloros must:
+Sihtpilte märkimata peab Chloros:
 
-* Scan every single image in your project
-* Run target detection algorithms on each image
-* Check hundreds or thousands of images unnecessarily
+* Skaneerima iga projekti pildi
+* Käivitama sihtmärgi tuvastamise algoritmid iga pildi puhul
+* Kontrollima sadu või tuhandeid pilte asjatult
 
-**Result**: Processing can take significantly longer, especially for large datasets.
+**Tulemus**: Töötlemine võib võtta oluliselt kauem aega, eriti suurte andmekogumite puhul.
 
-### With Marked Target Images
+### Märgitud sihtmärgi piltidega
 
-When you check the Target column for specific images:
+Kui märgite sihtmärgi veerus konkreetsed pildid:
 
-* Chloros only scans the checked images for targets
-* Target detection completes much faster
-* Overall processing time is greatly reduced
+* Chloros skaneerib sihtmärke ainult märgitud piltidel
+* Sihtmärgi tuvastamine toimub palju kiiremini
+* Üldine töötlemisaeg lüheneb oluliselt
 
-{% hint style="success" %}
-**Speed Improvement**: Marking 2-3 target images in a 500-image dataset can reduce target detection time from 30+ minutes to under 1 minute.
+{% vihje style=&quot;success&quot; %}
+**Kiiruse paranemine**: 500 pildist koosnevas andmekogus 2–3 sihtpildi märkimine võib sihtmärgi tuvastamise aega lühendada 30+ minutilt alla 1 minuti.
 {% endhint %}
 
 ***
 
-## How to Mark Target Images
+## Sihtmärgi piltide märkimine
 
-### Step 1: Identify Your Target Images
+### 1. samm: Sihtmärgi piltide tuvastamine
 
-Look through your imported images in the File Browser and identify which images contain calibration targets.
+Vaadake failibrauseris imporditud pilte ja tuvastage, millised pildid sisaldavad kalibreerimise sihtmärke.
 
-**Common scenarios:**
+**Tavalised stsenaariumid:**
 
-* **Pre-capture target**: Captured before starting the session
-* **Post-capture target**: Captured after completing the session
-* **In-field targets**: Targets placed within the capture area
-* **Multiple targets**: 2-3 target images per session (recommended)
+* **Eelnevalt jäädvustatud sihtmärk**: jäädvustatud enne seansi algust.
+* **Järeljäädvustatud sihtmärk**: jäädvustatud pärast seansi lõppu.
+* **Väljas olevad sihtmärgid**: sihtmärgid, mis asuvad jäädvustamisalas.
+* **Mitmed sihtmärgid**: 2–3 sihtmärgi pilti seansi kohta (soovitatav).
 
-### Step 2: Check the Target Column
+### 2. samm: kontrollige sihtmärgi veergu
 
-For each image containing a calibration target:
+Iga kalibreerimise sihtmärki sisaldava pildi puhul:
 
-1. Locate the image in the File Browser table
-2. Find the **Target** column (rightmost column)
-3. Click the checkbox in the Target column for that image
-4. Repeat for all images containing targets
+1. Leidke pilt failibrauseri tabelist.
+2. Leidke **Sihtmärk** veerg (parempoolseim veerg).
+3. Klõpsake selle pildi sihtmärgi veerus olevale märkeruudule.
+4. Korrake seda kõigi sihtmärke sisaldavate piltide puhul.
 
-### Step 3: Verify Your Selection
+### 3. samm: kontrollige oma valikut
 
-Before processing, double-check:
+Enne töötlemist kontrollige veel kord:
 
-* [ ] All images with calibration targets are checked
-* [ ] No non-target images are accidentally checked
-* [ ] Targets are clearly visible in checked images
-
-***
-
-## Best Practices for Target Images
-
-### Target Capture Guidelines
-
-**Timing:**
-
-* Capture target images immediately before and throughout your capture session
-* Within the same lighting conditions as your DAQ light sensor
-* Ideally capture target images as often as possible for the best results. Otherwise, the light sensor data will be used to adjust the calibration over time.
-
-**Camera Position:**
-
-* Hold camera above target such that is is centered and fills around 40-60% of the image center.
-* Keep camera parallel/nadir to target surface
-
-**Lighting:**
-
-* Same ambient lighting as your DAQ light sensor
-* Avoid shadows on the target surfaces
-* Don't block your light source with your body, vehicle or vegetation
-* Overcast conditions provide most consistent results
-
-**Target Condition:**
-
-* Keep target panels clean and dry
-* All 4 panels should be clearly visible and unobstructed
-* Targets perpendicular/nadir to the light source if possible
-
-### How Many Target Images?
-
-**Minimum:** 1 target image per session. **Recommended:** 3-5 target images per session.
-
-**Best practice schedule:**
-
-* 3-5 images captured shortly after the light sensor is recording
-* Rotate the camera between captures for the best results
-* Optional: periodically mid-session if lighting conditions change constantly
+* [ ] Kõik kalibreerimise sihtmärgiga pildid on märgitud
+* [ ] Ükski sihtmärgita pilt ei ole kogemata märgitud
+* [ ] Sihtmärgid on märgitud piltidel selgelt nähtavad
 
 ***
 
-## Working with Multiple Cameras
+## Sihtmärgi piltide parimad tavad
 
-### Dual-Camera Setups
+### Sihtmärgi pildistamise juhised
 
-If using two MAPIR cameras simultaneously (e.g., Survey3W RGN + Survey3N OCN):
+**Aeg:**
 
-1. Capture target images with **both cameras** at the same time
-2. Use the **same physical target** for both cameras
-3. Mark target images for **both camera types** in the File Browser
-4. Chloros will use appropriate targets for each camera's calibration
+* Pildistage sihtmärgi pildid vahetult enne pildistamise seanssi ja selle käigus
+* Samades valgustingimustes kui DAQ valgussensor
+* Parimate tulemuste saavutamiseks pildistage sihtmärke võimalikult tihti. Muidu kasutatakse kalibreerimise kohandamiseks aja jooksul valgussensori andmeid.
 
-### Camera Model Column
+**Kaamera asend:**
 
-The **Camera Model** column helps identify which images came from which camera:
+* Hoia kaamera sihtmärgi kohal nii, et see oleks keskel ja täidaks umbes 40–60% pildi keskosast.
+* Hoia kaamera sihtmärgi pinnaga paralleelselt/nadiril
+
+**Valgustus:**
+
+* Sama ümbritsev valgus kui teie DAQ valgussensoril.
+* Vältige varjusid sihtmärgi pinnal.
+* Ärge varjake valgusallikat oma kehaga, sõidukiga või taimestikuga.
+* Pilvine ilm annab kõige ühtlasemad tulemused.
+
+**Sihtmärgi seisund:**
+
+* Hoidke sihtmärgi paneelid puhtad ja kuivad.
+* Kõik 4 paneeli peavad olema selgelt nähtavad ja takistusteta.
+* Sihtmärgid võimaluse korral risti/nadir valgusallikaga.
+
+### Kui palju sihtmärgi pilte?
+
+**Minimaalselt:** 1 sihtmärgi pilt seansi kohta. **Soovitatav:** 3–5 sihtmärgi pilti seansi kohta.
+
+**Parim praktika:**
+
+* 3–5 pilti, mis on tehtud vahetult pärast valgussensori salvestamise algust
+* Parimate tulemuste saamiseks pöörake kaamerat pildistamise vahel
+* Valikuliselt: perioodiliselt seansi keskel, kui valgustusolud muutuvad pidevalt
+
+***
+
+## Töö mitme kaameraga
+
+### Kahe kaameraga seadistused
+
+Kui kasutate kahte MAPIR kaamerat korraga (nt Survey3W RGN + Survey3N OCN):
+
+1. Pildistage sihtmärgid **mõlema kaameraga** samaaegselt.
+2. Kasutage mõlema kaamera jaoks **sama füüsilist sihtmärki**.
+3. Märgistage sihtmärgid **mõlema kaameratüübi** jaoks failibrauseris.
+4. Chloros kasutab iga kaamera kalibreerimiseks sobivaid sihtmärke.
+
+### Kaamera mudeli veerg
+
+Veerg **Kaamera mudel** aitab kindlaks teha, millised pildid on pärit millisest kaamerast:
 
 * Survey3W\_RGN
 * Survey3N\_OCN
 * Survey3W\_RGB
-* etc.
+* jne.
 
-Use this column to verify you've marked targets for each camera type in your project.
-
-***
-
-## Target Detection Settings
-
-### Adjusting Detection Sensitivity
-
-If Chloros isn't detecting your targets correctly, adjust these settings in [Project Settings](adjusting-project-settings.md):
-
-**Minimum calibration sample area:**
-
-* **Default**: 25 pixels
-* **Increase** if getting false detections on small artifacts
-* **Decrease** if targets aren't being detected
-
-**Minimum target clustering:**
-
-* **Default**: 60
-* **Increase** if targets are being split into multiple detections
-* **Decrease** if targets with color variation aren't fully detected
+Kasutage seda veergu, et kontrollida, kas olete oma projektis märkinud sihtmärgid iga kaameratüübi jaoks.
 
 ***
 
-## Common Target Image Issues
+## Sihtmärgi tuvastamise seaded
 
-### Problem: No Targets Detected
+### Tuvastamise tundlikkuse reguleerimine
 
-**Possible causes:**
+Kui Chloros ei tuvasta teie sihtmärke õigesti, reguleerige neid seadeid [Projekti seaded](adjusting-project-settings.md):
 
-* Target images not marked in File Browser
-* Target too small in frame (< 30% of image)
-* Poor lighting (shadows, glare)
-* Target detection settings too strict
+**Minimaalne kalibreerimise valimi pindala:**
 
-**Solutions:**
+* **Vaikimisi**: 25 pikslit
+* **Suurendage**, kui väikeste artefaktide puhul tekivad valed tuvastused.
+* **Vähendage**, kui sihtmärke ei tuvastata.
 
-1. Verify Target column is checked for correct images
-2. Review target image quality in preview
-3. Recapture targets if quality is poor
-4. Adjust target detection settings if needed
+**Minimaalne sihtmärkide klastrite arv:**
 
-### Problem: False Target Detections
-
-**Possible causes:**
-
-* White buildings, vehicles, or ground cover mistaken for targets
-* Bright patches in vegetation
-* Detection sensitivity too low
-
-**Solutions:**
-
-1. Mark only actual target images to limit detection scope
-2. Increase minimum calibration sample area
-3. Increase minimum target clustering value
-4. Ensure target images show only the target (minimal background clutter)
+* **Vaikimisi**: 60
+* **Suurendage**, kui sihtmärgid jagunevad mitmeks tuvastamiseks
+* **Vähendage**, kui värvitooniga sihtmärgid ei tuvastata täielikult
 
 ***
 
-## Verification Checklist
+## Tavapärased sihtmärgi pildi probleemid
 
-Before starting processing, verify your target image selection:
+### Probleem: sihtmärke ei tuvastata
 
-* [ ] At least 1 target image marked per session
-* [ ] Target column checkboxes are checked for all target images
-* [ ] Target images captured within same timeframe as survey
-* [ ] Targets clearly visible in preview when clicked
-* [ ] All 4 calibration panels visible in each target image
-* [ ] No shadows or obstructions on targets
-* [ ] For dual-camera: Targets marked for both camera types
+**Võimalikud põhjused:**
+
+* Sihtmärgi pildid ei ole failibrauseris märgitud
+* Sihtmärk on raamis liiga väike (&lt; 30% pildist)
+* Halb valgustatus (varjud, päikese peegeldus)
+* Sihtmärgi tuvastamise seaded on liiga ranged
+
+**Lahendused:**
+
+1. Kontrollige, et sihtmärgi veerg on märgitud õigete piltide jaoks
+2. Vaadake sihtmärgi pildi kvaliteeti eelvaates
+3. Kui kvaliteet on halb, pildistage sihtmärgid uuesti
+4. Vajadusel kohandage sihtmärgi tuvastamise seadeid
+
+### Probleem: vale sihtmärgi tuvastamine
+
+**Võimalikud põhjused:**
+
+* Valged hooned, sõidukid või maapind, mida ekslikult peetakse sihtmärkideks
+* Heledad laigud taimestikus
+* Liiga madal tuvastamise tundlikkus
+
+**Lahendused:**
+
+1. Märkige ainult tegelikud sihtmärgi pildid, et piirata tuvastamise ulatust
+2. Suurendage minimaalse kalibreerimise valimi pindala
+3. Suurendage minimaalse sihtmärgi klastri väärtust
+4. Veenduge, et sihtmärgi pildid näitavad ainult sihtmärki (minimaalne taustakülg)
 
 ***
 
-## Target-Free Processing
+## Kontrollnimekiri
 
-### Processing Without Calibration Targets
+Enne töötlemise alustamist kontrollige oma sihtmärgi piltide valikut:
 
-While not recommended for scientific work, you can process without targets:
+* [ ] Iga seansi kohta on märgitud vähemalt 1 sihtmärgi pilt.
+* [ ] Kõigi sihtmärgi piltide puhul on märgitud sihtmärgi veeru valikukastid.
+* [ ] Sihtmärgi pildid on tehtud sama ajavahemiku jooksul kui uuring.
+* [ ] Sihtmärgid on eelvaates selgelt nähtavad, kui neile klõpsata.
+* [ ] Kõik 4 kalibreerimispaneeli on nähtavad igal sihtmärgi pildil.
+* [ ] Sihtmärkidel ei ole varjusid ega takistusi
+* [ ] Kahe kaamera puhul: sihtmärgid on märgitud mõlema kaameratüübi jaoks
 
-1. Leave all Target column checkboxes unchecked
-2. **Disable** "Reflectance calibration" in Project Settings
-3. Vignette correction will still be applied
-4. Output will not be calibrated for absolute reflectance
+***
 
-{% hint style="warning" %}
-**Not Recommended**: Without reflectance calibration, pixel values represent relative brightness only, not scientific reflectance measurements. Use calibration targets for accurate, repeatable results.
+## Sihtmärkideta töötlemine
+
+### Töötlemine ilma kalibreerimise sihtmärkideta
+
+Kuigi teadustööks ei ole see soovitatav, võite töötleda ilma sihtmärkideta:
+
+1. Jätke kõik sihtmärgi veeru valikukastid märkimata
+2. **Keelake** projekti seadetest „Peegelduskalibreerimine”
+3. Vignette&#x27;i korrigeerimine jääb endiselt kehtima.
+4. Väljundit ei kalibreerita absoluutse peegeldusvõime jaoks.
+
+{% vihje style=&quot;warning&quot; %}
+**Ei soovitata**: ilma peegeldusvõime kalibreerimiseta esindavad pikseliväärtused ainult suhtelist heledust, mitte teaduslikke peegeldusvõime mõõtmisi. Täpsete ja korratavate tulemuste saamiseks kasutage kalibreerimise sihtmärke.
 {% endhint %}
 
 ***
 
-## Next Steps
+## Järgmised sammud
 
-Once you've marked your target images:
+Kui olete märkinud oma sihtpildid:
 
-1. **Review your settings** - See [Adjusting Project Settings](adjusting-project-settings.md)
-2. **Start processing** - See [Starting the Processing](starting-the-processing.md)
-3. **Monitor progress** - See [Monitoring the Processing](monitoring-the-processing.md)
+1. **Vaadake oma seaded üle** – vt [Projekti seadeid kohandamine](adjusting-project-settings.md)
+2. **Alustage töötlemist** – vt [Töötlemise alustamine](starting-the-processing.md)
+3. **Jälgige protsessi kulgu** – vt [Töötlemise jälgimine](monitoring-the-processing.md)
 
-For more information about calibration targets themselves, see [Calibration Targets](../calibration-targets.md).
+Lisateavet kalibreerimise sihtmärkide kohta leiate jaotisest [Kalibreerimise sihtmärgid](../calibration-targets.md).

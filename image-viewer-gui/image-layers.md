@@ -1,352 +1,352 @@
-# Image Layers
+# Pildikihtid
 
-The Image Layers dropdown in the Chloros Image Viewer allows you to quickly switch between different versions of the same image - from the original captures to processed reflectance outputs and calculated index images.
+Chloros pildivaataja pildikihtide rippmenüü võimaldab teil kiiresti vahetada sama pildi erinevate versioonide vahel – alates originaalpiltidest kuni töödeldud peegeldusväljundite ja arvutatud indekspiltideni.
 
-## What are Image Layers?
+## Mis on pildikihtid?
 
-In Chloros, **layers** refer to the different image outputs available for a single source image. When you process images, Chloros creates multiple versions:
+Chloros-is viitavad **kihid** ühe allika pildi jaoks saadaval olevatele erinevatele pildiväljunditele. Kui töötlete pilte, loob Chloros mitu versiooni:
 
-* **Original images** (JPG and RAW files from your camera)
-* **Reflectance calibrated** outputs (if reflectance calibration was enabled)
-* **Target images** (if the image contains calibration targets)
-* **Index images** (NDVI, NDRE, GNDVI, etc. if indices were configured)
+* **Algupärased pildid** (JPG- ja RAW-failid teie kaamerast)
+* **Peegelduskalibreeritud** väljundid (kui peegelduskalibreerimine oli lubatud)
+* **Sihtpildid** (kui pilt sisaldab kalibreerimise sihtmärke)
+* **Indeksipildid** (NDVI, NDRE, GNDVI jne, kui indeksid olid konfigureeritud)
 
-The **Layer Selector dropdown** in the top-right of the Image Viewer lets you instantly switch between these versions without leaving the viewer.
+Pildi vaataja paremas ülemises nurgas asuv **kihtide valiku rippmenüü** võimaldab teil vaadata neid versioone vahetult, ilma vaatajast lahkumata.
 
 ***
 
-## Available Layer Types
+## Saadaval olevad kihtide tüübid
 
 ### JPG
 
-* The original JPG preview image from your camera
-* Always available for all images
-* Unprocessed, as captured by the camera
-* Fastest to load and display
+* Teie kaamera originaalne JPG eelvaatepilt
+* Alati saadaval kõikide piltide jaoks
+* Töötlemata, nagu kaamera on pildistanud
+* Kõige kiirem laadima ja kuvama
 
-**When to view:**
+**Millal vaadata:**
 
-* Quick preview of original capture
-* Checking image composition and framing
-* Verifying capture quality before processing
+* Originaalkaadri kiire eelvaade
+* Pildi kompositsiooni ja kadreeringu kontrollimine
+* Kaadri kvaliteedi kontrollimine enne töötlemist
 
-### RAW (Original)
+### RAW (originaal)
 
-* The original RAW sensor data from your camera
-* Debayered with no post processing applied
-* Higher bit depth than JPG (typically 12-bit or 14-bit sensor data)
+* Teie kaamera originaalne RAW-andurite andmed
+* Debayered, ilma järel töötlemiseta
+* Suurem bittisügavus kui JPG-l (tavaliselt 12-bitine või 14-bitine andurite andmed)
 
-**When to view:**
+**Millal vaadata:**
 
-* Inspecting original sensor data quality
-* Checking for sensor issues or artifacts
-* Comparing before/after processing results
+* Originaalse andurite andmete kvaliteedi kontrollimine
+* Anduriprobleemide või artefaktide kontrollimine
+* Töötlemiseelsete ja -järgsete tulemuste võrdlemine
 
-### RAW (Target)
+### RAW (sihtmärk)
 
-* Only appears for images identified as containing calibration targets
-* Shows the original RAW image with target detected
-* Used to verify target detection was successful
+* Ilmub ainult piltidel, mis sisaldavad kalibreerimise sihtmärke
+* Näitab originaalset RAW-pilti koos tuvastatud sihtmärgiga
+* Kasutatakse sihtmärgi tuvastamise edukuse kontrollimiseks
 
-**When to view:**
+**Millal vaadata:**
 
-* Confirming calibration targets were detected correctly
-* Checking target image quality
-* Troubleshooting calibration issues
+* Kalibreerimise sihtmärkide õige tuvastamise kinnitamine
+* Sihtmärgi pildi kvaliteedi kontrollimine
+* Kalibreerimisprobleemide lahendamine
 
-{% hint style="info" %}
-**Target Layer**: This layer only appears in the dropdown for images that contain calibration targets. Regular capture images will not have this option.
+{% vihje stiil=&quot;info&quot; %}
+**Sihtmärgi kiht**: See kiht kuvatakse rippmenüüs ainult kalibreerimise sihtmärke sisaldavate piltide puhul. Tavapärastel piltidel seda valikut ei ole.
+{% lõppvihje %}
+
+### RAW (peegeldus)
+
+* Kalibreeritud peegeldusega väljundpilt
+* Vignette korrigeeritud (kui see on töötlemisel aktiveeritud)
+* Peegeldus kalibreeritud sihtmärgi andmete abil (kui see on aktiveeritud)
+* Mitme sagedusega TIFF kõigi kaamera kanalitega
+* Pikselväärtused esindavad protsentuaalset peegeldust (protsendimoodi kasutamisel)
+* Valmis töötlemiseks [Index/LUT Sandbox] abil(index-lut-sandbox.md)
+
+**Millal vaadata:**
+
+* Kalibreeritud tulemuste kontrollimine
+* Kalibreerimise kvaliteedi kontrollimine
+* Pikselväärtuste kontrollimine teadusliku täpsuse seisukohast
+* Võrdlemine originaaliga, et näha kalibreerimise mõju
+
+{% vihje style=&quot;success&quot; %}
+**Soovitus**: Kasutage RAW (peegeldus) kihti, kui kontrollite pikselväärtusi teaduslike mõõtmiste ja analüüside jaoks.
 {% endhint %}
 
-### RAW (Reflectance)
+### RAW (NDVI indeks)... ja sarnased
 
-* The calibrated reflectance output image
-* Vignette corrected (if enabled in processing)
-* Reflectance calibrated using target data (if enabled)
-* Multi-band TIFF with all camera channels
-* Pixel values represent percent reflectance (when using percent mode)
-* Ready to manipulate with the [Index/LUT Sandbox](index-lut-sandbox.md)
+* Arvutatud taimestiku indeks pilt (selles näites NDVI)
+* Indeksi nimi muutub sõltuvalt sellest, milline indeks töötlemise ajal konfigureeriti
+* Näited: RAW (NDVI indeks), RAW (NDRE indeks), RAW (GNDVI indeks) jne.
+* Ühe sagedusriba halltooniline pilt, mis näitab indeksi arvutamise tulemusi
+* Iga projekti seadetest konfigureeritud indeksi jaoks kuvatakse üks kiht
 
-**When to view:**
+**Võimalikud indeksi nimed:**
 
-* Inspecting calibrated results
-* Verifying calibration quality
-* Checking pixel values for scientific accuracy
-* Comparing with original to see calibration effects
+* RAW (NDVI indeks)
+* RAW (NDRE indeks)
+* RAW (GNDVI indeks)
+* RAW (OSAVI indeks)
+* RAW (EVI indeks)
+* RAW (SAVI indeks)
+* Ja palju muud... (vt [Multispektraalsed indeksivalemid](../project-settings/multispectral-index-formulas.md))
 
-{% hint style="success" %}
-**Recommended**: Use RAW (Reflectance) layer when checking pixel values for scientific measurements and analysis.
-{% endhint %}
+**Millal vaadata:**
 
-### RAW (NDVI Index)... and similar
-
-* Calculated vegetation index image (NDVI in this example)
-* The index name changes based on which index was configured during processing
-* Examples: RAW (NDVI Index), RAW (NDRE Index), RAW (GNDVI Index), etc.
-* Single-band grayscale image showing index calculation results
-* One layer appears for each index configured in Project Settings
-
-**Possible index names:**
-
-* RAW (NDVI Index)
-* RAW (NDRE Index)
-* RAW (GNDVI Index)
-* RAW (OSAVI Index)
-* RAW (EVI Index)
-* RAW (SAVI Index)
-* And many more... (see [Multispectral Index Formulas](../project-settings/multispectral-index-formulas.md))
-
-**When to view:**
-
-* Examining index calculation results
-* Checking index value ranges
-* Identifying areas of interest
-* Verifying index images before using in GIS or analysis
+* Indeksi arvutustulemuste uurimine
+* Indeksi väärtuste vahemike kontrollimine
+* Huvipakkuvate alade kindlaksmääramine
+* Indeksi piltide kontrollimine enne kasutamist GIS-is või analüüsis
 
 ***
 
-## Using the Layer Selector
+## Kihtide valija kasutamine
 
-### Opening the Dropdown
+### Rippmenüü avamine
 
-1. Open an image in fullscreen mode (click any thumbnail in the Image Viewer)
-2. Locate the **layer dropdown** in the top-right corner of the viewer
-3. The dropdown shows the currently selected layer (e.g., "JPG")
-4. Click the dropdown to see all available layers
+1. Avage pilt täisekraanil (klõpsake pildivaatajas mis tahes pisipildil)
+2. Leidke vaataja paremas ülemises nurgas **kihtide rippmenüü**
+3. Rippmenüüs kuvatakse praegu valitud kiht (nt „JPG”)
+4. Klõpsake rippmenüüd, et näha kõiki saadaval olevaid kihte.
 
-### Switching Layers
+### Kihte vahetamine
 
-1. Click the layer dropdown to open the list
-2. All available layers for the current image are shown
-3. Click any layer name to switch to that version
-4. The image updates immediately to show the selected layer
+1. Klõpsake kihi rippmenüüd, et avada loend.
+2. Kuvatakse kõik praeguse pildi jaoks saadaval olevad kihid.
+3. Klõpsake mis tahes kihi nime, et vahetada selle versioonile.
+4. Pilt uuendatakse kohe, et näidata valitud kihti.
 
-**Quick switching:**
+**Kiire vahetamine:**
 
-* The dropdown remembers your last selection
-* When navigating to the next image, Chloros attempts to show the same layer type
-* If that layer doesn't exist on the next image, it defaults to JPG
+* Rippmenüü mäletab teie viimast valikut.
+* Järgmisele pildile liikudes üritab Chloros näidata sama kihitüüpi.
+* Kui see kiht järgmisel pildil puudub, on vaikimisi valitud JPG.
 
-### Layer Availability
+### Kihite kättesaadavus
 
-Not all layers are available for every image:
+Kõik kihid ei ole iga pildi jaoks kättesaadavad:
 
-**Always available:**
+**Alati kättesaadavad:**
 
-* ✅ JPG (every image has a JPG preview)
+* ✅ JPG (iga pildil on JPG-eelvaade)
 
-**Conditionally available:**
+**Tingimuslikult kättesaadavad:**
 
-* ⚠️ RAW (Original) - Only if image was captured in RAW or RAW+JPG mode
-* ⚠️ RAW (Target) - Only if image contains detected calibration targets
-* ⚠️ RAW (Reflectance) - Only after processing with reflectance calibration enabled
-* ⚠️ RAW (\[Index] Index) - Only after processing with indices configured
-
-***
-
-## Layer Persistence
-
-### Navigating Between Images
-
-When you navigate to a different image (using arrow keys or clicking thumbnails):
-
-**Layer preference is preserved:**
-
-* If viewing "RAW (Reflectance)", next image shows "RAW (Reflectance)" (if available)
-* If viewing "RAW (NDVI Index)", next image shows "RAW (NDVI Index)" (if available)
-* If the same layer doesn't exist, defaults to JPG
-
-**Example workflow:**
-
-1. Open Image 1, switch to RAW (NDVI Index)
-2. Press → to view Image 2
-3. Image 2 automatically displays RAW (NDVI Index) layer
-4. Continue navigating - all images show NDVI layer
-5. Very efficient for reviewing index results across many images
+* ⚠️ RAW (originaal) – ainult juhul, kui pilt on salvestatud RAW- või RAW+JPG-režiimis
+* ⚠️ RAW (sihtmärk) – ainult juhul, kui pilt sisaldab tuvastatud kalibreerimise sihtmärke
+* ⚠️ RAW (peegeldus) – ainult pärast töötlemist peegelduse kalibreerimise abil
+* ⚠️ RAW ([indeks] indeks) – ainult pärast töötlemist konfigureeritud indeksitega
 
 ***
 
-## Common Workflows
+## Kihtide püsivus
 
-### Workflow 1: Before/After Comparison
+### Piltide vahel navigeerimine
 
-**Goal**: Compare original vs. calibrated image
+Kui navigeerite teise pildile (nooleklahvide või pisipiltide klõpsamisega):
 
-1. Open processed image in Image Viewer
-2. Select **RAW (Original)** from dropdown
-3. Note the vignetting and uncalibrated values
-4. Switch to **RAW (Reflectance)** from dropdown
-5. Compare - vignetting removed, values calibrated
+**Kihtide eelistused säilivad:**
 
-### Workflow 2: Index Review
+* Kui vaatate „RAW (peegeldus)”, näitab järgmine pilt „RAW (peegeldus)” (kui see on saadaval)
+* Kui vaatate „RAW (NDVI indeks)”, kuvatakse järgmine pilt „RAW (NDVI indeks)” (kui see on saadaval)
+* Kui sama kihti ei ole, on vaikimisi JPG
 
-**Goal**: Quickly review NDVI results across dataset
+**Näide töövoost:**
 
-1. Open first processed image
-2. Select **RAW (NDVI Index)** from dropdown
-3. Use → arrow key to navigate to next image
-4. NDVI layer persists automatically
-5. Continue through all images, checking NDVI patterns
-6. Switch to **RAW (NDRE Index)** to compare
-
-### Workflow 3: Target Verification
-
-**Goal**: Verify all target images were detected correctly
-
-1. Navigate to a target image
-2. Select **RAW (Target)** from dropdown
-3. Verify calibration targets are clearly visible and detected
-4. Navigate to next target image
-5. Repeat verification for all targets
-
-### Workflow 4: Pixel Value Inspection
-
-**Goal**: Check reflectance values for scientific accuracy
-
-1. Open processed image
-2. Select **RAW (Reflectance)** layer
-3. Enable **Pixel Percent** mode (button in top-right toolbar)
-4. Move cursor over vegetation areas
-5. Verify pixel values are in expected ranges (30-70% for NIR, 5-15% for Red)
-6. Check soil and water areas for appropriate values
+1. Avage pilt 1, vahetage RAW-iks (NDVI Index)
+2. Vajutage →, et vaadata pilti 2.
+3. Pilt 2 kuvab automaatselt RAW (NDVI Index) kihi.
+4. Jätkake navigeerimist – kõik pildid kuvavad NDVI kihi.
+5. Väga efektiivne paljude piltide indeksitulemuste läbivaatamiseks.
 
 ***
 
-## Understanding Pixel Values by Layer
+## Tavapärased töövood
 
-Different layers show different pixel value ranges:
+### Töövoog 1: Enne/pärast võrdlus
 
-### JPG Layer
+**Eesmärk**: võrrelda originaali ja kalibreeritud pilti
 
-* **Range**: 0-255 (8-bit)
-* **Meaning**: Display values, gamma-corrected
-* **Use**: Visual inspection only, not for scientific measurement
+1. Avage töödeldud pilt pildivaatajas.
+2. Valige rippmenüüst **RAW (originaal)**.
+3. Märkige vinjetiseerumine ja kalibreerimata väärtused.
+4. Lülituge rippmenüüst **RAW (peegeldus)**-le.
+5. Võrdle – vinjetatsioon on eemaldatud, väärtused kalibreeritud.
 
-### RAW (Original)
+### Töövoog 2: Indeksi läbivaatamine
 
-* **Range**: 0-65535 (16-bit)
-* **Meaning**: Raw sensor digital numbers
-* **Use**: Checking sensor performance, not calibrated
+**Eesmärk**: NDVI tulemuste kiire läbivaatamine kogu andmekogus.
 
-### RAW (Reflectance)
+1. Ava esimene töödeldud pilt.
+2. Vali rippmenüüst **RAW (NDVI indeks)**.
+3. Kasutage → nooleklahvi, et liikuda järgmise pildi juurde
+4. NDVI kiht jääb automaatselt alles
+5. Jätkake kõigi piltide läbivaatamist, kontrollides NDVI mustreid
+6. Lülitage võrdlemiseks üle **RAW (NDRE indeks)**
 
-* **Range**: 0-65,535 (16-bit TIFF) or 0.0-1.0 (32-bit Percent)
-* **Meaning**: Calibrated percent reflectance
-* **Use**: Scientific measurements and analysis
+### Töövoog 3: sihtmärgi kontrollimine
 
-**For 16-bit TIFF:** Divide by 65,535 to get percent reflectance **For 32-bit Percent:** Values directly represent percent (0.5 = 50% reflectance)
+**Eesmärk**: kontrollida, et kõik sihtmärgi pildid on õigesti tuvastatud
 
-### RAW (Index Images)
+1. Navigeerige sihtmärgi pildile
+2. Valige rippmenüüst **RAW (sihtmärk)**
+3. Kontrollige, et kalibreerimise sihtmärgid on selgelt nähtavad ja tuvastatud
+4. Navigeerige järgmisele sihtmärgi pildile
+5. Korrake kontrollimist kõigi sihtmärkide puhul
 
-* **Range**: Varies by index (typically -1.0 to +1.0 for normalized indices)
-* **Meaning**: Index calculation result
-* **Examples**:
-  * NDVI: -1 to +1 (vegetation typically 0.4 to 0.9)
-  * NDRE: -1 to +1 (stress detection)
-  * EVI: 0 to 1 (enhanced vegetation)
+### Töövoog 4: Pikselväärtuste kontrollimine
 
-***
+**Eesmärk**: kontrollida peegeldusväärtuste teaduslikku täpsust
 
-## Tips and Best Practices
-
-### Efficient Layer Switching
-
-* **Keyboard shortcut awareness**: While there's no keyboard shortcut for layers, navigation arrows (←/→) work across all layers
-* **Consistent workflows**: Pick one layer (e.g., NDVI) and review entire dataset before switching to another
-* **Quick comparisons**: Toggle between Original and Reflectance to verify processing quality
-
-### Performance Considerations
-
-* **JPG loads fastest**: Use for quick navigation through many images
-* **RAW layers load slower**: Higher resolution and bit depth
-* **Index layers**: Similar speed to Reflectance layers
-* **First load is slowest**: Subsequent views of same layer are cached and faster
-
-### Quality Verification
-
-* **Always check RAW (Original)**: Verify source data quality before trusting processed outputs
-* **Compare layers**: Use layer switching to validate processing worked correctly
-* **Check index ranges**: Use Pixel Percent mode with index layers to verify values are reasonable
+1. Avage töödeldud pilt.
+2. Valige kiht **RAW (peegeldus)**.
+3. Lülitage sisse režiim **Pikselprotsent** (nupp tööriistariba ülemises paremas nurgas).
+4. Liiguta kursor taimestikualade kohale.
+5. Veendu, et pikseliväärtused on oodatud vahemikus (30–70% NIR puhul, 5–15% Red puhul).
+6. Kontrolli, et mulla- ja veealade väärtused on sobivad.
 
 ***
 
-## Troubleshooting
+## Pikseliväärtuste mõistmine kihiti
 
-### Layer Not Available
+Erinevad kihid näitavad erinevaid pikseliväärtuste vahemikke:
 
-**Problem**: Expected layer doesn't appear in dropdown
+### JPG-kiht
 
-**Possible causes:**
+* **Vahemik**: 0–255 (8-bitine)
+* **Tähendus**: kuvatavad väärtused, gammakorrigeeritud
+* **Kasutamine**: ainult visuaalne kontroll, mitte teaduslikuks mõõtmiseks
 
-* Image wasn't processed (only JPG and RAW (Original) available)
-* Reflectance calibration was disabled during processing
-* Specific index wasn't configured in Project Settings
-* Image is a target-only image (no indices generated for targets)
+### RAW (originaal)
 
-**Solutions:**
+* **Vahemik**: 0–65535 (16-bitine)
+* **Tähendus**: toores anduri digitaalne number
+* **Kasutamine**: anduri töökindluse kontrollimine, kalibreerimata
 
-1. Verify image was processed (check output folder for processed files)
-2. Check Project Settings to confirm indices were configured
-3. Reprocess with desired indices enabled
+### RAW (peegeldus)
 
-### Wrong Layer Shown
+* **Vahemik**: 0–65 535 (16-bitine TIFF) või 0,0–1,0 (32-bitine protsent)
+* **Tähendus**: kalibreeritud protsentuaalne peegeldusvõime
+* **Kasutamine**: teaduslikud mõõtmised ja analüüsid
 
-**Problem**: Image opens in unexpected layer
+**16-bitise TIFF puhul:** jagage 65 535-ga, et saada protsentuaalne peegeldusvõime **32-bitise protsendi puhul:** väärtused esindavad otseselt protsenti (0,5 = 50% peegeldusvõime)
 
-**Cause**: Layer preference from previous image carried forward, but that layer doesn't exist on current image
+### RAW (indekspildid)
 
-**Solution**: Chloros automatically falls back to JPG when preferred layer unavailable - this is normal behavior
-
-### Can't See Calibration Targets
-
-**Problem**: RAW (Target) layer doesn't show target detection
-
-**Possible causes:**
-
-* Targets weren't detected during processing
-* Image doesn't actually contain targets
-* Target detection settings too strict
-
-**Solutions:**
-
-1. Check Debug Log for "Target found" messages
-2. Verify image actually contains visible calibration targets
-3. Adjust target detection settings in Project Settings
-4. See [Choosing Target Images](../processing-images-gui/choosing-target-images.md)
+* **Vahemik**: varieerub indeksi järgi (tavaliselt -1,0 kuni +1,0 normaliseeritud indeksite puhul)
+* **Tähendus**: indeksi arvutamise tulemus
+* **Näited**:
+  * NDVI: -1 kuni +1 (taimestik tavaliselt 0,4 kuni 0,9)
+  * NDRE: -1 kuni +1 (stressi tuvastamine)
+  * EVI: 0 kuni 1 (täiustatud taimestik)
 
 ***
 
-## Related Features
+## Näpunäited ja parimad tavad
 
-### Image Viewer Tools
+### Tõhus kihtide vahetamine
 
-When viewing any layer, you can use:
+* **Klaviatuuri kiirklahvide tundmine**: kuigi kihtide jaoks pole klaviatuuri kiirklahve, töötavad navigeerimisnooled (←/→) kõikidel kihtidel
+* **Järjepidevad töövood**: vali üks kiht (nt NDVI) ja vaata läbi kogu andmekogum, enne kui vahetad teise kihi vastu
+* **Kiired võrdlused**: vaheta originaali ja peegelduse vahel, et kontrollida töötlemise kvaliteeti
 
-* **Zoom controls**: Magnify to inspect details
-* **Pan**: Click and drag to move around zoomed image
-* **Pixel value inspection**: See values at cursor location
-* **Navigation arrows**: Move between images while maintaining layer
-* **Pixel Percent mode**: Toggle between DN and percent display
+### Jõudlusega seotud kaalutlused
 
-See [Opening an Image Full Screen](page-3.md) for complete Image Viewer documentation.
+* **JPG laadib kõige kiiremini**: kasutage kiireks navigeerimiseks paljude piltide vahel.
+* **RAW-kihid laadivad aeglasemalt**: kõrgem resolutsioon ja bittisügavus.
+* **Indeksi kihid**: sarnane kiirus peegelduskihtidega.
+* **Esimene laadimine on aeglaseim**: sama kihi järgmised vaated salvestatakse vahemällu ja on kiiremad.
 
-### Index/LUT Sandbox
+### Kvaliteedi kontroll
 
-For interactive index testing and visualization:
-
-* **Real-time index calculation**: Test different index formulas
-* **LUT color mapping**: Apply color gradients to grayscale indices
-* **Export visualizations**: Save colored index images
-
-See [Index/LUT Sandbox](index-lut-sandbox.md) for details.
+* **Kontrollige alati RAW (originaal)**: kontrollige allika andmete kvaliteeti enne töödeldud väljundite usaldamist
+* **Kihtide võrdlemine**: kasutage kihtide vahetamist, et kontrollida töötlemise õigsust
+* **Indeksi vahemike kontrollimine**: kasutage indeksikihtidega pikseliprotsendi režiimi, et kontrollida väärtuste mõistlikkust
 
 ***
 
-## Next Steps
+## Probleemide lahendamine
 
-Now that you understand image layers:
+### Kiht pole saadaval
 
-* [**Opening an Image Full Screen**](page-3.md) - Complete Image Viewer guide
-* [**Index/LUT Sandbox**](index-lut-sandbox.md) - Interactive index visualization
-* [**Multispectral Index Formulas**](../project-settings/multispectral-index-formulas.md) - Available indices reference
-* [**Finishing the Processing**](../processing-images-gui/finishing-the-processing.md) - Understanding processed outputs
+**Probleem**: Oodatud kiht ei ilmu rippmenüüs
+
+**Võimalikud põhjused:**
+
+* Pilti ei ole töödeldud (saadaval on ainult JPG ja RAW (originaal))
+* Peegelduskalibreerimine oli töötlemise ajal keelatud
+* Projekti seadetest ei ole konfigureeritud konkreetset indeksit
+* Pilt on ainult sihtmärgi pilt (sihtmärkide jaoks ei ole indekseid loodud)
+
+**Lahendused:**
+
+1. Kontrollige, kas pilt on töödeldud (kontrollige töödeldud faile väljundkausta).
+2. Kontrollige projekti seadeid, et veenduda, et indeksid on konfigureeritud.
+3. Töötlege uuesti, aktiveerides soovitud indeksid.
+
+### Näidatakse vale kiht
+
+**Probleem**: pilt avatakse ootamatus kihis.
+
+**Põhjus**: eelmise pildi kihi eelistus on üle kantud, kuid see kiht ei ole praegusel pildil olemas.
+
+**Lahendus**: Chloros lülitub automaatselt tagasi JPG-le, kui eelistatud kiht pole saadaval – see on normaalne käitumine.
+
+### Kalibreerimise sihtmärke pole näha
+
+**Probleem**: RAW (sihtmärgi) kiht ei näita sihtmärgi tuvastamist.
+
+**Võimalikud põhjused:**
+
+* Sihtmärke ei tuvastatud töötlemise ajal
+* Pilt ei sisalda tegelikult sihtmärke
+* Sihtmärgi tuvastamise seaded on liiga ranged
+
+**Lahendused:**
+
+1. Kontrollige veaparanduslogist, kas seal on sõnum „Sihtmärk leitud”
+2. Veenduge, et pilt sisaldab tegelikult nähtavaid kalibreerimise sihtmärke
+3. Reguleerige sihtmärgi tuvastamise seadeid projekti seadetest
+4. Vaadake [Sihtmärgi piltide valimine](../processing-images-gui/choosing-target-images.md)
+
+***
+
+## Seotud funktsioonid
+
+### Pildivaataja tööriistad
+
+Mis tahes kihi vaatamisel saate kasutada:
+
+* **Suumikontrolle**: suurendage, et vaadata detaile
+* **Panoraam**: klõpsake ja lohistage, et liikuda suumitud pildil
+* **Pikselväärtuse kontrollimine**: vaadake väärtusi kursori asukohas
+* **Navigatsiooninooled**: liikuge piltide vahel, säilitades kiht
+* **Pikselprotsendi režiim**: vahetage DN- ja protsendimäära vahel
+
+Vaadake [Pildi avamine täisekraanil](opening-an-image-full-screen.md), et saada täielikku teavet pildivaataja kohta.
+
+### Indeks/LUT-liivakast
+
+Interaktiivseks indeksite testimiseks ja visualiseerimiseks:
+
+* **Reaalajas indeksite arvutamine**: testige erinevaid indeksite valemeid
+* **LUT-värvide kaardistamine**: rakendage värvide gradiente halltoonides indeksitele
+* **Visualiseeringute eksportimine**: salvestage värvilised indeksite pildid
+
+Vaadake [Indeks/LUT-liivakast](index-lut-sandbox.md) täpsema teabe saamiseks.
+
+***
+
+## Järgmised sammud
+
+Nüüd, kui saate aru pildikihtidest:
+
+* [**Pildi avamine täisekraanil**](opening-an-image-full-screen.md) – Image Vieweri täielik juhend
+* [**Index/LUT Sandbox**](index-lut-sandbox.md) – interaktiivne indeksite visualiseerimine
+* [**Multispektraalsed indeksivalemid**](../project-settings/multispectral-index-formulas.md) – kättesaadavad indeksid
+* [**Töötlemise lõpetamine**](../processing-images-gui/finishing-the-processing.md) – töödeldud väljundite mõistmine

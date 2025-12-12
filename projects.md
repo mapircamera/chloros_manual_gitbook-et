@@ -1,17 +1,13 @@
-# Projects
+# GUI : Projektid
 
-Chloros allows you to create projects which can be reopened in the future.
+Chloros võimaldab teil luua projekte, mida saab tulevikus uuesti avada.
 
-## New Project
+## Uus projekt
 
-<figure><img src=".gitbook/assets/project_new.JPG" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/project_new.JPG" alt=""><figcaption></figcaption></figure>Valige peamenüüst „Uus projekt” ja sisestage oma projektile unikaalne nimi.
 
-Select "New Project" from the main menu and enter a unique name for your project.
+## Projekti avamine
 
-## Open Project
+<figure><img src=".gitbook/assets/project_open.JPG" alt=""><figcaption></figcaption></figure>Valige „Ava projekt”, et näha projektikausta olemasolevate projektide loendit. Kui projekte ei ole, ei avane teine külgmenüü. Ülaloleval fotol on näha mõned GUI loodud projektid (t1, t2, t3). DATE\_TIME projektid on loodud CLI abil, kasutades vaikimisi projektide nimetamise skeemi. Mis tahes projekti nime klõpsates avatakse see.
 
-<figure><img src=".gitbook/assets/project_open.JPG" alt=""><figcaption></figcaption></figure>
-
-Select "Open Project" to see a list of existing projects in the Project Folder. If no projects exist the secondary side menu will not open. You can see some GUI created projects (t1, t2, t3) listed in the above photo. The DATE\_TIME projects were created by the CLI using the default project naming scheme. Clicking any project name will open it.
-
-Clicking the "Open Project Folder" button opens your computer's file explorer at the project path. You can adjust the project path in the [Project Settings](project-settings/page-2.md).
+Nupule „Ava projektikausta” klõpsates avatakse teie arvuti failibrauser projekti asukohas. Projekti asukohta saab muuta [Projekti seaded](project-settings/project-settings.md) menüüs.

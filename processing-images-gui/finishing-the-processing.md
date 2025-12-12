@@ -1,306 +1,306 @@
-# Finishing the Processing
+# Töötlemise lõpetamine
 
-Once Chloros completes processing, it's time to review your results, verify output quality, and prepare your processed images for use in your workflow. This page guides you through the final steps and next actions.
+Kui Chloros on töötlemise lõpetanud, on aeg vaadata üle tulemused, kontrollida väljundi kvaliteeti ja valmistada töödeldud pildid ette kasutamiseks oma töövoos. See lehekülg juhendab teid viimaste sammude ja järgmiste tegevuste läbi.
 
-## Processing Complete Indication
+## Töötlemise lõpetamise märge
 
-When processing finishes successfully, you'll see several indicators:
+Kui töötlemine on edukalt lõpetatud, näete mitmeid märke:
 
-* ✅ **Progress bar**: Reaches 100% completion
-* ✅ **Debug Log**: Shows "Processing Complete" message
-* ✅ **Start button**: Becomes enabled again (ready for next processing run)
-* ✅ **Output files**: All processed images saved to camera model subfolder
-
-***
-
-## Locating Your Processed Images
-
-### Opening the Output Folder
-
-1. Click the **Main Menu** <img src="../.gitbook/assets/image (1) (1).png" alt="" data-size="line"> icon (top left)
-2. Select **"Open Project Folder"**
-3. Your file explorer opens to the project directory
-4. Locate your project by name
+* ✅ **Progressiriba**: jõuab 100% täitmiseni
+* ✅ **Debug Log**: näitab sõnumit „Processing Complete” (Töötlemine lõpetatud)
+* ✅ **Start button**: muutub uuesti aktiveerituks (valmis järgmiseks töötlemiseks)
+* ✅ **Väljundfailid**: kõik töödeldud pildid salvestatakse kaamera mudeli alamkausta
 
 ***
 
-## Reviewing Processed Images
+## Töödeldud piltide leidmine
 
-### Quick Preview in File Explorer
+### Väljundkausta avamine
 
-**Windows built-in preview:**
-
-1. Navigate to camera model subfolder
-2. Select an image file
-3. Preview appears in Windows Explorer preview pane
-4. Use arrow keys to browse through images
-
-### Preview in External Image Viewers
-
-**Recommended viewers:**
-
-* **QGIS** - Free GIS software (best for georeferenced multispectral analysis)
-* **IrfanView** - Fast, lightweight image viewer (supports TIFF)
-* **Adobe Photoshop** - Professional editing (TIFF support)
-* **GIMP** - Free alternative to Photoshop
-* **Windows Photos** - Basic viewing (may not support 16-bit TIFF)
-
-### Preview in Chloros Image Viewer
-
-Use Chloros's built-in Image Viewer for advanced visualization:
-
-1. Click an image thumbnail in the File Browser
-2. Image opens in the main preview area
-3. Click **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> tab in left sidebar
-4. Use [Index/LUT Sandbox](../image-viewer-gui/index-lut-sandbox.md) for interactive analysis
-
-See [Image Viewer](../image-viewer-gui/page-3.md) for detailed instructions.
+1. Klõpsake **peamenüü** <img src="../.gitbook/assets/image (1) (1).png" alt="" data-size="line"> (ülemine vasak nurk)
+2. Valige **„Ava projekti kaust”**
+3. Failibrauser avab projekti kataloogi
+4. Leidke oma projekt nime järgi
 
 ***
 
-## Reviewing the Debug Log
+## Töödeldud piltide vaatamine
 
-### Check for Warnings or Errors
+### Kiire eelvaade failibrauseris
 
-1. Open **Debug Log** <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> tab
-2. Scroll through messages
-3. Look for yellow warnings or red errors
-4. Review any issues noted
-5. Contact MAPIR support for assistance
+**Windows sisseehitatud eelvaade:**
 
-### Saving the Log
+1. Navigeerige kaamera mudeli alamkausta
+2. Valige pildifail
+3. Eelvaade ilmub Windows Explorer eelvaateaknas
+4. Kasutage nooleklahve piltide sirvimiseks
 
-To keep a record of processing or to send to MAPIR Support:
+### Eelvaade välistes pildivaatajates
 
-1. Click **"Copy"** or **"Download"** button
-2. Save as text file in project folder
-3. Include with project documentation
-4. Send to MAPIR support if issues encountered
+**Soovitatavad vaatajad:**
 
-***
+* **QGIS** – tasuta GIS-tarkvara (parim georeferentseeritud multispektraalanalüüsiks)
+* **IrfanView** – kiire ja kerge pildivaataja (toetab TIFF)
+* **Adobe Photoshop** – professionaalne redigeerimine (TIFF tugi)
+* **GIMP** – tasuta alternatiiv Photoshopile
+* **Windows Photos** – põhiline vaatamine (ei pruugi toetada 16-bitist TIFF)
 
-## Common Output Issues and Solutions
+### Eelvaade Chloros pildivaatajas
 
-### Issue: Missing Output Files
+Kasutage Chloros sisseehitatud pildivaatajat täiustatud visualiseerimiseks:
 
-**Possible causes:**
+1. Klõpsake failibrauseris pildi pisipilti.
+2. Pilt avatakse peamises eelvaatealas.
+3. Klõpsake vasakul külgribal **Pildivaataja** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> vasakul külgribal.
+4. Kasutage interaktiivseks analüüsiks [Index/LUT Sandbox](../image-viewer-gui/index-lut-sandbox.md).
 
-* Files didn't meet processing criteria
-* Target-only images (excluded from export)
-* Disk space ran out during export
-* File corruption during processing
-
-**Solutions:**
-
-1. Check Debug Log for skip/error messages
-2. Verify disk space was sufficient
-3. Count files: Should match (original count - target count) × (indices + 1)
-4. Re-import and reprocess any missing files
-
-### Issue: Dark or Bright Edges (Vignetting Still Visible)
-
-**Possible causes:**
-
-* Vignette correction disabled
-* Camera/lens not in Chloros profile database
-* Extreme vignetting beyond correction capability
-
-**Solutions:**
-
-1. Verify vignette correction was enabled in Project Settings
-2. Check camera model correctly detected
-3. Contact MAPIR support if vignetting persists
-
-### Issue: Incorrect Colors or Values
-
-**Possible causes:**
-
-* No calibration targets detected
-* Wrong calibration target model selected
-* Reflectance calibration disabled
-* Poor quality target images
-
-**Solutions:**
-
-1. Verify reflectance calibration was enabled
-2. Check "Target found" messages in Debug Log
-3. Review target image quality
-4. Reprocess with proper targets marked
-
-### Issue: NDVI Values Seem Wrong
-
-**Expected NDVI ranges:**
-
-* **Water, rocks, soil**: -0.1 to 0.2
-* **Sparse/unhealthy vegetation**: 0.2 to 0.4
-* **Moderate vegetation**: 0.4 to 0.6
-* **Healthy, dense vegetation**: 0.6 to 0.9
-
-**If values are outside these ranges:**
-
-1. Verify reflectance calibration was applied
-2. Verify light sensor log was included
-3. Check calibration targets were detected
-4. Ensure correct camera model was detected
-5. Review target image capture timing and conditions
+Täpsemad juhised leiate [Image Viewerist](../image-viewer-gui/opening-an-image-full-screen.md).
 
 ***
 
-## Using Your Processed Images
+## Debug Logi läbivaatamine
 
-### For Photogrammetry / Orthomosaic Creation
+### Kontrollige hoiatusi ja vigu
 
-**Recommended workflow:**
+1. Avage **Debug Log** <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> sakk
+2. Sirvige sõnumeid
+3. Otsige kollaseid hoiatusi või punaseid vigu
+4. Vaadake läbi kõik märgitud probleemid
+5. Abiks võtke ühendust MAPIR tugiteenistusega
 
-1. **Import calibrated reflectance images** into photogrammetry software:
+### Logi salvestamine
+
+Töötlemise salvestamiseks või MAPIR tugiteenistusele saatmiseks:
+
+1. Klõpsake nuppu **„Kopeeri”** või **„Lae alla”**
+2. Salvesta tekstifailina projekti kausta
+3. Lisa projekti dokumentatsioonile
+4. Saada MAPIR tugiteenistusele, kui tekib probleeme
+
+***
+
+## Tavapärased väljundiprobleemid ja lahendused
+
+### Probleem: puuduvad väljundifailid
+
+**Võimalikud põhjused:**
+
+* Failid ei vastanud töötlemiskriteeriumidele.
+* Ainult sihtpildid (ekspordist välja jäetud).
+* Ekspordi ajal sai kettaruum otsa.
+* Failide rikkumine töötlemise ajal.
+
+**Lahendused:**
+
+1. Kontrollige veaotsingu logist, kas seal on vahelejätmise/veateateid.
+2. Veenduge, et kettaruumi oli piisavalt.
+3. Loendage faile: peaks vastama (algne arv – sihtarv) × (indeksid + 1).
+4. Importige puuduvad failid uuesti ja töötlege need uuesti.
+
+### Probleem: tumedad või heledad servad (vinjetatsioon on endiselt nähtav)
+
+**Võimalikud põhjused:**
+
+* Vinjetatsiooni korrigeerimine on keelatud.
+* Kaamera/objektiiv ei ole Chloros profiili andmebaasis.
+* Äärmuslik vinjetatsioon, mida ei ole võimalik korrigeerida.
+
+**Lahendused:**
+
+1. Kontrollige, kas vinjeti korrigeerimine on projektiseadetes lubatud
+2. Kontrollige, kas kaamera mudel on õigesti tuvastatud
+3. Kui vinjetatsioon püsib, võtke ühendust MAPIR tugiteenistusega
+
+### Probleem: vale värv või väärtus
+
+**Võimalikud põhjused:**
+
+* Kalibreerimise sihtmärke ei tuvastatud
+* Valitud on vale kalibreerimise sihtmärgi mudel
+* Peegelduskalibreerimine on keelatud
+* Sihtmärgi pildid on halva kvaliteediga
+
+**Lahendused:**
+
+1. Kontrollige, kas peegelduskalibreerimine on lubatud.
+2. Kontrollige veaotsingu logis sõnumit „Sihtmärk leitud”.
+3. Kontrollige sihtmärgi pildi kvaliteeti.
+4. Töötlege uuesti, märkides õiged sihtmärgid.
+
+### Probleem: NDVI väärtused tunduvad valed.
+
+**Oodatavad NDVI vahemikud:**
+
+* **Vesi, kivid, pinnas**: -0,1 kuni 0,2
+* **Hõre/ebatervislik taimestik**: 0,2 kuni 0,4
+* **Mõõdukas taimestik**: 0,4 kuni 0,6
+* **Tervislik, tihe taimestik**: 0,6 kuni 0,9
+
+**Kui väärtused jäävad väljapoole neid vahemikke:**
+
+1. Kontrollige, kas peegelduskalibreerimine on rakendatud.
+2. Kontrollige, kas valgussensori logi on lisatud.
+3. Kontrollige, kas kalibreerimise sihtmärgid on tuvastatud.
+4. Veenduge, et on tuvastatud õige kaameramudel.
+5. Kontrollige sihtmärgi pildi jäädvustamise aega ja tingimusi.
+
+***
+
+## Töödeldud piltide kasutamine
+
+### Fotogramm-meetria / ortomosaigi loomiseks
+
+**Soovitatav töövoog:**
+
+1. **Importige kalibreeritud peegeldusvõime pildid** fotogramm-meetria tarkvarasse:
    * Pix4Dmapper
    * Agisoft Metashape
    * DroneDeploy
    * WebODM
-2. **Keep EXIF metadata**: Ensure GPS data preserved for geotagging
-3. **Calibrated workflows**: Use reflectance images for scientific accuracy
-4. **Process index mosaics**: Create NDVI orthomosaics from individual index images
-5. **Export georeferenced GeoTIFF**: For use in GIS applications
+2. **Säilitage EXIF-metadata**: veenduge, et GPS-andmed on geotagimiseks säilitatud
+3. **Kalibreeritud töövood**: kasutage peegeldusvõime pilte teadusliku täpsuse tagamiseks
+4. **Töötlege indeksmosaiike**: Looge NDVI ortomosaiigid üksikutest indeksipiltidest
+5. **Eksportige georeferentseeritud GeoTIFF**: kasutamiseks GIS-rakendustes
 
-### For GIS Analysis
+### GIS-analüüsiks
 
-**Recommended workflow:**
+**Soovitatav töövoog:**
 
-1. **Load into QGIS, ArcGIS, or similar**
-2. **Use 16-bit TIFF** reflectance images for multi-band analysis
-3. **Use index images** (NDVI, NDRE) as ready-to-use vegetation layers
-4. **Raster calculator**: Combine bands for custom analysis
-5. **Export**: Create classification maps, change detection, vegetation health maps
+1. **Laadige QGIS-i, ArcGIS-i või sarnasesse**
+2. **Kasutage 16-bitiseid TIFF** peegelduspilte mitme sagedusriba analüüsiks
+3. **Kasutage indekspilte** (NDVI, NDRE) valmis kasutuseks taimestiku kihtidena
+4. **Rasterarvuti**: kombineerige sagedusribad kohandatud analüüsiks
+5. **Eksport**: looge klassifitseerimiskaardid, muutuste tuvastamine, taimestiku tervisekaardid
 
-### For Direct Analysis / Reporting
+### Otseseks analüüsiks / aruandluseks
 
-**Recommended workflow:**
+**Soovitatav töövoog:**
 
-1. **Use index images with LUT colors** for visual reports
-2. **Extract statistics**: Mean NDVI per field/plot
-3. **Time series**: Compare indices across multiple sessions
-4. **Generate reports**: Include maps, statistics, and visualizations
-
-***
-
-## Archiving and Backup
-
-### Recommended Backup Strategy
-
-**What to save:**
-
-* ✅ **Original RAW/JPG images** - Archive on separate drive/cloud
-* ✅ **Processed outputs** - Keep calibrated images and indices
-* ✅ **Project file** - Contains all settings for reprocessing if needed
-* ✅ **Debug Log** - Documents processing details
-* ✅ **Calibration target images** - For verification and reprocessing
-
-**Storage recommendations:**
-
-* **Immediate backup**: External hard drive
-* **Long-term archive**: Cloud storage (Google Drive, Dropbox, etc.)
-* **Critical data**: Keep 2-3 copies in different locations
+1. **Kasutage indekspilte LUT-värvidega** visuaalsete aruannete jaoks
+2. **Väljavõtted statistika**: keskmine NDVI põllu/krundi kohta
+3. **Aegread**: võrdle indekseid mitme seansi vahel
+4. **Aruannete koostamine**: lisa kaardid, statistika ja visualiseeringud
 
 ***
 
-## Next Processing Runs
+## Arhiveerimine ja varundamine
 
-### Reusing Project Settings
+### Soovitatav varundamisstrateegia
 
-If processing similar datasets in the future:
+**Mida salvestada:**
 
-1. **Save Project Template** (if not already done)
-2. **Create new project** using saved template
-3. **Import new images**
-4. **Process** with identical settings for consistency
+* ✅ **Originaalsed RAW/JPG pildid** – arhiveeri eraldi kettal/pilves
+* ✅ **Töödeldud väljundid** – hoidke kalibreeritud pilte ja indekseid
+* ✅ **Projektifail** – sisaldab kõiki vajaduse korral töötlemiseks vajalikke seadeid
+* ✅ **Debug-logi** – dokumenteerib töötlemise üksikasjad
+* ✅ **Kalibreerimise sihtpildid** – kontrollimiseks ja töötlemiseks
 
-### Batch Processing Multiple Sessions
+**Säilitamise soovitused:**
 
-For multiple sessions/datasets:
-
-**Option 1: GUI - Multiple Projects**
-
-* Create separate project for each session
-* Use consistent template settings
-* Process one at a time
-
-**Option 2: Chloros CLI (Chloros+ only)**
-
-* Automate batch processing
-* Process multiple folders with scripts
-* See [CLI Documentation](../CLI.md)
-
-**Option 3: Python SDK (Chloros+ only)**
-
-* Programmatic control
-* Integration with analysis pipelines
-* See [API Documentation](../api-python-sdk.md)
+* **Vahetu varukoopia**: välisele kõvakettale
+* **Pikaajaline arhiiv**: pilvesalvestus (Google Drive, Dropbox jne)
+* **Kriitilised andmed**: hoidke 2–3 koopiat erinevates asukohtades
 
 ***
 
-## Troubleshooting Post-Processing
+## Järgmised töötlemiskäigud
 
-### Re-Processing with Different Settings
+### Projekti seadete taaskasutamine
 
-If results aren't satisfactory:
+Kui töötlete tulevikus sarnaseid andmekogusid:
 
-1. Keep original images (never delete)
-2. Open same project in Chloros
-3. Adjust settings in Project Settings panel
-4. Process again - outputs will overwrite previous results
+1. **Salvestage projektimall** (kui seda pole veel tehtud)
+2. **Looge uus projekt** salvestatud malli abil
+3. **Importige uued pildid**
+4. **Töötlege** ühtsuse tagamiseks identseid seadeid kasutades
 
-### Processing Subset of Images
+### Mitme seansi kogumitöötlus
 
-To reprocess only specific images:
+Mitme seansi/andmekogumi puhul:
 
-1. Create new project
-2. Import only the images needing reprocessing
-3. Use same settings template
-4. Process smaller dataset
+**Võimalus 1: GUI – mitu projekti**
 
-### Getting Help
+* Looge iga seansi jaoks eraldi projekt.
+* Kasutage ühtseid malliseadeid.
+* Töötlege ükshaaval.
 
-If you encounter issues:
+**Võimalus 2: Chloros CLI (ainult Chloros+)**
 
-* 📧 **Email**: info@mapir.camera (include Debug Log)
-* 🌐 **Support**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
-* 📚 **FAQ**: [Frequently Asked Questions](../faq.md)
-* 📖 **Documentation**: [Chloros Manual](../)
+* Automatiseerige partii töötlemine.
+* Töötlege mitut kausta skriptidega.
+* Vaata [CLI dokumentatsiooni](../CLI.md)
 
-***
+**Variant 3: Python SDK (ainult Chloros+)**
 
-## Summary: Complete Workflow
-
-You've now completed the full Chloros processing workflow:
-
-1. ✅ **Created project** - See [Projects](../projects.md)
-2. ✅ **Added files** - See [Adding Files](page-1.md)
-3. ✅ **Adjusted settings** - See [Adjusting Project Settings](adjusting-project-settings.md)
-4. ✅ **Marked targets** - See [Choosing Target Images](choosing-target-images.md)
-5. ✅ **Started processing** - See [Starting the Processing](starting-the-processing.md)
-6. ✅ **Monitored progress** - See [Monitoring the Processing](monitoring-the-processing.md)
-7. ✅ **Reviewed results** - This page
-
-**Your calibrated, reflectance-corrected multispectral images are ready for analysis!**
+* Programmiline juhtimine
+* Integreerimine analüüsi torujuhtmete
+* Vaata [API dokumentatsiooni](../api-python-sdk.md)
 
 ***
 
-## Additional Resources
+## Järelkäsitluse veaotsing
 
-### Advanced Features
+### Uuesti töötlemine erinevate seadete abil
 
-* [**Image Viewer**](../image-viewer-gui/page-3.md) - Interactive visualization and analysis
-* [**Index/LUT Sandbox**](../image-viewer-gui/index-lut-sandbox.md) - Custom index testing
-* [**Multispectral Index Formulas**](../project-settings/multispectral-index-formulas.md) - Complete index reference
+Kui tulemused ei ole rahuldavad:
 
-### Automation & Integration
+1. Säilita originaalpildid (ära kunagi kustuta)
+2. Avage sama projekt Chloros-is
+3. Kohandage seadeid projekti seadeid paneelis
+4. Töötlege uuesti – väljundid kirjutavad üle eelmised tulemused
 
-* [**CLI Documentation**](../CLI.md) - Command-line batch processing
-* [**Python SDK**](../api-python-sdk.md) - Programmatic automation
-* [**Chloros+ Features**](../#chloros) - Advanced processing capabilities
+### Piltide alarühma töötlemine
 
-### Support & Learning
+Ainult teatud piltide uuesti töötlemiseks:
 
-* [**FAQ**](../faq.md) - Common questions answered
-* [**Calibration Targets**](../calibration-targets.md) - Understanding reflectance calibration
-* [**Supported Cameras**](../supported-cameras.md) - Compatible hardware
+1. Looge uus projekt
+2. Importige ainult uuesti töötlemist vajavad pildid
+3. Kasutage sama seadete mall
+4. Töötlege väiksemat andmekogumit
+
+### Abi saamine
+
+Kui tekib probleeme:
+
+* 📧 **E-post**: info@mapir.camera (lisage veaotsingu logi)
+* 🌐 **Tugi**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
+* 📚 **KKK**: [Korduma kippuvad küsimused](../faq.md)
+* 📖 **Dokumentatsioon**: [Chloros kasutusjuhend](../)
+
+***
+
+## Kokkuvõte: täielik töövoog
+
+Nüüd olete lõpetanud kogu Chloros töötlemise töövoo:
+
+1. ✅ **Loodud projekt** – vaadake [Projekte](../projects.md)
+2. ✅ **Lisatud failid** – vaata [Failide lisamine](adding-files-to-a-project.md)
+3. ✅ **Kohandatud seaded** – vaata [Projekti seadete kohandamine](adjusting-project-settings.md)
+4. ✅ **Märgitud sihtmärgid** – vaata [Sihtmärgi piltide valimine](choosing-target-images.md)
+5. ✅ **Alustatud töötlemine** – vaata [Töötlemise alustamine](starting-the-processing.md)
+6. ✅ **Jälgitud edenemine** – vaata [Töötlemise jälgimine](monitoring-the-processing.md)
+7. ✅ **Tulemuste läbivaatamine** – See lehekülg
+
+**Teie kalibreeritud, peegelduskorrektsiooniga multispektraalsed pildid on valmis analüüsimiseks!**
+
+***
+
+## Lisaressursid
+
+### Täiustatud funktsioonid
+
+* [**Pildivaataja**](../image-viewer-gui/opening-an-image-full-screen.md) – interaktiivne visualiseerimine ja analüüs
+* [**Indeks/LUT Sandbox**](../image-viewer-gui/index-lut-sandbox.md) – kohandatud indeksi testimine
+* [**Multispektraalsed indeksivalemid**](../project-settings/multispectral-index-formulas.md) – täielik indeksite viide
+
+### Automatiseerimine ja integreerimine
+
+* [**CLI dokumentatsioon**](../CLI.md) – käsurea partii töötlemine
+* [**Python SDK**](../api-python-sdk.md) – Programmiline automatiseerimine
+* [**Chloros+ funktsioonid**](../#chloros) – Täiustatud töötlemisvõimalused
+
+### Tugi ja õppimine
+
+* [**KKK**](../faq.md) – vastused tavapärastele küsimustele
+* [**Kalibreerimise sihtmärgid**](../calibration-targets.md) – peegelduskalibreerimise mõistmine
+* [**Toetatud kaamerad**](../supported-cameras.md) – ühilduv riistvara

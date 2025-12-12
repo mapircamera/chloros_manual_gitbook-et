@@ -1,34 +1,34 @@
-# Table of contents
+# Sisukord
 
-* [Getting Started](README.md)
-* [GUI : Navigation](navigation.md)
-* [GUI : Projects](projects.md)
-* [CLI : Command Line](CLI.md)
+* [Alustamine](README.md)
+* [GUI: navigeerimine](navigation.md)
+* [GUI: projektid](projects.md)
+* [CLI : käsurea](CLI.md)
 * [API : Python SDK](api-python-sdk.md)
-* [Supported Cameras](supported-cameras.md)
-* [Output Image Formats](output-image-formats.md)
-* [Chloros+ Login](chloros+-login.md)
-* [Calibration Targets](calibration-targets.md)
-* [Supported Languages](supported-languages.md)
-* [Download](download.md)
-* [FAQ](faq.md)
+* [Toetatud kaamerad](supported-cameras.md)
+* [Väljundpildi formaadid](output-image-formats.md)
+* [Chloros+ sisselogimine](chloros+-login.md)
+* [Kalibreerimise sihtmärgid](calibration-targets.md)
+* [Toetatud keeled](supported-languages.md)
+* [Allalaadimine](download.md)
+* [KKK](faq.md)
 
-## Processing Images (GUI)
+## Piltide töötlemine (GUI)
 
-* [Adjusting Project Settings](processing-images-gui/adjusting-project-settings.md)
-* [Adding Files to a Project](processing-images-gui/adding-files-to-a-project.md)
-* [Choosing Target Images](processing-images-gui/choosing-target-images.md)
-* [Starting the Processing](processing-images-gui/starting-the-processing.md)
-* [Monitoring the Processing](processing-images-gui/monitoring-the-processing.md)
-* [Finishing the Processing](processing-images-gui/finishing-the-processing.md)
+* [Projekti seadete kohandamine](processing-images-gui/adjusting-project-settings.md)
+* [Failide lisamine projekti](processing-images-gui/adding-files-to-a-project.md)
+* [Sihtpiltide valimine](processing-images-gui/choosing-target-images.md)
+* [Töötlemise alustamine](processing-images-gui/starting-the-processing.md)
+* [Töötlemise jälgimine](processing-images-gui/monitoring-the-processing.md)
+* [Töötlemise lõpetamine](processing-images-gui/finishing-the-processing.md)
 
-## PROJECT SETTINGS
+## PROJEKTI SEADED
 
-* [Project Settings](project-settings/project-settings.md)
-* [Multispectral Index Formulas](project-settings/multispectral-index-formulas.md)
+* [Projekti seaded](project-settings/project-settings.md)
+* [Multispektraalsed indeksivalemid](project-settings/multispectral-index-formulas.md)
 
-## IMAGE VIEWER (GUI)
+## PILDI VAATAMINE (GUI)
 
-* [Opening an Image Full Screen](image-viewer-gui/opening-an-image-full-screen.md)
-* [Image Layers](image-viewer-gui/image-layers.md)
-* [Index/LUT Sandbox](image-viewer-gui/index-lut-sandbox.md)
+* [Pildi avamine täisekraanil](image-viewer-gui/opening-an-image-full-screen.md)
+* [Pildi kihid](image-viewer-gui/image-layers.md)
+* [Indeks/LUT liivakast](image-viewer-gui/index-lut-sandbox.md)

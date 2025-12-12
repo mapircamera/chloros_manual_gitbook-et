@@ -1,48 +1,46 @@
-# CLI : Command Line
+# CLI : käsurea
 
-<figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>**Chloros CLI** pakub võimast käsurea juurdepääsu Chloros pilditöötlusmootorile, võimaldades automatiseerimist, skriptide kasutamist ja peata töötamist teie pilditöötlusprotsessides.
 
-The **Chloros CLI** provides powerful command-line access to the Chloros image processing engine, enabling automation, scripting, and headless operation for your imaging workflows.
+### Peamised omadused
 
-### Key Features
+* 🚀 **Automatiseerimine** – mitme andmekogumi skriptide kogumitöötlus
+* 🔗 **Integreerimine** – integreerimine olemasolevatesse töövoogudesse ja torustikesse
+* 💻 **Peata töö** – töötab ilma graafilise kasutajaliideseta
+* 🌍 **Mitmekeelsus** – toetab 38 keelt
+* ⚡ **Paralleelne töötlemine** – skaleerub dünaamiliselt teie CPU-le (kuni 16 paralleelset töötajat)
 
-* 🚀 **Automation** - Script batch processing of multiple datasets
-* 🔗 **Integration** - Embed in existing workflows and pipelines
-* 💻 **Headless Operation** - Run without GUI
-* 🌍 **Multi-Language** - Support for 38 languages
-* ⚡ **Parallel Processing** - Dynamically scales to your CPU (up to 16 parallel workers)
+### Nõuded
 
-### Requirements
-
-| Requirement          | Details                                                             |
+| Nõue          | Detailid                                                             |
 | -------------------- | ------------------------------------------------------------------- |
-| **Operating System** | Windows 10/11 (64-bit)                                              |
-| **License**          | Chloros+ ([paid plan required](https://cloud.mapir.camera/pricing)) |
-| **Memory**           | 8GB RAM minimum (16GB recommended)                                  |
-| **Internet**         | Required for license activation                                     |
-| **Disk Space**       | Varies by project size                                              |
+| **Operatsioonisüsteem** | Windows 10/11 (64-bitine)                                              |
+| **Litsents**          | Chloros+ ([tasuline pakett nõutav](https://cloud.mapir.camera/pricing)) |
+| **Mälu**           | Minimaalselt 8 GB RAM (soovitatav 16 GB)                                  |
+| **Internet**         | Vajalik litsentsi aktiveerimiseks                                     |
+| **Kettaruum**       | Sõltub projekti suurusest                                              |
 
-{% hint style="warning" %}
-**License Requirement**: The CLI requires a paid Chloros+ subscription. Standard (free) plans do not have CLI access. Visit [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing) to upgrade.
+{% vihje style=&quot;warning&quot; %}
+**Litsentsinõuded**: CLI nõuab tasulist Chloros+ tellimust. Standard (tasuta) paketid ei sisalda CLI juurdepääsu. Uuendamiseks külastage [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing).
 {% endhint %}
 
-## Quick Start
+## Kiirstart
 
-### Installation
+### Paigaldamine
 
-The CLI is automatically included with the Chloros installer:
+CLI on automaatselt kaasas Chloros paigaldajaga:
 
-1. Download and run **Chloros Installer.exe**
-2. Complete the installation wizard
-3. CLI installed to: `C:\Program Files\Chloros\resources\cli\chloros-cli.exe`
+1. Lae alla ja käivita **Chloros paigaldaja.exe**
+2. Viige paigaldusviisard lõpule
+3. CLI installitud: `C:\Program Files\Chloros\resources\cli\chloros-cli.exe`
 
-{% hint style="success" %}
-The installer automatically adds `chloros-cli` to your system PATH. Restart your terminal after installation.
+{% hint style=&quot;success&quot; %}
+Installija lisab automaatselt `chloros-cli` teie süsteemi PATH-i. Pärast installimist taaskäivitage terminal.
 {% endhint %}
 
-### First-Time Setup
+### Esmane seadistamine
 
-Before using the CLI, activate your Chloros+ license:
+Enne CLI kasutamist aktiveerige oma Chloros+ litsents:
 
 ```bash
 # Login with your Chloros+ account
@@ -55,9 +53,9 @@ chloros-cli status
 chloros-cli process "C:\Images\Dataset001"
 ```
 
-### Basic Usage
+### Põhiline kasutus
 
-Process a folder with default settings:
+Kausta töötlemine vaikimisi seadetega:
 
 ```powershell
 chloros-cli process "C:\Images\Dataset001"
@@ -65,9 +63,9 @@ chloros-cli process "C:\Images\Dataset001"
 
 ***
 
-## Command Reference
+## Käskude viited
 
-### General Syntax
+### Üldine süntaks
 
 ```
 chloros-cli [global-options] <command> [command-options]
@@ -75,89 +73,87 @@ chloros-cli [global-options] <command> [command-options]
 
 ***
 
-## Commands
+## Käskud
 
-### `process` - Process Images
+### `process` – piltide töötlemine
 
-Process images in a folder with calibration.
+Käsitle pildid kaustas kalibreerimisega.
 
-**Syntax:**
+**Süntaks:**
 
 ```bash
 chloros-cli process <input-folder> [options]
 ```
 
-**Example:**
+**Näide:**
 
 ```powershell
 chloros-cli process "C:\Datasets\Survey_001" --vignette --reflectance
 ```
 
-#### Process Command Options
+#### Käsitlemiskäsu valikud
 
-| Option                | Type    | Default        | Description                                                                            |
+| Valik                | Tüüp    | Vaikimisi        | Kirjeldus                                                                            |
 | --------------------- | ------- | -------------- | -------------------------------------------------------------------------------------- |
-| `<input-folder>`      | Path    | _Required_     | Folder containing RAW/JPG multispectral images                                         |
-| `-o, --output`        | Path    | Same as input  | Output folder for processed images                                                     |
-| `-n, --project-name`  | String  | Auto-generated | Custom project name                                                                    |
-| `--vignette`          | Flag    | Enabled        | Enable vignette correction                                                             |
-| `--no-vignette`       | Flag    | -              | Disable vignette correction                                                            |
-| `--reflectance`       | Flag    | Enabled        | Enable reflectance calibration                                                         |
-| `--no-reflectance`    | Flag    | -              | Disable reflectance calibration                                                        |
-| `--ppk`               | Flag    | Disabled       | Apply PPK corrections from .daq light sensor data                                      |
-| `--format`            | Choice  | TIFF (16-bit)  | Output format: `TIFF (16-bit)`, `TIFF (32-bit, Percent)`, `PNG (8-bit)`, `JPG (8-bit)` |
-| `--min-target-size`   | Integer | Auto           | Minimum target size in pixels for calibration panel detection                          |
-| `--target-clustering` | Integer | Auto           | Target clustering threshold (0-100)                                                    |
-| `--exposure-pin-1`    | String  | None           | Lock exposure for camera model (Pin 1)                                                 |
-| `--exposure-pin-2`    | String  | None           | Lock exposure for camera model (Pin 2)                                                 |
-| `--recal-interval`    | Integer | Auto           | Recalibration interval in seconds                                                      |
-| `--timezone-offset`   | Integer | 0              | Timezone offset in hours                                                               |
+| `<input-folder>`      | Tee    | _Nõutav_     | RAW/JPG multispektraalsete piltide kaust                                         |
+| `-o, --output`        | Tee    | Sama kui sisend  | Töödeldud piltide väljundkaust                                                     |
+| `-n, --project-name`  | String  | Automaatselt genereeritud | Kohandatud projekti nimi                                                                    |
+| `--vignette`          | Lipuke    | Lubatud        | Luba vinjeti korrigeerimine                                                             |
+| `--no-vignette`       | Lipuke    | -              | Keela vinjeti korrigeerimine                                                            |
+| `--reflectance`       | Lipuke    | Lubatud        | Lubada peegelduskalibreerimine                                                         |
+| `--no-reflectance`    | Lipuke    | -              | Keelata peegelduskalibreerimine                                                        |
+| `--ppk`               | Lipuke    | Keelatud       | Rakenda PPK parandusi .daq valgussensori andmetest                                      |
+| `--format`            | Valik  | TIFF (16-bitine)  | Väljundvorming: `TIFF (16-bit)`, `TIFF (32-bit, Percent)`, `PNG (8-bit)`, `JPG (8-bit)` |
+| `--min-target-size`   | Täisarv | Auto           | Kalibreerimispaneeli tuvastamise minimaalne sihtmärgi suurus pikslites                          |
+| `--target-clustering` | Täisarv | Auto           | Sihtmärgi klastrite künnis (0–100)                                                    |
+| `--exposure-pin-1`    | String  | Puudub           | Kaamera mudeli ekspositsiooni lukustamine (pin 1)                                                 |
+| `--exposure-pin-2`    | String  | Puudub           | Kaamera mudeli ekspositsiooni lukustamine (pin 2)                                                 |
+| `--recal-interval`    | Täisarv | Auto           | Kalibreerimise intervall sekundites                                                      |
+| `--timezone-offset`   | Täisarv | 0              | Ajavööndi nihke tundides                                                               |
 
 ***
 
-### `login` - Authenticate Account
+### `login` – konto autentimine
 
-Login with your Chloros+ credentials to enable CLI processing.
+Logige sisse oma Chloros+ kasutajatunnustega, et võimaldada CLI töötlemist.
 
-**Syntax:**
+**Süntaks:**
 
 ```bash
 chloros-cli login <email> <password>
 ```
 
-**Example:**
+**Näide:**
 
 ```powershell
 chloros-cli login user@example.com 'MyP@ssw0rd123'
 ```
 
-{% hint style="warning" %}
-**Special Characters**: Use single quotes around passwords containing characters like `$`, `!`, or spaces.
+{% hint style=&quot;warning&quot; %}
+**Erimärgid**: Kasutage ülakomaid paroolide ümber, mis sisaldavad märke nagu `$`, `!` või tühikuid.
 {% endhint %}
 
-**Output:**
+**Väljund:**
 
-<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>***
 
-***
+### `logout` – Salastatud andmete kustutamine
 
-### `logout` - Clear Credentials
+Kustutage salvestatud salastatud andmed ja logige oma kontolt välja.
 
-Clear stored credentials and logout from your account.
-
-**Syntax:**
+**Süntaks:**
 
 ```bash
 chloros-cli logout
 ```
 
-**Example:**
+**Näide:**
 
 ```powershell
 chloros-cli logout
 ```
 
-**Output:**
+**Väljund:**
 
 ```
 ✓ Logout successful
@@ -166,23 +162,23 @@ chloros-cli logout
 
 ***
 
-### `status` - Check License Status
+### `status` – kontrolli litsentsi staatust
 
-Display current license and authentication status.
+Kuva praegune litsentsi ja autentimise staatus.
 
-**Syntax:**
+**Süntaks:**
 
 ```bash
 chloros-cli status
 ```
 
-**Example:**
+**Näide:**
 
 ```powershell
 chloros-cli status
 ```
 
-**Output:**
+**Väljund:**
 
 ```
 ╔══════════════════════════════════════╗
@@ -197,31 +193,31 @@ chloros-cli status
 
 ***
 
-### `export-status` - Check Export Progress
+### `export-status` – ekspordi edenemise kontrollimine
 
-Monitor Thread 4 export progress during or after processing.
+Jälgib Thread 4 ekspordi edenemist töötlemise ajal või pärast seda.
 
-**Syntax:**
+**Süntaks:**
 
 ```bash
 chloros-cli export-status
 ```
 
-**Example:**
+**Näide:**
 
 ```powershell
 chloros-cli export-status
 ```
 
-**Use Case:** Call this command while processing is running to check export progress.
+**Kasutamisnäide:** Kutsu käesolev käsk töötlemise ajal, et kontrollida ekspordi edenemist.
 
 ***
 
-### `language` - Manage Interface Language
+### `language` – halda liidese keelt
 
-View or change the CLI interface language.
+Vaadake või muutke CLI liidese keelt.
 
-**Syntax:**
+**Süntaks:**
 
 ```bash
 # Show current language
@@ -234,7 +230,7 @@ chloros-cli language --list
 chloros-cli language <language-code>
 ```
 
-**Examples:**
+**Näited:**
 
 ```powershell
 # View current language
@@ -250,66 +246,66 @@ chloros-cli language es
 chloros-cli language ja
 ```
 
-#### Supported Languages (38 Total)
+#### Toetatud keeled (kokku 38)
 
-| Code    | Language              | Native Name      |
+| Kood    | Keel              | Emakeel      |
 | ------- | --------------------- | ---------------- |
-| `en`    | English               | English          |
-| `es`    | Spanish               | Español          |
-| `pt`    | Portuguese            | Português        |
-| `fr`    | French                | Français         |
-| `de`    | German                | Deutsch          |
-| `it`    | Italian               | Italiano         |
-| `ja`    | Japanese              | 日本語              |
-| `ko`    | Korean                | 한국어              |
-| `zh`    | Chinese (Simplified)  | 简体中文             |
-| `zh-TW` | Chinese (Traditional) | 繁體中文             |
-| `ru`    | Russian               | Русский          |
-| `nl`    | Dutch                 | Nederlands       |
-| `ar`    | Arabic                | العربية          |
-| `pl`    | Polish                | Polski           |
-| `tr`    | Turkish               | Türkçe           |
+| `en`    | Inglise keel               | English          |
+| `es`    | Hispaania keel               | Español          |
+| `pt`    | Portugali keel            | Português        |
+| `fr`    | Prantsuse keel                | Français         |
+| `de`    | Saksa keel                | Deutsch          |
+| `it`    | Itaalia keel               | Italiano         |
+| `ja`    | Jaapani keel              | 日本語              |
+| `ko`    | Korea keel                | 한국어              |
+| `zh`    | Hiina (lihtsustatud)  | 简体中文             |
+| `zh-TW` | Hiina (traditsiooniline) | 繁體中文             |
+| `ru`    | Vene               | Русский          |
+| `nl`    | Hollandi keel                 | Nederlands       |
+| `ar`    | Araabia keel                | العربية          |
+| `pl`    | Poola keel                | Polski           |
+| `tr`    | Türgi keel               | Türkçe           |
 | `hi`    | Hindi                 | हिंदी            |
-| `id`    | Indonesian            | Bahasa Indonesia |
-| `vi`    | Vietnamese            | Tiếng Việt       |
-| `th`    | Thai                  | ไทย              |
-| `sv`    | Swedish               | Svenska          |
-| `da`    | Danish                | Dansk            |
-| `no`    | Norwegian             | Norsk            |
-| `fi`    | Finnish               | Suomi            |
-| `el`    | Greek                 | Ελληνικά         |
-| `cs`    | Czech                 | Čeština          |
-| `hu`    | Hungarian             | Magyar           |
-| `ro`    | Romanian              | Română           |
-| `uk`    | Ukrainian             | Українська       |
-| `pt-BR` | Brazilian Portuguese  | Português Brasileiro |
-| `zh-HK` | Cantonese             | 粵語             |
-| `ms`    | Malay                 | Bahasa Melayu    |
-| `sk`    | Slovak                | Slovenčina       |
-| `bg`    | Bulgarian             | Български        |
-| `hr`    | Croatian              | Hrvatski         |
-| `lt`    | Lithuanian            | Lietuvių         |
-| `lv`    | Latvian               | Latviešu         |
-| `et`    | Estonian              | Eesti            |
-| `sl`    | Slovenian             | Slovenščina      |
+| `id`    | Indoneesia            | Bahasa Indonesia |
+| `vi`    | Vietnami            | Tiếng Việt       |
+| `th`    | Tai keel                  | ไทย              |
+| `sv`    | Rootsi keel               | Svenska          |
+| `da`    | Taani keel                | Dansk            |
+| `no`    | Norra keel             | Norsk            |
+| `fi`    | Soome               | Suomi            |
+| `el`    | Kreeka                 | Ελληνικά         |
+| `cs`    | Tšehhi                 | Čeština          |
+| `hu`    | Ungari             | Magyar           |
+| `ro`    | Rumeenia              | Română           |
+| `uk`    | Ukraina             | Українська       |
+| `pt-BR` | Brasiilia portugali  | Português Brasileiro |
+| `zh-HK` | kantoni keel             | 粵語             |
+| `ms`    | malai keel                 | Bahasa Melayu    |
+| `sk`    | slovaki keel                | Slovenčina       |
+| `bg`    | Bulgaaria keel             | Български        |
+| `hr`    | Horvaadi keel              | Hrvatski         |
+| `lt`    | Leedu keel            | Lietuvių         |
+| `lv`    | Läti keel               | Latviešu         |
+| `et`    | Eesti keel              | Eesti            |
+| `sl`    | Sloveeni keel             | Slovenščina      |
 
-{% hint style="success" %}
-**Automatic Persistence**: Your language preference is saved to `~/.chloros/cli_language.json` and persists across all sessions.
+{% vihje stiil=&quot;edu&quot; %}
+**Automaatne püsivus**: Teie keele-eelistus salvestatakse `~/.chloros/cli_language.json` ja püsib kõigis sessioonides.
 {% endhint %}
 
 ***
 
-### `set-project-folder` - Set Default Project Folder
+### `set-project-folder` - Vaikimisi projektikausta seadistamine
 
-Change the default project folder location (shared with GUI).
+Muuda vaikimisi projektikausta asukohta (jagatud GUI-ga).
 
-**Syntax:**
+**Süntaks:**
 
 ```bash
 chloros-cli set-project-folder <folder-path>
 ```
 
-**Example:**
+**Näide:**
 
 ```powershell
 chloros-cli set-project-folder "C:\Projects\2025"
@@ -317,23 +313,23 @@ chloros-cli set-project-folder "C:\Projects\2025"
 
 ***
 
-### `get-project-folder` - Show Project Folder
+### `get-project-folder` – Projekti kausta kuvamine
 
-Display the current default project folder location.
+Kuva praegune vaikimisi projektikausta asukoht.
 
-**Syntax:**
+**Süntaks:**
 
 ```bash
 chloros-cli get-project-folder
 ```
 
-**Example:**
+**Näide:**
 
 ```powershell
 chloros-cli get-project-folder
 ```
 
-**Output:**
+**Väljund:**
 
 ```
 ℹ Current project folder: C:\Projects\2025
@@ -341,11 +337,11 @@ chloros-cli get-project-folder
 
 ***
 
-### `reset-project-folder` - Reset to Default
+### `reset-project-folder` – Taasta vaikimisi
 
-Reset the project folder to the default location.
+Taasta projekti kausta vaikimisi asukoht.
 
-**Syntax:**
+**Süntaks:**
 
 ```bash
 chloros-cli reset-project-folder
@@ -353,19 +349,19 @@ chloros-cli reset-project-folder
 
 ***
 
-## Global Options
+## Üldised valikud
 
-These options apply to all commands:
+Need valikud kehtivad kõikide käskude puhul:
 
-| Option          | Type    | Default       | Description                                      |
+| Valik          | Tüüp    | Vaikimisi       | Kirjeldus                                      |
 | --------------- | ------- | ------------- | ------------------------------------------------ |
-| `--backend-exe` | Path    | Auto-detected | Path to backend executable                       |
-| `--port`        | Integer | 5000          | Backend API port number                          |
-| `--restart`     | Flag    | -             | Force restart backend (kills existing processes) |
-| `--version`     | Flag    | -             | Show version information and exit                |
-| `--help`        | Flag    | -             | Show help information and exit                   |
+| `--backend-exe` | Tee    | Automaatselt tuvastatud | Tee tagapõhja käivitatavale failile                       |
+| `--port`        | Täisarv | 5000          | Tagapõhja API pordi number                          |
+| `--restart`     | Lipuke    | -             | Tagapõhja taaskäivitamine (olemasolevad protsessid lõpetatakse) |
+| `--version`     | Lipuke    | -             | Versiooniinfo kuvamine ja väljumine                |
+| `--help`        | Lipuke    | -             | Abiinfo kuvamine ja väljumine                   |
 
-**Example with Global Options:**
+**Näide globaalsete valikutega:**
 
 ```powershell
 chloros-cli --port 5001 process "C:\Datasets\Survey_001"
@@ -373,80 +369,78 @@ chloros-cli --port 5001 process "C:\Datasets\Survey_001"
 
 ***
 
-## Processing Settings Guide
+## Töötlemise seadete juhend
 
-### Parallel Processing
+### Paralleelne töötlemine
 
-Chloros+ CLI **automatically scales** parallel processing to match your computer's capabilities:
+Chloros+ CLI **skaleerib automaatselt** paralleelset töötlemist vastavalt teie arvuti võimsusele:
 
-**How It Works:**
+**Kuidas see toimib:**
 
-* Detects your CPU cores and RAM
-* Allocates workers: **2× CPU cores** (uses hyperthreading)
-* **Maximum: 16 parallel workers** (for stability)
+* Tuvastab teie CPU tuumad ja RAM-i
+* Jaotab töötajad: **2× CPU tuumad** (kasutab hüperthreadingut)
+* **Maksimum: 16 paralleelset töötajat** (stabiilsuse tagamiseks)
 
-**System Tiers:**
+**Süsteemi tasemed:**
 
-| System Type   | CPU        | RAM      | Workers  | Performance     |
+| Süsteemi tüüp   | CPU        | RAM      | Töötajad  | Jõudlus     |
 | ------------- | ---------- | -------- | -------- | --------------- |
-| **High-End**  | 16+ cores  | 32+ GB   | Up to 16 | Maximum speed   |
-| **Mid-Range** | 8-15 cores | 16-31 GB | 8-16     | Excellent speed |
-| **Low-End**   | 4-7 cores  | 8-15 GB  | 4-8      | Good speed      |
+| **Kõrgetasemeline**  | 16+ tuuma  | 32+ GB   | Kuni 16 | Maksimaalne kiirus   |
+| **Keskklassi** | 8–15 tuuma | 16–31 GB | 8–16     | Suurepärane kiirus |
+| **Madalaim**   | 4–7 tuuma  | 8–15 GB  | 4–8      | Hea kiirus      |
 
-{% hint style="success" %}
-**Automatic Optimization**: The CLI automatically detects your system specs and configures optimal parallel processing. No manual configuration needed!
+{% vihje style=&quot;success&quot; %}
+**Automaatne optimeerimine**: CLI tuvastab automaatselt teie süsteemi spetsifikatsioonid ja konfigureerib optimaalse paralleelse töötlemise. Käsitsi konfigureerimine pole vajalik!
 {% endhint %}
 
-### Debayer Methods
+### Debayer-meetodid
 
-The CLI uses **High Quality (Faster)** as the default and recommended debayer algorithm:
+CLI kasutab vaikimisi ja soovitatava debayer-algoritmina **kõrge kvaliteeti (kiirem)**:
 
-| Method                      | Quality | Speed | Description                                 |
+| Meetod                      | Kvaliteet | Kiirus | Kirjeldus                                 |
 | --------------------------- | ------- | ----- | ------------------------------------------- |
-| **High Quality (Faster)** ⭐ | ⭐⭐⭐⭐    | ⚡⚡⚡   | Edge-aware algorithm (default, recommended) |
+| **Kõrge kvaliteet (kiirem)** ⭐ | ⭐⭐⭐⭐    | ⚡⚡⚡   | Servadega arvestav algoritm (vaikimisi, soovitatav) |
 
-### Vignette Correction
+### Vignette&#x27;i korrigeerimine
 
-**What it does:** Corrects light falloff at image edges (darker corners common in camera imagery).
+**Mida see teeb:** Korrigeerib valguse langust pildi servades (kaamerapiltidel tavalised tumedamad nurgad).
 
-* **Enabled by default** - Most users should keep this enabled
-* Use `--no-vignette` to disable
+* **Vaikimisi sisse lülitatud** – enamik kasutajaid peaks selle sisse lülitatuna jätma.
+* Kasutage `--no-vignette`, et see välja lülitada.
 
-{% hint style="success" %}
-**Recommendation**: Always enable vignette correction to ensure uniform brightness across the frame.
+{% hint style=&quot;success&quot; %}
+**Soovitus**: lülitage vinjetikorrektsioon alati sisse, et tagada ühtlane heledus kogu kaadris.
 {% endhint %}
 
-### Reflectance Calibration
+### Peegelduskalibreerimine
 
-Converts raw sensor values to standardized reflectance percentages using calibration panels.
+Muudab tooresensorite väärtused kalibreerimispaneelide abil standardiseeritud peegeldusprotsentideks.
 
-* **Enabled by default** - Essential for vegetation analysis
-* Requires calibration target panels in images
-* Use `--no-reflectance` to disable
+* **Vaikimisi aktiveeritud** – oluline taimestiku analüüsimiseks.
+* Nõuab kalibreerimise sihtpaneele piltidel.
+* Kasutage `--no-reflectance`, et deaktiveerida.
 
-{% hint style="info" %}
-**Requirements**: Ensure calibration panels are properly exposed and visible in your images for accurate reflectance conversion.
+{% hint style=&quot;info&quot; %}
+**Nõuded**: Kalibreerimispaneelid peavad olema pildil õigesti eksponeeritud ja nähtavad, et peegeldusvõime konverteerimine oleks täpne.
 {% endhint %}
 
-### PPK Corrections
+### PPK parandused
 
-**What it does:** Applies Post-Processed Kinematic corrections using DAQ-A-SD log data for improved GPS accuracy.
+**Funktsioon:** Rakendab DAQ-A-SD logiandmeid kasutades järelkalibreeritud kinemaatilisi parandusi, et parandada GPS-i täpsust.
 
-* **Disabled by default**
-* Use `--ppk` to enable
-* Requires .daq files in project folder from MAPIR DAQ-A-SD light sensor.
+* **Vaikimisi keelatud**
+* Kasutamiseks aktiveerige `--ppk`
+* Nõuab .daq faile projektikausta MAPIR DAQ-A-SD valgussensorist.
 
-### Output Formats
+### Väljundvormingud
 
-<table><thead><tr><th width="197">Format</th><th width="130.20001220703125">Bit Depth</th><th width="116.5999755859375">File Size</th><th>Best For</th></tr></thead><tbody><tr><td><strong>TIFF (16-bit)</strong> ⭐</td><td>16-bit integer</td><td>Large</td><td>GIS analysis, photogrammetry (recommended)</td></tr><tr><td><strong>TIFF (32-bit, Percent)</strong></td><td>32-bit float</td><td>Very Large</td><td>Scientific analysis, research</td></tr><tr><td><strong>PNG (8-bit)</strong></td><td>8-bit integer</td><td>Medium</td><td>Visual inspection, web sharing</td></tr><tr><td><strong>JPG (8-bit)</strong></td><td>8-bit integer</td><td>Small</td><td>Quick preview, compressed output</td></tr></tbody></table>
+<table><thead><tr><th width="197">Vorming</th><th width="130.20001220703125">Biti sügavus</th><th width="116.5999755859375">Faili suurus</th><th>Sobib kõige paremini</th></tr></thead><tbody><tr><td><strong>TIFF (16-bitine)</strong> ⭐</td><td>16-bitine täisarv</td><td>Suur</td><td>GIS-analüüs, fotogramm-meetria (soovitatav)</td></tr><tr><td><strong>TIFF (32-bitine, protsent)</strong></td><td>32-bitine ujukomaarv</td><td>Väga suur</td><td>Teaduslik analüüs, uurimistöö</td></tr><tr><td><strong>PNG (8-bitine)</strong></td><td>8-bitine täisarv</td><td>Keskmine</td><td>Visuaalne kontroll, veebis jagamine</td></tr><tr><td><strong>JPG (8-bitine)</strong></td><td>8-bitine täisarv</td><td>Väike</td><td>Kiire eelvaade, kompresseeritud väljund</td></tr></tbody></table>***
 
-***
+## Automatiseerimine ja skriptimine
 
-## Automation & Scripting
+### PowerShell&#x27;i kogumitöötlus
 
-### PowerShell Batch Processing
-
-Process multiple dataset folders automatically:
+Mitme andmekogumi kausta automaatne töötlemine:
 
 ```powershell
 # process_all_datasets.ps1
@@ -470,9 +464,9 @@ foreach ($dataset in $datasets) {
 Write-Host "All datasets processed!" -ForegroundColor Green
 ```
 
-### Windows Batch Script
+### Windows kogumiskript
 
-Simple loop for batch processing:
+Lihtne tsükkel kogumitöötluseks:
 
 ```batch
 @echo off
@@ -497,9 +491,9 @@ echo All datasets processed!
 pause
 ```
 
-### Python Automation Script
+### Python automatiseerimisskript
 
-Advanced automation with error handling:
+Täiustatud automatiseerimine veakäsitlusega:
 
 ```python
 import subprocess
@@ -578,16 +572,16 @@ if __name__ == '__main__':
 
 ***
 
-## Processing Workflow
+## Töötlemise töövoog
 
-### Standard Workflow
+### Standardne töövoog
 
-1. **Input**: Folder containing RAW/JPG image pairs
-2. **Discovery**: CLI auto-scans for supported image files
-3. **Processing**: Parallel mode scales to your CPU cores (Chloros+)
-4. **Output**: Creates camera-model subfolders with processed images
+1. **Sisend**: kaust, mis sisaldab RAW/JPG pildipaare
+2. **Avastamine**: CLI otsib automaatselt toetatud pildifaile
+3. **Töötlemine**: Paralleelrežiim skaleerub vastavalt teie CPU tuumadele (Chloros+)
+4. **Väljund**: Loob kaameramudeli alamkaustad töödeldud piltidega
 
-### Example Output Structure
+### Väljundi struktuuri näide
 
 ```
 MyProject/
@@ -600,72 +594,72 @@ MyProject/
     └── ...
 ```
 
-### Processing Time Estimates
+### Töötlemise aja hinnangud
 
-Typical processing times for 100 images (12MP each):
+Tüüpilised töötlemisajad 100 pildi puhul (igaüks 12 MP):
 
-| Mode              | Time      | Hardware                                     |
+| Režiim              | Aeg      | Riistvara                                     |
 | ----------------- | --------- | -------------------------------------------- |
-| **Parallel Mode** | 5-10 min  | i7/Ryzen 7, 16GB RAM, SSD (up to 16 workers) |
-| **Parallel Mode** | 10-15 min | i5/Ryzen 5, 8GB RAM, HDD (up to 8 workers)   |
+| **Paralleelrežiim** | 5–10 min  | i7/Ryzen 7, 16 GB RAM, SSD (kuni 16 töötajat) |
+| **Paralleelrežiim** | 10–15 min | i5/Ryzen 5, 8 GB RAM, HDD (kuni 8 töötajat)   |
 
-{% hint style="info" %}
-**Performance Tip**: Processing time varies based on image count, resolution, and computer specs.
+{% vihje style=&quot;info&quot; %}
+**Jõudluse näpunäide**: Töötlemisaeg sõltub piltide arvust, resolutsioonist ja arvuti spetsifikatsioonidest.
 {% endhint %}
 
 ***
 
-## Troubleshooting
+## Veaotsing
 
-### CLI Not Found
+### CLI ei leitud
 
-**Error:**
+**Viga:**
 
 ```
 'chloros-cli' is not recognized as an internal or external command
 ```
 
-**Solutions:**
+**Lahendused:**
 
-1. Verify installation location:
+1. Kontrollige installimise asukohta:
 
 ```powershell
 dir "C:\Program Files\Chloros\resources\cli\chloros-cli.exe"
 ```
 
-2. Use full path if not in PATH:
+2. Kasutage täielikku teekonda, kui see ei ole PATH-is:
 
 ```powershell
 "C:\Program Files\Chloros\resources\cli\chloros-cli.exe" process "C:\Datasets\Field_A"
 ```
 
-3. Add to PATH manually:
-   * Open System Properties → Environment Variables
-   * Edit PATH variable
-   * Add: `C:\Program Files\Chloros\resources\cli`
-   * Restart terminal
+3. Lisage PATH-i käsitsi:
+   * Avage süsteemi omadused → keskkonnamuutujad
+   * Muutke PATH-muutujat
+   * Lisage: `C:\Program Files\Chloros\resources\cli`
+   * Käivitage terminal uuesti.
 
 ***
 
-### Backend Failed to Start
+### Backend ei õnnestunud käivitada.
 
-**Error:**
+**Viga:**
 
 ```
 Backend failed to start within 30 seconds
 ```
 
-**Solutions:**
+**Lahendused:**
 
-1. Check if backend already running (close it first)
-2. Check Windows Firewall is not blocking
-3. Try different port:
+1. Kontrollige, kas backend juba töötab (sulge see esmalt).
+2. Kontrollige, et Windows tulemüür ei blokeeri.
+3. Proovige teist porti:
 
 ```powershell
 chloros-cli --port 5001 process "C:\Datasets\Field_A"
 ```
 
-4. Force restart backend:
+4. Sundige backendi taaskäivitamine:
 
 ```powershell
 chloros-cli --restart process "C:\Datasets\Field_A"
@@ -673,71 +667,71 @@ chloros-cli --restart process "C:\Datasets\Field_A"
 
 ***
 
-### License / Authentication Issues
+### Litsentsi-/autentimise probleemid
 
-**Error:**
+**Viga:**
 
 ```
 Chloros+ license required for CLI access
 ```
 
-**Solutions:**
+**Lahendused:**
 
-1. Verify you have an active Chloros+ subscription
-2. Login with your credentials:
+1. Veenduge, et teil on aktiivne Chloros+ tellimus.
+2. Logige sisse oma kasutajatunnuse ja parooliga:
 
 ```powershell
 chloros-cli login user@example.com 'password'
 ```
 
-3. Check license status:
+3. Kontrollige litsentsi staatust:
 
 ```powershell
 chloros-cli status
 ```
 
-4. Contact support: info@mapir.camera
+4. Võtke ühendust tugiteenistusega: info@mapir.camera
 
 ***
 
-### No Images Found
+### Pilte ei leitud
 
-**Error:**
+**Viga:**
 
 ```
 No images found in the specified folder
 ```
 
-**Solutions:**
+**Lahendused:**
 
-1. Verify folder contains supported formats (.RAW, .TIF, .JPG)
-2. Check folder path is correct (use quotes for paths with spaces)
-3. Ensure you have read permissions for the folder
-4. Check file extensions are correct
-
-***
-
-### Processing Stalls or Hangs
-
-**Solutions:**
-
-1. Check available disk space (ensure enough for output)
-2. Close other applications to free memory
-3. Reduce image count (process in batches)
+1. Veenduge, et kaust sisaldab toetatud formaate (.RAW, .TIF, .JPG).
+2. Kontrollige, et kausta tee on õige (kasutage tühikuga teede puhul jutumärke).
+3. Veenduge, et teil on kausta lugemisõigus.
+4. Kontrollige, et faililaiendid on õiged.
 
 ***
 
-### Port Already in Use
+### Töötlemine seiskub või hangub
 
-**Error:**
+**Lahendused:**
+
+1. Kontrollige vaba kettaruumi (veenduge, et väljundiks on piisavalt ruumi).
+2. Sulgege teised rakendused, et vabastada mälu.
+3. Vähendage piltide arvu (töötlege partiidena).
+
+***
+
+### Port on juba kasutusel
+
+**Viga:**
 
 ```
 Port 5000 is already in use
 ```
 
-**Solution:**
+**Lahendus:**
 
-Specify a different port:
+Määrake teine port:
 
 ```powershell
 chloros-cli --port 5001 process "C:\Datasets\Field_A"
@@ -745,35 +739,35 @@ chloros-cli --port 5001 process "C:\Datasets\Field_A"
 
 ***
 
-## FAQ
+## KKK
 
-### Q: Do I need a license for the CLI?
+### K: Kas ma vajan litsentsi CLI jaoks?
 
-**A:** Yes! The CLI requires a paid **Chloros+ license**.
+**V:** Jah! CLI vajab tasulist **Chloros+ litsentsi**.
 
-* ❌ Standard (free) plan: CLI disabled
-* ✅ Chloros+ (paid) plans: CLI fully enabled
+* ❌ Standardne (tasuta) pakett: CLI on keelatud
+* ✅ Chloros+ (tasuline) paketid: CLI täielikult aktiveeritud
 
-Subscribe at: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
-
-***
-
-### Q: Can I use the CLI on a server without GUI?
-
-**A:** Yes! The CLI runs completely headless. Requirements:
-
-* Windows Server 2016 or later
-* Visual C++ Redistributable installed
-* Sufficient RAM (8GB minimum, 16GB recommended)
-* One-time GUI license activation on any machine
+Telli aadressil: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
 
 ***
 
-### Q: Where are processed images saved?
+### K: Kas ma saan kasutada CLI serveris, millel pole graafilist kasutajaliidest?
 
-**A:** By default, processed images are saved in the **same folder as input** in camera-model subfolders (e.g., `Survey3N_RGN/`).
+**V:** Jah! CLI töötab täielikult ilma graafilise kasutajaliideseta. Nõuded:
 
-Use `-o` option to specify different output folder:
+* Windows Server 2016 või uuem
+* Visual C++ Redistributable installitud
+* Piisav RAM (minimaalselt 8 GB, soovitatavalt 16 GB)
+* Ühekordne GUI litsentsi aktiveerimine mis tahes masinal
+
+***
+
+### K: Kuhu salvestatakse töödeldud pildid?
+
+**V:** Vaikimisi salvestatakse töödeldud pildid **samasse kausta kui sisend** kaameramudeli alamkausta (nt `Survey3N_RGN/`).
+
+Kasutage `-o` valikut, et määrata teine väljundkataloog:
 
 ```powershell
 chloros-cli process "C:\Input" -o "D:\Output"
@@ -781,13 +775,13 @@ chloros-cli process "C:\Input" -o "D:\Output"
 
 ***
 
-### Q: Can I process multiple folders at once?
+### K: Kas ma saan töödelda mitut kataloogi korraga?
 
-**A:** Not directly in one command, but you can use scripting to process folders sequentially. See [Automation & Scripting](CLI.md#automation--scripting) section.
+**V:** Ühe käsuga otseselt mitte, kuid saate kasutada skripte, et töötada kaustu järjestikku. Vaadake jaotist [Automatiseerimine ja skriptimine](CLI.md#automation--scripting).
 
 ***
 
-### Q: How do I save CLI output to a log file?
+### K: Kuidas salvestada CLI väljund logifaili?
 
 **PowerShell:**
 
@@ -795,7 +789,7 @@ chloros-cli process "C:\Input" -o "D:\Output"
 chloros-cli process "C:\Datasets\Field_A" | Tee-Object -FilePath "processing.log"
 ```
 
-**Batch:**
+**Paki:**
 
 ```batch
 chloros-cli process "C:\Datasets\Field_A" > processing.log 2>&1
@@ -803,33 +797,33 @@ chloros-cli process "C:\Datasets\Field_A" > processing.log 2>&1
 
 ***
 
-### Q: What happens if I press Ctrl+C during processing?
+### K: Mis juhtub, kui ma töötlemise ajal vajutan Ctrl+C?
 
-**A:** The CLI will:
+**V:** CLI teeb järgmist:
 
-1. Stop processing gracefully
-2. Shut down the backend
-3. Exit with code 130
+1. Lõpetab töötlemise korrektselt
+2. Sulgeb tagapõhja
+3. Lõpetab koodiga 130
 
-Partially processed images may remain in the output folder.
-
-***
-
-### Q: Can I automate CLI processing?
-
-**A:** Absolutely! The CLI is designed for automation. See [Automation & Scripting](CLI.md#automation--scripting) for PowerShell, Batch, and Python examples.
+Osaliselt töödeldud pildid võivad jääda väljundkausta.
 
 ***
 
-### Q: How do I check the CLI version?
+### K: Kas ma saan CLI töötlemist automatiseerida?
 
-**A:**
+**V:** Muidugi! CLI on loodud automatiseerimiseks. Vaadake [Automatiseerimine ja skriptimine](CLI.md#automation--scripting) PowerShelli, Batchi ja Pythoni näidete jaoks.
+
+***
+
+### K: Kuidas kontrollida CLIi versiooni?
+
+**V:**
 
 ```powershell
 chloros-cli --version
 ```
 
-**Output:**
+**Väljund:**
 
 ```
 Chloros CLI 1.0.2
@@ -837,11 +831,11 @@ Chloros CLI 1.0.2
 
 ***
 
-## Getting Help
+## Abi saamine
 
-### Command-Line Help
+### Käsuviiva abi
 
-View help information directly in the CLI:
+Vaadake abiinfo otse CLI-is:
 
 ```powershell
 # General help
@@ -853,19 +847,19 @@ chloros-cli login --help
 chloros-cli language --help
 ```
 
-### Support Channels
+### Abikanalid
 
-* **Email**: info@mapir.camera
-* **Website**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
-* **Pricing**: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
+* **E-post**: info@mapir.camera
+* **Veebisait**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
+* **Hinnad**: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
 
 ***
 
-## Complete Examples
+## Täielikud näited
 
-### Example 1: Basic Processing
+### Näide 1: põhiline töötlemine
 
-Process with default settings (vignette, reflectance):
+Töötlemine vaikimisi seadetega (vignett, peegeldusvõime):
 
 ```powershell
 chloros-cli process "C:\Datasets\Field_A_2025_01_15"
@@ -873,9 +867,9 @@ chloros-cli process "C:\Datasets\Field_A_2025_01_15"
 
 ***
 
-### Example 2: High-Quality Scientific Output
+### Näide 2: kõrgekvaliteediline teaduslik tulemus
 
-32-bit float TIFF:
+32-bitine ujukomaarv TIFF:
 
 ```powershell
 chloros-cli process "C:\Datasets\Field_A" ^
@@ -886,9 +880,9 @@ chloros-cli process "C:\Datasets\Field_A" ^
 
 ***
 
-### Example 3: Fast Preview Processing
+### Näide 3: kiire eelvaate töötlemine
 
-8-bit PNG without calibration for quick review:
+8-bitine PNG ilma kalibreerimiseta kiireks ülevaatamiseks:
 
 ```powershell
 chloros-cli process "C:\Datasets\Field_A" ^
@@ -899,9 +893,9 @@ chloros-cli process "C:\Datasets\Field_A" ^
 
 ***
 
-### Example 4: PPK-Corrected Processing
+### Näide 4: PPK-korrigeeritud töötlemine
 
-Apply PPK corrections with reflectance:
+PPK-korrektsioonide rakendamine peegeldusega:
 
 ```powershell
 chloros-cli process "C:\Datasets\Field_A" ^
@@ -911,9 +905,9 @@ chloros-cli process "C:\Datasets\Field_A" ^
 
 ***
 
-### Example 5: Custom Output Location
+### Näide 5: Kohandatud väljundi asukoht
 
-Process to different drive with specific format:
+Töötlemine teise draivi spetsiifilises formaadis:
 
 ```powershell
 chloros-cli process "C:\Input\Raw_Images" ^
@@ -923,9 +917,9 @@ chloros-cli process "C:\Input\Raw_Images" ^
 
 ***
 
-### Example 6: Authentication Workflow
+### Näide 6: Autentimise töövoog
 
-Complete authentication flow:
+Täielik autentimise voog:
 
 ```powershell
 # Step 1: Login
@@ -943,9 +937,9 @@ chloros-cli logout
 
 ***
 
-### Example 7: Multi-Language Usage
+### Näide 7: Mitmekeelne kasutamine
 
-Change interface language:
+Muuda liidese keelt:
 
 ```powershell
 # List available languages

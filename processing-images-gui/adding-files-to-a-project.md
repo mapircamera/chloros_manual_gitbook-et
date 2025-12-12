@@ -1,204 +1,204 @@
-# Adding Files to a Project
+# Failide lisamine projekti
 
-Once you've created or opened a project in Chloros, the next step is to add your multispectral images to begin processing. The File Browser<img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> tab makes it easy to import images and manage your dataset.
+Kui olete loonud või avanud projekti Chloros-is, on järgmine samm multispektraalsete piltide lisamine töötlemise alustamiseks. Failibrauser<img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> teeb piltide importimise ja andmekogumi haldamise lihtsaks.
 
-## Accessing the File Browser
+## Failibrauseri avamine
 
-1. Open or create a project in Chloros
-2. Click the **File Browser** <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> icon in the left sidebar
-3. The File Browser panel will display your project's file list
+1. Avage või looge projekt Chloros-is
+2. Klõpsake **Failibrauser** <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> ikoonile vasakul külgribal
+3. Failibrauseri paneel kuvab teie projekti failide loendi
 
-{% hint style="info" %}
-**Supported File Types**: Chloros supports RAW+JPG and JPG image files from MAPIR Survey3W and Survey3N cameras. Only RAW+JPG are recommended.
+{% vihje style=&quot;info&quot; %}
+**Toetatud failitüübid**: Chloros toetab RAW+JPG ja JPG pildifaile kaameratest MAPIR Survey3W ja Survey3N. Soovitatav on kasutada ainult RAW+JPG faile.
 {% endhint %}
 
 ***
 
-## Adding Images to Your Project
+## Piltide lisamine projekti
 
-There are two primary ways to add images to your project:
+Piltide lisamiseks projekti on kaks peamist viisi:
 
-### Method 1: Add Files
+### Meetod 1: failide lisamine
 
-Use this option to import individual image files or a small selection of files.
+Kasutage seda valikut üksikute pildifailide või väikese valiku failide importimiseks.
 
-1. Click the **"Add Files"** button at the top of the File Browser panel
-2. Navigate to the folder containing your images
-3. Select one or more image files (hold **Ctrl** to select multiple files)
-4. Click **"Open"** to import the selected files
+1. Klõpsake failibrauseri paneeli ülaosas nuppu **„Lisa faile”**.
+2. Navigeerige kaustani, mis sisaldab teie pilte.
+3. Valige üks või mitu pildifaili (hoidke all klahvi **Ctrl**, et valida mitu faili).
+4. Klõpsake nuppu **„Ava”**, et importida valitud failid.
 
-### Method 2: Add Folder
+### Meetod 2: kausta lisamine
 
-Use this option to import all images from a folder at once.
+Seda valikut kasutage, et importida kõik pildid kausta korraga.
 
-1. Click the **"Add Folder"** button at the top of the File Browser panel
-2. Navigate to and select the folder containing your capture session images
-3. Click **"Select Folder"** to import all supported images from that folder
-
-***
-
-## Understanding the File Browser Table
-
-Once images are imported, they appear in a table with the following columns:
-
-### Thumbnail
-
-* Small preview of each image
-* Click thumbnail to view full image in the main preview area
-
-### File Name
-
-* Original filename from the camera
-* Maintains camera naming convention (e.g., IMG\_0001.RAW)
-
-### Timestamp
-
-* Date and time the image was captured
-* Extracted from image EXIF metadata
-* Used for PPK synchronization and calibration target detection
-
-### Camera Model
-
-* Automatically detected camera and filter configuration
-* Examples: Survey3W\_RGN, Survey3N\_OCN, Survey3W\_RGB
-* Used to apply correct processing profiles
-
-### Target Column (Checkbox)
-
-* Check this box for images that contain calibration targets
-* Greatly speeds up target detection during processing
-* See [Choosing Target Images](choosing-target-images.md) for details
+1. Klõpsake failibrauseri paneeli ülaosas nuppu **„Lisa kaust”**.
+2. Leidke ja valige kaust, mis sisaldab teie pildistamissessiooni pilte.
+3. Klõpsake nuppu **„Vali kaust”**, et importida kõik selle kausta toetatud pildid.
 
 ***
 
-## Managing Files in Your Project
+## Failibrauseri tabeli mõistmine
 
-### Removing Files
+Pärast piltide importimist kuvatakse need tabelis, millel on järgmised veerud:
 
-To remove unwanted images from your project:
+### Pisipilt
 
-1. Select one or more images in the File Browser table
-2. Click the **"Remove Selected"** button
-3. Confirm removal (files are not deleted from disk, only removed from the project)
+* Iga pildi väike eelvaade.
+* Klõpsake pisipildil, et vaadata täispilti peamise eelvaate alas.
 
-### Sorting and Filtering
+### Failinimi
 
-* **Sort by column**: Click any column header to sort images
-* **Timestamp sort**: Useful for organizing chronological capture sequences
-* **Camera model filter**: Group images by camera type if using multiple cameras
+* Kaamera originaalne failinimi.
+* Säilitab kaamera nimetamiskonventsiooni (nt IMG\_0001.RAW).
 
-***
+### Aeg
 
-## Image Preview
+* Pildi salvestamise kuupäev ja kellaaeg.
+* Väljavõte pildi EXIF-metadatast.
+* Kasutatakse PPK sünkroniseerimiseks ja kalibreerimise sihtmärgi tuvastamiseks
 
-### Viewing Full Image
+### Kaamera mudel
 
-Click any image thumbnail in the File Browser to display it in the main preview area:
+* Automaatselt tuvastatud kaamera ja filtri konfiguratsioon
+* Näited: Survey3W\_RGN, Survey3N\_OCN, Survey3W\_RGB
+* Kasutatakse õigete töötlusprofiilide rakendamiseks
 
-1. Image appears in the center preview panel
-2. Use zoom controls to inspect image details
-3. Navigate between images using arrow keys
+### Sihtmärgi veerg (valikukast)
 
-### Quick Navigation
-
-* **Previous Image**: Click left arrow or press ← key
-* **Next Image**: Click right arrow or press → key
-* **Zoom In/Out**: Use mouse wheel or zoom buttons
-* **Pan**: Click and drag on image when zoomed in
+* Märkige see kast piltide puhul, mis sisaldavad kalibreerimise sihtmärke
+* Kiirendab oluliselt sihtmärgi tuvastamist töötlemise ajal
+* Täpsemad andmed leiate jaotisest [Sihtmärgi piltide valimine](choosing-target-images.md)
 
 ***
 
-## Duplicate File Handling
+## Failide haldamine projektis
 
-Chloros automatically detects and ignores duplicate files:
+### Failide eemaldamine
 
-* Files with identical filenames are skipped
-* Prevents accidental double-processing
-* Warning message displayed when duplicates are detected
+Soovimatute piltide eemaldamiseks projektist:
 
-{% hint style="warning" %}
-**Important**: Do not rename or modify your original image files before importing. Chloros relies on original filenames and metadata for proper processing.
+1. Valige failibrauseri tabelis üks või mitu pilti.
+2. Klõpsake nuppu **„Eemalda valitud”**.
+3. Kinnitage eemaldamine (faile ei kustutata kettalt, vaid eemaldatakse ainult projektist).
+
+### Sorteerimine ja filtreerimine
+
+* **Sorteeri veeru järgi**: klõpsake mis tahes veeru pealkirjal, et pilte sorteerida.
+* **Sorteerimine ajamärgise järgi**: kasulik kronoloogiliste pildistamisseeriate korraldamiseks
+* **Kaameramudeli filter**: rühmitage pildid kaameratüübi järgi, kui kasutate mitut kaamerat
+
+***
+
+## Pildi eelvaade
+
+### Täispildi vaatamine
+
+Klõpsake failibrauseris mis tahes pildi pisipildil, et kuvada see peamises eelvaatealas:
+
+1. Pilt kuvatakse keskmises eelvaatepaneelis
+2. Kasutage suumikontrolle, et vaadata pildi detaile
+3. Liigu piltide vahel nooleklahvide abil
+
+### Kiirnavigatsioon
+
+* **Eelmine pilt**: klõpsa vasakule nooleklahvile või vajuta ← klahvile
+* **Järgmine pilt**: klõpsa paremale nooleklahvile või vajuta → klahvile
+* **Suurenda/vähenda**: kasuta hiirerattat või suumiklahve
+* **Panoraam**: klõpsa ja lohista pilti, kui see on suurendatud
+
+***
+
+## Duplikaatfailide käitlemine
+
+Chloros tuvastab ja ignoreerib automaatselt duplikaatfailid:
+
+* Failid, millel on identne failinimi, jäetakse vahele.
+* Takistab juhuslikku topeltkäsitlemist.
+* Duplikaatide tuvastamisel kuvatakse hoiatus.
+
+{% hint style=&quot;warning&quot; %}
+**Oluline**: Ärge nimetage ümber ega muudake originaalseid pildifaile enne importimist. Chloros tugineb õigeks töötlemiseks originaalsetele failinimedele ja metaandmetele.
 {% endhint %}
 
 ***
 
-## Mixed Camera Datasets
+## Segatud kaamerate andmekogud
 
-If your project contains images from multiple MAPIR cameras:
+Kui teie projekt sisaldab pilte mitmest MAPIR kaamerast:
 
-1. Chloros automatically detects each camera model
-2. Each camera type is processed with its appropriate calibration profile
-3. File Browser displays camera model in the Camera Model column
-4. Processing applies correct settings for each camera type
+1. Chloros tuvastab automaatselt iga kaameramudeli.
+2. Iga kaameratüüp töödeldakse vastava kalibreerimisprofiiliga.
+3. Failibrauser kuvab kaameramudeli veerus „Kaameramudel”.
+4. Töötlemisel rakendatakse iga kaameratüübi jaoks õigeid seadeid.
 
-**Example scenario**: Survey3W RGN + Survey3N OCN dual-camera setup
-
-***
-
-## Best Practices
-
-### Organize Before Import
-
-* Keep calibration target images in the same folder as survey images
-* Maintain original folder structure from your camera/SD card
-* Don't mix datasets from different sessions in one project
-
-### File Naming
-
-* Preserve original camera filenames (IMG\_0001.RAW, etc.)
-* Don't rename files before import
-* Original names contain important metadata
-
-### Calibration Target Images
-
-* Always include 1-2 calibration target images per session
-* Capture targets before and after the capture session
-* Place targets in the same lighting conditions as capture area
-* Mark target images using the Target checkbox to speed up processing
+**Näide**: Survey3W RGN + Survey3N OCN kahe kaameraga seadistus.
 
 ***
 
-## Common Issues and Solutions
+## Parimad tavad
 
-### Images Not Appearing After Import
+### Korraldage enne importimist
 
-**Possible causes:**
+* Hoidke kalibreerimise sihtpildid samas kaustas kui uuringupildid
+* Säilitage kaamera/SD-kaardi algne kausta struktuur
+* Ärge segage ühes projektis eri sessioonide andmekogusid
 
-* File format not supported (only RAW+JPG and JPG from MAPIR cameras)
-* Images are from non-MAPIR cameras (see [Supported Cameras](../supported-cameras.md))
-* File corruption or incomplete transfer from SD card
+### Failide nimetamine
 
-**Solution**: Verify file format and camera model compatibility
+* Säilitage kaamera algsed failinimed (IMG\_0001.RAW jne)
+* Ärge nimetage faile enne importimist ümber
+* Algne nimi sisaldab olulisi metaandmeid
 
-### Camera Model Not Detected
+### Kalibreerimise sihtpildid
 
-**Possible causes:**
-
-* Modified EXIF metadata
-* Images edited in external software
-* Incomplete file transfer
-
-**Solution**: Re-import original, unmodified files from camera/SD card
-
-### Missing Timestamps
-
-**Possible causes:**
-
-* Camera clock not set correctly
-* EXIF data stripped by external software
-
-**Solution**: Verify camera time settings were correct during capture
+* Lisage alati 1–2 kalibreerimise sihtpilti seansi kohta.
+* Pildistage sihtmärgid enne ja pärast pildistamise seanssi.
+* Paigutage sihtmärgid samadesse valgustingimustesse kui pildistamispiirkond.
+* Märgistage sihtpildid sihtmärgi valikukastiga, et kiirendada töötlemist.
 
 ***
 
-## Next Steps
+## Tavapärased probleemid ja lahendused
 
-Once your files are imported:
+### Pildid ei ilmu pärast importimist
 
-1. **Review the file list** - Ensure all images loaded correctly
-2. **Check camera models** - Verify correct camera detection
-3. **Mark target images** - See [Choosing Target Images](choosing-target-images.md)
-4. **Adjust settings** - Configure processing options in [Project Settings](adjusting-project-settings.md)
-5. **Start processing** - See [Starting the Processing](starting-the-processing.md)
+**Võimalikud põhjused:**
 
-For detailed information about project configuration, see [Adjusting Project Settings](adjusting-project-settings.md).
+* Failivormingut ei toetata (ainult RAW+JPG ja JPG MAPIR kaameratest)
+* Pildid on pärit muudest kui MAPIR kaameratest (vt [Toetatud kaamerad](../supported-cameras.md))
+* Fail on rikutud või SD-kaardilt ülekandmine on poolik
+
+**Lahendus**: Kontrollige failivormingu ja kaameramudeli ühilduvust.
+
+### Kaameramudelit ei tuvastatud
+
+**Võimalikud põhjused:**
+
+* Muudetud EXIF-metadata
+* Välises tarkvaras redigeeritud pildid
+* Ebatäielik failide ülekandmine
+
+**Lahendus**: Importige uuesti originaalsed, muutmata failid kaamerast/SD-kaardilt.
+
+### Puuduvad ajamärgised
+
+**Võimalikud põhjused:**
+
+* Kaamera kell ei ole õigesti seadistatud
+* EXIF-andmed on eemaldatud välise tarkvaraga
+
+**Lahendus**: Kontrollige, et kaamera aja seaded olid pildistamise ajal õiged
+
+***
+
+## Järgmised sammud
+
+Kui failid on importitud:
+
+1. **Vaadake failide loendit** – veenduge, et kõik pildid on õigesti laaditud
+2. **Kontrollige kaameramudeleid** – veenduge, et kaamera on õigesti tuvastatud
+3. **Märkige sihtpildid** – vt [Sihtpiltide valimine](choosing-target-images.md)
+4. **Kohandage seadeid** – konfigureerige töötlemisvalikud [Projekti seaded](adjusting-project-settings.md)
+5. **Alustage töötlemist** – vt [Töötlemise alustamine](starting-the-processing.md)
+
+Täpsemat teavet projekti konfigureerimise kohta leiate jaotisest [Projekti seaded](adjusting-project-settings.md).

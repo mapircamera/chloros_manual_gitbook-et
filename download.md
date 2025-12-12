@@ -4,169 +4,165 @@ metaLinks:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/download
 ---
 
-# Download
+# Allalaadimine
 
-Download the latest version of Chloros for Windows to get started with multispectral image processing.
+Laadige alla Chloros uusim versioon Windows jaoks, et alustada multispektraalsete piltide töötlemist.
 
-### System Requirements
+### Süsteeminõuded
 
-| Requirement          | Minimum                         | Recommended                     |
+| Nõue          | Minimaalne                         | Soovitatav                     |
 | -------------------- | ------------------------------- | ------------------------------- |
-| **Operating System** | Windows 10 (64-bit)             | Windows 11 (64-bit)             |
-| **Processor**        | Intel Core i5 or equivalent     | Intel Core i7 or better         |
-| **Memory (RAM)**     | 8GB                             | 16GB or more                    |
-| **Graphics Card**    | DirectX 11 compatible           | NVIDIA GPU with 4GB+ VRAM       |
-| **Storage**          | 2GB free space                  | SSD with 10GB+ free space       |
-| **Display**          | 1920x1080                       | 2560x1440 or higher             |
-| **Internet**         | Required for license activation | Required for license activation |
+| **Operatsioonisüsteem** | Windows 10 (64-bitine)             | Windows 11 (64-bitine)             |
+| **Protsessor**        | Intel Core i5 või samaväärne     | Intel Core i7 või parem         |
+| **Mälu (RAM)**     | 8 GB                             | 16 GB või rohkem                    |
+| **Graafikakaart**    | DirectX 11 ühilduv           | NVIDIA GPU 4 GB+ VRAM-iga       |
+| **Salvestusruum**          | 2 GB vaba ruumi                  | SSD 10 GB+ vaba ruumiga       |
+| **Ekraan**          | 1920x1080                       | 2560x1440 või kõrgem             |
+| **Internet**         | Vajalik litsentsi aktiveerimiseks | Vajalik litsentsi aktiveerimiseks |
 
-{% hint style="info" %}
-**GPU Acceleration**: Chloros+ users with NVIDIA GPUs (4GB+ VRAM) can use CUDA acceleration for significantly faster processing.
+{% vihje style=&quot;info&quot; %}
+**GPU kiirendus**: Chloros+ kasutajad, kellel on NVIDIA GPU (4 GB+ VRAM), saavad kasutada CUDA kiirendust, et saavutada oluliselt kiirem töötlemine.
 {% endhint %}
 
 ***
 
-## Download Chloros
+## Lae alla Chloros
 
-### <a href="https://drive.google.com/file/d/1HjwrUY4M7HGxDbMybO7iPe_6JoHnUGr4/view?usp=drive_link" class="button primary">Download Chloros Here</a>
+### <a href="https://drive.google.com/file/d/1HjwrUY4M7HGxDbMybO7iPe_6JoHnUGr4/view?usp=drive_link" class="button primary">Lae alla Chloros siit</a>
 
-### Latest Stable Release
+### Viimane stabiilne versioon
 
-**Chloros Installer for Windows**
+**Chloros paigaldaja Windows jaoks**
 
-* **Version**: 1.0.3
-* **Release Date**: December ?, 2025
-* **File Size**: 1.6GB
-* **File Type**: .exe (Windows Installer)
+* **Versioon**: 1.0.3
+* **Väljalaske kuupäev**: detsember ?, 2025
+* **Faili suurus**: 1,6 GB
+* **Failitüüp**: .exe (Windows installija)
 
-#### **Installation Steps:**
+#### **Paigaldamise sammud:**
 
-1. Download the `CHLOROS INSTALLER - CURRENT VERSION.exe` file
-2. Double-click the installer to begin installation
-3. Follow the installation wizard prompts
-4. Choose installation directory (default: `C:\Program Files\Chloros\`)
-5. Complete installation and launch Chloros
-6. Sign in with your MAPIR Cloud Chloros+ account (or continue with free version)
+1. Lae alla fail `CHLOROS INSTALLER - CURRENT VERSION.exe`.
+2. Paigaldamise alustamiseks klõpsa paigaldajal kahekordselt.
+3. Järgi paigaldusviisardi juhiseid.
+4. Vali paigalduskataloog (vaikimisi: `C:\Program Files\Chloros\`).
+5. Viima paigaldamine lõpule ja käivita Chloros.
+6. Logi sisse oma MAPIR Cloud Chloros+ kontoga (või jätka tasuta versiooniga)
 
-{% hint style="success" %}
-The installer automatically adds `chloros-cli` to your system PATH for command-line access.
+{% vihje style=&quot;success&quot; %}
+Installija lisab automaatselt `chloros-cli` teie süsteemi PATH-i, et võimaldada juurdepääsu käsureale.
 {% endhint %}
 
 ***
 
-## Additional Resources
+## Lisaressursid
 
 ### Python SDK
 
-For developers and automation workflows, install the Chloros Python SDK:
+Arendajate ja automatiseeritud töövoogude jaoks installige Chloros Python SDK:
 
 ```bash
 pip install chloros-sdk
 ```
 
-**Documentation**: [API: Python SDK](api-python-sdk.md)
+**Dokumentatsioon**: [API: Python SDK](api-python-sdk.md)
 
-**Requirements**: Chloros Desktop must be installed, Chloros+ license required
-
-***
-
-## What's Included
-
-The Chloros installation includes:
-
-* ✅ **Chloros Desktop GUI** - Full-featured graphical interface
-* ✅ **Chloros (Browser)** - Web-based interface for lower-spec systems
-* ✅ **Chloros CLI** - Command-line interface (requires Chloros+ license)
-* ✅ **Backend Engine** - Image processing pipeline
-* ✅ **Camera Profiles** - Pre-configured MAPIR camera templates
+**Nõuded**: Chloros Desktop peab olema installitud, Chloros+ litsents on vajalik.
 
 ***
 
-## Upgrade to Chloros+
+## Komplektis sisalduv
 
-Unlock advanced features with a Chloros+ subscription:
+Chloros installatsioon sisaldab:
 
-* 🚀 **Multi-threaded Processing** - Process images in parallel
-* ⚡ **GPU (CUDA) Acceleration** - Leverage NVIDIA GPU power
-* 💻 **CLI Access** - Automate with command-line tools
-* 🐍 **Python SDK** - Programmatic API access
-* 📱 **Multiple Devices** - Use on 2-10+ devices (plan dependent)
-* 🧮 **Custom Formulas** - Create custom multispectral indices
-
-<p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary">View Chloros+ Plans &#x26; Pricing</a></p>
+* ✅ **Chloros Desktop GUI** – täisfunktsionaalne graafiline liides
+* ✅ **Chloros (brauser)** – veebipõhine liides madalama spetsifikatsiooniga süsteemidele
+* ✅ **Chloros CLI** – käsurealiides (nõuab Chloros+ litsentsi)
+* ✅ **Backend Engine** – pilditöötlusprotsess
+* ✅ **Kaameraprofiilid** - Eelkonfigureeritud MAPIR kaameramallid
 
 ***
 
-## Installation Help
+## Uuendage Chloros+ versioonile
 
-### Troubleshooting
+Avage täiustatud funktsioonid Chloros+ tellimusega:
 
-**Installation fails with error message:**
+* 🚀 **Mitmeprotsessiline töötlemine** – töötlege pilte paralleelselt
+* ⚡ **GPU (CUDA) kiirendus** – NVIDIA GPU võimsuse ärakasutamine
+* 💻 **CLI juurdepääs** – automatiseerimine käsurea tööriistadega
+* 🐍 **Python SDK** - Programmiline API juurdepääs
+* 📱 **Mitmed seadmed** - Kasutamine 2–10+ seadmel (sõltuvalt paketist)
+* 🧮 **Kohandatud valemid** - Kohandatud multispektraalsete indeksite loomine
 
-* Ensure you have administrator rights
-* Temporarily disable antivirus software
-* Check that you meet minimum system requirements
+<p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary">Vaata Chloros+ plaane ja hindu</a></p>***
 
-**Application won't start:**
+## Installimise abi
 
-* Try Chloros (Browser) version
-* Verify Windows 10/11 (64-bit) is installed
-* Update graphics drivers
-* Check Windows Event Viewer for error details
-* Contact support with error logs
+### Veaotsing
 
-**License activation issues:**
+**Installimine ebaõnnestub veateatega:**
 
-* Ensure internet connection is active
-* Verify credentials at [https://cloud.mapir.camera](https://cloud.mapir.camera)
-* Check firewall isn't blocking Chloros
-* See [Chloros+ Login](chloros+-login.md) for detailed instructions
+* Veenduge, et teil on administraatori õigused
+* Lülitage ajutiselt välja viirusetõrjeprogramm
+* Kontrollige, kas teie süsteem vastab miinimumnõuetele
 
-### Getting Support
+**Rakendus ei käivitu:**
 
-Need help with installation or setup?
+* Proovige Chloros (brauseri) versiooni
+* Veenduge, et Windows 10/11 (64-bitine) on installitud
+* Uuendage graafikadraiverid
+* Kontrollige Windows sündmustevaatajat vea üksikasjade leidmiseks
+* Võtke ühendust tugiteenistusega ja saatke vea logid
 
-* 📧 **Email**: info@mapir.camera
-* 🌐 **Website**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
-* 📚 **Documentation**: [Getting Started](./)
-* ❓ **FAQ**: [Frequently Asked Questions](faq.md)
+**Litsentsi aktiveerimise probleemid:**
+
+* Veenduge, et internetiühendus on aktiivne
+* Kontrollige oma kasutajatunnuseid [https://cloud.mapir.camera](https://cloud.mapir.camera)
+* Kontrollige, et tulemüür ei blokeeri Chloros
+* Täpsed juhised leiate [Chloros+ Login](chloros+-login.md)
+
+### Abi saamine
+
+Vajate abi installimise või seadistamisega?
+
+* 📧 **E-post**: info@mapir.camera
+* 🌐 **Veebisait**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
+* 📚 **Dokumentatsioon**: [Alustamine](./)
+* ❓ **KKK**: [Korduma kippuvad küsimused](faq.md)
 
 ***
 
-## Change Log
+## Muudatuste ajalugu
 
 <details>
 
-<summary>Version 1.0.3</summary>
+<summary>Versioon 1.0.3</summary>
 
-### **Release Date**: December ?, 2025
+### **Väljalaske kuupäev**: detsember ?, 2025
 
-#### New Features
+#### Uued funktsioonid
 
-* Initial Launch
+* Esmane käivitamine
 
-#### Improvements
+#### Parandused
 
-* Initial Launch
+* Esmane käivitamine
 
-#### Bug Fixes
+#### Veaparandused
 
-* Initial Launch
+* Esmane käivitamine
 
-#### Known Issues
+#### Teadaolevad probleemid
 
-* Initial Launch
+* Esmane käivitamine
 
-</details>
+</details>***
 
-***
+## Litsentsileping
 
-## License Agreement
+**Omanditarkvara** – Autoriõigus (c) 2025 MAPIR Inc.
 
-**Proprietary Software** - Copyright (c) 2025 MAPIR Inc.
+Ebaõiguslik kasutamine, levitamine või muutmine on keelatud.
 
-Unauthorized use, distribution, or modification is prohibited.
+**Tasuta versioon**: saadaval isiklikuks ja äriliseks kasutamiseks funktsioonide piirangutega.
 
-**Free Version**: Available for personal and commercial use with feature limitations
-
-**Chloros+**: Subscription-based license for advanced features and commercial deployments
+**Chloros+**: tellimuspõhine litsents täiustatud funktsioonide ja ärilise kasutusega.

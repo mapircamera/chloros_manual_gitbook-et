@@ -1,86 +1,86 @@
-# Index/LUT Sandbox
+# Indeks/LUT-liivakast
 
-The Index/LUT Sandbox is an interactive workspace within the Chloros Image Viewer that allows you to experiment with multispectral index calculations and color visualizations in real-time. This powerful tool helps you test different indices, refine value ranges, and create publication-ready visualizations without reprocessing your entire dataset.
+Indeks/LUT-liivakast on interaktiivne töökeskkond Chloros pildivaatajas, mis võimaldab teil katsetada multispektraalsete indeksite arvutamist ja värvide visualiseerimist reaalajas. See võimas tööriist aitab teil testida erinevaid indekseid, täpsustada väärtuste vahemikke ja luua avaldamiseks valmis visualiseeringuid ilma kogu andmekogumit uuesti töötlemata.
 
-## What is the Index/LUT Sandbox?
+## Mis on indeks/LUT-liivakast?
 
-### Purpose
+### Eesmärk
 
-The Sandbox provides:
+Liivakast pakub:
 
-* **Real-time index calculation** - Apply any vegetation index instantly
-* **Interactive LUT adjustment** - Fine-tune color gradients and ranges
-* **Workflow optimization** - Determine best settings before batch processing
+* **Reaalajas indeksarvutusi** – rakendage mis tahes taimestiku indeksit koheselt
+* **Interaktiivset LUT-reguleerimist** – täpsustage värvide gradiente ja vahemikke
+* **Töövoo optimeerimist** – määrake parimad seaded enne partii töötlemist
 
-### Sandbox vs. Project Processing
+### Sandbox vs. projekti töötlemine
 
-**Index/LUT Sandbox (Interactive):**
+**Index/LUT Sandbox (interaktiivne):**
 
-* Single image at a time
-* Instant feedback
-* Experimental and iterative
-* No permanent changes to files
-* Perfect for exploring and testing
+* Üks pilt korraga
+* Kiire tagasiside
+* Eksperimentaalne ja iteratiivne
+* Failidesse ei tehta püsivaid muudatusi
+* Ideaalne uurimiseks ja testimiseks
 
-**Project Processing (Batch):**
+**Projekti töötlemine (partii):**
 
-* Entire dataset at once
-* Pre-configured settings
-* Permanent output files
-* Time-intensive
-* Best when settings are finalized
+* Kogu andmekogum korraga
+* Eelkonfigureeritud seaded
+* Püsivad väljundfailid
+* Aeganõudev
+* Parim, kui seaded on lõplikud
 
-{% hint style="success" %}
-**Best Workflow**: Use the Sandbox to experiment and find optimal index and LUT settings, then apply those settings during Project Processing for your entire dataset.
+{% vihje style=&quot;success&quot; %}
+**Parim töövoog**: kasutage Sandboxi eksperimenteerimiseks ja optimaalse indeksi ja LUT-seadete leidmiseks, seejärel rakendage neid seadeid projekti töötlemise ajal kogu andmekogumile.
 {% endhint %}
 
 ***
 
-## Working with the Index/LUT Sandbox
+## Töö indeksiga/LUT Sandboxiga
 
-### Understanding Pre-Calculated Indices
+### Eelnevalt arvutatud indeksite mõistmine
 
-In Chloros, indices can be applied during project processing. To determine which index and LUT settings you want to apply to exports it is easiest to use the image viewer sandbox.
+Chloros-is saab indekseid rakendada projekti töötlemise ajal. Ekspordile rakendatavate indeksite ja LUT-seadete kindlaksmääramiseks on kõige lihtsam kasutada pildivaataja sandboxi.
 
-The sandbox allows you to:
+Sandbox võimaldab teil:
 
-* **Apply new index and color gradients (LUTs)** to visualize the data
-* **Adjust visualization settings** interactively
-* **View** already-calculated index images
-* **Inspect** pixel values at all zoom levels
+* **Rakendada uusi indekseid ja värvigradiente (LUT-e)** andmete visualiseerimiseks.
+* **Kohandada visualiseerimise seadeid** interaktiivselt.
+* **Vaadata** juba arvutatud indekspilte.
+* **Kontrollida** pikselväärtusi kõikidel suumitasemetel.
 
-### Opening the Sandbox
+### Sandboxi avamine
 
-The Index/LUT Sandbox is accessed in the **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> sidebar tab:
+Indeksi/LUT-i sandboxile pääseb **pildivaataja** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> külgriba kaardilt:
 
-1. Click an image in the file browser image grid, it opens in the **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> tab
-2. Click **the Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> tab to open the left pop-out sidebar if it's not already open
+1. Klõpsake failibrauseri pildiristil pilti, see avatakse **pildivaataja** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> vahekaardil
+2. Klõpsake **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> , et avada vasakpoolne külgriba, kui see pole veel avatud
 
-### Selecting an Image to Apply an Index/LUT to
+### Indeksi/LUT-i rakendamiseks pildi valimine
 
-To work with an index in the Image Viewer <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> sandbox:
+Indeksi kasutamiseks pildivaatajas <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> sandboxis:
 
-1. **Open an image** from the main image grid by clicking on it
-2. The **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> tab will then open
-3. Click the **Layer dropdown** (top-right of viewer)
-4. Select the layer from the dropdown:
-   * RAW (Reflectance)
+1. **Avage pilt** peamisest pildivõrgust, klõpsates sellel
+2. Seejärel avatakse **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> vahekaart
+3. Klõpsake **kihtide rippmenüüd** (vaataja ülemises paremas nurgas)
+4. Valige rippmenüüst kiht:
+   * RAW (peegeldus)
 
-### Applying an Index to an Image
+### Indeksi rakendamine pildile
 
-Once the image is fullscreen and the **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> tab sidebar is open:
+Kui pilt on täisekraanil ja **Pildivaataja** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> vaate riba on avatud:
 
-1. Check the Index box at the top of the sidebar
-2. Choose your camera's filter from the left dropdown
-3. Choose the desired index formula from the right dropdown
-4. Drag the filter channel color circles to the locations in the index formula below
-5. Once the formula is valid the image will update and show the index values
-6. Move your mouse cursor around to see the values at the cursor's location
-7. Zoom in to see individual pixels and their associated values
+1. Märkige riba ülaosas asuv indeksikast
+2. Valige vasakpoolsest rippmenüüst oma kaamera filter
+3. Valige parempoolsest rippmenüüst soovitud indeksivalem
+4. Lohistage filtri kanali värviringid allpool olevasse indeksivalemisse
+5. Kui valem on kehtiv, uuendatakse pilt ja kuvatakse indeksiväärtused
+6. Liigutage hiirekursorit, et näha väärtusi kursori asukohas
+7. Suurendage pilti, et näha üksikuid piksleid ja nendega seotud väärtusi.
 
-Each index has a specific value range and meaning:
+Igal indeksil on kindel väärtuste vahemik ja tähendus:
 
-#### NDVI Example
+#### NDVI Näide
 
 ```
 Formula: (NIR - Red) / (NIR + Red)
@@ -96,293 +96,293 @@ Bare soil: 0.0 to 0.2
 Water: -0.1 to 0.1
 ```
 
-For complete index formula documentation, see [Multispectral Index Formulas](../project-settings/multispectral-index-formulas.md).
+Täieliku indeksivalemite dokumentatsiooni leiate [Multispektraalsete indeksivalemite](../project-settings/multispectral-index-formulas.md) alt.
 
 ***
 
-## Working with LUTs (Look-Up Tables)
+## Töö LUT-idega (otsingutabelid)
 
-### What is a LUT?
+### Mis on LUT?
 
-A **Look-Up Table (LUT)** maps numerical index values to colors for visualization:
+**Otsingutabel (LUT)** seostab numbrilised indeksiväärtused värvidega visualiseerimiseks:
 
-* **Input**: Index pixel value (e.g., NDVI 0.65)
-* **Output**: RGB color (e.g., bright green)
-* **Purpose**: Make patterns easier to see and interpret
+* **Sisend**: indeksi pikseliväärtus (nt NDVI 0,65)
+* **Väljund**: RGB värv (nt ere roheline)
+* **Eesmärk**: muuta mustrid kergemini nähtavaks ja tõlgendatavaks
 
-**Grayscale vs. Color LUT:**
+**Halltoonide ja värvide LUT:**
 
-* Grayscale: Scientific and neutral, shows raw data
-* Color LUT: Intuitive and impactful, highlights patterns and differences
+* Halltoonid: teaduslikud ja neutraalsed, näitavad toorandmeid
+* Värvide LUT: intuitiivsed ja mõjukad, rõhutavad mustreid ja erinevusi
 
-{% hint style="success" %}
-**Visualization Power**: Applying a color LUT to a grayscale index image makes it dramatically easier to identify patterns, anomalies, and areas of interest at a glance.
+{% hint style=&quot;success&quot; %}
+**Visualiseerimise võimsus**: värvilise LUT-i rakendamine halltoonide indekspildile muudab mustrite, kõrvalekallete ja huvipakkuvate alade tuvastamise ühe pilguheiduga oluliselt lihtsamaks.
 {% endhint %}
 
-### Applying a LUT to an Index Image
+### LUT-i rakendamine indekspildile
 
-Once you have an index image showing
+Kui teil on indekspilt, mis näitab
 
-1. Click the <img src="../.gitbook/assets/image.png" alt="" data-size="line"> "+Add LUT" button
-2. Select the color gradient
-3. Adjust the clipping min/max end points
-4. Adjust the Clipping Mode
-5. Check the Index box in the **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> tab sidebar to apply the LUT
+1. Klõpsake <img src="../.gitbook/assets/image.png" alt="" data-size="line"> „+Lisa LUT” nuppu
+2. Valige värvi gradient
+3. Reguleerige lõikamise min/max lõpp-punkte
+4. Reguleerige lõikamisrežiimi
+5. Märkige **Pildivaataja** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> kõrvalribal, et rakendada LUT-i.
 
-### Choosing a Color Gradient
+### Värvi gradiendi valimine
 
-**Selecting a gradient:**
+**Gradiendi valimine:**
 
-1. In the LUT panel, locate the **colored gradient bar**
-2. Hover your mouse over it to view available gradient presets
-3. Select desired gradient
-4. The image **updates immediately** with new colors when the Index box is checked
+1. Leidke LUT-paneelis **värviline gradiendi riba**.
+2. Viige hiir selle kohale, et vaadata saadaval olevaid gradiendi eelseadistusi.
+3. Valige soovitud gradient.
+4. Kui indeksikast on märgitud, **uuendatakse pilt kohe** uute värvidega.
 
-{% hint style="success" %}
-**Best Practice**: For vegetation indices like NDVI, the Red-Yellow-Green gradient is most intuitive because it aligns with natural color associations (green=healthy, yellow=moderate, red=stressed).
+{% vihje style=&quot;success&quot; %}
+**Parim tava**: Taimestiku indeksite puhul, nagu NDVI, on Red-Yellow-Green gradient kõige intuitiivsem, kuna see vastab looduslikele värviassotsiatsioonidele (roheline = terve, kollane = mõõdukas, punane = stressis).
 {% endhint %}
 
-### Adjusting Color Classes
+### Värviklasside kohandamine
 
-The **Classes control** determines how many discrete color steps appear in your gradient:
+**Klasside kontroll** määrab, kui palju eraldiseisvaid värvitoone teie gradiendis ilmub:
 
-**Class count options:**
+**Klasside arvu valikud:**
 
-* **2-5 classes**: Very broad categories, distinct zones
-* **6-10 classes**: Balanced, good for classification
-* **11-20 classes**: Smooth gradients, continuous appearance
-* **20+ classes**: Near-continuous, maximum smoothness
+* **2–5 klassi**: väga laiad kategooriad, eristatavad tsoonid
+* **6–10 klassi**: tasakaalustatud, sobivad klassifitseerimiseks
+* **11–20 klassi**: sujuvad gradientid, järjepidev välimus
+* **20+ klassi**: peaaegu järjepidevad, maksimaalne sujuvus
 
-**How to adjust:**
+**Kuidas reguleerida:**
 
-1. In the LUT panel, locate the **color swatch squares below the gradient bar**
-2. Adjust the number of classes by adding with the + button
-3. Remove the number of classes by double clicking on a color swatch
-4. The gradient updates **in real-time** on the image
+1. LUT-paneelis otsige **värvivalikuväljad gradientribast allpool**.
+2. Reguleerige klasside arvu, lisades neid + nupuga.
+3. Eemaldage klasside arv, klõpsates värvivalikuväljal topeltklõpsuga.
+4. Gradient uueneb pildil **reaalajas**.
 
-**Effect on visualization:**
+**Mõju visualiseerimisele:**
 
-* **Fewer classes** (3-5): Creates distinct zones, simplified classification, easier to distinguish categories
-* **Medium classes** (6-10): Balanced approach, good for most applications
-* **More classes** (15-20): Smooth transitions, detailed variation, photographic appearance
+* **Vähem klasse** (3–5): loob eristatavad tsoonid, lihtsustab klassifitseerimist, lihtsustab kategooriate eristamist.
+* **Keskmine arv klasse** (6–10): tasakaalustatud lähenemine, sobib enamikule rakendustele.
+* **Rohkem klasse** (15–20): sujuvad üleminekud, detailne variatsioon, fotorealistlik välimus.
 
-**When to use:**
+**Millal kasutada:**
 
-* **Few classes (3-5)**: Presentation slides, classification maps, simple reports
-* **Medium classes (6-10)**: General analysis, balanced detail, standard reports
-* **Many classes (15-20)**: Scientific analysis, detailed inspection, publication-quality outputs
+* **Vähe klasse (3–5)**: esitluse slaidid, klassifitseerimiskaardid, lihtsad aruanded
+* **Keskmised klassid (6–10)**: üldine analüüs, tasakaalustatud detailid, standardaruanded
+* **Palju klasse (15–20)**: teaduslik analüüs, detailne kontroll, publikatsioonikvaliteediga väljundid
 
-### Fine-Tuning Value Ranges
+### Väärtuste vahemike täpsustamine
 
-The **value range controls** determine which index values map to which colors in your gradient:
+**Väärtuste vahemiku kontrollid** määravad, millised indeksväärtused vastavad teie gradiendi värvidele:
 
-**Range controls in LUT panel:**
+**Vahemiku kontrollid LUT-paneelis:**
 
-* **Minimum value**: Lower bound of the color scale
-* **Maximum value**: Upper bound of the color scale
-* **Intermediate values**: Automatically distributed between min and max (based on class count)
+* **Minimaalne väärtus**: värviskaala alumine piir
+* **Maksimaalne väärtus**: värviskaala ülemine piir
+* **Vaheväärtused**: jaotatakse automaatselt minimaalse ja maksimaalse väärtuse vahel (klasside arvu alusel)
 
-#### Adjusting Min/Max Values
+#### Minimaalse/maksimaalse väärtuse reguleerimine
 
-**To adjust value ranges:**
+**Väärtuste vahemike reguleerimiseks:**
 
-1. In the LUT panel, locate the **Min Value** and **Max Value** input fields
-2. Click the **Min Value** field
-3. Type the desired minimum value (e.g., `0.2`)
-4. Press **Enter** or click outside the field
-5. Repeat for **Max Value** field (e.g., `0.9`)
-6. The visualization **updates immediately**
+1. Leidke LUT-paneelis sisestusväljad **Minimaalne väärtus** ja **Maksimaalne väärtus**.
+2. Klõpsake väljal **Minimaalne väärtus**.
+3. Sisestage soovitud minimaalne väärtus (nt `0.2`).
+4. Vajutage **Enter** või klõpsake väljaspool välja.
+5. Korrake sama **Maksimaalne väärtus** väljaga (nt `0.9`).
+6. Visualiseerimine **uuendatakse kohe**.
 
-{% hint style="info" %}
-**Auto-Scaling**: When you first apply a LUT, Chloros automatically sets the min/max to the actual data range in the image. You can then narrow this range to focus on specific value ranges of interest.
+{% vihje style=&quot;info&quot; %}
+**Automaatne skaalamine**: kui rakendate LUT-i esimest korda, seab Chloros automaatselt miinimum-/maksimumväärtuse pildi tegeliku andmevahemiku järgi. Seejärel saate seda vahemikku kitsendada, et keskenduda konkreetsetele huvipakkuvatele väärtuste vahemikele.
 {% endhint %}
 
-**Example NDVI range adjustments:**
+**Näide NDVI vahemiku kohandamisest:**
 
-* **Full range**: `-1.0` to `1.0` (show all possible values)
-* **Vegetation-focused**: `0.2` to `0.9` (exclude bare soil and water)
-* **Healthy vegetation only**: `0.5` to `0.9` (highlight only vigorous plants)
-* **Stress detection**: `0.2` to `0.5` (emphasize problem areas)
-* **Custom range**: Adjust based on your observed pixel values
+* **Täisvahemik**: `-1.0` kuni `1.0` (näita kõiki võimalikke väärtusi)
+* **Taimestikule keskendunud**: `0.2` kuni `0.9` (välja arvatud paljas pinnas ja vesi)
+* **Ainult terve taimestik**: `0.5` kuni `0.9` (esile tõstetakse ainult jõulised taimed)
+* **Stressi tuvastamine**: `0.2` kuni `0.5` (rõhutatakse probleemsed alad)
+* **Kohandatud vahemik**: kohandage vastavalt oma täheldatud pikselväärtustele
 
-**Why adjust ranges?**
+**Miks vahemikke kohandada?**
 
-* **Increase contrast** in your area of interest
-* **Exclude irrelevant values** (e.g., water bodies, bare soil)
-* **Standardize visualization** across multiple images or dates
-* **Emphasize subtle differences** within a narrow value range
+* **Suurendage kontrasti** oma huvipakkuvas piirkonnas
+* **Jätke välja ebaolulised väärtused** (nt veekogud, paljas pinnas)
+* **Ühtlustage visualiseerimine** mitme pildi või kuupäeva puhul
+* **Rõhutage väikeseid erinevusi** kitsas väärtuste vahemikus
 
-### Clipping Out-of-Range Values
+### Vahemikust väljuvate väärtuste kärpimine
 
-When pixel values fall outside your defined min/max range, you can control how they're displayed using **clipping modes**.
+Kui pikseliväärtused jäävad väljapoole määratud min/max vahemikku, saate **kärpimisrežiimide** abil kontrollida, kuidas need kuvatakse.
 
-#### **Available clipping mode options:**
+#### **Saadaval olevad kärpimisrežiimi valikud:**
 
-#### 1. Minimum and Maximum
+#### 1. Minimaalne ja maksimaalne
 
-* Pixels **below minimum** → display using the **first color** in gradient (e.g., red)
-* Pixels **above maximum** → display using the **last color** in gradient (e.g., green)
-* **Use case**: Emphasize extremes, show full data range with saturated colors at limits
-* **Example**: NDVI values below 0.2 all appear red, values above 0.9 all appear green
+* Pikselid **alla minimaalse väärtuse** → kuvatakse gradientide **esimese värviga** (nt punane)
+* Pikslid **üle maksimumi** → kuvatakse gradientide **viimase värviga** (nt roheline)
+* **Kasutusjuhtum**: rõhutage äärmuslikke väärtusi, näidake kogu andmevahemikku küllastunud värvidega piiridel
+* **Näide**: NDVI väärtused alla 0,2 kuvatakse punasena, väärtused üle 0,9 kuvatakse rohelisena
 
-#### 2. Transparent Background
+#### 2. Läbipaistev taust
 
-* Pixels **outside the range** become **fully transparent**
-* Only pixels **within range** show color gradient
-* **Use case**: GIS overlay, isolating specific value ranges, highlighting only areas of interest
-* **Example**: Show only NDVI 0.4-0.7 in color, everything else transparent
+* **Vahemikust väljaspool** olevad pikslid muutuvad **täielikult läbipaistvaks**
+* Ainult **vahemikus** olevad pikslid näitavad värvi gradienti
+* **Kasutusjuhtum**: GIS-kiht, eraldades konkreetsed väärtuste vahemikud, esile tõstes ainult huvipakkuvad alad
+* **Näide**: Näita ainult NDVI 0,4–0,7 värviga, kõik muu läbipaistev
 
-{% hint style="warning" %}
-**Transparency Limitation**: Transparent pixels will appear as the background color in the viewer. When exported during processing, transparency is preserved in PNG format but not in JPG.
+{% hint style=&quot;warning&quot; %}
+**Läbipaistvuse piirang**: Läbipaistvad pikslid kuvatakse vaatajas taustavärvina. Töötlemise käigus ekspordimisel säilib läbipaistvus PNG formaadis, kuid mitte JPG-formaadis.
 {% endhint %}
 
-#### 3. Index Background
+#### 3. Indeksi taust
 
-* Pixels **outside range** display in **grayscale** (showing raw index values)
-* Pixels **within range** show **color gradient**
-* **Use case**: Subtle highlighting, maintain context while emphasizing areas of interest
-* **Example**: Color-highlight stressed vegetation (NDVI 0.3-0.5) while showing healthy areas in gray
+* **Vahemikust väljaspool** olevad pikslid kuvatakse **halltoonides** (näidates toorindeksi väärtusi)
+* **Vahemikus** olevad pikslid kuvatakse **värvi gradiendina**
+* **Kasutusjuhtum**: õrn esiletõstmine, konteksti säilitamine ja huvipakkuvate alade esiletõstmine
+* **Näide**: värviga esiletõstetud stressis taimestik (NDVI 0,3–0,5) ja terved alad halli värviga
 
-#### 4. Original Background
+#### 4. Algne taust
 
-* Pixels **outside range** display the **original multispectral image**
-* Pixels **within range** show **color gradient**
-* **Use case**: Most intuitive - combines natural image context with analytical color overlay
-* **Example**: See the actual field/crop appearance with color-coded stress areas overlaid
+* **Vahemikust väljaspool** olevad pikslid kuvatakse **algse multispektraalse pildina**
+* **Vahemikus olevad** pikslid näitavad **värvi gradienti**
+* **Kasutusjuhtum**: kõige intuitiivsem – ühendab loomuliku pildi konteksti analüütilise värvi ülekattumisega
+* **Näide**: vaadake tegelikku põllu/saagi välimust värvikoodiga stressipiirkondade ülekattumisega
 
-### Choosing the Right Clipping Mode
+### Õige lõikamisrežiimi valimine
 
-| Clipping Mode              | Best For                                   | Visualization Style          |
+| Lõikamisrežiim              | Sobib kõige paremini                                   | Visualiseerimisstiil          |
 | -------------------------- | ------------------------------------------ | ---------------------------- |
-| **Minimum and Maximum**    | Full data display, scientific analysis     | All pixels colored           |
-| **Transparent Background** | GIS overlays, isolating specific ranges    | Color on range, blank beyond |
-| **Index Background**       | Subtle emphasis, maintaining data context  | Color on range, gray beyond  |
-| **Original Background**    | Reports, presentations, intuitive analysis | Color on range, photo beyond |
+| **Minimaalne ja maksimaalne**    | Täielik andmete kuvamine, teaduslik analüüs     | Kõik pikslid värvitud           |
+| **Läbipaistev taust** | GIS-kihid, konkreetsete vahemike eraldamine    | Värv vahemikus, tühjad väljaspool |
+| **Indeksi taust**       | Õrn rõhutamine, andmete konteksti säilitamine  | Värv vahemikus, hall väljaspool  |
+| **Algne taust**    | Aruanded, esitlused, intuitiivne analüüs | Värv vahemikus, foto väljaspool |
 
-### Creating Custom LUT Colors
+### Kohandatud LUT-värvide loomine
 
-For full control over your visualization, you can create **custom color gradients** by editing individual color stops.
+Visualiseerimise täieliku kontrolli saavutamiseks saate luua **kohandatud värviüleminekuid**, muutes üksikuid värvipunkte.
 
-**To create a custom gradient:**
+**Kohandatud gradiendi loomiseks:**
 
-1. In the LUT panel, locate the **gradient preview bar**
-2. Look for **color swatch squares** below the gradient
-3. **Click a color stop** to select it
-4. A **color picker** opens
-5. Choose a new color using:
-   * **Color wheel**: Visual color selection
-   * **RGB/HSV sliders**: Precise color control
-   * **Hex code entry**: Exact color specification (e.g., `#FF0000` for red)
-6. Click off the color picker **to apply the new color**
-7. The gradient **updates immediately** on the image
+1. Leidke LUT-paneelis **gradiendi eelvaate riba**.
+2. Otsige gradiendi all **värviproovide ruudud**.
+3. **Klõpsake värvipunkti**, et see valida.
+4. Avaneb **värvivalija**.
+5. Valige uus värv, kasutades:
+   * **Värviratast**: visuaalne värvivalik
+   * **RGB/HSV liugureid**: täpne värvihaldus
+   * **Hex-koodi sisestamist**: täpne värvispetsifikatsioon (nt `#FF0000` punase jaoks)
+6. Klõpsake värvivalijalt ära, **et rakendada uus värv**
+7. Gradient **uuendatakse kohe** pildil
 
-**Adding or removing color stops:**
+**Värvipeatuste lisamine või eemaldamine:**
 
-* **Add a stop**: Click the + icon to add a new swatch at the end
-* **Remove a stop**: Double click the color square to remove the swatch
+* **Peatuse lisamine**: klõpsake ikoonil +, et lisada uus värviproov lõppu
+* **Peatuse eemaldamine**: klõpsake värviruudul topeltklõpsuga, et eemaldada värviproov
 
-**Customization strategies:**
+**Kohandamisstrateegiad:**
 
-* **Invert gradient**: Flip color order to reverse the meaning (e.g., green=low, red=high)
-* **Brand colors**: Match your organization's color palette for reports
-* **Colorblind-friendly**: Use orange-blue or purple-yellow combinations
-* **Print optimization**: Choose colors that work in both color and grayscale printing
-* **Multi-threshold**: Use distinct colors at specific value thresholds for classification
+* **Kalle pööramine**: pöörake värvide järjekord, et muuta tähendus vastupidiseks (nt roheline = madal, punane = kõrge)
+* **Brändi värvid**: sobitage oma organisatsiooni värvipalett aruannetega
+* **Värvipimedatele sobiv**: kasutage oranži-siniseid või lilla-kollaseid kombinatsioone
+* **Trükkimise optimeerimine**: valige värvid, mis sobivad nii värvilisele kui ka halltoonilisele trükkimisele
+* **Mitme lävega**: kasutage klassifitseerimiseks erinevaid värve kindlate väärtuste lävedel
 
-{% hint style="info" %}
-**Saving Custom Gradients**: Custom gradients can be saved and reused. Click the save icon in the LUT panel to preserve your custom color schemes for future use.
+{% vihje style=&quot;info&quot; %}
+**Kohandatud gradientide salvestamine**: kohandatud gradientide saab salvestada ja uuesti kasutada. Klõpsake LUT-paneelis salvestamise ikooni, et säilitada kohandatud värviskeemid tulevikus kasutamiseks.
 {% endhint %}
 
 ***
 
-## Interactive Workflow
+## Interaktiivne töövoog
 
-### Real-Time Updates
+### Reaalajas uuendused
 
-All LUT adjustments in the sandbox update the image **instantly and interactively**:
+Kõik LUT-i kohandused liivakastis uuendavad pilti **koheselt ja interaktiivselt**:
 
-* **Switch layer** → Image changes immediately
-* **Select gradient** → Colors update instantly
-* **Adjust value range** → Contrast changes in real-time
-* **Change classes** → Gradient smoothness updates immediately
-* **Modify clipping** → Background display changes instantly
-* **Edit colors** → Custom gradient applies immediately
+* **Vaheta kiht** → Pilt muutub kohe
+* **Vali gradient** → Värvid uuendatakse kohe
+* **Kohanda väärtuste vahemikku** → Kontrast muutub reaalajas
+* **Muuda klasse** → Gradienti sujuvus uuendatakse kohe
+* **Muuda lõikamist** → Taust kuvatakse kohe
+* **Muuda värve** → Kohandatud gradient rakendub kohe
 
-**No "Apply" button needed** - all changes are live and interactive!
+**Ei ole vaja nuppu „Rakenda”** – kõik muudatused on reaalajas ja interaktiivsed!
 
-{% hint style="success" %}
-**Live Feedback**: The instant visual feedback allows you to rapidly experiment with different settings until you find the optimal visualization for your analysis needs.
+{% vihje stiil=&quot;edu&quot; %}
+**Reaalajas tagasiside**: kohene visuaalne tagasiside võimaldab teil kiiresti katsetada erinevaid seadeid, kuni leiate oma analüüsi vajadustele optimaalse visualiseerimise.
 {% endhint %}
 
-### Iterative Refinement Workflow
+### Iteratiivne täiustamise töövoog
 
-**Typical LUT optimization workflow:**
+**Tüüpiline LUT optimeerimise töövoog:**
 
-1. **Select index layer** (e.g., RAW (Reflectance))
-2. **Apply index** - Choose camera filter and index formula, drag colored circles to appropriate location in the index formula
-3. **Apply LUT gradient** - Start with Red-Yellow-Green preset
-4. **Inspect pixel values** - Move cursor around, note value ranges
-5. **Adjust min/max** - Narrow to focus on vegetation (e.g., 0.2 to 0.9)
-6. **Choose clipping** - Try "Original Background" for context
-7. **Refine colors** - Customize gradient if needed for specific emphasis
-8. **Finalize settings** - Document settings and copy to Project Settings for export processing
+1. **Valige indeksikiht** (nt RAW (peegeldus))
+2. **Rakenda indeks** – vali kaamera filter ja indeksivalem, lohista värvilised ringid indeksivalemis sobivasse asukohta
+3. **Rakenda LUT-gradient** – alusta eelseadistusega Red-Yellow-Green
+4. **Kontrollige pikseliväärtusi** – liigutage kursorit, märkige väärtuste vahemikud
+5. **Reguleerige min/max** – kitsendage, et keskenduda taimestikule (nt 0,2 kuni 0,9)
+6. **Valige lõikamine** – proovige „Original Background” konteksti jaoks
+7. **Värvide täpsustamine** – kohandage gradienti vajaduse korral konkreetse rõhuasetuse jaoks
+8. **Seadete lõplik kinnitamine** – dokumenteerige seadistused ja kopeerige need ekspordi töötlemiseks projekti seadistustesse
 
-### Pixel Value Inspection
+### Pikselväärtuste kontrollimine
 
-Understanding actual pixel values is crucial for setting effective LUT ranges:
+Tegelikute pikselväärtuste mõistmine on oluline tõhusate LUT-vahemike seadistamiseks:
 
-**How to inspect values:**
+**Kuidas väärtusi kontrollida:**
 
-1. Pixel values show when the image has either the Index, or both the Index and LUT **boxes checked**.
-2. **Move your cursor** over different areas of the image
-3. **Observe pixel values** displayed in the legend as you hover
-4. Zoom in to see individual pixels highlighted with a floating value
-5. **Take notes** of value ranges for different features:
-   * **Healthy vegetation**: e.g., NDVI 0.55-0.85
-   * **Stressed vegetation**: e.g., NDVI 0.30-0.50
-   * **Bare soil**: e.g., NDVI 0.05-0.25
-   * **Water** (if present): e.g., NDVI -0.05 to 0.10
+1. Pikselväärtused kuvatakse, kui pildil on märgitud kas indeks või nii indeks kui ka LUT **ruudud**.
+2. **Liigutage kursorit** pildi erinevate alade kohale
+3. **Vaadake pikselväärtusi**, mis kuvatakse legendis, kui kursor on nende kohal
+4. Suurendage pilti, et näha üksikuid piksleid, mis on esile tõstetud ujuva väärtusega
+5. **Tee märkmeid** erinevate omaduste väärtuste vahemike kohta:
+   * **Terve taimestik**: nt NDVI 0,55–0,85
+   * **Stressis taimestik**: nt NDVI 0,30–0,50
+   * **Paljas pinnas**: nt NDVI 0,05–0,25
+   * **Vesi** (kui olemas): nt NDVI -0,05 kuni 0,10
 
-**Using pixel values to set LUT ranges:**
+**Pikselväärtuste kasutamine LUT-vahemike seadistamiseks:**
 
-After inspecting pixel values, adjust your LUT min/max accordingly:
+Pärast pikselväärtuste kontrollimist kohandage vastavalt oma LUT min/max:
 
-**Example scenario:**
+**Näide:**
 
-* **Observation**: Soil values = 0.05-0.25, Stressed = 0.25-0.50, Healthy = 0.50-0.85
-* **Goal**: Visualize only plant health (exclude soil)
-* **LUT settings**: Min = `0.25`, Max = `0.85`
-* **Clipping**: "Original Background" to see soil in natural color
-* **Result**: Color gradient only applies to vegetation, soil shows as original image
+* **Vaatlus**: Mulla väärtused = 0,05–0,25, stressis = 0,25–0,50, terved = 0,50–0,85
+* **Eesmärk**: visualiseerida ainult taimede tervis (välja arvatud pinnas)
+* **LUT-seaded**: Min = `0.25`, Max = `0.85`
+* **Kärpimine**: „Algne taust”, et näha pinnast loomulikus värvis
+* **Tulemus**: värvi gradient kehtib ainult taimestiku kohta, muld kuvatakse originaalpildina
 
-{% hint style="info" %}
-**Dynamic Range**: Different crops, seasons, and growth stages will have different value ranges. Always inspect pixel values in your specific dataset before setting LUT ranges.
+{% hint style=&quot;info&quot; %}
+**Dünaamiline ulatus**: erinevatel põllukultuuridel, aastaaegadel ja kasvufaasidel on erinevad väärtuste vahemikud. Enne LUT-vahemike seadistamist kontrollige alati oma konkreetses andmekogus pikseliväärtusi.
 {% endhint %}
 
 ***
 
-## Custom Indices (Chloros+)
+## Kohandatud indeksid (Chloros+)
 
-### Creating Custom Index Formulas
+### Kohandatud indeksivalemite loomine
 
-{% hint style="info" %}
-**Where to Create**: Custom indices can be configured in **Project Settings** before processing, as well as in the Image Viewer sandbox sidebar.
+{% hint style=&quot;info&quot; %}
+**Kus luua**: Kohandatud indeksid saab konfigureerida **projekti seadetest** enne töötlemist, samuti pildivaataja sandboxi külgribal.
 {% endhint %}
 
-**To create a custom index:**
+**Kohandatud indeksi loomiseks:**
 
-1. **Open Project Settings** (before processing) or Image Viewer sandbox sidebar
-2. Navigate to the **Index formula dropdown**
-3. Look for **"Custom"** option (must be logged in with Chloros+ license)
-4. **Define your formula** using band variables:
-   * Band names: `NIR`, `Red`, `Green`, `Blue`, `RedEdge`, etc.
-   * Operators: `+`, `-`, `*`, `/`, `^` (exponent)
-   * Functions: `sqrt()`, `abs()`, etc. (if supported)
-   * Parentheses: `()` for order of operations
-5. **Name your index** (e.g., "MyIndex" or "CustomNDVI")
-6. **Save the configuration**
+1. **Ava projekti seaded** (enne töötlemist) või pildivaataja liivakasti külgriba.
+2. Mine **indeksi valemi rippmenüüsse**.
+3. Otsi **„Kohandatud”** valik (pead olema sisse logitud Chloros+ litsentsiga).
+4. **Määrake valem**, kasutades ribamuutujaid:
+   * Ribade nimed: `NIR`, `Red`, `Green`, `Blue`, `RedEdge` jne.
+   * Operaatorid: `+`, `-`, `*`, `/`, `^` (eksponent)
+   * Funktsioonid: `sqrt()`, `abs()` jne (kui toetatakse)
+   * Sulgudes: `()` operatsioonide järjekorra jaoks
+5. **Nimetage oma indeks** (nt „MyIndex” või „CustomNDVI”)
+6. **Salvestage konfiguratsioon**
 
-**Example custom formulas:**
+**Näited kohandatud valemitest:**
 
 ```
 Modified NDVI with offset:
@@ -398,22 +398,22 @@ Exponential index:
 (NIR / Red) ^ 2
 ```
 
-{% hint style="warning" %}
-**Formula Validation**: Ensure your formula uses bands available in your camera. For example, RedEdge is only available on cameras with a RedEdge filter.
+{% hint style=&quot;warning&quot; %}
+**Valemi valideerimine**: Veenduge, et valemis kasutatakse teie kaameras saadaval olevaid sagedusribasid. Näiteks RedEdge on saadaval ainult kaamerates, millel on RedEdge filter.
 {% endhint %}
 
 ***
 
-## Next Steps
+## Järgmised sammud
 
-Now that you understand the Index/LUT Sandbox:
+Nüüd, kui saate aru indeksist/LUT-i liivakastist:
 
-* **Apply to processing**: Use discovered settings in [Project Settings](../project-settings/page-2.md)
-* **Batch process**: Apply optimized indices to full datasets
-* **Learn more**: Read [Multispectral Index Formulas](../project-settings/multispectral-index-formulas.md)
+* **Rakenda töötlemisele**: kasuta avastatud seadeid [projekti seadetest](../project-settings/project-settings.md)
+* **Partii töötlemine**: rakendage optimeeritud indeksid kogu andmekogumile
+* **Lisateave**: lugege [Multispektraalsed indeksivalemid](../project-settings/multispectral-index-formulas.md)
 
-Related documentation:
+Seotud dokumentatsioon:
 
-* [**Image Layers**](image-layers.md) - Layer management and visualization
-* [**Opening an Image Full Screen**](page-3.md) - Image Viewer basics
-* [**Processing Images (GUI)**](../processing-images-gui/page-1.md) - Full processing workflow
+* [**Pildikihtid**](image-layers.md) – kihtide haldamine ja visualiseerimine
+* [**Pildi avamine täisekraanil**](opening-an-image-full-screen.md) – pildivaataja põhitõed
+* [**Piltide töötlemine (GUI)**](../processing-images-gui/adding-files-to-a-project.md) – täielik töötlemise töövoog
