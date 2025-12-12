@@ -1,6 +1,6 @@
-# Failide lisamine projekti
+# Failide lisamine projektile
 
-Kui olete loonud või avanud projekti Chloros-is, on järgmine samm multispektraalsete piltide lisamine töötlemise alustamiseks. Failibrauser<img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> teeb piltide importimise ja andmekogumi haldamise lihtsaks.
+Kui olete Chloros-is projekti loonud või avanud, on järgmine samm multispektraalsete piltide lisamine töötlemise alustamiseks. Failibrauser<img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> teeb piltide importimise ja andmekogumi haldamise lihtsaks.
 
 ## Failibrauseri avamine
 
@@ -29,7 +29,7 @@ Kasutage seda valikut üksikute pildifailide või väikese valiku failide import
 
 ### Meetod 2: kausta lisamine
 
-Seda valikut kasutage, et importida kõik pildid kausta korraga.
+Kasutage seda valikut, et importida kõik pildid kausta korraga.
 
 1. Klõpsake failibrauseri paneeli ülaosas nuppu **„Lisa kaust”**.
 2. Leidke ja valige kaust, mis sisaldab teie pildistamissessiooni pilte.
@@ -104,7 +104,7 @@ Klõpsake failibrauseris mis tahes pildi pisipildil, et kuvada see peamises eelv
 * **Eelmine pilt**: klõpsa vasakule nooleklahvile või vajuta ← klahvile
 * **Järgmine pilt**: klõpsa paremale nooleklahvile või vajuta → klahvile
 * **Suurenda/vähenda**: kasuta hiirerattat või suumiklahve
-* **Panoraam**: klõpsa ja lohista pilti, kui see on suurendatud
+* **Panoraam**: suumitud pildil klõpsa ja lohista
 
 ***
 
@@ -160,7 +160,7 @@ Kui teie projekt sisaldab pilte mitmest MAPIR kaamerast:
 
 ## Tavapärased probleemid ja lahendused
 
-### Pildid ei ilmu pärast importimist
+### Pildid ei kuvata pärast importimist
 
 **Võimalikud põhjused:**
 
@@ -193,7 +193,7 @@ Kui teie projekt sisaldab pilte mitmest MAPIR kaamerast:
 
 ## Järgmised sammud
 
-Kui failid on importitud:
+Kui failid on imporditud:
 
 1. **Vaadake failide loendit** – veenduge, et kõik pildid on õigesti laaditud
 2. **Kontrollige kaameramudeleid** – veenduge, et kaamera on õigesti tuvastatud

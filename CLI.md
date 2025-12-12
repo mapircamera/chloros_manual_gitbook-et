@@ -91,7 +91,7 @@ chloros-cli process <input-folder> [options]
 chloros-cli process "C:\Datasets\Survey_001" --vignette --reflectance
 ```
 
-#### Käsitlemiskäsu valikud
+#### Käsukäsitluse valikud
 
 | Valik                | Tüüp    | Vaikimisi        | Kirjeldus                                                                            |
 | --------------------- | ------- | -------------- | -------------------------------------------------------------------------------------- |
@@ -100,12 +100,12 @@ chloros-cli process "C:\Datasets\Survey_001" --vignette --reflectance
 | `-n, --project-name`  | String  | Automaatselt genereeritud | Kohandatud projekti nimi                                                                    |
 | `--vignette`          | Lipuke    | Lubatud        | Luba vinjeti korrigeerimine                                                             |
 | `--no-vignette`       | Lipuke    | -              | Keela vinjeti korrigeerimine                                                            |
-| `--reflectance`       | Lipuke    | Lubatud        | Lubada peegelduskalibreerimine                                                         |
-| `--no-reflectance`    | Lipuke    | -              | Keelata peegelduskalibreerimine                                                        |
-| `--ppk`               | Lipuke    | Keelatud       | Rakenda PPK parandusi .daq valgussensori andmetest                                      |
+| `--reflectance`       | Lipuke    | Lubatud        | Peegelduskalibreerimise lubamine                                                         |
+| `--no-reflectance`    | Lipuke    | -              | Peegelduskalibreerimise keelamine                                                        |
+| `--ppk`               | Lipuke    | Keelatud       | Rakenda PPK-korrektsioone .daq valgussensori andmetest                                      |
 | `--format`            | Valik  | TIFF (16-bitine)  | Väljundvorming: `TIFF (16-bit)`, `TIFF (32-bit, Percent)`, `PNG (8-bit)`, `JPG (8-bit)` |
-| `--min-target-size`   | Täisarv | Auto           | Kalibreerimispaneeli tuvastamise minimaalne sihtmärgi suurus pikslites                          |
-| `--target-clustering` | Täisarv | Auto           | Sihtmärgi klastrite künnis (0–100)                                                    |
+| `--min-target-size`   | Täisarv | Auto           | Kalibreerimispaneeli tuvastamise minimaalne sihtmõõt pikslites                          |
+| `--target-clustering` | Täisarv | Auto           | Sihtmärgi klastrite lävi (0–100)                                                    |
 | `--exposure-pin-1`    | String  | Puudub           | Kaamera mudeli ekspositsiooni lukustamine (pin 1)                                                 |
 | `--exposure-pin-2`    | String  | Puudub           | Kaamera mudeli ekspositsiooni lukustamine (pin 2)                                                 |
 | `--recal-interval`    | Täisarv | Auto           | Kalibreerimise intervall sekundites                                                      |
@@ -115,7 +115,7 @@ chloros-cli process "C:\Datasets\Survey_001" --vignette --reflectance
 
 ### `login` – konto autentimine
 
-Logige sisse oma Chloros+ kasutajatunnustega, et võimaldada CLI töötlemist.
+Logige sisse oma Chloros+ kasutajatunnusega, et võimaldada CLI töötlemist.
 
 **Süntaks:**
 
@@ -279,9 +279,9 @@ chloros-cli language ja
 | `ro`    | Rumeenia              | Română           |
 | `uk`    | Ukraina             | Українська       |
 | `pt-BR` | Brasiilia portugali  | Português Brasileiro |
-| `zh-HK` | kantoni keel             | 粵語             |
-| `ms`    | malai keel                 | Bahasa Melayu    |
-| `sk`    | slovaki keel                | Slovenčina       |
+| `zh-HK` | Kantoni keel             | 粵語             |
+| `ms`    | Malai keel                 | Bahasa Melayu    |
+| `sk`    | Slovaki keel                | Slovenčina       |
 | `bg`    | Bulgaaria keel             | Български        |
 | `hr`    | Horvaadi keel              | Hrvatski         |
 | `lt`    | Leedu keel            | Lietuvių         |
@@ -313,7 +313,7 @@ chloros-cli set-project-folder "C:\Projects\2025"
 
 ***
 
-### `get-project-folder` – Projekti kausta kuvamine
+### `get-project-folder` – Näita projektikausta
 
 Kuva praegune vaikimisi projektikausta asukoht.
 
@@ -387,7 +387,7 @@ Chloros+ CLI **skaleerib automaatselt** paralleelset töötlemist vastavalt teie
 | ------------- | ---------- | -------- | -------- | --------------- |
 | **Kõrgetasemeline**  | 16+ tuuma  | 32+ GB   | Kuni 16 | Maksimaalne kiirus   |
 | **Keskklassi** | 8–15 tuuma | 16–31 GB | 8–16     | Suurepärane kiirus |
-| **Madalaim**   | 4–7 tuuma  | 8–15 GB  | 4–8      | Hea kiirus      |
+| **Madala klassi**   | 4–7 tuuma  | 8–15 GB  | 4–8      | Hea kiirus      |
 
 {% vihje style=&quot;success&quot; %}
 **Automaatne optimeerimine**: CLI tuvastab automaatselt teie süsteemi spetsifikatsioonid ja konfigureerib optimaalse paralleelse töötlemise. Käsitsi konfigureerimine pole vajalik!
@@ -403,7 +403,7 @@ CLI kasutab vaikimisi ja soovitatava debayer-algoritmina **kõrge kvaliteeti (ki
 
 ### Vignette&#x27;i korrigeerimine
 
-**Mida see teeb:** Korrigeerib valguse langust pildi servades (kaamerapiltidel tavalised tumedamad nurgad).
+**Funktsioon:** Korrigeerib valguse langust pildi servades (kaamerapiltidel tavalised tumedamad nurgad).
 
 * **Vaikimisi sisse lülitatud** – enamik kasutajaid peaks selle sisse lülitatuna jätma.
 * Kasutage `--no-vignette`, et see välja lülitada.
@@ -420,7 +420,7 @@ Muudab tooresensorite väärtused kalibreerimispaneelide abil standardiseeritud 
 * Nõuab kalibreerimise sihtpaneele piltidel.
 * Kasutage `--no-reflectance`, et deaktiveerida.
 
-{% hint style=&quot;info&quot; %}
+{% vihje stiil=&quot;info&quot; %}
 **Nõuded**: Kalibreerimispaneelid peavad olema pildil õigesti eksponeeritud ja nähtavad, et peegeldusvõime konverteerimine oleks täpne.
 {% endhint %}
 
@@ -603,13 +603,13 @@ Tüüpilised töötlemisajad 100 pildi puhul (igaüks 12 MP):
 | **Paralleelrežiim** | 5–10 min  | i7/Ryzen 7, 16 GB RAM, SSD (kuni 16 töötajat) |
 | **Paralleelrežiim** | 10–15 min | i5/Ryzen 5, 8 GB RAM, HDD (kuni 8 töötajat)   |
 
-{% vihje style=&quot;info&quot; %}
+{% hint style=&quot;info&quot; %}
 **Jõudluse näpunäide**: Töötlemisaeg sõltub piltide arvust, resolutsioonist ja arvuti spetsifikatsioonidest.
 {% endhint %}
 
 ***
 
-## Veaotsing
+## Probleemide lahendamine
 
 ### CLI ei leitud
 
@@ -635,7 +635,7 @@ dir "C:\Program Files\Chloros\resources\cli\chloros-cli.exe"
 
 3. Lisage PATH-i käsitsi:
    * Avage süsteemi omadused → keskkonnamuutujad
-   * Muutke PATH-muutujat
+   * Muutke PATH-i muutujat
    * Lisage: `C:\Program Files\Chloros\resources\cli`
    * Käivitage terminal uuesti.
 
@@ -797,11 +797,11 @@ chloros-cli process "C:\Datasets\Field_A" > processing.log 2>&1
 
 ***
 
-### K: Mis juhtub, kui ma töötlemise ajal vajutan Ctrl+C?
+### K: Mis juhtub, kui vajutan töötlemise ajal Ctrl+C?
 
 **V:** CLI teeb järgmist:
 
-1. Lõpetab töötlemise korrektselt
+1. Lõpetab töötlemise sujuvalt
 2. Sulgeb tagapõhja
 3. Lõpetab koodiga 130
 

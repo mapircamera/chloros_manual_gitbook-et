@@ -1,12 +1,12 @@
-# Pildikihtid
+# Pildikihtide valik
 
 Chloros pildivaataja pildikihtide rippmenüü võimaldab teil kiiresti vahetada sama pildi erinevate versioonide vahel – alates originaalpiltidest kuni töödeldud peegeldusväljundite ja arvutatud indekspiltideni.
 
 ## Mis on pildikihtid?
 
-Chloros-is viitavad **kihid** ühe allika pildi jaoks saadaval olevatele erinevatele pildiväljunditele. Kui töötlete pilte, loob Chloros mitu versiooni:
+Chloros-is tähendavad **kihid** ühe allika pildi jaoks kättesaadavaid erinevaid pildiväljundeid. Kui töötlete pilte, loob Chloros mitu versiooni:
 
-* **Algupärased pildid** (JPG- ja RAW-failid teie kaamerast)
+* **Algupärased pildid** (kaamera JPG- ja RAW-failid)
 * **Peegelduskalibreeritud** väljundid (kui peegelduskalibreerimine oli lubatud)
 * **Sihtpildid** (kui pilt sisaldab kalibreerimise sihtmärke)
 * **Indeksipildid** (NDVI, NDRE, GNDVI jne, kui indeksid olid konfigureeritud)
@@ -15,11 +15,11 @@ Pildi vaataja paremas ülemises nurgas asuv **kihtide valiku rippmenüü** võim
 
 ***
 
-## Saadaval olevad kihtide tüübid
+## Saadaval olevad kihitüübid
 
 ### JPG
 
-* Teie kaamera originaalne JPG eelvaatepilt
+* Teie kaamera originaalne JPG-eelvaatepilt
 * Alati saadaval kõikide piltide jaoks
 * Töötlemata, nagu kaamera on pildistanud
 * Kõige kiirem laadima ja kuvama
@@ -32,19 +32,19 @@ Pildi vaataja paremas ülemises nurgas asuv **kihtide valiku rippmenüü** võim
 
 ### RAW (originaal)
 
-* Teie kaamera originaalne RAW-andurite andmed
-* Debayered, ilma järel töötlemiseta
+* Teie kaamera originaalsed RAW-andurid
+* Debayering ilma järel töötlemiseta
 * Suurem bittisügavus kui JPG-l (tavaliselt 12-bitine või 14-bitine andurite andmed)
 
 **Millal vaadata:**
 
 * Originaalse andurite andmete kvaliteedi kontrollimine
-* Anduriprobleemide või artefaktide kontrollimine
-* Töötlemiseelsete ja -järgsete tulemuste võrdlemine
+* Andurite probleemide või artefaktide kontrollimine
+* Töötlemise eel- ja järel tulemuste võrdlemine
 
 ### RAW (sihtmärk)
 
-* Ilmub ainult piltidel, mis sisaldavad kalibreerimise sihtmärke
+* Ilmub ainult piltidel, mis on identifitseeritud kalibreerimise sihtmärkidega
 * Näitab originaalset RAW-pilti koos tuvastatud sihtmärgiga
 * Kasutatakse sihtmärgi tuvastamise edukuse kontrollimiseks
 
@@ -54,18 +54,18 @@ Pildi vaataja paremas ülemises nurgas asuv **kihtide valiku rippmenüü** võim
 * Sihtmärgi pildi kvaliteedi kontrollimine
 * Kalibreerimisprobleemide lahendamine
 
-{% vihje stiil=&quot;info&quot; %}
-**Sihtmärgi kiht**: See kiht kuvatakse rippmenüüs ainult kalibreerimise sihtmärke sisaldavate piltide puhul. Tavapärastel piltidel seda valikut ei ole.
-{% lõppvihje %}
+{% hint style=&quot;info&quot; %}
+**Sihtmärgi kiht**: See kiht kuvatakse rippmenüüs ainult piltide puhul, mis sisaldavad kalibreerimise sihtmärke. Tavapärastel piltidel seda valikut ei ole.
+{% endhint %}
 
 ### RAW (peegeldus)
 
-* Kalibreeritud peegeldusega väljundpilt
-* Vignette korrigeeritud (kui see on töötlemisel aktiveeritud)
+* Kalibreeritud peegeldusväljundpilt
+* Vignette parandatud (kui see on töötlemisel lubatud)
 * Peegeldus kalibreeritud sihtmärgi andmete abil (kui see on aktiveeritud)
 * Mitme sagedusega TIFF kõigi kaamera kanalitega
-* Pikselväärtused esindavad protsentuaalset peegeldust (protsendimoodi kasutamisel)
-* Valmis töötlemiseks [Index/LUT Sandbox] abil(index-lut-sandbox.md)
+* Pikseliväärtused esindavad peegelduse protsenti (protsendimoodi kasutamisel)
+* Valmis töötlemiseks [Index/LUT Sandboxiga](index-lut-sandbox.md)
 
 **Millal vaadata:**
 
@@ -74,13 +74,13 @@ Pildi vaataja paremas ülemises nurgas asuv **kihtide valiku rippmenüü** võim
 * Pikselväärtuste kontrollimine teadusliku täpsuse seisukohast
 * Võrdlemine originaaliga, et näha kalibreerimise mõju
 
-{% vihje style=&quot;success&quot; %}
+{% hint style=&quot;success&quot; %}
 **Soovitus**: Kasutage RAW (peegeldus) kihti, kui kontrollite pikselväärtusi teaduslike mõõtmiste ja analüüside jaoks.
 {% endhint %}
 
 ### RAW (NDVI indeks)... ja sarnased
 
-* Arvutatud taimestiku indeks pilt (selles näites NDVI)
+* Arvutatud taimestiku indeksipilt (käesolevas näites NDVI)
 * Indeksi nimi muutub sõltuvalt sellest, milline indeks töötlemise ajal konfigureeriti
 * Näited: RAW (NDVI indeks), RAW (NDRE indeks), RAW (GNDVI indeks) jne.
 * Ühe sagedusriba halltooniline pilt, mis näitab indeksi arvutamise tulemusi
@@ -109,17 +109,17 @@ Pildi vaataja paremas ülemises nurgas asuv **kihtide valiku rippmenüü** võim
 
 ### Rippmenüü avamine
 
-1. Avage pilt täisekraanil (klõpsake pildivaatajas mis tahes pisipildil)
+1. Avage pilt täisekraanil (klõpsake mis tahes pisipildil pildivaatajas)
 2. Leidke vaataja paremas ülemises nurgas **kihtide rippmenüü**
 3. Rippmenüüs kuvatakse praegu valitud kiht (nt „JPG”)
 4. Klõpsake rippmenüüd, et näha kõiki saadaval olevaid kihte.
 
 ### Kihte vahetamine
 
-1. Klõpsake kihi rippmenüüd, et avada loend.
-2. Kuvatakse kõik praeguse pildi jaoks saadaval olevad kihid.
+1. Klõpsake kihi rippmenüüd, et avada nimekiri.
+2. Näidatakse kõik praeguse pildi jaoks saadaval olevad kihid.
 3. Klõpsake mis tahes kihi nime, et vahetada selle versioonile.
-4. Pilt uuendatakse kohe, et näidata valitud kihti.
+4. Pilt uueneb kohe, et näidata valitud kihti.
 
 **Kiire vahetamine:**
 
@@ -135,12 +135,12 @@ Kõik kihid ei ole iga pildi jaoks kättesaadavad:
 
 * ✅ JPG (iga pildil on JPG-eelvaade)
 
-**Tingimuslikult kättesaadavad:**
+**Tingimuslikult saadaval:**
 
 * ⚠️ RAW (originaal) – ainult juhul, kui pilt on salvestatud RAW- või RAW+JPG-režiimis
 * ⚠️ RAW (sihtmärk) – ainult juhul, kui pilt sisaldab tuvastatud kalibreerimise sihtmärke
 * ⚠️ RAW (peegeldus) – ainult pärast töötlemist peegelduse kalibreerimise abil
-* ⚠️ RAW ([indeks] indeks) – ainult pärast töötlemist konfigureeritud indeksitega
+* ⚠️ RAW (\[Index] indeks) – ainult pärast töötlemist indeksitega
 
 ***
 
@@ -153,16 +153,16 @@ Kui navigeerite teise pildile (nooleklahvide või pisipiltide klõpsamisega):
 **Kihtide eelistused säilivad:**
 
 * Kui vaatate „RAW (peegeldus)”, näitab järgmine pilt „RAW (peegeldus)” (kui see on saadaval)
-* Kui vaatate „RAW (NDVI indeks)”, kuvatakse järgmine pilt „RAW (NDVI indeks)” (kui see on saadaval)
-* Kui sama kihti ei ole, on vaikimisi JPG
+* Kui vaatate „RAW (NDVI indeks)”, näitab järgmine pilt „RAW (NDVI indeks)” (kui see on saadaval)
+* Kui sama kiht puudub, kuvatakse vaikimisi JPG
 
 **Näide töövoost:**
 
-1. Avage pilt 1, vahetage RAW-iks (NDVI Index)
-2. Vajutage →, et vaadata pilti 2.
-3. Pilt 2 kuvab automaatselt RAW (NDVI Index) kihi.
-4. Jätkake navigeerimist – kõik pildid kuvavad NDVI kihi.
-5. Väga efektiivne paljude piltide indeksitulemuste läbivaatamiseks.
+1. Avage pilt 1, vahetage RAW (NDVI Index)
+2. Vajutage →, et vaadata pilti 2
+3. Pilt 2 kuvab automaatselt RAW (NDVI Index) kihi
+4. Jätkake navigeerimist – kõik pildid kuvavad NDVI kihti.
+5. Väga efektiivne paljude piltide indeksitulemuste vaatamiseks.
 
 ***
 
@@ -170,45 +170,45 @@ Kui navigeerite teise pildile (nooleklahvide või pisipiltide klõpsamisega):
 
 ### Töövoog 1: Enne/pärast võrdlus
 
-**Eesmärk**: võrrelda originaali ja kalibreeritud pilti
+**Eesmärk**: Võrrelda originaali ja kalibreeritud pilti.
 
 1. Avage töödeldud pilt pildivaatajas.
 2. Valige rippmenüüst **RAW (originaal)**.
 3. Märkige vinjetiseerumine ja kalibreerimata väärtused.
-4. Lülituge rippmenüüst **RAW (peegeldus)**-le.
-5. Võrdle – vinjetatsioon on eemaldatud, väärtused kalibreeritud.
+4. Vahetage rippmenüüst **RAW (peegeldus)**.
+5. Võrdlege – vinjetiseerumine on eemaldatud, väärtused kalibreeritud.
 
-### Töövoog 2: Indeksi läbivaatamine
+### Töövoog 2: indeksite läbivaatamine
 
-**Eesmärk**: NDVI tulemuste kiire läbivaatamine kogu andmekogus.
+**Eesmärk**: NDVI tulemuste kiire läbivaatamine kogu andmekogus
 
-1. Ava esimene töödeldud pilt.
-2. Vali rippmenüüst **RAW (NDVI indeks)**.
-3. Kasutage → nooleklahvi, et liikuda järgmise pildi juurde
-4. NDVI kiht jääb automaatselt alles
-5. Jätkake kõigi piltide läbivaatamist, kontrollides NDVI mustreid
-6. Lülitage võrdlemiseks üle **RAW (NDRE indeks)**
+1. Avage esimene töödeldud pilt.
+2. Valige rippmenüüst **RAW (NDVI indeks)**.
+3. Kasutage → nooleklahvi, et liikuda järgmise pildi juurde.
+4. NDVI kiht jääb automaatselt alles.
+5. Jätkake kõigi piltide läbivaatamist, kontrollides NDVI mustreid.
+6. Vahetage **RAW (NDRE indeks)**, et võrrelda
 
-### Töövoog 3: sihtmärgi kontrollimine
+### Töövoog 3: Sihtmärgi kontrollimine
 
-**Eesmärk**: kontrollida, et kõik sihtmärgi pildid on õigesti tuvastatud
+**Eesmärk**: Kontrollida, et kõik sihtmärgi pildid on õigesti tuvastatud
 
 1. Navigeerige sihtmärgi pildile
 2. Valige rippmenüüst **RAW (sihtmärk)**
 3. Kontrollige, et kalibreerimise sihtmärgid on selgelt nähtavad ja tuvastatud
-4. Navigeerige järgmisele sihtmärgi pildile
+4. Navigeerige järgmise sihtmärgi pildini
 5. Korrake kontrollimist kõigi sihtmärkide puhul
 
 ### Töövoog 4: Pikselväärtuste kontrollimine
 
-**Eesmärk**: kontrollida peegeldusväärtuste teaduslikku täpsust
+**Eesmärk**: Kontrollida peegeldusväärtuste teaduslikku täpsust
 
-1. Avage töödeldud pilt.
-2. Valige kiht **RAW (peegeldus)**.
-3. Lülitage sisse režiim **Pikselprotsent** (nupp tööriistariba ülemises paremas nurgas).
+1. Avage töödeldud pilt
+2. Valige **RAW (peegeldus)** kiht
+3. Lülitage sisse **Pikselprotsent** režiim (nupp tööriistariba ülemises paremas nurgas)
 4. Liiguta kursor taimestikualade kohale.
-5. Veendu, et pikseliväärtused on oodatud vahemikus (30–70% NIR puhul, 5–15% Red puhul).
-6. Kontrolli, et mulla- ja veealade väärtused on sobivad.
+5. Kontrolli, et pikseliväärtused oleksid oodatud vahemikes (30–70% NIR puhul, 5–15% Red puhul).
+6. Kontrolli, et mulla- ja veealade väärtused oleksid sobivad.
 
 ***
 
@@ -251,11 +251,11 @@ Erinevad kihid näitavad erinevaid pikseliväärtuste vahemikke:
 
 ### Tõhus kihtide vahetamine
 
-* **Klaviatuuri kiirklahvide tundmine**: kuigi kihtide jaoks pole klaviatuuri kiirklahve, töötavad navigeerimisnooled (←/→) kõikidel kihtidel
-* **Järjepidevad töövood**: vali üks kiht (nt NDVI) ja vaata läbi kogu andmekogum, enne kui vahetad teise kihi vastu
-* **Kiired võrdlused**: vaheta originaali ja peegelduse vahel, et kontrollida töötlemise kvaliteeti
+* **Klaviatuuri kiirklahvide tundmine**: kuigi kihtide jaoks ei ole klaviatuuri kiirklahve, töötavad navigeerimisnooled (←/→) kõikidel kihtidel
+* **Järjepidevad töövood**: valige üks kiht (nt NDVI) ja vaadake kogu andmekogum läbi enne teisele kihile üleminekut
+* **Kiired võrdlused**: vahetage originaali ja peegelduse vahel, et kontrollida töötlemise kvaliteeti
 
-### Jõudlusega seotud kaalutlused
+### Jõudluse kaalutlused
 
 * **JPG laadib kõige kiiremini**: kasutage kiireks navigeerimiseks paljude piltide vahel.
 * **RAW-kihid laadivad aeglasemalt**: kõrgem resolutsioon ja bittisügavus.
@@ -264,55 +264,55 @@ Erinevad kihid näitavad erinevaid pikseliväärtuste vahemikke:
 
 ### Kvaliteedi kontroll
 
-* **Kontrollige alati RAW (originaal)**: kontrollige allika andmete kvaliteeti enne töödeldud väljundite usaldamist
-* **Kihtide võrdlemine**: kasutage kihtide vahetamist, et kontrollida töötlemise õigsust
-* **Indeksi vahemike kontrollimine**: kasutage indeksikihtidega pikseliprotsendi režiimi, et kontrollida väärtuste mõistlikkust
+* **Kontrollige alati RAW-i (originaali)**: Kontrollige allika andmete kvaliteeti enne töödeldud väljundite usaldamist
+* **Võrdle kihte**: kasutage kihi vahetamist, et kontrollida töötlemise õigsust
+* **Kontrollige indeksivahemikke**: kasutage indeksikihtidega pikseliprotsendi režiimi, et kontrollida väärtuste mõistlikkust
 
 ***
 
-## Probleemide lahendamine
+## Veaotsing
 
 ### Kiht pole saadaval
 
-**Probleem**: Oodatud kiht ei ilmu rippmenüüs
+**Probleem**: oodatud kiht ei ilmu rippmenüüs
 
 **Võimalikud põhjused:**
 
 * Pilti ei ole töödeldud (saadaval on ainult JPG ja RAW (originaal))
-* Peegelduskalibreerimine oli töötlemise ajal keelatud
-* Projekti seadetest ei ole konfigureeritud konkreetset indeksit
+* Töötlemise ajal oli peegelduskalibreerimine keelatud
+* Projektiseadetes ei olnud konfigureeritud konkreetne indeks
 * Pilt on ainult sihtmärgi pilt (sihtmärkide jaoks ei ole indekseid loodud)
 
 **Lahendused:**
 
-1. Kontrollige, kas pilt on töödeldud (kontrollige töödeldud faile väljundkausta).
-2. Kontrollige projekti seadeid, et veenduda, et indeksid on konfigureeritud.
-3. Töötlege uuesti, aktiveerides soovitud indeksid.
+1. Kontrollige, kas pilt on töödeldud (kontrollige töödeldud faile väljundkausta)
+2. Kontrollige projektiseadeteid, et veenduda, et indeksid on konfigureeritud
+3. Töötle uuesti, aktiveerides soovitud indeksid.
 
 ### Näidatakse vale kiht
 
-**Probleem**: pilt avatakse ootamatus kihis.
+**Probleem**: Pilt avatakse ootamatus kihis.
 
-**Põhjus**: eelmise pildi kihi eelistus on üle kantud, kuid see kiht ei ole praegusel pildil olemas.
+**Põhjus**: Eelmise pildi kihi eelistus on üle kantud, kuid see kiht ei ole praegusel pildil olemas.
 
-**Lahendus**: Chloros lülitub automaatselt tagasi JPG-le, kui eelistatud kiht pole saadaval – see on normaalne käitumine.
+**Lahendus**: Chloros lülitub automaatselt tagasi JPG-vormingule, kui eelistatud kiht ei ole saadaval – see on normaalne käitumine.
 
-### Kalibreerimise sihtmärke pole näha
+### Kalibreerimise sihtmärke ei näe
 
 **Probleem**: RAW (sihtmärgi) kiht ei näita sihtmärgi tuvastamist.
 
 **Võimalikud põhjused:**
 
-* Sihtmärke ei tuvastatud töötlemise ajal
-* Pilt ei sisalda tegelikult sihtmärke
-* Sihtmärgi tuvastamise seaded on liiga ranged
+* Sihtmärke ei tuvastatud töötlemise ajal.
+* Pilt ei sisalda tegelikult sihtmärke.
+* Sihtmärgi tuvastamise seaded on liiga ranged.
 
 **Lahendused:**
 
-1. Kontrollige veaparanduslogist, kas seal on sõnum „Sihtmärk leitud”
-2. Veenduge, et pilt sisaldab tegelikult nähtavaid kalibreerimise sihtmärke
-3. Reguleerige sihtmärgi tuvastamise seadeid projekti seadetest
-4. Vaadake [Sihtmärgi piltide valimine](../processing-images-gui/choosing-target-images.md)
+1. Kontrollige veaotsingu logist, kas seal on sõnum „Sihtmärk leitud”.
+2. Kontrollige, kas pilt sisaldab tegelikult nähtavaid kalibreerimise sihtmärke.
+3. Reguleerige sihtmärgi tuvastamise seadeid projekti seadetest.
+4. Vaadake [Sihtmärgi piltide valimine](../processing-images-gui/choosing-target-images.md).
 
 ***
 
@@ -322,7 +322,7 @@ Erinevad kihid näitavad erinevaid pikseliväärtuste vahemikke:
 
 Mis tahes kihi vaatamisel saate kasutada:
 
-* **Suumikontrolle**: suurendage, et vaadata detaile
+* **Suumikontrolle**: suurendage, et vaadata detaile.
 * **Panoraam**: klõpsake ja lohistage, et liikuda suumitud pildil
 * **Pikselväärtuse kontrollimine**: vaadake väärtusi kursori asukohas
 * **Navigatsiooninooled**: liikuge piltide vahel, säilitades kiht
@@ -346,7 +346,7 @@ Vaadake [Indeks/LUT-liivakast](index-lut-sandbox.md) täpsema teabe saamiseks.
 
 Nüüd, kui saate aru pildikihtidest:
 
-* [**Pildi avamine täisekraanil**](opening-an-image-full-screen.md) – Image Vieweri täielik juhend
+* [**Pildi avamine täisekraanil**](opening-an-image-full-screen.md) – täielik Image Viewer juhend
 * [**Index/LUT Sandbox**](index-lut-sandbox.md) – interaktiivne indeksite visualiseerimine
 * [**Multispektraalsed indeksivalemid**](../project-settings/multispectral-index-formulas.md) – kättesaadavad indeksid
 * [**Töötlemise lõpetamine**](../processing-images-gui/finishing-the-processing.md) – töödeldud väljundite mõistmine

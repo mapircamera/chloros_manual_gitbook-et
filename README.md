@@ -37,7 +37,7 @@ Kuigi Chloros on enamiku ülesannete jaoks tasuta, võite avastada, et soovite e
 * **Mitmeprotsessiline töötlemine**: kiirendab oluliselt suuremate projektide pilditöötlust, töötlemisprotsessi kaudu pilte samaaegselt töötledes.
 * **GPU (CUDA) kiirendus**: kasutage tänapäeva suuremaid GPU mäluvalikuid, et veelgi kiirendada pilditöötlusprotsessi. Parimate tulemuste saavutamiseks soovitame 4 GB või rohkem VRAM-i.
 * **Chloros+** [**CLI**](CLI.md) **Juurdepääs**: käivitage Chloros+ käsurealt, et automatiseerida ja integreerida oma tarkvarasse.
-* **Chloros+** [**API**](api-python-sdk.md) **Juurdepääs:** käivitage Chloros+ programmist Python, et saavutada programmiline kontroll, mis võimaldab sujuvat integreerimist teie uurimisprotsesside, andmete analüüsi töövoogude ja kohandatud rakendustega.
+* **Chloros+** [**API**](api-python-sdk.md) **Juurdepääs:** käivitage Chloros+ programmilise juhtimise jaoks Python-ist, võimaldades sujuva integreerimise teie uurimisprotsesside, andmete analüüsi töövoogude ja kohandatud rakendustega.
 * **Mitme seadme kasutamine**: iga Chloros+ litsents võimaldab registreerida 2+ seadet. Kasutage oma MAPIR pilvekontot registreeritud seadmete haldamiseks. Lisage tugi rohkematele seadmetele, uuendades oma Chloros+ litsentsi.
 * **Kohandatud multispektraalsed indeksivalemid:** sisestage kohandatud multispektraalsed indeksid Chloros rasterarvutitesse, nii töötlemiseks kui ka piltide vaatamiseks.
 

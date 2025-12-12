@@ -30,7 +30,7 @@ Liivakast pakub:
 * Aeganõudev
 * Parim, kui seaded on lõplikud
 
-{% vihje style=&quot;success&quot; %}
+{% vihje stiil=&quot;edu&quot; %}
 **Parim töövoog**: kasutage Sandboxi eksperimenteerimiseks ja optimaalse indeksi ja LUT-seadete leidmiseks, seejärel rakendage neid seadeid projekti töötlemise ajal kogu andmekogumile.
 {% endhint %}
 
@@ -47,7 +47,7 @@ Sandbox võimaldab teil:
 * **Rakendada uusi indekseid ja värvigradiente (LUT-e)** andmete visualiseerimiseks.
 * **Kohandada visualiseerimise seadeid** interaktiivselt.
 * **Vaadata** juba arvutatud indekspilte.
-* **Kontrollida** pikselväärtusi kõikidel suumitasemetel.
+* **Kontrollida** pikseliväärtusi kõikidel suumitasanditel.
 
 ### Sandboxi avamine
 
@@ -60,7 +60,7 @@ Indeksi/LUT-i sandboxile pääseb **pildivaataja** <img src="../.gitbook/assets/
 
 Indeksi kasutamiseks pildivaatajas <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> sandboxis:
 
-1. **Avage pilt** peamisest pildivõrgust, klõpsates sellel
+1. **Avage pilt** peamise pildirestist, klõpsates sellel
 2. Seejärel avatakse **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> vahekaart
 3. Klõpsake **kihtide rippmenüüd** (vaataja ülemises paremas nurgas)
 4. Valige rippmenüüst kiht:
@@ -73,7 +73,7 @@ Kui pilt on täisekraanil ja **Pildivaataja** <img src="../.gitbook/assets/icon_
 1. Märkige riba ülaosas asuv indeksikast
 2. Valige vasakpoolsest rippmenüüst oma kaamera filter
 3. Valige parempoolsest rippmenüüst soovitud indeksivalem
-4. Lohistage filtri kanali värviringid allpool olevasse indeksivalemisse
+4. Lohistage filtri kanali värviringid allpool oleva indeksivalemi asukohtadesse
 5. Kui valem on kehtiv, uuendatakse pilt ja kuvatakse indeksiväärtused
 6. Liigutage hiirekursorit, et näha väärtusi kursori asukohas
 7. Suurendage pilti, et näha üksikuid piksleid ja nendega seotud väärtusi.
@@ -127,24 +127,24 @@ Kui teil on indekspilt, mis näitab
 2. Valige värvi gradient
 3. Reguleerige lõikamise min/max lõpp-punkte
 4. Reguleerige lõikamisrežiimi
-5. Märkige **Pildivaataja** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> kõrvalribal, et rakendada LUT-i.
+5. Märkige indeksikast **Pildivaataja** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> kõrvalribal, et rakendada LUT-i.
 
-### Värvi gradiendi valimine
+### Värvigraadiendi valimine
 
-**Gradiendi valimine:**
+**Graadiendi valimine:**
 
-1. Leidke LUT-paneelis **värviline gradiendi riba**.
-2. Viige hiir selle kohale, et vaadata saadaval olevaid gradiendi eelseadistusi.
-3. Valige soovitud gradient.
-4. Kui indeksikast on märgitud, **uuendatakse pilt kohe** uute värvidega.
+1. Leidke LUT-paneelis **värviline gradiendi riba**
+2. Viige hiir selle kohale, et vaadata saadaval olevaid gradiendi eelseadistusi
+3. Valige soovitud gradiendi
+4. Pilt **uuendatakse kohe** uute värvidega, kui indeksikast on märgitud
 
 {% vihje style=&quot;success&quot; %}
-**Parim tava**: Taimestiku indeksite puhul, nagu NDVI, on Red-Yellow-Green gradient kõige intuitiivsem, kuna see vastab looduslikele värviassotsiatsioonidele (roheline = terve, kollane = mõõdukas, punane = stressis).
+**Parim tava**: taimestiku indeksite puhul, nagu NDVI, on Red-Yellow-Green gradient kõige intuitiivsem, kuna see vastab looduslikele värviassotsiatsioonidele (roheline = terve, kollane = mõõdukas, punane = stressis).
 {% endhint %}
 
 ### Värviklasside kohandamine
 
-**Klasside kontroll** määrab, kui palju eraldiseisvaid värvitoone teie gradiendis ilmub:
+**Klasside kontroll** määrab, kui palju eraldiseisvaid värvitoone teie gradiendil ilmub:
 
 **Klasside arvu valikud:**
 
@@ -155,28 +155,28 @@ Kui teil on indekspilt, mis näitab
 
 **Kuidas reguleerida:**
 
-1. LUT-paneelis otsige **värvivalikuväljad gradientribast allpool**.
+1. LUT-paneelis otsige **värvivalikud gradientribast allpool**.
 2. Reguleerige klasside arvu, lisades neid + nupuga.
-3. Eemaldage klasside arv, klõpsates värvivalikuväljal topeltklõpsuga.
+3. Eemaldage klasside arv, klõpsates värvivalikul kahekordselt.
 4. Gradient uueneb pildil **reaalajas**.
 
 **Mõju visualiseerimisele:**
 
 * **Vähem klasse** (3–5): loob eristatavad tsoonid, lihtsustab klassifitseerimist, lihtsustab kategooriate eristamist.
-* **Keskmine arv klasse** (6–10): tasakaalustatud lähenemine, sobib enamikule rakendustele.
+* **Keskmised klassid** (6–10): tasakaalustatud lähenemine, sobib enamikule rakendustele.
 * **Rohkem klasse** (15–20): sujuvad üleminekud, detailne variatsioon, fotorealistlik välimus.
 
 **Millal kasutada:**
 
-* **Vähe klasse (3–5)**: esitluse slaidid, klassifitseerimiskaardid, lihtsad aruanded
+* **Vähesed klassid (3–5)**: esitluse slaidid, klassifitseerimiskaardid, lihtsad aruanded.
 * **Keskmised klassid (6–10)**: üldine analüüs, tasakaalustatud detailid, standardaruanded
-* **Palju klasse (15–20)**: teaduslik analüüs, detailne kontroll, publikatsioonikvaliteediga väljundid
+* **Palju klasse (15–20)**: teaduslik analüüs, üksikasjalik kontroll, avaldamiskvaliteediga väljundid
 
 ### Väärtuste vahemike täpsustamine
 
-**Väärtuste vahemiku kontrollid** määravad, millised indeksväärtused vastavad teie gradiendi värvidele:
+**Väärtuste vahemiku juhtimisseadmed** määravad, millised indeksväärtused vastavad teie gradiendi värvidele:
 
-**Vahemiku kontrollid LUT-paneelis:**
+**Vahemiku juhtimisseadmed LUT-paneelis:**
 
 * **Minimaalne väärtus**: värviskaala alumine piir
 * **Maksimaalne väärtus**: värviskaala ülemine piir
@@ -186,12 +186,12 @@ Kui teil on indekspilt, mis näitab
 
 **Väärtuste vahemike reguleerimiseks:**
 
-1. Leidke LUT-paneelis sisestusväljad **Minimaalne väärtus** ja **Maksimaalne väärtus**.
-2. Klõpsake väljal **Minimaalne väärtus**.
-3. Sisestage soovitud minimaalne väärtus (nt `0.2`).
-4. Vajutage **Enter** või klõpsake väljaspool välja.
-5. Korrake sama **Maksimaalne väärtus** väljaga (nt `0.9`).
-6. Visualiseerimine **uuendatakse kohe**.
+1. Leidke LUT-paneelis sisestusväljad **Minimaalne väärtus** ja **Maksimaalne väärtus**
+2. Klõpsake väljal **Minimaalne väärtus**
+3. Sisestage soovitud minimaalne väärtus (nt `0.2`)
+4. Vajutage **Enter** või klõpsake väljaspool välja
+5. Korrake sama **Maksimaalne väärtus** väljal (nt `0.9`)
+6. Visualiseerimine **uuendatakse kohe**
 
 {% vihje style=&quot;info&quot; %}
 **Automaatne skaalamine**: kui rakendate LUT-i esimest korda, seab Chloros automaatselt miinimum-/maksimumväärtuse pildi tegeliku andmevahemiku järgi. Seejärel saate seda vahemikku kitsendada, et keskenduda konkreetsetele huvipakkuvatele väärtuste vahemikele.
@@ -201,26 +201,26 @@ Kui teil on indekspilt, mis näitab
 
 * **Täisvahemik**: `-1.0` kuni `1.0` (näita kõiki võimalikke väärtusi)
 * **Taimestikule keskendunud**: `0.2` kuni `0.9` (välja arvatud paljas pinnas ja vesi)
-* **Ainult terve taimestik**: `0.5` kuni `0.9` (esile tõstetakse ainult jõulised taimed)
-* **Stressi tuvastamine**: `0.2` kuni `0.5` (rõhutatakse probleemsed alad)
-* **Kohandatud vahemik**: kohandage vastavalt oma täheldatud pikselväärtustele
+* **Ainult terve taimestik**: `0.5` kuni `0.9` (esile tõsta ainult jõulised taimed)
+* **Stressi tuvastamine**: `0.2` kuni `0.5` (rõhutada probleemsed alad)
+* **Kohandatud vahemik**: kohandada vastavalt oma täheldatud pikselväärtustele
 
 **Miks vahemikke kohandada?**
 
-* **Suurendage kontrasti** oma huvipakkuvas piirkonnas
-* **Jätke välja ebaolulised väärtused** (nt veekogud, paljas pinnas)
-* **Ühtlustage visualiseerimine** mitme pildi või kuupäeva puhul
-* **Rõhutage väikeseid erinevusi** kitsas väärtuste vahemikus
+* **Suurendada kontrasti** oma huvipakkuvas piirkonnas
+* **Eemaldage ebaolulised väärtused** (nt veekogud, paljas pinnas)
+* **Standardiseerige visualiseerimine** mitme pildi või kuupäeva puhul
+* **Rõhutage väikseid erinevusi** kitsas väärtuste vahemikus
 
-### Vahemikust väljuvate väärtuste kärpimine
+### Vahemikust väljajäävate väärtuste kärpimine
 
 Kui pikseliväärtused jäävad väljapoole määratud min/max vahemikku, saate **kärpimisrežiimide** abil kontrollida, kuidas need kuvatakse.
 
-#### **Saadaval olevad kärpimisrežiimi valikud:**
+#### **Saadaval olevad lõikamisrežiimi valikud:**
 
 #### 1. Minimaalne ja maksimaalne
 
-* Pikselid **alla minimaalse väärtuse** → kuvatakse gradientide **esimese värviga** (nt punane)
+* Pikslid **alla minimaalse väärtuse** → kuvatakse gradientide **esimese värviga** (nt punane)
 * Pikslid **üle maksimumi** → kuvatakse gradientide **viimase värviga** (nt roheline)
 * **Kasutusjuhtum**: rõhutage äärmuslikke väärtusi, näidake kogu andmevahemikku küllastunud värvidega piiridel
 * **Näide**: NDVI väärtused alla 0,2 kuvatakse punasena, väärtused üle 0,9 kuvatakse rohelisena
@@ -228,25 +228,25 @@ Kui pikseliväärtused jäävad väljapoole määratud min/max vahemikku, saate 
 #### 2. Läbipaistev taust
 
 * **Vahemikust väljaspool** olevad pikslid muutuvad **täielikult läbipaistvaks**
-* Ainult **vahemikus** olevad pikslid näitavad värvi gradienti
+* Ainult **vahemikus** olevad pikslid näitavad värvi gradient
 * **Kasutusjuhtum**: GIS-kiht, eraldades konkreetsed väärtuste vahemikud, esile tõstes ainult huvipakkuvad alad
 * **Näide**: Näita ainult NDVI 0,4–0,7 värviga, kõik muu läbipaistev
 
 {% hint style=&quot;warning&quot; %}
-**Läbipaistvuse piirang**: Läbipaistvad pikslid kuvatakse vaatajas taustavärvina. Töötlemise käigus ekspordimisel säilib läbipaistvus PNG formaadis, kuid mitte JPG-formaadis.
+**Läbipaistvuse piirang**: Läbipaistvad pikslid kuvatakse vaatajas taustavärvina. Kui eksporditakse töötlemise käigus, säilitatakse läbipaistvus PNG formaadis, kuid mitte JPG-s.
 {% endhint %}
 
 #### 3. Indeksi taust
 
 * **Vahemikust väljaspool** olevad pikslid kuvatakse **halltoonides** (näidates toorindeksi väärtusi)
-* **Vahemikus** olevad pikslid kuvatakse **värvi gradiendina**
+* **Vahemikus** olevad pikslid kuvatakse **värvigraadiendina**
 * **Kasutusjuhtum**: õrn esiletõstmine, konteksti säilitamine ja huvipakkuvate alade esiletõstmine
-* **Näide**: värviga esiletõstetud stressis taimestik (NDVI 0,3–0,5) ja terved alad halli värviga
+* **Näide**: värviga esiletõstetud stressis taimestik (NDVI 0,3–0,5) ja terved alad hallina
 
-#### 4. Algne taust
+#### 4. Originaalne taust
 
-* **Vahemikust väljaspool** olevad pikslid kuvatakse **algse multispektraalse pildina**
-* **Vahemikus olevad** pikslid näitavad **värvi gradienti**
+* **Vahemikust väljaspool** olevad pikslid kuvavad **originaalset multispektraalset pilti**
+* **Vahemikus** olevad pikslid kuvavad **värvi gradienti**
 * **Kasutusjuhtum**: kõige intuitiivsem – ühendab loomuliku pildi konteksti analüütilise värvi ülekattumisega
 * **Näide**: vaadake tegelikku põllu/saagi välimust värvikoodiga stressipiirkondade ülekattumisega
 
@@ -255,42 +255,42 @@ Kui pikseliväärtused jäävad väljapoole määratud min/max vahemikku, saate 
 | Lõikamisrežiim              | Sobib kõige paremini                                   | Visualiseerimisstiil          |
 | -------------------------- | ------------------------------------------ | ---------------------------- |
 | **Minimaalne ja maksimaalne**    | Täielik andmete kuvamine, teaduslik analüüs     | Kõik pikslid värvitud           |
-| **Läbipaistev taust** | GIS-kihid, konkreetsete vahemike eraldamine    | Värv vahemikus, tühjad väljaspool |
-| **Indeksi taust**       | Õrn rõhutamine, andmete konteksti säilitamine  | Värv vahemikus, hall väljaspool  |
+| **Läbipaistev taust** | GIS-katted, konkreetsete vahemike eraldamine    | Värv vahemikus, tühjad väljaspool |
+| **Indeksi taust**       | Peen rõhutamine, andmete konteksti säilitamine  | Värv vahemikus, hall väljaspool  |
 | **Algne taust**    | Aruanded, esitlused, intuitiivne analüüs | Värv vahemikus, foto väljaspool |
 
 ### Kohandatud LUT-värvide loomine
 
-Visualiseerimise täieliku kontrolli saavutamiseks saate luua **kohandatud värviüleminekuid**, muutes üksikuid värvipunkte.
+Visualiseerimise täieliku kontrolli saavutamiseks saate luua **kohandatud värviliuged**, muutes üksikuid värvipunkte.
 
-**Kohandatud gradiendi loomiseks:**
+**Kohandatud liugude loomiseks:**
 
-1. Leidke LUT-paneelis **gradiendi eelvaate riba**.
-2. Otsige gradiendi all **värviproovide ruudud**.
-3. **Klõpsake värvipunkti**, et see valida.
-4. Avaneb **värvivalija**.
+1. Leidke LUT-paneelis **liugude eelvaate riba**
+2. Otsige **värviproovide ruudud** liugude all
+3. **Klõpsake värvipunkti**, et see valida
+4. Avaneb **värvivalija**
 5. Valige uus värv, kasutades:
    * **Värviratast**: visuaalne värvivalik
    * **RGB/HSV liugureid**: täpne värvihaldus
-   * **Hex-koodi sisestamist**: täpne värvispetsifikatsioon (nt `#FF0000` punase jaoks)
+   * **Hex-koodi sisestamine**: täpne värvispetsifikatsioon (nt `#FF0000` punase jaoks)
 6. Klõpsake värvivalijalt ära, **et rakendada uus värv**
 7. Gradient **uuendatakse kohe** pildil
 
-**Värvipeatuste lisamine või eemaldamine:**
+**Värvipunktide lisamine või eemaldamine:**
 
 * **Peatuse lisamine**: klõpsake ikoonil +, et lisada uus värviproov lõppu
-* **Peatuse eemaldamine**: klõpsake värviruudul topeltklõpsuga, et eemaldada värviproov
+* **Peatuse eemaldamine**: klõpsake värviruudul topelt, et värviproov eemaldada
 
 **Kohandamisstrateegiad:**
 
-* **Kalle pööramine**: pöörake värvide järjekord, et muuta tähendus vastupidiseks (nt roheline = madal, punane = kõrge)
+* **Gradienti pööramine**: pöörake värvide järjekord, et tähendus muutuks vastupidiseks (nt roheline = madal, punane = kõrge)
 * **Brändi värvid**: sobitage oma organisatsiooni värvipalett aruannetega
 * **Värvipimedatele sobiv**: kasutage oranži-siniseid või lilla-kollaseid kombinatsioone
 * **Trükkimise optimeerimine**: valige värvid, mis sobivad nii värvilisele kui ka halltoonilisele trükkimisele
 * **Mitme lävega**: kasutage klassifitseerimiseks erinevaid värve kindlate väärtuste lävedel
 
-{% vihje style=&quot;info&quot; %}
-**Kohandatud gradientide salvestamine**: kohandatud gradientide saab salvestada ja uuesti kasutada. Klõpsake LUT-paneelis salvestamise ikooni, et säilitada kohandatud värviskeemid tulevikus kasutamiseks.
+{% vihje stiil=&quot;info&quot; %}
+**Kohandatud gradiendi salvestamine**: Kohandatud gradiendi saab salvestada ja uuesti kasutada. Klõpsake LUT-paneelis salvestamise ikooni, et salvestada oma kohandatud värviskeemid tulevikus kasutamiseks.
 {% endhint %}
 
 ***
@@ -302,13 +302,13 @@ Visualiseerimise täieliku kontrolli saavutamiseks saate luua **kohandatud värv
 Kõik LUT-i kohandused liivakastis uuendavad pilti **koheselt ja interaktiivselt**:
 
 * **Vaheta kiht** → Pilt muutub kohe
-* **Vali gradient** → Värvid uuendatakse kohe
-* **Kohanda väärtuste vahemikku** → Kontrast muutub reaalajas
-* **Muuda klasse** → Gradienti sujuvus uuendatakse kohe
-* **Muuda lõikamist** → Taust kuvatakse kohe
-* **Muuda värve** → Kohandatud gradient rakendub kohe
+* **Vali gradient** → Värvid uuenevad kohe
+* **Korrigeerige väärtuste vahemikku** → Kontrast muutub reaalajas
+* **Muutke klasse** → Gradientide sujuvus uueneb kohe
+* **Muutke lõikamist** → Taust kuvatakse kohe
+* **Muutke värve** → Kohandatud gradient rakendub kohe
 
-**Ei ole vaja nuppu „Rakenda”** – kõik muudatused on reaalajas ja interaktiivsed!
+**„Rakenda” nuppu pole vaja** – kõik muudatused on reaalajas ja interaktiivsed!
 
 {% vihje stiil=&quot;edu&quot; %}
 **Reaalajas tagasiside**: kohene visuaalne tagasiside võimaldab teil kiiresti katsetada erinevaid seadeid, kuni leiate oma analüüsi vajadustele optimaalse visualiseerimise.
@@ -319,11 +319,11 @@ Kõik LUT-i kohandused liivakastis uuendavad pilti **koheselt ja interaktiivselt
 **Tüüpiline LUT optimeerimise töövoog:**
 
 1. **Valige indeksikiht** (nt RAW (peegeldus))
-2. **Rakenda indeks** – vali kaamera filter ja indeksivalem, lohista värvilised ringid indeksivalemis sobivasse asukohta
-3. **Rakenda LUT-gradient** – alusta eelseadistusega Red-Yellow-Green
+2. **Rakendage indeks** – valige kaamerafilter ja indeksvalem, lohistage värvilised ringid indeksvalemis sobivasse asukohta
+3. **Rakendage LUT-gradient** – alustage eelseadistusega Red-Yellow-Green
 4. **Kontrollige pikseliväärtusi** – liigutage kursorit, märkige väärtuste vahemikud
-5. **Reguleerige min/max** – kitsendage, et keskenduda taimestikule (nt 0,2 kuni 0,9)
-6. **Valige lõikamine** – proovige „Original Background” konteksti jaoks
+5. **Min/max reguleerimine** – kitsendage, et keskenduda taimestikule (nt 0,2 kuni 0,9)
+6. **Klippimise valimine** – proovige konteksti jaoks „Original Background”
 7. **Värvide täpsustamine** – kohandage gradienti vajaduse korral konkreetse rõhuasetuse jaoks
 8. **Seadete lõplik kinnitamine** – dokumenteerige seadistused ja kopeerige need ekspordi töötlemiseks projekti seadistustesse
 
@@ -334,9 +334,9 @@ Tegelikute pikselväärtuste mõistmine on oluline tõhusate LUT-vahemike seadis
 **Kuidas väärtusi kontrollida:**
 
 1. Pikselväärtused kuvatakse, kui pildil on märgitud kas indeks või nii indeks kui ka LUT **ruudud**.
-2. **Liigutage kursorit** pildi erinevate alade kohale
-3. **Vaadake pikselväärtusi**, mis kuvatakse legendis, kui kursor on nende kohal
-4. Suurendage pilti, et näha üksikuid piksleid, mis on esile tõstetud ujuva väärtusega
+2. **Liiguta kursorit** pildi erinevate alade kohale
+3. **Vaata pikselväärtusi**, mis kuvatakse legendis, kui kursoriga üle libised
+4. Suurenda, et näha üksikuid piksleid, mis on esile tõstetud ujuva väärtusega
 5. **Tee märkmeid** erinevate omaduste väärtuste vahemike kohta:
    * **Terve taimestik**: nt NDVI 0,55–0,85
    * **Stressis taimestik**: nt NDVI 0,30–0,50
@@ -350,30 +350,30 @@ Pärast pikselväärtuste kontrollimist kohandage vastavalt oma LUT min/max:
 **Näide:**
 
 * **Vaatlus**: Mulla väärtused = 0,05–0,25, stressis = 0,25–0,50, terved = 0,50–0,85
-* **Eesmärk**: visualiseerida ainult taimede tervis (välja arvatud pinnas)
+* **Eesmärk**: visualiseerida ainult taimede tervis (välja arvatud muld)
 * **LUT-seaded**: Min = `0.25`, Max = `0.85`
-* **Kärpimine**: „Algne taust”, et näha pinnast loomulikus värvis
-* **Tulemus**: värvi gradient kehtib ainult taimestiku kohta, muld kuvatakse originaalpildina
+* **Kärpimine**: „Algne taust”, et näha mulda loomulikus värvis
+* **Tulemus**: Värvihaldus kehtib ainult taimestiku kohta, muld kuvatakse algse pildina
 
-{% hint style=&quot;info&quot; %}
-**Dünaamiline ulatus**: erinevatel põllukultuuridel, aastaaegadel ja kasvufaasidel on erinevad väärtuste vahemikud. Enne LUT-vahemike seadistamist kontrollige alati oma konkreetses andmekogus pikseliväärtusi.
+{% vihje stiil=&quot;info&quot; %}
+**Dünaamiline ulatus**: erinevatel põllukultuuridel, aastaaegadel ja kasvufaasidel on erinevad väärtuste vahemikud. Enne LUT-vahemike seadistamist kontrollige alati oma konkreetse andmekogumi pikselväärtusi.
 {% endhint %}
 
 ***
 
 ## Kohandatud indeksid (Chloros+)
 
-### Kohandatud indeksivalemite loomine
+### Kohandatud indeksite valemite loomine
 
 {% hint style=&quot;info&quot; %}
-**Kus luua**: Kohandatud indeksid saab konfigureerida **projekti seadetest** enne töötlemist, samuti pildivaataja sandboxi külgribal.
+**Kus luua**: Kohandatud indeksid saab konfigureerida **projekti seadetest** enne töötlemist, samuti pildivaataja liivakasti külgribal.
 {% endhint %}
 
 **Kohandatud indeksi loomiseks:**
 
-1. **Ava projekti seaded** (enne töötlemist) või pildivaataja liivakasti külgriba.
-2. Mine **indeksi valemi rippmenüüsse**.
-3. Otsi **„Kohandatud”** valik (pead olema sisse logitud Chloros+ litsentsiga).
+1. **Ava projekti seaded** (enne töötlemist) või pildivaataja liivakasti külgriba
+2. Mine **indeksi valemi rippmenüüsse**
+3. Otsi **„Kohandatud”** valik (pead olema sisse logitud Chloros+ litsentsiga)
 4. **Määrake valem**, kasutades ribamuutujaid:
    * Ribade nimed: `NIR`, `Red`, `Green`, `Blue`, `RedEdge` jne.
    * Operaatorid: `+`, `-`, `*`, `/`, `^` (eksponent)
@@ -399,7 +399,7 @@ Exponential index:
 ```
 
 {% hint style=&quot;warning&quot; %}
-**Valemi valideerimine**: Veenduge, et valemis kasutatakse teie kaameras saadaval olevaid sagedusribasid. Näiteks RedEdge on saadaval ainult kaamerates, millel on RedEdge filter.
+**Valemi valideerimine**: Veenduge, et valemis kasutatakse teie kaameras saadaval olevaid ribasid. Näiteks RedEdge on saadaval ainult kaamerates, millel on RedEdge filter.
 {% endhint %}
 
 ***

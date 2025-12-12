@@ -27,10 +27,10 @@ Chloros toetab järgmisi keeli:
 | 19 | 🇹🇭 Tai | ไทย | `th` |
 | 20 | 🇸🇪 Rootsi | Svenska | `sv` |
 | 21 | 🇩🇰 Taani | Dansk | `da` |
-| 22 | 🇳🇴 Norra | Norsk | `no` |
-| 23 | 🇫🇮 Soome | Suomi | `fi` |
-| 24 | 🇬🇷 Kreeka keel | Ελληνικά | `el` |
-| 25 | 🇨🇿 Tšehhi keel | Čeština | `cs` |
+| 22 | 🇳🇴 Norra keel | Norsk | `no` |
+| 23 | 🇫🇮 Soome keel | Suomi | `fi` |
+| 24 | 🇬🇷 Kreeka | Ελληνικά | `el` |
+| 25 | 🇨🇿 Tšehhi | Čeština | `cs` |
 | 26 | 🇭🇺 Ungari | Magyar | `hu` |
 | 27 | 🇷🇴 Rumeenia | Română | `ro` |
 | 28 | 🇺🇦 Ukraina | Українська | `uk` |
@@ -88,6 +88,6 @@ Kõiki 38 keelt toetatakse täielikult järgmistes rakendustes:
 * **Chloros Desktop** - täielik GUI tõlge
 * **Chloros Browser** - veebiliides kõigis keeltes
 * **Chloros CLI** - käsurealiides ja väljundsõnumid
-* **Chloros Python SDK** - API sõnumid ja dokumentatsioon
+* **Chloros Python SDK** – API sõnumid ja dokumentatsioon
 
 Keelte tugi tagab, et kasutajad üle kogu maailma saavad tõhusalt töötada oma emakeeles ilma takistusteta.

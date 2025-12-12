@@ -3,7 +3,7 @@
 * [Alustamine](README.md)
 * [GUI: navigeerimine](navigation.md)
 * [GUI: projektid](projects.md)
-* [CLI : käsurea](CLI.md)
+* [CLI : käsurida](CLI.md)
 * [API : Python SDK](api-python-sdk.md)
 * [Toetatud kaamerad](supported-cameras.md)
 * [Väljundpildi formaadid](output-image-formats.md)

@@ -2,7 +2,7 @@
 
 Kalibreerimise sihtmärkide sisaldavate piltide märkimine on oluline samm, mis kiirendab oluliselt Chloros töötlemisprotsessi. Sihtpiltide eelvalikuga ei pea Chloros skannima kõiki andmekogus olevaid pilte kalibreerimise sihtmärkide leidmiseks.
 
-## Miks märkida sihtpilte?
+## Miks sihtpilte märkida?
 
 ### Töötlemise kiirus
 
@@ -37,7 +37,7 @@ Vaadake failibrauseris imporditud pilte ja tuvastage, millised pildid sisaldavad
 **Tavalised stsenaariumid:**
 
 * **Eelnevalt jäädvustatud sihtmärk**: jäädvustatud enne seansi algust.
-* **Järeljäädvustatud sihtmärk**: jäädvustatud pärast seansi lõppu.
+* **Järgnevalt jäädvustatud sihtmärk**: jäädvustatud pärast seansi lõppu.
 * **Väljas olevad sihtmärgid**: sihtmärgid, mis asuvad jäädvustamisalas.
 * **Mitmed sihtmärgid**: 2–3 sihtmärgi pilti seansi kohta (soovitatav).
 
@@ -68,14 +68,14 @@ Enne töötlemist kontrollige veel kord:
 
 * Pildistage sihtmärgi pildid vahetult enne pildistamise seanssi ja selle käigus
 * Samades valgustingimustes kui DAQ valgussensor
-* Parimate tulemuste saavutamiseks pildistage sihtmärke võimalikult tihti. Muidu kasutatakse kalibreerimise kohandamiseks aja jooksul valgussensori andmeid.
+* Ideaaljuhul pildistage sihtmärgipilte võimalikult tihti, et saada parimaid tulemusi. Muidu kasutatakse kalibreerimise kohandamiseks aja jooksul valgussensori andmeid.
 
 **Kaamera asend:**
 
 * Hoia kaamera sihtmärgi kohal nii, et see oleks keskel ja täidaks umbes 40–60% pildi keskosast.
 * Hoia kaamera sihtmärgi pinnaga paralleelselt/nadiril
 
-**Valgustus:**
+**Valgustamine:**
 
 * Sama ümbritsev valgus kui teie DAQ valgussensoril.
 * Vältige varjusid sihtmärgi pinnal.
@@ -86,17 +86,17 @@ Enne töötlemist kontrollige veel kord:
 
 * Hoidke sihtmärgi paneelid puhtad ja kuivad.
 * Kõik 4 paneeli peavad olema selgelt nähtavad ja takistusteta.
-* Sihtmärgid võimaluse korral risti/nadir valgusallikaga.
+* Sihtmärgid peaksid olema võimaluse korral valgusallikaga risti/nadir.
 
 ### Kui palju sihtmärgi pilte?
 
-**Minimaalselt:** 1 sihtmärgi pilt seansi kohta. **Soovitatav:** 3–5 sihtmärgi pilti seansi kohta.
+**Minimum:** 1 sihtmärgi pilt seansi kohta. **Soovituslik:** 3–5 sihtmärgi pilti seansi kohta.
 
-**Parim praktika:**
+**Parim praktika ajakava:**
 
 * 3–5 pilti, mis on tehtud vahetult pärast valgussensori salvestamise algust
 * Parimate tulemuste saamiseks pöörake kaamerat pildistamise vahel
-* Valikuliselt: perioodiliselt seansi keskel, kui valgustusolud muutuvad pidevalt
+* Valikuline: perioodiliselt seansi keskel, kui valgustusolud muutuvad pidevalt
 
 ***
 
@@ -128,7 +128,7 @@ Kasutage seda veergu, et kontrollida, kas olete oma projektis märkinud sihtmär
 
 ### Tuvastamise tundlikkuse reguleerimine
 
-Kui Chloros ei tuvasta teie sihtmärke õigesti, reguleerige neid seadeid [Projekti seaded](adjusting-project-settings.md):
+Kui Chloros ei tuvasta teie sihtmärke õigesti, reguleerige neid seadeid [projekti seadetest](adjusting-project-settings.md):
 
 **Minimaalne kalibreerimise valimi pindala:**
 
@@ -160,7 +160,7 @@ Kui Chloros ei tuvasta teie sihtmärke õigesti, reguleerige neid seadeid [Proje
 1. Kontrollige, et sihtmärgi veerg on märgitud õigete piltide jaoks
 2. Vaadake sihtmärgi pildi kvaliteeti eelvaates
 3. Kui kvaliteet on halb, pildistage sihtmärgid uuesti
-4. Vajadusel kohandage sihtmärgi tuvastamise seadeid
+4. Vajadusel reguleerige sihtmärgi tuvastamise seadeid
 
 ### Probleem: vale sihtmärgi tuvastamine
 
@@ -197,7 +197,7 @@ Enne töötlemise alustamist kontrollige oma sihtmärgi piltide valikut:
 
 ### Töötlemine ilma kalibreerimise sihtmärkideta
 
-Kuigi teadustööks ei ole see soovitatav, võite töötleda ilma sihtmärkideta:
+Kuigi teadustööks ei ole see soovitatav, võite töötlemist teha ka ilma sihtmärkideta:
 
 1. Jätke kõik sihtmärgi veeru valikukastid märkimata
 2. **Keelake** projekti seadetest „Peegelduskalibreerimine”
@@ -212,7 +212,7 @@ Kuigi teadustööks ei ole see soovitatav, võite töötleda ilma sihtmärkideta
 
 ## Järgmised sammud
 
-Kui olete märkinud oma sihtpildid:
+Kui olete märkinud sihtpildid:
 
 1. **Vaadake oma seaded üle** – vt [Projekti seadeid kohandamine](adjusting-project-settings.md)
 2. **Alustage töötlemist** – vt [Töötlemise alustamine](starting-the-processing.md)

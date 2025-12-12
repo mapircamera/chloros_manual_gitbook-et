@@ -17,9 +17,9 @@ Kõige tavalisem viis pildi avamiseks pildivaatajas:
 
 Kui pilt on eelvaatealasse laaditud:
 
-1. Klõpsake **Pildivaataja** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> ikooni vasakul külgribal.
-2. Pildivaataja vahekaart avatakse ja kuvab valitud pildi täisekraanil.
-3. Vasakul külgribal muutuvad kättesaadavaks täiustatud vaatamis- ja analüüsitööriistad.
+1. Klõpsake **Pildivaataja** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> ikooni vasakul külgribal
+2. Pildivaataja vahekaart avatakse ja kuvab valitud pildi täisekraanil
+3. Vasakul külgribal muutuvad kättesaadavaks täiustatud vaatamis- ja analüüsitööriistad
 
 ***
 
@@ -29,16 +29,16 @@ Kui pilt on eelvaatealasse laaditud:
 
 Suurim osa ekraanist näitab teie pilti:
 
-* **Täisresolutsioon**: pildid kuvatakse algresolutsioonis.
+* **Täisresolutsioon**: pildid kuvatakse algresolutsioonis
 * **Suumitav**: kasutage suumimiseks juhtnuppe või hiirerattat
 * **Pööratav**: suumimisel klõpsake ja lohistage, et pilti liigutada
-* **Kuvasuhe säilitatakse**: pildid skaleeritakse proportsionaalselt
+* **Kuvasuhe säilib**: pildid skaleeritakse proportsionaalselt
 
 ***
 
 ## Vaatevalikud
 
-### Pildi põhiline navigeerimine
+### Pildi navigeerimise põhitõed
 
 #### Piltide sirvimine
 
@@ -77,9 +77,9 @@ Kui suum on suurem kui ekraani suurus:
 1. Liigutage hiirekursor pildi kohale
 2. Klõpsake ja **hoidke hiire vasakut nuppu all**
 3. **Lohistage**, et pilti liigutada
-4. Vabastage, et pildil liigutamine lõpetada
+4. Vabastage, et pildil navigeerimine lõpetada
 
-**Alternatiiv**: kasutage nooleklahve, et pilti väikeste sammude kaupa liigutada
+**Alternatiiv**: kasutage nooleklahve, et navigeerida väikeste sammude kaupa
 
 ***
 
@@ -121,8 +121,8 @@ Kui liigutate hiirekursorit pildi kohale, kuvatakse pikselväärtused reaalajas:
 
 **NDVI, NDRE, GNDVI jne (\_NDVI.tif failid):**
 
-* Ühe sagedusriba halltoonilised pildid
-* Pikselväärtused esindavad indeksite arvutamise tulemusi
+* Üheribalised halltoonilised pildid
+* Pikseliväärtused esindavad indeksite arvutamise tulemusi
 * Normaliseeritud indeksite vahemik on tavaliselt -1 kuni +1
 * Visualiseerimiseks saab rakendada värvi LUT-e
 
@@ -142,7 +142,7 @@ Täpsemad juhised leiate [Indeks/LUT Sandboxist](index-lut-sandbox.md).
 
 ***
 
-## Klaviatuurilühendid
+## Klaviatuurikombinatsioonid
 
 ### Navigeerimine
 
@@ -155,8 +155,8 @@ Täpsemad juhised leiate [Indeks/LUT Sandboxist](index-lut-sandbox.md).
 
 * **+** või **=**: suumimine
 * **−**: suumimine
-* **0** (null): ekraanile sobivaks kohandamine
-* **Hiirerattaga**: suumimine/suumimine
+* **0** (null): ekraanile sobivaks
+* **Hiirerattaga**: suumimine
 
 ### Vaate juhtimise nuppud
 
@@ -180,7 +180,7 @@ Kontrollige, et indeksid on arvutatud õigesti:
    * **NDVI**: Tervete taimede puhul peaks näitama 0,4–0,9.
    * **NDRE**: jõulise kasvu korral peaks näitama kõrgemaid väärtusi
    * **GNDVI**: sarnane NDVI-ga, kuid klorofüllitundlik
-3. Kontrollige taimestikuväliseid alasid:
+3. Kontrollige mitte-taimestikku:
    * **Muld**: ligi 0 või veidi negatiivne
    * **Vesi**: negatiivsed väärtused (-0,5 kuni 0)
 
@@ -223,7 +223,7 @@ Kontrollige, et indeksid on arvutatud õigesti:
 
 * Vale pildi vaatamine (originaal vs töödeldud)
 * Kalibreerimine ei rakendunud õigesti
-* Valgusanduri andmed ei olnud sisestatud
+* Valgusanduri andmed ei olnud sisendisse lisatud
 * Protsendimoodus lülitati valesti sisse
 
 **Lahendused:**
@@ -239,7 +239,7 @@ Kontrollige, et indeksid on arvutatud õigesti:
 Nüüd, kui saate pilte täisekraanil vaadata:
 
 * [**Pildikihtide**](image-layers.md) – Tutvuge mitme sagedusriba visualiseerimisega
-* [**Indeksi/LUT-liivakast**](index-lut-sandbox.md) – Rakendage kohandatud indekseid ja värvide kaardistamist
+* [**Indeks/LUT Sandbox**](index-lut-sandbox.md) – Rakendage kohandatud indekseid ja värvide kaardistamist
 * [**Multispektraalsed indeksivalemid**](../project-settings/multispectral-index-formulas.md) – tutvuge kättesaadavate indeksitega
 
 Töötlemise töövoo kohta vaadake:

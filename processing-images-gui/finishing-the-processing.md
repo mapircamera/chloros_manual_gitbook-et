@@ -7,8 +7,8 @@ Kui Chloros on töötlemise lõpetanud, on aeg vaadata üle tulemused, kontrolli
 Kui töötlemine on edukalt lõpetatud, näete mitmeid märke:
 
 * ✅ **Progressiriba**: jõuab 100% täitmiseni
-* ✅ **Debug Log**: näitab sõnumit „Processing Complete” (Töötlemine lõpetatud)
-* ✅ **Start button**: muutub uuesti aktiveerituks (valmis järgmiseks töötlemiseks)
+* ✅ **Debug Log**: näitab sõnumit „Töötlemine lõpetatud”
+* ✅ **Start-nupp**: muutub uuesti aktiveerituks (valmis järgmiseks töötlemiseks)
 * ✅ **Väljundfailid**: kõik töödeldud pildid salvestatakse kaamera mudeli alamkausta
 
 ***
@@ -40,7 +40,7 @@ Kui töötlemine on edukalt lõpetatud, näete mitmeid märke:
 **Soovitatavad vaatajad:**
 
 * **QGIS** – tasuta GIS-tarkvara (parim georeferentseeritud multispektraalanalüüsiks)
-* **IrfanView** – kiire ja kerge pildivaataja (toetab TIFF)
+* **IrfanView** – kiire, kerge pildivaataja (toetab TIFF)
 * **Adobe Photoshop** – professionaalne redigeerimine (TIFF tugi)
 * **GIMP** – tasuta alternatiiv Photoshopile
 * **Windows Photos** – põhiline vaatamine (ei pruugi toetada 16-bitist TIFF)
@@ -85,45 +85,45 @@ Töötlemise salvestamiseks või MAPIR tugiteenistusele saatmiseks:
 
 **Võimalikud põhjused:**
 
-* Failid ei vastanud töötlemiskriteeriumidele.
-* Ainult sihtpildid (ekspordist välja jäetud).
-* Ekspordi ajal sai kettaruum otsa.
-* Failide rikkumine töötlemise ajal.
+* Failid ei vastanud töötlemise kriteeriumidele
+* Ainult sihtpildid (eksportimisest välja jäetud)
+* Eksportimise ajal sai kettaruum otsa
+* Failide rikkumine töötlemise ajal
 
 **Lahendused:**
 
-1. Kontrollige veaotsingu logist, kas seal on vahelejätmise/veateateid.
-2. Veenduge, et kettaruumi oli piisavalt.
-3. Loendage faile: peaks vastama (algne arv – sihtarv) × (indeksid + 1).
+1. Kontrollige veaotsingu logist vahelejätmise/veateateid
+2. Veenduge, et kettaruumi oli piisavalt
+3. Loendage faile: peaksid vastama (algne arv – sihtarv) × (indeksid + 1)
 4. Importige puuduvad failid uuesti ja töötlege need uuesti.
 
-### Probleem: tumedad või heledad servad (vinjetatsioon on endiselt nähtav)
+### Probleem: tumedad või heledad servad (vignettimine on endiselt nähtav)
 
 **Võimalikud põhjused:**
 
-* Vinjetatsiooni korrigeerimine on keelatud.
+* Vignettimise korrigeerimine on keelatud.
 * Kaamera/objektiiv ei ole Chloros profiili andmebaasis.
-* Äärmuslik vinjetatsioon, mida ei ole võimalik korrigeerida.
+* Äärmuslik vignettimine, mida ei ole võimalik korrigeerida.
 
 **Lahendused:**
 
-1. Kontrollige, kas vinjeti korrigeerimine on projektiseadetes lubatud
-2. Kontrollige, kas kaamera mudel on õigesti tuvastatud
-3. Kui vinjetatsioon püsib, võtke ühendust MAPIR tugiteenistusega
+1. Kontrollige, kas vinjeti korrigeerimine on projektiseadetes lubatud.
+2. Kontrollige, kas kaamera mudel on õigesti tuvastatud.
+3. Kui vinjetatsioon püsib, võtke ühendust MAPIR tugiteenistusega.
 
 ### Probleem: vale värv või väärtus
 
 **Võimalikud põhjused:**
 
-* Kalibreerimise sihtmärke ei tuvastatud
-* Valitud on vale kalibreerimise sihtmärgi mudel
-* Peegelduskalibreerimine on keelatud
-* Sihtmärgi pildid on halva kvaliteediga
+* Kalibreerimise sihtmärke ei tuvastatud.
+* Valitud on vale kalibreerimise sihtmärgi mudel.
+* Peegelduskalibreerimine on keelatud.
+* Sihtmärgi pildid on halva kvaliteediga.
 
 **Lahendused:**
 
 1. Kontrollige, kas peegelduskalibreerimine on lubatud.
-2. Kontrollige veaotsingu logis sõnumit „Sihtmärk leitud”.
+2. Kontrollige veaotsinguprotokollis sõnumit „Sihtmärk leitud”.
 3. Kontrollige sihtmärgi pildi kvaliteeti.
 4. Töötlege uuesti, märkides õiged sihtmärgid.
 
@@ -177,7 +177,7 @@ Töötlemise salvestamiseks või MAPIR tugiteenistusele saatmiseks:
 **Soovitatav töövoog:**
 
 1. **Kasutage indekspilte LUT-värvidega** visuaalsete aruannete jaoks
-2. **Väljavõtted statistika**: keskmine NDVI põllu/krundi kohta
+2. **Ekstrakteerige statistika**: keskmine NDVI põllu/krundi kohta
 3. **Aegread**: võrdle indekseid mitme seansi vahel
 4. **Aruannete koostamine**: lisa kaardid, statistika ja visualiseeringud
 
@@ -197,7 +197,7 @@ Töötlemise salvestamiseks või MAPIR tugiteenistusele saatmiseks:
 
 **Säilitamise soovitused:**
 
-* **Vahetu varukoopia**: välisele kõvakettale
+* **Kohene varukoopia**: välisele kõvakettale
 * **Pikaajaline arhiiv**: pilvesalvestus (Google Drive, Dropbox jne)
 * **Kriitilised andmed**: hoidke 2–3 koopiat erinevates asukohtades
 
@@ -205,14 +205,14 @@ Töötlemise salvestamiseks või MAPIR tugiteenistusele saatmiseks:
 
 ## Järgmised töötlemiskäigud
 
-### Projekti seadete taaskasutamine
+### Projekti seadeid uuesti kasutamine
 
 Kui töötlete tulevikus sarnaseid andmekogusid:
 
 1. **Salvestage projektimall** (kui seda pole veel tehtud)
-2. **Looge uus projekt** salvestatud malli abil
-3. **Importige uued pildid**
-4. **Töötlege** ühtsuse tagamiseks identseid seadeid kasutades
+2. **Loo uus projekt** salvestatud malli abil
+3. **Impordi uued pildid**
+4. **Töötle** ühtsuse tagamiseks identseid seadeid kasutades
 
 ### Mitme seansi kogumitöötlus
 
@@ -220,14 +220,14 @@ Mitme seansi/andmekogumi puhul:
 
 **Võimalus 1: GUI – mitu projekti**
 
-* Looge iga seansi jaoks eraldi projekt.
-* Kasutage ühtseid malliseadeid.
-* Töötlege ükshaaval.
+* Loo iga seansi jaoks eraldi projekt
+* Kasuta ühtseid malli seadeid
+* Töötle ükshaaval
 
 **Võimalus 2: Chloros CLI (ainult Chloros+)**
 
-* Automatiseerige partii töötlemine.
-* Töötlege mitut kausta skriptidega.
+* Automatiseerige partii töötlemine
+* Töötlege mitut kausta skriptidega
 * Vaata [CLI dokumentatsiooni](../CLI.md)
 
 **Variant 3: Python SDK (ainult Chloros+)**
@@ -279,7 +279,7 @@ Nüüd olete lõpetanud kogu Chloros töötlemise töövoo:
 4. ✅ **Märgitud sihtmärgid** – vaata [Sihtmärgi piltide valimine](choosing-target-images.md)
 5. ✅ **Alustatud töötlemine** – vaata [Töötlemise alustamine](starting-the-processing.md)
 6. ✅ **Jälgitud edenemine** – vaata [Töötlemise jälgimine](monitoring-the-processing.md)
-7. ✅ **Tulemuste läbivaatamine** – See lehekülg
+7. ✅ **Tulemuste läbivaatamine** – see lehekülg
 
 **Teie kalibreeritud, peegelduskorrektsiooniga multispektraalsed pildid on valmis analüüsimiseks!**
 
