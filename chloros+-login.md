@@ -6,7 +6,9 @@ Kasutaja <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> külg
 
 Sisse logimisel kuvatakse teie konto andmed:
 
-<figure><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>## CLI sisselogimine
+<figure><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>
+
+## CLI sisselogimine
 
 Logige sisse oma Chloros+ kasutajatunnuse ja parooliga, et võimaldada CLI töötlemist.
 
@@ -28,7 +30,9 @@ chloros-cli login user@example.com 'MyP@ssw0rd123'
 
 **Väljund:**
 
-<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>### Paketi kehtivusaeg
+<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>
+
+### Paketi kehtivusaeg
 
 Paketi kehtivusaeg GUI-s näitab, millal teie litsents kehtivuse kaotab. Kuu jooksul korduvate tellimuste puhul on kehtivusaeg kuu lõpus. Aastaste tellimuste puhul on kehtivusaeg aasta pärast tellimuse algust. Litsentsi kontrollimiseks on vaja igakuist internetiühendust, mille puhul on 30-päevane ajapikendus.
 

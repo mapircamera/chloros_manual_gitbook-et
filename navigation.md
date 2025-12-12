@@ -14,7 +14,9 @@ Peamenüüst saate alustada uut projekti, avada olemasoleva projekti või avada 
 
 Kui nupp on aktiveeritud, käivitab see pilditöötluse protsessi.
 
-### <img src=".gitbook/assets/image (4).png" alt="" data-size="line"> Edusammude riba <img src=".gitbook/assets/image (5).png" alt="" data-size="line">Tasuta Chloros režiimis, mis töötleb kõiki faile järjest, näitab edenemisriba kahte etappi: sihtmärgi tuvastamine ja töötlemine.
+### <img src=".gitbook/assets/image (4).png" alt="" data-size="line"> Edusammude riba <img src=".gitbook/assets/image (5).png" alt="" data-size="line">
+
+Tasuta Chloros režiimis, mis töötleb kõiki faile järjest, näitab edenemisriba kahte etappi: sihtmärgi tuvastamine ja töötlemine.
 
 Tasulises Chloros+ litsentsitud režiimis, mis töötleb kõiki faile samaaegselt, näitab edenemisriba nelja etappi: tuvastamine, analüüsimine, kalibreerimine, eksportimine. Kui viite hiirekursori Chloros+ edenemisribale, avaneb laiendatud nelja edenemisriba paneel, mida saate jälgida. Ülemise edenemisriba klõpsamine külmutab rippmenüü paneeli, uuesti klõpsates vabastate selle.
 
