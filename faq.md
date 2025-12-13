@@ -1,10 +1,9 @@
 ---
-description: Frequently Asked Questions
+description: Korduma kippuvad küsimused
 metaLinks:
   alternates:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/faq
 ---
-
 # KKK
 
 <details>
@@ -19,7 +18,7 @@ Ei, Chloros toetab ainult MAPIR kaamerate piltide töötlemist. Lisateabe saamis
 
 <summary>Kas ma saan kalibreerida oma pilte peegeldusvõime jaoks ilma kalibreerimise sihtmärgita?</summary>
 
-Ei. Ilma kalibreerimise sihtmärgi pildita, mis on pildistatud umbes samal ajal kui sihtmärgita pildid, ei ole võimalik seostada pildi pikselväärtusi teadaoleva peegeldusprotsendiga. Kui te ei lisa ka MAPIR valgussensori logi, siis ümbritseva valguse spektrit ei mõõdeta ja peegeldustulemused ei ole täpsed.
+Ei. Ilma kalibreerimise sihtmärgi pildita, mis on pildistatud umbes samal ajal kui sihtmärgita pildid, ei ole võimalik seostada pildi pikseliväärtusi teadaoleva peegeldusprotsendiga. Kui te ei lisa ka MAPIR valgussensori logi, siis ümbritseva valguse spektrit ei mõõdeta ja peegeldustulemused ei ole täpsed.
 
 </details>
 
@@ -27,7 +26,7 @@ Ei. Ilma kalibreerimise sihtmärgi pildita, mis on pildistatud umbes samal ajal 
 
 <summary>Kas ma saan oma pilte enne töötlemist Chloros-is redigeerida?</summary>
 
-Ei. Chloros eeldab, et sisendandmeid ei ole muudetud. Ärge muutke failide nimesid.
+Ei. Chloros eeldab, et sisendandmeid ei ole muudetud. Ärge muutke failinimesid.
 
 </details>
 
@@ -41,9 +40,9 @@ Ei. Survey3 pildikogumitel peab olema fikseeritud/lukustatud säritus, seega ei 
 
 <details>
 
-<summary>Kas Chloros saab töödelda või analüüsida ortomosaikpilte?</summary>
+<summary>Kas Chloros suudab töödelda või analüüsida ortomosaikpilte?</summary>
 
-Ei. Toetatakse ainult üksikuid MAPIR kaamerapilte, mitte ortomosaik-kaardi taolisi ühendatud pilte.
+Ei. Toetatakse ainult üksikuid MAPIR kaamerapilte, mitte ortomoosaik-kaardi taolisi ühendatud pilte.
 
 </details>
 
@@ -67,6 +66,6 @@ Kui kavatsete need üles laadida meie veebipõhisele töötlemisplatvormile [MAP
 
 <summary>Kas MAPIR hakkab kunagi toetama X funktsiooni? Ma sooviksin väga, et MAPIR pakuks X funktsiooni.</summary>
 
-Oleme alati huvitatud tagasisidest meie toodete kohta. Kui leiate meie toodetes viga või teil on ettepanekuid, kuidas saaksime oma tooteid parandada, palun [VÕTKE MEiega ÜHENDUST](https://www.mapir.camera/community/contact), et jagada oma mõtteid. Suurem osa meie uurimis- ja arendustegevusest lähtub klientide suurimatest vajadustest.
+Oleme alati huvitatud tagasisidest meie toodete kohta. Kui leiate meie toodetes probleemi või teil on ettepanekuid, kuidas saaksime oma tooteid parandada, palun [VÕTKE MEiega ÜHENDUST](https://www.mapir.camera/community/contact), et jagada oma mõtteid. Suurem osa meie uurimis- ja arendustegevusest lähtub klientide suurimatest vajadustest.
 
 </details>

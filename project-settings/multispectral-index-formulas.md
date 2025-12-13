@@ -1,58 +1,57 @@
 ---
-description: This page lists some multispectral indices that Chloros uses
+description: This page lists some multispectral indices that Chloros uses.
 metaLinks:
   alternates:
     - >-
       https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/multispectral-index-formulas
 ---
-
 # Multispektraalsed indeksivalemid
 
-Allpool esitatud indeksivalemites kasutatakse Survey3 filtri keskmise läbilaskvuse vahemike kombinatsiooni:
+Allpool esitatud indeksivalemid kasutavad Survey3 filtri keskmise läbilaskvuse vahemike kombinatsiooni:
 
-<table><thead><tr><th align="center">Survey3 Filtri värv</th><th width="196.199951171875" align="center">Survey3 Filtri nimi</th><th width="159.800048828125" align="center">Läbilaskvusvahemik (FWHM)</th><th align="center">Keskmine läbilaskvus</th></tr></thead><tbody><tr><td align="center">Blue</td><td align="center">NGB - Blue</td><td align="center">468–483 nm</td><td align="center">475 nm</td></tr><tr><td align="center">Cyan</td><td align="center">OCN- Cyan</td><td align="center">476–512 nm</td><td align="center">494 nm</td></tr><tr><td align="center">Green</td><td align="center">RGN | NGB - Green</td><td align="center">543–558 nm</td><td align="center">547 nm</td></tr><tr><td align="center">Orange</td><td align="center">OCN - Orange</td><td align="center">598–640 nm</td><td align="center">619 nm</td></tr><tr><td align="center">Red</td><td align="center">RGN - Red</td><td align="center">653–668 nm</td><td align="center">661 nm</td></tr><tr><td align="center">RedEdge</td><td align="center">Re - RedEdge</td><td align="center">712–735 nm</td><td align="center">724 nm</td></tr><tr><td align="center">NIR1</td><td align="center">OCN - NIR1</td><td align="center">798–848 nm</td><td align="center">823 nm</td></tr><tr><td align="center">NIR2</td><td align="center">RGN | NGB | NIR - NIR2</td><td align="center">835–865 nm</td><td align="center">850 nm</td></tr></tbody></table>
+<table><thead><tr><th align="center">Survey3 filtri värv</th><th width="196.199951171875" align="center">Survey3 filtri nimi</th><th width="159.800048828125" align="center">Läbilaskvusvahemik (FWHM)</th><th align="center">Keskmine läbilaskvus</th></tr></thead><tbody><tr><td align="center">Blue</td><td align="center">NGB - Blue</td><td align="center">468–483 nm</td><td align="center">475 nm</td></tr><tr><td align="center">Cyan</td><td align="center">OCN- Cyan</td><td align="center">476–512 nm</td><td align="center">494 nm</td></tr><tr><td align="center">Green</td><td align="center">RGN | NGB - Green</td><td align="center">543–558 nm</td><td align="center">547 nm</td></tr><tr><td align="center">Orange</td><td align="center">OCN - Orange</td><td align="center">598–640 nm</td><td align="center">619 nm</td></tr><tr><td align="center">Red</td><td align="center">RGN - Red</td><td align="center">653–668 nm</td><td align="center">661 nm</td></tr><tr><td align="center">RedEdge</td><td align="center">Re - RedEdge</td><td align="center">712–735 nm</td><td align="center">724 nm</td></tr><tr><td align="center">NIR1</td><td align="center">OCN - NIR1</td><td align="center">798–848 nm</td><td align="center">823 nm</td></tr><tr><td align="center">NIR2</td><td align="center">RGN | NGB | NIR - NIR2</td><td align="center">835–865 nm</td><td align="center">850 nm</td></tr></tbody></table>
 
-Kui kasutatakse neid valemeid, võib nimi lõppeda „\_1” või „\_2”ga, mis vastab sellele, millist NIR filtrit, kas NIR1 või NIR2, kasutati.
+Kui kasutatakse neid valemeid, võib nimi lõppeda „\_1” või „\_2”, mis vastab sellele, millist NIR filtrit, kas NIR1 või NIR2, kasutati.
 
 ***
 
 ## EVI – täiustatud taimestiku indeks
 
-See indeks töötati algselt välja kasutamiseks koos MODIS andmetega, et täiustada NDVI indeksit, optimeerides taimestiku signaali piirkondades, kus on kõrge lehepinna indeks (LAI). See on kõige kasulikum kõrge LAI piirkondades, kus NDVI võib küllastuda. See kasutab sinise peegelduspiirkonda, et korrigeerida pinnase taustsignaale ja vähendada atmosfääri mõjusid, sealhulgas aerosoolide hajumist.
+See indeks töötati algselt välja kasutamiseks koos MODIS andmetega, et täiustada NDVI indeksit, optimeerides taimestiku signaali piirkondades, kus lehe pindala indeks (LAI) on kõrge. See on kõige kasulikum piirkondades, kus LAI on kõrge ja NDVI võib olla küllastunud. See kasutab sinise peegelduspiirkonda, et korrigeerida pinnase taustsignaale ja vähendada atmosfääri mõjusid, sealhulgas aerosoolide hajumist.
 
 $$
 EVI = 2.5 *  {(NIR - Red) \over (NIR + 6 * Red - 7.5 * Blue + 1)}
 $$
 
-EVI väärtused peaksid taimestiku pikslite puhul olema vahemikus 0 kuni 1. Heledad objektid, nagu pilved ja valged hooned, ning tumedad objektid, nagu vesi, võivad põhjustada EVI pildil ebanormaalsed piksliväärtused. Enne EVI pildi loomist tuleks peegelduselt eemaldada pilved ja heledad objektid ning valikuliselt määrata pikselite väärtuste künniseks 0 kuni 1.
+EVI väärtused peaksid taimestiku pikslite puhul olema vahemikus 0 kuni 1. Heledad objektid, nagu pilved ja valged hooned, ning tumedad objektid, nagu vesi, võivad põhjustada EVI pildil ebanormaalsed pikselväärtused. Enne EVI pildi loomist tuleks peegelduspildilt maskeerida pilved ja heledad objektid ning valikuliselt määrata pikselväärtuste künniseks 0 kuni 1.
 
-_Viide: Huete, A. jt. „Ülevaade MODIS taimestiku indeksite radiomeetrilisest ja biofüüsilisest toimivusest”. Remote Sensing of Environment 83 (2002):195–213._
+_Viide: Huete, A., et al. „Ülevaade MODIS taimestiku indeksite radiomeetrilisest ja biofüüsilisest toimivusest.” Remote Sensing of Environment 83 (2002):195–213._
 
 ***
 
 ## FCI1 – Metsakatte indeks 1
 
-See indeks eristab metsakatet muudest taimestikutüüpidest, kasutades multispektraalset peegelduspilti, mis sisaldab punast serva.
+See indeks eristab metsakatust muudest taimestikutüüpidest, kasutades multispektraalset peegelduspilti, mis sisaldab punast serva.
 
 $$
 FCI1 = Red * RedEdge
 $$
 
-Metsastatud aladel on FCI1 väärtused madalamad, kuna puud peegeldavad vähem ja lehtede vahel on varjud.
+Metsastatud aladel on FCI1 väärtused madalamad, kuna puude peegeldusvõime on madalam ja metsakatus on varjutatud.
 
-_Viide: Becker, Sarah J., Craig S.T. Daughtry ja Andrew L. Russ. „Robust forest cover indices for multispectral images.” Fotogramm-meetria ja kaugseire 84.8 (2018): 505-512._
+_Viide: Becker, Sarah J., Craig S.T. Daughtry ja Andrew L. Russ. „Robust forest cover indices for multispectral images” (Tugevad metsade katvuse indeksid multispektraalsete piltide jaoks). Photogrammetric Engineering &amp; Remote Sensing 84.8 (2018): 505–512._
 
 ***
 
-## FCI2 – Metsakatte indeks 2
+## FCI2 - Metsakatte indeks 2
 
-See indeks eristab metsakatteid muudest taimestikutüüpidest, kasutades multispektraalset peegelduspilti, mis ei sisalda punast serva.
+See indeks eristab metsakatteid muudest taimestikutüüpidest, kasutades multispektraalset peegeldusvõime pilti, mis ei sisalda punast serva.
 
 $$
 FCI2 = Red * NIR
 $$
 
-Metsastatud aladel on FCI2 väärtused madalamad, kuna puude peegeldusvõime on madalam ja puude latvades on varjud.
+Metsastatud aladel on madalamad FCI2 väärtused puude madalama peegeldusvõime ja varjude olemasolu tõttu puuvõrades.
 
 _Viide: Becker, Sarah J., Craig S.T. Daughtry ja Andrew L. Russ. „Robust forest cover indices for multispectral images” (Tugevad metsade katvuse indeksid multispektraalsete piltide jaoks). Photogrammetric Engineering &amp; Remote Sensing 84.8 (2018): 505–512._
 
@@ -78,13 +77,13 @@ _Viide: Pinty, B. ja M. Verstraete. GEMI: mittelineaarne indeks globaalse taimes
 
 ## GARI - Green Atmosfäärikindel indeks
 
-See indeks on tundlikum laia klorofülli kontsentratsioonide vahemiku suhtes ja vähem tundlik atmosfääri mõjude suhtes kui NDVI.
+See indeks on tundlikum laiale klorofülli kontsentratsioonide vahemikule ja vähem tundlik atmosfääri mõjule kui NDVI.
 
 $$
 GARI = {NIR - [Green - \gamma(Blue - Red)] \over NIR + [Green - \gamma(Blue - Red)]   }
 $$
 
-Gammakonstant on kaalufunktsioon, mis sõltub atmosfääri aerosoolide tingimustest. ENVI kasutab väärtust 1,7, mis on Gitelsoni, Kaufmani ja Merzylaki (1996, lk 296) soovitatud väärtus.
+Gammategur on kaalufunktsioon, mis sõltub atmosfääri aerosoolide tingimustest. ENVI kasutab väärtust 1,7, mis on Gitelson, Kaufman ja Merzylak (1996, lk 296) soovitatud väärtus.
 
 _Viide: Gitelson, A., Y. Kaufman ja M. Merzylak. „Green kanali kasutamine globaalse taimestiku kaugseires EOS-MODIS abil.” Remote Sensing of Environment 58 (1996): 289–298._
 
@@ -98,9 +97,9 @@ $$
 GCI = {NIR \over Green} - 1
 $$
 
-Lai NIR ja roheliste lainepikkustega on võimalik klorofüllisisaldust paremini ennustada, samal ajal tagades suurema tundlikkuse ja parema signaali-müra suhte.
+Lai NIR ja roheliste lainepikkustega on võimalik klorofüllisisaldust paremini ennustada, samal ajal saavutades suurema tundlikkuse ja parema signaali-müra suhte.
 
-_Viide: Gitelson, A., Y. Gritz ja M. Merzlyak. „Lehtede klorofüllisisalduse ja spektraalse peegeldusvõime vahelised seosed ning algoritmid kõrgemate taimede lehtede klorofüllisisalduse mittetõrjuva hindamise jaoks.” Journal of Plant Physiology 160 (2003): 271–282._
+_Viide: Gitelson, A., Y. Gritz ja M. Merzlyak. „Lehe klorofüllisisalduse ja spektraalsete peegeldusvõimete vahelised seosed ning algoritmid kõrgemate taimede lehtede klorofüllisisalduse mittetõkestavaks hindamiseks.” Journal of Plant Physiology 160 (2003): 271–282._
 
 ***
 
@@ -114,7 +113,7 @@ $$
 
 GLI väärtused ulatuvad -1-st +1-ni. Negatiivsed väärtused tähistavad mulda ja elutuid objekte, positiivsed väärtused aga rohelisi lehti ja varre.
 
-_Viide: Louhaichi, M., M. Borman ja D. Johnson. „Spatially Located Platform and Aerial Photography for Documentation of Grazing Impacts on Wheat.” Geocarto International 16, nr 1 (2001): 65–70._
+_Viide: Louhaichi, M., M. Borman ja D. Johnson. „Spatially Located Platform and Aerial Photography for Documentation of Grazing Impacts on Wheat” (Ruumi asukohaga platvorm ja õhufotograafia karjatamise mõju dokumenteerimiseks nisule). Geocarto International 16, nr 1 (2001): 65–70._
 
 ***
 
@@ -132,37 +131,37 @@ _Viide: Gitelson, A. ja M. Merzlyak. „Klorofülli kontsentratsiooni kaugseire 
 
 ## GOSAVI – Green Optimeeritud pinnasekorrigeeritud taimestiku indeks
 
-See indeks loodi algselt värvilise infrapunafotograafia abil, et ennustada maisi lämmastikuvajadust. See on sarnane OSAVI-ga, kuid asendab rohelise sagedusriba punasega.
+See indeks loodi algselt värvilise infrapunafotograafia abil, et ennustada maisi lämmastikuvajadust. See on sarnane OSAVI-ga, kuid asendab rohelise laine punasega.
 
 $$
 GOSAVI = {NIR - Green \over NIR + Green + 0.16)  }
 $$
 
-_Viide: Sripada, R., et al. „Maisi hooajalise lämmastikuvajaduse määramine õhust tehtud värvilise infrapunafotograafia abil.” Doktori väitekiri, Põhja-Carolina Riiklik Ülikool, 2005._
+_Viide: Sripada, R., et al. „Maisi hooajalise lämmastiku vajaduse määramine õhust tehtud värvilise infrapunafotograafia abil.” Doktori väitekiri, Põhja-Carolina Riiklik Ülikool, 2005._
 
 ***
 
-## GRVI – Green suhtarvu taimestiku indeks
+## GRVI – Green suhtarv taimestiku indeks
 
-See indeks on tundlik metsade latvade fotosünteesi kiiruse suhtes, kuna rohelise ja punase peegeldusvõime mõjutavad tugevalt lehtede pigmentide muutused.
+See indeks on tundlik metsade latvade fotosünteesi kiiruse suhtes, kuna rohelise ja punase peegelduse mõjutavad tugevalt lehe pigmendi muutused.
 
 $$
 GRVI = {NIR \over Green }
 $$
 
-_Viide: Sripada, R. jt. „Õhust tehtud värviline infrapunafotograafia maisi varase hooaja lämmastikuvajaduse kindlaksmääramiseks.” Agronomy Journal 98 (2006): 968-977._
+_Viide: Sripada, R. jt. „Õhust tehtud värviline infrapunafotograafia maisi varase hooaja lämmastiku vajaduse kindlaksmääramiseks.” Agronomy Journal 98 (2006): 968-977._
 
 ***
 
 ## GSAVI - Green Pinnasega korrigeeritud taimestiku indeks
 
-See indeks loodi algselt värvilise infrapunafotograafia abil maisi lämmastiku vajaduse ennustamiseks. See on sarnane SAVI-ga, kuid asendab rohelise laine punasega.
+See indeks loodi algselt värvilise infrapunafotograafia abil maisi lämmastikuvajaduse prognoosimiseks. See on sarnane SAVI-ga, kuid asendab rohelise sagedusriba punasega.
 
 $$
 GSAVI = 1.5 * {(NIR - Green) \over (NIR + Green + 0.5)  }
 $$
 
-_Viide: Sripada, R., et al. „Maisi hooajalise lämmastikuvajaduse määramine õhust tehtud värvilise infrapunafotograafia abil.” Doktoriõpe, Põhja-Carolina Riiklik Ülikool, 2005._
+_Viide: Sripada, R., et al. „Maisi hooajalise lämmastikuvajaduse määramine õhust tehtud värvilise infrapunafotograafia abil.” Doktori väitekiri, Põhja-Carolina Riiklik Ülikool, 2005._
 
 ***
 
@@ -180,7 +179,7 @@ $$
 EVI = 2.5 *  {(NIR - Red) \over (NIR + 6 * Red - 7.5 * Blue + 1)}
 $$
 
-Kõrged LAI väärtused on tavaliselt vahemikus 0 kuni 3,5. Kui aga pildil on pilved ja muud heledad objektid, mis tekitavad küllastunud piksleid, võivad LAI väärtused ületada 3,5. Ideaaljuhul peaksite enne LAI-pildi loomist maskeerima stseenist pilved ja heledad objektid.
+Kõrged LAI väärtused on tavaliselt vahemikus umbes 0 kuni 3,5. Kui aga pildil on pilved ja muud heledad objektid, mis tekitavad küllastunud piksleid, võivad LAI väärtused ületada 3,5. Ideaaljuhul peaksite enne LAI-pildi loomist maskeerima stseenist pilved ja eredad objektid.
 
 _Viide: Boegh, E., H. Soegaard, N. Broge, C. Hasager, N. Jensen, K. Schelde ja A. Thomsen. „Õhust kogutud multispektraalsed andmed lehepinna indeksi, lämmastiku kontsentratsiooni ja fotosünteesi efektiivsuse kvantifitseerimiseks põllumajanduses.” Remote Sensing of Environment 81, nr 2-3 (2002): 179-193._
 
@@ -200,7 +199,7 @@ _Viide: Datt, B. „Eukalüptuse lehtede veesisalduse kaugseire.” Journal of P
 
 ## MNLI – modifitseeritud mittelineaarne indeks
 
-See indeks on mittelineaarse indeksi (NLI) täiustus, mis hõlmab pinnase kohandatud taimestiku indeksit (SAVI), et arvesse võtta pinnase tausta. ENVI kasutab lehtede taustakohandusteguri (_L_) väärtust 0,5.
+See indeks on mittelineaarse indeksi (NLI) täiustus, mis hõlmab pinnase taustaga arvestamiseks pinnasega korrigeeritud taimestiku indeksit (SAVI). ENVI kasutab lehtede taustaga korrigeerimise tegurit (_L_) väärtusega 0,5.
 
 $$
 MNLI = {(NIR^{2} - Red) * (1 + L) \over (NIR^{2} + Red + L)  }
@@ -212,7 +211,7 @@ _Viide: Yang, Z., P. Willis ja R. Mueller. „Bändisuhtega täiustatud AWIFS-pi
 
 ## MSAVI2 – modifitseeritud pinnase kohandatud taimestiku indeks 2
 
-See indeks on Qi jt (1994) poolt välja pakutud indeksi MSAVI lihtsam versioon, mis täiustab pinnase kohandatud taimestiku indeksit (SAVI). See vähendab pinnase müra ja suurendab taimestiku signaali dünaamilist ulatust. MSAVI2 põhineb induktiivsel meetodil, mis ei kasuta konstantset _L_ väärtust (nagu SAVI), et esile tuua tervet taimestikku.
+See indeks on Qi jt (1994) poolt välja pakutud indeksi MSAVI lihtsam versioon, mis täiustab pinnase kohandatud taimestiku indeksit (SAVI). See vähendab pinnase müra ja suurendab taimestiku signaali dünaamilist ulatust. MSAVI2 põhineb induktiivsel meetodil, mis ei kasuta konstantset _L_ väärtust (nagu SAVI), et esile tuua terve taimestik.
 
 $$
 MSAVI2 = {2 * NIR + 1 - \sqrt{(2 * NIR + 1)^{2} - 8(NIR - Red)} \over 2}
@@ -224,7 +223,7 @@ _Viide: Qi, J., A. Chehbouni, A. Huete, Y. Kerr ja S. Sorooshian. „A Modified 
 
 ## NDRE – normaliseeritud erinevus RedEdge
 
-See indeks on sarnane NDVI-ga, kuid võrdleb kontrasti NIR ja RedEdge vahel, mitte Red-ga, mis tihti tuvastab taimestiku stressi varem.
+See indeks on sarnane NDVI-ga, kuid võrdleb NIR kontrasti RedEdge-ga, mitte Red-ga, mis tihti tuvastab taimestiku stressi varem.
 
 $$
 NDRE = {NIR - RedEdge \over NIR + RedEdge  }
@@ -232,9 +231,9 @@ $$
 
 ***
 
-## NDVI – normaliseeritud erinevus taimestiku indeks
+## NDVI – normaliseeritud taimestiku erinevusindeks
 
-See indeks on tervisliku, rohelise taimestiku mõõdik. Normaliseeritud erinevuse valemi ja klorofülli kõrgeima neeldumis- ja peegeldumispiirkonna kasutamise kombinatsioon muudab selle indeksi mitmesugustes tingimustes töökindlaks. Siiski võib see tiheda taimestiku tingimustes küllastuda, kui LAI muutub kõrgeks.
+See indeks mõõdab tervet, rohelist taimestikku. Normaliseeritud erinevuse valemi ja klorofülli kõrgeima neeldumis- ja peegeldumispiirkonna kasutamise kombinatsioon muudab selle indeksi mitmesugustes tingimustes stabiilseks. Siiski võib see tiheda taimestiku tingimustes küllastuda, kui LAI muutub kõrgeks.
 
 $$
 NDVI = {NIR - Red \over NIR + Red  }
@@ -248,7 +247,7 @@ _Viide: Rouse, J., R. Haas, J. Schell ja D. Deering. Taimestiku süsteemide seir
 
 ## NLI – mittelineaarne indeks
 
-See indeks eeldab, et paljude taimestiku indeksite ja pinnaja biofüüsikaliste parameetrite vaheline suhe on mittelineaarne. See lineariseerib suhted pinnaparametritega, mis on tavaliselt mittelineaarsed.
+See indeks eeldab, et paljude taimestiku indeksite ja pinnase biofüüsikaliste parameetrite vaheline suhe on mittelineaarne. See lineariseerib suhted pinnase parameetritega, mis on tavaliselt mittelineaarsed.
 
 $$
 NLI = {NIR^{2} - Red \over NIR^{2} + Red  }
@@ -266,7 +265,7 @@ $$
 OSAVI = {(NIR - Red) \over (NIR + Red + 0.16)  }
 $$
 
-_Viide: Rondeaux, G., M. Steven ja F. Baret. „Optimization of Soil-Adjusted Vegetation Indices” (Pinnase kohandatud taimestiku indeksite optimeerimine). Remote Sensing of Environment 55 (1996): 95–107._
+_Viide: Rondeaux, G., M. Steven ja F. Baret. „Optimization of Soil-Adjusted Vegetation Indices” (Pinnase järgi korrigeeritud taimestiku indeksite optimeerimine). Remote Sensing of Environment 55 (1996): 95–107._
 
 ***
 
@@ -284,25 +283,25 @@ _Viide: Roujean, J. ja F. Breon. „Hinnang PAR-i neeldumisele taimestikus kahep
 
 ## SAVI – pinnasega korrigeeritud taimestiku indeks
 
-See indeks on sarnane NDVI-ga, kuid see summutab pinnase pikslite mõju. See kasutab lehtede taustakorrigeerimistegurit _L_, mis on taimestiku tiheduse funktsioon ja nõuab sageli eelnevat teadmist taimestiku kogusest. Huete (1988) soovitab optimaalseks väärtuseks _L_=0,5, et arvesse võtta esimese järgu pinnase taustamuutusi. Seda indeksit on kõige parem kasutada piirkondades, kus taimestik on suhteliselt hõre ja pinnas on lehtede kaudu nähtav.
+See indeks on sarnane NDVI-ga, kuid see summutab pinnase pikslite mõju. See kasutab lehtede taustakorrigeerimistegurit _L_, mis on taimestiku tiheduse funktsioon ja nõuab sageli eelnevat teadmist taimestiku kogusest. Huete (1988) soovitab optimaalseks väärtuseks _L_=0,5, et arvesse võtta esimese järgu pinnase taustamuutusi. Seda indeksit on kõige parem kasutada piirkondades, kus taimestik on suhteliselt hõre ja muld on lehtede kaudu nähtav.
 
 $$
 SAVI = {1.5 * (NIR- Red) \over (NIR + Red + 0.5)  }
 $$
 
-_Viide: Huete, A. „Pinnasega korrigeeritud taimestiku indeks (SAVI).” Remote Sensing of Environment 25 (1988): 295-309._
+_Viide: Huete, A. „Mullaga korrigeeritud taimestiku indeks (SAVI).” Remote Sensing of Environment 25 (1988): 295-309._
 
 ***
 
-## TDVI – transformeeritud erinevusvegetatsiooni indeks
+## TDVI – transformeeritud erinevuste taimestiku indeks
 
-Seda indeksit on kasulik kasutada linnakeskkonna taimkatte seireks. See ei küllasta nagu NDVI ja SAVI.
+See indeks on kasulik taimestiku katvuse jälgimiseks linnakeskkonnas. See ei küllasta nagu NDVI ja SAVI.
 
 $$
 TDVI = 1.5 * {(NIR- Red) \over \sqrt{NIR^{2} + Red + 0.5}  }
 $$
 
-_Viide: Bannari, A., H. Asalhi ja P. Teillet. „Transformeeritud erinevuste taimestiku indeks (TDVI) taimestiku katte kaardistamiseks” Geoteaduste ja kaugseire sümpoosioni, IGARSS &#x27;02, IEEE International, 5. köide (2002) materjalides._
+_Viide: Bannari, A., H. Asalhi ja P. Teillet. „Transformeeritud erinevuste taimestiku indeks (TDVI) taimestiku katte kaardistamiseks” Geoteaduste ja kaugseire sümpoosioni IGARSS &#x27;02, IEEE International, 5. köide (2002) materjalides._
 
 ***
 
@@ -314,22 +313,22 @@ $$
 VARI = {Green - Red \over Green + Red - Blue  }
 $$
 
-_Viide: Gitelson, A., et al. „Vegetatsioon ja pinnaseliinid nähtavas spektraalses ruumis: kontseptsioon ja tehnika vegetatsiooni osakaalu kaughindamiseks. International Journal of Remote Sensing 23 (2002): 2537−2562._
+_Viide: Gitelson, A., et al. „Vegetation and Soil Lines in Visible Spectral Space: A Concept and Technique for Remote Estimation of Vegetation Fraction. International Journal of Remote Sensing 23 (2002): 2537−2562._
 
 ***
 
-## WDRVI – laia dünaamilise ulatusega taimestiku indeks
+## WDRVI – lai dünaamiline vahemik taimestiku indeks
 
-See indeks on sarnane NDVI-ga, kuid kasutab kaalukoefitsienti (_a_), et vähendada lähi-infrapuna- ja punaste signaalide osakaalu erinevust NDVI-s. WDRVI on eriti efektiivne stseenides, kus taimestiku tihedus on keskmine kuni kõrge, kui NDVI ületab 0,6. NDVI kipub tasanduma, kui taimestiku osakaal ja lehepinna indeks (LAI) suurenevad, samas kui WDRVI on tundlikum laiemale taimestiku osakaalu vahemikule ja muutustele LAI-is.
+See indeks on sarnane NDVI-ga, kuid kasutab kaalukoefitsienti (_a_), et vähendada lähi-infrapuna- ja punaste signaalide osakaalu erinevust NDVI-s. WDRVI on eriti efektiivne stseenides, kus taimestiku tihedus on mõõdukas kuni kõrge, kui NDVI ületab 0.6. NDVI kipub tasanduma, kui taimestiku osakaal ja lehe pindala indeks (LAI) suurenevad, samas kui WDRVI on tundlikum laiemale taimestiku osakaalu vahemikule ja muutustele LAI-is.
 
 $$
 WDRVI = {(\alpha * NIR- Red) \over (\alpha * NIR + Red)}
 $$
 
-Kaalukoefitsient (_a_) võib olla vahemikus 0,1–0,2. Henebry, Viña ja Gitelson (2004) soovitavad väärtust 0,2.
+Kaalukoefitsient (_a_) võib olla vahemikus 0,1 kuni 0,2. Henebry, Viña ja Gitelson (2004) soovitavad väärtust 0,2.
 
 _Viited_
 
-_Gitelson, A. „Lai dünaamiline vahemik taimestiku indeks taimestiku biofüüsikaliste omaduste kaugkvantifitseerimiseks.&quot; Journal of Plant Physiology 161, nr 2 (2004): 165-173._
+_Gitelson, A. „Lai dünaamiline taimestiku indeks taimestiku biofüüsikaliste omaduste kaugmõõtmiseks.” Journal of Plant Physiology 161, nr 2 (2004): 165–173._
 
-_Henebry, G., A. Viña ja A. Gitelson. &quot;Lai dünaamilise ulatusega taimestiku indeks ja selle potentsiaalne kasulikkus lünkade analüüsis.&quot; Gap Analysis Bulletin 12: 50-56._
+_Henebry, G., A. Viña ja A. Gitelson. „Lai dünaamilise ulatusega taimestiku indeks ja selle potentsiaalne kasulikkus lünkade analüüsis.” Gap Analysis Bulletin 12: 50–56._
