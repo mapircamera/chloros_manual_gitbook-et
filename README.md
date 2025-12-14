@@ -1,7 +1,6 @@
 ---
 metaLinks: {}
 ---
-
 # Alustamine
 
 <div data-full-width="false"><figure><img src=".gitbook/assets/chloros_logo_transparent.png" alt=""><figcaption></figcaption></figure></div>
@@ -32,12 +31,12 @@ Programmeeritav Python liides automatiseerimiseks ja kohandatud töövoogudeks. 
 
 ## Chloros+
 
-Kuigi Chloros on enamiku ülesannete jaoks tasuta, võib juhtuda, et soovite rohkem. Siis võib tasuline litsents Chloros+ teile kasuks tulla. Chloros+ litsentsiga saate avada uusi funktsioone, nagu:
+Kuigi Chloros on enamiku ülesannete jaoks tasuta, võite avastada, et soovite enamat. Siis võib tasuline litsents Chloros+ teile kasuks tulla. Chloros+ litsentsiga saate avada uusi funktsioone, nagu:
 
-* **Mitmeprotsessiline töötlemine**: kiirendab oluliselt suuremate projektide pilditöötlust, töötlemata pilte samaaegselt läbi torujuhtme.
-* **GPU (CUDA) kiirendus**: kasutage tänapäeva suuremaid GPU mäluvalikuid, et veelgi kiirendada pilditöötlusprotsessi. Parimate tulemuste saavutamiseks soovitame 4 GB või rohkem VRAM-i.
+* **Mitmeprotsessiline töötlemine**: kiirendab oluliselt suuremate projektide pilditöötlust, töötlemisprotsessi kaudu pilte samaaegselt töötledes.
+* **GPU (CUDA) kiirendus**: kasutage tänapäeva suuremate GPU mälumahutavuste eeliseid, et veelgi kiirendada pilditöötlusprotsessi. Parimate tulemuste saavutamiseks soovitame 4 GB või rohkem VRAM-i.
 * **Chloros+** [**CLI**](CLI.md) **Juurdepääs**: käivitage Chloros+ käsurealt, et automatiseerida ja integreerida oma tarkvarasse.
-* **Chloros+** [**API**](api-python-sdk.md) **Juurdepääs:** käivitage Chloros+ programmilise juhtimise jaoks Python-st, võimaldades sujuva integreerimise teie uurimisprotsesside, andmete analüüsi töövoogude ja kohandatud rakendustega.
+* **Chloros+** [**API**](api-python-sdk.md) **Juurdepääs:** käivitage Chloros+ programmilise juhtimise jaoks Python-st, võimaldades sujuvat integreerimist teie uurimistööde, andmete analüüsi töövoogude ja kohandatud rakendustega.
 * **Mitme seadme kasutamine**: iga Chloros+ litsents võimaldab registreerida 2+ seadet. Kasutage oma MAPIR pilvekontot registreeritud seadmete haldamiseks. Lisage tugi rohkematele seadmetele, uuendades oma Chloros+ litsentsi.
 * **Kohandatud multispektraalsed indeksivalemid:** sisestage kohandatud multispektraalsed indeksid Chloros rasterarvutitesse, nii töötlemiseks kui ka piltide vaatamiseks.
 

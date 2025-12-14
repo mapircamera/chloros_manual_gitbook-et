@@ -7,8 +7,8 @@ Kui Chloros on töötlemise lõpetanud, on aeg vaadata üle tulemused, kontrolli
 Kui töötlemine on edukalt lõpetatud, näete mitmeid märke:
 
 * ✅ **Progressiriba**: jõuab 100% täitmiseni
-* ✅ **Debug Log**: näitab sõnumit „Processing Complete” (Töötlemine lõpetatud)
-* ✅ **Start button**: muutub uuesti aktiveerituks (valmis järgmise töötlemise käivitamiseks)
+* ✅ **Debug Log**: näitab sõnumit „Töötlemine lõpetatud”
+* ✅ **Start-nupp**: muutub uuesti aktiveerituks (valmis järgmise töötlemise käivitamiseks)
 * ✅ **Väljundfailid**: kõik töödeldud pildid salvestatakse kaamera mudeli alamkausta
 
 ***
@@ -32,7 +32,7 @@ Kui töötlemine on edukalt lõpetatud, näete mitmeid märke:
 
 1. Navigeerige kaamera mudeli alamkausta
 2. Valige pildifail
-3. Eelvaade ilmub Windows Explorer eelvaateaknas
+3. Eelvaade ilmub Windows Explorer eelvaatepaneelis
 4. Kasutage nooleklahve piltide sirvimiseks
 
 ### Eelvaade välistes pildivaatajates
@@ -40,7 +40,7 @@ Kui töötlemine on edukalt lõpetatud, näete mitmeid märke:
 **Soovitatavad vaatajad:**
 
 * **QGIS** – tasuta GIS-tarkvara (parim georeferentseeritud multispektraalanalüüsiks)
-* **IrfanView** – kiire ja kerge pildivaataja (toetab TIFF)
+* **IrfanView** – kiire, kerge pildivaataja (toetab TIFF)
 * **Adobe Photoshop** – professionaalne redigeerimine (TIFF tugi)
 * **GIMP** – tasuta alternatiiv Photoshopile
 * **Windows Photos** – põhiline vaatamine (ei pruugi toetada 16-bitist TIFF)
@@ -85,16 +85,16 @@ Töötlemise salvestamiseks või MAPIR tugiteenistusele saatmiseks:
 
 **Võimalikud põhjused:**
 
-* Failid ei vastanud töötlemiskriteeriumidele
-* Ainult sihtpildid (ekspordist välja jäetud)
-* Ekspordi ajal sai kettaruum otsa
-* Failide rikkumine töötlemise ajal
+* Failid ei vastanud töötlemise kriteeriumidele.
+* Ainult sihtpildid (ekspordist välja jäetud).
+* Ekspordi ajal sai kettaruum otsa.
+* Failide rikkumine töötlemise ajal.
 
 **Lahendused:**
 
-1. Kontrollige veaotsingu logist, kas seal on vahelejätmise/veateateid
-2. Kontrollige, kas kettaruumi oli piisavalt
-3. Loendage faile: peaksid vastama (algne arv – sihtarv) × (indeksid + 1)
+1. Kontrollige veaotsingu logist, kas seal on vahelejätmise/veateateid.
+2. Veenduge, et kettaruumi oli piisavalt.
+3. Loendage faile: peaks vastama (algne arv – sihtarv) × (indeksid + 1)
 4. Importige puuduvad failid uuesti ja töötlege need uuesti.
 
 ### Probleem: tumedad või heledad servad (vignettimine on endiselt nähtav)
@@ -108,7 +108,7 @@ Töötlemise salvestamiseks või MAPIR tugiteenistusele saatmiseks:
 **Lahendused:**
 
 1. Kontrollige, kas vinjeti korrigeerimine on projektiseadetes lubatud.
-2. Kontrollige, kas kaamera mudel on õigesti tuvastatud.
+2. Kontrollige, kas kaameramudel on õigesti tuvastatud.
 3. Kui vinjetatsioon püsib, võtke ühendust MAPIR tugiteenistusega.
 
 ### Probleem: vale värv või väärtus
@@ -122,7 +122,7 @@ Töötlemise salvestamiseks või MAPIR tugiteenistusele saatmiseks:
 
 **Lahendused:**
 
-1. Kontrollige, kas peegelduskalibreerimine on lubatud.
+1. Kontrollige, kas peegelduskalibreerimine on sisse lülitatud.
 2. Kontrollige veaotsinguprotokollis sõnumit „Sihtmärk leitud”.
 3. Kontrollige sihtmärgi pildi kvaliteeti.
 4. Töötlege uuesti, märkides õiged sihtmärgid.
@@ -142,7 +142,7 @@ Töötlemise salvestamiseks või MAPIR tugiteenistusele saatmiseks:
 2. Kontrollige, kas valgussensori logi on lisatud.
 3. Kontrollige, kas kalibreerimise sihtmärgid on tuvastatud.
 4. Veenduge, et on tuvastatud õige kaameramudel.
-5. Kontrollige sihtmärgi pildistamise aega ja tingimusi.
+5. Kontrollige sihtmärgi pildi jäädvustamise aega ja tingimusi.
 
 ***
 
@@ -157,28 +157,28 @@ Töötlemise salvestamiseks või MAPIR tugiteenistusele saatmiseks:
    * Agisoft Metashape
    * DroneDeploy
    * WebODM
-2. **Säilitage EXIF-metadata**: veenduge, et GPS-andmed on geotagimise jaoks säilitatud
+2. **Säilitage EXIF-metadata**: veenduge, et GPS-andmed on geotagimiseks säilitatud
 3. **Kalibreeritud töövood**: kasutage peegeldusvõime pilte teadusliku täpsuse tagamiseks
-4. **Töötlege indeksmosaiike**: Looge NDVI ortomosaiigid üksikutest indeksipiltidest
-5. **Eksportige georeferentseeritud GeoTIFF**: kasutamiseks GIS-rakendustes
+4. **Töötle indeksmosaiike**: loo NDVI ortomosaik üksikutest indekspiltidest
+5. **Ekspordi georeferentseeritud GeoTIFF**: kasutamiseks GIS-rakendustes
 
 ### GIS-analüüsiks
 
 **Soovitatav töövoog:**
 
-1. **Laadige QGIS-i, ArcGIS-i või sarnasesse**
+1. **Laadige QGIS, ArcGIS või sarnane**
 2. **Kasutage 16-bitiseid TIFF** peegelduspilte mitme sagedusriba analüüsiks
 3. **Kasutage indekspilte** (NDVI, NDRE) valmis kasutuseks taimestiku kihtidena
-4. **Rasterarvuti**: kombineerige sagedusribad kohandatud analüüsiks
+4. **Rasterarvuti**: kombineerige sagedusalad kohandatud analüüsi jaoks
 5. **Eksport**: looge klassifitseerimiskaardid, muutuste tuvastamine, taimestiku tervisekaardid
 
-### Otsese analüüsi / aruandluse jaoks
+### Otseseks analüüsiks / aruandluseks
 
 **Soovitatav töövoog:**
 
 1. **Kasutage indekspilte LUT-värvidega** visuaalsete aruannete jaoks
-2. **Ekstrakteerige statistika**: keskmine NDVI põllu/krundi kohta
-3. **Aegread**: võrdle indekseid mitme seansi vahel
+2. **Statistika väljavõte**: keskmine NDVI põllu/krundi kohta
+3. **Aegrida**: võrdle indekseid mitme seansi vahel
 4. **Aruannete koostamine**: lisa kaardid, statistika ja visualiseeringud
 
 ***
@@ -189,17 +189,17 @@ Töötlemise salvestamiseks või MAPIR tugiteenistusele saatmiseks:
 
 **Mida salvestada:**
 
-* ✅ **Originaalsed RAW/JPG pildid** – arhiveeri eraldi kettal/pilves
-* ✅ **Töödeldud väljundid** – säilita kalibreeritud pildid ja indeksid
-* ✅ **Projektifail** – sisaldab kõiki vajaduse korral töötlemiseks vajalikke seadeid
-* ✅ **Debug-logi** – dokumenteerib töötlemise üksikasjad
+* ✅ **Originaalsed RAW/JPG pildid** – arhiveerige eraldi kettal/pilves
+* ✅ **Töödeldud väljundid** – säilitage kalibreeritud pildid ja indeksid
+* ✅ **Projektifail** – sisaldab kõiki vajadusel töötlemiseks vajalikke seadeid
+* ✅ **Debug Log** – dokumenteerib töötlemise üksikasjad
 * ✅ **Kalibreerimise sihtpildid** – kontrollimiseks ja töötlemiseks
 
 **Säilitamise soovitused:**
 
-* **Kohene varukoopia**: välisele kõvakettale
-* **Pikaajaline arhiiv**: pilvesalvestus (Google Drive, Dropbox jne)
-* **Kriitilised andmed**: hoidke 2–3 koopiat erinevates asukohtades
+* **Kohene varundamine**: välisele kõvakettale
+* **Pikaajaline arhiveerimine**: pilvesalvestus (Google Drive, Dropbox jne)
+* **Olulised andmed**: hoidke 2–3 koopiat erinevates kohtades
 
 ***
 
@@ -209,14 +209,14 @@ Töötlemise salvestamiseks või MAPIR tugiteenistusele saatmiseks:
 
 Kui töötlete tulevikus sarnaseid andmekogusid:
 
-1. **Salvestage projektimall** (kui seda pole veel tehtud)
+1. **Salvestage projektimall** (kui pole veel tehtud)
 2. **Looge uus projekt** salvestatud malli abil
 3. **Importige uued pildid**
 4. **Töötlege** ühtsuse tagamiseks identseid seadeid kasutades
 
 ### Mitme seansi kogumitöötlus
 
-Mitme seansi/andmekogumi puhul:
+Mitme seansi/andmekogu puhul:
 
 **Võimalus 1: GUI – mitu projekti**
 
@@ -238,7 +238,7 @@ Mitme seansi/andmekogumi puhul:
 
 ***
 
-## Järelkäsitlemise veaotsing
+## Järelkäsitluse veaotsing
 
 ### Uuesti töötlemine erinevate seadete abil
 
@@ -262,7 +262,7 @@ Ainult teatud piltide uuesti töötlemiseks:
 
 Kui tekib probleeme:
 
-* 📧 **E-post**: info@mapir.camera (lisage veaotsingu logi)
+* 📧 **E-post**: info@mapir.camera (lisage veaparanduslogi)
 * 🌐 **Tugi**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
 * 📚 **KKK**: [Korduma kippuvad küsimused](../faq.md)
 * 📖 **Dokumentatsioon**: [Chloros kasutusjuhend](../)
@@ -274,12 +274,12 @@ Kui tekib probleeme:
 Nüüd olete lõpetanud kogu Chloros töötlemise töövoo:
 
 1. ✅ **Loodud projekt** – vaadake [Projekte](../projects.md)
-2. ✅ **Lisatud failid** – vaadake [Failide lisamine](adding-files-to-a-project.md)
-3. ✅ **Seaded kohandatud** – vt [Projekti seadete kohandamine](adjusting-project-settings.md)
-4. ✅ **Sihtmärgid märgitud** – vt [Sihtmärgi piltide valimine](choosing-target-images.md)
-5. ✅ **Alustatud töötlemine** – vt [Töötlemise alustamine](starting-the-processing.md)
-6. ✅ **Jälgitud edenemine** – vt [Töötlemise jälgimine](monitoring-the-processing.md)
-7. ✅ **Tulemuste läbivaatamine** – see lehekülg
+2. ✅ **Lisatud failid** – vaata [Failide lisamine](adding-files-to-a-project.md)
+3. ✅ **Kohandatud seaded** – vaata [Projekti seadete kohandamine](adjusting-project-settings.md)
+4. ✅ **Märgitud sihtmärgid** – vaata [Sihtmärgi piltide valimine](choosing-target-images.md)
+5. ✅ **Alustatud töötlemine** – vaata [Töötlemise alustamine](starting-the-processing.md)
+6. ✅ **Jälgitud edenemine** – vaata [Töötlemise jälgimine](monitoring-the-processing.md)
+7. ✅ **Läbivaadatud tulemused** – see lehekülg
 
 **Teie kalibreeritud, peegelduskorrektsiooniga multispektraalsed pildid on valmis analüüsimiseks!**
 
@@ -302,5 +302,5 @@ Nüüd olete lõpetanud kogu Chloros töötlemise töövoo:
 ### Tugi ja õppimine
 
 * [**KKK**](../faq.md) – vastused tavapärastele küsimustele
-* [**Kalibreerimise sihtmärgid**](../calibration-targets.md) – peegelduskalibreerimise mõistmine
-* [**Toetatud kaamerad**](../supported-cameras.md) – ühilduv riistvara
+* [**Kalibreerimise sihtmärgid**](../calibration-targets.md) – Peegelduskalibreerimise mõistmine
+* [**Toetatud kaamerad**](../supported-cameras.md) – Ühilduv riistvara

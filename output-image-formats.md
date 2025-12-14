@@ -3,7 +3,6 @@ metaLinks:
   alternates:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/output-image-formats
 ---
-
 # Väljundpildi formaadid
 
 ### TIFF (16-bitine)
@@ -20,5 +19,5 @@ metaLinks:
 
 ### **PNG (8-bitine)**
 
-8-bitine (pikseli digitaalne number 0–255) PNG (.png) formaadis väljund. Kaotuseta pakkimine, mis sobib veebis vaatamiseks ja visualiseerimiseks.
+8-bitine (piksli digitaalne number 0–255) PNG (.png) formaadis väljund. Kaotuseta pakkimine, mis sobib veebis vaatamiseks ja visualiseerimiseks.
 

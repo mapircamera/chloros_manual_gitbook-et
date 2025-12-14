@@ -3,7 +3,6 @@ metaLinks:
   alternates:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/download
 ---
-
 # Allalaadimine
 
 Laadige alla Chloros uusim versioon Windows jaoks, et alustada multispektraalsete piltide töötlemist.
@@ -21,7 +20,7 @@ Laadige alla Chloros uusim versioon Windows jaoks, et alustada multispektraalset
 | **Internet**         | Vajalik litsentsi aktiveerimiseks | Vajalik litsentsi aktiveerimiseks |
 
 {% vihje style=&quot;info&quot; %}
-**GPU kiirendus**: Chloros+ kasutajad, kellel on NVIDIA GPU (4 GB+ VRAM), saavad kasutada CUDA kiirendust, et töötlemine oleks oluliselt kiirem.
+**GPU kiirendus**: Chloros+ kasutajad, kellel on NVIDIA GPU (4 GB+ VRAM), saavad kasutada CUDA kiirendust, et oluliselt kiirendada töötlemist.
 {% endhint %}
 
 ***
@@ -32,7 +31,7 @@ Laadige alla Chloros uusim versioon Windows jaoks, et alustada multispektraalset
 
 ### Viimane stabiilne versioon
 
-**Chloros installija Windows jaoks**
+**Chloros paigaldaja Windows jaoks**
 
 * **Versioon**: 1.0.3
 * **Väljalaske kuupäev**: detsember ?, 2025
@@ -42,13 +41,13 @@ Laadige alla Chloros uusim versioon Windows jaoks, et alustada multispektraalset
 #### **Paigaldamise sammud:**
 
 1. Lae alla fail `CHLOROS INSTALLER - CURRENT VERSION.exe`.
-2. Paigaldamise alustamiseks topeltklõpsa paigaldusprogrammi.
+2. Paigaldamise alustamiseks topeltklõpsa paigaldusprogrammil.
 3. Järgi paigaldusviisardi juhiseid.
 4. Vali paigalduskataloog (vaikimisi: `C:\Program Files\Chloros\`).
 5. Viima paigaldamine lõpule ja käivita Chloros.
 6. Logige sisse oma MAPIR Cloud Chloros+ kontoga (või jätkake tasuta versiooniga)
 
-{% hint style=&quot;success&quot; %}
+{% vihje style=&quot;success&quot; %}
 Installija lisab automaatselt `chloros-cli` teie süsteemi PATH-i, et võimaldada juurdepääsu käsureale.
 {% endhint %}
 
@@ -102,12 +101,12 @@ Avage täiustatud funktsioonid Chloros+ tellimusega:
 **Installimine ebaõnnestub veateatega:**
 
 * Veenduge, et teil on administraatori õigused
-* Lülitage ajutiselt välja viirusetõrjeprogramm
+* Lülitage ajutiselt välja viirusetõrjetarkvara
 * Kontrollige, kas teie süsteem vastab miinimumnõuetele
 
 **Rakendus ei käivitu:**
 
-* Proovige Chloros (brauseri) versiooni
+* Proovige Chloros (brauser) versiooni
 * Veenduge, et Windows 10/11 (64-bitine) on installitud
 * Uuendage graafikadraiverid
 * Kontrollige Windows sündmustevaatajat vea üksikasjade leidmiseks
@@ -116,9 +115,9 @@ Avage täiustatud funktsioonid Chloros+ tellimusega:
 **Litsentsi aktiveerimise probleemid:**
 
 * Veenduge, et internetiühendus on aktiivne
-* Kontrollige oma kasutajatunnust [https://cloud.mapir.camera](https://cloud.mapir.camera)
+* Kontrollige oma kasutajatunnuseid [https://cloud.mapir.camera](https://cloud.mapir.camera)
 * Kontrollige, et tulemüür ei blokeeri Chloros
-* Vaadake [Chloros+ Login](chloros+-login.md) üksikasjalikke juhiseid
+* Täpsed juhised leiate [Chloros+ Login](chloros+-login.md)
 
 ### Abi saamine
 
@@ -131,7 +130,7 @@ Vajate abi installimise või seadistamisega?
 
 ***
 
-## Muudatuste logi
+## Muudatuste ajalugu
 
 <details>
 
@@ -166,3 +165,5 @@ Ebaõiguslik kasutamine, levitamine või muutmine on keelatud.
 **Tasuta versioon**: saadaval isiklikuks ja äriliseks kasutamiseks funktsioonide piirangutega.
 
 **Chloros+**: tellimuspõhine litsents täiustatud funktsioonide ja ärilise kasutusega.
+
+<figure><img src=".gitbook/assets/t3-125_2.jpg" alt=""><figcaption></figcaption></figure>

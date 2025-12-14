@@ -1,6 +1,6 @@
 # Sihtpiltide valimine
 
-Kalibreerimise sihtmärkide sisaldavate piltide märkimine on oluline samm, mis kiirendab oluliselt Chloros töötlemisprotsessi. Sihtpiltide eelvalikuga ei pea Chloros skannima kõiki andmekogus olevaid pilte kalibreerimise sihtmärkide leidmiseks.
+Kalibreerimise sihtmärgid sisaldavate piltide märkimine on oluline samm, mis kiirendab oluliselt Chloros töötlemisprotsessi. Sihtpiltide eelvalikuga ei pea Chloros skannima kõiki andmekogus olevaid pilte kalibreerimise sihtmärkide leidmiseks.
 
 ## Miks märkida sihtpilte?
 
@@ -23,7 +23,7 @@ Kui märgite sihtmärgi veerus konkreetsed pildid:
 * Üldine töötlemisaeg lüheneb oluliselt
 
 {% vihje style=&quot;success&quot; %}
-**Kiiruse paranemine**: 500 pildist koosnevas andmekogus 2–3 sihtpildi märkimine võib sihtmärgi tuvastamise aega vähendada 30+ minutilt alla 1 minuti.
+**Kiiruse paranemine**: 500 pildist koosnevas andmekogus 2–3 sihtpildi märkimine võib sihtmärgi tuvastamise aega lühendada 30+ minutilt alla 1 minuti.
 {% endhint %}
 
 ***
@@ -38,7 +38,7 @@ Vaadake failibrauseris imporditud pilte ja tuvastage, millised pildid sisaldavad
 
 * **Eelnevalt jäädvustatud sihtmärk**: jäädvustatud enne seansi algust.
 * **Järgnevalt jäädvustatud sihtmärk**: jäädvustatud pärast seansi lõppu.
-* **Väljas olevad sihtmärgid**: sihtmärgid, mis asuvad jäädvustamisalas.
+* **Väljas asuvad sihtmärgid**: sihtmärgid, mis asuvad jäädvustamispiirkonnas.
 * **Mitmed sihtmärgid**: 2–3 sihtmärgi pilti seansi kohta (soovitatav).
 
 ### 2. samm: kontrollige sihtmärgi veergu
@@ -46,7 +46,7 @@ Vaadake failibrauseris imporditud pilte ja tuvastage, millised pildid sisaldavad
 Iga kalibreerimise sihtmärki sisaldava pildi puhul:
 
 1. Leidke pilt failibrauseri tabelist.
-2. Leidke veerg **Sihtmärk** (parempoolseim veerg).
+2. Leidke **Sihtmärk** veerg (parempoolseim veerg).
 3. Klõpsake selle pildi sihtmärgi veerus olevale märkeruudule.
 4. Korrake seda kõigi sihtmärke sisaldavate piltide puhul.
 
@@ -68,14 +68,14 @@ Enne töötlemist kontrollige veel kord:
 
 * Pildistage sihtmärgi pildid vahetult enne pildistamise seanssi ja selle käigus
 * Samades valgustingimustes kui DAQ valgussensor
-* Ideaaljuhul pildistage sihtmärgipilte võimalikult tihti, et saada parimaid tulemusi. Muidu kasutatakse kalibreerimise kohandamiseks aja jooksul valgussensori andmeid.
+* Parimate tulemuste saavutamiseks pildistage sihtmärke võimalikult tihti. Muidu kasutatakse kalibreerimise kohandamiseks aja jooksul valgussensori andmeid.
 
 **Kaamera asend:**
 
-* Hoidke kaamerat sihtmärgi kohal nii, et see oleks keskel ja täidaks umbes 40–60% pildi keskosast.
-* Hoidke kaamera sihtmärgi pinnaga paralleelselt/nadiril
+* Hoia kaamerat sihtmärgi kohal nii, et see oleks keskel ja täidaks umbes 40–60% pildi keskosast.
+* Hoia kaamera sihtmärgi pinnaga paralleelselt/nadiril
 
-**Valgustamine:**
+**Valgustus:**
 
 * Sama ümbritsev valgus kui teie DAQ valgussensoril.
 * Vältige varjusid sihtmärgi pinnal.
@@ -86,17 +86,17 @@ Enne töötlemist kontrollige veel kord:
 
 * Hoidke sihtmärgi paneelid puhtad ja kuivad.
 * Kõik 4 paneeli peavad olema selgelt nähtavad ja takistusteta.
-* Sihtmärgid võimaluse korral risti/nadiriga valgusallikaga.
+* Sihtmärgid peaksid olema võimaluse korral valgusallikaga risti/nadir.
 
 ### Kui palju sihtmärgi pilte?
 
-**Minimum:** 1 sihtmärgi pilt seansi kohta. **Soovituslik:** 3–5 sihtmärgi pilti seansi kohta.
+**Minimaalselt:** 1 sihtmärgi pilt seansi kohta. **Soovitatavalt:** 3–5 sihtmärgi pilti seansi kohta.
 
-**Parim praktika ajakava:**
+**Parim praktika:**
 
 * 3–5 pilti, mis on tehtud vahetult pärast valgussensori salvestamise algust
 * Parimate tulemuste saamiseks pöörake kaamerat pildistamise vahel
-* Valikuline: perioodiliselt seansi keskel, kui valgustusolud muutuvad pidevalt
+* Valikuliselt: perioodiliselt seansi keskel, kui valgustusolud muutuvad pidevalt
 
 ***
 
@@ -133,8 +133,8 @@ Kui Chloros ei tuvasta teie sihtmärke õigesti, reguleerige neid seadeid [proje
 **Minimaalne kalibreerimise valimi pindala:**
 
 * **Vaikimisi**: 25 pikslit
-* **Suurendage**, kui väikeste artefaktide puhul tekivad valed tuvastused
-* **Vähendage**, kui sihtmärke ei tuvastata
+* **Suurendage**, kui väikeste artefaktide puhul tekivad valed tuvastused.
+* **Vähendage**, kui sihtmärke ei tuvastata.
 
 **Minimaalne sihtmärkide klastrite arv:**
 
@@ -160,7 +160,7 @@ Kui Chloros ei tuvasta teie sihtmärke õigesti, reguleerige neid seadeid [proje
 1. Kontrollige, et sihtmärgi veerg on märgitud õigete piltide jaoks
 2. Vaadake sihtmärgi pildi kvaliteeti eelvaates
 3. Kui kvaliteet on halb, pildistage sihtmärgid uuesti
-4. Vajadusel kohandage sihtmärgi tuvastamise seadeid
+4. Vajadusel reguleerige sihtmärgi tuvastamise seadeid
 
 ### Probleem: valed sihtmärgi tuvastused
 
@@ -175,7 +175,7 @@ Kui Chloros ei tuvasta teie sihtmärke õigesti, reguleerige neid seadeid [proje
 1. Märkige ainult tegelikud sihtmärgi pildid, et piirata tuvastamise ulatust
 2. Suurendage minimaalse kalibreerimise valimi pindala
 3. Suurendage minimaalse sihtmärgi klastri väärtust
-4. Veenduge, et sihtmärgi pildid näitavad ainult sihtmärki (minimaalne taustakärar)
+4. Veenduge, et sihtmärgi pildid näitavad ainult sihtmärki (minimaalne taustakülg)
 
 ***
 
@@ -183,11 +183,11 @@ Kui Chloros ei tuvasta teie sihtmärke õigesti, reguleerige neid seadeid [proje
 
 Enne töötlemise alustamist kontrollige oma sihtmärgi piltide valikut:
 
-* [ ] Iga seansi kohta on märgitud vähemalt 1 sihtmärgi pilt.
-* [ ] Kõigi sihtmärgi piltide puhul on märgitud sihtmärgi veeru valikukastid.
-* [ ] Sihtmärgi pildid on tehtud sama ajavahemiku jooksul kui uuring.
-* [ ] Sihtmärgid on eelvaates selgelt nähtavad, kui neile klõpsata.
-* [ ] Kõik 4 kalibreerimispaneeli on nähtavad igal sihtmärgi pildil.
+* [ ] Vähemalt 1 sihtmärgi pilt märgitud iga seansi kohta
+* [ ] Sihtmärgi veeru valikukastid on märgitud kõikide sihtmärgi piltide puhul
+* [ ] Sihtmärgi pildid on jäädvustatud sama ajavahemiku jooksul kui uuring
+* [ ] Sihtmärgid on eelvaates selgelt nähtavad, kui neile klõpsata
+* [ ] Kõik 4 kalibreerimispaneeli on nähtavad igal sihtmärgi pildil
 * [ ] Sihtmärkidel ei ole varjusid ega takistusi
 * [ ] Kahe kaamera puhul: sihtmärgid on märgitud mõlema kaameratüübi jaoks
 
@@ -204,15 +204,15 @@ Kuigi teadustööks ei ole see soovitatav, võite töötlemist teha ka ilma siht
 3. Vignette&#x27;i korrigeerimine jääb endiselt kehtima.
 4. Väljundit ei kalibreerita absoluutse peegeldusvõime jaoks.
 
-{% hint style=&quot;warning&quot; %}
-**Ei soovitata**: ilma peegeldusvõime kalibreerimiseta esindavad pikseliväärtused ainult suhtelist heledust, mitte teaduslikke peegeldusvõime mõõtmisi. Täpsete ja korratavate tulemuste saamiseks kasutage kalibreerimise sihtmärke.
+{% vihje style=&quot;warning&quot; %}
+**Ei soovitata**: ilma peegeldusvõime kalibreerimiseta näitavad pikseliväärtused ainult suhtelist heledust, mitte teaduslikke peegeldusvõime mõõtmisi. Täpsete ja korratavate tulemuste saamiseks kasutage kalibreerimise sihtmärke.
 {% endhint %}
 
 ***
 
 ## Järgmised sammud
 
-Kui olete märkinud oma sihtpildid:
+Kui olete märkinud sihtpildid:
 
 1. **Vaadake oma seaded üle** – vt [Projekti seadeid kohandamine](adjusting-project-settings.md)
 2. **Alustage töötlemist** – vt [Töötlemise alustamine](starting-the-processing.md)

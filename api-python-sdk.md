@@ -7,7 +7,7 @@
 * 🐍 **Native Python** - Puhas, Pythonic API pilditöötluseks
 * 🔧 **Täielik API juurdepääs** - Täielik kontroll Chloros töötlemise üle
 * 🚀 **Automatiseerimine** - Kohandatud partii töötlemise töövoogude loomine
-* 🔗 **Integreerimine** – Chloros lisamine olemasolevatesse Python rakendustesse
+* 🔗 **Integreerimine** – Chloros integreerimine olemasolevatesse Python rakendustesse
 * 📊 **Uurimistööks valmis** – ideaalne teadusliku analüüsi protsesside jaoks
 * ⚡ **Paralleelne töötlemine** – skaleeritav vastavalt teie CPU tuumadele (Chloros+)
 
@@ -23,7 +23,7 @@
 | **Internet**         | Vajalik litsentsi aktiveerimiseks                                     |
 
 {% vihje style=&quot;warning&quot; %}
-**Litsentsinõuded**: Python SDK nõuab tasulist Chloros+ tellimust, et pääseda juurde API-ile. Standard (tasuta) paketid ei sisalda juurdepääsu API/SDK-ile. Külasta [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing), et uuendada.
+**Litsentsinõuded**: Python SDK nõuab tasulist Chloros+ tellimust, et pääseda juurde API. Standard (tasuta) paketid ei sisalda juurdepääsu API/SDK-ile. Külasta [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing), et uuendada.
 {% endhint %}
 
 ## Kiirstart
@@ -42,7 +42,7 @@ pip install chloros-sdk
 
 ### Põhiline kasutus
 
-Töötle kaust, milles on vaid paar rida:
+Töötle kaust, mis sisaldab vaid mõnda rida:
 
 ```python
 from chloros_sdk import process_folder
@@ -132,12 +132,12 @@ SDK kasutab sama litsentsi kui Chloros, Chloros (brauser) ja Chloros CLI. Aktive
 3. Litsents salvestatakse kohalikku vahemällu (säilib ka pärast taaskäivitamist)
 
 {% vihje style=&quot;success&quot; %}
-**Ühekordne seadistamine**: pärast sisselogimist GUI või CLI kaudu kasutab SDK automaatselt salvestatud litsentsi. Täiendavat autentimist ei ole vaja!
+**Ühekordne seadistamine**: Pärast sisselogimist GUI või CLI kaudu kasutab SDK automaatselt salvestatud litsentsi. Täiendavat autentimist ei ole vaja!
 {% endhint %}
 
 ### Ühenduse testimine
 
-Kontrollige, kas SDK saab ühenduda Chloros-iga:
+Veenduge, et SDK saab ühenduda Chloros-iga:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -174,9 +174,9 @@ ChlorosLocal(
 
 | Parameeter                 | Tüüp | Vaikimisi                   | Kirjeldus                           |
 | ------------------------- | ---- | ------------------------- | ------------------------------------- |
-| `api_url`                 | str  | `"http://localhost:5000"` | URL kohalikust Chloros backendist          |
+| `api_url`                 | str  | `"http://localhost:5000"` | URL kohalikust Chloros tagapõhjast          |
 | `auto_start_backend`      | bool | `True`                    | Vajadusel backendi automaatne käivitamine |
-| `backend_exe`             | str  | `None` (automaatne tuvastamine)      | Tagapõhja käivitatava faili asukoht            |
+| `backend_exe`             | str  | `None` (automaatne tuvastamine)      | Backendi käivitatava faili asukoht            |
 | `timeout`                 | int  | `30`                      | Päringu aegumine sekundites            |
 | `backend_startup_timeout` | int  | `60`                      | Backendi käivitamise aegumine (sekundites) |
 
@@ -236,7 +236,7 @@ Piltide importimine kaustast.
 | `folder_path` | str/Path | Jah      | Pildid sisaldava kausta tee         |
 | `recursive`   | bool     | Ei       | Otsi alamkaustadest (vaikimisi: False) |
 
-**Tagastab:** `dict` – Importimise tulemused koos failide arvuga
+**Tagastab:** `dict` - Importimise tulemused koos failide arvuga
 
 **Näide:**
 
@@ -252,17 +252,17 @@ chloros.import_images("C:\\DroneImages", recursive=True)
 
 #### `configure(**settings)`
 
-Töötlemise seadete konfigureerimine.
+Konfigureerige töötlemise seaded.
 
 **Parameetrid:**
 
 | Parameeter                 | Tüüp | Vaikimisi                 | Kirjeldus                     |
 | ------------------------- | ---- | ----------------------- | ------------------------------- |
-| `debayer`                 | str  | „Kõrge kvaliteet (kiirem)” | Debayer-meetod                  |
-| `vignette_correction`     | bool | `True`                  | Vignette&#x27;i korrigeerimise lubamine      |
+| `debayer`                 | str  | &quot;Kõrge kvaliteet (kiirem)&quot; | Debayer meetod                  |
+| `vignette_correction`     | bool | `True`                  | Vignette korrigeerimise lubamine      |
 | `reflectance_calibration` | bool | `True`                  | Peegelduskalibreerimise lubamine  |
 | `indices`                 | list | `None`                  | Arvutatavad taimestiku indeksid |
-| `export_format`           | str  | „TIFF (16-bitine)”         | Väljundvorming                   |
+| `export_format`           | str  | &quot;TIFF (16-bit)&quot;         | Väljundvorming                   |
 | `ppk`                     | bool | `False`                 | Luba PPK parandused          |
 | `custom_settings`         | dict | `None`                  | Täpsemad kohandatud seaded        |
 
@@ -316,7 +316,7 @@ Töötle projekti pilte.
 **Tagastab:** `dict` - Töötlemise tulemused
 
 {% hint style=&quot;warning&quot; %}
-**Paralleelrežiim**: Nõuab Chloros+ litsentsi. Skaalub automaatselt teie CPU tuumade järgi (kuni 16 töötajat).
+**Paralleelrežiim**: Nõuab Chloros+ litsentsi. Skaleerub automaatselt teie CPU tuumade järgi (kuni 16 töötajani).
 {% endhint %}
 
 **Näide:**
@@ -358,9 +358,9 @@ print(config['Project Settings'])
 
 #### `get_status()`
 
-Saab tagasiside staatuse teabe.
+Hangi backendi staatuse teave.
 
-**Tagastab:** `dict` - Tagasiside staatus
+**Tagastab:** `dict` - Backendi staatus
 
 **Näide:**
 
@@ -374,7 +374,7 @@ print(f"URL: {status['url']}")
 
 #### `shutdown_backend()`
 
-Tagapõhja sulgemine (kui käivitatud SDK poolt).
+Sulgeb backendi (kui see on käivitatud SDK poolt).
 
 **Näide:**
 
@@ -395,14 +395,14 @@ chloros.shutdown_backend()
 | Parameeter                 | Tüüp     | Vaikimisi         | Kirjeldus                    |
 | ------------------------- | -------- | --------------- | ------------------------------ |
 | `folder_path`             | str/Path | Nõutav        | Pildidega kausta tee     |
-| `project_name`            | str      | Automaatselt loodud  | Projekti nimi                   |
+| `project_name`            | str      | Automaatselt genereeritud  | Projekti nimi                   |
 | `camera`                  | str      | `None`          | Kaamera mall                |
 | `indices`                 | list     | `["NDVI"]`      | Arvutamiseks vajalikud indeksid           |
 | `vignette_correction`     | bool     | `True`          | Vignette&#x27;i korrigeerimise lubamine     |
 | `reflectance_calibration` | bool     | `True`          | Peegelduskalibreerimise lubamine |
 | `export_format`           | str      | &quot;TIFF (16-bit)&quot; | Väljundvorming                  |
 | `mode`                    | str      | `"parallel"`    | Töötlemisrežiim                |
-| `progress_callback`       | callable | `None`          | Progress callback              |
+| `progress_callback`       | callable | `None`          | Edusammude tagasiside              |
 
 **Tagastab:** `dict` - Töötlemise tulemused
 
@@ -512,9 +512,9 @@ print("Processing complete!")
 
 ***
 
-### Näide 3: mitme kausta töötlemine partiidena
+### Näide 3: mitme kausta kogumitöötlus
 
-Mitme lennuandmestiku töötlemine:
+Töötle mitut lennuandmestikku:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -564,9 +564,9 @@ print("All flights processed!")
 
 ***
 
-### Näide 4: uurimisprotsessi integreerimine
+### Näide 4: uurimistöö voo integreerimine
 
-Chloros integreerimine andmete analüüsiga:
+Integreeri Chloros andmete analüüsiga:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -619,9 +619,9 @@ print(df)
 
 ***
 
-### Näide 5: kohandatud protsessi jälgimine
+### Näide 5: kohandatud edusammude jälgimine
 
-Täpsem protsessi jälgimine logimisega:
+Täpsem edusammude jälgimine logimisega:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -660,7 +660,7 @@ logging.info("Processing complete!")
 
 ### Näide 6: veahaldus
 
-Töökindel veahaldus tootmiskasutamiseks:
+Töökindel veahaldus tootmiseks:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -712,7 +712,7 @@ else:
 
 ### Näide 7: käsurea tööriist
 
-Kohandatud CLI tööriista loomine SDK abil:
+Looge kohandatud CLI tööriist SDK abil:
 
 ```python
 #!/usr/bin/env python
@@ -839,7 +839,7 @@ chloros = ChlorosLocal(
 )
 ```
 
-### Mitteblokeeriv töötlemine
+### Mittetõkestav töötlemine
 
 Alustage töötlemist ja jätkake teiste ülesannetega:
 
@@ -863,7 +863,7 @@ print("Processing complete!")
 
 ### Mäluhaldus
 
-Suurte andmekogumite puhul töötle partiidena:
+Suurte andmekogumite puhul töötlege partiidena:
 
 ```python
 from pathlib import Path
@@ -967,15 +967,15 @@ python -c "import sys; print(sys.path)"
 chloros = ChlorosLocal(timeout=120)  # 2 minutes
 ```
 
-2. Töötle väiksemaid partiisid
-3. Kontrolli vaba kettaruumi
-4. Jälgi süsteemi ressursse
+2. Töötlege väiksemaid partiisid
+3. Kontrollige vaba kettaruumi
+4. Jälgige süsteemi ressursse
 
 ***
 
 ### Port on juba kasutusel
 
-**Probleem:** Backend-port 5000 on hõivatud
+**Probleem:** Tagapoolne port 5000 on hõivatud
 
 **Lahendused:**
 
@@ -984,7 +984,7 @@ chloros = ChlorosLocal(timeout=120)  # 2 minutes
 chloros = ChlorosLocal(api_url="http://localhost:5001")
 ```
 
-Või leia ja sulge konflikti tekitav protsess:
+Või otsige ja sulgege konflikti tekitav protsess:
 
 ```powershell
 # PowerShell
@@ -997,7 +997,7 @@ Get-NetTCPConnection -LocalPort 5000
 
 ### Optimeerige töötlemiskiirust
 
-1. **Kasutage paralleelset režiimi** (nõuab Chloros+)
+1. **Kasutage paralleelrežiimi** (nõuab Chloros+)
 
 ```python
 chloros.process(mode="parallel")  # Up to 16 workers
@@ -1033,7 +1033,7 @@ Suurte andmekogumite puhul:
 
 ### Taustatöötlus
 
-Vabastage Python muude ülesannete jaoks:
+Vabasta Python muude ülesannete jaoks:
 
 ```python
 chloros.process(wait=False)  # Non-blocking
@@ -1046,7 +1046,7 @@ chloros.process(wait=False)  # Non-blocking
 
 ## Integreerimise näited
 
-### Django integreerimine
+### Django integratsioon
 
 ```python
 # views.py
@@ -1137,7 +1137,7 @@ chloros.process(progress_callback=notebook_progress)
 
 ***
 
-### K: Mis vahe on Desktopil, CLIil ja SDKil?
+### K: Mis vahe on Desktop, CLI ja SDK vahel?
 
 | Funktsioon         | Desktop GUI | CLI käsurida | Python SDK  |
 | --------------- | ----------- | ---------------- | ----------- |
@@ -1151,17 +1151,17 @@ chloros.process(progress_callback=notebook_progress)
 
 ### K: Kas ma saan levitada SDK-ga loodud rakendusi?
 
-**V:** SDK koodi saab integreerida teie rakendustesse, kuid:
+**V:** SDK-koodi saab integreerida teie rakendustesse, kuid:
 
-* Lõppkasutajatel peab olema installitud Chloros.
-* Lõppkasutajatel peab olema aktiivne Chloros+ litsents.
-* Kommertsiaalne levitamine nõuab OEM-litsentsi.
+* Lõppkasutajatel peab olema installitud Chloros
+* Lõppkasutajatel peab olema aktiivne Chloros+ litsents
+* Kommertsiaalne levitamine nõuab OEM-litsentsi
 
-OEM-küsimustega võtke ühendust info@mapir.camera-iga.
+OEM-küsimuste korral võtke ühendust info@mapir.camera-iga.
 
 ***
 
-### K: Kuidas uuendada SDK?
+### K: Kuidas uuendada SDK-i?
 
 ```bash
 pip install --upgrade chloros-sdk
@@ -1171,7 +1171,7 @@ pip install --upgrade chloros-sdk
 
 ### K: Kuhu salvestatakse töödeldud pildid?
 
-Vaikimisi projekti teekonda:
+Vaikimisi projekti asukohta:
 
 ```
 Project_Path/
@@ -1181,7 +1181,7 @@ Project_Path/
 
 ***
 
-### K: Kas ma saan töödelda pilte Python skriptidest, mis töötavad graafiku järgi?
+### K: Kas ma saan töödelda pilte Python skriptidest, mis töötavad graafiku alusel?
 
 **V:** Jah! Kasutage Windows ülesannete planeerijat koos Python skriptidega:
 
@@ -1193,13 +1193,13 @@ from chloros_sdk import process_folder
 results = process_folder("C:\\Flights\\Today")
 ```
 
-Kavandage ülesannete planeerija abil igapäevane käivitamine.
+Planeerige ülesannete planeerija abil igapäevane käivitamine.
 
 ***
 
 ### K: Kas SDK toetab async/await?
 
-**V:** Praegune versioon on sünkroonne. Asünkroonse käitumise jaoks kasutage `wait=False` või käivitage eraldi protsessis:
+**V:** Praegune versioon on sünkroonne. Asünkroonse käitumise jaoks kasutage `wait=False` või käivitage eraldi niidis:
 
 ```python
 import threading
@@ -1219,7 +1219,7 @@ thread.start()
 
 ### Dokumentatsioon
 
-* **API viide**: see lehekülg
+* **API viide**: See lehekülg
 
 ### Abikanalid
 
@@ -1235,6 +1235,6 @@ Kõik siin loetletud näited on testitud ja valmis tootmiseks. Kopeerige ja koha
 
 ## Litsents
 
-**Omanditarkvara** – Autoriõigus (c) 2025 MAPIR Inc.
+**Omanditarkvara** – autoriõigus (c) 2025 MAPIR Inc.
 
 SDK nõuab aktiivset Chloros+ tellimust. Ebaseaduslik kasutamine, levitamine või muutmine on keelatud.

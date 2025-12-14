@@ -1,6 +1,6 @@
 # Töötlemise alustamine
 
-Kui olete importinud pildid, märkinud kalibreerimise sihtmärgid ja konfigureerinud projekti seaded, olete valmis töötlemise alustamiseks. See lehekülg juhendab teid Chloros töötlemisprotsessi käivitamisel.
+Kui olete importinud pildid, märkinud kalibreerimise sihtmärgid ja konfigureerinud projekti seaded, olete valmis töötlemist alustama. See lehekülg juhendab teid Chloros töötlemisprotsessi käivitamisel.
 
 ## Eeltöötluse kontrollnimekiri
 
@@ -23,7 +23,7 @@ Enne nupule „Start” klõpsamist veenduge, et kõik on valmis:
 
 ### Leia alustamisnupp
 
-Alustamis-/esitusnupp asub Chloros ülemises päisribas:
+Alustamis-/esitusnupp asub Chloros ülemises päises:
 
 * Asukoht: akna ülemine keskosa
 * Ikoon: **Esitus-/alustamisnupp** <img src="../.gitbook/assets/image (2).png" alt="" data-size="line">
@@ -46,7 +46,7 @@ Alustamis-/esitusnupp asub Chloros ülemises päisribas:
 
 Chloros töötab sõltuvalt teie litsentsist kahes erinevas töötlemisrežiimis:
 
-### Tasuta režiim (järkjärguline töötlemine)
+### Vaba režiim (järkjärguline töötlemine)
 
 **Kättesaadav kõigile kasutajatele**
 
@@ -56,7 +56,7 @@ Chloros töötab sõltuvalt teie litsentsist kahes erinevas töötlemisrežiimis
 * Üheprotsessiline töö
 * Väiksem mälu kasutamine
 
-**Progressiriba näitab 2 etappi:**
+**Edusammude riba näitab 2 etappi:**
 
 1. **Sihtmärgi tuvastamine** – kalibreerimise sihtmärkide otsimine
 2. **Töötlemine** – kalibreerimise rakendamine ja piltide eksportimine
@@ -88,7 +88,7 @@ Chloros töötab sõltuvalt teie litsentsist kahes erinevas töötlemisrežiimis
 
 * **Viige hiir** riba kohale, et näha üksikasjalikku 4-etapilist rippmenüüd
 * **Klõpsake** progressiribal, et rippmenüü paigale külmutada
-* **Klõpsake uuesti**, et paneel vabastada ja peita
+* **Klõpsake uuesti**, et külmutamine tühistada ja menüü peita
 
 **Töötlemisaeg:**
 
@@ -104,16 +104,16 @@ Chloros töötab sõltuvalt teie litsentsist kahes erinevas töötlemisrežiimis
 
 ## Mis toimub töötlemise ajal
 
-### 1. etapp: sihtmärgi tuvastamine
+### Etapp 1: Sihtmärgi tuvastamine
 
 **Mida Chloros teeb:**
 
-* Skaneerib märgistatud sihtmärgi pildid (või kõik pildid, kui märgitud sihtmärke pole)
+* Skaneerib märgistatud sihtmärgi pildid (või kõik pildid, kui märgistatud pole)
 * Identifitseerib iga sihtmärgi 4 kalibreerimispaneeli
 * Ekstraktib sihtmärgi paneelidelt peegeldusväärtused
 * Salvestab sihtmärgi ajamärgid kalibreerimise ajakava jaoks
 
-**Kestus:** 1–30 sekundit (märgitud sihtmärkide puhul), 5–30+ minutit (märgimata sihtmärkide puhul)
+**Kestus:** 1–30 sekundit (märgitud sihtmärkide puhul), 5–30+ minutit (märkimata sihtmärkide puhul)
 
 ### 2. etapp: Debayering (RAW-konverteerimine)
 
@@ -127,11 +127,11 @@ Chloros töötab sõltuvalt teie litsentsist kahes erinevas töötlemisrežiimis
 
 ### 3. etapp: kalibreerimine
 
-**Chloros teeb järgmist:**
+**Mida Chloros teeb:**
 
 * **Vignette&#x27;i korrigeerimine**: eemaldab objektiivi tumenemise servades
 * **Peegelduskalibreerimine**: normaliseerib sihtmärgi peegeldusväärtuste abil
-* Rakendab korrigeerimisi kõikides sagedusalades/kanalites
+* Rakendab korrigeerimisi kõigis sagedusalades/kanalites
 * Kasutab iga pildi jaoks sobivat kalibreerimise sihtmärki ajamärgise alusel
 
 **Kestus:** Enamik töötlemisajast
@@ -146,14 +146,14 @@ Chloros töötab sõltuvalt teie litsentsist kahes erinevas töötlemisrežiimis
 
 **Kestus:** Mõni sekund pildi kohta
 
-### 5. etapp: Eksportimine
+### 5. etapp: Eksport
 
 **Mida Chloros teeb:**
 
 * Salvestab kalibreeritud pildid valitud formaadis
 * Ekspordib indeksipildid konfigureeritud LUT-värvidega
-* Kirjutab failid kaameramudeli alamkaustadesse
-* Säilitab originaalfailide nimed koos laienditega
+* Kirjutab failid kaamera mudeli alamkaustadesse
+* Säilitab originaalfailide nimed koos sufiksitega
 
 **Kestus:** Sõltub ekspordiformaadist ja faili suurusest
 
@@ -173,7 +173,7 @@ Kui protsess on käivitatud, töötab kogu protsess automaatselt:
 
 **Vaba režiim:**
 
-* Suhteliselt madal CPU kasutamine (üheprotsessiline)
+* Suhteliselt madal CPU kasutamine (ühekiuline)
 * Arvuti jääb reageerivaks teiste ülesannete jaoks
 * Ohutu minimeerida Chloros ja töötada teistes rakendustes
 
@@ -205,12 +205,12 @@ Kui protsess on käivitatud, töötab kogu protsess automaatselt:
 
 Töötlemise käigus saate:
 
-* **Vaadata edenemisribat** – näha üldist valmimisprotsenti
+* **Vaadata edenemisriba** – näha üldist valmimisprotsenti
 * **Vaadata praegust etappi** – tuvastamine, analüüsimine, kalibreerimine või eksportimine
 * **Vaadata logi vahekaarti** – näha üksikasjalikke töötlemissõnumeid ja hoiatusi
 * **Vaadata valmis pilte** – mõned ekspordifailid võivad ilmuda töötlemise käigus
 
-Üksikasjalikku teavet jälgimise kohta leiate jaotisest [Töötlemise jälgimine](monitoring-the-processing.md).
+Üksikasjalikku teavet jälgimise kohta leiate [Töötlemise jälgimine](monitoring-the-processing.md).
 
 ***
 
@@ -220,8 +220,8 @@ Kui soovite töötlemise peatada:
 
 ### Kuidas tühistada
 
-1. Leidke **Peata/Tühista nupp** (asendab töötlemise ajal nuppu Alusta)
-2. Klõpsake nuppu Peata
+1. Leidke **Peata/Tühista nupp** (asendab töötlemise ajal Start nuppu)
+2. Klõpsake Peata nuppu
 3. Töötlemine peatub kohe
 4. Osalised tulemused kustutatakse
 
@@ -229,9 +229,9 @@ Kui soovite töötlemise peatada:
 
 **Kehtivad põhjused tühistamiseks:**
 
-* Saite aru, et kasutasite valesid seadeid
-* Unustasite märkida sihtpildid
-* Importisite valed pildid
+* Avastati, et kasutati valesid seadeid
+* Unustati märkida sihtpildid
+* Imporditi valed pildid
 * Süsteem töötab liiga aeglaselt või ei reageeri
 
 **Pärast tühistamist:**
@@ -239,10 +239,10 @@ Kui soovite töötlemise peatada:
 * Vaadake üle ja parandage kõik probleemid
 * Kohandage seadeid vastavalt vajadusele
 * Alustage töötlemist uuesti algusest
-* Parima tulemuse saamiseks sulgege Chloros täielikult ja alustage uuesti
+* Parima tulemuse saamiseks sulgege Chloros täielikult ja alustage uuesti.
 
 {% vihje style=&quot;warning&quot; %}
-**Osalisi tulemusi ei ole**: tühistamine kustutab kogu töötlemise käigu. Chloros ei salvesta osaliselt töödeldud pilte.
+**Osalisi tulemusi ei ole**: tühistamine kustutab kogu edusammud. Chloros ei salvesta osaliselt töödeldud pilte.
 {% endhint %}
 
 ***
@@ -292,14 +292,14 @@ Tegelik töötlemisaeg sõltub suuresti järgmistest teguritest:
 1. Oodake, kuni backend on täielikult algatatud (kontrollige peamenüü ikooni)
 2. Kontrollige, kas pildid on failibrauserisse imporditud
 3. Kui nupp jääb keelatuks, taaskäivitage Chloros
-4. Kontrollige veateateid vealogist
+4. Kontrollige veateateid veaotsingu logist
 
 ### Töötlemine algab, kuid ebaõnnestub kohe
 
 **Võimalikud põhjused:**
 
 * Projektis pole kehtivaid pilte
-* Pildifailid on rikutud
+* Rikutud pildifailid
 * Ebapiisav kettaruum
 * Ebapiisav mälu (RAM)
 
@@ -331,15 +331,15 @@ Tegelik töötlemisaeg sõltub suuresti järgmistest teguritest:
 
 ### Enne alustamist
 
-1. **Testige esmalt väikese alarühmaga** – töötlege 10–20 pilti, et kontrollida seadeid
-2. **Kontrollige vaba kettaruumi** – veenduge, et vaba ruumi on 2–3 korda andmekogumi suurusest
-3. **Sulge mittevajalikud rakendused** – vabastage süsteemi ressursse
-4. **Kontrollige sihtpilte** – vaadake eelvaadet märgitud sihtmärkidest, et veenduda kvaliteedis
+1. **Testige esmalt väikese alarühmaga** – töötlege 10–20 pilti, et kontrollida seadeid.
+2. **Kontrollige vaba kettaruumi** – veenduge, et vaba ruumi on 2–3 korda andmekogumi suurusest.
+3. **Sulge mittevajalikud rakendused** – vabastage süsteemi ressursse.
+4. **Kontrollige sihtpilte** – vaadake eelvaadet märgitud sihtmärkidest, et veenduda kvaliteedis.
 5. **Salvestage projekt** – projekt salvestatakse automaatselt, kuid hea tava on salvestada ka käsitsi.
 
 ### Töötlemise ajal
 
-1. **Vältige süsteemi puhkeolekut** – lülitage välja energiasäästu režiimid.
+1. **Vältige süsteemi uinakut** – keelake energiasäästu režiimid.
 2. **Hoidke Chloros esiplaanil** – või vähemalt nähtaval tegumiribal.
 3. **Jälgige aeg-ajalt töötlemise kulgu** – kontrollige hoiatusi ja vigu.
 4. **Ärge laadige teisi raskeid rakendusi** – eriti Chloros+ paralleelrežiimis
@@ -350,8 +350,8 @@ Kui kasutate NVIDIA GPU kiirendust:
 
 1. Uuendage NVIDIA draiverid viimase versioonini
 2. Veenduge, et GPU-l on 4 GB+ VRAM
-3. Sulgege GPU-mahukad rakendused (mängud, videotöötlus)
-4. Jälgige GPU temperatuuri (tagage piisav jahutus)
+3. Sulge GPU-mahukad rakendused (mängud, videotöötlus)
+4. Jälgi GPU temperatuuri (tagada piisav jahutus)
 
 ***
 
@@ -359,7 +359,7 @@ Kui kasutate NVIDIA GPU kiirendust:
 
 Kui töötlemine on alanud:
 
-1. **Jälgige protsessi kulgu** – vaadake [Töötlemise jälgimine](monitoring-the-processing.md)
+1. **Jälgi protsessi kulgu** – vaata [Töötlemise jälgimine](monitoring-the-processing.md)
 2. **Oodake töötlemise lõppu** – töötlemine toimub automaatselt.
 3. **Vaadake tulemusi** – vt [Töötlemise lõpetamine](finishing-the-processing.md).
 
