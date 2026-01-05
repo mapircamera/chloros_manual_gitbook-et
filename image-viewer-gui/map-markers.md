@@ -86,7 +86,7 @@ Kaardi vahekaart toetab kahte kaardikilpide pakkujat taustakaardi piltide jaoks:
 
 Võite valida kaardikihi tüübi (vasakult paremale):
 
- <img src="../.gitbook/assets/image (23).png" alt="" data-size="original">### Maastik
+ <img src="../.gitbook/assets/image (23).png" alt="" data-size="line">### Maastik
 
 Näitab kõrgusprofiile ja kaardikahvleid detailidega (teed jne)
 

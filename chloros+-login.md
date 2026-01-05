@@ -6,7 +6,7 @@ Kasutaja <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> külg
 
 Sisselogimisel kuvatakse teie konto andmed:
 
-<figure><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>## CLI sisselogimine
+<figure><img src=".gitbook/assets/user_account.JPG" alt="" data-size="line"><figcaption></figcaption></figure>## CLI sisselogimine
 
 Logige sisse oma Chloros+ kasutajatunnuse ja parooliga, et võimaldada CLI töötlemist.
 
