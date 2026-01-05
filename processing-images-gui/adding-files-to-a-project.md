@@ -20,41 +20,34 @@ Piltide lisamiseks projekti on kaks peamist viisi:
 
 ### Meetod 1: failide lisamine
 
-Kasutage seda valikut üksikute pildifailide või väikese valiku failide importimiseks.
+Kasutage seda valikut üksikute pildifailide või väikese failivaliku importimiseks.
 
-1. Klõpsake failibrauseri paneeli ülaosas nuppu **„Lisa faile”**.
-2. Navigeerige kaustani, mis sisaldab teie pilte.
-3. Valige üks või mitu pildifaili (hoidke all klahvi **Ctrl**, et valida mitu faili).
-4. Klõpsake nuppu **„Ava”**, et importida valitud failid.
+1. Klõpsake **„Lisa faile”** <img src="../.gitbook/assets/image.png" alt="" data-size="line"> nupule failibrauseri paneeli ülaosas
+2. Navigeerige kaustani, mis sisaldab teie pilte
+3. Valige üks või mitu pildifaili (hoidke all **Ctrl**, et valida mitu faili)
+4. Klõpsake **&quot;Ava&quot;**, et importida valitud failid
 
 ### Meetod 2: kausta lisamine
 
-Seda valikut saab kasutada kogu kausta piltide importimiseks korraga.
+Kasutage seda valikut, et importida kõik pildid kaustast korraga.
 
-1. Klõpsake failibrauseri paneeli ülaosas nuppu **„Lisa kaust”**.
+1. Klõpsake nuppu **„Lisa kaust”** <img src="../.gitbook/assets/image (1).png" alt="" data-size="line"> failibrauseri paneeli ülaosas.
 2. Leidke ja valige kaust, mis sisaldab teie pildistamissessiooni pilte.
-3. Klõpsake nuppu **„Vali kaust”**, et importida kõik selle kausta toetatud pildid.
-
-***
+3. Klõpsake **„Vali kaust”**, et importida kõik selle kausta toetatud pildid.***
 
 ## Failibrauseri tabeli mõistmine
 
 Pärast piltide importimist kuvatakse need tabelis, millel on järgmised veerud:
 
-### Pisipilt
-
-* Iga pildi väike eelvaade.
-* Klõpsake pisipildil, et vaadata täispilti peamise eelvaate alas.
-
 ### Failinimi
 
-* Kaamera originaalne failinimi.
-* Säilitab kaamera nimetamiskonventsiooni (nt IMG\_0001.RAW).
+* Kaamera originaalne failinimi
+* Säilitab kaamera nimetamiskonventsiooni (nt IMG\_0001.RAW)
 
 ### Aeg
 
-* Pildi salvestamise kuupäev ja kellaaeg.
-* Väljavõte pildi EXIF-metadatast.
+* Pildi salvestamise kuupäev ja kellaaeg
+* Väljavõte pildi EXIF-metadatast
 * Kasutatakse PPK sünkroniseerimiseks ja kalibreerimise sihtmärgi tuvastamiseks
 
 ### Kaamera mudel
@@ -67,27 +60,25 @@ Pärast piltide importimist kuvatakse need tabelis, millel on järgmised veerud:
 
 * Märkige see kast piltide puhul, mis sisaldavad kalibreerimise sihtmärke
 * Kiirendab oluliselt sihtmärgi tuvastamist töötlemise ajal
-* Täpsema teabe saamiseks vaadake [Sihtmärgi piltide valimine](choosing-target-images.md)
+* Täpsemad andmed leiate jaotisest [Sihtmärgi piltide valimine](choosing-target-images.md)
 
 ***
 
-## Failide haldamine projektis
+## Projektis olevate failide haldamine
 
 ### Failide eemaldamine
 
 Soovimatute piltide eemaldamiseks projektist:
 
-1. Valige failibrauseri tabelis üks või mitu pilti.
-2. Klõpsake nuppu **„Eemalda valitud”**.
+1. Valige failibrauseri tabelis üks või mitu pilti
+2. Klõpsake nuppu **„Eemalda valitud”** <img src="../.gitbook/assets/image (2).png" alt="" data-size="line"> .
 3. Kinnitage eemaldamine (faile ei kustutata kettalt, vaid eemaldatakse ainult projektist).
 
 ### Sorteerimine ja filtreerimine
 
 * **Sorteeri veeru järgi**: klõpsake mis tahes veeru pealkirjal, et pilte sorteerida.
-* **Sorteerimine ajamärgete järgi**: kasulik kronoloogiliste pildistamisseeriate korraldamiseks
-* **Kaameramudeli filter**: rühmitage pildid kaameratüübi järgi, kui kasutate mitut kaamerat
-
-***
+* **Sorteeri ajamärgi järgi**: kasulik kronoloogiliste pildistamisseeriate korraldamiseks.
+* **Kaameramudeli filter**: rühmitage pildid kaameratüübi järgi, kui kasutate mitut kaamerat.***
 
 ## Pildi eelvaade
 
@@ -95,18 +86,16 @@ Soovimatute piltide eemaldamiseks projektist:
 
 Klõpsake failibrauseris mis tahes pildi pisipildil, et kuvada see peamises eelvaatealas:
 
-1. Pilt kuvatakse keskmises eelvaatepaneelis
-2. Kasutage suumikontrolle, et vaadata pildi detaile
-3. Liigu piltide vahel nooleklahvide abil
+1. Pilt kuvatakse keskmises eelvaatepaneelis.
+2. Kasutage suumikontrolle, et vaadata pildi detaile.
+3. Liiguge piltide vahel nooleklahvide abil.
 
-### Kiirnavigatsioon
+### Kiire navigeerimine
 
-* **Eelmine pilt**: klõpsa vasakule nooleklahvile või vajuta ← klahvi
-* **Järgmine pilt**: klõpsa paremale nooleklahvile või vajuta → klahvi
-* **Suurendamine/vähendamine**: kasuta hiirerattat või suumiklahve
-* **Panorameerimine**: klõpsa ja lohista pilti, kui see on suurendatud
-
-***
+* **Eelmine pilt**: klõpsake vasakule nooleklahvile või vajutage ← klahvile
+* **Järgmine pilt**: klõpsake paremale nooleklahvile või vajutage → klahvile
+* **Suurendamine/vähendamine**: kasutage hiirerattat või suumiklahve
+* **Panorameerimine**: suumimisel klõpsake ja lohistage pilti***
 
 ## Duplikaatfailide käitlemine
 
@@ -131,9 +120,7 @@ Kui teie projekt sisaldab pilte mitmest MAPIR kaamerast:
 3. Failibrauser kuvab kaameramudeli veerus „Kaameramudel”.
 4. Töötlemisel rakendatakse iga kaameratüübi jaoks õigeid seadeid.
 
-**Näide**: Survey3W RGN + Survey3N OCN kahe kaameraga seadistus.
-
-***
+**Näide**: Survey3W RGN + Survey3N OCN kahe kaameraga seadistus.***
 
 ## Parimad tavad
 
@@ -187,9 +174,7 @@ Kui teie projekt sisaldab pilte mitmest MAPIR kaamerast:
 * Kaamera kell ei ole õigesti seadistatud
 * EXIF-andmed on eemaldatud välise tarkvaraga
 
-**Lahendus**: Kontrollige, et kaamera aja seaded olid pildistamise ajal õiged
-
-***
+**Lahendus**: Kontrollige, et kaamera aja seaded olid pildistamise ajal õiged***
 
 ## Järgmised sammud
 
@@ -199,6 +184,6 @@ Kui failid on imporditud:
 2. **Kontrollige kaameramudeleid** – veenduge, et kaamera on õigesti tuvastatud
 3. **Märkige sihtpildid** – vt [Sihtpiltide valimine](choosing-target-images.md)
 4. **Kohandage seadeid** – konfigureerige töötlemisvalikud [Projekti seaded](adjusting-project-settings.md)
-5. **Alustage töötlemist** – vaadake [Töötlemise alustamine](starting-the-processing.md).
+5. **Alustage töötlemist** – vt [Töötlemise alustamine](starting-the-processing.md)
 
-Projektide konfigureerimise kohta leiate üksikasjalikku teavet jaotisest [Projekti seaded](adjusting-project-settings.md).
+Täpsemat teavet projekti konfigureerimise kohta leiate jaotisest [Projekti seaded](adjusting-project-settings.md).

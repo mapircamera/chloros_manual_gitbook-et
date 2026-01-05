@@ -29,6 +29,8 @@
 
 ## PILDI VAATAMINE (GUI)
 
+* [Pildi raster](image-viewer-gui/image-grid.md)
 * [Pildi avamine täisekraanil](image-viewer-gui/opening-an-image-full-screen.md)
 * [Pildi kihid](image-viewer-gui/image-layers.md)
 * [Indeks/LUT liivakast](image-viewer-gui/index-lut-sandbox.md)
+* [Kaardimärgid](image-viewer-gui/map-markers.md)

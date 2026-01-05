@@ -1,13 +1,13 @@
 # CLI : käsurea
 
-<figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>**Chloros CLI** pakub võimast käsurea juurdepääsu Chloros pilditöötlusmootorile, võimaldades automatiseerimist, skriptide kasutamist ja peata töötamist teie pilditöötlusprotsessides.
+<figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>**Chloros CLI** pakub võimast käsurea juurdepääsu Chloros pilditöötlusmootorile, võimaldades automatiseerimist, skriptimist ja peata töötamist teie pilditöötlusvoogudes.
 
 ### Peamised omadused
 
 * 🚀 **Automatiseerimine** – mitme andmekogumi skriptide kogumitöötlus
 * 🔗 **Integreerimine** – integreerimine olemasolevatesse töövoogudesse ja torujuhtmetesse
-* 💻 **Peata töötamine** – töötamine ilma graafilise kasutajaliideseta
-* 🌍 **Mitmekeelsus** – 38 keele tugi
+* 💻 **Peata töö** – töötab ilma graafilise kasutajaliideseta
+* 🌍 **Mitmekeelsus** – toetab 38 keelt
 * ⚡ **Paralleelne töötlemine** – skaleerub dünaamiliselt teie CPU-le (kuni 16 paralleelset töötajat)
 
 ### Nõuded
@@ -16,7 +16,7 @@
 | -------------------- | ------------------------------------------------------------------- |
 | **Operatsioonisüsteem** | Windows 10/11 (64-bitine)                                              |
 | **Litsents**          | Chloros+ ([tasuline pakett nõutav](https://cloud.mapir.camera/pricing)) |
-| **Mälu**           | Minimaalselt 8 GB RAM (soovitatav 16 GB)                                  |
+| **Mälu**           | Minimaalselt 8 GB RAM-i (soovitatav 16 GB)                                  |
 | **Internet**         | Vajalik litsentsi aktiveerimiseks                                     |
 | **Kettaruum**       | Sõltub projekti suurusest                                              |
 
@@ -28,11 +28,12 @@
 
 ### Paigaldamine
 
-CLI on automaatselt kaasas Chloros paigaldusprogrammiga:
+CLI on automaatselt kaasas Chloros paigaldajaga:
 
-1. Lae alla ja käivita **Chloros paigaldusprogramm.exe**
+1. Lae alla ja käivita **Chloros paigaldaja.exe**
+
 2. Viige paigaldusviisard lõpule
-3. CLI on installitud: `C:\Program Files\Chloros\resources\cli\chloros-cli.exe`
+3. CLI installitud: `C:\Program Files\Chloros\resources\cli\chloros-cli.exe`
 
 {% hint style=&quot;success&quot; %}
 Installija lisab automaatselt `chloros-cli` teie süsteemi PATH-i. Pärast installimist taaskäivitage terminal.
@@ -55,7 +56,7 @@ chloros-cli process "C:\Images\Dataset001"
 
 ### Põhiline kasutus
 
-Käsitle kaustu vaikimisi seadetega:
+Käsitlege kausta vaikimisi seadetega:
 
 ```powershell
 chloros-cli process "C:\Images\Dataset001"
@@ -91,23 +92,23 @@ chloros-cli process <input-folder> [options]
 chloros-cli process "C:\Datasets\Survey_001" --vignette --reflectance
 ```
 
-#### Käsukäsitluse valikud
+#### Käsitlemiskäsu valikud
 
 | Valik                | Tüüp    | Vaikimisi        | Kirjeldus                                                                            |
 | --------------------- | ------- | -------------- | -------------------------------------------------------------------------------------- |
 | `<input-folder>`      | Tee    | _Nõutav_     | RAW/JPG multispektraalsete piltide kaust                                         |
 | `-o, --output`        | Tee    | Sama kui sisend  | Töödeldud piltide väljundkaust                                                     |
 | `-n, --project-name`  | String  | Automaatselt genereeritud | Kohandatud projekti nimi                                                                    |
-| `--vignette`          | Lipuke    | Lubatud        | Luba vinjetikorrektsioon                                                             |
-| `--no-vignette`       | Lipuke    | -              | Keela vinjetikorrektsioon                                                            |
+| `--vignette`          | Lipuke    | Lubatud        | Luba vinjeti korrigeerimine                                                             |
+| `--no-vignette`       | Lipuke    | -              | Keela vinjeti korrigeerimine                                                            |
 | `--reflectance`       | Lipuke    | Lubatud        | Peegelduskalibreerimise lubamine                                                         |
 | `--no-reflectance`    | Lipuke    | -              | Peegelduskalibreerimise keelamine                                                        |
 | `--ppk`               | Lipuke    | Keelatud       | Rakenda PPK-korrektsioone .daq valgussensori andmetest                                      |
 | `--format`            | Valik  | TIFF (16-bitine)  | Väljundvorming: `TIFF (16-bit)`, `TIFF (32-bit, Percent)`, `PNG (8-bit)`, `JPG (8-bit)` |
 | `--min-target-size`   | Täisarv | Auto           | Kalibreerimispaneeli tuvastamise minimaalne sihtmärgi suurus pikslites                          |
-| `--target-clustering` | Täisarv | Auto           | Sihtmärgi klastrite lävi (0–100)                                                    |
-| `--exposure-pin-1`    | String  | Puudub           | Kaamera mudeli ekspositsiooni lukustamine (Pin 1)                                                 |
-| `--exposure-pin-2`    | String  | Puudub           | Kaamera mudeli ekspositsiooni lukustamine (Pin 2)                                                 |
+| `--target-clustering` | Täisarv | Auto           | Sihtmärgi klastrite künnis (0–100)                                                    |
+| `--exposure-pin-1`    | String  | Puudub           | Kaamera mudeli ekspositsiooni lukustamine (pin 1)                                                 |
+| `--exposure-pin-2`    | String  | Puudub           | Kaamera mudeli ekspositsiooni lukustamine (pin 2)                                                 |
 | `--recal-interval`    | Täisarv | Auto           | Kalibreerimise intervall sekundites                                                      |
 | `--timezone-offset`   | Täisarv | 0              | Ajavööndi nihke tundides                                                               |
 
@@ -133,13 +134,11 @@ chloros-cli login user@example.com 'MyP@ssw0rd123'
 **Erimärgid**: Kasutage ülakomaid paroolide ümber, mis sisaldavad märke nagu `$`, `!` või tühikuid.
 {% endhint %}
 
-**Väljund:**
+**Väljund:**<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>***
 
-<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>***
+### `logout` - Krediidiandmete kustutamine
 
-### `logout` - Puhasta autentimisandmed
-
-Puhasta salvestatud autentimisandmed ja logi välja oma kontolt.
+Kustutage salvestatud krediidiandmed ja logige oma kontolt välja.
 
 **Süntaks:**
 
@@ -159,6 +158,10 @@ chloros-cli logout
 ✓ Logout successful
 ℹ Credentials cleared from cache
 ```
+
+{% hint style=&quot;info&quot; %}
+**SDK kasutajad**: Python SDK pakub ka programmilist `logout()` meetodit volituste tühistamiseks Python skriptides. Täpsema teabe saamiseks vaadake [Python SDK dokumentatsiooni](api-python-sdk.md#logout).
+{% endhint %}
 
 ***
 
@@ -209,13 +212,11 @@ chloros-cli export-status
 chloros-cli export-status
 ```
 
-**Kasutusjuhtum:** Kutsu käesolev käsk töötlemise ajal, et kontrollida ekspordi edenemist.
+**Kasutusjuhtum:** Kutsu käsk välja töötlemise käigus, et kontrollida ekspordi edenemist.***
 
-***
+### `language` – Liidese keele haldamine
 
-### `language` – halda liidese keelt
-
-Vaadake või muutke CLI liidese keelt.
+Vaata või muuda CLI liidese keelt.
 
 **Süntaks:**
 
@@ -250,35 +251,35 @@ chloros-cli language ja
 
 | Kood    | Keel              | Emakeel      |
 | ------- | --------------------- | ---------------- |
-| `en`    | Inglise               | English          |
-| `es`    | Hispaania               | Español          |
-| `pt`    | Portugali            | Português        |
-| `fr`    | Prantsuse                | Français         |
+| `en`    | Inglise keel               | English          |
+| `es`    | Hispaania keel               | Español          |
+| `pt`    | Portugali keel            | Português        |
+| `fr`    | Prantsuse keel                | Français         |
 | `de`    | Saksa keel                | Deutsch          |
 | `it`    | Itaalia keel               | Italiano         |
 | `ja`    | Jaapani keel              | 日本語              |
 | `ko`    | Korea keel                | 한국어              |
-| `zh`    | Hiina (lihtsustatud)  | 简体中文             |
-| `zh-TW` | Hiina (traditsiooniline) | 繁體中文             |
+| `zh`    | Hiina keel (lihtsustatud)  | 简体中文             |
+| `zh-TW` | Hiina keel (traditsiooniline) | 繁體中文             |
 | `ru`    | Vene               | Русский          |
-| `nl`    | Hollandi keel                 | Nederlands       |
-| `ar`    | Araabia keel                | العربية          |
-| `pl`    | Poola keel                | Polski           |
-| `tr`    | Türgi keel               | Türkçe           |
-| `hi`    | Hindi                 | हिंदी            |
-| `id`    | Indoneesia            | Bahasa Indonesia |
-| `vi`    | Vietnami            | Tiếng Việt       |
+| `nl`    | Hollandi                 | Nederlands       |
+| `ar`    | Araabia                | العربية          |
+| `pl`    | Poola                | Polski           |
+| `tr`    | türgi keel               | Türkçe           |
+| `hi`    | hindi keel                 | हिंदी            |
+| `id`    | indoneesia keel            | Bahasa Indonesia |
+| `vi`    | Vietnami keel            | Tiếng Việt       |
 | `th`    | Tai keel                  | ไทย              |
 | `sv`    | Rootsi keel               | Svenska          |
 | `da`    | Taani keel                | Dansk            |
 | `no`    | Norra keel             | Norsk            |
-| `fi`    | Soome               | Suomi            |
-| `el`    | Kreeka                 | Ελληνικά         |
+| `fi`    | Soome keel               | Suomi            |
+| `el`    | Kreeka keel                 | Ελληνικά         |
 | `cs`    | Tšehhi                 | Čeština          |
 | `hu`    | Ungari             | Magyar           |
 | `ro`    | Rumeenia              | Română           |
 | `uk`    | Ukraina             | Українська       |
-| `pt-BR` | Brasiilia portugali  | Português Brasileiro |
+| `pt-BR` | Brasiilia portugali keel  | Português Brasileiro |
 | `zh-HK` | Kantoni keel             | 粵語             |
 | `ms`    | Malai keel                 | Bahasa Melayu    |
 | `sk`    | Slovaki keel                | Slovenčina       |
@@ -286,16 +287,16 @@ chloros-cli language ja
 | `hr`    | Horvaadi keel              | Hrvatski         |
 | `lt`    | Leedu keel            | Lietuvių         |
 | `lv`    | Läti keel               | Latviešu         |
-| `et`    | Eesti keel              | Eesti            |
-| `sl`    | Sloveeni keel             | Slovenščina      |
+| `et`    | Eesti              | Eesti            |
+| `sl`    | Sloveenia             | Slovenščina      |
 
-{% vihje stiil=&quot;edu&quot; %}
+{% hint style=&quot;success&quot; %}
 **Automaatne püsivus**: Teie keele-eelistus salvestatakse `~/.chloros/cli_language.json` ja püsib kõigis sessioonides.
 {% endhint %}
 
 ***
 
-### `set-project-folder` - Vaikimisi projektikausta seadistamine
+### `set-project-folder` - Vaikimisi projektikausta seadmine
 
 Muuda vaikimisi projektikausta asukohta (jagatud GUI-ga).
 
@@ -337,7 +338,7 @@ chloros-cli get-project-folder
 
 ***
 
-### `reset-project-folder` – Taasta vaikimisi
+### `reset-project-folder` - Taasta vaikimisi
 
 Taasta projekti kausta vaikimisi asukoht.
 
@@ -349,7 +350,7 @@ chloros-cli reset-project-folder
 
 ***
 
-## Üldised valikud
+## Globaalsed valikud
 
 Need valikud kehtivad kõikide käskude puhul:
 
@@ -357,9 +358,9 @@ Need valikud kehtivad kõikide käskude puhul:
 | --------------- | ------- | ------------- | ------------------------------------------------ |
 | `--backend-exe` | Tee    | Automaatselt tuvastatud | Tee tagapõhja käivitatavale failile                       |
 | `--port`        | Täisarv | 5000          | Tagapõhja API pordi number                          |
-| `--restart`     | Lipuke    | -             | Tagapõhja sundrestart (lõpetab olemasolevad protsessid) |
-| `--version`     | Lipuke    | -             | Näita versiooniinfo ja välju                |
-| `--help`        | Lipuke    | -             | Näita abiinfo ja välju                   |
+| `--restart`     | Lipuke    | -             | Sundida taustaprogrammi taaskäivitamist (lõpetab olemasolevad protsessid) |
+| `--version`     | Lipuke    | -             | Näita versiooni teavet ja välju                |
+| `--help`        | Lipuke    | -             | Näita abi teavet ja välju                   |
 
 **Näide globaalsete valikutega:**
 
@@ -373,15 +374,11 @@ chloros-cli --port 5001 process "C:\Datasets\Survey_001"
 
 ### Paralleelne töötlemine
 
-Chloros+ CLI **skaleerib automaatselt** paralleelset töötlemist vastavalt teie arvuti võimsusele:
-
-**Kuidas see toimib:**
+Chloros+ CLI **skaleerib automaatselt**paralleelset töötlemist vastavalt teie arvuti võimsusele:**Kuidas see toimib:**
 
 * Tuvastab teie CPU tuumad ja RAM-i
 * Jaotab töötajad: **2× CPU tuumad** (kasutab hüperthreadingut)
-* **Maksimum: 16 paralleelset töötajat** (stabiilsuse tagamiseks)
-
-**Süsteemi tasemed:**
+* **Maksimum: 16 paralleelset töötajat** (stabiilsuse tagamiseks)**Süsteemi tasemed:**
 
 | Süsteemi tüüp   | CPU        | RAM      | Töötajad  | Jõudlus     |
 | ------------- | ---------- | -------- | -------- | --------------- |
@@ -389,7 +386,7 @@ Chloros+ CLI **skaleerib automaatselt** paralleelset töötlemist vastavalt teie
 | **Keskklassi** | 8–15 tuuma | 16–31 GB | 8–16     | Suurepärane kiirus |
 | **Madala klassi**   | 4–7 tuuma  | 8–15 GB  | 4–8      | Hea kiirus      |
 
-{% vihje stiil=&quot;edu&quot; %}
+{% hint style=&quot;success&quot; %}
 **Automaatne optimeerimine**: CLI tuvastab automaatselt teie süsteemi spetsifikatsioonid ja konfigureerib optimaalse paralleelse töötlemise. Käsitsi konfigureerimine pole vajalik!
 {% endhint %}
 
@@ -403,7 +400,7 @@ CLI kasutab vaikimisi ja soovitatava debayer-algoritmina **kõrge kvaliteeti (ki
 
 ### Vignette&#x27;i korrigeerimine
 
-**Mida see teeb:** Korrigeerib valguse langust pildi servades (kaamera piltidel tavalised tumedamad nurgad).
+**Mida see teeb:** Korrigeerib valguse langust pildi servades (kaamerapiltidel tavalised tumedamad nurgad).
 
 * **Vaikimisi sisse lülitatud** – enamik kasutajaid peaks selle sisse lülitatuna jätma.
 * Kasutage `--no-vignette`, et see välja lülitada.
@@ -421,12 +418,12 @@ Muudab tooresensorite väärtused kalibreerimispaneelide abil standardiseeritud 
 * Kasutage `--no-reflectance`, et deaktiveerida.
 
 {% vihje stiil=&quot;info&quot; %}
-**Nõuded**: Kalibreerimispaneelid peavad olema pildil õigesti eksponeeritud ja nähtavad, et peegeldusvõime konverteerimine oleks täpne.
+**Nõuded**: Tagage, et kalibreerimispaneelid oleksid piltidel õigesti eksponeeritud ja nähtavad, et tagada täpne peegeldusvõime konverteerimine.
 {% endhint %}
 
 ### PPK parandused
 
-**Funktsioon:** Rakendab DAQ-A-SD logiandmeid kasutades järelkalibreeritud kinemaatilisi parandusi, et parandada GPS-i täpsust.
+**Funktsioon:** Rakendab DAQ-A-SD logiandmeid kasutades järelkäsitletud kinemaatilisi parandusi, et parandada GPS-i täpsust.
 
 * **Vaikimisi keelatud**
 * Kasutamiseks aktiveerige `--ppk`
@@ -493,7 +490,7 @@ pause
 
 ### Python automatiseerimisskript
 
-Täiustatud automatiseerimine veahaldusega:
+Täiustatud automatiseerimine veakäsitlusega:
 
 ```python
 import subprocess
@@ -577,13 +574,14 @@ if __name__ == '__main__':
 ### Standardne töövoog
 
 1. **Sisend**: kaust, mis sisaldab RAW/JPG pildipaare
-2. **Avastamine**: CLI otsib automaatselt toetatud pildifaile
+2. **Avastamine**: CLI skannib automaatselt toetatud pildifaile
 3. **Töötlemine**: Paralleelrežiim skaleerub vastavalt teie CPU tuumadele (Chloros+)
-4. **Väljund**: Loob kaameramudeli alamkataloogid töödeldud piltidega
+4. **Väljund**: Loob kaameramudeli alamkaustad töödeldud piltidega
 
 ### Väljundi struktuuri näide
 
 ```
+
 MyProject/
 ├── project.json                             # Project metadata
 ├── 2025_0203_193056_008.JPG                # Original JPG
@@ -603,13 +601,13 @@ Tüüpilised töötlemisajad 100 pildi puhul (igaüks 12 MP):
 | **Paralleelrežiim** | 5–10 min  | i7/Ryzen 7, 16 GB RAM, SSD (kuni 16 töötajat) |
 | **Paralleelrežiim** | 10–15 min | i5/Ryzen 5, 8 GB RAM, HDD (kuni 8 töötajat)   |
 
-{% vihje stiil=&quot;info&quot; %}
+{% vihje style=&quot;info&quot; %}
 **Jõudluse näpunäide**: Töötlemisaeg sõltub piltide arvust, resolutsioonist ja arvuti spetsifikatsioonidest.
 {% endhint %}
 
 ***
 
-## Probleemide lahendamine
+## Veaotsing
 
 ### CLI ei leitud
 
@@ -641,11 +639,10 @@ dir "C:\Program Files\Chloros\resources\cli\chloros-cli.exe"
 
 ***
 
-### Backend ei õnnestunud käivitada.
-
-**Viga:**
+### Backend ei õnnestunud käivitada.**Viga:**
 
 ```
+
 Backend failed to start within 30 seconds
 ```
 
@@ -667,11 +664,10 @@ chloros-cli --restart process "C:\Datasets\Field_A"
 
 ***
 
-### Litsentsi-/autentimise probleemid
-
-**Viga:**
+### Litsentsi-/autentimise probleemid**Viga:**
 
 ```
+
 Chloros+ license required for CLI access
 ```
 
@@ -690,15 +686,14 @@ chloros-cli login user@example.com 'password'
 chloros-cli status
 ```
 
-4. Võtke ühendust tugiüksusega: info@mapir.camera
+4. Võtke ühendust klienditoega: info@mapir.camera
 
 ***
 
-### Pilte ei leitud
-
-**Viga:**
+### Pilte ei leitud**Viga:**
 
 ```
+
 No images found in the specified folder
 ```
 
@@ -706,14 +701,12 @@ No images found in the specified folder
 
 1. Veenduge, et kaust sisaldab toetatud formaate (.RAW, .TIF, .JPG).
 2. Kontrollige, et kausta tee on õige (kasutage tühikuga teede puhul jutumärke).
-3. Veenduge, et teil on kausta lugemisõigus.
+3. Veenduge, et teil on kausta lugemisõigused.
 4. Kontrollige, et faililaiendid on õiged.
 
 ***
 
-### Töötlemine seiskub või hangub
-
-**Lahendused:**
+### Töötlemine seiskub või hangub**Lahendused:**
 
 1. Kontrollige vaba kettaruumi (veenduge, et väljundiks on piisavalt ruumi).
 2. Sulgege teised rakendused, et vabastada mälu.
@@ -721,11 +714,10 @@ No images found in the specified folder
 
 ***
 
-### Port on juba kasutusel
-
-**Viga:**
+### Port on juba kasutusel**Viga:**
 
 ```
+
 Port 5000 is already in use
 ```
 
@@ -743,7 +735,7 @@ chloros-cli --port 5001 process "C:\Datasets\Field_A"
 
 ### K: Kas ma vajan litsentsi CLI jaoks?
 
-**V:** Jah! CLI vajab tasulist **Chloros+ litsentsi**.
+**V:**Jah! CLI nõuab tasulist**Chloros+ litsentsi**.
 
 * ❌ Standardne (tasuta) pakett: CLI on keelatud
 * ✅ Chloros+ (tasuline) paketid: CLI täielikult aktiveeritud
@@ -752,20 +744,16 @@ Telli aadressil: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera
 
 ***
 
-### K: Kas ma saan kasutada CLI serveris, millel pole graafilist kasutajaliidest?
-
-**V:** Jah! CLI töötab täielikult ilma graafilise kasutajaliideseta. Nõuded:
+### K: Kas ma saan kasutada CLI serveris, millel pole graafilist kasutajaliidest?**V:** Jah! CLI töötab täielikult ilma graafilise kasutajaliideseta. Nõuded:
 
 * Windows Server 2016 või uuem
 * Visual C++ Redistributable installitud
-* Piisav RAM (minimaalselt 8 GB, soovitatavalt 16 GB)
-* Ühekordne GUI litsentsi aktiveerimine mis tahes masinal
+* Piisav RAM-mälu (minimaalselt 8 GB, soovitatavalt 16 GB)
+* Ühekordne GUI litsentsi aktiveerimine mis tahes arvutil
 
 ***
 
-### K: Kuhu salvestatakse töödeldud pildid?
-
-**V:** Vaikimisi salvestatakse töödeldud pildid **samasse kausta kui sisend** kaameramudeli alamkausta (nt `Survey3N_RGN/`).
+### K: Kuhu salvestatakse töödeldud pildid?**V:**Vaikimisi salvestatakse töödeldud pildid**samasse kausta kui sisend** kaameramudeli alamkausta (nt `Survey3N_RGN/`).
 
 Kasutage `-o` valikut, et määrata teine väljundkataloog:
 
@@ -775,15 +763,9 @@ chloros-cli process "C:\Input" -o "D:\Output"
 
 ***
 
-### K: Kas ma saan töödelda mitut kataloogi korraga?
+### K: Kas ma saan töödelda mitut kataloogi korraga?**V:** Ühe käsuga otseselt mitte, kuid saate kasutada skripte, et töötada kaustu järjestikku. Vaadake jaotist [Automatiseerimine ja skriptimine](CLI.md#automation--scripting).***
 
-**V:** Ühe käsuga otseselt mitte, kuid saate kasutada skripte, et töötada kaustu järjestikku. Vaadake jaotist [Automatiseerimine ja skriptimine](CLI.md#automation--scripting).
-
-***
-
-### K: Kuidas salvestada CLI väljund logifaili?
-
-**PowerShell:**
+### K: Kuidas salvestada CLI väljund logifaili?**PowerShell:**
 
 ```powershell
 chloros-cli process "C:\Datasets\Field_A" | Tee-Object -FilePath "processing.log"
@@ -797,11 +779,9 @@ chloros-cli process "C:\Datasets\Field_A" > processing.log 2>&1
 
 ***
 
-### K: Mis juhtub, kui vajutan töötlemise ajal Ctrl+C?
+### K: Mis juhtub, kui ma töötlemise ajal vajutan Ctrl+C?**V:** CLI teeb järgmist:
 
-**V:** CLI teeb järgmist:
-
-1. Lõpetab töötlemise korrektselt
+1. Lõpetab töötlemise sujuvalt
 2. Sulgeb tagapõhja
 3. Lõpetab koodiga 130
 
@@ -809,15 +789,9 @@ Osaliselt töödeldud pildid võivad jääda väljundkausta.
 
 ***
 
-### K: Kas ma saan CLI töötlemist automatiseerida?
+### K: Kas ma saan CLI töötlemist automatiseerida?**V:** Muidugi! CLI on loodud automatiseerimiseks. Vaadake [Automatiseerimine ja skriptimine](CLI.md#automation--scripting) PowerShell, Batch ja Python näidete jaoks.***
 
-**V:** Muidugi! CLI on loodud automatiseerimiseks. Vaadake [Automatiseerimine ja skriptimine](CLI.md#automation--scripting) PowerShelli, Batchi ja Pythoni näidete jaoks.
-
-***
-
-### K: Kuidas kontrollida CLIi versiooni?
-
-**V:**
+### K: Kuidas kontrollida CLI versiooni?**V:**
 
 ```powershell
 chloros-cli --version
@@ -826,6 +800,7 @@ chloros-cli --version
 **Väljund:**
 
 ```
+
 Chloros CLI 1.0.2
 ```
 
@@ -851,15 +826,13 @@ chloros-cli language --help
 
 * **E-post**: info@mapir.camera
 * **Veebisait**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
-* **Hinnad**: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
-
-***
+* **Hinnad**: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)***
 
 ## Täielikud näited
 
 ### Näide 1: põhiline töötlemine
 
-Töötlemine vaikimisi seadetega (vignett, peegeldusvõime):
+Töötlemine vaikimisi seadetega (vinjett, peegeldusvõime):
 
 ```powershell
 chloros-cli process "C:\Datasets\Field_A_2025_01_15"
@@ -867,7 +840,7 @@ chloros-cli process "C:\Datasets\Field_A_2025_01_15"
 
 ***
 
-### Näide 2: kõrgekvaliteediline teaduslik väljund
+### Näide 2: kõrgekvaliteediline teaduslik tulemus
 
 32-bitine ujukomaarv TIFF:
 
