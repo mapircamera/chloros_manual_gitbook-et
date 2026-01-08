@@ -2,20 +2,24 @@
 
 Kaardi vahekaardil kuvatakse teie pildid interaktiivsel 2D-kaardil nende GPS-koordinaatide alusel. See annab geograafilise ülevaate teie pildistamissessioonist ja aitab visualiseerida ruumilist katvust. See on kasulik ka piltide esmakordsel importimisel, et kiiresti eemaldada pildid, mida pole vaja töödelda.
 
+<figure><img src="../.gitbook/assets/chloros_map_markers.gif" alt=""><figcaption></figcaption></figure>
+
 ## Kaardi vahekaardi avamine
 
 1. Avage või looge projekt Chloros-is.
 2. Importige pildid, mis sisaldavad GPS-metadata.
-3. Klõpsake vasakul külgribal **Kaart** <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> vahekaarti vasakul külgribal.
-4. Kaardil kuvatakse märgid iga pildi GPS-asukoha juures.
+3. Klõpsake vasakul külgribal **Kaart** <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> vahekaarti vasakul külgribal
+4. Kaardil kuvatakse märgid iga pildi GPS-asukoha juures
 
-{% vihje style=&quot;info&quot; %}
+{% hint style="info" %}
 **GPS vajalik**: Kaardil kuvatakse ainult need pildid, mille EXIF-metadata sisaldab GPS-koordinaate. Veenduge, et teie kaamera GPS on pildistamise ajal sisse lülitatud.
 {% endhint %}
 
 ***
 
-## Piltide kohandamine kaardivahekaardilt**Kaart**<img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> vahekaardil on samad lisamise  <img src="../.gitbook/assets/image.png" alt="" data-size="line">   <img src="../.gitbook/assets/image (1).png" alt="" data-size="line">  ja eemaldamise  <img src="../.gitbook/assets/image (2).png" alt="" data-size="line">  failide nuppe nagu [**Failibrauser**](../processing-images-gui/adding-files-to-a-project.md) <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> kaardil. Samuti kuvatakse sama projektifailide tabel, kuid erinevate veeru pealkirjadega:
+## Piltide kohandamine kaardi vahekaardilt
+
+**Kaardi** <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> kaardil on samad lisamise  <img src="../.gitbook/assets/image.png" alt="" data-size="line">   <img src="../.gitbook/assets/image (1).png" alt="" data-size="line">  ja eemaldamise  <img src="../.gitbook/assets/image (2).png" alt="" data-size="line">  failide nuppe nagu [**Failibrauser**](../processing-images-gui/adding-files-to-a-project.md) <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> . Samuti kuvatakse sama projektifailide tabel, kuid erinevate veeru pealkirjadega:
 
 ### Failinimi
 
@@ -34,37 +38,37 @@ Kaardi vahekaardil kuvatakse teie pildid interaktiivsel 2D-kaardil nende GPS-koo
 
 * Pildi kõrgus
 
-{% hint style=&quot;info&quot; %}
-Tabelite veeru pealkirjade klõpsamine sorteerib ka ridade andmed
+{% hint style="info" %}
+Tabelis veeru pealkirjade klõpsamine sorteerib ka rea andmed
 {% endhint %}
 
 ***
 
-## Pildimärgid
+## Pildi märgised
 
-Iga GPS-andmetega pilt on kaardil esindatud märgiga:
+Iga GPS-andmetega pilt on kaardil esindatud märgisega:
 
-### Märgi kuvamine
+### Märgise kuvamine
 
-* Märgid näitavad iga pildi täpsed GPS-koordinaadid, kus pilt on tehtud.
+* Märgid näitavad täpsed GPS-koordinaadid, kus iga pilt on tehtud.
 * Klastriteks koondunud märgid võivad väiksemal suumil kokku rühmituda.
-* Suurendage, et näha üksikute piltide asukohti.
+* Suumige sisse, et näha üksikute piltide asukohti.
 
-{% vihje stiil=&quot;edu&quot; %}
-SUPER-ZOOM: Kui jõuate kaardikilpide pakkuja maksimaalse suumitasemeni, suumitakse kilp edasi, võimaldades teil näha üksteisele lähedal asuvaid markereid.
+{% hint style="success" %}
+SUPER-ZOOM: Kui jõuate kaardikilpide pakkuja maksimaalse suumitasemeni, suumitakse kilp edasi, võimaldades teil näha lähedal asuvaid märke.
 {% endhint %}
 
-### Eelvaade hiirega
+### Eelvaade hiirega üle libistades
 
-* **Viige hiir** mis tahes märgi kohale, et näha selle pildi pisipilti.
-* See võimaldab kiiret visuaalset identifitseerimist kaardivaadet lahkumata.
+* **Libistage hiirega** mis tahes märgi üle, et näha selle pildi pisipilti.
+* See võimaldab kiiret visuaalset identifitseerimist kaardivaatest lahkumata.
 * Kasulik konkreetsete piltide leidmiseks suure pildistamissessiooni jooksul.
 
 ***
 
 ## Kaardikilpide pakkujad
 
-{% vihje stiil=&quot;edu&quot; %}
+{% hint style="success" %}
 **Automaatne valik**: Chloros valib automaatselt kaardikilpide teenuse, mis pakub parimat suumitaset teie praeguse kaardikoha jaoks. Soovi korral saate teenusepakkujate vahel käsitsi vahetada.
 {% endhint %}
 
@@ -113,7 +117,9 @@ Näitab satelliitkaardikahvleid lisatud detailidega (teed jne)
 
 ### Panoraamikontrollid
 
-* **Panoraam**: klõpsake ja lohistage, et kaardil liikuda.***
+* **Panoraam**: klõpsake ja lohistage, et kaardil liikuda.
+
+***
 
 ## Kasutusjuhtumid
 
@@ -139,12 +145,12 @@ Näitab satelliitkaardikahvleid lisatud detailidega (teed jne)
 
 ## Probleemide lahendamine
 
-### Märgid ei kuvata
+### Märgistused ei kuvata
 
 **Võimalikud põhjused:**
 
 * Pildid ei sisalda GPS-i metaandmeid
-* GPS oli pildistamise ajal kaameral välja lülitatud
+* GPS oli pildistamise ajal kaameras välja lülitatud
 * EXIF-andmed on eemaldatud välise tarkvara abil
 
 **Lahendus**: Kontrollige, kas kaamera GPS on sisse lülitatud, ja importige originaalfailid uuesti.
@@ -156,4 +162,4 @@ Näitab satelliitkaardikahvleid lisatud detailidega (teed jne)
 * Kaamera GPS-il oli halb satelliidi signaal
 * GPS-i kõrvalekalle pildistamise ajal
 
-**Lahendus**: Tegu on tavaliselt pildistamise ajal tekkinud probleemiga; kaaluge täpsete rakenduste jaoks PPK/RTK GPS-i kasutamist.
+**Lahendus**: Tavaliselt on tegemist pildistamise ajal tekkinud probleemiga; kaaluge täpsete rakenduste jaoks PPK/RTK GPS-i kasutamist.
