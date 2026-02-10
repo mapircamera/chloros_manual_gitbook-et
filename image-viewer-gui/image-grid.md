@@ -1,14 +1,14 @@
-# Pildiraster
+# Pildivõrk
 
-Pärast piltide importimist projekti näete pildid peamises alas rasterina paigutatuna.
+Pärast piltide importimist projekti näete peaekraanil pildid võrgustikuna paigutatuna.
 
-## Pisipildi suurus
+## Pildivõtme suurus
 
-Pisipiltide suurust saate reguleerida paremas ülemises nurgas oleva suumiklõpsuga. Suurust saate muuta ka klahvide CTRL + hiirerattaga.
+Pildivõtme suurust saate reguleerida paremas ülemises nurgas asuva suumiklõpsuga. Suurust saate muuta ka klahvi CTRL ja hiirerattaga.
 
 <figure><img src="../.gitbook/assets/chloros_grid_zoom.gif" alt=""><figcaption></figcaption></figure>## Ekspordi vaate nupud
 
-Piltide töötlemise käigus ilmuvad rasterala ülemisse vasakusse nurka nupud. Need nupud lülitavad rasterpildid erinevate pilditüüpide vahel:
+Piltide töötlemise käigus ilmuvad rasterala ülemisse vasakusse nurka nupud. Need nupud lülitavad rasteri pisipildid erinevate pilditüüpide vahel:
 
 * **JPG** – originaalkaamera JPG pisipildid
 * **Sihtmärgid** – pildid, mis sisaldavad tuvastatud kalibreerimise sihtmärke

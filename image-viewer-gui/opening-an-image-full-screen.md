@@ -8,8 +8,8 @@ Chloros pildivaataja pakub spetsiaalset täisekraani liidest multispektraalsete 
 
 Kõige tavalisem viis pildi avamiseks pildivaatajas:
 
-1. Veenduge, et olete **Failibrauseri** vahekaardil <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">
-2. Klõpsake mis tahes **pildi pisipilti** pildiristis
+1. Veenduge, et olete **Failibrauser**-vahekaardil <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">
+2. Klõpsake mis tahes **pildi pisipilti** pildirastris
 3. Pilt avatakse **peamise eelvaatealas** (ekraani keskel)
 4. Pilt on nüüd laaditud ja valmis täisekraanil vaatamiseks
 
@@ -18,7 +18,7 @@ Kõige tavalisem viis pildi avamiseks pildivaatajas:
 Kui pilt on eelvaatealasse laaditud:
 
 1. Klõpsake **Pildivaataja** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> ikooni vasakul külgribal.
-2. Pildivaataja vahekaart avatakse ja valitud pilt kuvatakse täisekraanil.
+2. Avaneb pildivaataja vahekaart, kus kuvatakse valitud pilt täisekraanil.
 3. Vasakul külgribal muutuvad kättesaadavaks täiustatud vaatamis- ja analüüsitööriistad.
 
 ***
@@ -31,36 +31,29 @@ Suurim osa ekraanist näitab teie pilti:
 
 * **Täisresolutsioon**: pildid kuvatakse algresolutsioonis.
 * **Suumitav**: kasutage suumimiseks juhtnuppe või hiirerattat
-* **Pööratav**: suumimisel klõpsake ja lohistage, et pilti liigutada
-* **Kuvasuhe säilitatakse**: pildid skaleeritakse proportsionaalselt
-
-***
+* **Liigutatav**: suumimisel klõpsake ja lohistage, et pilti liigutada
+* **Kuvasuhe säilib**: pildid skaleeritakse proportsionaalselt***
 
 ## Vaatevalikud
 
-### Pildi navigeerimise põhitõed
+### Pildi põhiline navigeerimine
 
 #### Piltide sirvimine
 
 Navigeerige pildikogus klaviatuurilühendite või nuppude abil:
 
-* **Järgmine pilt**: klõpsake nuppu → või vajutage klahvi **→** (parem nooleklahv)
-* **Eelmine pilt**: klõpsake nuppu ← või vajutage klahvi **←** (vasak nooleklahv)
+* **Järgmine pilt**: klõpsake nuppu → või vajutage klahvi**→** (parem nooleklahv)
+* **Eelmine pilt**: klõpsake nuppu ← või vajutage klahvi**←** (vasak nooleklahv)
 * **Hüppake konkreetsele pildile**: naaske failibrauserisse ja klõpsake soovitud pisipildil
 
 #### Suumikontrollid
 
 Reguleerige suurendust, et vaadata pildi detaile:
 
-**Suurendamine:**
+**Suurendamine:*** Klõpsake nuppu **+** (pluss)
+* Vajutage klahvi **+**või**=*** Kerige hiirerattaga **üles**
 
-* Klõpsake nuppu **+** (pluss)
-* Vajutage klahvi **+** või **=**
-* Kerige hiirerattaga **üles**
-
-**Vähendamine:**
-
-* Klõpsake nuppu **−** (miinus)
+**Vähendamine:*** Klõpsake nuppu **−** (miinus)
 * Vajutage klahvi **−** (miinus)
 * Kerige hiirerattaga **alla**
 
@@ -73,22 +66,13 @@ Kui suum on suurem kui ekraani suurus:
 3. **Lohistades** saad pilti nihutada.
 4. Vabasta nupp, et pildi nihutamine lõpetada.
 
-**Alternatiiv**: Kasuta nooleklahve, et pilti väikeste sammudega nihutada.
-
-***
+**Alternatiiv**: Kasuta nooleklahve, et pilti väikeste sammudega nihutada.***
 
 ## Pikselväärtuste vaatamine
 
-### Pikseliväärtuste vaatamine kursori juures
+### Pikselväärtuste vaatamine kursori juures
 
-Kui liigutate hiirekursorit pildi kohale, kuvatakse pikseliväärtused reaalajas:
-
-**Väärtuste kuvamise asukoht:**
-
-* **Ujuv number ja punane joon parempoolse indeksi LUT gradiendi legendis**
-* **Suurendamisel veelgi, ujuv väärtus kursori lähedal ja esiletõstetud piksel**
-* Näitab väärtusi pikseli **kursori all või esiletõstetud**
-* Uuendatakse hiire liigutamisel
+Kui liigutate hiirekursorit pildi kohale, kuvatakse pikselväärtused reaalajas:**Väärtuste kuvamise asukoht:*** **Ujuv number ja punane joon parempoolses indeks LUT gradiendi legendis*** **Kui suumite veelgi, ujuv väärtus kursori lähedal ja esiletõstetud piksel*** Näitab väärtusi pikselile **kursori all või esiletõstetud*** Uuendatakse hiire liigutamisel
 
 ***
 
@@ -108,9 +92,9 @@ Kui liigutate hiirekursorit pildi kohale, kuvatakse pikseliväärtused reaalajas
 
 **Pärast töötlemist:**
 
-* Vignett parandatud
+* Vignette parandatud
 * Peegeldus kalibreeritud
-* Mitme sagedusriba TIFF (Red, Green, NIR jne)
+* Mitme sagedusega TIFF (Red, Green, NIR jne)
 * Teaduslikud andmed valmis analüüsimiseks
 
 ### RAW (indeks)
@@ -118,7 +102,7 @@ Kui liigutate hiirekursorit pildi kohale, kuvatakse pikseliväärtused reaalajas
 **NDVI, NDRE, GNDVI jne (\_NDVI.tif failid):**
 
 * Ühe sagedusriba halltoonilised pildid
-* Pikselväärtused esindavad indeksi arvutamise tulemusi
+* Pikseliväärtused esindavad indeksi arvutamise tulemusi
 * Normaliseeritud indeksite vahemik on tavaliselt -1 kuni +1
 * Visualiseerimiseks saab rakendada värvi LUT-e
 
@@ -142,35 +126,31 @@ Täpsemad juhised leiate [Indeks/LUT Sandboxist](index-lut-sandbox.md).
 
 ### Navigeerimine
 
-* **→** (parem nooleklahv): järgmine pilt
-* **←** (vasak nooleklahv): eelmine pilt
+* **→** (parempoolne nooleklahv): järgmine pilt
+* **←** (vasakpoolne nooleklahv): eelmine pilt
 * **Home**: esimene pilt nimekirjas
 * **End**: nimekirja viimane pilt
 
 ### Suum
 
-* **+** või **=**: suumimine
-* **−**: suumimine
-* **Hiirerattaga**: suumimine
-
-***
+* **+**või**=**: suum sisse
+* **−**: suum välja
+* **Hiirerattaga**: suum sisse/välja***
 
 ### Indeksi arvutuste kontrollimine
 
-Kontrollige, kas indeksid on arvutatud õigesti:
+Kontrollige, et indeksid on arvutatud õigesti:
 
 1. Avage NDVI või muu indeksipilt.
 2. Kontrollige taimestikualasid:
    * **NDVI**: tervete taimede puhul peaks näitama 0,4–0,9.
    * **NDRE**: jõulise kasvu puhul kõrgemad väärtused.
    * **GNDVI**: sarnane NDVI-ga, kuid klorofüllitundlik
-3. Kontrollige mitte-taimestikku:
-   * **Pinnas**: ligi 0 või veidi negatiivne
-   * **Vesi**: negatiivsed väärtused (-0,5 kuni 0)
+3. Kontrollige taimestikuväliseid alasid:
+   * **Muld**: ligikaudu 0 või veidi negatiivne
+   * **Vesi**: negatiivsed väärtused (-0,5 kuni 0)***
 
-***
-
-## Vaadamisprobleemide lahendamine
+## Vaadeldavuse probleemide lahendamine
 
 ### Pilt ei avane
 
@@ -199,21 +179,21 @@ Kontrollige, kas indeksid on arvutatud õigesti:
 
 1. Kontrollige pikselväärtusi – kui need on kõik väga madalad või väga kõrged, reguleerige kuvamisvahemikku.
 2. Proovige avada QGIS-is või sarnases rakenduses, mis reguleerib vahemikku automaatselt.
-3. Kontrollige töötlemise veaotsingulogi vead.
+3. Kontrollige töötlemise veaotsingulogi vigu.
 
 ### Pikselväärtused tunduvad valed
 
 **Võimalikud põhjused:**
 
-* Vale pildi kuvamine (originaal vs töödeldud)
+* Valesti kuvatav pilt (originaal vs töödeldud)
 * Kalibreerimine ei rakendunud õigesti
-* Valgusanduri andmed ei olnud sisestatud
+* Valgusanduri andmed ei olnud sisendis kaasatud
 * Protsendimoodus lülitati valesti sisse
 
 **Lahendused:**
 
 1. Veenduge, et vaatate töödeldud väljundit (kontrollige failinime laiendit)
-2. Kontrollige protsendimooduse nupu seisundit
+2. Kontrollige protsendimooduse nupu olekut
 3. Võrrelge sama andmekogumi teadaolevalt heade piltidega
 
 ***

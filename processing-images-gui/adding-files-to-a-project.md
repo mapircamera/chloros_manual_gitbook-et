@@ -20,11 +20,11 @@ Piltide lisamiseks projekti on kaks peamist viisi:
 
 ### Meetod 1: failide lisamine
 
-Kasutage seda valikut üksikute pildifailide või väikese valiku failide importimiseks.
+Kasutage seda valikut üksikute pildifailide või väikese failide valiku importimiseks.
 
 1. Klõpsake **„Failide lisamine”** <img src="../.gitbook/assets/image.png" alt="" data-size="line"> nupule failibrauseri paneeli ülaosas.
 2. Navigeerige kaustani, mis sisaldab teie pilte.
-3. Valige üks või mitu pildifaili (hoidke all **Ctrl**, et valida mitu faili).
+3. Valige üks või mitu pildifaili (hoidke **Ctrl** all, et valida mitu faili).
 4. Klõpsake **&quot;Ava&quot;**, et importida valitud failid.
 
 ### Meetod 2: kausta lisamine
@@ -33,9 +33,7 @@ Kasutage seda valikut, et importida kõik pildid kaustast korraga.
 
 1. Klõpsake nuppu **„Lisa kaust”** <img src="../.gitbook/assets/image (1).png" alt="" data-size="line"> failibrauseri paneeli ülaosas.
 2. Leidke ja valige kaust, mis sisaldab teie pildistamise seansi pilte.
-3. Klõpsake **„Vali kaust”**, et importida kõik selle kausta toetatud pildid.
-
-***
+3. Klõpsake **„Vali kaust”**, et importida kõik selle kausta toetatud pildid.***
 
 ## Failibrauseri tabeli mõistmine
 
@@ -49,7 +47,7 @@ Pärast piltide importimist kuvatakse need tabelis, millel on järgmised veerud:
 ### Aeg
 
 * Pildi salvestamise kuupäev ja kellaaeg
-* Väljavõte pildi EXIF-metadatast
+* Ekstraheeritud pildi EXIF-metadatast
 * Kasutatakse PPK-sünkroniseerimiseks ja kalibreerimise sihtmärgi tuvastamiseks
 
 ### Kaamera mudel
@@ -60,7 +58,7 @@ Pärast piltide importimist kuvatakse need tabelis, millel on järgmised veerud:
 
 ### Sihtmärgi veerg (valikukast)
 
-* Märkige see valikukast piltide puhul, mis sisaldavad kalibreerimise sihtmärke
+* Märkige see ruut piltide puhul, mis sisaldavad kalibreerimise sihtmärke
 * Kiirendab oluliselt sihtmärgi tuvastamist töötlemise ajal
 * Täpsema teabe saamiseks vaadake [Sihtmärgi piltide valimine](choosing-target-images.md)
 
@@ -80,45 +78,41 @@ Soovimatute piltide eemaldamiseks projektist:
 
 1. Valige failibrauseri tabelis üks või mitu pilti
 2. Klõpsake nuppu **„Eemalda valitud”** <img src="../.gitbook/assets/image (2).png" alt="" data-size="line"> nuppu.
-3. Kinnitage eemaldamine (faile ei kustutata kettalt, vaid eemaldatakse ainult projektist).
+3. Kinnitage eemaldamine (failid ei kustutata kettalt, vaid eemaldatakse ainult projektist).
 
 ### Sorteerimine ja filtreerimine
 
 * **Sorteerimine veeru järgi**: klõpsake mis tahes veeru pealkirjal, et pilte sorteerida.
 * **Sorteerimine ajamärgise järgi**: kasulik kronoloogiliste pildistamisseeriate korraldamiseks.
-* **Kaameramudeli filter**: kui kasutate mitut kaamerat, rühmitage pildid kaameratüübi järgi.
-
-***
+* **Kaameramudeli filter**: rühmitage pildid kaameratüübi järgi, kui kasutate mitut kaamerat.***
 
 ## Pildi eelvaade
 
 ### Kogu pildi vaatamine
 
-Klõpsake failibrauseris mis tahes pildi pisipilti, et kuvada see peamises eelvaatealas:
+Klõpsake failibrauseris mis tahes pildi pisipildil, et kuvada see peamises eelvaatealas:
 
 1. Pilt kuvatakse keskmises eelvaatepaneelis.
 2. Kasutage suumikontrolle, et vaadata pildi detaile.
 3. Liiguge piltide vahel nooleklahvide abil.
 
-### Kiirnavigatsioon
+### Kiire navigeerimine
 
-* **Eelmine pilt**: klõpsake vasakule noolt või vajutage klahvi ←.
+* **Eelmine pilt**: klõpsake vasakule nooleklahvile või vajutage ← klahvile.
 * **Järgmine pilt**: klõpsake paremat noolt või vajutage klahvi →.
 * **Suurendamine/vähendamine**: kasutage hiirerattat või suumiklahve.
-* **Panorameerimine**: suumimisel klõpsake ja lohistage pilti.
-
-***
+* **Panoraam**: suumimisel klõpsake ja lohistage pilti.***
 
 ## Duplikaatfailide käitlemine
 
 Chloros tuvastab ja ignoreerib automaatselt duplikaatfailid:
 
 * Failid, millel on identne failinimi, jäetakse vahele.
-* Takistab juhuslikku topeltkäsitlemist.
+* Vältib juhuslikku topeltkäsitlemist.
 * Duplikaatide tuvastamisel kuvatakse hoiatus.
 
 {% hint style="warning" %}
-**Oluline**: Ära nimeta ümber ega muuda originaalseid pildifaile enne importimist. Chloros tugineb nõuetekohaseks töötlemiseks originaalsetele failinimedele ja metaandmetele.
+**Oluline**: Ära nimeta ümber ega muuda originaalpilte enne importimist. Chloros tugineb nõuetekohaseks töötlemiseks originaalse failinime ja metaandmetele.
 {% endhint %}
 
 ***
@@ -132,9 +126,7 @@ Kui teie projekt sisaldab pilte mitmest MAPIR kaamerast:
 3. Failibrauser kuvab kaameramudeli veerus „Kaameramudel”.
 4. Töötlemisel rakendatakse iga kaameratüübi jaoks õigeid seadeid.
 
-**Näide**: Survey3W RGN + Survey3N OCN kahe kaameraga seadistus.
-
-***
+**Näide**: Survey3W RGN + Survey3N OCN kahe kaameraga seadistus.***
 
 ## Parimad tavad
 
@@ -142,7 +134,7 @@ Kui teie projekt sisaldab pilte mitmest MAPIR kaamerast:
 
 * Hoidke kalibreerimise sihtpildid samas kaustas kui uuringupildid.
 * Säilitage kaamera/SD-kaardi algne kausta struktuur.
-* Ärge segage ühes projektis erinevate sessioonide andmekogusid.
+* Ärge segage ühes projektis eri sessioonide andmekogusid.
 
 ### Failide nimetamine
 
@@ -177,7 +169,7 @@ Kui teie projekt sisaldab pilte mitmest MAPIR kaamerast:
 
 * Muudetud EXIF-metadata
 * Pildid on redigeeritud välises tarkvaras
-* Faili ülekanne on poolik
+* Faili ülekandmine on poolik
 
 **Lahendus**: Importige uuesti originaalsed, muutmata failid kaamerast/SD-kaardilt
 
@@ -188,18 +180,16 @@ Kui teie projekt sisaldab pilte mitmest MAPIR kaamerast:
 * Kaamera kell ei ole õigesti seadistatud
 * EXIF-andmed on eemaldatud välise tarkvaraga
 
-**Lahendus**: Kontrollige, et kaamera aja seaded olid pildistamise ajal õiged
-
-***
+**Lahendus**: Kontrollige, et kaamera aja seaded olid pildistamise ajal õiged***
 
 ## Järgmised sammud
 
-Kui failid on imporditud:
+Kui failid on importitud:
 
 1. **Vaadake failide loendit** – veenduge, et kõik pildid on õigesti laaditud
 2. **Kontrollige kaameramudeleid** – veenduge, et kaamera on õigesti tuvastatud
 3. **Märgistage sihtpildid** – vt [Sihtpiltide valimine](choosing-target-images.md)
 4. **Kohandage seadeid** – konfigureerige töötlemisvalikud [Projekti seaded](adjusting-project-settings.md)
-5. **Alustage töötlemist** – vt [Töötlemise alustamine](starting-the-processing.md)
+5. **Alustage töötlemist** – vaadake [Töötlemise alustamine](starting-the-processing.md)
 
 Täpsemat teavet projekti konfigureerimise kohta leiate jaotisest [Projekti seaded](adjusting-project-settings.md).

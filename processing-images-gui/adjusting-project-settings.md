@@ -1,14 +1,14 @@
-# Projekti seadeid kohandamine
+# Projekti seadete kohandamine
 
-Enne piltide töötlemist on oluline konfigureerida projekti seaded vastavalt oma töövoo nõuetele. Projekti seaded <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> paneel võimaldab kalibreerimise, töötlemisvalikute, multispektraalsete indeksite ja ekspordivormingute põhjalikku juhtimist.
+Enne piltide töötlemist on oluline konfigureerida projekti seaded vastavalt oma töövoo nõuetele. Projekti seaded <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> paneel võimaldab täielikku kontrolli kalibreerimise, töötlemisvalikute, multispektraalsete indeksite ja ekspordivormingute üle.
 
 ## Projektiseadete avamine
 
-1. Avage oma projekt Chloros-is
+1. Avage oma projekt Chloros
 2. Klõpsake **Projektiseaded** <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> ikoonile vasakul külgribal
 3. Projekti seaded paneel kuvab kõik konfiguratsiooni valikud
 
-{% vihje style=&quot;info&quot; %}
+{% hint style="info" %}
 **Seaded salvestatakse automaatselt** koos projektiga. Kui projekt uuesti avada, taastatakse kõik seaded.
 {% endhint %}
 
@@ -18,11 +18,11 @@ Enne piltide töötlemist on oluline konfigureerida projekti seaded vastavalt om
 
 ### Vaikesätted (soovitatav enamikule kasutajatele)
 
-Tüüpiliste MAPIR Survey3 kaameratöövoogude puhul sobivad hästi vaikimisi seaded:
+Tüüpiliste MAPIR Survey3 kaameratöövoogude puhul sobivad hästi vaikesätted:
 
 * ✅ **Vignette correction**: Enabled
 * ✅ **Reflectance calibration**: Enabled (nõuab MAPIR sihtmärkide pilte)
-* ✅ **Debayer-meetod**: kõrge kvaliteet (kiirem)
+* ✅ **Debayer-meetod**: Standardne (kiire, keskmine kvaliteet)
 * ✅ **Ekspordivorming**: TIFF (16-bitine)
 
 Importige lihtsalt oma pildid ja alustage töötlemist nende vaikimisi seadetega.
@@ -31,79 +31,74 @@ Importige lihtsalt oma pildid ja alustage töötlemist nende vaikimisi seadetega
 
 ## Projekti seaded ülevaade
 
-Projekti seaded paneel on jagatud mitmeks kategooriaks. Allpool on iga sektsiooni kokkuvõte. Täieliku dokumentatsiooni leiate [Projekti seaded](../project-settings/project-settings.md).
+Projekti seaded paneel on jagatud mitmesse kategooriasse. Allpool on iga sektsiooni kokkuvõte. Täieliku dokumentatsiooni leiate [Projekti seaded](../project-settings/project-settings.md).
 
 ### Sihtmärgi tuvastamine
 
-Kontrollib, kuidas Chloros tuvastab kalibreerimise sihtmärke teie piltidel.
+Kontrollib, kuidas Chloros tuvastab kalibreerimise sihtmärgid teie piltidel.
 
-**Peamised seaded:**
+**Olulised seaded:*** **Minimaalne kalibreerimisproovi ala**: sihtmärgi tuvastamise suuruslävi (vaikimisi: 25 pikslit)
+* **Minimaalne sihtmärgi klastrite arv**: sihtmärgi piirkondade rühmitamise sarnasuse lävi (vaikimisi: 60)**Millal kohandada:**
 
-* **Minimaalne kalibreerimisproovi ala**: sihtmärgi tuvastamise suuruslävi (vaikimisi: 25 pikslit)
-* **Minimaalne sihtmärgi klastrite arv**: sihtmärgi piirkondade rühmitamise sarnasuse lävi (vaikimisi: 60)
-
-**Millal kohandada:**
-
-* Suurendage proovi ala, kui tekivad valed tuvastused.
-* Vähendage, kui sihtmärke ei tuvastata.
-* Kohandage klastrite arvu, kui sihtmärgid jagunevad mitmeks tuvastuseks.
+* Suurendage proovi ala, kui tekivad valed tuvastused
+* Vähendage, kui sihtmärke ei tuvastata
+* Reguleerige klastrit, kui sihtmärgid jagunevad mitmeks tuvastamiseks
 
 ### Töötlemine
 
 Peamised pilditöötlus- ja kalibreerimisvalikud.
 
-**Peamised seaded:**
-
-* **Vignette&#x27;i korrigeerimine**: kompenseerib objektiivi tumenemise servades ✅ Soovitatav
+**Peamised seaded:*** **Vignette&#x27;i korrigeerimine**: kompenseerib objektiivi tumenemise servades ✅ Soovitatav
 * **Peegelduskalibreerimine**: normaliseerib väärtused kalibreerimise sihtmärkide abil ✅ Soovitatav
-* **Debayer-meetod**: algoritm RAW-vormingu teisendamiseks 3-kanaliliseks multispektraalseks
-* **Minimaalne kalibreerimise intervall**: aeg kalibreerimise sihtmärkide kasutamise vahel (0 = kasuta kõiki)
+* **Debayer-meetod**: algoritm RAW-failide teisendamiseks 3-kanaliliseks multispektraalseks
+* **Minimaalne kalibreerimise intervall**: aeg kalibreerimise sihtmärkide kasutamise vahel (0 = kasuta kõiki)**Täpsemad seaded:*** **Valgusanduri ajavööndi nihke**: PPK aja sünkroniseerimiseks (vaikimisi: 0)
+* **PPK paranduste rakendamine**: kasutab .daq-failide GPS/eksponeerimise pin-andmeid
+* **Eksponeerimise pin 1/2**: määrab kaamerad eksponeerimise pinidele kahe kaameraga seadistuste jaoks
 
-**Täpsemad seaded:**
+### Debayer-meetod
 
-* **Valgusanduri ajavööndi nihke**: PPK aja sünkroniseerimiseks (vaikimisi: 0)
-* **Rakenda PPK parandusi**: kasutab .daq failide GPS/eksponeerimise pin andmeid
-* **Exposure Pin 1/2**: Määrab kaamerad ekspositsioonipinnidele kahe kaameraga seadistuste jaoks
+Praegu pakume Chloros-is 2 debayering-meetodit:
+
+#### Standard (kiire, keskmine kvaliteet)
+
+Standardne debayer töötleb kiiresti, kuid näitab debayeringu värvimüra, mille tulemuseks on vähem täpsed ja müraisemad pildid.
+
+#### Tekstuuritundlik (aeglane, kõrgeim kvaliteet) \[Chloros+ ainult]
+
+Tekstuuritundlik kasutab kõrgekvaliteedilist servatundlikku debayerit koos AI/ML müra vähendamise mudeliga, mis eemaldab peaaegu kogu debayeringu müra. Tekstuuritundlik mudel vajab töötamiseks GPU mälu (VRAM). Soovitame seda kasutada, kui teil on kiirema töötlemise jaoks saadaval &gt;4 GB VRAM-i.
 
 ### Indeks (multispektraalsed indeksid)
 
-Konfigureerige, milliseid taimestiku indekseid arvutada ja eksportida.
+Määrake, milliseid taimestiku indekseid arvutada ja eksportida.
 
 **Indeksite lisamine:**
 
-1. Klõpsake nuppu **„Lisa indeks”**
-2. Valige indeks rippmenüüst (NDVI, NDRE, GNDVI jne)
-3. Konfigureerige visualiseerimise seaded (LUT värvid, väärtuste vahemikud)
-4. Lisage vajadusel mitu indeksit
+1. Klõpsake nuppu**„Lisa indeks”**
 
-**Populaarsed indeksid:**
+2. Valige indeks rippmenüüst (NDVI, NDRE, GNDVI jne).
+3. Konfigureerige visualiseerimise seaded (LUT värvid, väärtuste vahemikud).
+4. Lisage vajaduse korral mitu indeksit.
 
-* **NDVI**: üldine taimestiku tervis (kõige levinum)
+**Populaarsed indeksid:*** **NDVI**: üldine taimestiku tervis (kõige levinum)
 * **NDRE**: varajane stressi tuvastamine koos RedEdge-ga
 * **GNDVI**: klorofülli kontsentratsioonile tundlik
 * **OSAVI**: toimib hästi nähtava pinnasega
-* **EVI**: kõrge lehepinna indeksiga (LAI) piirkonnad
-
-**Kohandatud valemid (ainult Chloros+):**
+* **EVI**: kõrge lehepinna indeksiga (LAI) piirkonnad**Kohandatud valemid (ainult Chloros+):**
 
 * Looge kohandatud multispektraalsed indeksivalemid
-* Kasutage riba matemaatikat kõigi pildikanalitega
+* Kasutage ribamatemaatikat kõigi pildikanalitega
 * Salvesta kohandatud valemid taaskasutamiseks
 
-Kõikide kättesaadavate indeksite ja valemite kohta vaadake [Multispektraalsed indeksivalemid](../project-settings/multispectral-index-formulas.md).
+Kõikide saadaval olevate indeksite ja valemite kohta vaadake [Multispektraalsed indeksivalemid](../project-settings/multispectral-index-formulas.md).
 
 ### Eksport
 
 Kontrollib väljundfaili formaati ja kvaliteeti.
 
-**Kättesaadavad formaadid:**
-
-* **TIFF (16-bitine)**: soovitatav GIS-i ja teaduslikuks analüüsiks (vahemik 0–65 535)
+**Saadaval olevad formaadid:*** **TIFF (16-bitine)**: soovitatav GIS-i ja teaduslikuks analüüsiks (vahemik 0–65 535)
 * **TIFF (32-bitine, protsent)**: ujukomaga peegeldusväärtused (vahemik 0,0–1,0)
 * **PNG (8-bitine)**: kaotuseta pakkimine visualiseerimiseks (vahemik 0–255)
-* **JPG (8-bitine)**: väikseimad failid, kaotusega pakkimine (vahemik 0–255)
-
-***
+* **JPG (8-bitine)**: väikseimad failid, kaotusega pakkimine (vahemik 0–255)***
 
 ## Seadete salvestamine ja laadimine
 
@@ -122,12 +117,12 @@ Looge korduvkasutatavad mallid ühtsete töövoogude jaoks:
 * Jaga konfiguratsioone meeskonnaliikmetega.
 * Säilita järjepidevus korduvate uuringute puhul.
 
-### Lae mall uude projekti
+### Laadi mall uude projekti
 
 Uue projekti loomisel:
 
 1. Vali peamenüüst **„Uus projekt”**.
-2. Vali valik **„Lae mallist”**.
+2. Vali valik **„Laadi mallist”**.
 3. Vali salvestatud mall.
 4. Kõik seaded rakenduvad automaatselt.
 
@@ -140,37 +135,33 @@ Seade **„Salvesta projekti kaust”** määrab, kuhu uued projektid vaikimisi 
 * **Millal muuta**:
   * Võrguketas meeskonnatööks
   * Teine ketas, millel on rohkem salvestusruumi
-  * Aastate/klientide järgi organiseeritud kausta struktuur
+  * Aastate/klientide kaupa organiseeritud kausta struktuur
 
 ***
 
 ## PPK (järelkäsitletud kinemaatika) seadistamine
 
-Kui kasutate MAPIR DAQ salvestusseadmeid koos GPS-iga täpse geolokatsiooni jaoks:
+Kui kasutate täpse geolokatsiooni jaoks MAPIR DAQ salvestusseadmeid koos GPS-iga:
 
 ### Eeltingimused
 
 * MAPIR DAQ koos GPS (GNSS) mooduliga
-* .daq logifail koos ekspositsiooni pin-koodidega
+* .daq logifail koos eksponeerimispinnide sisestustega
 * Kaamera ühendatud DAQ eksponeerimispinnidega salvestamise ajal
 
 ### Konfiguratsiooni sammud
 
-1. Paigutage .daq logifail oma projekti kausta.
-2. Projektiseadetes aktiveerige **&quot;Kohalda PPK parandusi&quot;** valikukast.
-3. Vajadusel seadistage **&quot;Valgusanduri ajavööndi nihke&quot;** (vaikimisi: 0 UTC jaoks).
-4. Määrake kaamerad eksponeerimispinnidele:
-   * **Üks kaamera**: Määratakse automaatselt pistikule 1.
-   * **Kaks kaamerat**: Määrake iga kaamera käsitsi õigele pistikule.
+1. Paigutage .daq logifail oma projekti kausta
+2. Projektiseadetes aktiveerige **&quot;Kohalda PPK parandusi&quot;** valik
+3. Vajadusel seadistage **„Valgusanduri ajavööndi nihke”** (vaikimisi: 0 UTC jaoks)
+4. Määrake kaamerad ekspositsioonipinnidele:
+   * **Üks kaamera**: määratakse automaatselt pinnile 1
+   * **Kaks kaamerat**: määrake iga kaamera käsitsi õigele pinnile**Ekspositsioonipinnide määramine:*** **Valgustuse pin 1**: valige kaameramudel rippmenüüst
+* **Valgustuse pin 2**: valige teine kaamera või „Ära kasuta”
+* Sama kaamerat ei saa määrata mõlemale pinnile
 
-**Pistikute määramine:**
-
-* **Pistik 1**: Valige kaameramudel rippmenüüst.
-* **Pistik 2**: Valige teine kaamera või „Ära kasuta”.
-* Sama kaamerat ei saa määrata mõlemale pistikule.
-
-{% vihje style=&quot;warning&quot; %}
-**Oluline**: Ekspositsioonipinnid peavad olema õigesti määratud vastavatele kaameratele. Vale määramine põhjustab valed geolokatsiooniandmed.
+{% hint style="warning" %}
+**Oluline**: Valgustuse pinnid peavad olema õigesti määratud vastavatele kaameratele. Vale määramine põhjustab valesid geolokatsiooniandmeid.
 {% endhint %}
 
 ***
@@ -179,9 +170,9 @@ Kui kasutate MAPIR DAQ salvestusseadmeid koos GPS-iga täpse geolokatsiooni jaok
 
 ### Mitme kaameraga projektid
 
-Kui töödeldakse ühes projektis mitme MAPIR kaamera pilte:
+Kui töödeldakse ühes projektis mitme kaamera pilte:
 
-1. Chloros tuvastab automaatselt iga kaamera mudeli
+1. Chloros tuvastab automaatselt iga kaameramudeli
 2. Iga kaamera saab sobiva töötlusprofiili
 3. PPK: määrake igale kaamerale käsitsi õige eksponeerimise pin
 4. Kõik kaamerad kasutavad sama ekspordivormingut ja indekseid
@@ -202,7 +193,7 @@ Sama ala korduvate uuringute jaoks aja jooksul:
 
 Projektide puhul, kus on palju pilte (500+):
 
-* Kaaluge jagamist väiksemateks projektideks kuupäeva või ala järgi.
+* Kaaluge jagamist väiksemateks projektideks kuupäeva või piirkonna järgi.
 * Kasutage Chloros+ paralleelset töötlemist kiiremate tulemuste saamiseks.
 * Kaaluge CLI või API kasutamist partiide automatiseerimiseks.
 * Reguleerige minimaalne kalibreerimise intervall, et vähendada sihtmärgi tuvastamise aega.
