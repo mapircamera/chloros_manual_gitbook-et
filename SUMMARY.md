@@ -3,12 +3,12 @@
 * [Alustamine](README.md)
 * [GUI: navigeerimine](navigation.md)
 * [GUI: projektid](projects.md)
-* [CLI : käsurida](CLI.md)
+* [CLI : käsurea](CLI.md)
 * [API : Python SDK](api-python-sdk.md)
 * [Toetatud kaamerad](supported-cameras.md)
 * [Väljundpildi formaadid](output-image-formats.md)
-* [Chloros+ sisselogimine](chloros+-login.md)
-* [Kalibreerimise sihtmärgid](calibration-targets.md)
+* [Chloros+ Sisselogimine](chloros+-login.md)
+* [Kalibreerimismärgid](calibration-targets.md)
 * [Toetatud keeled](supported-languages.md)
 * [Allalaadimine](download.md)
 * [KKK](faq.md)
@@ -27,10 +27,21 @@
 * [Projekti seaded](project-settings/project-settings.md)
 * [Multispektraalsed indeksivalemid](project-settings/multispectral-index-formulas.md)
 
-## PILDI VAATAMINE (GUI)
+## PILTIDE VAATAMISPROGRAMM (GUI)
 
-* [Pildi raster](image-viewer-gui/image-grid.md)
+* [Piltide raster](image-viewer-gui/image-grid.md)
 * [Pildi avamine täisekraanil](image-viewer-gui/opening-an-image-full-screen.md)
-* [Pildi kihid](image-viewer-gui/image-layers.md)
-* [Indeks/LUT liivakast](image-viewer-gui/index-lut-sandbox.md)
+* [Pildikihtid](image-viewer-gui/image-layers.md)
+* [Indeks/LUT-liivakast](image-viewer-gui/index-lut-sandbox.md)
 * [Kaardimärgid](image-viewer-gui/map-markers.md)
+
+## Linux ja servaarvutus
+
+* [Linux ülevaade](linux/linux-overview.md)
+* [Linux paigaldamine](linux/linux-installation.md)
+* [NVIDIA Jetsoni juhend](linux/nvidia-jetson-guide.md)
+
+## Töötlemisarhitektuur
+
+* [Dünaamiline arvutusadapteerimine](processing-architecture/dynamic-compute-adaptation.md)
+* [Töötlemispipeline](processing-architecture/processing-pipeline.md)

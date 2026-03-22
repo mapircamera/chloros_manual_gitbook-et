@@ -1,161 +1,147 @@
 # Töötlemise jälgimine
 
-Kui töötlemine on alanud, pakub Chloros mitmeid võimalusi protsessi jälgimiseks, probleemide kontrollimiseks ja andmekogumi olukorra mõistmiseks. Sellel lehel selgitatakse, kuidas jälgida töötlemist ja tõlgendada Chloros poolt pakutavat teavet.
+Kui töötlemine on alanud, pakub Chloros mitmeid võimalusi protsessi kulgemise jälgimiseks, probleemide tuvastamiseks ja andmekogumi seisundi mõistmiseks. Sellel lehel selgitatakse, kuidas töötlemist jälgida ja kuidas tõlgendada Chloros poolt pakutavat teavet.
 
-## Ülevaade edenemisribast
+## Edusammude riba ülevaade
 
-Ülemises päises asuv edenemisriba näitab reaalajas töötlemise staatust ja valmimisprotsenti.
+Ülemises päises asuv edusammude riba näitab töötlemise staatust ja valmimisprotsenti reaalajas.
 
-### Vaba režiimi edenemisriba
+### Vaba režiimi edusammude riba
 
-Kasutajatele, kellel pole Chloros+ litsentsi:
+Kasutajatele, kellel puudub Chloros+ litsents:
 
-**2-etapiline edenemise kuvamine:**
+**2-etapiline edusammude kuvamine:**
 
-1. **Sihtmärgi tuvastamine** – kalibreerimise sihtmärkide leidmine piltidest
-2. **Töötlemine** – paranduste rakendamine ja eksportimine
-
-**Progressiriba näitab:**
+1.**Sihtmärgi tuvastamine** – kalibreerimissihte leidmine piltidelt
+2. **Töötlemine** – paranduste rakendamine ja eksportimine**Edusammude riba näitab:**
 
 * Üldine valmimisprotsent (0–100%)
 * Praeguse etapi nimi
-* Lihtne horisontaalne riba
+* Lihtne horisontaalne riba visualiseerimine
 
-### Chloros+ progressiriba
+### Chloros+ edusammude riba
 
 Kasutajatele, kellel on Chloros+ litsents:
 
-**4-etapiline progressinäit:**
+**4-etapiline edusammude kuvamine:**
 
-1. **Avastamine** – kalibreerimise sihtmärkide leidmine
+1.**Tuvastamine** – kalibreerimise sihtmärkide leidmine
 2. **Analüüsimine** – piltide uurimine ja töötlemisprotsessi ettevalmistamine
-3. **Kalibreerimine** – vinjeti ja peegelduskorrektsioonide rakendamine
-4. **Eksportimine** – töödeldud failide salvestamine
-
-**Interaktiivsed funktsioonid:**
-
-* **Viige hiir** edusammude riba kohale, et näha laiendatud 4-etapilist paneeli
-* **Klõpsake** edusammude ribale, et laiendatud paneel külmutada/kinnitada
-* **Klõpsake uuesti**, et külmutamine tühistada ja hiirega eemaldamisel automaatselt peita
-* Iga etapp näitab individuaalset edusammude protsenti (0–100%)
+3. **Kalibreerimine** – vinjeti ja peegeldusparanduste rakendamine
+4. **Eksportimine** – töödeldud failide salvestamine**Interaktiivsed funktsioonid:*** **Viige hiir** edastusribale, et näha laienenud 4-etapilist paneeli
+* **Klõpsake** edastusribale, et laienenud paneel fikseerida
+* **Klõpsake uuesti**, et fikseeringut tühistada ja paneel hiire eemaldamisel automaatselt peita
+* Iga etapp näitab individuaalset edastust (0–100%)
 
 ***
 
 ## Iga töötlemisetapi mõistmine
 
-### Etapp 1: tuvastamine (sihtmärgi tuvastamine)
+{% hint style="info" %}
+**Töötlemisprotsessi arhitektuur**: Need 4 GUI etappi vastavad [4-niitilisele töötlemisprotsessile](../processing-architecture/processing-pipeline.md). GPU kiirendusega süsteemides kasutab 3. niit (kalibreerimine) [dünaamilist arvutusadapteerimist](../processing-architecture/dynamic-compute-adaptation.md), mis optimeerib töötlemist teie konkreetse riistvara jaoks.
+{% endhint %}
+
+### Etapp 1: Avastamine (sihtmärgi avastamine)
 
 **Mis toimub:**
 
-* Chloros skaneerib sihtmärgi valikukastiga märgitud pilte
+* Chloros skaneerib pilte, mis on märgitud sihtmärgi valikukastiga
 * Arvutinägemise algoritmid tuvastavad 4 kalibreerimispaneeli
-* Iga paneelist ekstraheeritakse peegeldusväärtused
-* Sihtmärgi ajamärgid salvestatakse õige kalibreerimise ajastamise jaoks
+* Iga paneeli peegeldusväärtused ekstraheeritakse
+* Sihtmärgi ajamärgid salvestatakse õige kalibreerimise ajastamiseks
 
 **Kestus:**
 
 * Märgitud sihtmärkidega: 10–60 sekundit
-* Märgitud sihtmärkideta: 5–30+ minutit (skaneerib kõik pildid)
+* Märgimata sihtmärkidega: 5–30+ minutit (skaneerib kõik pildid)
 
 **Edusammude indikaator:**
 
-* Tuvastamine: 0% → 100%
+* Avastamine: 0% → 100%
 * Skaneeritud piltide arv
 * Leitud sihtmärkide arv
 
 **Mida jälgida:**
 
-* Peaks kiiresti lõppema, kui sihtmärgid on õigesti märgitud
-* Kui see võtab liiga kaua aega, ei pruugi sihtmärgid olla märgitud
-* Kontrollige veaotsingu logist sõnumeid „Sihtmärk leitud”
+* Kui sihtmärgid on korralikult märgitud, peaks protsess kiiresti lõppema
+* Kui protsess võtab liiga kaua aega, ei pruugi sihtmärgid olla märgitud
+* Kontrollige vealogi, kas seal on sõnumeid „Sihtmärk leitud”
 
 ### 2. etapp: analüüsimine
 
 **Mis toimub:**
 
-* Pildi EXIF-metadata lugemine (ajastused, säriaja seaded)
-* Kalibreerimisstrateegia määramine sihtmärkide ajastuste põhjal
-* Pilditöötluse järjekorra korraldamine
+* Pildi EXIF-metadata lugemine (ajamärgid, säri seaded)
+* Kalibreerimisstrateegia kindlaksmääramine sihtmärkide ajamärkide põhjal
+* Pilditöötlusjärjekorra korraldamine
 * Paralleelse töötlemise töötajate ettevalmistamine (ainult Chloros+)
 
-**Kestus:** 5–30 sekundit
-
-**Edusammude indikaator:**
+**Kestus:** 5–30 sekundit**Edusammude näitaja:**
 
 * Analüüsimine: 0% → 100%
-* Kiire etapp, tavaliselt lõpeb kiiresti
+* Kiire etapp, lõpeb tavaliselt kiiresti
 
 **Mida jälgida:**
 
-* Peab kulgema stabiilselt ilma pausideta
-* Hoiatused puuduvate metaandmete kohta ilmuvad veaotsinguprotokollis
+* Protsess peaks kulgema sujuvalt ja pausideta
+* Hoiatused puuduvate metaandmete kohta ilmuvad vealokisse
 
-### 3. etapp: kalibreerimine
+### 3. etapp: Kalibreerimine
 
-**Mis toimub:**
-
-* **Debayering**: RAW Bayer-mustri teisendamine 3 kanaliks
+**Mis toimub:*** **Debayering**: RAW-Bayer-mustri teisendamine 3 kanaliks
 * **Vignette correction**: objektiivi servade tumenemise eemaldamine
 * **Reflectance calibration**: normaliseerimine sihtväärtustega
 * **Index calculation**: multispektraalsete indeksite arvutamine
 * Iga pildi töötlemine kogu protsessi vältel
 
-**Kestus:** enamik kogu töötlemise ajast (60–80%)
-
-**Edusammude indikaator:**
+**Kestus:** Suurem osa kogu töötlemisajast (60–80%)**Edusammude indikaator:**
 
 * Kalibreerimine: 0% → 100%
-* Praegu töödeldav pilt
-* Valmis pildid / Kõik pildid
+* Hetkel töödeldav pilt
+* Töödeldud pildid / Piltide koguarv
 
-**Töötlemise käitumine:**
+**Töötlemise käitumine:*** **Vaba režiim**: Töötleb ühte pilti korraga järjest
+* **Chloros+ režiim**: Töötleb kuni 16 pilti korraga
+* **GPU kiirendus**: kiirendab seda etappi märkimisväärselt**Mida jälgida:**
 
-* **Vaba režiim**: töötleb ühe pildi korraga järjest
-* **Chloros+ režiim**: töötleb kuni 16 pilti korraga
-* **GPU kiirendus**: kiirendab seda etappi oluliselt
-
-**Mida jälgida:**
-
-* Pidev edasiminek piltide arvu järgi
-* Kontrollige veaparanduslogist iga pildi valmimise teateid
-* Hoiatused pildi kvaliteedi või kalibreerimise probleemide kohta
+* Piltide arvu järjepidev suurenemine
+* Kontrollige vealokist iga pildi valmimise teateid
+* Hoiatused pildi kvaliteedi või kalibreerimisprobleemide kohta
 
 ### 4. etapp: eksportimine
 
 **Mis toimub:**
 
-* Kalibreeritud piltide kirjutamine valitud formaadis kettale
-* Multispektraalsete indekspiltide eksportimine LUT-värvidega
-* Kaameramudeli alamkataloogide loomine
-* Originaalfailide nimede säilitamine sobivate laienditega
+* Kalibreeritud piltide kirjutamine kettale valitud formaadis
+* Multispektraalsete indeksipiltide eksportimine LUT-värvidega
+* Kaameramudelite alamkaustade loomine
+* Originaalfailinimede säilitamine sobivate laienditega
 
-**Kestus:** 10–20% kogu töötlemisajast
-
-**Edusammude indikaator:**
+**Kestus:** 10–20% kogu töötlemisajast**Edusammude indikaator:**
 
 * Eksportimine: 0% → 100%
-* Failide kirjutamine
-* Ekspordi formaat ja sihtkoht
+* Kirjutatavad failid
+* Ekspordivorming ja sihtkoht
 
 **Mida jälgida:**
 
-* Kettaruumi hoiatused
-* Failide kirjutamise vead
+* Kõvakettaruumi hoiatused
+* Failide kirjutamisvead
 * Kõigi konfigureeritud väljundite valmimine
 
 ***
 
-## Debug Log tab
+## Debug Log (veakontrolli logi) vahekaart
 
-Debug Log annab üksikasjalikku teavet töötlemise edenemise ja tekkinud probleemide kohta.
+Debug Log (veakontrolli logi) pakub üksikasjalikku teavet töötlemise edenemise ja tekkinud probleemide kohta.
 
 ### Debug Logi avamine
 
-1. Klõpsake **Debug Log** <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> ikoonile vasakul külgribal
-2. Avaneb logi paneel, mis näitab reaalajas töötlemise sõnumeid
-3. Automaatne kerimine, et näidata viimaseid sõnumeid
+1. Klõpsake vasakul külgribal **Debug Log** <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> ikoonile vasakul külgribal
+2. Avaneb logipaneel, mis kuvab reaalajas töötlemissõnumeid
+3. Logi keritakse automaatselt, et kuvada viimaseid sõnumeid
 
-### Logi sõnumite mõistmine
+### Logisõnumite mõistmine
 
 #### Teabesõnumid (valge/hall)
 
@@ -179,7 +165,7 @@ Mittekriitilised probleemid, mis ei peata töötlemist:
 [WARN] Low contrast in calibration panel - results may vary
 ```
 
-**Tegevus:** Vaadake hoiatused pärast töötlemist läbi, kuid ärge katkestage töötlemist.
+**Tegevus:** Vaadake hoiatusi pärast töötlemist läbi, kuid ärge katkestage töötlemist
 
 #### Veateated (Red)
 
@@ -191,41 +177,41 @@ Kriitilised probleemid, mis võivad põhjustada töötlemise ebaõnnestumise:
 [ERROR] No targets detected - enable reflectance calibration or mark target images
 ```
 
-**Tegevus:** Peatage töötlemine, lahendage viga, alustage uuesti.
+**Tegevus:** Peatage töötlemine, kõrvaldage viga, alustage uuesti
 
-### Üldised logisõnumid
+### Tavapärased logisõnumid
 
 | Sõnum                          | Tähendus                                | Vajalik tegevus                                         |
 | -------------------------------- | -------------------------------------- | ----------------------------------------------------- |
-| „Sihtmärk avastatud failis \[failinimi]” | Kalibreerimise sihtmärk leitud  | Puudub – normaalne                                         |
-| „Töödeldakse pilti X Y-st”        | Praegune töö edenemine                | Puudub – normaalne                                         |
-| „Sihtmärke ei leitud”               | Kalibreerimise sihtmärke ei avastatud        | Märgi sihtmärgi pildid või keela peegelduskalibreerimine |
-| „Kettaruumi ei ole piisavalt”        | Väljundiks ei ole piisavalt salvestusruumi          | Vabasta kettaruumi                                    |
-| „Rikutud faili vahelejätmine”        | Pildifail on rikutud                  | Kopeeri fail uuesti SD-kaardilt                             |
-| „PPK-andmed rakendatud”               | Rakendatud .daq-faili GPS-parandused | Puudub – normaalne                                         |
+| &quot;Sihtmärk tuvastatud failis \[failinimi]&quot; | Kalibreerimisihtmärk leitud  | Puudub – normaalne                                         |
+| &quot;Töödeldakse pilti X / Y&quot;        | Praegune edusammude ülevaade                | Puudub – normaalne                                         |
+| &quot;Sihtmärke ei leitud&quot;               | Kalibreerimisihtmärke ei tuvastatud        | Märgi sihtmärgipildid või lülita peegelduskalibreerimine välja |
+| &quot;Kõvakettal pole piisavalt ruumi&quot;        | Väljundandmete salvestamiseks pole piisavalt ruumi          | Vabasta kõvakettal ruumi                                    |
+| &quot;Vahelejäänud rikutud fail&quot;        | Pildifail on rikutud                  | Kopeeri fail uuesti SD-kaardilt                             |
+| &quot;PPK-andmed rakendatud&quot;               | .daq-failist pärit GPS-korrektsioonid rakendatud | Puudub – normaalne                                         |
 
 ### Logiandmete kopeerimine
 
-Logi kopeerimine veaotsinguks või toe jaoks:
+Logi kopeerimiseks veaotsinguks või tugi jaoks:
 
-1. Avage veaotsingu logi paneel.
-2. Klõpsake nuppu **„Kopeeri logi”** (või paremklõpsake → Valige kõik).
-3. Kleepige tekstifaili või e-kirja.
-4. Saatke vajadusel MAPIR toele.
+1. Avage paneel „Debug Log“
+2. Klõpsake nuppu **„Copy Log“** (või paremklõpsake → Valige kõik)
+3. Kleepige tekstifaili või e-kirja
+4. Saatke vajadusel MAPIR tugiteenistusele
 
 ***
 
-## Süsteemi ressursside jälgimine
+## Süsteemiressursside jälgimine
 
 ### CPU kasutamine
 
 **Vaba režiim:**
 
 * 1 CPU tuum ~100%
-* Muud tuumad on jõudeolekus või saadaval
-* Süsteem jääb reageerivaks
+* Ülejäänud tuumad on ooterežiimis või vabad
+* Süsteem reageerib endiselt
 
-**Chloros+ paralleelrežiim:**
+**Chloros+ Paralleelrežiim:**
 
 * Mitmed tuumad 80–100% (kuni 16 tuuma)
 * Kõrge üldine CPU kasutamine
@@ -234,8 +220,8 @@ Logi kopeerimine veaotsinguks või toe jaoks:
 **Jälgimiseks:**
 
 * Windows Task Manager (Ctrl+Shift+Esc)
-* Vahekaart Performance → CPU sektsioon
-* Otsige protsesse „Chloros” või „chloros-backend”
+* Performance tab → CPU section
+* Otsi protsesse &quot;Chloros&quot; või &quot;chloros-backend&quot;
 
 ### Mälu (RAM) kasutamine
 
@@ -256,127 +242,127 @@ Logi kopeerimine veaotsinguks või toe jaoks:
 
 Kui GPU kiirendus on sisse lülitatud:
 
-* NVIDIA GPU näitab suurt kasutust (60–90%)
+* NVIDIA GPU näitab kõrget kasutust (60–90%)
 * VRAM-i kasutamine suureneb (nõuab 4 GB+ VRAM-i)
-* Kalibreerimisetapp on oluliselt kiirem
+* Kalibreerimisetapp on märkimisväärselt kiirem
 
 **Jälgimiseks:**
 
 * NVIDIA süsteemiriba ikoon
-* Ülesannete haldur → Jõudlus → GPU
+* Task Manager → Performance → GPU
 * GPU-Z või sarnane jälgimistööriist
 
 ### Ketta I/O
 
 **Mida oodata:**
 
-* Kõrge ketta lugemine analüüsimise etapis
-* Kõrge ketta kirjutamine eksportimise etapis
+* Kõrge kettalugemine analüüsietapis
+* Kõrge kettakirjutamine ekspordietapis
 * SSD on oluliselt kiirem kui HDD
 
 **Jõudluse näpunäide:**
 
-* Kasutage projekti kausta jaoks võimaluse korral SSD-d
+* Kasutage projektikausta jaoks võimaluse korral SSD-d
 * Vältige võrgukettaid suurte andmekogumite puhul
-* Veenduge, et ketta maht ei ole peaaegu täis (mõjutab kirjutuskiirust)
+* Veenduge, et kettal ei oleks palju vaba ruumi (mõjutab kirjutuskiirust)
 
 ***
 
-## Probleemide avastamine töötlemise ajal
+## Probleemide tuvastamine töötlemise ajal
 
 ### Hoiatavad märgid
 
-**Töö seisab (ei muutu üle 5 minuti):**
+**Töö seisab (muutusi pole üle 5 minuti):**
 
-* Kontrollige veaotsingulogi vigu
-* Kontrollige kättesaadavat kettaruumi
-* Kontrollige ülesannete haldurit, et veenduda, et Chloros töötab
+* Kontrollige vead silumislogist
+* Kontrollige kettaruumi olemasolu
+* Kontrollige ülesannete haldurist, et Chloros töötab
 
 **Veateated ilmuvad sageli:**
 
 * Peatage töötlemine ja vaadake vead üle
 * Tavapärased põhjused: kettaruum, rikutud failid, mäluprobleemid
-* Vaadake allpool olevat jaotist „Vigade leidmine ja kõrvaldamine”
+* Vaadake allpool olevat jaotist „Vigade kõrvaldamine”
 
-**Süsteem ei vasta:**
+**Süsteem ei reageeri:**
 
 * Chloros+ paralleelrežiim kasutab liiga palju ressursse
-* Kaaluge samaaegsete ülesannete vähendamist või riistvara uuendamist
-* Vaba režiim on ressursimahukam
+* Kaaluge samaaegsete ülesannete arvu vähendamist või riistvara uuendamist
+* Vaba režiim on ressursisäästlikum
 
 ### Millal töötlemine peatada
 
 Peatage töötlemine, kui näete:
 
-* ❌ Vead „Ketas täis” või „Ei saa faili kirjutada”
+* ❌ Vead „Kett on täis” või „Faili ei saa kirjutada”
 * ❌ Korduvad pildifailide rikkumisvead
-* ❌ Süsteem on täielikult külmunud (ei reageeri)
-* ❌ Avastati, et konfigureeriti valed seaded
+* ❌ Süsteem on täielikult hangunud (ei reageeri)
+* ❌ Saite aru, et seadistused olid valed
 * ❌ Imporditi valed pildid
 
 **Kuidas peatada:**
 
-1. Klõpsake **Stop/Cancel nuppu** (asendab Start nuppu)
+1. Klõpsake**Peata/Tühista nuppu** (asendab Start nuppu)
 2. Töötlemine peatub, edusammud kaovad
-3. Lahendage probleemid ja alustage uuesti algusest
+3. Parandage probleemid ja alustage uuesti algusest
 
 ***
 
-## Töötlemise ajal tekkinud probleemide lahendamine
+## Tõrkeotsing töötlemise ajal
 
 ### Töötlemine on väga aeglane
 
 **Võimalikud põhjused:**
 
 * Märkimata sihtpildid (kõikide piltide skaneerimine)
-* HDD asemel SSD-mälu
+* HDD asemel SSD-salvestusruum
 * Ebapiisavad süsteemiressursid
-* Palju konfigureeritud indekseid
+* Konfigureeritud on palju indekseid
 * Võrguketta juurdepääs
 
 **Lahendused:**
 
-1. Kui töötlemine on just alanud ja asub tuvastamisjärgus: tühista, märgi sihtpildid, alusta uuesti
-2. Tulevikuks: kasuta SSD-d, vähenda indeksite arvu, uuenda riistvara
-3. Kaaluge CLI kasutamist suurte andmekogumite kogumitöötlemiseks
+1. Kui töötlemine on just alanud ja on tuvastamisetapis: tühista, märgi sihtmärgid, alusta uuesti
+2. Edaspidiseks: kasuta SSD-d, vähenda indekseid, uuenda riistvara
+3. Kaalu CLI kasutamist suurte andmekogumite partiitöötlemiseks
 
-### Hoiatused „Kettaruumi puudumise” kohta
+### Hoiatused „Kettaruum” kohta
 
 **Lahendused:**
 
 1. Vabasta kohe kettaruumi
-2. Viige projekt kettale, kus on rohkem ruumi
-3. Vähendage eksporditavate indeksite arvu.
-4. Kasutage TIFF asemel JPG-vormingut (väiksemad failid).
+2. Viia projekt kettale, kus on rohkem ruumi
+3. Vähenda eksporditavate indeksite arvu
+4. Kasuta JPG-vormingut TIFF asemel (väiksemad failid)
 
-### Sagedased „Corrupted File” (Rikutud fail) teated
-
-**Lahendused:**
-
-1. Kopeerige pildid SD-kaardilt uuesti, et tagada nende terviklikkus.
-2. Kontrollige SD-kaardi vead.
-3. Eemaldage projektist rikutud failid.
-4. Jätkake ülejäänud piltide töötlemist.
-
-### Süsteemi ülekuumenemine / aeglustamine
+### Sagedased „Rikutud faili” teated
 
 **Lahendused:**
 
-1. Tagage piisav ventilatsioon.
-2. Puhastage arvuti ventilatsiooniavad tolmust.
-3. Vähendage töötlemiskoormust (kasutage vaba režiimi asemel Chloros+).
-4. Töötlege jahedamal ajal päevast.
+1. Kopeeri pildid SD-kaardilt uuesti, et tagada terviklikkus
+2. Kontrolli SD-kaarti vigade suhtes
+3. Eemalda rikutud failid projektist
+4. Jätka ülejäänud piltide töötlemist
+
+### Süsteemi ülekuumenemine / aeglustumine
+
+**Lahendused:**
+
+1. Tagage piisav ventilatsioon
+2. Puhastage arvuti ventilatsiooniavad tolmust
+3. Vähendage töötlemiskoormust (kasutage Free režiimi asemel Chloros+)
+4. Töötlege päeva jahedamatel aegadel
 
 ***
 
 ## Töötlemise lõpetamise teade
 
-Kui töötlemine on lõppenud:
+Kui töötlemine lõpeb:
 
-* Jõudlusribal jõuab 100%ni
-* **Debug Logis** ilmub sõnum **„Töötlemine lõpetatud”**
-* Start-nupp muutub taas aktiveerituks
-* Kõik väljundfailid asuvad kaameramudeli alamkataloogis
+* edenemisribal jõuab 100%ni
+* **&quot;Töötlemine lõpetatud&quot;** sõnum ilmub veaparanduslogisse
+* Käivitusnupp muutub taas aktiivseks
+* Kõik väljundfailid asuvad kaameramudeli alamkaustas
 
 ***
 
@@ -385,8 +371,8 @@ Kui töötlemine on lõppenud:
 Kui töötlemine on lõppenud:
 
 1. **Vaadake tulemusi** – vt [Töötlemise lõpetamine](finishing-the-processing.md)
-2. **Kontrollige väljundkausta** – veenduge, et kõik failid on eksporditud õigesti
-3. **Vaadake üle veaotsinguprotokoll** – kontrollige, kas seal on hoiatusi või vigu
-4. **Vaadake eelvaadet töödeldud piltidest** – kasutage pildivaatajat või välist tarkvara
+2. **Kontrollige väljundkausta** – veenduge, et kõik failid on õigesti eksporditud
+3. **Vaadake läbi vealogi** – kontrollige, kas seal on mingeid hoiatusi või vigu
+4. **Vaadake töödeldud pilte eelvaates** – kasutage pildivaatajat või välist tarkvara
 
-Töödeldud tulemuste ülevaatamise ja kasutamise kohta leiate teavet jaotisest [Töötlemise lõpetamine](finishing-the-processing.md).
+Töödeldud tulemuste läbivaatamise ja kasutamise kohta leiate teavet jaotisest [Töötlemise lõpetamine](finishing-the-processing.md).

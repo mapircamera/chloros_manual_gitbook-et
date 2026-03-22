@@ -1,34 +1,34 @@
 # Toetatud keeled
 
-Chloros pakub täielikku liidese tuge **38 keeles üle maailma**, muutes selle kättesaadavaks kasutajatele kogu maailmas. Keelt saab vahetada koheselt kõigis liidestes: töölaual, brauseris, CLI ja Python SDK.
+Chloros pakub täielikku kasutajaliidese tuge **38 keeles üle maailma**, muutes selle kättesaadavaks kasutajatele kogu maailmas. Keelt saab vahetada koheselt kõigis kasutajaliidestes: töölaual, brauseris, CLI ja Python SDK.
 
 Chloros toetab järgmisi keeli:
 
-| # | Keel | Emakeel | CLI kood |
+| # | Keel | Keele nimi | CLI Kood |
 |---|----------|-------------|----------|
-| 1 | 🇺🇸 inglise keel | inglise keel | `en` |
+| 1 | 🇺🇸 Inglise keel | English | `en` |
 | 2 | 🇪🇸 Hispaania | Español | `es` |
 | 3 | 🇵🇹 Portugali | Português | `pt` |
 | 4 | 🇫🇷 Prantsuse | Français | `fr` |
 | 5 | 🇩🇪 Saksa keel | Deutsch | `de` |
 | 6 | 🇮🇹 Itaalia keel | Italiano | `it` |
 | 7 | 🇯🇵 Jaapani keel | 日本語 | `ja` |
-| 8 | 🇰🇷 Korea keel | 한국어 | `ko` |
-| 9 | 🇨🇳 Hiina keel (lihtsustatud) | 简体中文 | `zh` |
+| 8 | 🇰🇷 Korea | 한국어 | `ko` |
+| 9 | 🇨🇳 Hiina (lihtsustatud) | 简体中文 | `zh` |
 | 10 | 🇹🇼 Hiina (traditsiooniline) | 繁體中文 | `zh-TW` |
 | 11 | 🇷🇺 Vene | Русский | `ru` |
 | 12 | 🇳🇱 Hollandi keel | Nederlands | `nl` |
 | 13 | 🇸🇦 Araabia keel | العربية | `ar` |
 | 14 | 🇵🇱 Poola keel | Polski | `pl` |
-| 15 | 🇹🇷 türgi keel | Türkçe | `tr` |
-| 16 | 🇮🇳 hindi keel | हिंदी | `hi` |
-| 17 | 🇮🇩 Indoneesia keel | Bahasa Indonesia | `id` |
-| 18 | 🇻🇳 Vietnami keel | Tiếng Việt | `vi` |
+| 15 | 🇹🇷 Türgi | Türkçe | `tr` |
+| 16 | 🇮🇳 Hindi | हिंदी | `hi` |
+| 17 | 🇮🇩 Indoneesia | Bahasa Indonesia | `id` |
+| 18 | 🇻🇳 Vietnami | Tiếng Việt | `vi` |
 | 19 | 🇹🇭 Tai | ไทย | `th` |
 | 20 | 🇸🇪 Rootsi | Svenska | `sv` |
 | 21 | 🇩🇰 Taani | Dansk | `da` |
-| 22 | 🇳🇴 Norra keel | Norsk | `no` |
-| 23 | 🇫🇮 Soome keel | Suomi | `fi` |
+| 22 | 🇳🇴 Norra | Norsk | `no` |
+| 23 | 🇫🇮 Soome | Suomi | `fi` |
 | 24 | 🇬🇷 Kreeka | Ελληνικά | `el` |
 | 25 | 🇨🇿 Tšehhi | Čeština | `cs` |
 | 26 | 🇭🇺 Ungari | Magyar | `hu` |
@@ -39,20 +39,20 @@ Chloros toetab järgmisi keeli:
 | 31 | 🇲🇾 Malai keel | Bahasa Melayu | `ms` |
 | 32 | 🇸🇰 Slovaki keel | Slovenčina | `sk` |
 | 33 | 🇧🇬 Bulgaaria keel | Български | `bg` |
-| 34 | 🇭🇷 Horvaadi keel | Hrvatski | `hr` |
+| 34 | 🇭🇷 Horvaatia keel | Hrvatski | `hr` |
 | 35 | 🇱🇹 Leedu keel | Lietuvių | `lt` |
 | 36 | 🇱🇻 Läti keel | Latviešu | `lv` |
 | 37 | 🇪🇪 Eesti | Eesti | `et` |
-| 38 | 🇸🇮 Sloveenia | Slovenščina | `sl` |
+| 38 | 🇸🇮 Sloveeni | Slovenščina | `sl` |
 
-## Keele muutmine
+## Kuidas keelt muuta
 
 ### Chloros töölaual/brauseris
 
-1. Avage rakenduse seaded.
-2. Navigeerige keelevaliku menüüsse.
-3. Valige loendist soovitud keel.
-4. Kasutajaliides uueneb kohe.
+1. Avage rakenduse seaded
+2. Minge keelevaliku menüüsse
+3. Valige loendist soovitud keel
+4. Kasutajaliides uueneb kohe
 
 ### Chloros CLI
 
@@ -75,19 +75,19 @@ chloros-cli language pt-BR
 chloros-cli language --list
 ```
 
-Täpsema teabe saamiseks vaadake [CLI dokumentatsiooni](CLI.md).
+Lisateabe saamiseks vaadake [CLI dokumentatsiooni](CLI.md).
 
 ### Chloros Python SDK
 
-Määrake keele parameeter SDK algseadistamisel, et saada sõnumeid ja väljundeid soovitud keeles.
+Määrake keeleparameeter SDK algseadistamisel, et saada teateid ja väljundeid oma eelistatud keeles.
 
-## Katvus
+## Toetatavad keeled
 
-Kõik 38 keelt on täielikult toetatud järgmistes rakendustes:
+Kõiki 38 keelt toetatakse täielikult järgmistes rakendustes:
 
-* **Chloros Desktop** - täielik GUI tõlge
-* **Chloros Browser** - veebiliides kõigis keeltes
-* **Chloros CLI** - käsurealiides ja väljundsõnumid
-* **Chloros Python SDK** – API sõnumid ja dokumentatsioon
+* **Chloros Desktop** – täielik graafilise kasutajaliidese tõlge
+* **Chloros Browser** – veebiliides kõigis keeltes
+* **Chloros CLI** – käsurealiides ja väljundsõnumid
+* **Chloros Python SDK** – API-sõnumid ja dokumentatsioon
 
-Keelte tugi tagab, et kasutajad üle kogu maailma saavad tõhusalt töötada oma emakeeles ilma takistusteta.
+Keelte tugi tagab, et kasutajad üle kogu maailma saavad takistusteta ja tõhusalt töötada oma emakeeles.

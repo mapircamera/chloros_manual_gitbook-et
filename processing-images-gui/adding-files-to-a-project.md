@@ -1,43 +1,43 @@
 # Failide lisamine projekti
 
-Kui olete Chloros-is projekti loonud või avanud, on järgmine samm multispektraalsete piltide lisamine töötlemise alustamiseks. Failibrauser<img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> teeb piltide importimise ja andmekogumi haldamise lihtsaks.
+Kui olete Chloros-is projekti loonud või avanud, on järgmine samm multispektraalsete piltide lisamine, et alustada töötlemist. Failibrauseri<img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> võimaldab hõlpsasti pilte importida ja andmekogumit hallata.
 
 ## Failibrauseri avamine
 
 1. Avage või looge projekt Chloros-is
-2. Klõpsake **Failibrauser** <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> ikoonile vasakul külgribal
-3. Failibrauseri paneel kuvab teie projekti failide loendi
+2. Klõpsake vasakul külgribal **Failibrauser** <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> ikoonile vasakul külgribal
+3. Failibrauseri paneelil kuvatakse teie projekti failide loend
 
 {% hint style="info" %}
-**Toetatud failitüübid**: Chloros toetab RAW+JPG ja JPG pildifaile kaameratest MAPIR Survey3W ja Survey3N. Soovitatav on kasutada ainult RAW+JPG faile.
+**Toetatud failitüübid**: Chloros toetab RAW+JPG ja JPG pildifaile kaameratest MAPIR, Survey3W ja Survey3N. Soovitatav on kasutada ainult RAW+JPG faile.
 {% endhint %}
 
 ***
 
 ## Piltide lisamine projekti
 
-Piltide lisamiseks projekti on kaks peamist viisi:
+Projektile pilte lisada saab peamiselt kahel viisil:
 
-### Meetod 1: failide lisamine
+### Meetod 1: Failide lisamine
 
-Kasutage seda valikut üksikute pildifailide või väikese failide valiku importimiseks.
+Kasutage seda valikut üksikute pildifailide või väikese failivaliku importimiseks.
 
-1. Klõpsake **„Failide lisamine”** <img src="../.gitbook/assets/image.png" alt="" data-size="line"> nupule failibrauseri paneeli ülaosas.
-2. Navigeerige kaustani, mis sisaldab teie pilte.
-3. Valige üks või mitu pildifaili (hoidke **Ctrl** all, et valida mitu faili).
-4. Klõpsake **&quot;Ava&quot;**, et importida valitud failid.
+1. Klõpsake nuppu **„Lisa faile”** <img src="../.gitbook/assets/image.png" alt="" data-size="line"> nuppu failibrauseri paneeli ülaosas
+2. Navigeerige kaustani, mis sisaldab teie pilte
+3. Valige üks või mitu pildifaili (hoidke all **Ctrl**, et valida mitu faili)
+4. Klõpsake **&quot;Ava&quot;**, et importida valitud failid
 
-### Meetod 2: kausta lisamine
+### Meetod 2: Kausta lisamine
 
 Kasutage seda valikut, et importida kõik pildid kaustast korraga.
 
-1. Klõpsake nuppu **„Lisa kaust”** <img src="../.gitbook/assets/image (1).png" alt="" data-size="line"> failibrauseri paneeli ülaosas.
-2. Leidke ja valige kaust, mis sisaldab teie pildistamise seansi pilte.
-3. Klõpsake **„Vali kaust”**, et importida kõik selle kausta toetatud pildid.***
+1. Klõpsake **&quot;Lisa kaust&quot;** <img src="../.gitbook/assets/image (1).png" alt="" data-size="line"> nuppu failibrauseri paneeli ülaosas
+2. Navigeerige kaustani, mis sisaldab teie pildistamissessiooni pilte, ja valige see
+3. Klõpsake **&quot;Vali kaust&quot;**, et importida kõik toetatud pildid sellest kaustast***
 
 ## Failibrauseri tabeli mõistmine
 
-Pärast piltide importimist kuvatakse need tabelis, millel on järgmised veerud:
+Kui pildid on imporditud, kuvatakse need tabelis järgmiste veergudega:
 
 ### Failinimi
 
@@ -47,8 +47,8 @@ Pärast piltide importimist kuvatakse need tabelis, millel on järgmised veerud:
 ### Aeg
 
 * Pildi salvestamise kuupäev ja kellaaeg
-* Ekstraheeritud pildi EXIF-metadatast
-* Kasutatakse PPK-sünkroniseerimiseks ja kalibreerimise sihtmärgi tuvastamiseks
+* Saadud pildi EXIF-metadata
+* Kasutatakse PPK sünkroniseerimiseks ja kalibreerimise sihtmärgi tuvastamiseks
 
 ### Kaamera mudel
 
@@ -59,107 +59,107 @@ Pärast piltide importimist kuvatakse need tabelis, millel on järgmised veerud:
 ### Sihtmärgi veerg (valikukast)
 
 * Märkige see ruut piltide puhul, mis sisaldavad kalibreerimise sihtmärke
-* Kiirendab oluliselt sihtmärgi tuvastamist töötlemise ajal
-* Täpsema teabe saamiseks vaadake [Sihtmärgi piltide valimine](choosing-target-images.md)
+* Kiirendab oluliselt sihtmärkide tuvastamist töötlemise ajal
+* Täpsemad üksikasjad leiate jaotisest [Sihtmärkide piltide valimine](choosing-target-images.md)
 
 ### Pildi metaandmete vaatamine
 
-Tabelist ülemises paremas nurgas asuva lüliti nupule klõpsates kuvatakse valitud pildi metaandmed pildi rasteralal.
+Tabelist ülemises paremas nurgas asuva lüliti nupule klõpsates kuvatakse valitud pildi metaandmed pildirestis.
 
 <figure><img src="../.gitbook/assets/chloros_grid_meta.gif" alt=""><figcaption></figcaption></figure>
 
 ***
 
-## Projektis olevate failide haldamine
+## Failide haldamine projektis
 
 ### Failide eemaldamine
 
 Soovimatute piltide eemaldamiseks projektist:
 
 1. Valige failibrauseri tabelis üks või mitu pilti
-2. Klõpsake nuppu **„Eemalda valitud”** <img src="../.gitbook/assets/image (2).png" alt="" data-size="line"> nuppu.
-3. Kinnitage eemaldamine (failid ei kustutata kettalt, vaid eemaldatakse ainult projektist).
+2. Klõpsake nuppu **&quot;Eemalda valitud&quot;** <img src="../.gitbook/assets/image (2).png" alt="" data-size="line"> nupule
+3. Kinnitage eemaldamine (faile ei kustutata kettalt, vaid eemaldatakse ainult projektist)
 
 ### Sorteerimine ja filtreerimine
 
-* **Sorteerimine veeru järgi**: klõpsake mis tahes veeru pealkirjal, et pilte sorteerida.
-* **Sorteerimine ajamärgise järgi**: kasulik kronoloogiliste pildistamisseeriate korraldamiseks.
-* **Kaameramudeli filter**: rühmitage pildid kaameratüübi järgi, kui kasutate mitut kaamerat.***
+* **Sorteeri veeru järgi**: klõpsake mis tahes veeru pealkirjal, et pilte sorteerida
+* **Sorteeri ajamärgise järgi**: kasulik kronoloogiliste pildiseeriate organiseerimiseks
+* **Kaameramudeli filter**: rühmitage pildid kaameratüübi järgi, kui kasutate mitut kaamerat***
 
 ## Pildi eelvaade
 
-### Kogu pildi vaatamine
+### Täispildi vaatamine
 
 Klõpsake failibrauseris mis tahes pildi pisipildil, et kuvada see peamises eelvaatealas:
 
-1. Pilt kuvatakse keskmises eelvaatepaneelis.
-2. Kasutage suumikontrolle, et vaadata pildi detaile.
-3. Liiguge piltide vahel nooleklahvide abil.
+1. Pilt ilmub keskmisele eelvaatepaneelile
+2. Kasutage suumikontrolle pildi detailide uurimiseks
+3. Liiguge piltide vahel nooleklahvide abil
 
-### Kiire navigeerimine
+### Kiirnavigatsioon
 
-* **Eelmine pilt**: klõpsake vasakule nooleklahvile või vajutage ← klahvile.
-* **Järgmine pilt**: klõpsake paremat noolt või vajutage klahvi →.
-* **Suurendamine/vähendamine**: kasutage hiirerattat või suumiklahve.
-* **Panoraam**: suumimisel klõpsake ja lohistage pilti.***
+* **Eelmine pilt**: Klõpsake vasakule noolele või vajutage klahvi ←
+* **Järgmine pilt**: klõpsake paremat noolt või vajutage klahvi →
+* **Suurendamine/vähendamine**: kasutage hiirerattat või suumimisnuppe
+* **Panoraam**: klõpsake ja lohistage pilti, kui see on suurendatud***
 
 ## Duplikaatfailide käitlemine
 
 Chloros tuvastab ja ignoreerib automaatselt duplikaatfailid:
 
-* Failid, millel on identne failinimi, jäetakse vahele.
-* Vältib juhuslikku topeltkäsitlemist.
-* Duplikaatide tuvastamisel kuvatakse hoiatus.
+* Failid, millel on identsed failinimed, jäetakse vahele
+* Vältib juhuslikku topeltkäsitlemist
+* Duplikaatide tuvastamisel kuvatakse hoiatussõnum
 
 {% hint style="warning" %}
-**Oluline**: Ära nimeta ümber ega muuda originaalpilte enne importimist. Chloros tugineb nõuetekohaseks töötlemiseks originaalse failinime ja metaandmetele.
+**Oluline**: Ärge nimetage ümber ega muudake originaalpildifaile enne importimist. Chloros tugineb nõuetekohaseks töötlemiseks originaalfailinimedele ja metaandmetele.
 {% endhint %}
 
 ***
 
-## Segatud kaamerate andmekogud
+## Segatud kaamerate andmekogumid
 
 Kui teie projekt sisaldab pilte mitmest MAPIR kaamerast:
 
 1. Chloros tuvastab automaatselt iga kaameramudeli
-2. Iga kaameratüüp töödeldakse vastava kalibreerimisprofiiliga
-3. Failibrauser kuvab kaameramudeli veerus „Kaameramudel”.
-4. Töötlemisel rakendatakse iga kaameratüübi jaoks õigeid seadeid.
+2. Iga kaameratüüpi töödeldakse vastava kalibreerimisprofiiliga
+3. Failibrauser kuvab kaameramudeli veerus „Camera Model“
+4. Töötlemisel rakendatakse iga kaameratüübi jaoks õigeid seadeid
 
-**Näide**: Survey3W RGN + Survey3N OCN kahe kaameraga seadistus.***
+**Näide**: Survey3W RGN + Survey3N OCN kahe kaameraga seadistus***
 
 ## Parimad tavad
 
-### Korraldamine enne importimist
+### Korraldage enne importimist
 
-* Hoidke kalibreerimise sihtpildid samas kaustas kui uuringupildid.
-* Säilitage kaamera/SD-kaardi algne kausta struktuur.
-* Ärge segage ühes projektis eri sessioonide andmekogusid.
+* Hoidke kalibreerimise sihtmärkide pilte samas kaustas kui uuringupilte
+* Säilitage kaamera/SD-kaardi algne kaustastruktuur
+* Ärge segage ühes projektis eri seansside andmekogumeid
 
 ### Failide nimetamine
 
-* Säilitage kaamera algsed failinimed (IMG\_0001.RAW jne).
-* Ärge nimetage faile enne importimist ümber.
-* Originaalnimes sisaldavad olulisi metaandmeid.
+* Säilitage kaamera algsed failinimed (IMG\_0001.RAW jne)
+* Ärge nimetage faile ümber enne importimist
+* Algne nimi sisaldab olulisi metaandmeid
 
-### Kalibreerimise sihtpildid
+### Kalibreerimise sihtmärgi pildid
 
-* Lisage alati 1–2 kalibreerimise sihtpilti seansi kohta.
-* Pildistage sihtmärgid enne ja pärast pildistamise seanssi.
-* Paigutage sihtmärgid samadesse valgustingimustesse kui pildistamispiirkond.
-* Märgistage sihtpildid sihtmärgi valikukastiga, et kiirendada töötlemist.
+* Lisage alati 1–2 kalibreerimise sihtmärgi pilti seansi kohta
+* Pildistage sihtmärke enne ja pärast pildistamisseanssi
+* Paigutage sihtmärgid samadesse valgustingimustesse kui pildistamisala
+* Märgistage sihtmärgi pildid valikukastiga „Target”, et kiirendada töötlemist
 
 ***
 
-## Tavapärased probleemid ja lahendused
+## Tüüpilised probleemid ja lahendused
 
 ### Pildid ei ilmu pärast importimist
 
 **Võimalikud põhjused:**
 
-* Failivormingut ei toetata (ainult RAW+JPG ja JPG MAPIR kaameratest)
-* Pildid on pärit muudest kui MAPIR kaameratest (vt [Toetatud kaamerad](../supported-cameras.md))
-* Fail on rikutud või SD-kaardilt pole täielikult üle kantud
+* Failivormingut ei toetata (ainult RAW+JPG ja JPG MAPIR kaameratelt)
+* Pildid on pärit muudest kui MAPIR kaameratest (vaata [Toetatud kaamerad](../supported-cameras.md))
+* Fail on rikutud või SD-kaardilt ei ole kogu sisu üle kantud
 
 **Lahendus**: Kontrollige failivormingu ja kaameramudeli ühilduvust
 
@@ -169,27 +169,27 @@ Kui teie projekt sisaldab pilte mitmest MAPIR kaamerast:
 
 * Muudetud EXIF-metadata
 * Pildid on redigeeritud välises tarkvaras
-* Faili ülekandmine on poolik
+* Failide ülekanne on poolik
 
-**Lahendus**: Importige uuesti originaalsed, muutmata failid kaamerast/SD-kaardilt
+**Lahendus**: Importige kaamerast/SD-kaardilt uuesti originaalsed, muutmata failid
 
-### Puuduvad ajamärgised
+### Puuduvad ajamärgid
 
 **Võimalikud põhjused:**
 
 * Kaamera kell ei ole õigesti seadistatud
-* EXIF-andmed on eemaldatud välise tarkvaraga
+* EXIF-andmed on välise tarkvara poolt eemaldatud
 
-**Lahendus**: Kontrollige, et kaamera aja seaded olid pildistamise ajal õiged***
+**Lahendus**: Kontrollige, kas kaamera aja seaded olid pildistamise ajal õiged***
 
 ## Järgmised sammud
 
-Kui failid on importitud:
+Kui failid on imporditud:
 
-1. **Vaadake failide loendit** – veenduge, et kõik pildid on õigesti laaditud
+1. **Vaadake failide nimekirja** – veenduge, et kõik pildid on õigesti laaditud
 2. **Kontrollige kaameramudeleid** – veenduge, et kaamera on õigesti tuvastatud
-3. **Märgistage sihtpildid** – vt [Sihtpiltide valimine](choosing-target-images.md)
+3. **Märkige sihtpildid** – vt [Sihtpiltide valimine](choosing-target-images.md)
 4. **Kohandage seadeid** – konfigureerige töötlemisvalikud [Projekti seaded](adjusting-project-settings.md)
-5. **Alustage töötlemist** – vaadake [Töötlemise alustamine](starting-the-processing.md)
+5. **Alustage töötlemist** – vt [Töötlemise alustamine](starting-the-processing.md)
 
-Täpsemat teavet projekti konfigureerimise kohta leiate jaotisest [Projekti seaded](adjusting-project-settings.md).
+Projekti konfigureerimise kohta leiate üksikasjalikku teavet jaotisest [Projekti seadete kohandamine](adjusting-project-settings.md).

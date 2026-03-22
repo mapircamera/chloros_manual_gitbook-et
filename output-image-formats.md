@@ -3,15 +3,16 @@ metaLinks:
   alternates:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/output-image-formats
 ---
+
 # Väljundpildi formaadid
 
 ### TIFF (16-bitine)
 
-16-bitine (piksli digitaalne number 0–65535) TIFF (.tif) formaadis väljund.
+16-bitine (piksli digitaalne väärtus 0–65535) väljund formaadis TIFF (.tif).
 
 ### TIFF (32-bitine, protsent %)
 
-32-bitine (pikseli ujukomaarv 0,0–1,0) TIFF (.tif) formaadis väljund. Pikseli väärtused esindavad peegeldusprotsente, kus 0,0 = 0% ja 1,0 = 100%.
+32-bitine (piksli ujukomaarv 0,0–1,0) väljund TIFF (.tif) formaadis. Piksli väärtused esindavad peegeldusprotsente, kus 0,0 = 0% ja 1,0 = 100%.
 
 ### **JPG (8-bitine)**
 

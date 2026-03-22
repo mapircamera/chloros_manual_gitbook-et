@@ -1,161 +1,161 @@
 # Projekti seaded
 
-Projekti seaded <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> kõrvalribal Chloros võimaldab teil konfigureerida kõik pilditöötluse, kalibreerimise sihtmärgi tuvastamise, multispektraalsete indeksite arvutamise ja ekspordi valikud oma projektis. Need seaded salvestatakse koos projektiga ja neid saab salvestada mallidena, et neid mitmes projektis uuesti kasutada.
+Projekti seaded <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> Chloros-is võimaldab teil konfigureerida kõiki pilditöötluse, kalibreerimise sihtmärgi tuvastamise, multispektraalsete indeksite arvutamise ja projekti ekspordivõimaluste aspekte. Need seaded salvestatakse koos teie projektiga ja neid saab salvestada mallidena, et neid mitmes projektis uuesti kasutada.
 
-## Projektiseadete avamine
+## Projektiseadetele juurdepääs
 
-Projektiseadete avamiseks:
+Projektiseadetele juurdepääsuks:
 
 1. Avage projekt Chloros-is
 2. Klõpsake vasakul külgribal **Projektiseaded**  <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> vasakul külgribal
-3. Seadete paneel kuvab kõik kättesaadavad konfiguratsiooni valikud kategooriate kaupa
+3. Seadete paneelis kuvatakse kõik saadaval olevad konfiguratsiooni valikud kategooriate kaupa
 
 ***
 
-## Sihtmärgi tuvastamine
+## Sihtmärkide tuvastamine
 
-Need seaded kontrollivad, kuidas Chloros tuvastab ja töötleb kalibreerimise sihtmärke teie piltidel.
+Need seaded määravad, kuidas Chloros tuvastab ja töötleb kalibreerimissihte teie piltidel.
 
-### Minimaalne kalibreerimise proovi pindala (px)
+### Minimaalne kalibreerimisproovi pindala (px)
 
-* **Tüüp**: number
+* **Tüüp**: Number
 * **Vahemik**: 0 kuni 10 000 pikslit
 * **Vaikimisi**: 25 pikslit
-* **Kirjeldus**: määrab minimaalse ala (pikslites), mis on vajalik, et tuvastatud piirkond loetaks kehtivaks kalibreerimise sihtmärgi prooviks. Väiksemad väärtused tuvastavad väiksemad sihtmärgid, kuid võivad suurendada valepositiivseid tulemusi. Suuremad väärtused nõuavad tuvastamiseks suuremaid ja selgemaid sihtmärgi piirkondi.
-* **Millal kohandada**:
-  * Suurendage, kui saate valepositiivseid tulemusi väikeste pildiartefaktide puhul.
-  * Vähendage, kui kalibreerimise sihtmärgid on piltidel väikesed ja neid ei tuvastata.
+* **Kirjeldus**: Määrab minimaalse ala (pikslites), mis on vajalik, et tuvastatud piirkonda loetaks kehtivaks kalibreerimise sihtmärgi prooviks. Väiksemad väärtused tuvastavad väiksemaid sihtmärke, kuid võivad suurendada valetuvastuste arvu. Suuremad väärtused nõuavad tuvastamiseks suuremaid ja selgemaid sihtmärgi piirkondi.
+* **Millal reguleerida**:
+  * Suurendage, kui saate valehäireid väikeste pildiartefaktide puhul
+  * Vähendage, kui teie kalibreerimise sihtmärgid paistavad piltidel väikesed ja neid ei tuvastata
 
 ### Minimaalne sihtmärkide klastrite arv (0–100)
 
-* **Tüüp**: number
+* **Tüüp**: Number
 * **Vahemik**: 0 kuni 100
 * **Vaikimisi**: 60
-* **Kirjeldus**: reguleerib klastrite künnist sarnaste värviga piirkondade rühmitamiseks kalibreerimise sihtmärkide tuvastamisel. Kõrgemad väärtused nõuavad sarnaste värvide rühmitamist, mis toob kaasa konservatiivsema sihtmärkide tuvastamise. Madalamad väärtused lubavad sihtmärkide rühmas suuremat värvivalikut.
+* **Kirjeldus**: Reguleerib klastrite künnist sarnaste värviga piirkondade rühmitamiseks kalibreerimise sihtmärkide tuvastamisel. Suuremad väärtused nõuavad rohkem sarnaste värvide rühmitamist, mille tulemuseks on konservatiivsem sihtmärkide tuvastamine. Väiksemad väärtused lubavad sihtmärkide rühmas rohkem värvivaheldusi.
 * **Millal reguleerida**:
-  * Suurendage, kui kalibreerimise sihtmärgid jagunevad mitmeks tuvastamiseks.
-  * Vähendage, kui värvitooni variatsiooniga kalibreerimise sihtmärgid ei tuvastata täielikult.
+  * Suurendage, kui kalibreerimise sihtmärgid jagunevad mitmeks tuvastuseks
+  * Vähendage, kui värvivaheldusega kalibreerimise sihtmärke ei tuvastata täielikult
 
 ***
 
 ## Töötlemine
 
-Need seaded reguleerivad, kuidas Chloros töötleb ja kalibreerib teie pilte.
+Need seaded reguleerivad, kuidas Chloros teie pilte töötleb ja kalibreerib.
 
-### Vignette&#x27;i korrigeerimine
-
-* **Tüüp**: Valikukast
-* **Vaikimisi**: Lubatud (märgitud)
-* **Kirjeldus**: Rakendab vinjetikorrektsiooni, et kompenseerida objektiivi tumenemist pildi servades. Vinjetikorrektsioon on tavaline optiline nähtus, mille puhul pildi nurgad ja servad tunduvad objektiivi omaduste tõttu tumedamad kui keskosa.
-* **Millal keelata**: Keelake ainult juhul, kui teie kaamera/objektiivi kombinatsioon on juba rakendanud vinjetikorrektsiooni või kui soovite vinjetikorrektsiooni käsitsi järeltöötluses korrigeerida.
-
-### Peegelduskalibreerimine / valgebalanss
+### Vignettkorrektsioon
 
 * **Tüüp**: Valikukast
 * **Vaikimisi**: Lubatud (märgitud)
-* **Kirjeldus**: Lubab automaatset peegelduskalibreerimist, kasutades piltidel tuvastatud kalibreerimise sihtmärke. See normaliseerib peegeldusväärtused kogu andmekogus ja tagab ühtlased mõõtmised olenemata valgustingimustest.
-* **Kui keelata**: Keelake ainult juhul, kui soovite töödelda töötlemata, kalibreerimata pilte või kui kasutate teistsugust kalibreerimise töövoogu.
+* **Kirjeldus**: Rakendab vignettkorrektsiooni, et kompenseerida objektiivi tumenemist piltide servades. Vignett on tavaline optiline nähtus, kus pildi nurgad ja servad tunduvad objektiivi omaduste tõttu tumedamad kui keskkosa.
+* **Millal keelata**: Keelake see ainult juhul, kui teie kaamera/objektiivi kombinatsioon on vinjeti korrigeerimist juba rakendanud või kui soovite vinjetit järelkäsitluses käsitsi korrigeerida.
 
-### Debayer-meetod
+### Peegeldusvõime kalibreerimine / valgebalanss
+
+* **Tüüp**: Valikukast
+* **Vaikimisi**: Lubatud (märgitud)
+* **Kirjeldus**: Lubab automaatset peegeldusvõime kalibreerimist, kasutades piltidel tuvastatud kalibreerimise sihtmärke. See normaliseerib peegeldusväärtused kogu andmekogus ja tagab ühtsed mõõtmistulemused sõltumata valgustingimustest.
+* **Millal välja lülitada**: Lülitage välja ainult siis, kui soovite töödelda töötlemata, kalibreerimata pilte või kui kasutate teistsugust kalibreerimise töövoogu.
+
+### Debayeri meetod
 
 * **Tüüp**: Rippmenüü
 * **Valikud**:
-  * Standardne (kiire, keskmine kvaliteet)
+  * Standard (kiire, keskmine kvaliteet)
   * Tekstuuritundlik (aeglane, kõrgeim kvaliteet) \[Chloros+]
-* **Vaikimisi**: Standardne (kiire, keskmine kvaliteet)
-* **Kirjeldus**: Valib demosaicing-algoritmi, mida kasutatakse töötlemata Bayer-mustri andurite andmete muutmiseks täisvärvilisteks piltideks. Meetod „Standardne (kiire, keskmine kvaliteet)” pakub optimaalset tasakaalu töötlemiskiiruse ja pildi kvaliteedi vahel. „Tekstuuritundlik (aeglane, kõrgeim kvaliteet)” \[Chloros+] kasutab kõrgekvaliteedilist servatundlikku debayerit koos AI/ML müra eemaldamise mudeliga, mis eemaldab peaaegu kogu debayeringu müra. Tekstuuritundlik mudel vajab töötamiseks GPU mälu (VRAM). Soovitame seda kasutada, kui teil on kiirema töötlemise jaoks saadaval &gt;4 GB VRAM-i.
-* **Märkus**: Chloros tulevastes versioonides võidakse lisada täiendavaid debayer-meetodeid.
+* **Vaikimisi**: Standard (kiire, keskmine kvaliteet)
+* **Kirjeldus**: Valib demosaicing-algoritmi, mida kasutatakse töötlemata Bayeri mustri andurite andmete teisendamiseks täisvärvilisteks piltideks. Meetod „Standard (kiire, keskmine kvaliteet)” pakub optimaalset tasakaalu töötlemiskiiruse ja pildi kvaliteedi vahel. „Tekstuuritundlik (aeglane, kõrgeim kvaliteet)” \[Chloros+] kasutab kõrgekvaliteedilist servatundlikku demosaicingut koos AI/ML müra eemaldamise mudeliga, mis eemaldab peaaegu kogu demosaicingu müra. Tekstuuritundliku mudeli töötamiseks on vaja GPU mälu (VRAM). Soovitame seda kasutada, kui teil on kiirema töötlemise jaoks saadaval &gt;4 GB VRAM-i.
+* **Märkus**: Chloros tulevastes versioonides võidakse lisada täiendavaid debayeri meetodeid.
 
 ### Minimaalne kalibreerimise intervall
 
-* **Tüüp**: number
+* **Tüüp**: Number
 * **Vahemik**: 0 kuni 3600 sekundit
 * **Vaikimisi**: 0 sekundit
-* **Kirjeldus**: Seab minimaalse ajavahemiku (sekundites) kalibreerimise sihtmärkide kasutamise vahel. Kui väärtuseks on seatud 0, kasutab Chloros kõiki tuvastatud kalibreerimise sihtmärke. Kui väärtuseks on seatud suurem number, kasutab Chloros ainult kalibreerimise sihtmärke, mis on üksteisest eraldatud vähemalt selle arvu sekunditega, vähendades töötlemisaega andmekogumite puhul, kus kalibreerimise sihtmärke on sageli.
-* **Millal reguleerida**:
-  * Seadke väärtuseks 0, et saavutada maksimaalne kalibreerimistäpsus, kui valgustingimused muutuvad.
-  * Suurendage väärtust (nt 60–300 sekundini), et kiirendada töötlemist, kui valgustingimused on ühtlased ja teil on sagedased kalibreerimise sihtmärgi pildid.
+* **Kirjeldus**: Määrab minimaalse ajavahemiku (sekundites) kalibreerimise sihtmärkide kasutamise vahel. Kui väärtuseks on seatud 0, kasutab Chloros iga tuvastatud kalibreerimise sihtmärki. Kui väärtuseks on seatud suurem number, kasutab Chloros ainult neid kalibreerimise sihtmärke, mis on üksteisest eraldatud vähemalt selle arvu sekunditega, vähendades töötlemisaega andmekogumite puhul, kus kalibreerimise sihtmärke salvestatakse sagedasti.
+* **Millal kohandada**:
+  * Seadke väärtuseks 0, et saavutada maksimaalne kalibreerimistäpsus, kui valgustingimused muutuvad
+  * Suurendage väärtust (nt 60–300 sekundini), et töötlemine oleks kiirem, kui valgustingimused on stabiilsed ja teil on sagedased kalibreerimismärgi pildid
 
 ### Valgusanduri ajavööndi nihke
 
-* **Tüüp**: number
+* **Tüüp**: Number
 * **Vahemik**: -12 kuni +12 tundi
 * **Vaikimisi**: 0 tundi
-* **Kirjeldus**: Määrab valgussensori andmete ajamärgete ajavööndi nihke (tundides UTC-st). Seda kasutatakse PPK (Post-Processed Kinematic) andmefailide töötlemisel, et tagada piltide salvestamise ja GPS-andmete õige ajaline sünkroniseerimine.
-* **Millal reguleerida**: Seadke see oma kohaliku ajavööndi nihkeks, kui teie PPK-andmed kasutavad UTC asemel kohalikku aega. Näiteks:
+* **Kirjeldus**: Määrab valgussensori andmete ajamärkide ajavööndi nihke (tundides UTC-st). Seda kasutatakse PPK (Post-Processed Kinematic) andmefailide töötlemisel, et tagada piltide salvestamise ja GPS-andmete vaheline õige ajasünkroniseerimine.
+* **Millal kohandada**: Määrake see oma kohaliku ajavööndi nihkeks, kui teie PPK-andmed kasutavad UTC asemel kohalikku aega. Näiteks:
   * Vaikse ookeani aeg: -8 või -7 (sõltuvalt suveajast)
   * Ida-Ameerika aeg: -5 või -4 (sõltuvalt suveajast)
   * Kesk-Euroopa aeg: +1 või +2 (sõltuvalt suveajast)
 
-### PPK paranduste rakendamine
+### Rakenda PPK-korrektsioone
 
 * **Tüüp**: Valikukast
-* **Vaikimisi**: Keelatud (valikukast ei ole märgitud)
-* **Kirjeldus**: Võimaldab kasutada järelkäsitletud kinemaatilisi (PPK) parandusi MAPIR DAQ salvestitest, mis sisaldavad GPS-i (GNSS). Kui see on aktiveeritud, kasutab Chloros kõiki .daq logifailid, mis sisaldavad eksponeerimispinna andmeid teie projektikataloogis, ja rakendab teie piltidele täpseid geolokatsiooni parandusi.
-* **Nõue**: .daq logifail, mis sisaldab eksponeerimispinna andmeid, peab olema olemas teie projektikataloogis.
-* **Millal lubada**: Soovitatav on alati lubada PPK parandusi, kui teie .daq logifail sisaldab eksponeerimise tagasiside andmeid.
+* **Vaikimisi**: Keelatud (valikukast märkimata)
+* **Kirjeldus**: Lubab kasutada GPS-i (GNSS) sisaldavate MAPIR DAQ-salvestite järelkinnitatud kinemaatilisi (PPK) korrektsioone. Kui see on lubatud, kasutab Chloros kõiki teie projektikataloogis olevaid .daq-logifaile, mis sisaldavad eksponeerimispin-andmeid, ja rakendab teie piltidele täpseid geolokatsiooni parandusi.
+* **Nõue**: teie projektikataloogis peab olema .daq-logifail, mis sisaldab eksponeerimispin-kandeid
+* **Millal lubada**: soovitatav on alati lubada PPK-parandusi, kui teie .daq-logifailis on eksponeerimise tagasiside kanded.
 
-### Eksponeerimispind 1
+### Valgustuse kontakt 1
 
-* **Tüüp**: Rippmenüü valik
-* **Nähtavus**: Nähtav ainult siis, kui „Kohalda PPK parandusi” on lubatud JA eksponeerimisandmed on saadaval pin 1 jaoks.
+* **Tüüp**: Rippmenüü
+* **Nähtavus**: Nähtav ainult siis, kui „Kohalda PPK-korrektsioone” on aktiveeritud JA valgustuse andmed on saadaval kontaktile 1
 * **Valikud**:
   * Projektis tuvastatud kaameramudelite nimed
-  * „Ära kasuta” – ignoreeri see ekspositsiooni pin
-* **Vaikimisi**: valitakse automaatselt projekti konfiguratsiooni alusel
-* **Kirjeldus**: määrab PPK aja sünkroniseerimiseks ekspositsiooni pin 1-le kindla kaamera. Ekspositsiooni pin salvestab kaamera katiku täpse käivitamise aja, mis on täpse PPK geolokatsiooni jaoks väga oluline.
-* **Automaatse valiku käitumine**:
-  * Üks kaamera + üks pin: valib kaamera automaatselt
-  * Üks kaamera + kaks pini: pin 1 määratakse kaamerale automaatselt
-  * Mitmed kaamerad: vajalik käsitsi valik
+  * „Ära kasuta” – ignoreeri seda valgustuse kontakti
+* **Vaikimisi**: Valitakse automaatselt projekti konfiguratsiooni alusel
+* **Kirjeldus**: Määrab ekspositsiooni pistikule 1 konkreetse kaamera PPK-aja sünkroniseerimiseks. Ekspositsiooni pistik salvestab täpse ajahetke, mil kaamera katik vallandub, mis on täpse PPK-geolokatsiooni jaoks kriitilise tähtsusega.
+* **Automaatvaliku käitumine**:
+  * Üks kaamera + üks pistik: Valib kaamera automaatselt
+  * Üks kaamera + kaks viiku: viik 1 määratakse kaamerale automaatselt
+  * Mitmed kaamerad: vaja on käsitsi valikut
 
-### Ekspositsiooni pin 2
+### Ekspositsiooniviik 2
 
-* **Tüüp**: rippmenüü valik
-* **Nähtavus**: nähtav ainult siis, kui on aktiveeritud „Kohalda PPK parandused” JA ekspositsiooni andmed on saadaval pin 2 jaoks
+* **Tüüp**: rippmenüü
+* **Nähtavus**: nähtav ainult siis, kui „Kohalda PPK-parandusi” on sisse lülitatud JA ekspositsiooniandmed on saadaval viigule 2
 * **Valikud**:
   * Projektis tuvastatud kaameramudelite nimed
-  * „Ära kasuta” – ignoreeri seda ekspositsiooni pini
+  * „Ära kasuta” – ignoreeri seda ekspositsiooni viiku
 * **Vaikimisi**: valitakse automaatselt projekti konfiguratsiooni alusel
-* **Kirjeldus**: määrab kahe kaamera seadistuse kasutamisel kindla kaamera ekspositsiooni pinile 2 PPK aja sünkroniseerimiseks.
-* **Automaatse valiku käitumine**:
-  * Üks kaamera + üks pin: pin 2 määratakse automaatselt „Ära kasuta”
-  * Üks kaamera + kaks pistikupesa: pistikupesa 2 seatakse automaatselt „Ära kasuta”
-  * Mitmed kaamerad: vajalik käsitsi valik
-* **Märkus**: sama kaamerat ei saa määrata samaaegselt nii pistikupesale 1 kui ka pistikupesale 2.***
+* **Kirjeldus**: määrab ekspositsiooni viigule 2 konkreetse kaamera PPK-aja sünkroniseerimiseks kahe kaamera seadistuse kasutamisel.
+* **Automaatvaliku käitumine**:
+  * Üks kaamera + üks viik: viik 2 seatakse automaatselt „Ära kasuta”
+  * Üks kaamera + kaks viiku: viik 2 seatakse automaatselt „Ära kasuta”
+  * Mitme kaameraga: vajalik käsitsi valik
+* **Märkus**: Sama kaamerat ei saa määrata korraga nii viigule 1 kui ka viigule 2.***
 
 ## Indeks
 
-Need seaded võimaldavad teil konfigureerida multispektraalsed indeksid analüüsimiseks ja visualiseerimiseks.
+Need seaded võimaldavad teil konfigureerida multispektraalseid indekseid analüüsimiseks ja visualiseerimiseks.
 
-### Indeksi lisamine
+### Lisa indeks
 
-* **Tüüp**: Spetsiaalne indeksi konfiguratsiooni paneel
-* **Kirjeldus**: Avab interaktiivse paneeli, kus saate valida ja konfigureerida multispektraalsed taimestiku indeksid (NDVI, NDRE, EVI jne), mida arvutada pilditöötluse käigus. Võite lisada mitu indeksit, millest igaühel on oma visualiseerimise seaded.
-* **Saadaval olevad indeksid**: Süsteem sisaldab üle 30 eeldefineeritud multispektraalset indeksit, sealhulgas:
-  * NDVI (normaliseeritud taimestiku erinevusindeks)
+* **Tüüp**: spetsiaalne indeksite konfigureerimise paneel
+* **Kirjeldus**: Avab interaktiivse paneeli, kus saate valida ja konfigureerida multispektraalseid taimestiku indekseid (NDVI, NDRE, EVI jne), mida arvutada pilditöötluse käigus. Saate lisada mitu indeksit, millest igaühel on oma visualiseerimisseaded.
+* **Saadaval olevad indeksid**: Süsteem sisaldab üle 30 eelmääratud multispektraalset indeksit, sealhulgas:
+  * NDVI (normaliseeritud erinevuse taimestiku indeks)
   * NDRE (normaliseeritud erinevus RedEdge)
   * EVI (täiustatud taimestiku indeks)
   * GNDVI, SAVI, OSAVI, MSAVI2
-  * Ja palju muud (täieliku loendi leiate [Multispektraalsete indeksite valemid](multispectral-index-formulas.md))
+  * Ja palju muud (täieliku nimekirja leiate [Multispektraalsete indeksite valemid](multispectral-index-formulas.md) alt)
 * **Funktsioonid**:
   * Valige eeldefineeritud indeksite valemite hulgast
-  * Konfigureerige visualiseerimise värvigradientid (LUT – Look-Up Tables)
+  * Konfigureerige visualiseerimise värvigradiente (LUT – Look-Up Tables)
   * Määrake analüüsi künnisväärtused
-  * Looge kohandatud indeksite valemid
+  * Looge kohandatud indeksite valemeid
 
 ### Kohandatud valemid (Chloros+ funktsioon)
 
 * **Tüüp**: Kohandatud valemite määratluste massiiv
-* **Kirjeldus**: Võimaldab luua ja salvestada kohandatud multispektraalsete indeksite valemeid, kasutades riba matemaatikat. Kohandatud valemid salvestatakse koos projekti seadetega ja neid saab kasutada nagu sisseehitatud indekseid.
+* **Kirjeldus**: Võimaldab teil luua ja salvestada kohandatud multispektraalseid indeksivalemeid, kasutades ribade matemaatikat. Kohandatud valemid salvestatakse koos teie projekti seadetega ja neid saab kasutada täpselt nagu sisseehitatud indekseid.
 * **Kuidas luua**:
-  1. Indeksi konfiguratsiooni paneelis otsige kohandatud valemi valik
-  2. Määrake oma valem, kasutades riba identifikaatoreid (nt NIR, Red, Green, Blue)
+  1. Otsige indeksite konfiguratsioonipaneelis kohandatud valemite valik
+  2. Määrake oma valem, kasutades lainepikkuste identifikaatoreid (nt NIR, Red, Green, Blue)
   3. Salvesta valem kirjeldava nimega
 * **Valemi süntaks**: Toetatakse standardseid matemaatilisi operatsioone, sealhulgas:
   * Aritmeetika: `+`, `-`, `*`, `/`
-  * Sulgudes operatsioonide järjekord
-  * Band viited: NIR, Red, Green, Blue, RedEdge, Cyan, Orange, NIR1, NIR2
+  * Sulgudes tegevuste järjekord
+  * Vahemikuvihjed: NIR, Red, Green, Blue, RedEdge, Cyan, Orange, NIR1, NIR2
 
 ***
 
@@ -163,34 +163,34 @@ Need seaded võimaldavad teil konfigureerida multispektraalsed indeksid analüü
 
 Need seaded määravad eksporditavate töödeldud piltide formaadi ja kvaliteedi.
 
-### Kalibreeritud pildiformaat
+### Kalibreeritud pildi formaat
 
-* **Tüüp**: rippmenüü
+* **Tüüp**: Rippmenüü
 * **Valikud**:
-  * **TIFF (16-bitine)** – pakkimata 16-bitine TIFF formaat
-  * **TIFF (32-bitine, protsent)** – 32-bitine ujukomaga TIFF, mille peegeldusväärtused on protsentides
-  * **PNG (8-bitine)** - Kompresseeritud 8-bitine PNG formaat
-  * **JPG (8-bitine)** - Kompresseeritud 8-bitine JPEG formaat
+  * **TIFF (16-bit)** - Tihendamata 16-bitine TIFF formaat
+  * **TIFF (32-bitine, protsent)** – 32-bitine ujukomaga TIFF, kus peegeldusväärtused on protsentides
+  * **PNG (8-bitine)** - Tihendatud 8-bitine PNG-vorming
+  * **JPG (8-bitine)** - Tihendatud 8-bitine JPEG-vorming
 * **Vaikimisi**: TIFF (16-bitine)
-* **Kirjeldus**: Valib failivormingu töödeldud ja kalibreeritud piltide salvestamiseks.
+* **Kirjeldus**: Valib töödeldud ja kalibreeritud piltide salvestamise failivormingu.
 * **Vormingu soovitused**:
-  * **TIFF (16-bitine)**: Soovitatav teaduslikuks analüüsiks ja professionaalseteks töövoogudeks. Säilitab maksimaalse andmekvaliteedi ilma kompressiooniartefaktideta. Parim multispektraalanalüüsiks ja edasiseks töötlemiseks GIS-tarkvaras.
-  * **TIFF (32-bitine, protsent)**: Parim töövoogudeks, mis nõuavad peegeldusväärtusi protsentides (0–100%). Pakub maksimaalset täpsust radiomeetrilisteks mõõtmisteks.
-  * **PNG (8-bitine)**: Sobib veebivaatamiseks ja üldiseks visualiseerimiseks. Väiksemad failisuurused kaotuseta kompressiooniga, kuid väiksem dünaamiline ulatus.
-  * **JPG (8-bitine)**: Väikseimad failisuurused, sobib ainult eelvaatamiseks ja veebis kuvamiseks. Kasutab kaotusega kompressiooni, mis ei sobi teaduslikuks analüüsiks.***
+  * **TIFF (16-bitine)**: Soovitatav teaduslikuks analüüsiks ja professionaalseteks töövoogudeks. Säilitab maksimaalse andmekvaliteedi ilma tihendamisest tulenevate artefaktideta. Sobib kõige paremini multispektraalsele analüüsile ja edasisele töötlemisele GIS-tarkvaras.
+  * **TIFF (32-bitine, protsent)**: Sobib kõige paremini töövoogudele, mis nõuavad peegeldusväärtusi protsentides (0–100%). Pakub maksimaalset täpsust radiomeetriliste mõõtmiste jaoks.
+  * **PNG (8-bitine)**: Sobib veebivaatamiseks ja üldiseks visualiseerimiseks. Väiksemad failisuurused kaotuseta pakkimisega, kuid vähenenud dünaamiline ulatus.
+  * **JPG (8-bitine)**: Väikseimad failisuurused, sobib ainult eelvaatamiseks ja veebis kuvamiseks. Kasutab kaotusega pakkimist, mis ei sobi teaduslikuks analüüsiks.***
 
 ## Projekti malli salvestamine
 
-See funktsioon võimaldab salvestada praegused projekti seaded korduvkasutatava mallina.
+See funktsioon võimaldab teil salvestada oma praegused projekti seaded korduvkasutatava mallina.
 
-* **Tüüp**: Teksti sisestamine + Salvesta nupp
-* **Kirjeldus**: Sisestage oma seademalli kirjeldav nimi ja klõpsake salvestamise ikooni. Mall salvestab kõik praegused projekti seaded (sihtmärgi tuvastamine, töötlemisvalikud, indeksid ja ekspordivorming), et neid oleks tulevastes projektides lihtne uuesti kasutada.
+* **Tüüp**: Teksti sisestus + Salvestamise nupp
+* **Kirjeldus**: Sisestage oma seademallile kirjeldav nimi ja klõpsake salvestamise ikoonile. Mall salvestab kõik teie praegused projekti seaded (sihtmärgi tuvastamine, töötlemisvalikud, indeksid ja ekspordivorming) tulevaste projektide jaoks hõlpsaks korduvkasutamiseks.
 * **Kasutusjuhtumid**:
-  * Looge mallid erinevatele kaamerasüsteemidele (RGB, multispektraalne, NIR)
-  * Salvesta standardkonfiguratsioonid konkreetsetele põllukultuuridele või analüüsi töövoogudele
-  * Jaga ühtsed seaded kogu meeskonnaga
+  * Loo mallid erinevate kaamerasüsteemide jaoks (RGB, multispektraalne, NIR)
+  * Salvesta standardkonfiguratsioonid konkreetsete põllukultuuride või analüüsitöövoogude jaoks
+  * Jaga ühtseid seadeid kogu meeskonnaga
 * **Kasutamine**:
-  1. Konfigureeri kõik soovitud projekti seaded
+  1. Konfigureerige kõik soovitud projekti seaded
   2. Sisestage malli nimi (nt „RedEdge Survey3 NDVI Standard”)
   3. Klõpsake salvestamise ikooni
   4. Mall on nüüd uute projektide loomisel laaditav
@@ -201,33 +201,34 @@ See funktsioon võimaldab salvestada praegused projekti seaded korduvkasutatava 
 
 See seade määrab, kuhu uued projektid vaikimisi salvestatakse.
 
-* **Tüüp**: Kataloogi tee kuvamine + redigeerimisnupp
-* **Vaikimisi**: `C:\Users\[Username]\Chloros Projects`
-* **Kirjeldus**: Näitab praegust vaikimisi kataloogi, kuhu uued Chloros projektid loodakse. Klõpsake redigeerimisikooni, et valida teine kataloog.
+* **Tüüp**: Kataloogi tee kuvamine + Muuda nupp
+* **Vaikimisi (Windows)**: `C:\Users\[Username]\Chloros Projects`
+* **Vaikimisi (Linux)**: `~/.local/share/chloros/projects`
+* **Kirjeldus**: Näitab praegust vaikimisi kataloogi, kuhu luuakse uued Chloros projektid. Klõpsake redigeerimisikoonil, et valida teine kataloog.
 * **Millal muuta**:
-  * Määrake võrgukettaks meeskonnatöö jaoks
-  * Muutke suuremate andmekogumite jaoks kettaks, millel on rohkem salvestusruumi
+  * Määrake võrgukettale meeskonnatöö jaoks
+  * Vahetage suuremate andmekogumite jaoks ketta vastu, millel on rohkem salvestusruumi
   * Korraldage projektid aasta, kliendi või projekti tüübi järgi erinevatesse kaustadesse
-* **Märkus**: Selle seade muutmine mõjutab ainult UUSI projekte. Olemasolevad projektid jäävad oma algsetesse asukohtadesse.***
+* **Märkus**: Selle seadistuse muutmine mõjutab ainult UUSI projekte. Olemasolevad projektid jäävad oma algsetesse asukohtadesse.***
 
-## Seadete püsivus
+## Seadistuste püsivus
 
-Kõik projekti seaded salvestatakse automaatselt koos projektifailiga (`.mapir` projekti formaat). Kui avate projekti uuesti, taastatakse kõik seaded täpselt nii, nagu need olid.
+Kõik projekti seadistused salvestatakse automaatselt koos teie projektifailiga (`.mapir` projektivorming). Kui avate projekti uuesti, taastatakse kõik seaded täpselt sellisena, nagu need olid.
 
 ### Seadete hierarhia
 
-Seaded rakenduvad järgmises järjekorras:
+Seaded rakendatakse järgmises järjekorras:
 
 1. **Süsteemi vaikimisi seaded** – Chloros poolt määratud sisseehitatud vaikimisi seaded
-2. **Malliseaded** – kui laadite projekti loomisel malli
+2. **Malli seaded** – kui laadite projekti loomisel malli
 3. **Salvestatud projekti seaded** – projektifailiga salvestatud seaded
-4. **Käsitsi tehtud muudatused** – kõik muudatused, mis teete praeguse seansi jooksul
+4. **Käsitsi tehtud muudatused** – kõik muudatused, mida teete käesoleva seansi jooksul
 
 ### Seaded ja pilditöötlus
 
-Enamik seadeid (eriti kategooriates „Töötlemine” ja „Eksport”) käivitab piltide uuesti töötlemise, et kajastada uusi seadeid. Mõned seaded on aga „ainult ekspordiks” ja ei vaja kohest uuesti töötlemist:
+Enamik seadete muudatusi (eriti kategooriates „Töötlus” ja „Eksport”) käivitab piltide uuesti töötlemise, et kajastada uusi seadeid. Mõned seaded on aga „ainult ekspordiks” ja ei vaja kohest uuesti töötlemist:
 
-* Salvesta projekti mall
+* Projekti malli salvestamine
 * Töökataloog
 * Kalibreeritud pildiformaat (kehtib eksportimisel)
 
@@ -235,13 +236,13 @@ Enamik seadeid (eriti kategooriates „Töötlemine” ja „Eksport”) käivit
 
 ## Parimad tavad
 
-1. **Alusta vaikimisi seadetega**: vaikimisi seaded sobivad hästi enamiku MAPIR kaamerasüsteemide ja tüüpiliste töövoogude jaoks.
-2. **Loo mallid**: kui oled optimeerinud seaded konkreetse töövoo või kaamera jaoks, salvesta need mallina, et tagada projektide ühtsus.
-3. **Testi enne täielikku töötlemist**: kui katsetad uusi seadeid, testi neid väiksel pildivalimil enne kogu andmekogumi töötlemist.
-4. **Dokumenteerige oma seaded**: kasutage kirjeldavaid mallinimesid, mis näitavad kaamerasüsteemi, töötlemise tüüpi ja kavandatud kasutust (nt „Survey3\_RGB\_NDVI\_Agriculture”).
-5. **Ekspordivormingu valik**: valige ekspordivorming vastavalt lõppkasutusele:
+1. **Alusta vaikimisi seadetega**: Vaikimisi seaded sobivad hästi enamiku MAPIR kaamerasüsteemide ja tüüpiliste töövoogude jaoks.
+2. **Loo mallid**: Kui oled seaded konkreetse töövoo või kaamera jaoks optimeerinud, salvesta need mallina, et tagada projektidevaheline järjepidevus.
+3. **Testige enne täielikku töötlemist**: Kui katsetate uusi seadeid, testige neid väikesel pildivalimil enne kogu andmekogumi töötlemist.
+4. **Dokumenteerige oma seaded**: Kasutage kirjeldavaid mallinimesid, mis näitavad kaamerasüsteemi, töötlemise tüüpi ja kavandatud kasutust (nt „Survey3\_RGB\_NDVI\_Agriculture”).
+5. **Ekspordivormingu valik**: Valige ekspordivorming vastavalt lõppkasutusele:
    * Teaduslik analüüs → TIFF (16-bitine või 32-bitine)
-   * GIS-töötlemine → TIFF (16-bitine)
+   * GIS-töötlus → TIFF (16-bitine)
    * Kiire visualiseerimine → PNG (8-bitine)
    * Veebis jagamine → JPG (8-bitine)
 

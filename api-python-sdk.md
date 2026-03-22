@@ -4,26 +4,26 @@
 
 ### Peamised omadused
 
-* 🐍 **Native Python** - Puhas, Pythonic API pilditöötluseks
-* 🔧 **Täielik API juurdepääs** - Täielik kontroll Chloros töötlemise üle
-* 🚀 **Automatiseerimine** - Kohandatud partiide töötlemise töövoogude loomine
-* 🔗 **Integreerimine** – Chloros integreerimine olemasolevatesse Python rakendustesse
-* 📊 **Uurimistööks valmis** – ideaalne teadusliku analüüsi protsesside jaoks
-* ⚡ **Paralleelne töötlemine** – skaleeritav vastavalt teie CPU tuumadele (Chloros+)
+* 🐍 **Native Python** – puhas, Pythoni stiilis API pilditöötluseks
+* 🔧 **Täielik API juurdepääs** – täielik kontroll Chloros töötlemise üle
+* 🚀 **Automatiseerimine** – looge kohandatud partii töötlemise töövood
+* 🔗 **Integreerimine** – integreerige Chloros olemasolevatesse Python rakendustesse
+* 📊 **Teadustööks valmis** – ideaalne teaduslike analüüsiprotsesside jaoks
+* ⚡ **Paralleelne töötlemine** – Skaleerub vastavalt teie CPU tuumadele (Chloros+)
 
 ### Nõuded
 
 | Nõue          | Detailid                                                             |
 | -------------------- | ------------------------------------------------------------------- |
-| **Chloros Desktop**  | Peab olema kohalikult installitud                                           |
-| **Litsents**          | Chloros+ ([tasuline pakett nõutav](https://cloud.mapir.camera/pricing)) |
-| **Operatsioonisüsteem** | Windows 10/11 (64-bitine)                                              |
+| **Chloros installitud** | Windows: töölaua installija; Linux: `.deb` pakett                  |
+| **Litsents**          | Chloros+ ([vajalik tasuline pakett](https://cloud.mapir.camera/pricing)) |
+| **Operatsioonisüsteem** | Windows 10/11 (64-bitine), Linux x86_64 (amd64), Linux arm64 (NVIDIA Jetson JetPack 6) |
 | **Python**           | Python 3.7 või uuem                                                |
-| **Mälu**           | Minimaalselt 8 GB RAM (soovitatav 16 GB)                                  |
+| **Mälu**           | Minimaalselt 8 GB RAM-i (soovitatavalt 16 GB)                                  |
 | **Internet**         | Vajalik litsentsi aktiveerimiseks                                     |
 
-{% hint style=&quot;warning&quot; %}
-**Litsentsinõuded**: Python SDK nõuab tasulist Chloros+ tellimust, et pääseda juurde API-ile. Standard (tasuta) paketid ei sisalda juurdepääsu API/SDK-ile. Külasta [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing), et uuendada.
+{% hint style="warning" %}
+**Litsentsinõuded**: Python SDK nõuab Chloros+ tasulist tellimust, et saada juurdepääs API-ile. Standard (tasuta) paketid ei anna juurdepääsu API/SDK-ile. Uuendamiseks külasta [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing).
 {% endhint %}
 
 ## Kiirstart
@@ -36,20 +36,27 @@ Paigaldage pipi kaudu:
 pip install chloros-sdk
 ```
 
-{% hint style=&quot;info&quot; %}
-**Esmane seadistamine**: Enne SDK kasutamist aktiveerige oma Chloros+ litsents, avades Chloros, Chloros (brauser) või Chloros CLI ja logige sisse oma kasutajatunnuse ja parooliga. Seda tuleb teha ainult üks kord.
+{% hint style="info" %}
+**Esmane seadistamine**: Enne SDK kasutamist aktiveerige oma Chloros+ litsents, avades Chloros, Chloros (brauser) või Chloros CLI ja logige sisse oma kasutajatunnuse ja parooliga. Seda tuleb teha ainult üks kord. Linux-is (ilma graafilise kasutajaliideseta) kasutage: `chloros-cli login user@example.com 'password'`
 {% endhint %}
 
-### Põhiline kasutus
+### Põhikasutus
 
-Käsitlege kaustu vaid mõne rea abil:
+Töötle kaust vaid mõne reaga:
 
 ```python
 from chloros_sdk import process_folder
 
-# One-line processing
+# One-line processing (Windows)
 results = process_folder("C:\\DroneImages\\Flight001")
+
+# One-line processing (Linux)
+results = process_folder("/home/user/drone_images/flight001")
 ```
+
+{% hint style="info" %}
+**Platvormiüleseid teid**: Selle lehe koodinäited kasutavad Windows-stiilis teid (nt `C:\\DroneImages\\Flight001`). Linux-is kasutage selle asemel Linux-tüüpi teid (nt `/home/user/drone_images/flight001` või `~/drone_images/flight001`). SDK töötab mõlemal platvormil ühtmoodi.
+{% endhint %}
 
 ### Täielik kontroll
 
@@ -65,7 +72,8 @@ chloros = ChlorosLocal()
 chloros.create_project("MyProject", camera="Survey3N_RGN")
 
 # Import images
-chloros.import_images("C:\\DroneImages\\Flight001")
+chloros.import_images("C:\\DroneImages\\Flight001")  # Windows
+# chloros.import_images("/home/user/drone_images/flight001")  # Linux
 
 # Configure settings
 chloros.configure(
@@ -86,13 +94,13 @@ chloros.process(mode="parallel", wait=True)
 
 Enne SDK paigaldamist veenduge, et teil on:
 
-1. **Chloros Desktop** installitud ([alla laadida](download.md))
-2. **Python 3.7+** installitud ([python.org](https://www.python.org))
+1. **Chloros on paigaldatud** — Windows: töölaua paigaldaja ([alla laadida](download.md)); Linux: `.deb` pakett ([Linux paigaldamine](linux/linux-installation.md))
+2. **Python 3.7+** on installitud ([python.org](https://www.python.org))
 3. **Aktiivne Chloros+ litsents** ([uuendamine](https://cloud.mapir.camera/pricing))
 
 ### Paigaldamine pipi kaudu
 
-**Standardne paigaldamine:**
+**Standardpaigaldus:**
 
 ```bash
 pip install chloros-sdk
@@ -104,15 +112,15 @@ pip install chloros-sdk
 pip install chloros-sdk[progress]
 ```
 
-**Arendusinstallatsioon:**
+**Arenduspaigaldus:**
 
 ```bash
 pip install chloros-sdk[dev]
 ```
 
-### Installatsiooni kontrollimine
+### Paigalduse kontrollimine
 
-Kontrollige, kas SDK on õigesti installitud:
+Kontrollige, kas SDK on õigesti paigaldatud:
 
 ```python
 import chloros_sdk
@@ -125,23 +133,25 @@ print(f"Chloros SDK version: {chloros_sdk.__version__}")
 
 ### Litsentsi aktiveerimine
 
-SDK kasutab sama litsentsi kui Chloros, Chloros (brauser) ja Chloros CLI. Aktiveerige üks kord GUI või CLI kaudu:
+SDK kasutab sama litsentsi kui Chloros, Chloros (brauser) ja Chloros CLI. Aktiveerige üks kord graafilise kasutajaliidese või CLI kaudu:**Windows:**Avage**Chloros või Chloros (brauser)** ja logige sisse vahekaardil „Kasutaja” <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> või kasutage CLI.**Linux:** Kasutage CLI (graafilist kasutajaliidest pole saadaval):
 
-1. Avage **Chloros või Chloros (brauser)**ja logige sisse kasutaja <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> . Või avage**CLI**.
-2. Sisestage oma Chloros+ kasutajatunnus ja parool ning logige sisse
-3. Litsents salvestatakse kohalikku vahemällu (säilib ka pärast taaskäivitamist)
+```bash
+chloros-cli login user@example.com 'your_password'
+```
 
-{% vihje style=&quot;success&quot; %}
-**Ühekordne seadistamine**: Pärast sisselogimist GUI või CLI kaudu kasutab SDK automaatselt salvestatud litsentsi. Täiendavat autentimist ei ole vaja!
+Litsents salvestatakse kohalikku vahemällu ja säilib ka pärast süsteemi taaskäivitamist.
+
+{% hint style="success" %}
+**Ühekordne seadistamine**: Pärast sisselogimist graafilise kasutajaliidese või CLI kaudu kasutab SDK automaatselt vahemällu salvestatud litsentsi. Täiendavat autentimist ei ole vaja!
 {% endhint %}
 
-{% vihje stiil=&quot;info&quot; %}
-**Väljumine**: SDK kasutajad saavad vahemällu salvestatud autentimisandmed programmeerimise teel kustutada, kasutades meetodit `logout()`. Vaadake [logout() meetodit](#logout) API viites.
+{% hint style="info" %}
+**Väljumine**: SDK kasutajad saavad vahemällu salvestatud autentimisandmeid programmiliselt kustutada, kasutades meetodit `logout()`. Vaadake [logout() meetodit](#logout) API viites.
 {% endhint %}
 
 ### Ühenduse testimine
 
-Veenduge, et SDK saab ühenduda Chloros-iga:
+Kontrollige, kas SDK suudab ühenduda Chloros-iga:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -178,27 +188,37 @@ ChlorosLocal(
 
 | Parameeter                 | Tüüp | Vaikimisi                   | Kirjeldus                           |
 | ------------------------- | ---- | ------------------------- | ------------------------------------- |
-| `api_url`                 | str  | `"http://localhost:5000"` | URL kohaliku Chloros tagapõhja kohta          |
-| `auto_start_backend`      | bool | `True`                    | Vajadusel käivita backend automaatselt |
-| `backend_exe`             | str  | `None` (auto-detect)      | Tagapõhja käivitatava faili asukoht            |
-| `timeout`                 | int  | `30`                      | Päringu aegumine sekundites            |
-| `backend_startup_timeout` | int  | `60`                      | Tagapõhja käivitamise aegumine (sekundites) |
+| `api_url`                 | str  | `"http://localhost:5000"` | URL kohaliku Chloros tagapõhja          |
+| `auto_start_backend`      | bool | `True`                    | Käivita backend vajadusel automaatselt |
+| `backend_exe`             | str  | `None` (automaatne tuvastamine)      | Backendi käivitatava faili tee            |
+| `timeout`                 | int  | `30`                      | Päringu ooteaeg sekundites            |
+| `backend_startup_timeout` | int  | `60`                      | Backendi käivitamise ooteaeg (sekundites) |
 
 **Näited:**
 
 ```python
-# Default (auto-start backend)
+# Default (auto-start backend, auto-detect path on Windows and Linux)
 chloros = ChlorosLocal()
 
 # Connect to running backend
 chloros = ChlorosLocal(auto_start_backend=False)
 
-# Custom backend path
+# Custom backend path (Windows)
 chloros = ChlorosLocal(backend_exe="C:/Custom/chloros-backend.exe")
 
-# Custom timeout
-chloros = ChlorosLocal(timeout=60)
+# Custom backend path (Linux)
+chloros = ChlorosLocal(backend_exe="/opt/mapir/chloros/backend/chloros-backend")
+
+# Custom timeout with longer startup (e.g., for Jetson)
+chloros = ChlorosLocal(timeout=60, backend_startup_timeout=120)
 ```
+
+{% hint style="info" %}
+**Platvormiülene automaatne tuvastamine**: SDK proovib automaatselt teie platvormile sobivat tagapõhja teekonda:
+* **Windows**: `C:\Program Files\MAPIR\Chloros\resources\backend\chloros-backend.exe`
+* **Linux (.deb)**: `/usr/lib/chloros/chloros-backend`
+* **Linux (käsitsi)**: `/opt/mapir/chloros/backend/chloros-backend`
+{% endhint %}
 
 ***
 
@@ -213,9 +233,9 @@ Loo uus Chloros projekt.
 | Parameeter      | Tüüp | Nõutav | Kirjeldus                                              |
 | -------------- | ---- | -------- | -------------------------------------------------------- |
 | `project_name` | str  | Jah      | Projekti nimi                                     |
-| `camera`       | str  | Ei       | Kaamera mall (nt „Survey3N\_RGN”, „Survey3W\_OCN”) |
+| `camera`       | str  | Ei       | Kaamera mall (nt &quot;Survey3N\_RGN&quot;, &quot;Survey3W\_OCN&quot;) |
 
-**Tagastab:** `dict` – Projekti loomise vastus**Näide:**
+**Tagastab:** `dict` - Projekti loomise vastus**Näide:**
 
 ```python
 # Basic project
@@ -229,16 +249,16 @@ chloros.create_project("DroneField_A", camera="Survey3N_RGN")
 
 #### `import_images(folder_path, recursive=False)`
 
-Piltide importimine kaustast.
+Impordi pildid kaustast.
 
 **Parameetrid:**
 
 | Parameeter     | Tüüp     | Nõutav | Kirjeldus                        |
 | ------------- | -------- | -------- | ---------------------------------- |
-| `folder_path` | str/Path | Jah      | Pildid sisaldava kausta tee         |
+| `folder_path` | str/Path | Jah      | Pildikausta asukoht         |
 | `recursive`   | bool     | Ei       | Otsi alamkaustadest (vaikimisi: False) |
 
-**Tagastab:** `dict` - Importimise tulemused koos failide arvuga**Näide:**
+**Tagastab:** `dict` - Impordi tulemused koos failide arvuga**Näide:**
 
 ```python
 # Import from folder
@@ -252,26 +272,26 @@ chloros.import_images("C:\\DroneImages", recursive=True)
 
 #### `configure(**settings)`
 
-Konfigureerige töötlemise seaded.
+Töötlemise seadete konfigureerimine.
 
 **Parameetrid:**
 
 | Parameeter                 | Tüüp | Vaikimisi                 | Kirjeldus                     |
 | ------------------------- | ---- | ----------------------- | ------------------------------- |
-| `debayer`                 | str  | „Kõrge kvaliteet (kiirem)” | Debayer-meetod                  |
-| `vignette_correction`     | bool | `True`                  | Vignette-korrektsiooni lubamine      |
-| `reflectance_calibration` | bool | `True`                  | Peegelduskalibreerimise lubamine  |
+| `debayer`                 | str  | &quot;Standard (kiire, keskmine kvaliteet)&quot; | Debayer-meetod            |
+| `vignette_correction`     | bool | `True`                  | Luba vinjettkorrektsiooni      |
+| `reflectance_calibration` | bool | `True`                  | Luba peegelduskalibreerimist  |
 | `indices`                 | list | `None`                  | Arvutatavad taimestiku indeksid |
 | `export_format`           | str  | &quot;TIFF (16-bit)&quot;         | Väljundvorming                   |
-| `ppk`                     | bool | `False`                 | Luba PPK-korrektsioonid          |
+| `ppk`                     | bool | `False`                 | Luba PPK-korrektsioone          |
 | `custom_settings`         | dict | `None`                  | Täpsemad kohandatud seaded        |
 
 **Ekspordivormingud:**
 
-* `"TIFF (16-bit)"` – soovitatav GIS/fotogramm-meetria jaoks
+* `"TIFF (16-bit)"` – soovitatav GIS-i/fotogramm-meetria jaoks
 * `"TIFF (32-bit, Percent)"` – teaduslik analüüs
 * `"PNG (8-bit)"` – visuaalne kontroll
-* `"JPG (8-bit)"` – kompresseeritud väljund
+* `"JPG (8-bit)"` – pakitud väljund
 
 **Saadaval olevad indeksid:**NDVI, NDRE, GNDVI, OSAVI, CIG, EVI, SAVI, MSAVI, MTVI2 jm.**Näide:**
 
@@ -285,7 +305,7 @@ chloros.configure(
 
 # Advanced configuration
 chloros.configure(
-    debayer="High Quality (Faster)",
+    debayer="Standard (Fast, Medium Quality)",
     vignette_correction=True,
     reflectance_calibration=True,
     ppk=True,
@@ -304,15 +324,15 @@ Töötle projekti pilte.
 
 | Parameeter           | Tüüp     | Vaikimisi      | Kirjeldus                               |
 | ------------------- | -------- | ------------ | ----------------------------------------- |
-| `mode`              | str      | `"parallel"` | Töötlemisrežiim: „parallel” või „serial”   |
+| `mode`              | str      | `"parallel"` | Töötlemisrežiim: &quot;parallel&quot; või &quot;serial&quot;   |
 | `wait`              | bool     | `True`       | Oota lõpetamist                       |
-| `progress_callback` | callable | `None`       | Edusammude tagasiside funktsioon (progress, msg) |
+| `progress_callback` | callable | `None`       | Edusammude tagasisidefunktsioon (progress, msg) |
 | `poll_interval`     | float    | `2.0`        | Edusammude küsitlusintervall (sekundites)   |
 
 **Tagastab:** `dict` - Töötlemise tulemused
 
-{% hint style=&quot;warning&quot; %}
-**Paralleelrežiim**: Nõuab Chloros+ litsentsi. Skaleerub automaatselt teie CPU tuumadele (kuni 16 töötajat).
+{% hint style="warning" %}
+**Paralleelrežiim**: Nõuab Chloros+ litsentsi. Skaalub automaatselt vastavalt teie CPU tuumadele (kuni 16 töötajat).
 {% endhint %}
 
 **Näide:**
@@ -352,21 +372,41 @@ print(config['Project Settings'])
 
 #### `get_status()`
 
-Saab tagasiside staatuse teabe.
+Hangi tagapõhja staatuse teave, sealhulgas iga niidi töötlemise edenemine.
 
-**Tagastab:** `dict` - Tagasiside staatus**Näide:**
+**Tagastab:** `dict` – Tagapõhja staatus järgmise struktuuriga:
+
+```python
+{
+    "running": True,
+    "url": "http://localhost:5000",
+    "processing": {
+        "percent": 75.0,
+        "phase": "processing"
+    },
+    "export": {
+        "percent": 50.0,
+        "phase": "exporting",
+        "active": True
+    }
+}
+```
+
+**Näide:**
 
 ```python
 status = chloros.get_status()
 print(f"Running: {status['running']}")
 print(f"URL: {status['url']}")
+print(f"Processing: {status['processing']['percent']}%")
+print(f"Export: {status['export']['percent']}% - Active: {status['export']['active']}")
 ```
 
 ***
 
 #### `shutdown_backend()`
 
-Sulgeb backendi (kui see on käivitatud SDK poolt).
+Lülita backend välja (kui see on käivitatud käskuga SDK).
 
 **Näide:**
 
@@ -378,16 +418,16 @@ chloros.shutdown_backend()
 
 #### `logout()`
 
-Kustutab kohalikust süsteemist vahemällu salvestatud autentimisandmed.
+Kustuta vahemällu salvestatud autentimisandmed kohalikust süsteemist.
 
 **Kirjeldus:**
 
-Programmeeritult logib välja, eemaldades vahemällu salvestatud autentimise andmed. See on kasulik:
+Logib programmiliselt välja, eemaldades vahemällu salvestatud autentimisandmed. See on kasulik:
 * Erinevate Chloros+ kontode vahel vahetamiseks
-* Automaatsetes keskkondades autentimise andmete kustutamiseks
-* Turvalisuse eesmärgil (nt autentimise andmete eemaldamiseks enne desinstallimist)
+* Autentimisandmete tühjendamiseks automatiseeritud keskkondades
+* Turvalisuse eesmärgil (nt autentimisandmete eemaldamine enne desinstallimist)
 
-**Tagastab:** `dict` - Välja logimise tulemus**Näide:**
+**Tagastab:** `dict` - Väljumise operatsiooni tulemus**Näide:**
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -402,8 +442,8 @@ print(f"Logout successful: {result}")
 # After logout, login required via GUI/CLI/Browser before next SDK use
 ```
 
-{% vihje style=&quot;info&quot; %}
-**Uuesti autentimine vajalik**: Pärast `logout()` kutsumist peate uuesti sisse logima Chloros, Chloros (brauser) või Chloros CLI kaudu, enne kui saate kasutada SDK.
+{% hint style="info" %}
+**Vajalik uuesti autentimine**: Pärast `logout()` kutsumist peate uuesti sisse logima Chloros, Chloros (brauser) või Chloros CLI kaudu, enne kui kasutate SDK.
 {% endhint %}
 
 ***
@@ -418,15 +458,15 @@ print(f"Logout successful: {result}")
 
 | Parameeter                 | Tüüp     | Vaikimisi         | Kirjeldus                    |
 | ------------------------- | -------- | --------------- | ------------------------------ |
-| `folder_path`             | str/Path | Nõutav        | Pildid sisaldava kausta tee     |
+| `folder_path`             | str/Path | Nõutav        | Pildikausta asukoht     |
 | `project_name`            | str      | Automaatselt genereeritud  | Projekti nimi                   |
 | `camera`                  | str      | `None`          | Kaamera mall                |
 | `indices`                 | list     | `["NDVI"]`      | Arvutamiseks vajalikud indeksid           |
-| `vignette_correction`     | bool     | `True`          | Vignette&#x27;i korrigeerimise lubamine     |
+| `vignette_correction`     | bool     | `True`          | Vignettkorrektsiooni lubamine     |
 | `reflectance_calibration` | bool     | `True`          | Peegelduskalibreerimise lubamine |
 | `export_format`           | str      | &quot;TIFF (16-bit)&quot; | Väljundvorming                  |
 | `mode`                    | str      | `"parallel"`    | Töötlemisrežiim                |
-| `progress_callback`       | callable | `None`          | Edusammude tagasiside              |
+| `progress_callback`       | kutsutav | `None`          | Edusammude tagasiside              |
 
 **Tagastab:** `dict` - Töötlemise tulemused**Näide:**
 
@@ -477,7 +517,11 @@ with ChlorosLocal() as chloros:
 
 ## Täielikud näited
 
-### Näide 1: Põhiline töötlemine
+{% hint style="info" %}
+**Linux kasutajad**: Kõik allpool toodud näited kasutavad Windows teid. Asendage `C:\\...` teed oma Linux teedega (nt `/home/user/...` või `~/...`). Kõik SDK funktsioonid on platvormide lõikes identsed.
+{% endhint %}
+
+### Näide 1: Põhitöötlus
 
 Kausta töötlemine vaikimisi seadetega:
 
@@ -494,7 +538,7 @@ print(f"Processing complete: {results}")
 
 ### Näide 2: Kohandatud töövoog
 
-Täielik kontroll töötlemisprotsessi üle:
+Täielik kontroll töötlusprotsessi üle:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -511,7 +555,7 @@ print(f"Imported {len(import_results.get('files', []))} images")
 
 # Configure advanced settings
 chloros.configure(
-    debayer="High Quality (Faster)",
+    debayer="Standard (Fast, Medium Quality)",
     vignette_correction=True,
     reflectance_calibration=True,
     ppk=False,
@@ -534,9 +578,9 @@ print("Processing complete!")
 
 ***
 
-### Näide 3: Mitme kausta töötlemine partiidena
+### Näide 3: Mitme kausta kogumitöötlus
 
-Mitme lennu andmekogumi töötlemine:
+Töötle mitut lennuandmestikku:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -586,9 +630,9 @@ print("All flights processed!")
 
 ***
 
-### Näide 4: Uurimistöö protsessi integreerimine
+### Näide 4: Uurimistöö voo integreerimine
 
-Chloros integreerimine andmete analüüsiga:
+Integreeri Chloros andmete analüüsiga:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -643,7 +687,7 @@ print(df)
 
 ### Näide 5: Kohandatud protsessi jälgimine
 
-Täpsem protsessi jälgimine logimisega:
+Täiustatud protsessi jälgimine logimisega:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -682,7 +726,7 @@ logging.info("Processing complete!")
 
 ### Näide 6: Veakäsitlus
 
-Töökindel veakäsitlus tootmiskasutamiseks:
+Tugev veakäsitlus tootmiskasutuseks:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -708,7 +752,7 @@ def process_safely(folder_path):
         return False, f"License error: {e}. Upgrade to Chloros+ at cloud.mapir.camera/pricing"
     
     except ChlorosBackendError as e:
-        return False, f"Backend error: {e}. Ensure Chloros Desktop is installed."
+        return False, f"Backend error: {e}. Ensure Chloros is installed (Windows installer or Linux .deb package)."
     
     except ChlorosProcessingError as e:
         return False, f"Processing error: {e}"
@@ -734,7 +778,7 @@ else:
 
 ### Näide 7: Kontode haldamine ja väljalogimine
 
-Haldage kasutajatunnuseid programmiliselt:
+Kontoandmete haldamine programmeeritult:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -775,9 +819,9 @@ if switch_account():
 
 ***
 
-### Näide 8: käsurea tööriist
+### Näide 8: Käsurea tööriist
 
-CLI tööriista loomine SDK abil:
+Kohandatud CLI tööriista loomine SDK abil:
 
 ```python
 #!/usr/bin/env python
@@ -892,7 +936,7 @@ except ChlorosLicenseError:
     print("Chloros+ license required. Upgrade at cloud.mapir.camera/pricing")
 
 except ChlorosBackendError:
-    print("Backend failed to start. Ensure Chloros Desktop is installed.")
+    print("Backend failed to start. Ensure Chloros is installed (Windows installer or Linux .deb package).")
 
 except ChlorosProcessingError as e:
     print(f"Processing failed: {e}")
@@ -905,9 +949,9 @@ except ChlorosError as e:
 
 ## Täpsemad teemad
 
-### Kohandatud tagapõhja konfiguratsioon
+### Tagapõhja kohandatud konfiguratsioon
 
-Kasutage kohandatud tagapõhja asukohta või konfiguratsiooni:
+Kasutage tagapõhja kohandatud asukohta või konfiguratsiooni:
 
 ```python
 chloros = ChlorosLocal(
@@ -918,7 +962,7 @@ chloros = ChlorosLocal(
 )
 ```
 
-### Mitteblokeeriv töötlemine
+### Blokeerimata töötlemine
 
 Alustage töötlemist ja jätkake teiste ülesannetega:
 
@@ -942,7 +986,7 @@ print("Processing complete!")
 
 ### Mäluhaldus
 
-Suurte andmekogumite puhul töötlege partiidena:
+Suurte andmekogumite puhul töötle partiidena:
 
 ```python
 from pathlib import Path
@@ -969,23 +1013,34 @@ for i in range(0, len(images), batch_size):
 
 ## Veaotsing
 
-### Backend ei käivitu
+### Tagapõhi ei käivitu
 
-**Probleem:** SDK ei suuda backendit käivitada.**Lahendused:**
+**Probleem:** SDK ei suuda tagapõhja käivitada**Lahendused:**
 
-1. Kontrollige, kas Chloros Desktop on installitud:
+1. Kontrollige, kas Chloros on installitud:
 
 ```python
 import os
-backend_path = r"C:\Program Files\MAPIR\Chloros\resources\backend\chloros-backend.exe"
+import platform
+
+# Auto-detect backend path
+if platform.system() == "Windows":
+    backend_path = r"C:\Program Files\MAPIR\Chloros\resources\backend\chloros-backend.exe"
+else:
+    backend_path = "/usr/lib/chloros/chloros-backend"
+
 print(f"Backend exists: {os.path.exists(backend_path)}")
 ```
 
-2. Kontrollige, et Windows tulemüür ei blokeeri
-3. Proovige käsitsi backendi teekonda:
+2. Kontrollige tulemüüri (Windows) või pordi kättesaadavust (Linux: `lsof -i :5000`)
+3. Proovige käsitsi sisestada tagapõhja tee:
 
 ```python
+# Windows
 chloros = ChlorosLocal(backend_exe="C:\\Path\\To\\chloros-backend.exe")
+
+# Linux
+chloros = ChlorosLocal(backend_exe="/opt/mapir/chloros/backend/chloros-backend")
 ```
 
 ***
@@ -993,18 +1048,23 @@ chloros = ChlorosLocal(backend_exe="C:\\Path\\To\\chloros-backend.exe")
 ### Litsentsi ei tuvastatud**Probleem:** SDK hoiatab puuduva litsentsi kohta**Lahendused:**
 
 1. Avage Chloros, Chloros (brauser) või Chloros CLI ja logige sisse.
-2. Kontrollige, kas litsents on vahemällu salvestatud:
+2. Veenduge, et litsents on vahemällu salvestatud:
 
 ```python
 from pathlib import Path
 import os
+import platform
 
-# Check cache location (Windows)
-cache_path = Path(os.getenv('APPDATA')) / 'Chloros' / 'cache'
+# Check cache location
+if platform.system() == "Windows":
+    cache_path = Path(os.getenv('APPDATA')) / 'Chloros' / 'cache'
+else:
+    cache_path = Path.home() / '.cache' / 'chloros'
+
 print(f"Cache exists: {cache_path.exists()}")
 ```
 
-3. Kui teil on probleeme kasutajatunnustega, kustutage vahemällu salvestatud kasutajatunnused ja logige uuesti sisse:
+3. Kui tekib probleeme kasutajatunnustega, tühjendage vahemällu salvestatud kasutajatunnused ja logige uuesti sisse:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -1020,7 +1080,7 @@ chloros.logout()
 
 ***
 
-### Importimise vead**Probleem:** `ModuleNotFoundError: No module named 'chloros_sdk'`**Lahendused:**
+### Importimisvead**Probleem:** `ModuleNotFoundError: No module named 'chloros_sdk'`**Lahendused:**
 
 ```bash
 # Verify installation
@@ -1036,7 +1096,7 @@ python -c "import sys; print(sys.path)"
 
 ***
 
-### Töötlemise aegumine**Probleem:** Töötlemine aegub**Lahendused:**
+### Töötlemise aegumine**Probleem:** Töötlemise aegumine**Lahendused:**
 
 1. Suurendage aegumist:
 
@@ -1046,11 +1106,11 @@ chloros = ChlorosLocal(timeout=120)  # 2 minutes
 
 2. Töötle väiksemaid partiisid
 3. Kontrolli vaba kettaruumi
-4. Jälgi süsteemi ressursse
+4. Jälgi süsteemiressursse
 
 ***
 
-### Port on juba kasutusel**Probleem:** Backend-port 5000 on hõivatud**Lahendused:**
+### Port on juba kasutusel**Probleem:** Tagapõhja port 5000 on hõivatud**Lahendused:**
 
 ```python
 # Use different port
@@ -1060,36 +1120,42 @@ chloros = ChlorosLocal(api_url="http://localhost:5001")
 Või leia ja sulge konflikti tekitav protsess:
 
 ```powershell
-# PowerShell
+# Windows PowerShell
 Get-NetTCPConnection -LocalPort 5000
+```
+
+```bash
+# Linux
+lsof -i :5000
+kill $(lsof -t -i :5000)
 ```
 
 ***
 
 ## Jõudluse näpunäited
 
-### Optimeerige töötlemiskiirust
+### Optimeeri töötlemiskiirust
 
-1. **Kasutage paralleelrežiimi** (nõuab Chloros+)
+1. **Kasuta paralleelrežiimi** (nõuab Chloros+)
 
 ```python
 chloros.process(mode="parallel")  # Up to 16 workers
 ```
 
-2. **Vähendage väljundi resolutsiooni** (kui see on vastuvõetav)
+2. **Vähenda väljundi resolutsiooni** (kui see on vastuvõetav)
 
 ```python
 chloros.configure(export_format="PNG (8-bit)")  # Faster than TIFF
 ```
 
-3. **Keelake mittevajalikud indeksid**
+3. **Lülita välja mittevajalikud indeksid**
 
 ```python
 # Only calculate needed indices
 chloros.configure(indices=["NDVI"])  # Not all indices
 ```
 
-4. **Töötlege SSD-l** (mitte HDD-l)***
+4. **Töötle SSD-l** (mitte HDD-l)***
 
 ### Mälu optimeerimine
 
@@ -1104,7 +1170,7 @@ Suurte andmekogumite puhul:
 
 ### Taustatöötlus
 
-Vabastage Python muude ülesannete jaoks:
+Vabasta Python muude ülesannete jaoks:
 
 ```python
 chloros.process(wait=False)  # Non-blocking
@@ -1194,33 +1260,36 @@ chloros.process(progress_callback=notebook_progress)
 
 ### K: Kas SDK vajab internetiühendust?
 
-**V:** Ainult esialgse litsentsi aktiveerimiseks. Pärast sisselogimist Chloros, Chloros (brauser) või Chloros CLI kaudu salvestatakse litsents kohalikku vahemällu ja töötab offline-režiimis 30 päeva.***
+**V:** Ainult esialgse litsentsi aktiveerimiseks. Pärast sisselogimist Chloros, Chloros (brauser) või Chloros CLI kaudu salvestatakse litsents kohalikult ja töötab offline-režiimis 30 päeva.***
 
-### K: Kas ma saan kasutada SDK serveris, millel pole graafilist kasutajaliidest?**V:** Jah! Nõuded:
+### K: Kas ma saan kasutada SDK-i serveril, millel puudub graafiline kasutajaliides?**V:** Jah! SDK töötab ilma graafilise kasutajaliideseta nii Windows-i kui ka Linux-i serveritel.**Linux (soovitatav graafilise kasutajaliidese puudumisel):**
+* Paigaldage `.deb` paketi kaudu
+* Aktiveerige litsents: `chloros-cli login user@example.com 'password'`
 
+**Windows Server:**
 * Windows Server 2016 või uuem
 * Chloros installitud (ühekordne)
-* Litsents aktiveeritud mis tahes masinal (vahemällu salvestatud litsents kopeeritud serverisse)
+* Litsents aktiveeritud CLI kaudu või mis tahes arvutil
 
 ***
 
-### K: Mis vahe on Desktop, CLI ja SDK vahel?
+### K: Mis vahe on Desktopil, CLI-il ja SDK-il?
 
-| Funktsioon         | Desktop GUI | CLI käsurida | Python SDK  |
+| Omadus         | Desktop GUI | CLI käsurea | Python SDK  |
 | --------------- | ----------- | ---------------- | ----------- |
-| **Liides**   | Punkt-klõps | Käsk          | Python API  |
+| **Liides**   | Klõpsuga | Käsk | Python API  |
 | **Sobib kõige paremini**    | Visuaalne töö | Skriptimine        | Integreerimine |
 | **Automatiseerimine**  | Piiratud     | Hea             | Suurepärane   |
 | **Paindlikkus** | Põhiline       | Hea             | Maksimaalne     |
 | **Litsents**     | Chloros+    | Chloros+         | Chloros+    |***
 
-### K: Kas ma saan levitada SDK-ga loodud rakendusi?**V:** SDK-koodi saab integreerida teie rakendustesse, kuid:
+### K: Kas ma saan levitada SDK-iga loodud rakendusi?**V:** SDK koodi saab integreerida teie rakendustesse, kuid:
 
-* Lõppkasutajad peavad olema installinud Chloros
-* Lõppkasutajad vajavad aktiivseid Chloros+ litsentse
-* Kommertsiaalne levitamine nõuab OEM-litsentsi
+* Lõppkasutajatel peab olema installitud Chloros
+* Lõppkasutajatel peab olema aktiivne Chloros+ litsents
+* Kommertslevitamiseks on vaja OEM-litsentsi
 
-OEM-küsimuste korral võtke ühendust info@mapir.camera-iga.
+OEM-alaste küsimuste korral võtke ühendust info@mapir.camera-iga.
 
 ***
 
@@ -1234,7 +1303,7 @@ pip install --upgrade chloros-sdk
 
 ### K: Kuhu salvestatakse töödeldud pildid?
 
-Vaikimisi projekti kataloogi:
+Vaikimisi projekti kausta:
 
 ```
 
@@ -1245,21 +1314,27 @@ Project_Path/
 
 ***
 
-### K: Kas ma saan töödelda pilte Python skriptidest, mis töötavad graafiku alusel?**V:** Jah! Kasutage Windows ülesannete planeerijat koos Python skriptidega:
+### K: Kas ma saan töödelda pilte Python skriptidest, mis töötavad ajakava järgi?**V:** Jah! Kasutage oma operatsioonisüsteemi ajastajat koos Python skriptidega:
 
 ```python
 # scheduled_processing.py
 from chloros_sdk import process_folder
 
 # Process today's flights
-results = process_folder("C:\\Flights\\Today")
+results = process_folder("/data/flights/today")  # Linux
+# results = process_folder("C:\\Flights\\Today")  # Windows
 ```
 
-Kavandage ülesannete planeerija abil igapäevane käivitamine.
+**Windows:** Planeerige ülesande planeerija abil igapäevaseks käivitamiseks.**Linux:** Planeerige croni abil:
+
+```cron
+# Run at 2 AM daily
+0 2 * ** /usr/bin/python3 /home/user/scheduled_processing.py >> /var/log/chloros.log 2>&1
+```
 
 ***
 
-### K: Kas SDK toetab async/await?**V:** Praegune versioon on sünkroonne. Asünkroonse käitumise jaoks kasutage `wait=False` või käivitage eraldi niidis:
+### K: Kas SDK toetab async/await-funktsioone?**V:** Praegune versioon on sünkroonne. Asünkroonse käitumise jaoks kasutage `wait=False` või käivitage eraldi protsessis:
 
 ```python
 import threading
@@ -1275,7 +1350,7 @@ thread.start()
 
 ***
 
-### K: Kuidas vahetada erinevate Chloros+ kontode vahel?**V:** Kasutage `logout()` meetodit, et kustutada vahemällu salvestatud autentimisandmed, seejärel logige uuesti sisse uue kontoga:
+### K: Kuidas vahetada erinevate Chloros+ kontode vahel?**V:** Kasutage meetodit `logout()`, et tühjendada vahemällu salvestatud autentimisandmed, seejärel logige uue kontoga uuesti sisse:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -1287,7 +1362,7 @@ chloros.logout()
 # Re-login via Chloros, Chloros (Browser), or Chloros CLI with new account
 ```
 
-Pärast väljalogimist autentigeerige uus konto GUI, brauseri või CLI kaudu, enne kui kasutate uuesti SDK.
+Pärast väljalogimist autentigeerige uue kontoga GUI, brauseri või CLI kaudu, enne kui kasutate SDK uuesti.
 
 ***
 
@@ -1295,9 +1370,9 @@ Pärast väljalogimist autentigeerige uus konto GUI, brauseri või CLI kaudu, en
 
 ### Dokumentatsioon
 
-* **API viide**: see lehekülg
+* **API viide**: See lehekülg
 
-### Abikanalid
+### Tugikanalid
 
 * **E-post**: info@mapir.camera
 * **Veebisait**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
@@ -1305,7 +1380,7 @@ Pärast väljalogimist autentigeerige uus konto GUI, brauseri või CLI kaudu, en
 
 ### Näidiskood
 
-Kõik siin loetletud näited on testitud ja valmis tootmiseks. Kopeerige need ja kohandage oma kasutusjuhtumile.
+Kõik siin loetletud näited on testitud ja valmis kasutuseks. Kopeerige ja kohandage neid oma vajadustele.
 
 ***
 
