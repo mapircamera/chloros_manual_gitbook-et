@@ -1,74 +1,91 @@
 # Töötlemisprotsess
 
-Chloros 1.1.0 kasutab neljatoalist töötlemisprotsessi, mis toimib etapiviisilise konveierina. Iga protsessitoiming tegeleb töötlemisvoo eraldi etapiga, võimaldades mitme pildi samaaegset töötlemist erinevates etappides.
+Chlorosversioonis 1.2.0 kasutatakse nelja niidiga töötlemisprotsessi, mis toimib nagu etapiviisiline konveierliin. Iga niit tegeleb töövoo eraldi etapiga, mistõttu võib korraga olla töös mitu pilti erinevates etappides.
+
+<figure><img src="../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
 
 ***
 
-## Protsessi arhitektuur
+## Töötlemisprotsessi arhitektuur
 
 ```
 
 Images In → [Thread 1: Detection] → [Thread 2: Calibration] → [Thread 3: Processing] → [Thread 4: Export] → Files Out
 ```
 
-Iga pilt läbib järjest kõik neli niiti. Chloros+ mitme niidiga töötlemise abil võivad mitu pilti olla samaaegselt erinevates niitides – kui niit 3 töötleb ühte pilti, võib niit 1 tuvastada järgmist, niit 2 kalibreerida teist ja niit 4 kirjutada eelnevalt töödeldud pilti kettale.
+Iga pilt läbib järjest kõik neli niiti. Chloros+ mitme niidiga töötlemise puhul hõivavad mitu pilti samaaegselt erinevaid niite – kui niit 3 töötleb ühte pilti, võib niit 1 tuvastada järgmist, niit 2 kalibreerida teist ja niit 4 kirjutada valmis pilti kettale.
 
-***
+Töö edenemist kajastatakse iga niidi kohta eraldi ning andmed edastatakse Server-Sent Eventsi kaudu (tagapõhi avaldab need `/api/events`-is). CLI reaalajas edenemise kuvamisel on neli etappi märgistatud **Tuvastamine, Analüüsimine, Töötlemine, Eksportimine**.***
 
-## Niitide üksikasjad
+## Niiditeave
 
-### Lõng 1: Tuvastamine
+### Niit 1: Avastamine
 
-**Eesmärk**: Laadida pilte ja tuvastada kalibreerimise sihtmärke.
+**Eesmärk**: Laadida pildid ja tuvastada kalibreerimise sihtmärgid.
 
-* Loeb pildifaile kettalt (RAW, JPG)
-* Ekstraktib EXIF-metadata (GPS, kaameramudel, ajamärgid, säri)
-* Tuvastab ArUco kalibreerimise sihtmärgid märgistatud sihtmärgipiltidel
-* Väljundid: pildid + metadata + sihtmärkide tuvastamise tulemused
+* Loeb pildifaile kettalt — Survey3 `.raw`+`.jpg` paarid, LATTICE `.tif`/`.tiff` pildid ja `.dng`
+* Eraldab EXIF-metadata (GPS, kaamera mudel, ajamärgid, säriaeg)
+* Tuvastab kalibreerimismärgid: ArUco-märgistatud sihtmärkide geomeetriad LATTICE-pildistamiste puhul ning klassikalise paneeldetektori puhul Survey3 kalibreerimismärkide fotode korral
+* Väljundid: pildid + metaandmed + sihtmärkide tuvastamise tulemused
 
-See on peamiselt I/O- ja CPU-sõltuv niit.
+Peamiselt sisend-väljund- ja protsessorikoormusega seotud niit.
 
-### Niit 2: Kalibreerimine
+### Protsess 2: Kalibreerimine
 
-**Eesmärk**: Arvutada kalibreerimise parameetrid tuvastatud sihtmärkide põhjal.
+**Eesmärk**: Arvutada kalibreerimisparaameetrid tuvastatud sihtmärkide põhjal.
 
 * Arvutab sihtmärkide piltidest peegelduskalibreerimise koefitsiendid
 * Arvutab vinjeti korrigeerimise parameetrid
-* Määrab kindlaks iga lainepikkuse kalibreerimiskõverad
-* Väljundid: kalibreerimise parameetrid iga pildi jaoks
+* Määrab kindlaks iga laineala kalibreerimiskõverad
+* Väljundid: iga pildi kalibreerimise parameetrid
 
-See on CPU-mahukas arvutusniit.
+Protsessoriga seotud arvutusniit. Niit 3 ootab selle lõpetamist, kui peegelduskalibreerimine on sisse lülitatud, et koefitsiendid oleksid valmis enne piltide töötlemist.
 
 ### Niit 3: Töötlemine (GPU)
 
-**Eesmärk**: Rakendada parandusi ja arvutada taimestiku indeksid.**See on kõige arvutusmahukam niit.*** **Debayering**: teisendab RAW-vormingus olevad Bayeri mustri andmed mitmekanalilisteks piltideks
-  * Standard (kiire, keskmine kvaliteet) — vaikimisi
-  * Tekstuuritundlik (aeglane, kõrgeim kvaliteet) — ainult Chloros+, kasutab AI/ML müra eemaldamist
-* **Vignette-korrektsioon**: rakendab objektiivi vignette-korrektsiooni kogu pildile
-* **Peegelduskalibreerimine**: rakendab kalibreerimiskoefitsiente peegeldusväärtuste teisendamiseks
-* **Indeksi arvutamine**: arvutab taimestiku indeksid (NDVI, NDRE, GNDVI jne)
+**Eesmärk**: Rakendada korrektsioone ja arvutada taimestiku indeksid.**See on arvutusmahukaim niit.*** **Debayering**: teisendab RAW-Bayer-andmed mitmekanalilisteks piltideks
+  * Standard (kiire, keskmine kvaliteet) — vaikimisi, `--debayer standard`
+  * Tekstuuritundlik (aeglane, kõrgeim kvaliteet) — ainult Chloros+, `--debayer texture-aware`, kasutab AI/ML müra eemaldamise mudelit
+  * LATTICE mono (M3M) pildid on ühekanalilised: nende puhul jäetakse demosaik ja valgebalansi etappid vahele (koos üherealise logisõnumiga), samas kui samas seerias olevad M3C/Bayer-pildid läbivad need ikkagi
+* **Vignettkorrektsioon**: rakendab kogu pildile objektiivi vignettkorrektsiooni
+* **Peegeldusvõime kalibreerimine**: rakendab kalibreerimiskoefitsiente, et teisendada väärtused peegeldusvõimeks
+* **Indeksi arvutamine**: arvutab taimestiku indeksid (NDVI, NDRE, GNDVI, …)
 * Väljundid: eksportimiseks valmis töödeldud pildid
 
-See protsess saab GPU kiirendusest kõige enam kasu. [Dynamic Compute Adaptation](dynamic-compute-adaptation.md) süsteem optimeerib peamiselt selle protsessi käitumist.
+See protsessisaat saab kõige enam kasu GPU kiirendusest ning just seda protsessisaat [Dynamic Compute Adaptation](dynamic-compute-adaptation.md) optimeerib.
 
-### Protsess 4: Eksport
+### Protsessisaat 4: Eksport
 
-**Eesmärk**: Kirjutada töödeldud pildid kettale.
+**Eesmärk**: kirjutada töödeldud pildid kettale.
 
-* Kirjutab väljundfailid valitud formaadis (TIFF 16-bitine, TIFF 32-bitine %, PNG, JPG)
-* Lisab väljundfailidesse EXIF-metadata (GPS, ajamärgid, töötlemisparameetrid)
-* Korraldab väljundi kaameramudelite alamkaustadesse
+* Kirjutab väljundfailid valitud formaadis — `TIFF (16-bit)`, `TIFF (32-bit, Percent)`, `PNG (8-bit)`, `JPG (8-bit)`
+* Lisab väljundfailidesse metaandmed (GPS, ajamärgid, töötlemisparameetrid)
+* Korraldab väljundid projektikausta alla nimedega `<camera>/<format>/<Product>_Images/` – näiteks `LATT-M3M-L41-F550/tiff16/Reflectance_Calibrated_Images/`. **Eksporditud failid säilitavad allikafaili nime; toodet identifitseerib kaust.**
+* LATTICE-pildistamiste puhul võib üks allikakaader jaguneda mitmeks tooteks (Debayered, Preview, Radiance, Reflectance, Index), millest igaüks asub oma tootekausis
 * Väljundid: lõplikud failid kettal
 
-See on peamiselt sisend-väljundiga seotud niit. SSD-salvestusruum parandab oluliselt niidi 4 jõudlust.
+Peamiselt sisend-väljundiga seotud niit — SSD-salvestusruum parandab selle jõudlust märgatavalt.
 
 ***
 
-## Järjestikune vs. torustatud töötlemine
+## Sisemine toimimine: täitjad
+
+Niidis 3 on pildipõhine töö paralleelistatud „Python” standardiga `concurrent.futures`:
+
+* **GPU-strateegiad**(`GPU_SINGLE`, `GPU_PARALLEL`) kasutavad `ProcessPoolExecutor`-i koos**spawn** — iga töötaja on eraldi protsess, millel on oma CUDA-kontekst (`fork` päriks vanema algseadistatud CUDA-seisundi ja rikuks järglaste seisundi)
+* **`CPU_PARALLEL`** kasutab `ThreadPoolExecutor`-i — NumPy ja OpenCV vabastavad GIL-i, seega piisab niitidest
+* Jetson-seadmed, millel on 8 GB või vähem jagatud RAM-i, jätavad täitja täielikult vahele ja töötlevad protsessi sees järjestikku
+* Texture Aware töötab ka GPU-l, millel on alla 7 GB VRAM-i, järjestikku — müra eemaldamise mudel ei mahu sinna rohkem kui üks kord
+
+Chlorosei kasuta ühtegi kolmanda osapoole hajutatud raamistikku (nagu Ray). Vaata [Dynamic Compute Adaptation](dynamic-compute-adaptation.md), et teada saada, kuidas valitakse strateegia ja töötajate arv.
+
+***
+
+## Järjestikune vs. torustikupõhine töötlemine
 
 ### Vaba režiim (järjestikune)
 
-Chloros vabaversioonis töödeldakse pilte **ükshaaval**, järjestikku läbi kõigi nelja etapi:
+Chlorosi tasuta versioonis töödeldakse pilte **ükshaaval** järjestikku kõigi nelja etapi kaudu:
 
 ```
 
@@ -76,11 +93,11 @@ Image 1: [Detect] → [Calibrate] → [Process] → [Export]
                                                          Image 2: [Detect] → [Calibrate] → [Process] → [Export]
 ```
 
-GUI-i edenemisribal on näha 2 etappi: sihtmärgi tuvastamine ja töötlemine.
+GUI kuvab vabarežiimis lihtsustatud edenemisriba; selle järjestikused etapid on märgitud kui **Sihtmärgi tuvastamine**ja seejärel**Töötlemine**.
 
-### Chloros+ režiim (torustatud)
+### „Chloros+“ režiim (järkjärguline)
 
-Chloros+ litsentsiga töötavad kõik neli protsessisäitu **paralleelselt** erinevate piltidega:
+„Chloros+“ litsentsi korral töötavad kõik neli niiti **paralleelselt** erinevate piltidega:
 
 ```
 
@@ -90,45 +107,56 @@ Thread 3:                     [Image 1] [Image 2] ...
 Thread 4:                               [Image 1] ...
 ```
 
-GUI-i edenemisribal on näha 4 etappi: tuvastamine, analüüsimine, kalibreerimine, eksportimine. Viige hiir edenemisribale, et näha iga protsessisäiu edenemist.
+GUI edastusribal on näha neli etappi; viige hiir selle peale, et näha iga niidi edusamme. „CLI’is” kuvatakse samad neli etappi reaalajas järgmiselt: **Detecting, Analyzing, Processing, Exporting**.
+
+{% hint style="info" %}
+**Üks märge, kaks nime.** „CLI” nimetab 3. etappi _Töötlemine_. Backendi premium-režiimi edastusvoog – see, mida GUI edastusriba kuvab – märgib sama etappi _Kalibreerimine_. Tegemist on sama protsessiga, mis teeb sama tööd (protsess 3: debayer, parandused, indeksid).
+{% endhint %}
 
 {% hint style="success" %}
-**Järjekorras töötlemine Chloros+ abil** võib olla 3–5 korda kiirem kui järjestikune töötlemine, sõltuvalt teie riistvarast ja andmekogumi suurusest. Kiiruse kasv on suurim süsteemides, millel on kiired GPU-d ja SSD-d.
+**Chloros-ga** teostatav torustatud töötlemine võib olla 3–5 korda kiirem kui järjestikune töötlemine, sõltuvalt teie riistvarast ja andmekogumi suurusest. Kiiruse kasv on suurim süsteemides, kus on kiired GPU-d ja SSD-d.
 {% endhint %}
 
 ***
 
 ## 4. niidi ekspordi edenemine
 
-Chloros versioonis 1.1.0 on ekspordi niidil (niit 4) oma spetsiaalne edenemise jälgimise süsteem. Ekspordi edenemist saate jälgida eraldi:**CLI:**
+Ekspordi niidil on oma edenemise jälgimissüsteem, mida saate eraldi küsida:**CLI:**
+
 ```bash
 chloros-cli export-status
 ```
 
 **SDK:**
+
 ```python
 status = chloros.get_status()
 print(f"Export: {status['export']['percent']}% - Phase: {status['export']['phase']}")
 ```
 
-Töötlemine on lõpetatud, kui niit 4 jõuab 100%ni.
+Töötlemine on lõppenud, kui niit 4 jõuab 100%ni.
+
+{% hint style="info" %}
+**Käivitus, mille käigus pilte ei kirjutata, on ebaõnnestunud.**Eduka tulemuse korral teatab `chloros-cli process`, kui palju pilditooteid kirjutati (`Image products written: N`). Kui tooteid taotleti, kuid**ühtegi**ei kirjutatud — ainult `project.json` ja `calibration_data.json` —, siis väljastab CLI `Processing finished but wrote no image products.` ja**lõpetab töötamise nullist erineva väärtusega**, nimetades projekti kausta ja tavalised põhjused (sisendkausta ei tunnistatud salvestusena – kontrollige paigutust ja `--input-level` – või kõik taotletud tooted olid nende kaamerate jaoks sobimatud). Skriptid võivad tugineda väljumiskoodile.
+{% endhint %}
 
 ***
 
 ## Seos dünaamilise arvutusadapteerimisega
 
-[Dünaamilise arvutusadapteerimise](dynamic-compute-adaptation.md) süsteem mõjutab peamiselt **niiti 3 (töötlemine)**:
+[Dünaamiline arvutusadapteerimine](dynamic-compute-adaptation.md) mõjutab peamiselt **niiti 3 (töötlemine)**:
 
-* **`GPU_PARALLEL`** strateegia: niit 3 töötleb GPU kaudu mitut pilti korraga, kasutades `fused_gpu` torujuhet
-* **`GPU_SINGLE`** strateegia: Thread 3 töötleb ühe pildi korraga, kasutades mälu säästvat `tiled_gpu` torujuhet
-* **`CPU_PARALLEL`** strateegia: Thread 3 kasutab CPU-põhist töötlemist mitmeprotsessilise paralleelsusega
+* **`GPU_PARALLEL`**: 3. niit töötleb GPU kaudu samaaegselt mitut pilti, kasutades `fused_gpu`-töötlusliini
+* **`GPU_SINGLE`**: Thread 3 järjestab GPU-le juurdepääsu semafori abil, samal ajal kui tööprotsessid teevad I/O-operatsioone üheaegselt, kasutades `fused_gpu` või mälusäästlikku `tiled_gpu` torujuhet
+* **`CPU_PARALLEL`**: 3. niit kasutab CPU-põhist töötlemist mitme niidiga paralleelsusega
 
-Thread 3 GPU mälu eraldamine muutub dünaamiliselt ka siis, kui Thread 1 ja 2 lõpetavad töö — vaata [Dynamic GPU Memory Allocation](dynamic-compute-adaptation.md#dynamic-gpu-memory-allocation).
+Niidi 3 GPU-mälu eraldus suureneb ka siis, kui niidid 1 ja 2 lõpetavad töö — vt [Dynamic GPU Memory Allocation](dynamic-compute-adaptation.md#dynamic-gpu-memory-allocation).
 
 ***
 
 ## Järgmised sammud
 
-* [Dynamic Compute Adaptation](dynamic-compute-adaptation.md) — Kuidas Chloros valib teie riistvarale optimaalse strateegia
+* [Dünaamiline arvutusvõimsuse kohandamine](dynamic-compute-adaptation.md) — Kuidas „Chloros“ valib teie riistvarale optimaalse strateegia
 * [NVIDIA Jetsoni juhend](../linux/nvidia-jetson-guide.md) — Platvormispetsiifiline töötlemisprotsessi käitumine Jetsonil
-* [Töötlemise jälgimine](../processing-images-gui/monitoring-the-processing.md) — GUI-põhine protsessi jälgimine
+* [Töötlemise jälgimine](../processing-images-gui/monitoring-the-processing.md) — Tööde edenemise jälgimine graafilise kasutajaliidese kaudu
+* [„CLI“ viide](../reference/cli-reference.md) — `process`, `export-status`, väljumiskoodid ja väljundi paigutus

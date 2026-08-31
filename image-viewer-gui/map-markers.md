@@ -1,6 +1,6 @@
 # Kaardimärgid
 
-Vahekaardil „Kaart“ kuvatakse teie pildid interaktiivsel 2D-kaardil nende GPS-koordinaatide alusel. See annab geograafilise ülevaate teie pildistamissessioonist ja aitab visualiseerida ruumilist katvust. See on kasulik ka piltide esmakordsel importimisel, et kiiresti eemaldada pildid, mida pole vaja töödelda.
+Vahekaart „Kaart“ kuvab teie pildid interaktiivsel 2D-kaardil nende GPS-koordinaatide alusel. See annab teile pildistamissessiooni geograafilise ülevaate ja on kohe pärast importimist kiireim viis eemaldada pildid, mida te töödelda ei soovi.
 
 <figure><img src="../.gitbook/assets/chloros_map_markers.gif" alt=""><figcaption></figcaption></figure>
 
@@ -8,154 +8,143 @@ Vahekaardil „Kaart“ kuvatakse teie pildid interaktiivsel 2D-kaardil nende GP
 
 1. Avage või looge projekt Chloros-is
 2. Importige pildid, mis sisaldavad GPS-metadata
-3. Klõpsake vasakul külgribal **Kaart** <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> vasakul külgribal
-4. Kaart kuvab märgid iga pildi GPS-asukohas
+3. Klõpsake vasakul külgribal **Kaart**-<img src="../.gitbook/assets/image (3) (1).png" alt="" data-size="line">-vahelehel
+4. Kaardil kuvatakse märk iga pildi GPS-asukohas
 
 {% hint style="info" %}
-**GPS on vajalik**: Kaardil kuvatakse ainult need pildid, mille EXIF-metadata sisaldab GPS-koordinaate. Veenduge, et pildistamise ajal on teie kaameras GPS sisse lülitatud.
+**GPS on vajalik**: kaardil kuvatakse ainult need pildid, mille EXIF-metandmetes on GPS-koordinaadid. Koordinaatideta pilt jääb ikkagi projekti ja töödeldakse tavapäraselt – sellel lihtsalt puudub märk.
 {% endhint %}
 
 ***
 
-## Piltide kohandamine kaardivahekaardilt**Kaart**<img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> on sama lisamise  <img src="../.gitbook/assets/image.png" alt="" data-size="line">   <img src="../.gitbook/assets/image (1).png" alt="" data-size="line">  ja eemaldamise  <img src="../.gitbook/assets/image (2).png" alt="" data-size="line">  nupud nagu [**Failibrauser**](../processing-images-gui/adding-files-to-a-project.md) <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> . Samuti kuvatakse seal sama projektifailide tabel, kuid teiste veerupealkirjadega:
+## Piltide kohandamine vahekaardil „Kaart“
 
-### Failinimi
+Vahekaardil **„Kaart“**<img src="../.gitbook/assets/image (3) (1).png" alt="" data-size="line"> on samad nuppud „Lisa“ <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> <img src="../.gitbook/assets/image (1) (1).png" alt="" data-size="line"> ja „Eemalda“ <img src="../.gitbook/assets/image (2) (1).png" alt="" data-size="line"> nagu vahekaardil [**„Failibrauser“**](../processing-images-gui/adding-files-to-a-project.md) <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">. Seal kuvatakse sama projektifailide nimekiri koos geograafiliste veergudega:
 
-* Kaamera originaalfailinimi
-* Säilitab kaamera nimetamiskonventsiooni (nt IMG\_0001.RAW)
-
-### Laiuskraad
-
-* Pildi laiuskraad
-
-### Pikkuskraad
-
-* Pildi pikkuskraad
-
-### Kõrgus
-
-* Pildi kõrgus
+| Veerg        | Sisu                                                           |
+| ------------- | ------------------------------------------------------------------ |
+| **Nimi**      | Failinimi sellisena, nagu see kaamerast saadi                             |
+| **Laiuskraad**  | Kümnendkraadid, kuus kümnendkohta                                |
+| **Pikkuskraad** | Desimaalkraadid, kuus kümnendkohta                                |
+| **Kõrgus**  | Meetrid, üks kümnendkoht — `-`, kui pildil puudub kõrgus |
 
 {% hint style="info" %}
-Tabelite veerupealkirjade klõpsamine sorteerib ka ridade andmeid
+Klõpsake mis tahes veeru pealkirjal, et seda järgi sorteerida; klõpsake uuesti, et järjestust pöörata.
+{% endhint %}
+
+{% hint style="warning" %}
+**Kõrgus on kõrgus merepinnast, mitte maapinnast.** Väärtus pärineb pildi EXIF-märgistusest `GPSAltitude`, mis viitab keskmisele merepinnale. See ei ole lennukõrgus maapinna suhtes ning Chloros ei arvuta selle põhjal maapinna proovivahekaugust – 300 m merepinnast kõrgemal asuva põllu kohal registreerib 100 m AGL kõrgusel lendav droon siin ligikaudu 400 m. Kasutage seda veergu hälvete tuvastamiseks ja lennukõrguse järjepidevuse kontrollimiseks, mitte aga AGL-mõõtmiseks.
 {% endhint %}
 
 ***
 
-## Pildi märgid
+## Pildimärgised
 
-Iga GPS-andmetega pilt on kaardil esindatud märgiga:
+Iga GPS-andmetega pilt saab oma koordinaatidele märgise.
 
 ### Märkide kuvamine
 
-* Märgid näitavad täpseid GPS-koordinaate, kus iga pilt on tehtud
-* Kui kaarti vähendada, võivad märgid rühmituda
-* Suurendage kaarti, et näha iga pildi asukohta eraldi
-
-{% hint style="success" %}
-SUPER-ZOOM: Kui jõuate kaarditahvli pakkuja maksimaalse suumitasemeni, suurendatakse tahvlit edasise suumimise korral, võimaldades teil näha märgid, mis asuvad üksteise lähedal.
-{% endhint %}
+* Märgid asuvad iga pildi jaoks salvestatud täpsetel koordinaatidel
+* Lähedal asuvad märgid võivad väiksema suumiga visuaalselt üksteisega kattuda – suumige sisse, et neid eraldada
+* Valitud ja esile tõstetud märgid kuvatakse teiste kohal
 
 ### Eelvaade hiirega üle libistamisel
 
-* **Libistage hiirt** mis tahes märgi kohale, et näha selle pildi pisipilti
-* See võimaldab kiiret visuaalset tuvastamist ilma kaardivaatest lahkumata
-* Kasulik konkreetsete piltide leidmiseks suure pildistamissessiooni raames
+* **Liiguta hiirt** mis tahes märgi kohale, et avada selle pildi pisipilt koos failinimega
+* **Klõpsake**märgile, et valida pilt ja**kinnitada** hüpikaken avatuks — see jääb avatuks, kuni klõpsate mujale. Kui hüpikaken on kinnitatud, ei võta teiste märkide peale viimine seda ära
+* See on kiire viis leida üks konkreetne kaader suures sessioonis, ilma kaardilt lahkumata
 
-***
-
-## Kaarditahvlite pakkujad
+<figure><img src="../.gitbook/assets/image (36).png" alt=""><figcaption><p>Vahekaardil „Kaart“ kuvatakse kõik projekti geotagitud pildid</p></figcaption></figure>### Super-suum
 
 {% hint style="success" %}
-**Automaatne valik**: Chloros valib automaatselt kaarditahvli teenuse, mis pakub parimat suumitaset teie praeguse kaardiasukoha jaoks. Soovi korral saate teenusepakkujate vahel käsitsi vahetada.
+**SUPER-SUUM**: kui jõuad maksimaalsele suumitasemele, mille jaoks kaarditükkide pakkujal on pildimaterjali olemas, suurendab edasine suumimine kaarditükke edasi, selle asemel et peatuda, nii et saad eristada märgiseid, mis asuvad peaaegu üksteise peal.
 {% endhint %}
 
-Kaardi vahekaart toetab kahe teenusepakkuja taustakaardipilte:
-
-### Google Maps
-
-* Google&#x27;i standardne satelliit- ja kaardipilt
-* Sobib kõige paremini üldiseks ülemaailmseks katvuseks
-
-### ESRI
-
-* ESRI ArcGIS-i satelliit- ja õhupildid
-* Pakub teatud piirkondades sageli kõrgemahulisi pilte
+* Super-zoom aktiveerub ainult siis, kui olete **jõudnud** teenusepakkuja poolt selle asukoha jaoks määratud maksimaalse suumini ja kaarditükid on lõpetanud laadimise. Sellest madalamal tasemel toimib suumimine tavapäraselt
+* Suumivahemik on **1× kuni 32×** teenusepakkuja enda maksimaalse suumi peal
+* Nurgas asuv indikaator näitab praegust superzoomi protsendina ning selle kõrval olev **×**-nupp viib ühe klõpsuga tagasi tavalise suumimise juurde
+* Väljasuumimine toimub alati kaardil endal, seega ei saa te kunagi superzoomi juurde kinni jääda
+* Suurendamise ja nihutamise ajal superzoomis kantakse tekkinud nihke kaardile üle, nii et keskpunktist eemale nihutatud ala jätkab ruutude laadimist, mitte ei muutu tühjaks
+* Märgid joonistatakse vektorkujul, mitte rasterdatuna, mistõttu jäävad need teravaks igal superzoomi tasemel
 
 ***
 
-## Kaarditüüpide valik
+## Kaardiplaadi pakkujad
 
-Võite valida kaardikihti tüübi (vasakult paremale):
+{% hint style="success" %}
+**Automaatne valik**: Chloros valib selle plaaditeenuse, mis pakub parimat suumitaset sinu piltide asukoha jaoks. Saad igal ajal käsitsi vahetada.
+{% endhint %}
 
- <img src="../.gitbook/assets/image (23).png" alt="" data-size="original">### Maastik
+| Pakkuja        | Märkused                                                                                                                                                             |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Google Maps** | Laiaulatuslik ülemaailmne katvus; toetab kõiki nelja kaarditüüpi                                                                                                            |
+| **Esri ArcGIS**| Sageli kõrgem resolutsiooniga õhufotod teatud piirkondades. Kaarditüüp**Terrain** ei ole Esri jaoks saadaval ja selle nupp on keelatud, kui Esri on valitud |***
 
-Näitab kõrgusprofiile ja kaardiplaate koos detailidega (teed jne)
+## Kaardiplaadiliigid
 
-### Kaart
+Valige kaardikihti tüüp nuppude abil (vasakult paremale):
 
-Näitab standardseid (madalama ribalaiusega) kaardiplaate koos detailidega (teed jne)
+![](&lt;../.gitbook/assets/image (14).png&gt;)
 
-### Satelliit
+| Tüüp                 | Näitab                                                                |
+| -------------------- | -------------------------------------------------------------------- |
+| **Maastik**          | Kõrguste varjutus koos kaardidetailidega (teed, sildid). Ainult Google       |
+| **Kaart**              | Standardse tänavakaardi plaadid — madalaima ribalaiusega valik              |
+| **Satelliit**        | Detailne satelliidipilt, ilma siltideta — suurima andmeedastuskiirusega valik |
+| **Hübriid** (vaikimisi) | Satelliidipilt, millele on joonistatud teed ja sildid                |
 
-Näitab detailseid (kõrgema ribalaiusega) satelliitkaardiplaate
-
-### Hübriid
-
-Näitab satelliitkaardiplaate koos lisatud detailidega (teed jne)
-
-***
+Kaardi vahekaart avatakse **Hübriid**-režiimis. Teie valik mõjutab teenusepakkuja vahetust, kui teenusepakkuja seda toetab.***
 
 ## Kaardil navigeerimine
 
-### Suumimise juhtnupud
-
-* **Suumimine sisse/välja**: Kasutage hiire kerimisratast või suumimisnuppe
-* **Täisekraan**: Kaardi kuvamine täisekraanil
-
-### Paanimise juhtnupud
-
-* **Paanimine**: Klõpsake ja lohistage, et kaardil liikuda***
+* **Suurendamine**: hiire kerimisratas või kaardil olevad suurendamisnupud
+* **Liikumine**: klõpsake ja lohistage
+* **Täisekraan**: täisekraani nupp laiendab kaarti kogu akna suuruseks***
 
 ## Kasutusjuhtumid
 
-### Lennutrajektoori visualiseerimine
+### Lennutrajektoori ülevaatamine
 
-* Vaadake drooniga pildistamise seansside katvust
-* Tuvastage lüngad pildikatvuses
-* Kontrollige lennutrajektoori täitmist
+* Vaata ühe pilguheitega droonilennu katteala
+* Leia lüngad, kus mõni läbimine jäi vahele
+* Veendu, et lend järgis planeeritud marsruuti
 
-### Maapinna uuringu ülevaatamine
+### Maapinna uuringu läbivaatamine
 
-* Vaadake maapinnal tehtud piltide ruumilist jaotust
-* Leidke kalibreerimise sihtmärkide pildid suhtes uuringualaga
-* Planeerige täiendavaid pildistamiskohti
+* Vaata, kuidas on jaotunud maapinnalt tehtud pildid
+* Leia kalibreerimise sihtmärkide raamid uuringuala suhtes
+* Otsusta, kus on vaja täiendavaid pilte
 
 ### Kvaliteedikontroll
 
-* Ootamatutes kohtades pildistatud piltide kiire tuvastamine
-* GPS-i täpsuse kontrollimine kogu andmekogus
-* Piltide asukohtade võrdlemine välitöö märkmetega
+* Leia ootamatutes kohtades pildistatud kaadrid ja eemalda need enne töötlemist
+* Sorteeri kõrguse järgi, et leida valel kõrgusel pildistatud kaadrid või need, kus GPS-signaal oli nõrk
+* Võrdle piltide asukohti välitöö märkmetega
 
 ***
 
 ## Veaotsing
 
-### Märgid ei kuvata
+### Märgiseid ei kuvata
 
-**Võimalikud põhjused:**
+**Võimalikud põhjused**
 
-* Pildid ei sisalda GPS-i metaandmeid
-* GPS oli pildistamise ajal kaameras välja lülitatud
-* EXIF-andmed on välise tarkvara poolt eemaldatud
+* Piltidel puuduvad GPS-metandmed
+* Pildistamise ajal oli kaameras GPS välja lülitatud
+* EXIF-andmed eemaldati enne importimist mõne teise tarkvara abil
 
-**Lahendus**: Kontrollige, kas GPS on kaameras sisse lülitatud, ja importige originaalfailid uuesti
+**Mida teha**: veendu, et kaameras on GPS sisse lülitatud, ja impordi originaalfailid uuesti. Saad kontrollida, kas konkreetsel failil on koordinaadid, otsides seda vahekaardi „Kaart” failitabelist – pildil, millel koordinaate pole, puudub seal rida.
 
-### Märgised on vales asukohas
+### Märgid asuvad vales kohas
 
-**Võimalikud põhjused:**
+**Võimalikud põhjused**: halb satelliitpositsioon pildistamise ajal või GPS-i hälve seansi jooksul.**Mida teha**: tegemist on pildistamise ajal tekkinud probleemiga, mida Chloros ei saa tagantjärele parandada. Täpseks tööks kasutage PPK/RTK GPS-töövoogu – vaadake seadet**Kohalda PPK-parandusi** [Projekti seaded](../project-settings/project-settings.md).
 
-* Kaamera GPS-i satelliitide signaal oli nõrk
-* GPS-i nihkumine pildistamise ajal
+### Kaart on tühi või kaarditükkide laadimine peatub
 
-**Lahendus**: Tegu on tavaliselt pildistamise ajal tekkinud probleemiga; kaaluge täpsust nõudvate rakenduste puhul PPK/RTK GPS-i kasutamist
+Kaartiplaadipakkujad on veebipõhised teenused. Kui kaartiplaadid ei lae enam, kontrollige seadme võrguühendust ja proovige seejärel vahetada pakkujat. Kui olite väga suurelt suumitud, vajutage **×** taastamisnuppu, et naasta tavalisele suumitasemele ja lasta kaardil kaartiplaadid uuesti taotleda.***
+
+## Seotud leheküljed
+
+* [**Pildivõrk**](image-grid.md) — sama pildikogum kui pisipildid
+* [**Pildi avamine täisekraanil**](opening-an-image-full-screen.md) — ühe pildi üksikasjalik uurimine
+* [**Failide lisamine projektile**](../processing-images-gui/adding-files-to-a-project.md) — selle vahekaardi failide lisamise ja eemaldamise nupud

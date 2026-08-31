@@ -1,214 +1,226 @@
 # Pildi avamine täisekraanil
 
-Chloros pildivaataja pakub spetsiaalset täisekraaniliidest multispektraalsete piltide vaatamiseks, analüüsimiseks ja töötlemiseks. Olgu tegemist originaalpiltide või töödeldud väljunditega, pakub pildivaataja võimsaid vahendeid kontrollimiseks ja analüüsimiseks.
+<figure><img src="../.gitbook/assets/image (34).png" alt=""><figcaption><p>Täisekraanil avatud pilt, mille paremas ülanurgas asub kihtide valija</p></figcaption></figure>
 
-## Pildivaatajasse sisenemine
+Chloros pildivaataja on täisekraaniline liides piltide vaatamiseks, uurimiseks ja mõõtmiseks. Siin saate lugeda **tegelikke pikselväärtusi** — kanali kohta DN, peegeldusprotsenti või kiirgust W/m²/sr/nm — mitte ekraanil kuvatavat venitatud eelvaadet.
+
+## Pildivaataja avamine
 
 ### Failibrauserist
 
-Kõige tavalisem viis pildi avamiseks pildivaatajas:
+1. Avage vahekaart **Failibrauser** (<img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">)
+2. Klõpsake mis tahes **pisipilti** [pildirestis](image-grid.md)
+3. Pilt avaneb täisekraanil vahekaardil **Pildivaataja**
 
-1. Veenduge, et olete **Failibrauseri** vahekaardil <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">
-2. Klõpsake pildiribal mis tahes **pildi pisipildil**
+Pilt avatakse selles tootes, mida raster parasjagu näitas. Kui raster on seatud `RAW (Reflectance)`-ile, siis on see kiht, millele jõuate.
 
-3. Pilt avatakse**peamises eelvaatealas** (ekraani keskel)
-4. Pilt on nüüd laaditud ja valmis täisekraanil vaatamiseks
+### Pildivaataja külgriba avamine
 
-### Pildivaataja vahekaardi avamine
+Klõpsake vasakul külgribal ikooni **Pildivaataja** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line">, et avada analüüsipaneel. See sisaldab ülevalt alla järgmist:
 
-Kui pilt on eelvaatealasse laaditud:
+* pildi nimi ja kaamera mudel
+* nupp **Ekspordi/salvesta pilt(eid)** (ainult siis, kui indeks või LUT on aktiivne)
+* valikukastid **Indeks**ja**LUT** ning indeksi konfiguratsioonipaneel — vaata [Indeksi/LUT-i katsetuskeskus](index-lut-sandbox.md)
+* paneel **Kursori väärtused**: kanalipõhine väljund, kihi histogramm ja GSD-regulaator***
 
-1. Klõpsake vasakul külgribal **Pildivaataja** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> ikoonile vasakul külgribal
-2. Avaneb pildivaataja vahekaart, mis kuvab valitud pildi täisekraanil
-3. Vasakul külgribal muutuvad kättesaadavaks täiustatud vaatamis- ja analüüsitööriistad
+## Navigeerimine ja suumimine
 
-***
+### Piltide sirvimine
 
-## Pildivaataja liidese ülevaade
+* **Järgmine pilt**: nupp → või klahv**→** (parem nool)
+* **Eelmine pilt**: nupp ← või klahv**←** (vasak nool)
+* **Hüppa konkreetsele pildile**: naase võrgustikule ja klõpsa selle pisipildil
 
-### Peamine kuvamisala
+Suurendus ja nihutamine säilivad piltide vahel liikudes, nii et saad pildiseeria läbi vaadata, jäädes samal ajal raami samasse osasse.
 
-Ekraani suurim osa näitab teie pilti:
+### Suurendamine
 
-* **Täisresolutsioon**: pildid kuvatakse algupärases resolutsioonis
-* **Suurendatav**: kasutage suurendamiseks juhtnuppe või hiirerattat
-* **Liigutatav**: suurendatud pildi puhul klõpsake ja lohistage, et liikuda
-* **Kuvasuhe säilitatud**: pildid skaaluvad proportsionaalselt***
+Suurendamist juhitakse **hiirerattaga** 15% sammuga, kusjuures suurendus on seotud kursoriga – kursori all olev punkt jääb kursori alla. Suurendamisvahemik on piiratud pildi ja akna suurusega: sa ei saa vähendada pilti väiksemaks kui „aknasse mahutamine” ning ülemine piir on määratud pildi algse resolutsiooniga.
 
-## Vaatevalikud
+Täisekraanivaatajas puuduvad spetsiaalsed suumimisnupud. (Ristikuvaates muudavad **Ctrl + `+` / `−`** pisipiltide suurust – see on teistsugune juhtimine.)
 
-### Pildi põhiline navigeerimine
+### Paanimine suurendatud vaates
 
-#### Piltide sirvimine
+Klõpsake pildi peal vasaku hiirenupuga, hoidke seda all ja lohistage. Paanimine on piiratud, nii et pilti ei saa ekraanilt välja lohistada.
 
-Navigeerige pildikogus klahvikombinatsioonide või nuppude abil:
+### Pikslipõhine vaatlus suurel suumil
 
-* **Järgmine pilt**: klõpsake nuppu → või vajutage klahvi**→** (parem nool)
-* **Eelmine pilt**: klõpsake nuppu ← või vajutage klahvi**←** (vasak nool)
-* **Hüppake konkreetsele pildile**: naaske failibrauserisse ja klõpsake soovitud pisipilti
+Kui efektiivne suurendus ületab **60×**, joonistab Chloros kursori all oleva üksiku kuvatava pikseli ümber esiletõstetud raami ja selle kõrvale ujukomaarvulise väärtuse.
 
-#### Suumimise juhtnupud
+„Tegelik” suurendus arvestab GSD-ploki suurust: ploki suurusega 8 ilmub esiletõstmine juba 7,5× suurenduse juures, mitte 60× juures, sest üks kuvatav piksel on juba 8 × 8 allikapikslit. Kui suurendust vähendada allapoole künnist, kaob esiletõstmine.
 
-Reguleerige suurendust, et vaadata pildi detaile:
+### Klahvikombinatsioonid
 
-**Suurendamine:*** Klõpsake nuppu **+** (pluss)
-* Vajutage klahvi **+**või**=*** Kerige hiirerattaga **üles**
+| Klahv                             | Asukoht       | Tegevus                              |
+| ------------------------------- | ----------- | ----------------------------------- |
+| **→**                           | Täisekraan | Järgmine pilt                          |
+| **←**                           | Täisekraan | Eelmine pilt                      |
+| **Ctrl + R**                    | Täisekraan | Indeksi/LUT-liivakasti tühjendamine         |
+| **Ctrl + `+`**/**Ctrl + `=`** | Võrgustik        | Suuremad pisipildid (4 pikselit vajutuse kohta)  |
+| **Ctrl + `−`**                  | Raster        | Väiksemad pisipildid (4 pikselit iga vajutuse kohta) |***
 
-**Vähendamine:*** Klõpsake nuppu **−** (miinus)
-* Vajutage klahvi **−** (miinus)
-* Kerige hiirerattaga **alla**
+## Kursori väärtused
 
-#### Suumimisel pildil liikumine
+Liiguta kursorit pildi kohale ja paneelis **Kursori väärtused** kuvatakse selle all oleva iga kanali väärtus.
 
-Kui suum on suurem kui ekraani suurus:
+{% hint style="success" %}
+**Need on faili tegelikud numbrid.** Ekraanil olev pilt on 8-bitine venitatud eelvaade ja ei suuda neid väärtusi kuvada, seega võtab Chloros lugemiseks proove tegelikust tootefailist. Seetõttu näitab 12-bitine toorkaader näitab väärtusi üle 255 ja miks float32-kiirguskiht näitab füüsikalisi ühikuid.
+{% endhint %}
 
-1. Viige hiirekursor pildi kohale
-2. Klõpsake ja **hoidke vasakut hiirenuppu**
+### Veergude tähendus
 
-3.**Lohistage**, et pilti liigutada
-4. Vabastage, et pildil liikumine peatada
+Paneel kohandub vastavalt vaadeldavale kihile:
 
-**Alternatiiv**: Kasutage nooleklahve, et liikuda väikeste sammude kaupa***
+| Vaadeldav kiht              | Näidatavad veerud    | Märkused                                                                                           |
+| ---------------------------------- | ---------------- | ----------------------------------------------------------------------------------------------- |
+| Peegeldusvõime                        | **DN**ja**%** | Protsent arvutatakse selle faili enda skaala alusel – vt allpool                                      |
+| Kiirgus                           | **W/m²/sr/nm**   | Ujukomaga füüsikalised väärtused; DN-veergu pole, kuna DN on siin tähendusetu                           |
+| Toores / Debayered / eelvaade / JPG    | **DN**           | Täisarvulised digitaalsed numbrid                                                                         |
+| 32-bitise protsendilise peegeldusvõime eksport | ainult **%**       | Salvestatud ujukomaarv ei ole DN, seega ümardamine täisarvuks tooks kaasa mõttetud väljundid nagu `0` või `1` |
 
-## Pikselväärtuste vaatamine
+Iga rida on märgistatud teie kaamera filtri kanalinimega — `Red / Green / NIR` vastab RGN-ile, `Orange / Cyan / NIR` vastab OCN-ile, `NIR / Green / Blue` NGB puhul, `Red / Green / Blue` kaamera RGB puhul ning ühe kanali nimi kaamerate RE, NIR ja mono-M3M-kaamerate puhul. Igal sildil on värviline punkt, mis vastab indeksivalemi redaktoris kasutatavatele kanaliringidele.
 
-### Pikselväärtuste vaatamine kursori juures
+Salvestatud **indeks- ja LUT-**pildid on erijuhtum: need sisaldavad pigem värvikaardi komponente kui spektraalribasid, seega on nende read märgistatud `Red / Green / Blue` (või `Index` ühekanalilise indeksifaili puhul) asemel kaamera filternimede asemel.
 
-Kui liigutad hiirekursorit pildi kohal, kuvatakse pikselväärtused reaalajas:**Väärtuste kuvamise asukoht:*** **Ujuv number ja punane joon parempoolse indeks-LUT-gradiendi legendis*** **Kui suumitakse veelgi sisse, ujuv väärtus kursori ja esiletõstetud pikseli juures*** Näitab väärtusi **kursori all või esiletõstetud** pikseli jaoks
-* Uuendub hiire liikumisel
+Kui indeks on liivakastis aktiivne, ilmub kanalite alla lisanrida, mis näitab kursori asukohas olevat **indeksiväärtust** koos indeksi nimega ja valge punktiga, mis vastab selle märgile histogrammil.
+
+### Peegeldusprotsent kasutab iga faili enda skaalat
+
+{% hint style="warning" %}
+**Ärge eeldage, et 65535 = 100%.** Chloros salvestab peegeldusvõime erinevates skaalades sõltuvalt sellest, milline kaamera selle genereeris, ning vaataja määrab iga faili puhul õige skaala kindlaks.
+{% endhint %}
+
+| Allikas                  | DN, mis vastab peegeldusvõimele 1,0 | Kuidas seda tuvastatakse                                                                                                                               |
+| ----------------------- | ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **LATTICE**(M3C / M3M) |**32768**                      | XMP-märge `Chloros:PixelScale=32768` kirjutatakse igasse LATTICE peegeldusvõime eksporti. 2× varu võimaldab failil kanda ρ väärtust üle 1,0 ilma kärpimiseta |
+| **Survey3**|**65535**                      | XMP-skaala sildit Chloros ei ole — kalibreerimine kirjutab ρ × dtype-max ja kärbib väärtuse 1,0 juures                                                               |
+
+Vaatur, indeks/LUT-liivakast ja indeksi eksport määravad skaala kindlaks ühe ja sama rakenduse kaudu, seega on kursori juures loetav väärtus sama, mida indeksarvutused kasutasid.
+
+Kaks olulist tagajärge:
+
+* **32-bitine protsent**TIFF salvestab DN/65535 ujukomana ja**8-bitine** PNG/JPG-eksport salvestab DN × 255/65535 — vaataja teisendab mõlemad tagasi enne protsendi kuvamist.
+* Üht juhtumit ei ole võimalik taastada: **8-bitise allika salvestuse 8-bitine TIFF-eksport** kärbitakse vahemikku 0–255, mitte ei skaalata ümber, ning sellel puudub tahtlikult skaalimärge. Nende failide puhul kuvab paneel ainult DN-väärtusi, protsendikolonn puudub. See on aus vastus, mitte viga.***
+
+## Kihtide histogramm
+
+Kursori ridade all asub vaadeldava kihi reaalajas histogramm, mis on jagatud **256 vahemikku**. Vaikimisi joonistatakse üks kombineeritud kõver, kaalutud `(R + 2G + B) / 4` — sama mõõtmisruum, mida kasutavad LATTICE-kaamera histogrammid. Kui lülitada sisse**RGB** sisse, asendatakse see kanalipõhiste kõveratega kanalite värvides, mis on additiivselt segatud, et kattuvad osad jääksid loetavaks. Monokroomkihtidel joonistatakse alati üksainus kõver.
+
+Horisontaaltelg on kihti iseloomustavas ühikus:
+
+| Kiht       | Telje ühik  | Telje maksimum                                               |
+| ----------- | ---------- | ---------------------------------------------------------- |
+| Peegeldusvõime | protsent    | 125% — toote varu võimaldab ρ väärtust üle 1,0           |
+| Kiirgusvõimsus | W/m²/sr/nm | Kaadri enda tippväärtus, ümardatud kahe olulise numbrini |
+| 8-bitised andmed | DN         | 255                                                        |
+| 12-bitised andmed | DN         | 4095                                                       |
+| 16-bitised andmed | DN         | 65535                                                      |
+
+Kui telg on DN-režiimis ja jääb ühe neist kolmest ülempiirist, teab Chloros ka selle pildi bittisügavust, mida vaatate.
+
+Histogrammi kohal asuvad kolm nuppu:
+
+| Nupp     | Vaikimisi | Mõju                                                                                                                                                                                                                                                                                   |
+| ---------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **KURSOR** | Sisse      | Joonistab histogrammile märgistusjooned täpselt ülaltoodud ridades näidatud väärtustele, nii et saate näha, kus kursori all olev piksel raami jaotuses asub. Režiimis RGB on igal kanalil üks oma värvi märgistusjoon; muul juhul on üks valge märgistusjoon kombineeritud väärtuse juures |
+| **INDEX**| Sisse      | Ilmub ainult siis, kui indeks on aktiivne. Lülitab histogrammi allikakanalitelt üle**indeksväärtuste jaotusele**, kus kaks klippimiskünnist on joonistatud oranžide katkendjoontena ja kursori indeksväärtus valge joonena                                                          |
+| **RGB**| Väljas     | Lülitab ümber kombineeritud kõveralt kanalipõhistele kõveratele. Monosensoril on selle nupu tekstiks**MONO** ja see on keelatud — kuvada on vaid üks kanal                                                                                                                                  |
+
+Histogramm arvutatakse **nähtavate plokkide** põhjal, mitte nende taga olevate allikapikslite põhjal: GSD-ploki suuruse muutmisel arvutatakse jaotus uuesti, nii et histogramm, kursori märk ja kuvatav pilt on alati omavahel kooskõlas.***
+
+## GSD-ploki suurus
+
+Paneeli allosas asub **GSD (px)**-regulaator: numbrikast, liugur vahemikus**1 kuni 256**ja**RESET**-nupp.
+
+See muudab _kuvatava_ pildi jämedamaks, arvutades N × N allikapikslite ploki keskmise üheks kuvatavaks piksliks. `1` on algne eraldusvõime.
+
+* See mõjutab **täisekraanivaadet, võrgustiku pisipilte, kursori näitu ja mõlemat histogrammi** – kõik, mis kuvab pilti, kasutab sama põhilahutusvõimet.
+* See mõjutab **ainult kuvamist**. Töötlemine ja eksport jäävad muutmata. Üks erand on tahtlik: [Index/LUT Sandbox](index-lut-sandbox.md) eksport salvestab selle, mida te parasjagu vaatate, seega säilitab see praeguse plokisuuruse, ja ekspordipaneel hoiatab teid, kui plokisuurus ületab 1.
+* Väärtus salvestatakse **projekti kaupa** nimega `viewer_display.gsd_bin` failis `project.json`, seega säilib see ka programmi sulgemisel ja uuesti avamisel.
+* Kui ploki suurus on suurem kui 1, näitab kursori näidik ploki väärtust, mitte allika pikslit – kuvatav väärtus on kursori all oleva ploki keskmine väärtus.
+
+{% hint style="info" %}
+**Miks „ploki suurus” ja mitte sentimeetrid pikseli kohta?** Cm/px näitaja eeldab kõrgust maapinnast. Ühe kaadri EXIF-andmed sisaldavad GPS-kõrgust keskmise merepinna suhtes, mitte selle maastiku suhtes, millele kaamera oli suunatud, seega Chloros ei prindi maapinnast kaugust, mida ta ausalt öeldes ei saa tuletada. Ploki suurus allikapikslites on sama varuvariant, mida MAPIR pilvetöötlusvahendid kasutavad, kui maapinna proovivahe on teadmata.
+{% endhint %}
 
 ***
 
 ## Vaadeldavad pilditüübid
 
-### JPG
+Vaateakna ülemises paremas nurgas asuvas kihtide rippmenüüs on loetletud kõik praeguse pildi versioonid. Millised kanded kuvatakse, sõltub kaamerast ja sellest, mida on töödeldud – vaata [Pildikihtidest](image-layers.md), et näha täielikku nimekirja ja rippmenüü toimimist.
 
-**Kaamerast pärit JPG-pildid:**
+### Survey3
 
-* JPG-andmete kuvamine eelvaatena
-* Originaalsete, korrigeerimata väärtuste kuvamine
-* Kasulik pildi kvaliteedi kontrollimiseks enne töötlemist
+* **JPG** — kaamera enda eelvaatefail
+* **RAW (originaal)** — allikas `.RAW`, kuvamiseks debayereeritud, ilma parandusteta
+* **RAW (sihtmärk)** — kaader, mis on identifitseeritud kalibreerimisihtmärki sisaldavana
+* **RAW (peegeldusvõime)** — kalibreeritud peegeldusvõime tulemus (65535 = ρ 1,0)
+* **Vignette Corrected**/**Sensor Response** — kalibreerimata varutulemus
+* **Valgebalansiga** — valgebalansiga töödeldud pilt
+* **RAW (`<INDEX>` indeks)**ja**`<INDEX>` LUT** — arvutatud indeksipildid
 
-### RAW (originaal)
+### LATTICE
 
-### RAW (peegeldus)
+LATTICE-pildistamisel kasutatakse sama rippmenüüd, milles on esitatud töötlemisahela tasandite nimed:
 
-**Pärast töötlemist:**
+| Kiht                 | Sisu                                                        |
+| --------------------- | -------------------------------------------------------------------- |
+| **RAW (originaal)**    | Salvestatud algne RAW-kaader                                     |
+| **RAW (debayered)**   | Lineaarne debayered-pilt                                           |
+| **RAW (eelvaade)**     | Ekraanil kuvatav eelvaade — multispektraalsete kaamerate jaoks värvide võltsvärviga venitus |
+| **Valgebalanss**    | RGB-põhikaamerate eelvaade (valgebalanss + gamma)   |
+| **RAW (kiirgus)**    | Float32 spektraalne kiirgus ühikutes W/m²/sr/nm                              |
+| **RAW (peegeldusvõime)** | uint16 peegeldusvõime, 32768 = ρ 1,0                                    |
 
-* Vignett korrigeeritud
-* Peegeldus kalibreeritud
-* Mitme sagedusribaga TIFF (Red, Green, NIR jne)
-* Analüüsiks valmis teadusandmed
-
-### RAW (indeks)
-
-**NDVI, NDRE, GNDVI jne. (\_NDVI.tif-failid):**
-
-* Ühekanalilised halltoonilised pildid
-* Pikselväärtused esindavad indeksite arvutustulemusi
-* Normaliseeritud indeksite vahemik on tavaliselt -1 kuni +1
-* Visualiseerimiseks saab rakendada värvilisi LUT-e
+Kiirgusvõimsus ja peegeldusvõime on saadaval ainult multispektraalsete kaamerate puhul: RGB põhikaameral puudub ribapõhine radiomeetria, seega neid kihte selle jaoks ei genereerita.
 
 ***
 
 ## Indeksi ja LUT-i rakendamine
 
-Rakenda multispektraalseid indekseid ja värvilisi Look-Up Tabelid:
+Rakendage multispektraalseid indekseid ja värvilisi Look-Up Tabeleid (LUT) külgribalt:
 
-1. Leia **Index/LUT Sandbox** **Image Viewer**-is <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> külgribal
-2. Valige taimestiku indeks (NDVI, NDRE jne)
-3. Valige multispektraalne valem või looge oma kohandatud valem (ainult Chloros+)
-4. Rakendage visualiseerimiseks värvilist LUT-gradienti
-5. Reguleerige väärtuste vahemikke ja künniseid
+1. Avage külgribal **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line">
+2. Märkige **Indeks**
 
-Vaata [Indeks/LUT Sandbox](index-lut-sandbox.md) üksikasjalike juhiste saamiseks.
+3. Valige oma kaamera filter ja indeksivalem, seejärel lohistage kanaliringid valemi lahtritesse
+4. Lisage LUT ja valige gradient, künnisväärtused ja kärpimisrežiim
+5. Lugege väärtused kursori juures ja salvestage tulemus valikuga **Ekspordi/Salvesta pilt(id)**Täieliku juhendi leiate [Indeksi/LUT-i katsetuskastist](index-lut-sandbox.md).***
 
-***
-
-## Klahvikombinatsioonid
-
-### Navigeerimine
-
-* **→** (parem nool): Järgmine pilt
-* **←** (vasak nool): Eelmine pilt
-* **Home**: Nimekirja esimene pilt
-* **End**: nimekirja viimane pilt
-
-### Suumimine
-
-* **+**või**=**: suumimine sisse
-* **−**: suumimine välja
-* **Hiireratt**: suumimine sisse/välja***
-
-### Indeksite arvutuste kontrollimine
-
-Kontrollige, kas indeksid on arvutatud õigesti:
-
-1. Avage NDVI või muu indeksipilt
-2. Kontrollige taimestikuga kaetud alasid:
-   * **NDVI**: Tervete taimede puhul peaks näitama väärtust 0,4–0,9
-   * **NDRE**: Kiire kasvu puhul on väärtused kõrgemad
-   * **GNDVI**: sarnane NDVI-iga, kuid klorofüllitundlik
-3. Kontrollige mitte-taimestikku:
-   * **Muld**: ligikaudu 0 või veidi negatiivne
-   * **Vesi**: negatiivsed väärtused (-0,5 kuni 0)***
-
-## Vaateprobleemide lahendamine
+## Veaotsing
 
 ### Pilt ei avane
 
-**Võimalikud põhjused:**
+**Võimalikud põhjused**: faili on pärast importimist teisaldatud või kustutatud; toodet ei salvestatud kunagi; väga suure pildi jaoks pole piisavalt mälu.**Mida teha**:
 
-* Fail on töötlemise käigus rikutud
-* Toetamata failivorming
-* Suure pildi jaoks pole piisavalt mälu
-
-**Lahendused:**
-
-1. Proovige avada fail välises vaatajas, et kontrollida faili terviklikkust
-2. Kontrollige, kas failivorming vastab oodatavale tüübile
+1. Kontrollige, kas kihi fail on endiselt olemas projekti väljundpuus
+2. Avage fail välises vaatajas, et veenduda, et see on terviklik
 3. Sulgege teised rakendused, et vabastada mälu
-4. Proovige väiksemat/teist pilti
 
-### Pildi kuvamine mustana või valgena
+### Pilt on must, valge või äärmiselt värvikas
 
-**Võimalikud põhjused:**
+**Võimalikud põhjused**: kuvari venitusel pole millegagi töötada (peaaegu konstantne kaader); float32-kiht ebatavaliste väärtustega; indeks, mis ei andnud kehtivaid andmeid.**Mida teha**:
 
-* Väärtuste vahemik väljaspool kuvamisvõimalusi
-* 32-bitine ujukomapilt ebatavaliste väärtustega
-* Indeksi arvutamise viga
+1. Loe kursori väärtused – kui iga kanal on nullis või selle lähedal, on probleem andmetes, mitte kuvamisel
+2. Kontrolli histogrammi: üksik piik ühes otsas näitab, et kaader on kärbitud või tühi
+3. Kontrolli töötlemislogi selle käivituse kohta, mis kihti genereeris
 
-**Lahendused:**
+### Väärtused tunduvad valed
 
-1. Kontrollige pikselväärtusi – kui need on kõik väga madalad või väga kõrged, reguleerige kuvamisvahemikku
-2. Proovige avada QGIS-is või sarnases programmis, kus on automaatne vahemiku reguleerimine
-3. Kontrollige töötlemise vealokist, kas seal on vigu
+**Võimalikud põhjused**: olete teisel kihil, kui arvate; võrdlete protsenti toore DN-iga; võrdlete LATTICE-faili Survey3-failiga, kasutades sama jagajat.**Mida teha**:
 
-### Pikselväärtused tunduvad valed
-
-**Võimalikud põhjused:**
-
-* Vaadeldakse valet pilti (originaal vs töödeldud)
-* Kalibreerimine ei toiminud korrektselt
-* Valgusanduri andmed ei olnud sisendisse kaasatud
-* Protsendirežiim oli valesti sisse lülitatud
-
-**Lahendused:**
-
-1. Veenduge, et vaatate töödeldud väljundit (kontrollige failinime laiendit)
-2. Kontrollige protsendirežiimi nupu seisundit
-3. Võrrelge sama andmekogumist pärit teadaolevalt korrektsete piltidega
+1. Kontrollige rippmenüüst valitud kihti – paneeli ühikud järgivad kihti
+2. Peegeldusvõime puhul kasutage **%**-veergu, selle asemel et jagada DN-väärtust ise; kui pead jagama, kasuta selle faili `Chloros:PixelScale`-väärtust (32768 LATTICE-faili puhul, puudumine tähendab 65535 Survey3-faili puhul)
+3. Seadke GSD-ploki suurus tagasi väärtusele 1 — kui see on suurem kui 1, loete ploki keskmist, mitte pikslit
+4. Kontrollige, kas selle kaadri jaoks tegelikult teostati peegeldusvõime kalibreerimine; kalibreerimata varutoode (Sensor Response / Vignette Corrected) ei ole peegeldusvõime
 
 ***
 
 ## Järgmised sammud
 
-Nüüd, kui saate pilte täisekraanil vaadata:
+* [**Pildikihtid**](image-layers.md) — iga kihi nimi (kui see on olemas) ja selle väärtuste tähendus
+* [**Indeksi/LUT-katsetuskeskkond**](index-lut-sandbox.md) — indeksite visualiseerimise loomine, häälestamine ja eksportimine
+* [**Kaardimärgid**](map-markers.md) — sama pildikogum kaardil
+* [**Multispektraalsete indeksite valemid**](../project-settings/multispectral-index-formulas.md) — indeksite viited
 
-* [**Pildikihtid**](image-layers.md) – Tutvuge mitme lainepikkuse visualiseerimisega
-* [**Indeks/LUT-liivakast**](index-lut-sandbox.md) – Rakendage kohandatud indekseid ja värvikaardistust
-* [**Multispektraalsed indeksivalemid**](../project-settings/multispectral-index-formulas.md) – Tutvuge saadaval olevate indeksitega
-
-Töötlemise töövoo kohta vaadake:
-
-* [**Piltide töötlemine (GUI)**](../processing-images-gui/adding-files-to-a-project.md) – Täielik töötlemisjuhend
+Töötlemise töövoo kohta vaata [Piltide töötlemine (GUI)](../processing-images-gui/adding-files-to-a-project.md).

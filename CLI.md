@@ -1,1205 +1,283 @@
 # CLI : Käsurea
 
-<figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>**Chloros CLI** pakub võimsat käsurea juurdepääsu Chloros pilditöötlusmootorile, võimaldades automatiseerimist, skriptimist ja peata töötamist teie pilditöötlusvoogudes.
+> **Täielik viide:**[CLI viide](reference/cli-reference.md) dokumenteerib**iga alamkäsu iga lipu** ja on optimeeritud tehisintellekti abiliste jaoks — kleebi selle URL oma abilisse ja küsi töötavat käsku: `https://mapir.gitbook.io/chloros/reference/cli-reference`
+>
+> **Nõuanne AI-tööriistade jaoks:** käesoleva juhendi iga lehekülg on kättesaadav toores Markdown-vormingus, kui lisada selle URL-ile `.md` (nt `https://mapir.gitbook.io/chloros/reference/cli-reference.md`), ning `https://mapir.gitbook.io/chloros/llms.txt` indekseerib kogu juhendi LLM-i kasutamiseks.
 
-### Peamised omadused
+<figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>
+<!-- SCREENSHOT-UPDATE: banner shows CLI 1.1.0; reshoot the CLI welcome/banner output on the 1.2.0 build so the version line reads "Chloros CLI 1.2.0" -->
+## Mis on CLI
 
-* 🚀 **Automatiseerimine** – mitme andmekogumi skriptipõhine paketttöötlus
-* 🔗 **Integreerimine** – integreerimine olemasolevatesse töövoogudesse ja protsessidesse
-* 💻 **Käsitsi juhtimata töö** – töötab ilma graafilise kasutajaliideseta
-* 🌍 **Mitmekeelne** – toetab 38 keelt
-* ⚡ **Paralleelne töötlemine** – [Dynamic Compute Adaptation](processing-architecture/dynamic-compute-adaptation.md) optimeerib automaatselt teie riistvara jaoks
+`chloros-cli` on sama töötlemismootori käsurealiides, mida kasutab ka töölaua rakendus Chloros. Tegemist on kerge HTTP-kliendiga, mis töötab Chloros-tagapõhja (`127.0.0.1:5000`-i kohalik server) kaudu — enamik käske käivitab tagapõhja automaatselt, seega piisab skriptile ühestainsast `chloros-cli process …`-kutsest.
 
-### Nõuded
-
-| Nõue          | Üksikasjad                                                             |
-| -------------------- | ------------------------------------------------------------------- |
-| **Operatsioonisüsteem** | Windows 10/11 (64-bit), Linux x86_64 (amd64), Linux arm64 (NVIDIA Jetson JetPack 6) |
-| **Litsents**          | Chloros+ ([vajalik tasuline pakett](https://cloud.mapir.camera/pricing)) |
-| **Mälu**           | Minimaalselt 8 GB RAM-i (soovitatavalt 16 GB)                                  |
-| **Internet**         | Vajalik litsentsi aktiveerimiseks                                     |
-| **Kettaruum**       | Sõltub projekti suurusest                                              |
-
-{% hint style="warning" %}
-**Litsentsinõuded**: CLI nõuab tasulist Chloros+ tellimust. Standard (tasuta) paketid ei anna juurdepääsu CLI-ile. Uuendamiseks külastage [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing).
-{% endhint %}
-
-## Kiirstart
-
-### Paigaldamine
-
-#### Windows
-
-CLI on automaatselt lisatud Chloros paigaldajasse:
-
-1. Laadige alla ja käivitage **Chloros Installer.exe**
-
-2. Viige paigaldusviisard lõpule
-3. CLI paigaldati: `C:\Program Files\Chloros\resources\cli\chloros-cli.exe`
-
-{% hint style="success" %}
-Paigaldaja lisab automaatselt `chloros-cli` teie süsteemi PATH-i. Käivitage pärast paigaldamist terminal uuesti.
-{% endhint %}
-
-#### Linux
-
-Paigaldage oma arhitektuurile sobiv `.deb` pakett:
+See töötab **Windows 10/11 (x64)**ja**Linux (x86_64 ning NVIDIA Jetson arm64 JetPack 6-l)** keskkondades, mis tahes terminalis, ilma et oleks vaja graafilist kasutajaliidest. Kontrollige oma installi järgmise käskuga:
 
 ```bash
-# Linux amd64
+chloros-cli --version    # prints "Chloros CLI 1.2.0"
+```
+
+Käskude rühmad lühidalt:
+
+* **Töötlemine ja konto** — `process`, `login`, `logout`, `status`, `export-status`, `language` (38 keelt — vt [Toetatud keeled](supported-languages.md)), `set-project-folder` / `get-project-folder` / `reset-project-folder`, `selftest`, `update` (Linux/ainult Jetson)
+* **Töötav riistvara** — `lattice` (LATTICE kaamera juhtimine, üle 45 alamkäsu), `daq pool-*` (DAQ valgusandurid), `time-sync` (PTP)
+* **Automatiseerimine** — `project` (salvestatud Chloros projekti juhtimine ilma kasutajaliideseta, sealhulgas YAML-pildistamisretseptid)
+
+Teadmiseks väärt üldised valikud: `--port N` (tagapõhja port, vaikimisi `5000`), `-v/--verbose`, `--restart` (tagapõhja sundtaaskäivitamine), `--backend-exe PATH`. Täieliku loetelu leiate [CLI-i viitest](reference/cli-reference.md).
+
+***
+
+## Paigaldamine
+
+CLI **on kaasas Chloros paigaldusprogrammis** kõikidel platvormidel — eraldi CLI-i allalaadimist ei ole. Lae paigaldusprogramm alla [Allalaadimise](download.md) lehelt.
+
+### Windows
+
+Paigaldusprogramm paigutab CLI järgmisesse asukohta:
+
+```
+
+C:\Program Files\Chloros\cli\chloros-cli.exe
+```
+
+ja lisab selle kausta teie süsteemi `PATH` — **avage pärast installimist uus terminal**, et uuendatud `PATH` leitaks. Installija paigutab ka käivitusskriptid (`Chloros_CLI.bat` / `Chloros_CLI.ps1`) paigalduskataloogi ning**Chloros CLI** Start-menüü kiirklahvi, millest igaüks avab terminali, kus `chloros-cli` on valmis kasutamiseks.
+
+### Linux
+
+Paigalda oma arhitektuurile sobiv `.deb`:
+
+```bash
+# Linux x86_64
 sudo dpkg -i chloros-amd64.deb
 
-# Linux arm64 (NVIDIA Jetson, JetPack 6)
+# NVIDIA Jetson (arm64, JetPack 6)
 sudo dpkg -i chloros-arm64-jp6.deb
 ```
 
-Linux üksikasjaliku seadistamise kohta vaadake [Linux paigaldamine](linux/linux-installation.md).
+See paigaldab `chloros-cli` kuni `/usr/bin/chloros-cli` (juba versioonil `PATH`) ja tagapõhja versioonile `/usr/lib/chloros/chloros-backend`, koos LATTICE-kaamerate jaoks vajaliku Arena SDK-i tööajaga. Täpsemad üksikasjad leiate [Linux paigaldamisjuhendist](linux/linux-installation.md).
 
-### Esmane seadistamine
+### Kontrollige
 
-Enne CLI kasutamist aktiveerige oma Chloros+ litsents:
+```bash
+chloros-cli --version    # "Chloros CLI 1.2.0"
+chloros-cli selftest     # 7-step diagnostic: backend, API, GPU/CUDA, denoiser models
+chloros-cli status       # license tier + logged-in user
+```
 
-**Windows:**
+***
 
-```powershell
-# Login with your Chloros+ account
-chloros-cli login user@example.com 'your_password'
+## Sisselogimine ja litsentsimine
 
-# Check license status
+CLI (ja Python SDK) juurdepääs eeldab **tasulist Chloros+ paketti**— see on olemas igas tasulises paketis, tasuta paketis aga mitte. Piirang rakendatakse**serveripoolelt** backend&#x27;i poolt, mitte CLI-i binaarfaili poolt: välja logitud kasutaja kõne lükatakse tagasi veakoodiga `401 AUTH_REQUIRED` ja sisse logitud kasutaja kõne tasuta tasemel veakoodiga `403 PLAN_UPGRADE_REQUIRED`, olenemata sellest, kas see pärineb `chloros-cli`-ist, SDK või käsitsi loodud HTTP-kliendist. Uuendage aadressil [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing).
+
+Logige sisse **üks kord iga arvuti kohta**:
+
+```bash
+chloros-cli login user@example.com 'YourPassword'
 chloros-cli status
-
-# Process your first project
-chloros-cli process "C:\Images\Dataset001"
 ```
 
-**Linux:**
+<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>
+<!-- SCREENSHOT-UPDATE: login success output predates 1.2.0; reshoot `chloros-cli login` followed by `chloros-cli status` on the 1.2.0 build showing the license tier line -->
+{% hint style="warning" %}
+**Erimärke sisaldavad paroolid**(`$`, `!`, spaces): wrap the password in**single quotes**, as shown above. In PowerShell double quotes, `$$` moonutab shell (CLI tuvastab selle 401-vea korral ja proovib automaatselt uuesti, kuid ühekordsed jutumärgid vältivad seda probleemi täielikult).
+{% endhint %}
 
-```bash
-# Login with your Chloros+ account
-chloros-cli login user@example.com 'your_password'
+Seanss salvestatakse vahemällu `~/.chloros/user_session.json` ja töötab offline-režiimis plaani armuaja jooksul (kuuplaanide puhul 30 päeva, aastaplaanide puhul kuni kehtivusaja lõpuni). `chloros-cli status` töötab isegi ilma tasulise plaanita, seega on keeldumise põhjus alati nähtav.
 
-# Check license status
-chloros-cli status
-
-# Process your first project
-chloros-cli process ~/images/dataset001
-```
-
-### Põhikasutus
-
-Kausta töötlemine vaikimisi seadetega:
-
-**Windows:**
-
-```powershell
-chloros-cli process "C:\Images\Dataset001"
-```
-
-**Linux:**
-
-```bash
-chloros-cli process ~/images/dataset001
-```
+{% hint style="danger" %}
+**Kavandate peata tööd? Logige esmalt sisse.**Tagapõhja käivitav käsk (`process`, `status`, `export-status`, …) ei ebaõnnestu kiiresti, kui seda käivitatakse**ilma vahemällu salvestatud sessioonita**— see lülitub stdin-i kaudu interaktiivsesse `Email:` / `Password:`-käsureale. Seetõttu**jääb järelevalveta cron-ülesanne või CI-samm sisendit oodates kinni**. Käivita masinal enne mis tahes ülesande planeerimist üks kord käsk `chloros-cli login EMAIL 'PASSWORD'`.
+{% endhint %}
 
 ***
 
-## Käskude viide
+## Sinu esimene töötlemiskäivitus
 
-### Üldine süntaks
+Suunake `process` salvestatud andmete kausta – see tuvastab automaatselt Survey3 (`.raw` + `.jpg`), LATTICE (`.tif`/`.tiff`), `.dng` või nende kombinatsiooni:
+
+```bash
+chloros-cli process "C:\Images\flight_001"          # Windows
+chloros-cli process ~/images/flight_001              # Linux
+```
+
+Progressi vood edastatakse reaalajas iga toru-niidi kohta (avastamine, analüüsimine, töötlemine, eksportimine) ning edukas käivitamine lõpeb aruandega, kui palju pilditooteid salvestati (`Image products written: N`).
+
+<!-- SCREENSHOT-NEEDED: terminal capture of a `chloros-cli process` run on a LATTICE captures folder completing successfully — per-thread progress lines visible and the final "Image products written: N" summary line -->
+### Kuhu väljundid salvestatakse
+
+`process` salvestab andmed **projektikausta**, mitte teie sisendkausta:
+
+* Kui `-o` puudub: projekt luuakse teie vaikimisi projektikausta alla (mida jagatakse graafilise kasutajaliidesega; haldage seda `get-project-folder` / `set-project-folder`, varuvariant `~/Chloros Projects`), mille nimeks on `-n/--project-name` või ajamärge (`YYYYMMDD_HHMMSS`), kui see on välja jäetud.
+* Kui kasutatakse `-o PATH`-i, **on** see kaust projektikaust. Kui see sisaldab juba `project.json`-i, luuakse selle asemel, et seda üle kirjutada, `_1`/`_2`…-lõpuga kaust.
+
+Projekti sees on tooted rühmitatud **kaamera järgi, seejärel failivormingu järgi**:
 
 ```
-chloros-cli [global-options] <command> [command-options]
+<project>/
+├── project.json
+├── calibration_data.json
+└── LATT-M3M-L41-F550/                  # one folder per camera model+lens+filter
+    ├── tiff16/
+    │   ├── Reflectance_Calibrated_Images/
+    │   ├── Debayered_Images/
+    │   ├── Preview_Images/
+    │   └── NDVI_Index_Images/           # one folder per requested index
+    └── tiff32/
+        └── Radiance_Images/             # float32 radiance always lands here
 ```
+
+Kaamera kaust on `LATT-<sensor>-<lens>-F<filter>` kaamera LATTICE jaoks (vastab pildi EXIF-andmetele `Model`) ning `<model>_<filter>` (nt `Survey3N_RGN`) kaamera Survey3 puhul. Formaatikausta järgib `--format`: `tiff16`, `tiff8`, `png8`, `jpg8` või `tiff32` asemel `TIFF (32-bit, Percent)`.
+
+{% hint style="info" %}
+**Iga eksporditud toode säilitab ALGFAILI nime.**`capture_..._raw.tif`-i radiance-eksport kannab endiselt nime `capture_..._raw.tif` — see asub lihtsalt kataloogis `tiff32/Radiance_Images/`.**Toote identifitseerimiseks kasutatakse kausta, mitte failinime**, seega otsige kataloogi, mitte `*radiance*`-lõppu.
+{% endhint %}
+
+### Valikud, mida tegelikult kasutate
+
+| Lipuk | Vaikimisi | Mida see teeb |
+| --- | --- | --- |
+| `-o, --output PATH` | projekti vaikimisi kaust | Projekti kausta asukoht (vt eespool). |
+| `-n, --project-name NAME` | ajamärge | Projekti nimi. |
+| `--format FMT` | `TIFF (16-bit)` | Üks järgmistest: `TIFF (16-bit)`, `TIFF (32-bit, Percent)`, `PNG (8-bit)`, `JPG (8-bit)`. |
+| `--indices NAME [NAME ...]` | puudub | Eksporditavad taimestiku indeksid (vt [Taimestiku indeksid](#vegetation-indices)). |
+| `--debayer {standard,texture-aware}` | `standard` | `texture-aware` = neurovõrgu abil debayerimine, aeglasem, kõrgeim kvaliteet (Chloros+, NVIDIA GPU). |
+| `--vignette / --no-vignette` | sisse | Vignettkorrektsioon. |
+| `--reflectance / --no-reflectance` | sisse | Peegelduskalibreerimine; LATTICE puhul on see ka peegeldustoote lüliti. |
+| `--input-level {auto,raw,debayered,processed}` | `auto` | LATTICE TIFF-failide töötlemisahela alguspunkti sundimine. |
+
+Kõige muu kohta — sihtmärgi tuvastamise häälestamine, PPK, ekspositsioonitapid, massiivi joondamise lipukesed — vaata [`process` jaotist viites CLI](reference/cli-reference.md).
 
 ***
 
-## Käskud
+## Eksporditava valimine (LATTICE tooted)
 
-### `process` - Töötle pilte
+LATTICE töötlemine hargneb **ühe läbimisega kõikidele asjakohastele toodetele**. Kõik neli tootekohast lülitit on**vaikimisi sisse lülitatud**; ühe väljalülitamiseks kasutage vormi `--no-`:
 
-Töötle kausta pilte kalibreerimisega.
+| Lüliti | Toode |
+| --- | --- |
+| `--debayered` | Lineaarne demosaik → `Debayered_Images/` |
+| `--preview` | Eelvaate kuvamine (valgebalanss + gamma; valevärvide venitus multispektraalsete piltide puhul) → `Preview_Images/` |
+| `--radiance` | float32 kiirgusintensiivsus, W/m²/sr/nm → `Radiance_Images/` (alati `tiff32/`) |
+| `--reflectance` | uint16 peegeldusvõime, Pix4D-valmis → `Reflectance_Calibrated_Images/` |
 
-**Süntaks:**
+RGB peakaamerad edastavad alati ainult debayered + eelvaadet — laiaribalise anduri puhul ei ole sagedusribapõhine kiirgusvõimsus/peegeldusvõime oluline, seega on need lülitid nende puhul toiminguteta. Survey3 `.raw` eirab lülitusi ja järgib standardset peegeldusvõime/sihtmärgi teekonda.
 
 ```bash
-chloros-cli process <input-folder> [options]
+# Radiance only — no DAQ downwelling needed
+chloros-cli process ~/captures/lattice_flight --no-debayered --no-preview --no-reflectance
 ```
 
-**Näited:**
+**`--reflectance-source {auto,target,daq}`** (vaikimisi `auto`) valib peegeldusvõime võrdluspunkti: `auto` loob kaadris kvaliteedikontrolli läbinud [kalibreerimissihiku](calibration-targets.md) absoluutseks etaloniks ja kasutab sihtmärgi puudumisel tagavarana DAQ-i valgusanduri allapoole suunatud valguse jagunemist (ρ = π·L/E); `target` on range (ei kasuta DAQ-i asendust); `daq` tugineb DAQ-ile. Ühiku kohta mõõdetud sihtmärgi skaneeringuid saab esitada koos `--target-reflectance-dir`-iga.
 
-```bash
-# Windows
-chloros-cli process "C:\Datasets\Survey_001" --vignette --reflectance
+{% hint style="info" %}
+**Peegeldusvõime pikslite lugemine:**DN-väärtus, mis tähendab ρ = 1,0, on**allika kohta** — LATTICE-failid lisavad XMP-sse märgise `Chloros:PixelScale=32768`; Survey3-failid kasutavad väärtust 65535 (ja neil puuduvad `Chloros:*`-märgised). Loe silt ja jaga sellega, selle asemel et eeldada konstanti. Üksikasjad ja üks tahtlik skaalata äärejuhtum on toodud [CLI viites](reference/cli-reference.md).
+{% endhint %}
 
-# Linux
-chloros-cli process ~/datasets/survey_001 --vignette --reflectance
-```
+**Töötlemine algab alati failist `raw`.** Tuletatud tooted (debayered/kiirgus/peegeldusvõime ekspordid) ei suunata kunagi tagasi töötlemisahelasse – nende uuesti importimine ja töötlemine rakendaks kalibreerimisarvutusi topelt, seega Chloros jätab need vahele ja teatab sellest. `--input-level` on tahtlik pääsetee, kui on tõesti vaja sisenemispunkti jõuga määrata.***
 
-#### Käskude töötlemise valikud
+## Kui käivitamine ebaõnnestub
 
-| Valik                | Tüüp    | Vaikimisi        | Kirjeldus                                                                            |
-| --------------------- | ------- | -------------- | -------------------------------------------------------------------------------------- |
-| `<input-folder>`      | Tee    | _Nõutav_     | Kausta, mis sisaldab RAW/JPG multispektraalpilte                                         |
-| `-o, --output`        | Tee    | Sama kui sisend  | Töödeldud piltide väljundkausta                                                     |
-| `-n, --project-name`  | String  | Automaatselt genereeritud | Kohandatud projekti nimi                                                                    |
-| `--vignette`          | Lipuke    | Lubatud        | Luba vinjeti korrigeerimine                                                             |
-| `--no-vignette`       | Lipuke    | -              | Keela vinjeti korrigeerimine                                                            |
-| `--reflectance`       | Lipuke    | Lubatud        | Lubada peegelduskalibreerimist                                                         |
-| `--no-reflectance`    | Lipuke    | -              | Keelata peegelduskalibreerimist                                                        |
-| `--ppk`               | Lipuke    | Lülitatud välja       | Rakenda PPK-korrektsioone .daq valgusanduri andmetest                                      |
-| `--format`            | Valik  | TIFF (16-bitine)  | Väljundvorming: `TIFF (16-bit)`, `TIFF (32-bit, Percent)`, `PNG (8-bit)`, `JPG (8-bit)` |
-| `--min-target-size`   | Täisarv | Auto           | Kalibreerimispaneeli tuvastamise minimaalne sihtmärgi suurus pikslites                          |
-| `--target-clustering` | Täisarv | Auto           | Sihtmärkide klastrite künnis (0–100)                                                    |
-| `--debayer`           | Valik  | `standard`     | Debayeri meetod: `standard` või `texture-aware` (ainult Chloros+)                          |
-| `--target`, `--targets` | Lipuke  | Keelatud       | Otsi kalibreerimise sihtmärke ainult alamkaustast „target” või „targets” (kiirendab töötlemist) |
-| `--indices`           | Nimekiri    | Puudub           | Arvutatavad taimestiku indeksid (nt `--indices NDVI NDRE GNDVI`)                    |
-| `--exposure-pin-1`    | String  | Puudub           | Lukusta kaamera mudeli ekspositsioon (pin 1)                                                 |
-| `--exposure-pin-2`    | String  | Puudub           | Kaamera mudeli säriaja lukustamine (pin 2)                                                 |
-| `--recal-interval`    | Täisarv | Auto           | Kalibreerimise intervall sekundites                                                      |
-| `--timezone-offset`   | Täisarv | 0              | Ajavööndi nihke tundides                                                               |
+Alates versioonist 1.2.0 annab `process` selge veateate, selle asemel et näidata „õnnestumist“ ilma tulemusteta:
+
+* Käivitus, mis **taotles tooteid, kuid ei kirjutanud ühtegi**— ainult `project.json` ja `calibration_data.json` — väljastab veakoodi `Processing finished but wrote no image products.` ja**lõpetab töötamise nullist erineva väärtusega**, seega skriptid suudavad seda tuvastada. Tavapärased põhjused: sisendkausta ei tunnistatud pildistamisena (kontrollige paigutust ja `--input-level`) või iga taotletud toode oli nende kaamerate jaoks sobimatu (nt radiance/peegeldusvõimet ainult RGB-kaameratelt).
+* **Tahtlikult ainult metandmetega käivitus** (kõik tooted välja lülitatud, `--indices` puudub) on ikkagi edukas – tühja pildi väljund on selles juhul õige tulemus.
+* Käivita uuesti koos `--verbose`-iga ja kontrolli tagapõhja logist `[LATTICE-EXPORT]` / `[EXPORT-CHECK]` ridu, mis selgitavad kaamerapõhiseid vahelejätmisi.
+
+Väljumiskoodid: `0` edukas · `1` üldine viga · `2` argumendiviga · `130` katkestatud klahvikombinatsiooniga Ctrl+C.
 
 ***
 
-### `login` - Konto autentimine
+## Taimestiku indeksid
 
-Logige sisse oma Chloros+ kasutajatunnustega, et võimaldada CLI töötlemist.
-
-**Süntaks:**
+Käivitage `--indices` ühe või mitme eelseadistuse nimega; iga indeks salvestatakse omaette `<INDEX>_Index_Images/` kausta:
 
 ```bash
-chloros-cli login <email> <password>
+chloros-cli process ~/images/flight_001 --indices NDVI NDRE GNDVI
 ```
 
-**Näide:**
+22 eelseadistatud nime, mida `process --indices` aktsepteerib:
 
-```bash
-chloros-cli login user@example.com 'MyP@ssw0rd123'
-```
+`NDVI` `GNDVI` `NDRE` `OSAVI` `SAVI` `MSAVI2` `EVI` `MSR` `TDVI` `LAI` `GCI` `GRVI` `GSAVI` `GOSAVI` `NLI` `MNLI` `RDVI` `WDRVI` `CVI` `ENDVI` `GLI` `VARI`
 
 {% hint style="warning" %}
-**Erimärgid**: Kasutage ühekordseid jutumärke paroolide ümber, mis sisaldavad märke nagu `$`, `!` või tühikuid.
-{% endhint %}
-
-**Väljund:**<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>***
-
-### `logout` – Kustuta kasutajatunnused
-
-Kustuta salvestatud kasutajatunnused ja logi oma kontolt välja.
-
-**Süntaks:**
-
-```bash
-chloros-cli logout
-```
-
-**Näide:**
-
-```bash
-chloros-cli logout
-```
-
-**Väljund:**
-
-```
-✓ Logout successful
-ℹ Credentials cleared from cache
-```
-
-{% hint style="info" %}
-**SDK kasutajad**: Python SDK pakub ka programmilist `logout()` meetodit kasutajatunnuste kustutamiseks Python skriptides. Täpsema teabe saamiseks vaadake [Python SDK dokumentatsiooni](api-python-sdk.md#logout).
+**Indeksiloendeid on kolm – ärge neid segage.**GUI-liidese rippmenüüs „Project Settings“ on 27 valemit (lisatud on `FCI1`, `FCI2`, `GARI`, `GEMI`, `LCI` – need viis on mõeldud ainult graafilise kasutajaliidese jaoks ja**ei** kehti `--indices` jaoks). Reaalajas/offline-režiimis töötav käsk `lattice index --preset` kasutab oma eraldi 22-eelseadistuste nimekirja. Valemid ja lainepikkuste arvutused on dokumenteeritud [Multispektraalsete indeksite valemites](project-settings/multispectral-index-formulas.md).
 {% endhint %}
 
 ***
 
-### `status` – Litsentsi staatuse kontrollimine
+## DAQ-valgusandurid: lühike ülevaade
 
-Kuva praegune litsentsi- ja autentimise staatus.
-
-**Süntaks:**
+`daq pool-*`-seeria juhib MAPIR DAQ-spektraalandureid (DAQ-U USB-ühenduse kaudu, DAQ-M BLE kaudu, DAQ-E Etherneti kaudu) tagapõhja püsiva reservi kaudu — GUI, CLI ja SDK jagavad ühte reaalajas käepidet. **`pool-*` on tarnitud CLI-is toetatud DAQ-tee**; muud `daq` alamkäskud, millele võite viiteid näha, on MAPIR-i sisemine ainult allikana kasutatav pind ning need lõpetavad töö selge veateatega, mis suunab teid `pool-*`-i poole.
 
 ```bash
-chloros-cli status
+# 1. Open a pooled session (pick the line matching your sensor)
+chloros-cli daq pool-connect                              # smart-detect
+chloros-cli daq pool-connect --port COM3                  # DAQ-U on a specific COM port
+chloros-cli daq pool-connect --mac AA:BB:CC:DD:EE:FF      # DAQ-M by BLE MAC
+chloros-cli daq pool-connect --eth-host daq-e-xxx.local   # DAQ-E by hostname (reliable)
+
+# 2. List pooled sensors and their ids
+#    (DAQ-U ids look like 'CB-7C-A8-2E-5F'; DAQ-E ids like 'daq-e-def330')
+chloros-cli daq pool-list
+
+# 3. Read the latest calibrated spectrum (W/m²/nm)
+chloros-cli daq pool-latest --sensor-id CB-7C-A8-2E-5F
+
+# 4. Record a calibrated .daq file for 60 s
+chloros-cli daq pool-record --sensor-id CB-7C-A8-2E-5F --duration 60 \
+  -o ~/Documents/spectra --device-name "field-A"
+
+# 5. Release
+chloros-cli daq pool-disconnect --sensor-id CB-7C-A8-2E-5F
 ```
 
-**Näide:**
+`pool-record` ilma `--duration`-ita töötab kuni `pool-record --stop`-ini; vaikimisi väljundkataloog on `~/Documents/DAQ Live View/` **tagapõhja masinal**. Katteparandusprofiil valitakse ühenduse loomise ajal (`--cap-id`, tagapõhja vaikimisi `sunshine_cosine`) ja seda saab reaalajas vahetada `pool-set-cap` — piirväärtuste profiile ja anduri kalibreeritud mõõtevahemikku on käsitletud käesoleva juhendi DAQ-peatükkides.
 
-```bash
-chloros-cli status
-```
-
-**Väljund:**
-
-```
-╔══════════════════════════════════════╗
-║     LICENSE & ACCOUNT INFORMATION    ║
-╚══════════════════════════════════════╝
-
-📧 Email: user@example.com
-📋 Plan: Chloros+ Professional
-🔓 API/CLI Access: Enabled
-✓ Status: Active
-```
-
-***
-
-### `export-status` – Ekspordi edenemise kontrollimine
-
-Jälgib Thread 4 ekspordi edenemist töötlemise ajal või pärast seda.
-
-**Süntaks:**
-
-```bash
-chloros-cli export-status
-```
-
-**Näide:**
-
-```bash
-chloros-cli export-status
-```
-
-**Kasutamisjuhtum:** Kutsuge seda käsku töötlemise käigus, et kontrollida ekspordi kulgu.***
-
-### `language` – Liidese keele haldamine
-
-Vaadake või muutke CLI liidese keelt.
-
-**Süntaks:**
-
-```bash
-# Show current language
-chloros-cli language
-
-# List all available languages
-chloros-cli language --list
-
-# Set a specific language
-chloros-cli language <language-code>
-```
-
-**Näited:**
-
-```bash
-# View current language
-chloros-cli language
-
-# List all 38 supported languages
-chloros-cli language --list
-
-# Change to Spanish
-chloros-cli language es
-
-# Change to Japanese
-chloros-cli language ja
-```
-
-#### Toetatud keeled (kokku 38)
-
-| Kood    | Keel              | Algne nimi      |
-| ------- | --------------------- | ---------------- |
-| `en`    | Inglise keel               | English          |
-| `es`    | Hispaania keel               | Español          |
-| `pt`    | Portugali keel            | Português        |
-| `fr`    | Prantsuse keel                | Français         |
-| `de`    | Saksa                | Deutsch          |
-| `it`    | Itaalia               | Italiano         |
-| `ja`    | Jaapani              | 日本語              |
-| `ko`    | Korea                | 한국어              |
-| `zh`    | Hiina (lihtsustatud)  | 简体中文             |
-| `zh-TW` | Hiina (traditsiooniline) | 繁體中文             |
-| `ru`    | Vene               | Русский          |
-| `nl`    | Hollandi keel                 | Nederlands       |
-| `ar`    | Araabia keel                | العربية          |
-| `pl`    | Poola keel                | Polski           |
-| `tr`    | Türgi keel               | Türkçe           |
-| `hi`    | Hindi                 | हिंदी            |
-| `id`    | Indoneesia keel            | Bahasa Indonesia |
-| `vi`    | Vietnami keel            | Tiếng Việt       |
-| `th`    | Tai keel                  | ไทย              |
-| `sv`    | Rootsi keel               | Svenska          |
-| `da`    | Taani keel                | Dansk            |
-| `no`    | Norra keel             | Norsk            |
-| `fi`    | Soome keel               | Suomi            |
-| `el`    | Kreeka keel                 | Ελληνικά         |
-| `cs`    | Tšehhi keel                 | Čeština          |
-| `hu`    | Ungari             | Magyar           |
-| `ro`    | Rumeenia              | Română           |
-| `uk`    | Ukraina             | Українська       |
-| `pt-BR` | Brasiilia portugali  | Português Brasileiro |
-| `zh-HK` | Kantoni keel             | 粵語             |
-| `ms`    | Malai keel                 | Bahasa Melayu    |
-| `sk`    | Slovaki keel                | Slovenčina       |
-| `bg`    | Bulgaaria keel             | Български        |
-| `hr`    | Horvaatia keel              | Hrvatski         |
-| `lt`    | Leedu keel            | Lietuvių         |
-| `lv`    | Läti keel               | Latviešu         |
-| `et`    | Eesti keel              | Eesti            |
-| `sl`    | Sloveeni keel             | Slovenščina      |
-
-{% hint style="success" %}
-**Automaatne püsivus**: Teie keele-eelistus salvestatakse faili `~/.chloros/cli_language.json` ja säilib kõigi sessioonide vältel.
+{% hint style="warning" %}
+**DAQ-E mitme võrgukaardiga hostis:** esimene `pool-connect --eth` automaatne avastamine pärast käivitamist võib ebaõnnestuda isegi töökorras anduri puhul. `--eth-host <ip-or-hostname>` on usaldusväärne variant – kasutage seda alati, kui avastamine ei anna tulemust.
 {% endhint %}
 
 ***
 
-### `set-project-folder` - Vaikimisi projektikausta määramine
+## LATTICE-kaamerad, PTP ja projekti automatiseerimine
 
-Muuda vaikimisi projektikausta asukohta (jagatud GUI-ga failis Windows).
-
-**Süntaks:**
+`lattice`-seeria (üle 45 alamkäsu) hõlmab LATTICE-kaamerate tööd algusest lõpuni: avastamine, üksikud pildistamised, püsivad sünkroniseeritud massiivid koos GUI nutika ettevalmistus- ja ühendamisvooga, reaalajas brauseri eelvaade, joondamine, indeksite arvutamine ja host-NIC-i diagnostika. Näide:
 
 ```bash
-chloros-cli set-project-folder <folder-path>
+chloros-cli lattice info                                          # discover cameras
+chloros-cli lattice capture -o output/                            # one frame, all export types
+chloros-cli lattice array-connect --serials SN1,SN2,SN3,SN4       # persistent synced array
+chloros-cli lattice array-capture --processing reflectance -o out/
 ```
 
-**Näited:**
+Lisaks sellele: `chloros-cli time-sync` annab aru PTP-grandmasterist, mida käitab Chloros-host (LATTICE-kaamerad ja DAQ-E-andurid töötavad selle alluvuses seadmetevaheliste ajamärkide jaoks), ning `chloros-cli project` avab salvestatud Chloros projekti ja juhib selle kaameraid, massiive ja andureid ilma kasutajaliideseta — sealhulgas skriptitud YAML-salvestusretsepte.
 
-```bash
-# Windows
-chloros-cli set-project-folder "C:\Projects\2025"
+Need kolm perekonda (`lattice`, `project`, `daq pool-*`) on ka ainsad, mis toetavad `CHLOROS_BACKEND_URL`-i **kaugjuhtimiseks**; põhikäsud on alati suunatud kohalikule masinale.
 
-# Linux
-chloros-cli set-project-folder ~/projects/2025
-```
+Täielikud juhendid on käesoleva käsiraamatu LATTICE-peatükkides; kõik lipud on toodud [CLI-viites](reference/cli-reference.md).
 
 ***
 
-### `get-project-folder` – Näita projektikausta
-
-Kuva praeguse vaikimisi projektikausta asukoht.
-
-**Süntaks:**
-
-```bash
-chloros-cli get-project-folder
-```
-
-**Näide:**
-
-```bash
-chloros-cli get-project-folder
-```
-
-**Väljund:**
-
-```
-
-# Windows
-ℹ Current project folder: C:\Projects\2025
-
-# Linux
-ℹ Current project folder: /home/user/.local/share/chloros/projects
-```
-
-***
-
-### `reset-project-folder` – Taasta vaikimisi
-
-Taasta projektikausta asukoht vaikimisi.
-
-**Süntaks:**
-
-```bash
-chloros-cli reset-project-folder
-```
-
-***
-
-### `selftest` – Süsteemi diagnostika käivitamine
-
-Käivita 7 diagnostilist kontrolli, et kontrollida süsteemi konfiguratsiooni.
-
-**Süntaks:**
-
-```bash
-chloros-cli selftest
-```
-
-**Teostatavad diagnostikad:**
-
-1. Versiooni kontroll
-2. Pordi kättesaadavus (5000)
-3. Backendi käivitamine
-4. API ühenduvuse test
-5. Süsteemiinfo ja GPU tuvastamine
-6. Müra vähendamise mudelite kontroll
-7. CUDA kättesaadavuse kontroll
-
-{% hint style="info" %}
-**Kasulik veaotsinguks**: Käivitage pärast installimist `selftest`, et kontrollida, kas teie süsteem on õigesti konfigureeritud, eriti Linux/Jetsonil, kus GPU ja CUDA seadistust võib olla vaja kontrollida.
-{% endhint %}
-
-***
-
-### `update` – Uuenduste otsimine (ainult Linux)
-
-Otsige ja installige CLI uuendused Linux süsteemidele.
-
-**Süntaks:**
-
-```bash
-# Check for updates without installing
-chloros-cli update --check
-
-# Check for and install updates
-chloros-cli update
-```
-
-| Valik    | Kirjeldus                        |
-| --------- | ---------------------------------- |
-| `--check` | Vaata ainult värskendusi, ära installeeri |
-
-{% hint style="info" %}
-See käsk on saadaval ainult Linux-süsteemides. Windows-süsteemides edastatakse värskendused paigaldaja kaudu.
-{% endhint %}
-
-***
-
-## Üldised valikud
-
-Need valikud kehtivad kõigi käskude puhul:
-
-| Valik            | Tüüp    | Vaikimisi       | Kirjeldus                                      |
-| ----------------- | ------- | ------------- | ------------------------------------------------ |
-| `--backend-exe`   | Tee    | Automaatselt tuvastatud | Tagapõhja käivitatava faili tee                       |
-| `--port`          | Täisarv | 5000          | Tagapõhja API pordi number                          |
-| `--restart`       | Lipuk | -             | Sundida tagapõhja taaskäivitamist (lõpetab olemasolevad protsessid) |
-| `--version`       | Lipuk | -             | Näita versiooniinfo ja välju                |
-| `--help`          | Lipuk | -             | Näita abiinfo ja välju                   |
-
-{% hint style="info" %}
-**Tagapõhja automaatne tuvastamine**: `--backend-exe` tee tuvastatakse automaatselt vastavalt platvormile:
-* **Windows**: `C:\Program Files\MAPIR\Chloros\resources\backend\chloros-backend.exe`
-* **Linux (.deb)**: `/usr/lib/chloros/chloros-backend`
-* **Linux (käsitsi)**: `/opt/mapir/chloros/backend/chloros-backend`
-{% endhint %}
-
-**Näide globaalsete valikutega:**
-
-**Windows:**
-
-```powershell
-chloros-cli --port 5001 process "C:\Datasets\Survey_001"
-```
-
-**Linux:**
-
-```bash
-chloros-cli --port 5001 process ~/datasets/survey_001
-```
-
-***
-
-## Töötlemise seadete juhend
-
-### Paralleelne töötlemine ja dünaamiline arvutusvõimsuse kohandamine
-
-Chloros 1.1.0 sisaldab [dünaamilist arvutusvõimsuse kohandamist](processing-architecture/dynamic-compute-adaptation.md) — töötlemismootor **tuvastab automaatselt teie riistvara** ja valib optimaalse strateegia:
-
-| Platvorm | Strateegia | Töötajad | Töötlemisahel | Märkused |
-| --- | --- | --- | --- | --- |
-| **Jetson Nano 8GB** | `GPU_SINGLE` | 1 | `tiled_gpu` | Mälu-efektiivne, serialiseeritud |
-| **Jetson Orin NX 16 GB** | `GPU_PARALLEL` | 3 | `fused_gpu` | Paralleelne GPU-töötlemine |
-| **Lauaarvuti 8 GB GPU-ga** | `GPU_SINGLE` | 3 | `tiled_gpu` | Hea lauaarvuti jõudlus |
-| **Töölauaarvuti 12 GB+ GPU-ga** | `GPU_PARALLEL` | 3–4 | `fused_gpu` | Optimaalne töölauaarvuti jõudlus |
-| **Ainult CPU-ga süsteem** | `CPU_PARALLEL` | tuumad – 1 | `cpu_fallback` | GPU-d ei ole vaja |
-
-{% hint style="success" %}
-**Käsitsi konfigureerimist ei ole vaja!** Chloros tuvastab automaatselt teie CPU, GPU, RAM-i ja (Jetsonil) temperatuuriandurid ning konfigureerib seejärel automaatselt optimaalse töötlemisprotsessi.
-{% endhint %}
-
-### Debayer-meetodid
-
-| Meetod | CLI Lipuk | Kvaliteet | Kiirus | Litsents |
-| --- | --- | --- | --- | --- |
-| **Standard (kiire, keskmine kvaliteet)** | `--debayer standard` | Hea | Kiire | Tasuta / Chloros+ |
-| **Tekstuuritundlik (aeglane, kõrgeim kvaliteet)** | `--debayer texture-aware` | Kõrgeim | Aeglane | Ainult Chloros+ |
-
-Vaikimisi kasutatav debayer-meetod on **Standard**.**Tekstuuritundlik** meetod kasutab AI/ML müra vähendamise mudelit, et saavutada kõrgeima kvaliteediga tulemus, kuid nõuab Chloros+ litsentsi ja NVIDIA GPU-d.
-
-```bash
-# Use Texture Aware debayer (Chloros+ only)
-chloros-cli process ~/datasets/field_a --debayer texture-aware
-```
-
-### Vignette-korrektsioon
-
-**Mida see teeb:** Korrigeerib valguse langust pildi servades (kaamerapiltidel tavaliselt esinevad tumedamad nurgad).
-
-* **Vaikimisi sisse lülitatud** – enamik kasutajaid peaks selle sisse jätma
-* Kasutage `--no-vignette` selle väljalülitamiseks
-
-{% hint style="success" %}
-**Soovitus**: Lülita vinjeti korrigeerimine alati sisse, et tagada ühtlane heledus kogu kaadri ulatuses.
-{% endhint %}
-
-### Peegelduskalibreerimine
-
-Muudab tooresensorite väärtused kalibreerimispaneelide abil standardiseeritud peegeldusprotsentideks.
-
-* **Vaikimisi sisse lülitatud** – oluline taimestiku analüüsiks
-* Nõuab piltidel kalibreerimispaneele
-* Kasutage `--no-reflectance`, et see välja lülitada
-
-{% hint style="info" %}
-**Nõuded**: Tagage, et kalibreerimispaneelid on piltidel õigesti valgustatud ja nähtavad, et tagada täpne peegeldusvõime teisendus.
-{% endhint %}
-
-### PPK-korrektsioonid
-
-**Mida see teeb:** Rakendab järelkäsitletud kinemaatilisi korrektsioone, kasutades DAQ-A-SD logiandmeid GPS-i täpsuse parandamiseks.
-
-* **Vaikimisi keelatud**
-* Kasutage `--ppk` selle lubamiseks
-* Nõuab .daq faile projektikausta MAPIR DAQ-A-SD valgusandurist.
-
-### Väljundformaadid
-
-<table><thead><tr><th width="197">Vorming</th><th width="130.20001220703125">Bitide sügavus</th><th width="116.5999755859375">Faili suurus</th><th>Sobib kõige paremini</th></tr></thead><tbody><tr><td><strong>TIFF (16-bitine)</strong> ⭐</td><td>16-bitine täisarv</td><td>Suur</td><td>GIS-analüüs, fotogramm-meetria (soovitatav)</td></tr><tr><td><strong>TIFF (32-bitine, protsent)</strong></td><td>32-bitine ujukomaarv</td><td>Väga suur</td><td>Teaduslik analüüs, uurimistöö</td></tr><tr><td><strong>PNG (8-bitine)</strong></td><td>8-bitine täisarv</td><td>Keskmine</td><td>Visuaalne kontroll, veebis jagamine</td></tr><tr><td><strong>JPG (8-bitine)</strong></td><td>8-bitine täisarv</td><td>Väike</td><td>Kiire eelvaade, pakitud väljund</td></tr></tbody></table>***
-
-## Automaatika ja skriptimine
-
-### PowerShelli kogumitöötlus (Windows)
-
-Töötle mitut andmekogumite kausta automaatselt Windows-is:
-
-```powershell
-# process_all_datasets.ps1
-
-$datasets = Get-ChildItem "C:\Datasets\2025" -Directory
-
-foreach ($dataset in $datasets) {
-    Write-Host "Processing $($dataset.Name)..." -ForegroundColor Cyan
-    
-    chloros-cli process $dataset.FullName `
-        --vignette `
-        --reflectance
-    
-    if ($LASTEXITCODE -eq 0) {
-        Write-Host "✓ $($dataset.Name) complete" -ForegroundColor Green
-    } else {
-        Write-Host "✗ $($dataset.Name) failed" -ForegroundColor Red
-    }
-}
-
-Write-Host "All datasets processed!" -ForegroundColor Green
-```
-
-### Windows partiiskript (Windows)
-
-Lihtne tsükkel partiitöötluseks Windows-is:
-
-```batch
-@echo off
-echo Starting batch processing...
-
-for /d %%i in (C:\Datasets\2025\*) do (
-    echo.
-    echo ========================================
-    echo Processing: %%i
-    echo ========================================
-    chloros-cli process "%%i"
-    
-    if %ERRORLEVEL% EQU 0 (
-        echo SUCCESS: %%i processed
-    ) else (
-        echo ERROR: %%i failed
-    )
-)
-
-echo.
-echo All datasets processed!
-pause
-```
-
-### Bash-patsi töötlemine (Linux)
-
-Töötle mitut andmekogumite kausta Linux-is:
-
-```bash
-#!/bin/bash
-# process_all_datasets.sh
-
-for dataset in ~/datasets/2026/*/; do
-    name=$(basename "$dataset")
-    echo "Processing $name..."
-
-    chloros-cli process "$dataset" \
-        --vignette \
-        --reflectance
-
-    if [ $? -eq 0 ]; then
-        echo "✓ $name complete"
-    else
-        echo "✗ $name failed"
-    fi
-done
-
-echo "All datasets processed!"
-```
-
-### Python automatiseerimisskript (platvormiülene)
-
-Täiustatud automatiseerimine veatöötlusega (töötab Windows ja Linux-is):
-
-```python
-import subprocess
-import os
-import sys
-from pathlib import Path
-from datetime import datetime
-
-def process_dataset(input_folder):
-    """Process a folder using Chloros CLI"""
-    cmd = ['chloros-cli', 'process', str(input_folder)]
-    
-    # Execute command
-    result = subprocess.run(
-        cmd, 
-        capture_output=True, 
-        text=True,
-        encoding='utf-8'
-    )
-    
-    return result.returncode == 0, result.stdout, result.stderr
-
-def main():
-    """Process all datasets in a directory"""
-    # Adjust path for your platform
-    # Windows: Path('C:/Datasets/2025')
-    # Linux:   Path.home() / 'datasets' / '2025'
-    datasets_dir = Path('C:/Datasets/2025')
-    log_file = Path('processing_log.txt')
-    
-    successful = []
-    failed = []
-    
-    # Start processing
-    print(f"Starting batch processing: {datetime.now()}")
-    print(f"Scanning: {datasets_dir}")
-    print("=" * 60)
-    
-    for dataset_folder in sorted(datasets_dir.iterdir()):
-        if not dataset_folder.is_dir():
-            continue
-        
-        print(f"\nProcessing: {dataset_folder.name}")
-        
-        success, stdout, stderr = process_dataset(dataset_folder)
-        
-        if success:
-            print(f"✓ {dataset_folder.name} - SUCCESS")
-            successful.append(dataset_folder.name)
-        else:
-            print(f"✗ {dataset_folder.name} - FAILED")
-            failed.append(dataset_folder.name)
-            
-            # Log error details
-            with open(log_file, 'a', encoding='utf-8') as f:
-                f.write(f"\n=== {dataset_folder.name} - {datetime.now()} ===\n")
-                f.write(f"STDOUT:\n{stdout}\n")
-                f.write(f"STDERR:\n{stderr}\n")
-    
-    # Print summary
-    print("\n" + "=" * 60)
-    print(f"SUMMARY - Completed: {datetime.now()}")
-    print(f"  Successful: {len(successful)}")
-    print(f"  Failed: {len(failed)}")
-    
-    if failed:
-        print(f"\nFailed folders:")
-        for folder in failed:
-            print(f"  - {folder}")
-        print(f"\nCheck {log_file} for error details")
-        sys.exit(1)
-    else:
-        print("\nAll datasets processed successfully!")
-        sys.exit(0)
-
-if __name__ == '__main__':
-    main()
-```
-
-***
-
-## Töötlemise töövoog
-
-### Standardne töövoog
-
-1. **Sisend**: Kaust, mis sisaldab RAW/JPG pildipaare
-2. **Avastamine**: CLI otsib automaatselt toetatud pildifaile
-3. **Töötlemine**: Paralleelrežiim skaleerub vastavalt teie CPU tuumadele (Chloros+)
-4. **Väljund**: Loob kaameramudeli alamkaustad töödeldud piltidega
-
-### Näide väljundstruktuurist
-
-```
-
-MyProject/
-├── project.json                             # Project metadata
-├── 2025_0203_193056_008.JPG                # Original JPG
-├── 2025_0203_193055_007.RAW                # Original RAW
-└── Survey3N_RGN/                           # Processed outputs ✓
-    ├── 2025_0203_193056_008_Reflectance.tif   # Calibrated reflectance
-    ├── 2025_0203_193056_008_Target.tif        # Target detection
-    └── ...
-```
-
-### Töötlemise aja hinnangud
-
-Tüüpilised töötlemisajad 100 pildi puhul (igaüks 12 MP):
-
-| Platvorm | Režiim | Hinnanguline aeg | Märkused |
-| --- | --- | --- | --- |
-| **Töölauaarvuti 12 GB+ GPU** | `GPU_PARALLEL` | 5–10 min | Kiireim valik |
-| **Töölauaarvuti 8 GB GPU** | `GPU_SINGLE` | 10–15 min | Hea jõudlus |
-| **Jetson Orin NX 16 GB** | `GPU_PARALLEL` | 15–25 min | Äärtearvutus |
-| **Jetson Nano 8 GB** | `GPU_SINGLE` | 30–60 min | Piiratud mälu |
-| **Ainult CPU** | `CPU_PARALLEL` | 20–40 min | GPU-d ei ole vaja |
-
-{% hint style="info" %}
-**Jõudluse näpunäide**: Töötlemisaeg sõltub piltide arvust, resolutsioonist, debayeri meetodist ja riistvarast. Tekstuuritundlik debayer võtab märkimisväärselt rohkem aega kui standardne. Vaata täpsemaid andmeid [Dynamic Compute Adaptation](processing-architecture/dynamic-compute-adaptation.md) alt.
-{% endhint %}
-
-***
-
-## Veaotsing
-
-### CLI ei leitud
-
-**Windows viga:**
-
-```
-'chloros-cli' is not recognized as an internal or external command
-```
-
-**Windows Lahendused:**
-
-1. Kontrollige installimiskohta:
-
-```powershell
-dir "C:\Program Files\Chloros\resources\cli\chloros-cli.exe"
-```
-
-2. Kasutage täielikku teekonda, kui see ei ole PATH-is:
-
-```powershell
-"C:\Program Files\Chloros\resources\cli\chloros-cli.exe" process "C:\Datasets\Field_A"
-```
-
-3. Lisage PATH-i käsitsi:
-   * Avage Süsteemi omadused → Keskkonnamuutujad
-   * Muutke PATH-muutujat
-   * Lisage: `C:\Program Files\Chloros\resources\cli`
-   * Käivitage terminal uuesti
-
-**Linux Viga:**
-
-```
-chloros-cli: command not found
-```
-
-**Linux Lahendused:**
-
-1. Kontrolli installi:
-
-```bash
-which chloros-cli
-dpkg -L chloros-amd64  # or chloros-arm64-jp6
-```
-
-2. Laadi oma shell uuesti:
-
-```bash
-source ~/.bashrc
-```
-
-3. Kontrolli õigusi:
-
-```bash
-sudo chmod +x /usr/bin/chloros-cli
-```
-
-***
-
-### Backend ei õnnestunud käivitada**Viga:**
-
-```
-
-Backend failed to start within 30 seconds
-```
-
-**Lahendused:**
-
-1. Kontrollige, kas backend juba töötab (sulgege see esmalt)
-2. Kontrollige, et tulemüür ei blokeeri (Windows) või kontrollige pordi kättesaadavust (Linux: `lsof -i :5000`)
-3. Proovige teist porti:
-
-```bash
-# Windows
-chloros-cli --port 5001 process "C:\Datasets\Field_A"
-
-# Linux
-chloros-cli --port 5001 process ~/datasets/field_a
-```
-
-4. Sundige backendit taaskäivitama:
-
-```bash
-# Windows
-chloros-cli --restart process "C:\Datasets\Field_A"
-
-# Linux
-chloros-cli --restart process ~/datasets/field_a
-```
-
-5. Kontrollige Linux puhul, kas backend-i käivitatav fail on olemas:
-
-```bash
-ls -la /usr/lib/chloros/chloros-backend
-```
-
-***
-
-### Litsentsi- ja autentimise probleemid**Viga:**
-
-```
-
-Chloros+ license required for CLI access
-```
-
-**Lahendused:**
-
-1. Veenduge, et teil on aktiivne Chloros+ tellimus
-2. Logige sisse oma kasutajatunnuse ja parooliga:
-
-```bash
-chloros-cli login user@example.com 'password'
-```
-
-3. Kontrollige litsentsi staatust:
-
-```bash
-chloros-cli status
-```
-
-4. Võtke ühendust tugiteenistusega: info@mapir.camera
-
-***
-
-### Pilte ei leitud**Viga:**
-
-```
-
-No images found in the specified folder
-```
-
-**Lahendused:**
-
-1. Veenduge, et kaust sisaldab toetatud formaate (.RAW, .TIF, .JPG)
-2. Kontrollige, kas kausta tee on õige (kasutage jutumärke, kui tees on tühikuid)
-3. Veenduge, et teil on kaustale lugemisõigused
-4. Kontrollige, kas faililaiendid on õiged
-
-***
-
-### Töötlemine seisab või hangub**Lahendused:**
-
-1. Kontrollige vaba kettaruumi (veenduge, et väljundiks on piisavalt ruumi)
-2. Sulgege teised rakendused, et vabastada mälu
-3. Vähendage piltide arvu (töötlege partiidena)
-
-***
-
-### Port on juba kasutusel**Viga:**
-
-```
-
-Port 5000 is already in use
-```
-
-**Lahendused:**
-
-**Windows:**
-
-```powershell
-chloros-cli --port 5001 process "C:\Datasets\Field_A"
-```
-
-**Linux:**
-
-```bash
-# Find what's using port 5000
-lsof -i :5000
-
-# Use a different port
-chloros-cli --port 5001 process ~/datasets/field_a
-```
-
-***
-
-## KKK
-
-### K: Kas ma vajan CLI jaoks litsentsi?
-
-**V:**Jah! CLI nõuab tasulist**Chloros+ litsentsi**.
-
-* ❌ Standard (tasuta) pakett: CLI on keelatud
-* ✅ Chloros+ (tasuline) pakett: CLI on täielikult lubatud
-
-Telli aadressil: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
-
-***
-
-### K: Kas ma saan kasutada CLI-i serveris, millel puudub graafiline kasutajaliides?**V:** Jah! CLI töötab täielikult ilma graafilise kasutajaliideseta. See on Linux peamine kasutusjuhtum.**Windows server:**
-* Windows Server 2016 või uuem
-* Visual C++ Redistributable on installitud
-
-**Linux Server:**
-* Ubuntu 20.04+ / Debian 11+ (amd64) või JetPack 6 (arm64)
-* Paigaldamine `.deb` paketi kaudu
-
-**Mõlemad platvormid:**
-* Minimaalselt 8 GB RAM-i (soovitatavalt 16 GB)
-* Ühekordne litsentsi aktiveerimine: `chloros-cli login user@example.com 'password'`
-
-***
-
-### K: Kuhu salvestatakse töödeldud pildid?**V:**Vaikimisi salvestatakse töödeldud pildid**samasse kausta kui sisend** kaameramudeli alamkaustadesse (nt `Survey3N_RGN/`).
-
-Kasutage valikut `-o`, et määrata teine väljundkaust:
-
-```bash
-# Windows
-chloros-cli process "C:\Input" -o "D:\Output"
-
-# Linux
-chloros-cli process ~/input -o ~/output
-```
-
-***
-
-### K: Kas ma saan töödelda mitut kausta korraga?**V:** Ühe käsuga otseselt mitte, kuid skriptide abil saate kaustu järjestikku töödelda. Vaadake jaotist [Automatiseerimine ja skriptimine](CLI.md#automation--scripting).***
-
-### K: Kuidas salvestada CLI väljund logifaili?**PowerShell:**
-
-```powershell
-chloros-cli process "C:\Datasets\Field_A" | Tee-Object -FilePath "processing.log"
-```
-
-**Batch:**
-
-```batch
-chloros-cli process "C:\Datasets\Field_A" > processing.log 2>&1
-```
-
-**Linux Bash:**
-
-```bash
-chloros-cli process ~/datasets/field_a 2>&1 | tee processing.log
-```
-
-***
-
-### K: Mis juhtub, kui vajutan töötlemise ajal klahvikombinatsiooni Ctrl+C?**V:** CLI teeb järgmist:
-
-1. Peatab töötlemise sujuvalt
-2. Sulgeb taustaprogrammi
-3. Lõpetab töö koodiga 130
-
-Osaliselt töödeldud pildid võivad jääda väljundkausta.
-
-***
-
-### K: Kas ma saan CLI töötlemist automatiseerida?**V:** Kindlasti! CLI on loodud automatiseerimiseks. Vaata [Automatiseerimine ja skriptimine](CLI.md#automation--scripting) PowerShelli (Windows), Batchi (Windows), Bash (Linux) ja Python (platvormiülene) näiteid.***
-
-### K: Kuidas kontrollida CLI versiooni?**V:**
-
-```bash
-chloros-cli --version
-```
-
-**Väljund:**
-
-```
-
-Chloros CLI 1.1.0
-```
+## Veahaldus: 5 kõige levinumat probleemi
+
+| Sümptom | Lahendus |
+| --- | --- |
+| `Login required` või ajastatud ülesanne jääb kinni `Email:`-käsureal | Käivita `chloros-cli login EMAIL 'PASSWORD'` üks kord sellel arvutil — käsud, millel puudub vahemällu salvestatud seanss, töötavad interaktiivselt, mitte ei ebaõnnestu kohe. |
+| `backend unreachable` | Käivita töölaua rakendus Chloros või käivita tagapõhja binaarfail otse (`chloros-backend`). Kui suunate `lattice`/`project`/`daq pool-*` kaugele tagapõhja, kontrollige `CHLOROS_BACKEND_URL`. |
+| Array-ühendus blokeeritud: `FRAMES WILL DROP` / `Reduce ROI to enable` | Hosti võrgukaardi vastuvõturõngas on taastatud vaikimisi seadistustele — see on peamine põhjus, miks varem töötanud seadmestik keeldub ühendusest, tavaliselt pärast võrgukaardi draiveri uuendamist. Käivita `chloros-cli lattice network --fix` **õigustega** terminalist (või määra `ReceiveBufferLen=256`, `PendingReceives=64`); vaata viite jaotist *Host NIC Setup &amp; Tuning*. |
+| `daq` alamkäsk lõpetab töö: „nõuab täielikku daq-paketti…“ | Oodatav tarnitud versioonides — kompileeritud CLI sisaldab ainult `daq pool-*`-perekonda, mis hõlmab ühendamist, voogedastust, salvestamist ja kap-valikut. Kasutage `pool-*`-i (või `chloros_sdk.connect_daq_sensor()`-i versioonist Python). |
+| Jetson kuvab enne suurte kaustade töötlemist vahetushoiatuse | Lisa failipõhine vahetus — CLI kuvab täpsed käivitamiseks vajalikud `fallocate`/`swapon`-käskud. |
 
 ***
 
 ## Abi saamine
 
-### Käsurea abi
-
-Vaadake abiinfo otse CLI-is:
-
 ```bash
-# General help
-chloros-cli --help
-
-# Command-specific help
-chloros-cli process --help
-chloros-cli login --help
-chloros-cli language --help
+chloros-cli --help              # top-level help
+chloros-cli process --help      # per-command help
+chloros-cli lattice --help
+chloros-cli daq --help          # lists the pool-* subcommands
 ```
 
-### Tugikanalid
-
-* **E-post**: info@mapir.camera
-* **Veebisait**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
-* **Hinnad**: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)***
-
-## Täielikud näited
-
-### Näide 1: Põhitöötlus
-
-Töötlus vaikimisi seadetega (vignett, peegeldus):
-
-**Windows:**
-
-```powershell
-chloros-cli process "C:\Datasets\Field_A_2025_01_15"
-```
-
-**Linux:**
-
-```bash
-chloros-cli process ~/datasets/field_a_2025_01_15
-```
-
-***
-
-### Näide 2: Kvaliteetne teaduslik väljund
-
-32-bitine ujukomaarv TIFF:
-
-**Windows:**
-
-```powershell
-chloros-cli process "C:\Datasets\Field_A" ^
-  --format "TIFF (32-bit, Percent)" ^
-  --vignette ^
-  --reflectance
-```
-
-**Linux:**
-
-```bash
-chloros-cli process ~/datasets/field_a \
-  --format "TIFF (32-bit, Percent)" \
-  --vignette \
-  --reflectance
-```
-
-***
-
-### Näide 3: Kiire eelvaate töötlemine
-
-8-bitine PNG ilma kalibreerimiseta kiireks ülevaatamiseks:
-
-**Windows:**
-
-```powershell
-chloros-cli process "C:\Datasets\Field_A" ^
-  --format "PNG (8-bit)" ^
-  --no-vignette ^
-  --no-reflectance
-```
-
-**Linux:**
-
-```bash
-chloros-cli process ~/datasets/field_a \
-  --format "PNG (8-bit)" \
-  --no-vignette \
-  --no-reflectance
-```
-
-***
-
-### Näide 4: PPK-korrigeeritud töötlemine
-
-Rakenda PPK-korrektsioone peegeldusega:
-
-**Windows:**
-
-```powershell
-chloros-cli process "C:\Datasets\Field_A" ^
-  --ppk ^
-  --reflectance
-```
-
-**Linux:**
-
-```bash
-chloros-cli process ~/datasets/field_a \
-  --ppk \
-  --reflectance
-```
-
-***
-
-### Näide 5: Kohandatud väljundkoht
-
-Töötle teise asukohta kindlas formaadis:
-
-**Windows:**
-
-```powershell
-chloros-cli process "C:\Input\Raw_Images" ^
-  -o "D:\Output\Processed" ^
-  --format "TIFF (16-bit)"
-```
-
-**Linux:**
-
-```bash
-chloros-cli process ~/input/raw_images \
-  -o ~/output/processed \
-  --format "TIFF (16-bit)"
-```
-
-***
-
-### Näide 6: Autentimise töövoog
-
-Täielik autentimise voog (sama kõikidel platvormidel):
-
-```bash
-# Step 1: Login
-chloros-cli login user@example.com 'MyP@ssw0rd'
-
-# Step 2: Verify status
-chloros-cli status
-
-# Step 3: Process images
-# Windows: chloros-cli process "C:\Datasets\Field_A"
-# Linux:   chloros-cli process ~/datasets/field_a
-chloros-cli process ~/datasets/field_a
-
-# Step 4: Logout (optional, when switching accounts)
-chloros-cli logout
-```
-
-***
-
-### Näide 7: Mitmekeelne kasutamine
-
-Muuda liidese keelt (sama kõikidel platvormidel):
-
-```bash
-# List available languages
-chloros-cli language --list
-
-# Change to Spanish
-chloros-cli language es
-
-# Process with Spanish interface
-# Windows: chloros-cli process "C:\Vuelos\Campo_A"
-# Linux:   chloros-cli process ~/vuelos/campo_a
-chloros-cli process ~/vuelos/campo_a
-
-# Change back to English
-chloros-cli language en
-```
+* **Iga lipuk, iga alamkäsk:** [CLI viide](reference/cli-reference.md)
+* **Python ekvivalent:** [Python SDK](api-python-sdk.md) ja [SDK viide](reference/sdk-reference.md)
+* **Tugi:** info@mapir.camera · [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
