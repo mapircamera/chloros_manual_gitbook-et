@@ -1,31 +1,31 @@
 # LATTICE-kaamerad
 
-LATTICE on MAPIRi modulaarne multispektraalne kaamerasüsteem põllumajanduslikuks ja teaduslikuks pildistamiseks. Iga LATTICE-kaamera põhineb Sony IMX265 globaal-katikuga sensoril (**3,1 MP, 3,45 µm pikslid**) ja ühendub Etherneti kaudu**GigE Vision**-seadmena.
+LATTICE on MAPIRi modulaarne multispektraalne kaamerasüsteem põllumajanduslikuks ja teaduslikuks pildistamiseks. Iga LATTICE-kaamera põhineb Sony IMX265 globaalse katikuga sensoril (**3,1 MP, 3,45 µm pikslid**) ja ühendub Etherneti kaudu**GigE Vision**-seadmena.
 
-Chloros 1.2.0 juhib LATTICE-kaameraid reaalajas – avastamine, reaalajas eelvaade, pildistamine ja sünkroniseeritud mitme kaamera massiivid – kolmest keskkonnast:
+Chloros 1.3.0 juhib LATTICE-kaameraid reaalajas – avastamine, reaalajas eelvaade, pildistamine ja sünkroniseeritud mitme kaamera massiivid – kolmest kasutajaliidesest:
 
-| Keskkond    | Kus                                                          | Platvormid                                                |
+| Kasutajaliides    | Kus                                                          | Platvormid                                                |
 | ---------- | -------------------------------------------------------------- | -------------------------------------------------------- |
-| Graafiline kasutajaliides        | Chloros külgribal olev vahekaart **Kaamerad**                         | Windows 10/11 x64                                        |
-| CLI        | `chloros-cli lattice` käskude perekond                           | Windows 10/11 x64, Linux x86_64, Linux aarch64 (Jetson) |
-| Python SDK | `chloros_sdk.connect_camera()` / `chloros_sdk.connect_array()` | Windows 10/11 x64, Linux x86\_64, Linux aarch64 (Jetson) |
+| Graafiline kasutajaliides        | **Kaamerad**-vahekaart Chlorosi külgribal                         | Windows 10/11 x64                                        |
+| CLI        | `chloros-cli lattice`-käskude perekond                           | Windows 10/11 x64, Linux x86\_64, Linux aarch64 (Jetson) |
+| Pythoni SDK | `chloros_sdk.connect_camera()` / `chloros_sdk.connect_array()` | Windows 10/11 x64, Linux x86\_64, Linux aarch64 (Jetson) |
 
-> **Otsite riistvara?**Kaameramoodulid, objektiivid, filtrid ja lainepikkused, raamid ja kinnitused, kaablid, PoE ja päästemehhanismi juhtmestik on dokumenteeritud [**LATTICE&#x27;i kasutusjuhendis**](https://mapir.gitbook.io/lattice-camera). Käesolevas peatükis käsitletakse kaamerate juhtimist Chloros-i abil.
+> **Otsite riistvara?**Kaameramoodulid, objektiivid, filtrid ja lainepikkused, raamid ja kinnitused, kaablid, PoE ja päästemehhanismide juhtmestik on dokumenteeritud [**LATTICE&#x27;i kasutusjuhendis**](https://mapir.gitbook.io/lattice-camera). Käesolevas peatükis käsitletakse kaamerate juhtimist Chloros&#x27;i kaudu.
 
-LATTICE salvestised on standardseid `.tif`/`.tiff`-failid ning Chloros töötleb neid alati alates tooresalvestisest. Vaata [CLI-viidet](../reference/cli-reference.md) ja [SDK-viidet](../reference/sdk-reference.md), et tutvuda täielike käskude ja API-pinnaga.
+LATTICE salvestused on standardse formaadiga `.tif`/`.tiff` failid ning Chloros töötleb neid alati algandmetest alates. Täieliku käskude ja API-liideste loetelu leiate [CLI-viitest](../reference/cli-reference.md) ja [SDK-viitest](../reference/sdk-reference.md).
 
 ## Kaks andurikonfiguratsiooni
 
 | Konfiguratsioon | Andur       | Filter                                | Mida üks kaamera edastab                                          |
 | ------------- | ------------ | ------------------------------------- | ----------------------------------------------------------------- |
-| **M3C**| Bayeri värvisüsteem | kolmekordne ribapääsufilter                |**Kolm kalibreeritud laineala ühe ekspositsiooni tulemusena**                 |
-| **M3M**| Monokroomne   | üks kitsasribaline interferentsfilter |**Üks kalibreeritud laineala**; indeksite saamiseks kombineerige mitu M3M-kaamerat |
+| **M3C**| Bayeri värv | kolmekordne ribapääsufilter                |**Kolm kalibreeritud laineala ühe ekspositsiooni kohta**                 |
+| **M3M**| Monokroomne   | üks kitsasribaline interferentsfilter |**Üks kalibreeritud sagedusala**; indeksite saamiseks kombineerige mitut M3M-kaamerat |
 
-Kuna M3M-kaamera on ühe filtri taga monokroomne, saab iga sagedusala oma ekspositsiooni. M3C-kaamera katab kõik kolm sagedusala ühe anduri ekspositsiooniga.
+Kuna M3M-kaamera on ühe filtri taga monokroomne, saab iga sagedusala oma eraldi ekspositsiooni. M3C-kaamera katab kõik kolm oma sagedusala ühe anduri ekspositsiooniga.
 
 ## Mudelistringid ja nimetamine
 
-Iga kaamera salvestab oma identiteedi GenICam-is `DeviceUserID` kujul mudelistringina:
+Iga kaamera salvestab oma identiteedi GenICam-is `DeviceUserID` mudelistringina:
 
 ```
 <sensor>-<lens>-F<filter>       e.g.  M3C-L41-FRGN,  M3M-L87-F450
@@ -39,22 +39,26 @@ Chloros kuvab seda eesliitega `LATT-` (näiteks `LATT-M3M-L87-F450`). Sama strin
 | Objektiiv | `L41` / `L87`                                            | Number tähistab **horisontaalset vaatevälja kraadides**: L41 = kitsas (41°), L87 = lai (87°)    |
 | Filter    | `FRGB` / `FRGN` / `FOCN` / `FNGB` (M3C) või `F<nm>` (M3M) | Vaata [Filtrid ja spektraalribad](https://mapir.gitbook.io/lattice-camera/hardware/filters-and-bands) |
 
-Mudelistring juhib kõiki järgnevaid protsesse: Chloros määrab kindlaks anduri profiili, ribade paigutuse ja tehase kalibreeringu väärtused, lähtudes `DeviceUserID` + `DeviceSerialNumber` väärtustest. Kaamera kohta pole midagi konfigureerida — vaata [Kaamerate ühendamine](connecting.md).
+Mudelistring juhib kõiki järgnevaid protsesse: Chloros määrab kindlaks anduri profiili, ribade paigutuse ja tehase kalibreeringu väärtused kombinatsioonist `DeviceUserID` + `DeviceSerialNumber`. Iga kaamera jaoks pole vaja midagi eraldi seadistada — vaata [Kaamerate ühendamine](connecting.md).
 
 ## Filtrid ja spektriribad
 
-Spektriribade keskpunktid, FWHM servad ja kogu 23-SKU M3M kataloog on toote spetsifikatsioonid, seega asuvad need riistvara kasutusjuhendis: [**Filtrid ja spektriribad**](https://mapir.gitbook.io/lattice-camera/hardware/filters-and-bands).
+Spektriribade keskpunktid, FWHM-servad ja kogu 23 SKU-ga M3M-kataloog on toote spetsifikatsioonid, seega asuvad need riistvara kasutusjuhendis: [**Filtrid ja spektriribad**](https://mapir.gitbook.io/lattice-camera/hardware/filters-and-bands).
 
-Tarkvara poolelt on oluline see, et mudeli stringis olev filtri kood määrab, milliseid tooteid Chloros suudab luua. RGB-filtriga kaamerad (`FRGB`) väljastavad ainult debayered- ja eelvaate tooteid — lairibaandilise anduri puhul ei ole ribapõhine kiirgus ja peegeldusvõime olulised, seega Chloros jätab need vahele ja märgib seda. Iga muu filter annab täieliku kiirguse → peegeldusvõime → indeksi ahela.
+Tarkvara poolelt on oluline järgmine: mudeli stringis olev filtri kood määrab, milliseid tooteid Chloros suudab luua. RGB-filtriga kaamerad (`FRGB`) väljastavad ainult debayereeritud ja eelvaate tooteid — lairibaandilise anduri puhul ei ole sagedusriba-põhine kiirgus ja peegeldusvõime olulised, seega Chloros jätab need vahele ja teavitab sellest. Iga muu filter annab täieliku kiirgus → peegeldusvõime → indeks ahela.
 
 ## Radiomeetriline kalibreerimine lühidalt
 
-Iga LATTICE-kaamera kalibreeritakse tehases individuaalselt NIST-i jälgitava ahela alusel ning kaameraga kaasas on iga kaamera kohta eraldi sertifikaat. Mida see hõlmab, kuidas seda mõõdetakse ja millist täpsust võib nimetada, on kirjas riistvara kasutusjuhendis: [**Tehase radiomeetriline kalibreerimine**](https://mapir.gitbook.io/lattice-camera/calibration/factory-radiometric-calibration).
+Iga LATTICE-kaamera kalibreeritakse tehases individuaalselt NIST-i jälgitava ahela alusel ning tarnitakse koos iga kaamera sertifikaadiga. Mida see hõlmab, kuidas seda mõõdetakse ja millist täpsust saate esitada, on kirjas riistvara kasutusjuhendis: [**Tehase radiomeetriline kalibreerimine**](https://mapir.gitbook.io/lattice-camera/calibration/factory-radiometric-calibration).
 
-Tarkvara poolelt on oluline, et Chloros määrab kaamera ühendamisel õige kalibreeringu ja fikseerib rakendatud koefitsiendid igasse eksporti — vt [Kaamerate ühendamine](connecting.md).
+Tarkvara poolelt on oluline, et Chloros määraks kaamera ühendamisel õige kalibreeringu ja fikseeriks rakendatud koefitsiendid igasse ekspordisse — vt [Kaamerate ühendamine](connecting.md).
 
 ## Selles peatükis
 
-* [Kaamerate ühendamine](connecting.md) — automaatne tuvastamine, graafilise kasutajaliidese ühendusdialoog, CLI/SDK ekvivalendid ning kuidas kaamera ühendamisel määratakse tehase kalibreerimine (kaamera sisemine pakett vs. pilv).
+* [Kaamerate ühendamine](connecting.md) – automaatne tuvastamine, graafilise kasutajaliidese ühendusdialoog, CLI- ja SDK-vasted ning kuidas kaamera ühendamisel määratakse tehase kalibreerimine (kaamerasisene pakett vs. pilv).
+* [Kaamera seaded](camera-settings.md) — kõik „Kaamerad” vahekaardi juhtelemendid: kaamerate nimekiri, kaamerapõhised seaded ja massiivi seaded (sh huvipiirkonna (ROI) redaktor ja joondamine).
+* [Salvestusseaded ja -režiimid](capture.md) — „Salvesta kõik”, üksik-, pidev- ja intervall-salvestus, eksporditüübid ning salvestuste kausta struktuur.
+* [Mitme kaamera massiivid](arrays.md) — massiivi ühendamise viisard, sünkroniseerimiskaabli sond, ribalaius, PTP ja massiivi reaalaja vaade.
+* [Mono-kaamerad ja taimestiku indeksid](mono-indices.md) — M3M-kaamerad ning joondamine → kihistamine → indeksimine.
 
-Muud LATTICE-teemad — kaamera seaded ja reaalajas juhtimine, salvestusrežiimid, mitme kaameraga süsteemid ning mono (M3M) töötlemine ja indeksid — on käsitletud käesoleva juhendi eraldi jaotistes ning täielik käskude loend asub [CLI viites](../reference/cli-reference.md) ja [SDK viite](../reference/sdk-reference.md).
+Täielik käskude loetelu on esitatud [CLI-viites](../reference/cli-reference.md) ja [SDK-viites](../reference/sdk-reference.md).
