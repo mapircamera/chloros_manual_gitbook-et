@@ -1,7 +1,6 @@
 # Töötlemise lõpetamine
 
-Kui Chloros
-on töötlemise lõpetanud, on aeg tulemusi üle vaadata, väljundi kvaliteeti kontrollida ja töödeldud pilte töövoos kasutamiseks ette valmistada. Käesolev lehekülg juhendab teid viimaste sammude ja järgmiste tegevuste läbiviimisel.
+Kui Chloros on töötlemise lõpetanud, on aeg tulemusi üle vaadata, väljundi kvaliteeti kontrollida ja töödeldud pilte töövoos kasutamiseks ette valmistada. Käesolev lehekülg juhendab teid viimaste sammude ja järgmiste tegevuste läbiviimisel.
 
 ## Töötlemise lõpetamise märgid
 
@@ -13,10 +12,7 @@ Kui töötlemine on edukalt lõppenud, näete mitmeid märgid:
 * ✅ **Väljundfailid**: kõik töödeldud pildid on salvestatud projekti väljundkataloogi (allpool)
 
 {% hint style="warning" %}
-**Töötlusvoor, mille käigus pilte ei salvestata, loetakse ebaõnnestunuks.** Kui taotlesite pilditooteid ja töötlusvoog ei salvestanud ühtegi, märgib Chloros
-seda ebaõnnestumisena — logi nimes sisalduv viide `[RUN-SUMMARY]` osutab tõenäolisele põhjusele (midagi ei imporditud, sihtmärki ei tuvastatud või kõik taotletud tooted jäeti kõrvale kui mittekohaldatavad). Vastav CLI
--käsk lõpetab töötamise nullist erineva tulemusega. Tahtlikult ainult metandmetele suunatud käivitus (kõik eksporditooted välja lülitatud, indeksid puuduvad) loetakse siiski edukaks. Vaata [CLI
--viidet](../reference/cli-reference.md#a-run-that-writes-no-images-fails).
+**Töötlusvoor, mille käigus pilte ei salvestata, loetakse ebaõnnestunuks.** Kui taotlesite pilditooteid ja töötlusvoog ei salvestanud ühtegi, märgib Chloros seda ebaõnnestumisena — logi nimes sisalduv viide `[RUN-SUMMARY]` osutab tõenäolisele põhjusele (midagi ei imporditud, sihtmärki ei tuvastatud või kõik taotletud tooted jäeti kõrvale kui mittekohaldatavad). Vastav CLI-käsk lõpetab töötamise nullist erineva tulemusega. Tahtlikult ainult metandmetele suunatud käivitus (kõik eksporditooted välja lülitatud, indeksid puuduvad) loetakse siiski edukaks. Vaata [CLI-viidet](../reference/cli-reference.md#a-run-that-writes-no-images-fails).
 {% endhint %}
 
 ***
@@ -48,10 +44,8 @@ Tooted salvestatakse **projekti kausta alla, rühmitatuna kaamera ja seejärel f
         └── Radiance_Images/             # float32 radiance always lands here
 ```
 
-* **Kaamera kaust**: `LATT-<sensor>-<lens>-F<filter>` kaamera LATTICE jaoks (vastab pildi EXIF-andmetele `Model`), `<model>_<filter>` kaamera Survey3
-puhul (nt `Survey3N_RGN`). Kaks kaamerat, millel on ühine sensor ja filter, kuid erinev objektiiv, hoitakse eraldi puudes — vinjet, vaateväli ja moonutus erinevad.
-* **Formaatikausta**: järgib teie ekspordiformaadi seadet — `tiff16`, `tiff8`, `png8`, `jpg8`, või `tiff32` TIFF
--i puhul (32-bitine, protsent). Kiirgus on alati float32 ja asub alati kaustas `tiff32`.
+* **Kaamera kaust**: `LATT-<sensor>-<lens>-F<filter>` kaamera LATTICE jaoks (vastab pildi EXIF-andmetele `Model`), `<model>_<filter>` kaamera Survey3 puhul (nt `Survey3N_RGN`). Kaks kaamerat, millel on ühine sensor ja filter, kuid erinev objektiiv, hoitakse eraldi puudes — vinjet, vaateväli ja moonutus erinevad.
+* **Formaatikausta**: järgib teie ekspordiformaadi seadet — `tiff16`, `tiff8`, `png8`, `jpg8`, või `tiff32` TIFF-i puhul (32-bitine, protsent). Kiirgus on alati float32 ja asub alati kaustas `tiff32`.
 * **Tootekaustad**:
   * `Reflectance_Calibrated_Images/` — kalibreeritud peegeldusvõime
   * `Debayered_Images/` — lineaarselt debayereeritud (LATTICE): tumedusnihe eemaldatud ja demosaicitud, ilma tasandusvälja või segunemise eemaldamiseta, anduri algses orientatsioonis
@@ -70,8 +64,7 @@ puhul (nt `Survey3N_RGN`). Kaks kaamerat, millel on ühine sensor ja filter, kui
 
 ### Kui palju faile peaks olema?
 
-Ärge arvutage valemi järgi — väljundite arv sõltub sellest, millised tooted olid aktiveeritud ja millised kehtivad iga kaamera puhul (nt RGB
--kaamerad ei saa kiirgust/peegeldust). Õige arv on kirjas logis: viimane rida `[RUN-SUMMARY]` näitab täpselt, kui palju faile kirjutati, ja selgitavad read kirjeldavad kõike, mis vahele jäi.
+Ärge arvutage valemi järgi — väljundite arv sõltub sellest, millised tooted olid aktiveeritud ja millised kehtivad iga kaamera puhul (nt RGB-kaamerad ei saa kiirgust/peegeldust). Õige arv on kirjas logis: viimane rida `[RUN-SUMMARY]` näitab täpselt, kui palju faile kirjutati, ja selgitavad read kirjeldavad kõike, mis vahele jäi.
 
 ***
 
@@ -79,32 +72,24 @@ puhul (nt `Survey3N_RGN`). Kaks kaamerat, millel on ühine sensor ja filter, kui
 
 ### Kiire eelvaade failiotsijas
 
-**Sisseehitatud eelvaade Windows
-is:**
+**Sisseehitatud eelvaade Windowsis:**
 
 1. Navigeerige tootekausta (nt `tiff16/Reflectance_Calibrated_Images/`)
 2. Valige pildifail
-3. Eelvaade ilmub Windows
-i Explorer&#x27;i eelvaatepaneelis
+3. Eelvaade ilmub Windows i Explorer'i eelvaatepaneelis
 4. Kasutage nooleklahve piltide sirvimiseks
 
 ### Eelvaade välistes pildivaatajates
 
 **Soovitatavad vaatajad:*** **QGIS** – tasuta GIS-tarkvara (parim georefereeritud multispektraalanalüüsiks)
-* **IrfanView** – kiire ja kerge pildivaataja (toetab TIFF
--vormingut)
-* **Adobe Photoshop** – professionaalne pilditöötlus (TIFF
--tugi)
+* **IrfanView** – kiire ja kerge pildivaataja (toetab TIFF-vormingut)
+* **Adobe Photoshop** – professionaalne pilditöötlus (TIFF-tugi)
 * **GIMP** – tasuta alternatiiv Photoshopile
-* **Windows
-Photos** – põhiline vaatamine (võib-olla ei toeta 16-bitist TIFF
--vormingut)
+* **Windows Photos** – põhiline vaatamine (võib-olla ei toeta 16-bitist TIFF-vormingut)
 
-### Eelvaade Chloros
-i pildivaatajas
+### Eelvaade Chloros i pildivaatajas
 
-Kasutage Chloros
-i sisseehitatud pildivaatajat täiustatud visualiseerimiseks:
+Kasutage Chloros i sisseehitatud pildivaatajat täiustatud visualiseerimiseks:
 
 1. Klõpsake failibrauseris pildi pisipildile
 2. Pilt avaneb peamises eelvaatealas
@@ -123,9 +108,7 @@ Peegeldusvõime salvestatakse täisarvuna DN ning **DN, mis tähendab ρ = 1,0, 
 | Allikas          | ρ = 1,0 on | Kuidas kindlaks teha                                        |
 | --------------- | ---------- | -------------------------------------------------- |
 | LATTICE (M3C/M3M) | **32768** (varu kuni ρ 2,0) | Failile on lisatud XMP-märge `Chloros:PixelScale=32768` |
-| Survey3
-         | **65535** (piiratud väärtusega ρ 1,0)     | `Chloros:PixelScale`-märget ei ole — selle puudumine ongi märk (Survey3
-i tooted kannavad küll teisi `Chloros:*`-töötlemismärke) |
+| Survey3          | **65535** (piiratud väärtusega ρ 1,0)     | `Chloros:PixelScale`-märget ei ole — selle puudumine ongi märk (Survey3 i tooted kannavad küll teisi `Chloros:*`-töötlemismärke) |
 
 **Loe `Chloros:PixelScale`-märget ja jaga sellega**, selle asemel et eeldada ühtset väärtust 65535 — LATTICE-peegeldusvõime jagamine 65535-ga vähendab vaikimisi iga väärtust poole võrra. Enne versiooni 1.3.0 loodud 8-bitisena salvestatud peegeldusfail on kärbitud, mitte ümberskaalatud, ja sellel puudub skaalamärge: ekspordige see uuesti 16-bitisena või 32-bitisena, selle asemel et seda jagada. Täieliku ülevaate leiate jaotisest [Väljundpildi formaadid](../output-image-formats.md).***
 
@@ -153,11 +136,9 @@ rikub LATTICE väljundit) ning `ExifImageWidth` / `ExifImageHeight` jäetakse v�
 kuna need kirjeldavad algset salvestust – muidu nõuaks suurust muudetud eksport
 mõõtmeid, mis on vastuolus selle enda rasteriga.
 
-Chloros
-kirjutab ka oma `Chloros:*` XMP-märgised, mis kirjeldavad, mida iga tootega tehti
+Chloros kirjutab ka oma `Chloros:*` XMP-märgised, mis kirjeldavad, mida iga tootega tehti
 (näiteks `Chloros:ProcessingLevel`, `Chloros:CalibrationApplied`,
-`Chloros:VignetteCorrected`). Alates versioonist 1.3.0 sisaldavad Survey3
-tooted neid igas töötlemisrežiimis
+`Chloros:VignetteCorrected`). Alates versioonist 1.3.0 sisaldavad Survey3 tooted neid igas töötlemisrežiimis
 režiimis; indeksitooted kirjeldavad indeksit ennast (`Chloros:ProcessingLevel=index`,
 valemit ja seda, kas see arvutati peegeldusvõime või kiirguse põhjal), selle asemel et korrata
 allika toorandmete sildid, ning ka kaustades, mille nimi on pikem kui 260 tähemärki, säilitatakse metaandmed
@@ -174,23 +155,19 @@ samuti. Vaata [Väljundpildi formaadid](../output-image-formats.md#index-product
 2. Sirvige sõnumeid
 3. Otsige kollaseid hoiatusi või punaseid vigu
 4. Lugege ridu `[RUN-SUMMARY]` ja kõiki vihjeid
-5. Abisaamiseks võtke ühendust MAPIR
-i tugiteenistusega
+5. Abisaamiseks võtke ühendust MAPIR i tugiteenistusega
 
 ### Logi salvestamine
 
-Töötlemise dokumenteerimiseks või MAPIR
-i tugiteenistusele saatmiseks:
+Töötlemise dokumenteerimiseks või MAPIR i tugiteenistusele saatmiseks:
 
 1. Klõpsa nuppu **„Kopeeri”**või**„Laadi alla”**
 
 2. Salvesta tekstifailina projekti kausta
 3. Lisa projekti dokumentatsiooni
-4. Saada MAPIR
-i tugiteenistusele, kui tekivad probleemid
+4. Saada MAPIR i tugiteenistusele, kui tekivad probleemid
 
-Probleemi otse MAPIR
-ile saatmiseks kasuta veakuvandit (**Teata veast**) vahekaardi „Debug Log“ ülaosas — vaata [Veast teatamine vahekaardilt „Log“](monitoring-the-processing.md#reporting-a-bug-from-the-log-tab).***
+Probleemi otse MAPIRile saatmiseks kasuta veakuvandit (**Teata veast**) vahekaardi „Debug Log“ ülaosas — vaata [Veast teatamine vahekaardilt „Log“](monitoring-the-processing.md#reporting-a-bug-from-the-log-tab).***
 
 ## Tüüpilised väljundiga seotud probleemid ja lahendused
 
@@ -198,8 +175,7 @@ ile saatmiseks kasuta veakuvandit (**Teata veast**) vahekaardi „Debug Log“ �
 
 **Võimalikud põhjused:**
 
-* Toode ei sobi selle kaameraga (nt kiirgus/peegeldusvõime RGB
--kaamerate puhul — seda näitab logi)
+* Toode ei sobi selle kaameraga (nt kiirgus/peegeldusvõime RGB-kaamerate puhul — seda näitab logi)
 * Puudus vajalik viide (nt peegeldusvõime ilma sihtmärgi ja `.daq` allapoole suunatud kiirguseta)
 * Toote ekspordi valikukast oli projekti seadetes keelatud
 * Ekspordi ajal sai kettaruum otsa
@@ -216,16 +192,14 @@ ile saatmiseks kasuta veakuvandit (**Teata veast**) vahekaardi „Debug Log“ �
 **Võimalikud põhjused:**
 
 * Vignettimise korrigeerimine on välja lülitatud
-* Kaamera/objektiiv puudub Chloros
-i profiilide andmebaasist
+* Kaamera/objektiiv puudub Chloros i profiilide andmebaasist
 * Äärmuslik vignettimine, mida ei ole võimalik korrigeerida
 
 **Lahendused:**
 
 1. Veenduge, et projektiseadetes on vignettimise korrigeerimine sisse lülitatud
 2. Kontrollige, kas kaameramudel on õigesti tuvastatud
-3. Kui vignettimine püsib, võtke ühendust MAPIR
-i tugiteenistusega
+3. Kui vignettimine püsib, võtke ühendust MAPIR i tugiteenistusega
 
 ### Probleem: valed värvid või väärtused
 
@@ -243,11 +217,9 @@ i tugiteenistusega
 3. Kontrollige sihtmärgi pildi kvaliteeti
 4. Töötlege uuesti, märgistades õiged sihtmärgid
 
-### Probleem: NDVI
--väärtused tunduvad valed
+### Probleem: NDVI-väärtused tunduvad valed
 
-**Oodatavad NDVI
--vahemikud:*** **Vesi, kivid, muld**: -0,1 kuni 0,2
+**Oodatavad NDVI-vahemikud:*** **Vesi, kivid, muld**: -0,1 kuni 0,2
 * **Hõre/ebaterve taimestik**: 0,2 kuni 0,4
 * **Mõõdukas taimestik**: 0,4 kuni 0,6
 * **Terve, tihe taimestik**: 0,6 kuni 0,9**Kui väärtused jäävad väljapoole neid vahemikke:**
@@ -274,8 +246,7 @@ i tugiteenistusega
    * WebODM
 2. **Säilita EXIF-metadata**: veendu, et geotagimiseks säiliksid GPS-andmed
 3. **Kalibreeritud töövood**: kasuta teadusliku täpsuse tagamiseks peegelduspilte — LATTICE peegelduspildid sisaldavad XMP-kalibreerimismärke, mida Pix4D loeb
-4. **Töötle indeksmosaiike**: loo NDVI
--ortomosaiike üksikutest indeksipiltidest
+4. **Töötle indeksmosaiike**: loo NDVI-ortomosaiike üksikutest indeksipiltidest
 5. **Ekspordi georefereeritud GeoTIFF**: kasutamiseks GIS-rakendustes
 
 ### GIS-analüüsi jaoks
@@ -284,11 +255,8 @@ i tugiteenistusega
 
 1.**Laadi QGIS-i, ArcGIS-i või sarnasse programmi**
 
-2.**Kasutage 16-bitiseid TIFF
-** peegelduspilte mitme lainepikkuse analüüsiks (jagage faili `Chloros:PixelScale`-iga)
-3. **Kasutage indeksipilte** (NDVI
-, NDRE
-) valmis taimestikukihtidena
+2.**Kasutage 16-bitiseid TIFF** peegelduspilte mitme lainepikkuse analüüsiks (jagage faili `Chloros:PixelScale`-iga)
+3. **Kasutage indeksipilte** (NDVI, NDRE) valmis taimestikukihtidena
 4. **Rasterarvuti**: kombineeri laineid kohandatud analüüsi jaoks
 5. **Eksport**: loo klassifitseerimiskaardid, muutuste tuvastamine, taimestiku tervisekaardid
 
@@ -297,8 +265,7 @@ i tugiteenistusega
 **Soovitatav töövoog:**
 
 1.**Kasuta indeksipilte LUT-värvidega** visuaalsete aruannete jaoks
-2. **Statistika väljavõtmine**: keskmine NDVI
-väli/katseala kohta
+2. **Statistika väljavõtmine**: keskmine NDVI väli/katseala kohta
 3. **Aegrida**: indeksite võrdlemine mitme seansi vahel
 4. **Aruannete koostamine**: lisage kaardid, statistika ja visualiseeringud***
 
@@ -335,27 +302,17 @@ Mitme seansi/andmekogumi puhul:**Võimalus 1: graafiline kasutajaliides (GUI) �
 * Kasuta ühtseid malli seadeid
 * Töötle ükshaaval
 
-**Võimalus 2: Chloros
-CLI
-(ainult Chloros
-+)**
+**Võimalus 2: Chloros CLI (ainult Chloros+)**
 
 * Automatiseeri hulgitöötlus
 * Töötle mitut kausta skriptide abil
-* Vaata [CLI
-dokumentatsiooni](../CLI.md) ja [CLI
-viiteid](../reference/cli-reference.md)
+* Vaata [CLI dokumentatsiooni](../CLI.md) ja [CLI viiteid](../reference/cli-reference.md)
 
-**Võimalus 3: Python
-SDK
-(ainult Chloros
-+)**
+**Võimalus 3: Python SDK (ainult Chloros+)**
 
 * Programmeeritud juhtimine
 * Integreerimine analüüsipipeliinidega
-* Vaata [API
--dokumentatsiooni](../api-python-sdk.md) ja [SDK
--viiteid](../reference/sdk-reference.md)
+* Vaata [API-dokumentatsiooni](../api-python-sdk.md) ja [SDK-viiteid](../reference/sdk-reference.md)
 
 ***
 
@@ -366,8 +323,7 @@ SDK
 Kui tulemused ei ole rahuldavad:
 
 1. Säilita originaalpildid (ära kunagi kustuta)
-2. Ava sama projekt Chloros
-es 3. Muuda seadeid projekti seadete paneelis
+2. Ava sama projekt Chloros es 3. Muuda seadeid projekti seadete paneelis
 4. Töötle uuesti — väljundid salvestatakse samadesse tootekausta, seega asendatakse eelmise töötlemiskorra samanimelised failid
 
 ### Piltide alarühma töötlemine
@@ -386,15 +342,13 @@ Kui tekib probleeme:
 * 📧 **E-post**: info@mapir.camera (lisage vealogi)
 * 🌐 **Tugi**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
 * 📚 **KKK**: [Korduma kippuvad küsimused](../faq.md)
-* 📖 **Dokumentatsioon**: [Chloros
-i kasutusjuhend](../)
+* 📖 **Dokumentatsioon**: [Chloros i kasutusjuhend](../)
 
 ***
 
 ## Kokkuvõte: täielik töövoog
 
-Olete nüüd läbinud kogu Chloros
-i töötlemise töövoo:
+Olete nüüd läbinud kogu Chloros i töötlemise töövoo:
 
 1. ✅ **Projekt loodud** – vaadake [Projekte](../projects.md)
 2. ✅ **Lisasid faile** – vaata [Failide lisamine](adding-files-to-a-project.md)
@@ -416,13 +370,9 @@ i töötlemise töövoo:
 
 ### Automatiseerimine ja integreerimine
 
-* [**Käsurea (CLI
-) dokumentatsioon**](../CLI.md) – käsurea kaudu toimuv paketttöötlus
-* [**Python
-SDK
-**](../api-python-sdk.md) – programmeeritud automatiseerimine
-* [**„Chloros
-+“ funktsioonid**](../#chloros) – Täiustatud töötlemisvõimalused
+* [**Käsurea (CLI) dokumentatsioon**](../CLI.md) – käsurea kaudu toimuv paketttöötlus
+* [**Python SDK**](../api-python-sdk.md) – programmeeritud automatiseerimine
+* [**„Chloros+“ funktsioonid**](../#chloros) – Täiustatud töötlemisvõimalused
 
 ### Tugi ja õppimine
 

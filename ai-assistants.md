@@ -21,9 +21,9 @@ Juhendisisesed lingid: [CLI-viide](reference/cli-reference.md) · [SDK-viide](re
 Need kaks viitelehte on iseseisvad: assistent, kes on ühe neist läbi lugenud, ei vaja käsiraamatu ülejäänud osa, et kirjutada korrektne skript.
 {% endhint %}
 
-## Laske oma assistendil käivitadChloros&#x27;i otse: `chloros-mcp`
+## Laske oma assistendil käivitadChloros'i otse: `chloros-mcp`
 
-Kõik eespool nimetatu eeldab, et teie assistent *kirjutab* skripti või käsu. `chloros-mcp` abil juhib [Model Context Protocol](https://modelcontextprotocol.io) (MCP) keelt kõnelev assistent, näiteks Claude Desktop, Claude Code või Cursor, Chloros&#x27;i ise. Te esitate küsimuse lihtsas keeles ja assistent kutsub välja serveri tööriistad:
+Kõik eespool nimetatu eeldab, et teie assistent *kirjutab* skripti või käsu. `chloros-mcp` abil juhib [Model Context Protocol](https://modelcontextprotocol.io) (MCP) keelt kõnelev assistent, näiteks Claude Desktop, Claude Code või Cursor, Chloros'i ise. Te esitate küsimuse lihtsas keeles ja assistent kutsub välja serveri tööriistad:
 
 * **Piltide töötlemine:** looge projekt, importige pildikaadrite kaust, valige seaded, töötlege ja esitage aruanne selle kohta, mida käivitamine eksportis.
 * **Riistvara käitamine:** ühendab LATTICE-kaamerad, maatriksid ja DAQ-valgusandurid, näitab eelvaadet, seadistab säri ja värvi, teeb pildistusi, salvestab ja uuendab püsivara.
@@ -37,13 +37,13 @@ You:  Show me what the array sees, then capture reflectance every 10 seconds
 
 Serveri tööriistad hõlmavad seda, mida teeb [Pythoni SDK](api-python-sdk.md). Need paigaldatakse koos SDK-ga, seega pole tavaliselt vaja midagi muud paigaldada: Windowsis paigutab Chlorosi paigaldaja `chloros-mcp.exe` teie Pythoni `Scripts` kausta, Linuxi puhul paigutab `.deb` faili `chloros-mcp` kausta `/usr/bin`.
 
-**Claude&#x27;i kood:**
+**Claude'i kood:**
 
 ```bash
 claude mcp add chloros -- chloros-mcp
 ```
 
-**Claude Desktop:**lisage see faili `claude_desktop_config.json` (**Seaded &gt; Arendaja &gt; Konfiguratsiooni redigeerimine**avab selle), seejärel taaskäivitage Claude Desktop.**Kursor** võtab sama kande failist `~/.cursor/mcp.json`.
+**Claude Desktop:**lisage see faili `claude_desktop_config.json` (**Seaded > Arendaja > Konfiguratsiooni redigeerimine**avab selle), seejärel taaskäivitage Claude Desktop.**Kursor** võtab sama kande failist `~/.cursor/mcp.json`.
 
 ```json
 {

@@ -63,7 +63,7 @@ Chloros töötab sõltuvalt teie litsentsist kahes erinevas töötlemisrežiimis
 2. **Töötlemine** – kalibreerimise rakendamine ja piltide eksportimine**Töötlemisaeg:**
 
 * Palju aeglasem kui Chloros+ paralleelrežiim
-* Sobib väikestele ja keskmise suurusega andmekogumitele (&lt; 200 pilti)
+* Sobib väikestele ja keskmise suurusega andmekogumitele (< 200 pilti)
 
 ### Chloros+ režiim (paralleelne töötlemine)
 
@@ -160,7 +160,7 @@ Käivitamisel töötab kogu protsess automaatselt:
 
 * Suhteliselt madal CPU koormus (üheprotsessiline)
 * Arvuti reageerib endiselt teistele ülesannetele
-* Chloros&#x27;i võib ohutult minimeerida ja töötada teistes rakendustes
+* Chloros'i võib ohutult minimeerida ja töötada teistes rakendustes
 
 **Chloros+ paralleelrežiim:**
 
@@ -306,7 +306,7 @@ Täieliku semantikaga tutvumiseks vaadake [CLI-viidet](../reference/cli-referenc
 **Lahendused:**
 
 1. Hoidke projekte lühemas kaustas — muutke**töökataloogi** [Projekti seaded](../project-settings/project-settings.md) all ja looge projekt uuesti, või
-2. Lülita sisse Windowsi pikad teed ja käivita Chloros uuesti: käivita Chlorosi installija uuesti, valides valiku **Enable Windows long paths** (see on vaikimisi märgitud), või kasuta grupipoliitikat: *Arvuti konfiguratsioon &gt; Haldusmallid &gt; Süsteem &gt; Failisüsteem &gt; Enable Win32 long paths*.
+2. Lülita sisse Windowsi pikad teed ja käivita Chloros uuesti: käivita Chlorosi installija uuesti, valides valiku **Enable Windows long paths** (see on vaikimisi märgitud), või kasuta grupipoliitikat: *Arvuti konfiguratsioon > Haldusmallid > Süsteem > Failisüsteem > Enable Win32 long paths*.
 
 ### Hoiatus „Sihtmärke ei leitud”
 

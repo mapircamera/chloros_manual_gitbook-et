@@ -1,17 +1,14 @@
 # Dünaamiline arvutusvõimsuse kohandamine
 
-Chloros
-1.3.0 kasutab riistvara tuvastamist ja töötlemisstrateegia automaatset valikut. Töötlemismootor kohandub teie riistvaraga – alates Jetson Orin Nanost kuni mitme GPU-ga tööjaamani – ilma igasuguse käsitsi konfigureerimiseta.
+Chloros 1.3.0 kasutab riistvara tuvastamist ja töötlemisstrateegia automaatset valikut. Töötlemismootor kohandub teie riistvaraga – alates Jetson Orin Nanost kuni mitme GPU-ga tööjaamani – ilma igasuguse käsitsi konfigureerimiseta.
 
 ***
 
 ## Kuidas see toimib
 
-Kui Chloros
-käivitub, koostab ta teie süsteemi profiili:
+Kui Chloros käivitub, koostab ta teie süsteemi profiili:
 
-1. **Tuvastab operatsioonisüsteemi** – Windows
-või Linux
+1. **Tuvastab operatsioonisüsteemi** – Windows või Linux
 2. **Määrab kindlaks CPU tuumad ja RAM-mälu kogumahu**
 
 3.**Tuvastab GPU olemasolu** – NVIDIA CUDA toetuse, VRAM-i, mudeli
@@ -24,19 +21,16 @@ Tuvastatud profiil salvestatakse seansi jaoks vahemällu ja kettale, et hilisema
 
 | Platvorm | Vahemällu salvestatud profiil |
 | --- | --- |
-| **Linux
-/ Jetson** | `~/.config/chloros/system_config.json` (võtab arvesse `XDG_CONFIG_HOME`) |
+| **Linux / Jetson** | `~/.config/chloros/system_config.json` (võtab arvesse `XDG_CONFIG_HOME`) |
 | **Windows** | `%LOCALAPPDATA%\Chloros\config\system_config.json` |
 
-Kustutage see fail, et sundida süsteemi profiili uuesti tuvastama – see on kasulik pärast GPU või täiendava RAM-i lisamist. Chloros
-tuvastab profiili automaatselt uuesti ka juhul, kui vahemälu on kirjutatud ühilduvuse puudumisega vanema versiooni poolt.
+Kustutage see fail, et sundida süsteemi profiili uuesti tuvastama – see on kasulik pärast GPU või täiendava RAM-i lisamist. Chloros tuvastab profiili automaatselt uuesti ka juhul, kui vahemälu on kirjutatud ühilduvuse puudumisega vanema versiooni poolt.
 
 ***
 
 ## Arvutusstrateegiad
 
-Chloros
-valib teie riistvara põhjal ühe kolmest arvutusstrateegiast:
+Chloros valib teie riistvara põhjal ühe kolmest arvutusstrateegiast:
 
 | Strateegia | Valitakse, kui | Töötajad | Täitja | Töötlemisahel |
 | --- | --- | --- | --- | --- |
@@ -50,11 +44,7 @@ valib teie riistvara põhjal ühe kolmest arvutusstrateegiast:
 **GPU-strateegiad vajavad PyTorchi, mis suudab kasutada CUDA-d.** Seade, mille PyTorchil puudub kasutatav CUDA-seade, saab `CPU_PARALLEL`, olenemata selle GPU-st. Jetsoni 1.3.0 pakett kasutab JetPack 6 CUDA-versiooni PyTorchist, seega vastab Jetson nõuetele, kui JetPacki CUDA- ja cuDNN-teegid on paigaldatud. Alla 12 GB RAM-iga Jetson töötleb alati ühte pilti korraga, protsessi käigus (logitakse kui `GPU_SINGLE`).
 {% endhint %}
 
-GPU-strateegiad käitavad tööprotsesside kogumit, millest igaüks on eraldi operatsioonisüsteemi protsess oma CUDA-kontekstiga, mille Chloros
-käivitab, käivitades uuesti oma installitud tagapõhiprogrammi (mitte Python
-&#x27;i `multiprocessing` kaudu, mille tööprotsesside käivitamine ei tööta pakendatud rakenduse sees). CPU-strateegia kasutab niidipooli (Python
-i `ThreadPoolExecutor`). Chloros
-ei kasuta ühtegi kolmanda osapoole hajutatud raamistikku (nagu Ray).
+GPU-strateegiad käitavad tööprotsesside kogumit, millest igaüks on eraldi operatsioonisüsteemi protsess oma CUDA-kontekstiga, mille Chloros käivitab, käivitades uuesti oma installitud tagapõhiprogrammi (mitte Python'i `multiprocessing` kaudu, mille tööprotsesside käivitamine ei tööta pakendatud rakenduse sees). CPU-strateegia kasutab niidipooli (Python i `ThreadPoolExecutor`). Chloros ei kasuta ühtegi kolmanda osapoole hajutatud raamistikku (nagu Ray).
 
 ### Töötlemisliinide tüübid
 
@@ -75,8 +65,7 @@ Määrake keskkonnamuutuja `CHLOROS_STRATEGY`, et sundida kasutama kindlat strat
 CHLOROS_STRATEGY=CPU_PARALLEL chloros-cli process ~/datasets/flight001
 ```
 
-Muutuja sobitamine toimub suurtähti arvestamata; kõike, mis ei kuulu kolme nimetatud nime hulka, ignoreeritakse ja automaatne tuvastamine jätkub tavapäraselt. Ülekirjutamise korral valib Chloros
-töötajate arvu ikkagi teie eest:
+Muutuja sobitamine toimub suurtähti arvestamata; kõike, mis ei kuulu kolme nimetatud nime hulka, ignoreeritakse ja automaatne tuvastamine jätkub tavapäraselt. Ülekirjutamise korral valib Chloros töötajate arvu ikkagi teie eest:
 
 | Ülekirjutamine | Kasutatud töötajate arv |
 | --- | --- |
@@ -124,8 +113,7 @@ Eraldiseisvad GPU-d reserveerivad süsteemile vaid 0,5 GB, kuna nad ei jaga süs
 
 ## Dünaamiline GPU-mälu eraldamine
 
-Chloros
-kasutab [4-niitlist töötlemispipeliini](processing-pipeline.md):
+Chloros kasutab [4-niitlist töötlemispipeliini](processing-pipeline.md):
 
 * **Niit 1** (avastamine) — pildi laadimine, EXIF-andmete analüüs, sihtmärgi avastamine
 * **Niit 2** (kalibreerimine) — peegelduskalibreerimise arvutamine
@@ -152,26 +140,23 @@ Tegelikult kasutatakse käitamisel **väiksemat** väärtust platvormiprofiili e
 
 ## Tekstuuriteadlik töötlemine
 
-Tekstuuriteadlik debayer (**ainult Chloros
-+** — `--debayer texture-aware`) käitab AI/ML-müra eemaldamise mudelit, mis vajab ühe koopia kohta ligikaudu 1,75 GB VRAM-i FP16-režiimis, seega kasutab see palju rohkem GPU-mälu kui standardmeetod:
+Tekstuuriteadlik debayer (**ainult Chloros+** — `--debayer texture-aware`) käitab AI/ML-müra eemaldamise mudelit, mis vajab ühe koopia kohta ligikaudu 1,75 GB VRAM-i FP16-režiimis, seega kasutab see palju rohkem GPU-mälu kui standardmeetod:
 
 * Süsteemid, millel on **alla 7 GB VRAM-i**, töötlevad tekstuuriteadlikku töötlemist**sünkroonses tsüklis, üks pilt korraga** — mitu mudeli koopiat ei mahu sinna ja töötajate rühm tekitaks vaid konkurentsi
-* Süsteemid, millel on **7 GB või rohkem VRAM-i**, suudavad Texture Aware&#x27;i töödelda paralleelselt, kuigi töötajate arv on Standard-meetodiga võrreldes väiksem
+* Süsteemid, millel on **7 GB või rohkem VRAM-i**, suudavad Texture Aware'i töödelda paralleelselt, kuigi töötajate arv on Standard-meetodiga võrreldes väiksem
 * **Jetsonil** on Texture Aware alati seotud ühe töötajaga
 * Kui **kasutatavat CUDA-GPU-d pole**, kasutab käivitus Standard-debayerit ja tagapõhi logib ühe rea `[DEBAYER] … needs a CUDA GPU …`, milles selgitatakse põhjust
-* Madala võimsusega Jetsonitel (Nano, Orin Nano) rakendab CLI
-GPU sageduse piirangut, kui taotled Texture Aware&#x27;i kasutamist — vaata [NVIDIA Jetsoni juhendit](../linux/nvidia-jetson-guide.md#gpu-frequency-cap-for-texture-aware-on-nano-and-orin-nano)
+* Madala võimsusega Jetsonitel (Nano, Orin Nano) rakendab CLI GPU sageduse piirangut, kui taotled Texture Aware'i kasutamist — vaata [NVIDIA Jetsoni juhendit](../linux/nvidia-jetson-guide.md#gpu-frequency-cap-for-texture-aware-on-nano-and-orin-nano)
 
 ***
 
 ## Soojusjuhtimine (Jetson)
 
-Jetson-seadmetel on soojuspiirangud, eriti suletud ruumides või õhus kasutamisel. Chloros
-jälgib Jetsoni sisseehitatud temperatuuriandureid ja skaleerib partiide suurust automaatselt:
+Jetson-seadmetel on soojuspiirangud, eriti suletud ruumides või õhus kasutamisel. Chloros jälgib Jetsoni sisseehitatud temperatuuriandureid ja skaleerib partiide suurust automaatselt:
 
 | Temperatuur | Reaktsioon |
 | --- | --- |
-| **&lt; 70 °C** | Normaalne töö — täiskiirus |
+| **< 70 °C** | Normaalne töö — täiskiirus |
 | **70 °C** (hoiatus) | Partii suurus väheneb järk-järgult (100% → 50% vahemikus 70 °C kuni 80 °C) |
 | **80 °C** (kriitiline) | Agressiivne võimsuse piiramine (50% → 0% vahemikus 80 °C kuni 90 °C) |
 | **90 °C** (seiskamine) | GPU töötlemine peatatakse täielikult |
@@ -182,11 +167,9 @@ Piisava jahutusega lauaarvutites käivitub soojuspiirang harva.
 
 ## Mälu koormuse haldamine
 
- Chloros
-jälgib töötlemise ajal pidevalt GPU mälu ja reageerib kolmel tasandil.
+ Chloros jälgib töötlemise ajal pidevalt GPU mälu ja reageerib kolmel tasandil.
 
-**Partii suuruse määramine.** Partii algab 8 pildist, mis on korrutatud ülaltoodud tabelites esitatud platvormi kordajaga. Seejärel kontrollib Chloros
-vaba VRAM-i, reserveerib sellest 20% PyTorchi enda halduskoormuseks ja eeldab umbes 100 MB GPU mälu iga 12 MP pildi kohta – partii suurus on väiksem neist kahest: mälust tulenev piirang või platvormi baasväärtus. See ei lange kunagi alla 1.
+**Partii suuruse määramine.** Partii algab 8 pildist, mis on korrutatud ülaltoodud tabelites esitatud platvormi kordajaga. Seejärel kontrollib Chloros vaba VRAM-i, reserveerib sellest 20% PyTorchi enda halduskoormuseks ja eeldab umbes 100 MB GPU mälu iga 12 MP pildi kohta – partii suurus on väiksem neist kahest: mälust tulenev piirang või platvormi baasväärtus. See ei lange kunagi alla 1.
 
 **Ennetav vähendamine.**Kui**VRAM-i kasutamine ületab 85%**, vähendatakse partiide suurust enne, kui midagi ebaõnnestub.**Eraldise kärpimine iga niidi kohta.** Reaalajas kasutuse suurenemisel vähendatakse iga niidi GPU-eelarvet: ×0,75 üle 80% kasutuse juures, ×0,5 üle 90% juures. Seirevahemikud on 70% (konservatiivne), 85% (normaalne töötamispiir) ja 95% (OOM-risk).**OOM-tagasitõmbumine ja taastumine.** Kui mälu ammendumise sündmus ikkagi toimub:
 
@@ -194,8 +177,7 @@ vaba VRAM-i, reserveerib sellest 20% PyTorchi enda halduskoormuseks ja eeldab um
 * aktiivsete niitide eraldised vähendatakse 70%ni nende praegusest väärtusest ning eraldaja lülitub üle konservatiivsele strateegiale, leevendades piiranguid taas pärast edukate eraldiste seeriat
 * tugeva koormuse korral lülitub töötlemisahel tagasi `fused_gpu`-ilt `tiled_gpu`-ile ning viimase abinõuna `cpu_fallback`-ile
 
-**Host-RAM (Jetson).** Enne töötlemist hindab CLI
-i pildi arvu ja debayer-režiimi põhjal hosti mälu tippmahtu ning hoiatab, kui RAM-mälu ja failipõhine vahetusmälu tõenäoliselt ei piisa, kuvades täpsed käsud vahetusmälu lisamiseks — vt [NVIDIA Jetsoni juhendit](../linux/nvidia-jetson-guide.md#swap-warning-and-recommendations).
+**Host-RAM (Jetson).** Enne töötlemist hindab CLI i pildi arvu ja debayer-režiimi põhjal hosti mälu tippmahtu ning hoiatab, kui RAM-mälu ja failipõhine vahetusmälu tõenäoliselt ei piisa, kuvades täpsed käsud vahetusmälu lisamiseks — vt [NVIDIA Jetsoni juhendit](../linux/nvidia-jetson-guide.md#swap-warning-and-recommendations).
 
 ***
 
@@ -215,35 +197,27 @@ Selle 7 kontrolli hõlmavad versiooni, pordi kättesaadavust, tagapõhja käivit
       GPU: NVIDIA RTX A4000, CUDA: True, PyTorch: 2.7.0
 ```
 
-7. kontroll väljastab `CUDA: <bool>, Denoiser: <bool>` — mõlemad peavad olema tõesed, et Texture Aware&#x27;i saaks üldse kasutada.
+7. kontroll väljastab `CUDA: <bool>, Denoiser: <bool>` — mõlemad peavad olema tõesed, et Texture Aware'i saaks üldse kasutada.
 
 ### Tagapõhja logid
 
-Strateegia ja töötajate arv valitakse backendis iga käivituse alguses — neid ei teavita ükski CLI
--bänner. Kui midagi käitub ootamatult (GPU-tee tagasipöördumine, OOM, müra vähendaja, mis ei lae), ilmub see selle seansi backend-logisse:
+Strateegia ja töötajate arv valitakse backendis iga käivituse alguses — neid ei teavita ükski CLI-bänner. Kui midagi käitub ootamatult (GPU-tee tagasipöördumine, OOM, müra vähendaja, mis ei lae), ilmub see selle seansi backend-logisse:
 
 | Platvorm | Logi asukoht |
 | --- | --- |
-| **Linux
-/ Jetson** | `~/.cache/chloros/logs/backend_<YYYYMMDD_HHMMSS>.log` (üks fail iga käivituse kohta) |
-| **Linux
-, CLI
-kaudu käivitatud backend** | samuti `~/.chloros/backend.log` |
+| **Linux / Jetson** | `~/.cache/chloros/logs/backend_<YYYYMMDD_HHMMSS>.log` (üks fail iga käivituse kohta) |
+| **Linux, CLI kaudu käivitatud backend** | samuti `~/.chloros/backend.log` |
 | **Windows** | `%LOCALAPPDATA%\Chloros\logs\` |
 
 ### Reaalajas edenemine
 
-Käivituse ajal näitab CLI
-reaalajas iga niidi edenemist (avastamine, analüüsimine, töötlemine, eksportimine), mida edastatakse Server-Sent Eventsi kaudu — see annab praktilise ülevaate sellest, kas niit 3 on pudelikaelaks. Vaata [töötlemispipeliini](processing-pipeline.md).
+Käivituse ajal näitab CLI reaalajas iga niidi edenemist (avastamine, analüüsimine, töötlemine, eksportimine), mida edastatakse Server-Sent Eventsi kaudu — see annab praktilise ülevaate sellest, kas niit 3 on pudelikaelaks. Vaata [töötlemispipeliini](processing-pipeline.md).
 
 ***
 
 ## Järgmised sammud
 
-* [Töötlemispipeline](processing-pipeline.md) — 4-niitilise töötlemispipeline&#x27;i arhitektuuri mõistmine
+* [Töötlemispipeline](processing-pipeline.md) — 4-niitilise töötlemispipeline'i arhitektuuri mõistmine
 * [NVIDIA Jetsoni juhend](../linux/nvidia-jetson-guide.md) — Jetsonile spetsiifiline kasutuselevõtt ja optimeerimine
-* [CLI
-: käsurea](../CLI.md) — CLI
-juhend
-* [CLI
-viide](../reference/cli-reference.md) — Täielik käskude loetelu versioonile 1.3.0
+* [CLI: käsurea](../CLI.md) — CLI juhend
+* [CLI viide](../reference/cli-reference.md) — Täielik käskude loetelu versioonile 1.3.0

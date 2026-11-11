@@ -130,7 +130,7 @@ Salvestamine toimub tagapõhiselt, seega salvestatakse fail `.daq` **tagapõhise
 chloros-cli daq pool-set-cap --sensor-id daq-e-def330 --cap-id sunshine_cosine
 ```
 
-Katte ID valib tehases mõõdetud korrigeerimisprofiili, mida rakendatakse igale spektrile, ning see **peab vastama andurile füüsiliselt paigaldatud katele** — ei andur ega tarkvara suuda katet ise tuvastada ning valik salvestatakse igasse `.daq`-faili. Vaikimisi on kõikjal kasutusel `sunshine_cosine` (iga DAQ-seade tarnitakse koos paigaldatud Sunshine&#x27;i kosinus-korrektoriga, mille kavandatud sumbumine on ~12× — deklareerimata kate vahetus korrigeerib spektreid valesti ligikaudu sama teguriga).
+Katte ID valib tehases mõõdetud korrigeerimisprofiili, mida rakendatakse igale spektrile, ning see **peab vastama andurile füüsiliselt paigaldatud katele** — ei andur ega tarkvara suuda katet ise tuvastada ning valik salvestatakse igasse `.daq`-faili. Vaikimisi on kõikjal kasutusel `sunshine_cosine` (iga DAQ-seade tarnitakse koos paigaldatud Sunshine'i kosinus-korrektoriga, mille kavandatud sumbumine on ~12× — deklareerimata kate vahetus korrigeerib spektreid valesti ligikaudu sama teguriga).
 
 | `--cap-id` | Saadaval |
 | --- | --- |

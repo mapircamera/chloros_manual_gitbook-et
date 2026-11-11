@@ -62,7 +62,7 @@ results = chloros_sdk.process_folder(
 
 (Linuxis kasuta Linuxi teekondi: `/home/user/drone_images/flight001`. SDK töötab mõlemal platvormil ühtmoodi.)
 
-Töötled LATTICE&#x27;i salvestuskausta? Kasutage LATTICE-ga ühilduvat wrapperit – see rakendab õigeid vaikimisi seadeid (ei tuvasta paneeli sihtmärki, kasutab standardset debayeri):
+Töötled LATTICE'i salvestuskausta? Kasutage LATTICE-ga ühilduvat wrapperit – see rakendab õigeid vaikimisi seadeid (ei tuvasta paneeli sihtmärki, kasutab standardset debayeri):
 
 ```python
 results = chloros_sdk.process_lattice_capture(
@@ -176,7 +176,7 @@ with chloros_sdk.connect_camera("213800234") as cam:
 
 ### Sünkroniseeritud massiiv — `connect_array`
 
-`connect_array` on soovitatav alguspunkt mitme kaameraga seadmetele. See käivitab sama smart-prep-voo kui graafiline kasutajaliides: võrguanalüüs, sünkroniseerimistaseme automaatvalik, PTP-ajasünkroniseerimine, pikseliformaadi valik iga kaamera jaoks, AE algväärtustamine ja GPIO-päästiku aktiveerimine. **Esimene seerianumber on master** (see käivitab riistvaralise triggimpulsi); ülejäänud on slave&#x27;id.
+`connect_array` on soovitatav alguspunkt mitme kaameraga seadmetele. See käivitab sama smart-prep-voo kui graafiline kasutajaliides: võrguanalüüs, sünkroniseerimistaseme automaatvalik, PTP-ajasünkroniseerimine, pikseliformaadi valik iga kaamera jaoks, AE algväärtustamine ja GPIO-päästiku aktiveerimine. **Esimene seerianumber on master** (see käivitab riistvaralise triggimpulsi); ülejäänud on slave'id.
 
 ```python
 with chloros_sdk.connect_array(
@@ -238,13 +238,13 @@ Hostis, kus on **ainult** `pip install chloros-sdk` ja puudub Chlorosi töölaua
 
 ## AI-assistendid — `chloros-mcp`
 
-SDK sisaldab `chloros-mcp`-i, MCP-serverit, mis võimaldab Claude Desktopil, Claude Code’il, Cursoril ja teistel MCP-klientidel juhtida Chloros’i: töödelda pilte ning käitada LATTICE-kaameraid, andurimassiive ja DAQ-valgusandureid. Selle tööriistad hõlmavad kõiki selle SDK funktsioone. See installitakse koos SDK-ga, seega on Claude Code&#x27;i seadistamine vaid ühe rea pikkune:
+SDK sisaldab `chloros-mcp`-i, MCP-serverit, mis võimaldab Claude Desktopil, Claude Code’il, Cursoril ja teistel MCP-klientidel juhtida Chloros’i: töödelda pilte ning käitada LATTICE-kaameraid, andurimassiive ja DAQ-valgusandureid. Selle tööriistad hõlmavad kõiki selle SDK funktsioone. See installitakse koos SDK-ga, seega on Claude Code'i seadistamine vaid ühe rea pikkune:
 
 ```bash
 claude mcp add chloros -- chloros-mcp
 ```
 
-Muud kliendid: [Chloros&#x27;i kasutamine AI-abistajatega](ai-assistants.md). Valikud ja kõik tööriistad: [MCP-server (AI-assistendid)](reference/sdk-reference.md#mcp-server-ai-assistants).
+Muud kliendid: [Chloros'i kasutamine AI-abistajatega](ai-assistants.md). Valikud ja kõik tööriistad: [MCP-server (AI-assistendid)](reference/sdk-reference.md#mcp-server-ai-assistants).
 
 ## Litsentsinõuded
 

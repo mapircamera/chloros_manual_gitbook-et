@@ -4,11 +4,7 @@ Pildivaataja paremas ülanurgas asuv **kihtide rippmenüü** võimaldab vaadata 
 
 ## Mis on pildikihtid?
 
-„Kiht“ Chloros
-
-es on üks **tootet fail**, mis on registreeritud ühe algpildi juurde. Importimisel saad algfailid; töötlemise käigus lisatakse kiht iga toote jaoks, mille töötlemistsükkel on loonud. Eksporditud failid säilitavad allikafaili nime – toodet identifitseerib**kaust** ning kihi nimi on Chloros
-
-e poolt sellele kaustale antud märge.
+„Kiht“ Chloros es on üks **tootet fail**, mis on registreeritud ühe algpildi juurde. Importimisel saad algfailid; töötlemise käigus lisatakse kiht iga toote jaoks, mille töötlemistsükkel on loonud. Eksporditud failid säilitavad allikafaili nime – toodet identifitseerib**kaust** ning kihi nimi on Chloros e poolt sellele kaustale antud märge.
 
 <!-- SCREENSHOT-NEEDED: Image Viewer full screen with the layer dropdown open on a processed LATTICE multispectral image, showing the full list: TIFF base, RAW (Original), RAW (Debayered), RAW (Preview), RAW (Radiance), RAW (Reflectance), and one RAW (NDVI Index) entry. -->
 
@@ -20,24 +16,12 @@ e poolt sellele kaustale antud märge.
 
 | Kiht | Mis see on |
 | --- | --- |
-| **JPG**(või**PNG
-
-**/**TIFF
-
-**) | Pildistamisel saadud algfail. Survey3
-
-impordib iga `.RAW` kõrvale faili `.JPG`; LATTICE-pildistamised toovad kaasa PNG
-
-- või TIFF
-
--kuvaeelvaate. Märgistatud vastavalt sellele, mis tegelikult imporditi |
+| **JPG**(või**PNG**/**TIFF**) | Pildistamisel saadud algfail. Survey3 impordib iga `.RAW` kõrvale faili `.JPG`; LATTICE-pildistamised toovad kaasa PNG- või TIFF-kuvaeelvaate. Märgistatud vastavalt sellele, mis tegelikult imporditi |
 | **RAW (originaal)** | Allikaseks olev töötlemata kaader, kuvamiseks debayereeritud, ilma korrigeerimisteta. Saadaval alates importimise hetkest — ei vaja töötlemist |
 
 LATTICE-salvestusel, mille alusfailiks **on** selle toorkaader, puudub eraldi aluskanne: `RAW (Original)` hõlmab seda juba.
 
-### Survey3
-
-töötlemistulemused
+### Survey3 töötlemistulemused
 
 | Kiht | Salvestatud | Olemas alates |
 | --- | --- | --- |
@@ -57,31 +41,19 @@ LATTICE salvestab need ühe töötlemisvooru jooksul. Millised neist on olemas, 
 
 | Kiht | Salvestatakse | Kehtib |
 | --- | --- | --- |
-| **RAW (Debayered)** | `Debayered_Images/` | RGB
-
-ja multispektraalne |
+| **RAW (Debayered)** | `Debayered_Images/` | RGB ja multispektraalne |
 | **RAW (eelvaade)** | `Preview_Images/` | Multispektraalne (värvide võltsvärviga venitamine) |
-| **Valgebalanss** | `Preview_Images/` | RGB
-
--põhikaamerad — RGB
-
--eelvaade on registreeritud selle nime all, et see oleks kooskõlas sama nimega Survey3
-
--kihiga |
+| **Valgebalanss** | `Preview_Images/` | RGB-põhikaamerad — RGB-eelvaade on registreeritud selle nime all, et see oleks kooskõlas sama nimega Survey3-kihiga |
 | **RAW (kiirgus)** | `Radiance_Images/` | Ainult multispektraalne |
 | **RAW (peegeldus)** | `Reflectance_Calibrated_Images/` | Ainult multispektraalne ja ainult juhul, kui kaadrit katab vastav `.daq` allapoole suunatud andmekirje või kvaliteedikontrolli läbinud kaadrisisesed sihtmärgid |
 
-RGB
-
--põhikaameratel puudub ribapõhine radiomeetria, seega jäetakse nende puhul kiirgus ja peegeldusvahe **mittekohaldatavaks** — logifailis märgitakse seda, mitte ei jäeta seda märkimata.
+RGB-põhikaameratel puudub ribapõhine radiomeetria, seega jäetakse nende puhul kiirgus ja peegeldusvahe **mittekohaldatavaks** — logifailis märgitakse seda, mitte ei jäeta seda märkimata.
 
 {% hint style="info" %}
 **Toored ja debayereeritud kihid joonduvad toodetega (uus versioonis 1.3.0).**LATTICE toored ja debayereeritud failid salvestatakse anduri algses orientatsioonis ning salvestavad XMP-s neile kuuluva orientatsiooni; teised tooted salvestatakse juba selle orientatsiooniga. Vaataja ja pildivõrk lülitavad kuvamiseks**RAW (originaal)**ja**RAW (debayered)** vastavalt sellele andmele, nii et kaader enam ei pöördu ümber, kui vahetate tootekihi ja toorandmekihi vahel. See puudutab ainult kuvamist — faile ei kirjutata kunagi ümber. Suunaandmeteta failid (mis on salvestatud enne versiooni 1.3.0 või loodud mõne teise tarkvaraga) kuvatakse sellisena, nagu need on salvestatud. Vaata [Väljundpildiformaadid](../output-image-formats.md#orientation).
 {% endhint %}
 
-Klambermaskid (`*_clampmask.tif` kaustas `clamp_masks/`) ei ole kihid: Chloros
-
-jätab need importimisel vahele. Vaata [Väljundpildiformaadid](../output-image-formats.md#clamp-masks).
+Klambermaskid (`*_clampmask.tif` kaustas `clamp_masks/`) ei ole kihid: Chloros jätab need importimisel vahele. Vaata [Väljundpildiformaadid](../output-image-formats.md#clamp-masks).
 
 ### Indeks-, LUT- ja liivakasti kihid
 
@@ -125,87 +97,41 @@ Suum ja nihutamine toimivad ka piltide vahel, mis muudab sama väljapositsiooni 
 
 | Kiht | Näidatud ühik | Märkused |
 | --- | --- | --- |
-| Baas (JPG / PNG
-
-/ TIFF
-
--eelvaade) | DN, 0–255 | Ekraaniväärtused, RGB
-
--le gamma-korrigeeritud. Ainult visuaalseks kontrollimiseks |
+| Baas (JPG / PNG / TIFF-eelvaade) | DN, 0–255 | Ekraaniväärtused, RGB-le gamma-korrigeeritud. Ainult visuaalseks kontrollimiseks |
 | RAW (originaal) | DN | Anduri töötlemata digitaalarvud. Histogrammi telg näitab sügavust: 255 (8-bitine), 4095 (12-bitine) või 65535 (16-bitine) |
 | RAW (debayereeritud) | DN | Lineaarne, kuvamisel venitamata |
 | RAW (eelvaade) / valgebalansiga | DN | Kuvamisväärtus – venitatud või gamma-korrigeeritud. Mitte mõõtmiseks |
 | RAW (kiirgus) | **W/m²/sr/nm** | Float32 füüsiline kiirgus. DN-veergu pole |
 | RAW (peegeldus) | DN **ja %** | Protsent arvutatud selle faili enda skaala alusel — vt allpool |
-| Indeks / LUT / sandboxi ekspordid | Indeksväärtus või RGB
-
--komponendid | Ühekanaliline indeksifail näitab indeksväärtust; värvikaardistatud LUT-fail näitab Red
-
-/Green
-
-/Blue
-
--komponente |
+| Indeks / LUT / sandboxi ekspordid | Indeksväärtus või RGB-komponendid | Ühekanaliline indeksifail näitab indeksväärtust; värvikaardistatud LUT-fail näitab Red /Green /Blue-komponente |
 
 ### Peegeldusvõime: skaala on failipõhine
 
 {% hint style="warning" %}
-**„Jaga 65 535-ga” kehtib ainult Survey3
-
-puhul.** LATTICE-i peegeldusvõime salvestatakse teistsugusel skaalal ning kahe jagaja segamine on kõige levinum viis saada peegeldusvõime väärtused, mis on täpselt poole väiksemad sellest, mis nad peaksid olema.
+**„Jaga 65 535-ga” kehtib ainult Survey3 puhul.** LATTICE-i peegeldusvõime salvestatakse teistsugusel skaalal ning kahe jagaja segamine on kõige levinum viis saada peegeldusvõime väärtused, mis on täpselt poole väiksemad sellest, mis nad peaksid olema.
 {% endhint %}
 
 | Allikas | DN, mis vastab peegeldusvõimele 1,0 | Tuvastatud |
 | --- | --- | --- |
 | **LATTICE**(M3C / M3M) |**32768** | XMP-märge `Chloros:PixelScale=32768`, mis on lisatud igasse LATTICE-peegeldusvõime ekspordifaili. 2× varu tähendab, et ρ väärtust üle 1,0 on võimalik esitada, mitte kärpida |
-| **Survey3**| **65535** | Puudub Chloros
+| **Survey3**| **65535** | Puudub Chloros i XMP-skaalamärge — Survey3 i kalibreerimine kirjutab ρ × dtype-max ja kärbib väärtuse 1,0 juures |
 
-i XMP-skaalamärge — Survey3
-
-i kalibreerimine kirjutab ρ × dtype-max ja kärbib väärtuse 1,0 juures |
-
-GIS-i ja skriptide jaoks: loe failist välja `Chloros:PixelScale` ja jaga sellega. Kui märget pole, on faili skaala Survey3
-
-(65535). Vaatur, indeks/LUT-liivakast ja indeksi eksport määravad skaala kõik samamoodi kindlaks, seega on kursori juures kuvatav number sama, mida indeksarvutused kasutasid.
+GIS-i ja skriptide jaoks: loe failist välja `Chloros:PixelScale` ja jaga sellega. Kui märget pole, on faili skaala Survey3 (65535). Vaatur, indeks/LUT-liivakast ja indeksi eksport määravad skaala kõik samamoodi kindlaks, seega on kursori juures kuvatav number sama, mida indeksarvutused kasutasid.
 
 Selle skaala peale lisanduv formaadispetsiifiline salvestamine:
 
-* **TIFF
-
-(32-bitine, protsent)** salvestab DN / 65535 ujukomana
-* **PNG
-
-(8-bitine)**ja**JPG (8-bitine)** salvestavad DN × 255 / 65535
+* **TIFF (32-bitine, protsent)** salvestab DN / 65535 ujukomana
+* **PNG (8-bitine)**ja**JPG (8-bitine)** salvestavad DN × 255 / 65535
 * **8-bitise pildistuse 8-bitine DN-väärtus** või enne versiooni 1.3.0 salvestatud peegeldusfail on piiratud vahemikuga 0–255 ja sellel puudub skaalamärge. Paneel kuvab nende failide puhul ainult DN-väärtust, protsendiveergu ei kuvata
 
 ### Indeksi väärtuste vahemikud
 
 | Indeksi perekond | Tüüpiline vahemik | Näit |
 | --- | --- | --- |
-| Normaliseeritud erinevus (NDVI
-
-, GNDVI
-
-, NDRE
-
-, ENDVI…) | −1 kuni +1 | Tervislik taimestik tavaliselt 0,4–0,9; paljas pinnas ligikaudu 0; vesi negatiivne |
-| Pinnasega korrigeeritud (SAVI
-
-, OSAVI
-
-, MSAVI2…) | ligikaudu −1 kuni +1,5 | Sarnane näit nagu NDVI
-
-, kuid pinnase taust on summutatud |
-| Suhe (GRVI
-
-, GCI
-
-, MSR, CIRE…) | piiranguteta ülespoole | Suhted kasvavad piiranguteta, kui nimetaja lainepikkus läheneb nullile |
-| EVI
-
-/ LAI
-
-| 0 kuni ~1, 0 kuni ~3,5 | Pilved ja muud küllastunud pikslid viivad mõlemad väärtused vahemikust välja — maskeerige need esmalt |
+| Normaliseeritud erinevus (NDVI, GNDVI, NDRE, ENDVI…) | −1 kuni +1 | Tervislik taimestik tavaliselt 0,4–0,9; paljas pinnas ligikaudu 0; vesi negatiivne |
+| Pinnasega korrigeeritud (SAVI, OSAVI, MSAVI2…) | ligikaudu −1 kuni +1,5 | Sarnane näit nagu NDVI, kuid pinnase taust on summutatud |
+| Suhe (GRVI, GCI, MSR, CIRE…) | piiranguteta ülespoole | Suhted kasvavad piiranguteta, kui nimetaja lainepikkus läheneb nullile |
+| EVI / LAI | 0 kuni ~1, 0 kuni ~3,5 | Pilved ja muud küllastunud pikslid viivad mõlemad väärtused vahemikust välja — maskeerige need esmalt |
 
 Vaadake [multispektraalsete indeksite valemeid](../project-settings/multispectral-index-formulas.md), et tutvuda iga eelseadistuse taga oleva täpse valemiga.
 
@@ -237,9 +163,7 @@ Vaadake [multispektraalsete indeksite valemeid](../project-settings/multispectra
 1. Valige **RAW (Reflectance)**
 
 2. Loe paneelis „Cursor Values“ veergu**%** – see on selle faili jaoks juba õigesti skaalitud
-3. Kontrolli, kas väärtused vastavad kaadris olevatele teadaolevatele materjalidele: tervel taimestikul on kõrge NIR
-
--väärtus ja madal punane väärtus; kalibreerimise sihtmärgi väärtus peaks olema lähedane selle avaldatud peegeldusväärtusele
+3. Kontrolli, kas väärtused vastavad kaadris olevatele teadaolevatele materjalidele: tervel taimestikul on kõrge NIR-väärtus ja madal punane väärtus; kalibreerimise sihtmärgi väärtus peaks olema lähedane selle avaldatud peegeldusväärtusele
 
 ***
 
@@ -251,25 +175,19 @@ Vaadake [multispektraalsete indeksite valemeid](../project-settings/multispectra
 
 * Pilti ei ole kunagi töödeldud — olemas on ainult baaskiht ja `RAW (Original)`
 * Toote ekspordilüliti on projekti seadetest märkimata
-* Toode ei kehti selle kaamera puhul (kiirgus ja peegeldusvõime RGB
-
--põhikaameral; mis tahes indeks ühekanalilisel M3M-mono-kaameral)
+* Toode ei kehti selle kaamera puhul (kiirgus ja peegeldusvõime RGB-põhikaameral; mis tahes indeks ühekanalilisel M3M-mono-kaameral)
 * Peegelduskalibreerimisel polnud millegi põhjal töötada — puudus `.daq` allapoole suunatud katvus ja puudus kvaliteedikontrolli läbinud sihtmärk kaadris — seega kasutati kaadri puhul tagavaravarianti „Vignette Corrected“ või „Sensor Response“
 
 **Mida teha**
 
-1. Kontrollige töökäigu logi: Chloros
-
-märgib, millal taotletud eksporditoote loomine oli võimatu ja miks
+1. Kontrollige töökäigu logi: Chloros märgib, millal taotletud eksporditoote loomine oli võimatu ja miks
 2. Kontrollige tootekohaseid ekspordivalikuid [Projekti seadetes](../project-settings/project-settings.md)
 3. Veendu, et tootekaust on olemas projekti väljundpuus
 4. Töötle uuesti, kui toode on aktiveeritud
 
 ### Kihtide loend tundub aegunud
 
-Chloros
-
-skaneerib projekti tootekatalooge uuesti käivituse käigus ja parandab puuduvad kihtide registreeringud vastavalt sellele, mis tegelikult kettal asub, seega ilmub normaalse ekspordi lõpetanud kiht iseenesest küsitluse tulemustes. Pildilt ära- ja tagasi vahetamine sunnib süsteemi uuesti otsustama.
+Chloros skaneerib projekti tootekatalooge uuesti käivituse käigus ja parandab puuduvad kihtide registreeringud vastavalt sellele, mis tegelikult kettal asub, seega ilmub normaalse ekspordi lõpetanud kiht iseenesest küsitluse tulemustes. Pildilt ära- ja tagasi vahetamine sunnib süsteemi uuesti otsustama.
 
 ### Peegeldusväärtused tunduvad olevat poole väiksemad, kui peaksid olema
 

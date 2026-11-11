@@ -1,8 +1,6 @@
 # NVIDIA Jetsoni juhend NVIDIA Jetsonil töötav
 
-Chloros
-võimaldab multispektraalset pilditöötlust äärearvutuses – välitingimustes, droonidel ja kaugpaigaldistes. Chloros
-1.3.0 tuvastab käivitamisel teie Jetsoni mudeli ja optimeerib töötlusstrateegia vastavalt leitud riistvarale. **Käsitsi seadistamist ei ole vaja.**
+Chloros võimaldab multispektraalset pilditöötlust äärearvutuses – välitingimustes, droonidel ja kaugpaigaldistes. Chloros 1.3.0 tuvastab käivitamisel teie Jetsoni mudeli ja optimeerib töötlusstrateegia vastavalt leitud riistvarale. **Käsitsi seadistamist ei ole vaja.**
 {% hint style="info" %}
 **Jetsoni pakett versioonis 1.3.0 töötleb andmeid Jetsoni GPU-l.** `chloros_1.3.0_arm64_jp6.deb` on loodud JetPack 6 jaoks ja kasutab JetPack 6 CUDA-versiooni PyTorchist, seega töötab kogu töötlemine, sealhulgas tekstuuritundlik debayer, Orini GPU-l. Pakett ei sisalda CUDA-t ennast: see kasutab CUDA- ja cuDNN-teeke, mille JetPack 6 installib (`sudo apt install nvidia-jetpack` pildil, millel need puuduvad). Kui CUDA-graafikaprotsessorit ei ole võimalik kasutada, toimub töötlemine CPU-l ja Texture Aware kasutab Standard-debayerit.
 {% endhint %}
@@ -18,8 +16,7 @@ võimaldab multispektraalset pilditöötlust äärearvutuses – välitingimuste
 | **Jetson Orin Nano** | 8 GB jagatud     | `GPU_SINGLE` (1 tööjaam, järjestikune)                     | Algastme servaarvutus                                 |
 
 {% hint style="info" %}
-Linux
-i arm64-pakett nõuab **JetPack 6**-i, mis on saadaval Jetson Orin-seerias. Vanemad mudelid (Nano, TX2, Xavier NX) ei saa JetPack 6-i käivitada ja neid praegune pakett ei toeta.
+Linux i arm64-pakett nõuab **JetPack 6**-i, mis on saadaval Jetson Orin-seerias. Vanemad mudelid (Nano, TX2, Xavier NX) ei saa JetPack 6-i käivitada ja neid praegune pakett ei toeta.
 {% endhint %}
 
 ***
@@ -28,10 +25,7 @@ i arm64-pakett nõuab **JetPack 6**-i, mis on saadaval Jetson Orin-seerias. Vane
 
 * **JetPack 6.x** (soovitatav on uusim versioon)
 * **NVIDIA CUDA ja cuDNN** JetPack 6-st (`sudo apt install nvidia-jetpack`, kui need puuduvad teie pildist)
-* **Tasuline Chloros
-+ pakett** — Copper-tase või kõrgem (nõutav kogu CLI
-- ja SDK
--juurdepääsu jaoks; rakendatakse serveri poolel)
+* **Tasuline Chloros+ pakett** — Copper-tase või kõrgem (nõutav kogu CLI- ja SDK-juurdepääsu jaoks; rakendatakse serveri poolel)
 
 ## Paigaldamine
 
@@ -48,15 +42,10 @@ python3 -c "import chloros_sdk; print(chloros_sdk.__version__)"   # the .deb ins
 chloros-cli selftest
 ```
 
-`.deb` paigaldab süsteemile `python3` selle koostisega sobiva Python
-i SDK
-. Ainult virtualenv vajab komplektis oleva wheeli paigaldamist: `pip install /usr/lib/chloros/sdk/chloros_sdk-*.whl` (täielikult offline-režiimis). Üldiste Linux
-i paigaldamise üksikasjade, failide asukohtade ja veaotsingute kohta vaata [Linux
-i paigaldamine](linux-installation.md).
+`.deb` paigaldab süsteemile `python3` selle koostisega sobiva Python i SDK. Ainult virtualenv vajab komplektis oleva wheeli paigaldamist: `pip install /usr/lib/chloros/sdk/chloros_sdk-*.whl` (täielikult offline-režiimis). Üldiste Linux i paigaldamise üksikasjade, failide asukohtade ja veaotsingute kohta vaata [Linux i paigaldamine](linux-installation.md).
 
 {% hint style="info" %}
-**Käivitamisel ei toimu enam lahtipakkimist.** Alates versioonist 1.3.0 paigaldatakse tagapõhi ja CLI
-lahtipakitud kujul kataloogi `/usr/lib/chloros/`, seega ei pakita need end enam iga käivitamise korral ajutisse kataloogi. Ajutised failid salvestatakse endiselt automaatselt kataloogi `/mnt/ssd/tmp`, kui see kataloog on olemas; vastasel juhul saate määrata `TMPDIR`-ile tee oma NVMe-le (`export TMPDIR=/mnt/nvme/tmp`).
+**Käivitamisel ei toimu enam lahtipakkimist.** Alates versioonist 1.3.0 paigaldatakse tagapõhi ja CLI lahtipakitud kujul kataloogi `/usr/lib/chloros/`, seega ei pakita need end enam iga käivitamise korral ajutisse kataloogi. Ajutised failid salvestatakse endiselt automaatselt kataloogi `/mnt/ssd/tmp`, kui see kataloog on olemas; vastasel juhul saate määrata `TMPDIR`-ile tee oma NVMe-le (`export TMPDIR=/mnt/nvme/tmp`).
 {% endhint %}
 
 ***
@@ -65,8 +54,7 @@ lahtipakitud kujul kataloogi `/usr/lib/chloros/`, seega ei pakita need end enam 
 
 ### Kuidas see toimib
 
-Käivitamisel koostab Chloros
-teie süsteemi profiili:
+Käivitamisel koostab Chloros teie süsteemi profiili:
 
 1. **Tuvastab Jetsoni mudeli** `/proc/device-tree/model` kaudu
 2. **Loeb kättesaadavat jagatud GPU/CPU mälu** (Jetson kasutab ühtset mälu)
@@ -90,7 +78,7 @@ Automaatset valikut saab ümber kirjutada keskkonnamuutuja `CHLOROS_STRATEGY` ab
 | **Jetson Orin NX 16 GB**     | `GPU_PARALLEL` | 2       | Paralleelsed tööprotsessid, `fused_gpu` tee  |
 | **Jetson AGX Orin 32–64 GB** | `GPU_PARALLEL` | 2       | Paralleelsed tööprotsessid, `fused_gpu` tee  |
 
-Platvormide peamine erinevus on **mälu**. 8 GB Jetson peab suure koormuse korral töötlema pilte ükshaaval, kasutades mälu säästvat tiled-lähenemist, samas kui 16 GB+ Orin suudab töötada GPU kaudu samaaegselt kahte pilti, kasutades suurema läbilaskevõimega fused pipeline&#x27;i.
+Platvormide peamine erinevus on **mälu**. 8 GB Jetson peab suure koormuse korral töötlema pilte ükshaaval, kasutades mälu säästvat tiled-lähenemist, samas kui 16 GB+ Orin suudab töötada GPU kaudu samaaegselt kahte pilti, kasutades suurema läbilaskevõimega fused pipeline'i.
 
 ### GPU-ressursid mudeli kohta
 
@@ -108,15 +96,12 @@ Täieliku arvutusvõimsuse kohandamise juhendi leiate [Dynamic Compute Adaptatio
 
 ***
 
-## GPU sageduse piirang Texture Aware&#x27;i jaoks Nano ja Orin Nano mudelitel
+## GPU sageduse piirang Texture Aware'i jaoks Nano ja Orin Nano mudelitel
 
-Texture Aware&#x27;i debayer kasutab GPU neurovõrgu järeldamist, mis võib madala võimsusega Jetson-mudelitel (10–15 W klass) täis-GPU taktsagedusel põhjustada **ülevoolu hoiatusi**. Kui edastate `--debayer texture-aware`**Jetson Nano või Orin Nano**, kontrollib CLI
-GPU maksimaalset sagedust ja piirab selle **510 MHz**-ni (510000000), kui see on hetkel kõrgem:
+Texture Aware'i debayer kasutab GPU neurovõrgu järeldamist, mis võib madala võimsusega Jetson-mudelitel (10–15 W klass) täis-GPU taktsagedusel põhjustada **ülevoolu hoiatusi**. Kui edastate `--debayer texture-aware`**Jetson Nano või Orin Nano**, kontrollib CLI GPU maksimaalset sagedust ja piirab selle **510 MHz**-ni (510000000), kui see on hetkel kõrgem:
 
-* Kui CLI
--l on õigus kirjutada GPU sageduse sysfs-sõlme, **rakendatakse** piirang automaatselt ja kuvatakse kinnitus.
-* Kui mitte (vajab root-õigusi), kuvab CLI
-täpse käsu `sudo`, et piirangut käsitsi rakendada, ootab hetke, et saaksite selle läbi lugeda, ja jätkab seejärel — töötlemine jätkub, kuid võib kuvada ülevoolu hoiatusi.
+* Kui CLI-l on õigus kirjutada GPU sageduse sysfs-sõlme, **rakendatakse** piirang automaatselt ja kuvatakse kinnitus.
+* Kui mitte (vajab root-õigusi), kuvab CLI täpse käsu `sudo`, et piirangut käsitsi rakendada, ootab hetke, et saaksite selle läbi lugeda, ja jätkab seejärel — töötlemine jätkub, kuid võib kuvada ülevoolu hoiatusi.
 
 Piirangu käsitsi rakendamiseks enne töötlemist:
 
@@ -127,20 +112,18 @@ echo 510000000 | sudo tee /sys/devices/platform/bus@0/17000000.gpu/devfreq/17000
 Suurema võimsusega mudelid (Orin NX 25W, AGX Orin 60W) töötavad täis-GPU-kiirusel; piirangut ei rakendata. Standardne debayer ei käivita piirangut ühelgi mudelil.
 
 {% hint style="info" %}
-**„Texture Aware“ töötab Jetsonil alati ühe pildiga korraga.** Iga töötaja vajaks oma CUDA-konteksti (~1 GB) ning oma koopiat müra eemaldamise mudelist, mida ühtne mälu ei suuda toetada — seega on Jetsonil Texture Aware&#x27;i töötlemistee seotud ühe töötajaga, kelle GPU-juurdepääs on serialiseeritud. Eeldage, et Texture Aware on igal Jetsonil märkimisväärselt aeglasem kui Standard. Texture Aware kehtib Survey3
--piltide puhul: LATTICE-pildid töödeldakse alati Standard-debayeriga. Kasutatava CUDA-GPU puudumisel kasutatakse töötlemisel Standard-režiimi ning tagapõhi logib ühe `[DEBAYER] … needs a CUDA GPU …`-rea, milles selgitatakse põhjust (näidatud koos `chloros-cli --verbose`-ga).
+**„Texture Aware“ töötab Jetsonil alati ühe pildiga korraga.** Iga töötaja vajaks oma CUDA-konteksti (~1 GB) ning oma koopiat müra eemaldamise mudelist, mida ühtne mälu ei suuda toetada — seega on Jetsonil Texture Aware'i töötlemistee seotud ühe töötajaga, kelle GPU-juurdepääs on serialiseeritud. Eeldage, et Texture Aware on igal Jetsonil märkimisväärselt aeglasem kui Standard. Texture Aware kehtib Survey3-piltide puhul: LATTICE-pildid töödeldakse alati Standard-debayeriga. Kasutatava CUDA-GPU puudumisel kasutatakse töötlemisel Standard-režiimi ning tagapõhi logib ühe `[DEBAYER] … needs a CUDA GPU …`-rea, milles selgitatakse põhjust (näidatud koos `chloros-cli --verbose`-ga).
 {% endhint %}
 
 ***
 
 ## Soojusjuhtimine
 
-Jetson-seadmetel on piiratud soojusvaru, eriti suletud ruumides või õhus kasutamisel. Chloros
-jälgib SoC-i temperatuuri ja piirab partiide suurust automaatselt:
+Jetson-seadmetel on piiratud soojusvaru, eriti suletud ruumides või õhus kasutamisel. Chloros jälgib SoC-i temperatuuri ja piirab partiide suurust automaatselt:
 
 | Temperatuur         | Tegevus                                            |
 | ------------------- | ------------------------------------------------- |
-| **&lt; 70 °C**          | Normaalne töö — täis töötlemiskiirus          |
+| **< 70 °C**          | Normaalne töö — täis töötlemiskiirus          |
 | **70 °C** (hoiatus)  | Partii suurus väheneb järk-järgult (100% → 50% vahemikus 70 °C kuni 80 °C) |
 | **80 °C** (kriitiline) | Agressiivne piiramine (50% → 0% vahemikus 80 °C kuni 90 °C) |
 | **90 °C** (väljalülitamine) | GPU töötlemise täielik peatamine — vajalik jahutamine |
@@ -157,8 +140,7 @@ Jetson-seadmed kasutavad **ühtset mälu** — GPU ja CPU jagavad sama füüsili
 
 ### Vahetusmälu hoiatus ja soovitused
 
-Enne töötlemist Jetsonil loendab CLI
-teie sisendkaustas olevaid RAW-pilte (`.tif`, `.tiff`, `.raw`, `.dng` — JPG-eelvaateid ei arvestata), hindab käivitamiseks vajaliku mälu tippmahtu ning **hoiatab enne käivitamist**, kui RAM + vahemälu on tõenäoliselt ebapiisav. Hoiatuse pealkirjaks on `LOW MEMORY WARNING - Jetson Detected`, see kuvab piltide arvu, RAM-i, praeguse vahemälumahu ja hinnangulise tippmahu ning annab seejärel täpsed käskud `fallocate` / `chmod` / `mkswap` / `swapon`, mis on mõõdetud just (mitte kunagi väiksem kui 8 GB). Süsteem peatub mõneks sekundiks, et sõnum ei kaoks kerimisajal, seejärel jätkub töötlemine.**Hoiatuses kasutatud mäluhinnangud:**
+Enne töötlemist Jetsonil loendab CLI teie sisendkaustas olevaid RAW-pilte (`.tif`, `.tiff`, `.raw`, `.dng` — JPG-eelvaateid ei arvestata), hindab käivitamiseks vajaliku mälu tippmahtu ning **hoiatab enne käivitamist**, kui RAM + vahemälu on tõenäoliselt ebapiisav. Hoiatuse pealkirjaks on `LOW MEMORY WARNING - Jetson Detected`, see kuvab piltide arvu, RAM-i, praeguse vahemälumahu ja hinnangulise tippmahu ning annab seejärel täpsed käskud `fallocate` / `chmod` / `mkswap` / `swapon`, mis on mõõdetud just (mitte kunagi väiksem kui 8 GB). Süsteem peatub mõneks sekundiks, et sõnum ei kaoks kerimisajal, seejärel jätkub töötlemine.**Hoiatuses kasutatud mäluhinnangud:**
 
 | Debayer-režiim | Baas | Pildi kohta |
 | --- | --- | --- |
@@ -188,8 +170,7 @@ echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 
 ### OOM (Out of Memory) käsitlemine
 
-Töötlemise ajal jälgib Chloros
-GPU mälu kasutust ja vähendab jõudlust sujuvalt, selle asemel et krahhi minna:
+Töötlemise ajal jälgib Chloros GPU mälu kasutust ja vähendab jõudlust sujuvalt, selle asemel et krahhi minna:
 
 1. Kui GPU mälu kasutamine ületab **85%**, vähendatakse partiide suurust ennetavalt
 2. Kui mälu puudumise juhtum ikkagi esineb, **vähendatakse** partiide suurust poole võrra ning iga järgneva OOM-juhtumi korral veel kord poole võrra; iga järgnev edukas parti viib selle karistuse ühe sammu võrra tagasi
@@ -220,9 +201,7 @@ Planeerige toitevaru pikaajaliseks töötlemiseks — suurim võimsustarbimine e
 ### Peata töö SSH
 kaudu
 
-Chloros
--CLI
-on ideaalne peata Jetsoni kasutusjuhtumite jaoks:
+Chloros-CLI on ideaalne peata Jetsoni kasutusjuhtumite jaoks:
 
 ```bash
 # SSH into the Jetson
@@ -237,16 +216,14 @@ chloros-cli export-status
 
 ### Pidevalt töötav tagapõhi LATTICE / DAQ-E ajasünkroniseerimiseks
 
-Kui teie Jetson juhib LATTICE-kaameraid või DAQ-E valgussensoreid ilma kuvarita, aktiveerige backend-systemd-teenus **oma kasutajana**, et PTP-grandmaster töötaks pidevalt ja SDK
--skriptid leiaksid töötava backendi (seade on paigaldatud, kuid vaikimisi mitte aktiveeritud):
+Kui teie Jetson juhib LATTICE-kaameraid või DAQ-E valgussensoreid ilma kuvarita, aktiveerige backend-systemd-teenus **oma kasutajana**, et PTP-grandmaster töötaks pidevalt ja SDK-skriptid leiaksid töötava backendi (seade on paigaldatud, kuid vaikimisi mitte aktiveeritud):
 
 ```bash
 sudo systemctl enable --now chloros-backend@$USER.service    # $USER expands to your user name
 chloros-cli time-sync status
 ```
 
-Seejärel töötab backend teie nimel: selle poolt salvestatud andmed kuuluvad teile ja see kasutab teie `chloros-cli login`-i. Vaata [Linux
-i paigaldusjuhendit](linux-installation.md#always-on-ptp-for-headless-hosts) täpsemate üksikasjade kohta, sealhulgas root-kasutaja `chloros-backend.service` ja kuidas pakett muudab PTP-pordid 319/320 siduvaks ilma root-õigusteta.
+Seejärel töötab backend teie nimel: selle poolt salvestatud andmed kuuluvad teile ja see kasutab teie `chloros-cli login`-i. Vaata [Linux i paigaldusjuhendit](linux-installation.md#always-on-ptp-for-headless-hosts) täpsemate üksikasjade kohta, sealhulgas root-kasutaja `chloros-backend.service` ja kuidas pakett muudab PTP-pordid 319/320 siduvaks ilma root-õigusteta.
 
 ### Automatiseeritud töötlemine systemd abil
 
@@ -306,9 +283,7 @@ chloros-cli process /data/flights/flight_042 \
     --indices NDVI GNDVI OSAVI
 ```
 
-### Python
-i SDK
-Jetsonil
+### Python i SDK Jetsonil
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -352,26 +327,15 @@ Välitingimustes ja õhus kasutamiseks kaaluge järgmisi Jetson Orin NX 16 GB ka
 * **Karmid välitingimused**: IP67/IP69K veekindlad korpused, millel on PoE GigE kaamera ühenduvus
 * **Minimaalne/eelarvesõbralik**: arendajate komplektid lisakorpustega
 
-Võtke ühendust [MAPIR
-i tugiteenistusega](https://www.mapir.camera/community/contact), et saada konkreetseid riistvarasoovitusi just teie kasutusolukorra jaoks.
+Võtke ühendust [MAPIR i tugiteenistusega](https://www.mapir.camera/community/contact), et saada konkreetseid riistvarasoovitusi just teie kasutusolukorra jaoks.
 
 ***
 
 ## Järgmised sammud
 
-* [Linux
-i paigaldamine](linux-installation.md) — üldised Linux
-i paigaldamise üksikasjad
+* [Linux i paigaldamine](linux-installation.md) — üldised Linux i paigaldamise üksikasjad
 * [Dünaamiline arvutusvõimsuse kohandamine](../processing-architecture/dynamic-compute-adaptation.md) — Täielik arvutusstrateegia juhend
-* [Töötlemispipeline](../processing-architecture/processing-pipeline.md) — 4-niitilise töötlemispipeline&#x27;i mõistmine
-* [CLI: käsurea](../CLI.md) — CLI
-juhend
-* [API
-: Python
-SDK
-](../api-python-sdk.md) — SDK
-juhend
-* [CLI
--juhend](../reference/cli-reference.md) ja [SDK
--juhend](../reference/sdk-reference.md) — Kõik käskud ja API
--d versioonis 1.3.0
+* [Töötlemispipeline](../processing-architecture/processing-pipeline.md) — 4-niitilise töötlemispipeline'i mõistmine
+* [CLI: käsurea](../CLI.md) — CLI juhend
+* [API: Python SDK](../api-python-sdk.md) — SDK juhend
+* [CLI-juhend](../reference/cli-reference.md) ja [SDK-juhend](../reference/sdk-reference.md) — Kõik käskud ja API-d versioonis 1.3.0

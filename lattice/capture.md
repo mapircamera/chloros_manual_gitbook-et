@@ -26,28 +26,10 @@ Paneeli ülaosas on kolm režiiminuppu:
 | **Järjepidev**| Pildistamine järjest, kuni peatamistingimus täitub. | Peatamine**pildistamiste arvu** järgi (vaikimisi 1) *või* **pildistamise kestuse** järgi (vaikimisi 10 s; ühikud: sekundid / minutid / tunnid / päevad). |
 | **Intervall**(ajavahemik) | Pildistamissarjad ajastatud intervallidega. |**Pildistamised / intervall**(vaikimisi 1) ·**Iga**N ühiku järel (vaikimisi 5 s) ·**Kestusega** N ühikut (vaikimisi 1 m). |
 
-Pidevas või intervallrežiimis muutub nupp „Kõik pildistada” töötamise ajal nupuks **Peata (N)**, loendades pildistamisi nende saabumise järgi. Täis mälukaart peatab töötamise (vt [„Kõik pildistada“ voog](#the-capture-all-flow)).**Järjepidev režiim massiivides töötab tagapõhiselt (uus alates versioonist 1.3.0).** Kui iga nimekirjas olev kaamera kuulub massiivi (eraldiseisvad kaamerad on peidetud või välistatud), ei saada pidevas režiimis enam ühte päringut iga salvestuse kohta: Chloros
-
-i tagapõhi käitab salvestussilmust ise, kirjutades ühe sünkroniseeritud rühma samal ajal, kui valib järgmise, ning nupp küsib selle arvu. Kui nimekirjas on eraldiseisvad kaamerad, salvestab Chloros
-
-nagu varemgi pass-haaval.
+Pidevas või intervallrežiimis muutub nupp „Kõik pildistada” töötamise ajal nupuks **Peata (N)**, loendades pildistamisi nende saabumise järgi. Täis mälukaart peatab töötamise (vt [„Kõik pildistada“ voog](#the-capture-all-flow)).**Järjepidev režiim massiivides töötab tagapõhiselt (uus alates versioonist 1.3.0).** Kui iga nimekirjas olev kaamera kuulub massiivi (eraldiseisvad kaamerad on peidetud või välistatud), ei saada pidevas režiimis enam ühte päringut iga salvestuse kohta: Chloros i tagapõhi käitab salvestussilmust ise, kirjutades ühe sünkroniseeritud rühma samal ajal, kui valib järgmise, ning nupp küsib selle arvu. Kui nimekirjas on eraldiseisvad kaamerad, salvestab Chloros nagu varemgi pass-haaval.
 
 {% hint style="warning" %}
-**Kiire salvestamine Windows
-
-is: jäta Chloros
-
-i backend Microsoft Defenderist välja.** Iga faili reaalajas skaneerimine, mida kiire salvestamine kirjutab, võtab MAPIR
-
-i testide kohaselt umbes 30 % salvestuskiirusest (sadu faile sekundis väikese huvipiirkonna puhul). Windows
-
-i paigaldaja pakub valikut **„Jäta Chloros
-
-i backend Microsoft Defenderi skaneerimisest välja (palju kiirem kaamera salvestamine; soovitatav)“**, mis on vaikimisi märgitud, ning eemaldab selle väljajätmise desinstallimisel. Kui te selle valiku tühistasite, käivitage paigaldaja uuesti, jättes selle valiku märgitud, või lisage Defenderi protsesside välistuste nimekirja `chloros-backend.exe` (Chloros
-
-i paigalduskausta kaustas `backend`). Kui Defender kasutab massiivi pideva salvestamise ajal ühte või enamat CPU tuuma, märgib Chloros
-
-i backend seda üks kord oma logisse, pakkudes samu kahte lahendust.
+**Kiire salvestamine Windowsis: jäta Chloros i backend Microsoft Defenderist välja.** Iga faili reaalajas skaneerimine, mida kiire salvestamine kirjutab, võtab MAPIR i testide kohaselt umbes 30 % salvestuskiirusest (sadu faile sekundis väikese huvipiirkonna puhul). Windows i paigaldaja pakub valikut **„Jäta Chloros i backend Microsoft Defenderi skaneerimisest välja (palju kiirem kaamera salvestamine; soovitatav)“**, mis on vaikimisi märgitud, ning eemaldab selle väljajätmise desinstallimisel. Kui te selle valiku tühistasite, käivitage paigaldaja uuesti, jättes selle valiku märgitud, või lisage Defenderi protsesside välistuste nimekirja `chloros-backend.exe` (Chloros i paigalduskausta kaustas `backend`). Kui Defender kasutab massiivi pideva salvestamise ajal ühte või enamat CPU tuuma, märgib Chloros i backend seda üks kord oma logisse, pakkudes samu kahte lahendust.
 {% endhint %}
 
 <!-- SCREENSHOT-NEEDED: the capture-mode area of Capture Settings with Interval selected — showing the "Captures / interval", "Every N (unit)" and "For N (unit)" rows with their defaults (1, 5 s, 1 m). -->
@@ -67,26 +49,16 @@ Paneeli abitekst võtab selle kokku: valige, milliseid kaameraid ja eksporditü�
 
 Eksporditüüpe on kuus: **Raw, Debayered, Radiance, Reflectance, Preview, Index**. Iga kaamera real kuvatakse ainult asjakohased tüübid:
 
-| Eksporditüüp | Sisu | RGB
-
-(FRGB) | Bayeri multispektraalne (FRGN/FOCN/FNGB) | Mono (M3M) |
+| Eksporditüüp | Sisu | RGB (FRGB) | Bayeri multispektraalne (FRGN/FOCN/FNGB) | Mono (M3M) |
 | --- | --- | --- | --- | --- |
 | **Raw** | Bayer-mosaiik (mono: üks riba) otse sensorist | ✓ | ✓ | ✓ |
-| **Debayered** | Lineaarne demosaik: kalibreerimispaketi tume nihke (DSNU) eemaldatud toorandmetest, seejärel servadega arvestav demosaik — ilma lineaarsuse korrigeerimise, tasase välja või segamise eemaldamiseta. Salvestatud 3-kanalilise RGB
-
--TIFF
-
--failina (mono: 1-kanaliline halltoon) | ✓ | ✓ | ✓ |
-| **Eelvaade** | Täielik kuvamisahel (valgebalanss + gamma vastavalt kaamera profiilile, lisaks RGB
-
--kaamera „Highlights“ seadistus; multispektraalne: valevärvide venitus) | ✓ | ✓ | ✓ |
+| **Debayered** | Lineaarne demosaik: kalibreerimispaketi tume nihke (DSNU) eemaldatud toorandmetest, seejärel servadega arvestav demosaik — ilma lineaarsuse korrigeerimise, tasase välja või segamise eemaldamiseta. Salvestatud 3-kanalilise RGB-TIFF-failina (mono: 1-kanaliline halltoon) | ✓ | ✓ | ✓ |
+| **Eelvaade** | Täielik kuvamisahel (valgebalanss + gamma vastavalt kaamera profiilile, lisaks RGB-kaamera „Highlights“ seadistus; multispektraalne: valevärvide venitus) | ✓ | ✓ | ✓ |
 | **Kiirgus** | float32 W/m²/sr/nm täieliku radiomeetrilise ahela kaudu | — (ei pakuta) | ✓ | ✓ |
 | **Peegeldusvõime** | uint16 ρ (32768 = 1,0) | — (ei pakuta) | ✓ — kuvatakse ainult siis, kui kaameral on DAQ-valgusandur (oma või massiivilt pärandatud) | sama mis multispektraalne |
 | **Indeks** | Taimestikuindeks (LUT) render | — | ✓ — nõuab kaameral aktiveeritud, mittetühja indeksaväljendit ning ei ole saadaval kombineeritud massiivi liikmetele (massiivil on üks ühine indeks) | — (indeks vajab ≥2 laineala; vt [Mono-kaamerad ja taimestiku indeksid](mono-indices.md)) |
 
-RGB
-
--kaamerate puhul ei pakuta kunagi kiirgust ega peegeldust — lairiba fotomeetrilise anduri puhul ei ole Bayeri-põhine kiirgus mõttekas.
+RGB-kaamerate puhul ei pakuta kunagi kiirgust ega peegeldust — lairiba fotomeetrilise anduri puhul ei ole Bayeri-põhine kiirgus mõttekas.
 
 ### Kiireim salvestamine
 
@@ -151,15 +123,11 @@ Salvestused salvestatakse avatud projekti alla kataloogi `<project>/captures/`. 
 * **Üks erand, mida tuleb teada:** kuvatase salvestatakse kausta nimega `preview/`, samas kui failide nimedes säilitatakse `_display` — kausta ja sufiksi erinevus kehtib ainult selle taseme puhul.
 * Tundmatud tasemed salvestatakse oma nime kandvasse kausta; kui alamkausta ei ole võimalik luua, salvestatakse fail salvestiste juurkataloogi, selle asemel et see kaoks.
 * Salvestatud TIFF-failid on vaikimisi kadudeta pakitud (DEFLATE) ning sisaldavad kogu kalibreerimis- ja töötlemismetadata **faili XMP-s** — pildid on iseloomustavad ega vaja muid lisafaile peale `.daq`-i (ja selle `.daq.cameras.json`-i).
-* **Klambermaskid (uus versioonis 1.3.0).**Kui 3×3 spektraalne eraldamine pidi vähemalt ühel pikselil sagedusriba 0-ni klamberdama, saavad kiirguse, peegeldusvõime ja indeksi tooted pikselipõhise maski, `clamp_masks/<product folder>/<product name>_clampmask.tif` (bit 0 = toote R-kanali sagedusala, bit 1 = G, bit 2 = B); toote `Chloros:UnmixClampMask` XMP-märge viitab sellele. Maskid asuvad**toote kaustade kõrval**, mitte kunagi nende sees, seega saab sellist tootekaustat nagu `reflectance/` edastada fotogramm-meetria tarkvarale sellisena, nagu see on. Chloros
-
-e enda importimisfunktsioon jätab maskid vahele.
+* **Klambermaskid (uus versioonis 1.3.0).**Kui 3×3 spektraalne eraldamine pidi vähemalt ühel pikselil sagedusriba 0-ni klamberdama, saavad kiirguse, peegeldusvõime ja indeksi tooted pikselipõhise maski, `clamp_masks/<product folder>/<product name>_clampmask.tif` (bit 0 = toote R-kanali sagedusala, bit 1 = G, bit 2 = B); toote `Chloros:UnmixClampMask` XMP-märge viitab sellele. Maskid asuvad**toote kaustade kõrval**, mitte kunagi nende sees, seega saab sellist tootekaustat nagu `reflectance/` edastada fotogramm-meetria tarkvarale sellisena, nagu see on. Chloros e enda importimisfunktsioon jätab maskid vahele.
 * **Orienteerimine (1.3.0).** Eraldi kaamera eelvaate-, kiirguse-, peegeldus- ja indeksitooted pööratakse vastavalt selle peegeldus-/pööramisseadistusele; RAW- ja debayered-failid jäävad selliseks, nagu andur need luges. Kõik massiivi liikmefailid jäävad algupäraseks. Iga fail salvestab seadistuse oma XMP-sse, mistõttu uuesti töötlemisel rakendatakse seda samamoodi.
 * **Millisele kaamerale kuulub `.daq` (1.3.0).** Pildistamise `.daq` sobitatakse töötlemise ajal ainult nende kaamerate piltidega, mille nimed on märgitud selle `.daq.cameras.json`-is. Seetõttu ei kasuta eraldiseisev kaamera, millel puudub oma valgusandur, enam teise kaamera näitu – seostage sellega andur või salvestage see vahekaardil „Valgusandurid”. Valgusanduri salvestus (ja iga `.daq`, millel seda faili pole, sealhulgas vanemad salvestused) teenib endiselt kõiki kaameraid.
 
-See on sama struktuur, mille `chloros-cli lattice capture` / `array-capture` kirjutavad oma `-o` kataloogi – dokumenteeritud [CLI
-
--viite § Kuidas näeb välja salvestuste kaust](../reference/cli-reference.md#what-a-captures-folder-looks-like).
+See on sama struktuur, mille `chloros-cli lattice capture` / `array-capture` kirjutavad oma `-o` kataloogi – dokumenteeritud [CLI-viite § Kuidas näeb välja salvestuste kaust](../reference/cli-reference.md#what-a-captures-folder-looks-like).
 
 <!-- SCREENSHOT-NEEDED: OS file explorer showing a real <project>/captures/ folder after a multi-level array capture — the raw/debayered/radiance/reflectance/preview subfolders, the daq/ and clamp_masks/ folders, and sync_<ts>_SN<serial>_<level>.tif filenames visible inside one subfolder. -->
 
@@ -179,11 +147,7 @@ chloros-cli process "C:/ChlorosProjects/MyField/captures"
 Taseme alamkausta otsene nimetamine (nt `…/captures/raw/`) toimib samuti, kuid jätab kausta `daq/` kõrvale – kopeerige see kõrvale, kui te- tuletate radiomeetrilist toodet kaustast `raw/`, vastasel juhul ei ole ajamärgise vastavusel millegi suhtes lahendada.
 
 {% hint style="warning" %}
-**Töötlemine algab alati kaustast `raw`.** Iga salvestuse puhul on töötlemisahela allikaks töötlemata kaader; `debayered`, `radiance`, `reflectance`, ja `preview` on vaatamisrežiimid, kuid neid ei suunata kunagi tagasi töötlusvoo kaudu — tuletatud toote uuesti töötlemine rakendaks uuesti vinjeti, värvi ja kiirguse matemaatikat, mis on juba pikslitesse sisse põletatud, seetõttu loobub Chloros
-
-sellest, selle asemel et teha topelt-töötlust. Renderdusi `index/` ja `composite/` ei töödeldagi üldse (need on väljundid, mitte salvestused). Salvestatud kaadrite kaust, milles **puuduvad** toorandmed, kuvatakse normaalselt, kuid `process` jätab selle vahele ja teatab sellest; `--input-level {raw,debayered,processed}` on tahtlik pääsetee, mis sunnib sissepääsupunkti kasutama. Täpsed vahelejätmisteated leiate [CLI
-
--viitest](../reference/cli-reference.md#what-a-captures-folder-looks-like).
+**Töötlemine algab alati kaustast `raw`.** Iga salvestuse puhul on töötlemisahela allikaks töötlemata kaader; `debayered`, `radiance`, `reflectance`, ja `preview` on vaatamisrežiimid, kuid neid ei suunata kunagi tagasi töötlusvoo kaudu — tuletatud toote uuesti töötlemine rakendaks uuesti vinjeti, värvi ja kiirguse matemaatikat, mis on juba pikslitesse sisse põletatud, seetõttu loobub Chloros sellest, selle asemel et teha topelt-töötlust. Renderdusi `index/` ja `composite/` ei töödeldagi üldse (need on väljundid, mitte salvestused). Salvestatud kaadrite kaust, milles **puuduvad** toorandmed, kuvatakse normaalselt, kuid `process` jätab selle vahele ja teatab sellest; `--input-level {raw,debayered,processed}` on tahtlik pääsetee, mis sunnib sissepääsupunkti kasutama. Täpsed vahelejätmisteated leiate [CLI-viitest](../reference/cli-reference.md#what-a-captures-folder-looks-like).
 {% endhint %}
 
 Veel kaks käitumist, mida tasub teada skriptide abil ümbertöötlemisel:
@@ -191,15 +155,11 @@ Veel kaks käitumist, mida tasub teada skriptide abil ümbertöötlemisel:
 * `chloros-cli process` käivitus, mis taotles väljundeid, kuid **ei kirjutanud ühtegi pildiväljundit, ebaõnnestub märgatavalt ja lõpetab töötamise nullist erineva tulemusega** — vaikset tühja käivitust ei toimu kunagi. Edukad käivitused teatavad väljundite arvu. (Tahtlikult ainult metaandmetele suunatud käivitus loetakse ikkagi edukaks.)
 * Uuesti imporditud töödeldud ekspordid ei võta kunagi pildi toorandmete pesa — algne toorandmete fail jääb alati töötlemisprotsessi allikaks.
 
-## CLI
-
--ekvivalendid
+## CLI-ekvivalendid
 
 Kõiki sellel lehel kirjeldatud toiminguid saab teostada graafilise kasutajaliidese (GUI) kasutamata. GUI pildistamisrežiimid vastavad otseselt järgmistele -käivitustele:
 
-| GUI | CLI
-
-|
+| GUI | CLI |
 | --- | --- |
 | Ühekordne | `chloros-cli lattice array-capture` |
 | Pidev | `array-capture --continuous [--count N] [--duration S]` |
@@ -210,6 +170,4 @@ Kõiki sellel lehel kirjeldatud toiminguid saab teostada graafilise kasutajaliid
 | Salvestada indeksvideo | `chloros-cli lattice array-record` |
 | Salvestada töötlemata pildiseeria / Koostada video | `chloros-cli lattice array-burst` / `array-build-video` |
 
-Täielikud liputabelid, nutika automaatse säri (smart-AE) püsiv pildistamise valik (`--smart`) ja püsiva kiirusega mudel on kirjeldatud [CLI
-
--viite jaotises „Pildistamisrežiimid, salvestid ja offline-töötlemine”](../reference/cli-reference.md#capture-modes-recorders--offline-reprocess).
+Täielikud liputabelid, nutika automaatse säri (smart-AE) püsiv pildistamise valik (`--smart`) ja püsiva kiirusega mudel on kirjeldatud [CLI-viite jaotises „Pildistamisrežiimid, salvestid ja offline-töötlemine”](../reference/cli-reference.md#capture-modes-recorders--offline-reprocess).

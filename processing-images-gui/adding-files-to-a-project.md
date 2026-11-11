@@ -83,7 +83,7 @@ Kui pildid on imporditud, kuvatakse need tabelis, millel on järgmised veerud:
 
 * Automaatselt tuvastatud kaamera ja filtri konfiguratsioon
 * Survey3i näited: Survey3W_RGN, Survey3N_OCN, Survey3W_RGB
-* LATTICE&#x27;i näited: LATT-M3M-L41-F550, LATT-M3C-L87-FRGN
+* LATTICE'i näited: LATT-M3M-L41-F550, LATT-M3C-L87-FRGN
 * Kasutatakse õigete töötlusprofiilide rakendamiseks
 
 ### Sihtmärgi veerg (valikukast)

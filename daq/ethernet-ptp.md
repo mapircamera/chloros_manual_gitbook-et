@@ -1,8 +1,6 @@
 # DAQ-E võrgustik ja ajasünkroniseerimine
 
-> Anduri füüsiline võrguseadistus – kaabeldus, PoE, IP-aadressi määramine ja seadme enda võrguseaded – on kirjeldatud **[DAQ-kasutusjuhendis](https://mapir.gitbook.io/daq/daq-e/network-setup)**. Käesolev lehekülg käsitleb Chloros
-
-i poolt: ühendamine, ajasünkroniseerimine ja mida teha, kui seadme avastamine ei õnnestu.
+> Anduri füüsiline võrguseadistus – kaabeldus, PoE, IP-aadressi määramine ja seadme enda võrguseaded – on kirjeldatud **[DAQ-kasutusjuhendis](https://mapir.gitbook.io/daq/daq-e/network-setup)**. Käesolev lehekülg käsitleb Chloros i poolt: ühendamine, ajasünkroniseerimine ja mida teha, kui seadme avastamine ei õnnestu.
 
 DAQ-E on DAQ-perekonna Ethernet-liige: toidetakse PoE kaudu, leitakse mDNS-i kaudu (teenus `_daq-e._tcp`) ja sellele saab viidata anduri ID-st tuletatud hostinimega — `daq-e-<6 hex>.local`, nt `daq-e-def330.local`. Käesolev lehekülg käsitleb, kuidas seade edastab andmeid võrgus ja kuidas osaleb PTP-ajasünkroniseerimises.
 
@@ -13,35 +11,17 @@ DAQ-E on DAQ-perekonna Ethernet-liige: toidetakse PoE kaudu, leitakse mDNS-i kau
 | **Multicast** (vaikimisi) | UDP `239.10.10.10:5002` | Iga sama LAN-võrgus olev seade võtab vastu sama voogu | Iga datagramm on CRC-16/CCITT-ga valideeritud |
 | **Raw** | TCP-port `5000` | Täpselt üks klient (eksklusiivne) | Baiditasandil ühilduv DAQ-U-ga |
 
-Chloros
-
-kasutab vaikimisi multisaadet, mis võimaldab graafilisel kasutajaliidesel (GUI), käsurealiidesel (CLI
-
-) ja arendajate tööriistakomplektil (SDK
-
-) jälgida ühte andurit korraga.
+Chloros kasutab vaikimisi multisaadet, mis võimaldab graafilisel kasutajaliidesel (GUI), käsurealiidesel (CLI) ja arendajate tööriistakomplektil (SDK) jälgida ühte andurit korraga.
 
 ## Võrgunõuded
 
-* **Sama levidomeen.** Chloros
-
-&#x27;i käitav arvuti peab asuma samas L2-võrgusegmendis kui andur — mDNS-otsing ei läbi ruutereid.
-* **Tulemüür.** Windows
-
-is lisab installija igasse võrguprofiili backendile tulemüürireegli **Chloros
-
-Backend (UDP-In)**, mis hõlmab DAQ-E andmeid (UDP 5002), mDNS-i (UDP 5353) ja PTP-d (UDP 319/320), ning**„Chloros
-
-Backend (TCP-In)“** reegli, mis on piiratud kohaliku alamvõrguga ja on mõeldud ühenduseks, mille DAQ-E loob arvutiga tagasi püsivara uuendamise ajal. Linux
-
-is avab `.deb` UDP-pordid `ufw`-is või `firewalld`-is, kui see tulemüür on paigaldamise ajal aktiivne. Kolmanda osapoole tulemüür või hiljem aktiveeritud tulemüür vajab samade portide lubamist.
+* **Sama levidomeen.** Chloros'i käitav arvuti peab asuma samas L2-võrgusegmendis kui andur — mDNS-otsing ei läbi ruutereid.
+* **Tulemüür.** Windowsis lisab installija igasse võrguprofiili backendile tulemüürireegli **Chloros Backend (UDP-In)**, mis hõlmab DAQ-E andmeid (UDP 5002), mDNS-i (UDP 5353) ja PTP-d (UDP 319/320), ning**„Chloros Backend (TCP-In)“** reegli, mis on piiratud kohaliku alamvõrguga ja on mõeldud ühenduseks, mille DAQ-E loob arvutiga tagasi püsivara uuendamise ajal. Linuxis avab `.deb` UDP-pordid `ufw`-is või `firewalld`-is, kui see tulemüür on paigaldamise ajal aktiivne. Kolmanda osapoole tulemüür või hiljem aktiveeritud tulemüür vajab samade portide lubamist.
 * **PoE-toide, puudub oleku-LED.** DAQ-E-l puudub oma LED – kontrollige toite olemasolu lüliti või injektori pordi link/PoE-indikaatori abil ning oodake pärast sisselülitamist mõni sekund, kuni seade käivitub ja ühineb võrguga.
 
 ## Ühendamine
 
-**GUI:** Vahekaart „Valgusandurid“ → „Ühenda andur“ → Seadmetüüp „DAQ-E (Ethernet)“. Andurite otsimine toimub ainult siis, kui ühendusdialoog on ekraanil (mDNS-otsing ja ARP-skaneerimine Windows
-
-is), kordudes iga 15 sekundi järel; nupp „Värskenda“ käivitab uue skaneerimise kohe. Leitud andurid kuvatakse rippmenüüs; esimene tuvastatud andur valitakse automaatselt.
+**GUI:** Vahekaart „Valgusandurid“ → „Ühenda andur“ → Seadmetüüp „DAQ-E (Ethernet)“. Andurite otsimine toimub ainult siis, kui ühendusdialoog on ekraanil (mDNS-otsing ja ARP-skaneerimine Windowsis), kordudes iga 15 sekundi järel; nupp „Värskenda“ käivitab uue skaneerimise kohe. Leitud andurid kuvatakse rippmenüüs; esimene tuvastatud andur valitakse automaatselt.
 
 <!-- SCREENSHOT-NEEDED: DAQ connect dialog with Device Type set to "DAQ-E (Ethernet)" and at least one discovered sensor listed in the Hostname/IP dropdown (e.g. daq-e-xxxxxx.local), Connect button enabled. -->
 
@@ -67,23 +47,9 @@ chloros-cli daq pool-connect --eth-host daq-e-def330.local
 
 ## Seadme seaded ja püsivara
 
-Anduril endal on oma võrguseaded: DHCP (tehase seade, mis kasutab tagavarana 169.254.x.x link-local-aadressi, kui ükski DHCP-server ei vasta) või staatiline aadress. Samuti on seal määratud, kas andur alustab andmete edastamist kohe sisselülitamisel. Muutke neid graafilises kasutajaliideses (anduri hammasratta ikooniga seaded, **Võrk**:**Muuda…**,**Andmevoog sisselülitamisel**,**Anduri taaskäivitamine**; vt [vahekaart „DAQ”](gui.md)) või CLI
+Anduril endal on oma võrguseaded: DHCP (tehase seade, mis kasutab tagavarana 169.254.x.x link-local-aadressi, kui ükski DHCP-server ei vasta) või staatiline aadress. Samuti on seal määratud, kas andur alustab andmete edastamist kohe sisselülitamisel. Muutke neid graafilises kasutajaliideses (anduri hammasratta ikooniga seaded, **Võrk**:**Muuda…**,**Andmevoog sisselülitamisel**,**Anduri taaskäivitamine**; vt [vahekaart „DAQ”](gui.md)) või CLI- ja SDK-liidese kaudu käskudega `pool-set-network`, `pool-set-auto-stream` ja `pool-reboot` (`DAQSensorSession.set_network()`, `set_auto_stream()`, `reboot()`; vt [CLI-juhendit](../reference/cli-reference.md#daq-e-device-settings)). Andur taaskäivitub võrgumuudatuse rakendamiseks ja Chloros ühendab selle uuesti. Chloros i käitava arvuti võrgus peab olema staatiline aadress: Chloros lükkab tagasi aadressi, milleni ta pärast taaskäivitamist ei pääse. Anduri ID ja selle `daq-e-<id>.local` hostinimi ei muutu kunagi. Uus versioonis 1.3.0.
 
-- ja SDK
-
--liidese kaudu käskudega `pool-set-network`, `pool-set-auto-stream` ja `pool-reboot` (`DAQSensorSession.set_network()`, `set_auto_stream()`, `reboot()`; vt [CLI
-
--juhendit](../reference/cli-reference.md#daq-e-device-settings)). Andur taaskäivitub võrgumuudatuse rakendamiseks ja Chloros
-
-ühendab selle uuesti. Chloros
-
-i käitava arvuti võrgus peab olema staatiline aadress: Chloros
-
-lükkab tagasi aadressi, milleni ta pärast taaskäivitamist ei pääse. Anduri ID ja selle `daq-e-<id>.local` hostinimi ei muutu kunagi. Uus versioonis 1.3.0.
-
-**Püsivara uuendused on integreeritud graafilisse kasutajaliidesesse.** Kui ühendatud DAQ-E-seadmel on vanem püsivara kui teie Chloros
-
--koostisega kaasas olev püsivara, kuvatakse selle anduri real kollane **Uuendus saadaval**-ikoon ning hammasratta-seadete aknas on <version>nupp</version>
+**Püsivara uuendused on integreeritud graafilisse kasutajaliidesesse.** Kui ühendatud DAQ-E-seadmel on vanem püsivara kui teie Chloros-koostisega kaasas olev püsivara, kuvatakse selle anduri real kollane **Uuendus saadaval**-ikoon ning hammasratta-seadete aknas on <version>nupp</version>
 
 „Uuenda versioonile <version>“. Uuendus laaditakse võrgu kaudu umbes 30 sekundiga; andur taaskäivitub ja ühendub automaatselt uuesti ning katkestatud ülekande korral jääb praegune püsivara muutumatuks. CLI-st või SDK-st ning Linux-s, kus kasutajaliidest pole, käivitage käsk `chloros-cli daq pool-update-firmware --sensor-id <id>` (`DAQSensorSession.update_firmware()`).
 

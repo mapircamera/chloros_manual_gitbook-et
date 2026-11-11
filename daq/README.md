@@ -33,7 +33,7 @@ Andmeedastusviisid (USB-seriaal, BLE, mDNS/zeroconf) on koondatud Chlorosi tagap
 
 Andur edastab andmeid kogu 340–1010 nm vahemiku kohta, kuid NIST-i standarditele vastav radiomeetriline võimendus hõlmab ligikaudu **374–974 nm**. Chloroseerib absoluutse peegeldusvõime jagamise kõikide kaamerasagedusalade puhul, mille spektraalne kaal jääb kalibreeritud vahemikust alla poole; vahelejäänud sagedusala kuvatakse koos vahelejätmise põhjusega `dls-uncalibrated-band-<nm>`.
 
-LATTICE&#x27;i müügil olevatest filtri tootenumbritest puudutab see ainult **F988**:
+LATTICE'i müügil olevatest filtri tootenumbritest puudutab see ainult **F988**:
 
 F988 peegeldusvõime on kalibreeritud stseeni-sisese peegeldusvõime paneeli abil: sagedusala jääb väljapoole DAQ-valgusanduri kalibreeritud vahemikku, seega kasutab Chloros teie viimast paneeli mõõtmistulemust ja säilitab selle paneeli mõõtmiste vahelisel ajal.
 

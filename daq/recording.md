@@ -1,8 +1,6 @@
 # Salvestamine ja .daq-vorming
 
-`.daq`-fail on Chloros
-
-i valgusanduri salvestusvorming: ühe DAQ-anduri kalibreeritud spektraalkaadrite **SQLite-andmebaas**. Salvestage üks selline fail salvestussessiooni ajal ja peegeldusvõimsuse töötlemisahel saab hiljem jagada iga pildi just sel hetkel mõõdetud allapoole suunatud kiirguse tihedusega.
+`.daq`-fail on Chloros i valgusanduri salvestusvorming: ühe DAQ-anduri kalibreeritud spektraalkaadrite **SQLite-andmebaas**. Salvestage üks selline fail salvestussessiooni ajal ja peegeldusvõimsuse töötlemisahel saab hiljem jagada iga pildi just sel hetkel mõõdetud allapoole suunatud kiirguse tihedusega.
 
 ## Mida .daq-fail sisaldab
 
@@ -16,15 +14,11 @@ i valgusanduri salvestusvorming: ühe DAQ-anduri kalibreeritud spektraalkaadrite
 
 Formaat on identne mudelitel DAQ-U, DAQ-M, DAQ-E ja DAQ-E-S, seega ei ole järgneval töötlemisel oluline, milline andmeedastusseade salvestuse tegi. DAQ-E-S salvestus talletab iga spektri kõrvale ka seadme kallutuse, pöörde ja kaldenurga.
 
-**Salvestised säilivad ka voolukatkestuse korral (1.3.0).**Reaalajas salvestamine toimub ajakirja abil ja iga salvestamise käigus toimub täielik kettasünkroniseerimine, mistõttu voolukatkestus või protsessi katkestamine kaotab umbes viimased 3 sekundit, mitte kogu faili. Kirjutamise käigus peatunud salvestus võib jätta faili `.daq` kõrvale faili `<name>.daq-journal`:**säilitage ja kopeerige need kaks koos.** Chloros
-
-kerib ajakirja tagasi, kui loeb faili esimest korda. Hõivatud ketas viivitab faili salvestamist, kuid mitte kunagi anduri näidud.
+**Salvestised säilivad ka voolukatkestuse korral (1.3.0).**Reaalajas salvestamine toimub ajakirja abil ja iga salvestamise käigus toimub täielik kettasünkroniseerimine, mistõttu voolukatkestus või protsessi katkestamine kaotab umbes viimased 3 sekundit, mitte kogu faili. Kirjutamise käigus peatunud salvestus võib jätta faili `.daq` kõrvale faili `<name>.daq-journal`:**säilitage ja kopeerige need kaks koos.** Chloros kerib ajakirja tagasi, kui loeb faili esimest korda. Hõivatud ketas viivitab faili salvestamist, kuid mitte kunagi anduri näidud.
 
 **Andmeid edastamast lakanud DAQ-E ühendatakse uuesti (1.3.0).** Kui DAQ-E andmevoog katkeb (lüliti toide lülitati välja, ühendus katkes), ühendab tagapõhi selle uuesti varasemate seadistustega ning salvestamine jätkub samas `.daq`-failis, kus lünk on failis märgitud.
 
-Kalibreeritud salvestamine nõuab anduri tehase kalibreerimispaketti. DAQ-U ja DAQ-M puhul laadib backend paketi MAPIR
-
-i pilvest anduri ID järgi alla (kui see ei õnnestu, lükatakse salvestamine tagasi); DAQ-E seadmed on sellest vabastatud, kuna nende kalibreerimisandmed on salvestatud seadmes endas.
+Kalibreeritud salvestamine nõuab anduri tehase kalibreerimispaketti. DAQ-U ja DAQ-M puhul laadib backend paketi MAPIR i pilvest anduri ID järgi alla (kui see ei õnnestu, lükatakse salvestamine tagasi); DAQ-E seadmed on sellest vabastatud, kuna nende kalibreerimisandmed on salvestatud seadmes endas.
 
 ## Salvestamine graafilise kasutajaliidese kaudu
 
@@ -45,11 +39,7 @@ Failid salvestatakse `<project>/light_sensor/`-i ja kui salvestamine peatatakse 
 
 kaudu
 
-CLI
-
-salvestab tagapõhja andurite kogumi kaudu (tagapõhi peab töötama – need käsud on lihtsad HTTP
-
--kliendid):
+CLI salvestab tagapõhja andurite kogumi kaudu (tagapõhi peab töötama – need käsud on lihtsad HTTP-kliendid):
 
 ```bash
 # Connect the sensor into the backend pool
@@ -69,40 +59,22 @@ Hangi väärtus `--sensor-id` andurilt `chloros-cli daq pool-list`. Kaks teadmis
 | Valik | Vaikimisi |
 | --- | --- |
 | `--duration` | `0` — salvestab kuni `pool-record --stop` |
-| `--output` / `-o` | `~/Documents/DAQ Live View/` **tagapõhja** failisüsteemis, mitte CLI
+| `--output` / `-o` | `~/Documents/DAQ Live View/` **tagapõhja** failisüsteemis, mitte CLI-s |
 
--s |
-
-Väljundkataloogi eristamine on oluline, kui CLI
-
-suunab tagapõhja teisele masinale: fail salvestatakse sinna, kus tagapõhi töötab. Kui backend asub samal arvutil, siis suhteline `-o` (nagu eespool toodud `./out`) määratakse kindlaks selle kausta suhtes, kus käsk käivitati.
+Väljundkataloogi eristamine on oluline, kui CLI suunab tagapõhja teisele masinale: fail salvestatakse sinna, kus tagapõhi töötab. Kui backend asub samal arvutil, siis suhteline `-o` (nagu eespool toodud `./out`) määratakse kindlaks selle kausta suhtes, kus käsk käivitati.
 
 ## Salvestamine Python
 
-ist `DAQSensorSession` (mille tagastab `chloros_sdk.connect_daq_sensor()`) näitab sama koondatud salvestust: `record_start(output_dir=None, device_name=None)` tagastab faili tee, `record_stop()` tagastab `{path, rows}`. Täieliku seansi API
-
-kohta vaadake [SDK
-
--viidet](../reference/sdk-reference.md). SDK
-
-otsese riistvaraga seotud klassid (ainult töölaua installatsioonid) kirjutavad salvestused vaikimisi `~/Documents/DAQ/`-i; väljalastud versioonide puhul on toetatud eespool nimetatud koondatud tee.
+ist `DAQSensorSession` (mille tagastab `chloros_sdk.connect_daq_sensor()`) näitab sama koondatud salvestust: `record_start(output_dir=None, device_name=None)` tagastab faili tee, `record_stop()` tagastab `{path, rows}`. Täieliku seansi API kohta vaadake [SDK-viidet](../reference/sdk-reference.md). SDK otsese riistvaraga seotud klassid (ainult töölaua installatsioonid) kirjutavad salvestused vaikimisi `~/Documents/DAQ/`-i; väljalastud versioonide puhul on toetatud eespool nimetatud koondatud tee.
 
 ## .daq-faili kasutamine töötlemise ajal
 
-Piltidest peegeldusvõimsuse arvutamiseks vajab Chloros
-
-iga ekspositsiooniga sobivat allapoole suunatud kiirgust:
+Piltidest peegeldusvõimsuse arvutamiseks vajab Chloros iga ekspositsiooniga sobivat allapoole suunatud kiirgust:
 
 * **Hoidke `.daq` koos piltidega.**Töötlemise ajal määrab töötlemisahel automaatselt**ajamärgistusega sobiva allapoole suunatud kiirguse** salvestatud `.daq`-failist (mis tahes DAQ-mudel) — või DAQ-M-i omast `.csv`-failist — mis asub piltide kõrval. GUI-salvestused vastavad sellele nõudele automaatselt, kuna need lisatakse projektile kohe, kui salvestamine lõpeb.
-* **Kalibreerimisandmed laaditakse vajaduse korral.** Kui kaamera- või DAQ-põhist tehase kalibreerimispaketti pole veel kohalikult vahemällu salvestatud, laadib Chloros
-
-selle esmakordsel kasutamisel automaatselt MAPIR
-
-i pilvest alla (vajalik ühekordne internetiühendus; salvestatakse vahemällu failina `~/.chloros/`).
+* **Kalibreerimisandmed laaditakse vajaduse korral.** Kui kaamera- või DAQ-põhist tehase kalibreerimispaketti pole veel kohalikult vahemällu salvestatud, laadib Chloros selle esmakordsel kasutamisel automaatselt MAPIR i pilvest alla (vajalik ühekordne internetiühendus; salvestatakse vahemällu failina `~/.chloros/`).
 * **Reaalajas salvestused kirjutavad oma sidecar-faili.** Iga reaalajas salvestatud peegelduskaadri puhul salvestatakse tegelikult kasutatud DAQ-näit `.daq`-failina salvestiste kausta `daq/`, nii et salvestist saab hiljem uuesti töödelda ilma originaalsalvestuseta.
-* **Salvestused salvestitest `chloros_scripts` (1.3.0).**Avalike [`chloros_scripts`](https://github.com/mapircamera/chloros_scripts) salvestite poolt loodud `.daq` on loetletud selle loonud DAQ-mudelina ning selle piirangut saab määrata**Projekti seaded → DAQ valgusandur** nagu iga teise salvestuse puhul. Need salvestid kirjutavad salvestusse anduri toorandmeid; Chloros
-
-laadib anduri tehase kalibreerimisandmed seerianumbri järgi alla ja rakendab neid.
+* **Salvestused salvestitest `chloros_scripts` (1.3.0).**Avalike [`chloros_scripts`](https://github.com/mapircamera/chloros_scripts) salvestite poolt loodud `.daq` on loetletud selle loonud DAQ-mudelina ning selle piirangut saab määrata**Projekti seaded → DAQ valgusandur** nagu iga teise salvestuse puhul. Need salvestid kirjutavad salvestusse anduri toorandmeid; Chloros laadib anduri tehase kalibreerimisandmed seerianumbri järgi alla ja rakendab neid.
 * **Kelle mõõtmistulemus see on (1.3.0).**Iga salvestuse `.daq` kõrval on `.daq.cameras.json`, mis nimetab kaamera(id), mille kaadreid see näid kirjeldab, ning töötlemine seostab selle**ainult nende kaamerate piltidega**. Seetõttu ei kasuta iseseisev kaamera, millel puudub oma valgussensor, enam teise kaamera näitu – seostage sellega andur või salvestage ise näit. DAQ-iga endaga tehtud salvestus (GUI Record, `daq pool-record`) ja kõik `.daq`-failid, milles seda faili pole (sh vanemad salvestused), teenivad endiselt kõiki kaameraid.
 
 ## Kiirguse andmete taastamine
@@ -111,9 +83,7 @@ Projekti töötlemisel eksporditakse ka kõik selle sisalduvad valgusanduri salv
 `Light Sensor/` kausta pilditoodete kõrvale. Selleks **ei** ole vaja pilte:
 eraldi salvestatud valgusandur on täielik salvestus ning kaust, mis sisaldab ainult `.daq`
 faile, on kehtiv sisend. Projekt, mis sisaldab ainult valgusanduri salvestusi, loetleb need ja
-töötleb neid nii rakenduses kui ka CLI
-
--s, ning need jäävad loetelusse ka pärast töötlemist. Töötlemine
+töötleb neid nii rakenduses kui ka CLI-s, ning need jäävad loetelusse ka pärast töötlemist. Töötlemine
 näitab, kui palju valgusanduri tooteid kirjutati.
 
 | Toode | Mis see on |
@@ -132,9 +102,7 @@ kohalikult pole midagi vahemällu salvestatud.
 **DAQ-A** on vanem kui seerianumbri-põhine kalibreerimispaketi süsteem ja sellel pole paketti, mida
 alla laadida. See ei ole tähelepanematus: DAQ-A kalibreeritakse kohapeal
 peegeldusmäära sihtmärgi abil ning sihtmärgipõhine kalibreerimine vajab ainult anduri *suhtelist*
-vastust — mis ongi täpselt see, mida toores loend näitab. Chloros
-
-kalibreerib neid tänapäevalgi.
+vastust — mis ongi täpselt see, mida toores loend näitab. Chloros kalibreerib neid tänapäevalgi.
 
 Seega eksporditakse DAQ-A salvestus, kuid teise nime all:
 
@@ -153,12 +121,8 @@ ainult tegeliku kiirguse puhul – koguvõimsus, luks, PPFD – jäetakse tühja
 arvutatakse loenduste põhjal.
 
 Vanemad DAQ-A-SD salvestused (skeem v1.01 / v1.02) salvestavad ainult faili kirjutamise aja, mitte
-iga lugemise ajamärget. Chloros
-
-ei sobi pilte nendega kokku – kaadri sidumine
+iga lugemise ajamärget. Chloros ei sobi pilte nendega kokku – kaadri sidumine
 kirjutamisajaga oleks vale, kuigi see ei paistaks esmapilgul valena –, kuid eksport loeb neid hästi ja
-CSV
-
--failis on märgitud, millise kella järgi see on.
+CSV-failis on märgitud, millise kella järgi see on.
 
 Täieliku peegeldusvõime ülevaate saamiseks – ühe anduriga koos kaameraga ja kahe anduriga (ümbrus/objekt) – vaata [Peegeldusvõime töövood](reflectance.md).

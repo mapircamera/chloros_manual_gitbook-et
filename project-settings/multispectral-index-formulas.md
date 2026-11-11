@@ -111,7 +111,7 @@ Kui sisestate lihtsalt nime, näiteks `NDVI`, peab Chloros otsustama, millise fa
 
 | Filtri kood | Kanal → massiivi indeks |
 | --- | --- |
-| OCN | Orange 0, Cyan 1, NIR 2 (`Red` aktsepteeritakse Orange&#x27;i aliasena, samuti 0) |
+| OCN | Orange 0, Cyan 1, NIR 2 (`Red` aktsepteeritakse Orange'i aliasena, samuti 0) |
 | RGN | Red 0, Green 1, NIR 2 |
 | NGB | NIR 0, Green 1, Blue 2 |
 | RGB | Red 0, Green 1, Blue 2 |
@@ -165,7 +165,7 @@ $$
 
 GUI-s ning CLI- ja SDK-eelseadete loendis on sümboli valem `(z/y)*(x/y)`, kus x=Red, y=Green, z=NIR (RGN-kaamera lainepikkused); LATTICE indeksimootori eelseadistus on `nir * red / green**2`. Iga pind arvutab sama indeksit.
 
-_Viide: Vincini, M., E. Frazzi ja P. D&#x27;Alessio. „A Broad-Band Leaf Chlorophyll Vegetation Index at the Canopy Scale.” Precision Agriculture 9 (2008): 303–319._
+_Viide: Vincini, M., E. Frazzi ja P. D'Alessio. „A Broad-Band Leaf Chlorophyll Vegetation Index at the Canopy Scale.” Precision Agriculture 9 (2008): 303–319._
 
 ***
 
@@ -207,7 +207,7 @@ $$
 
 Metsastatud aladel on madalamad FCI1-väärtused, kuna puude peegeldusvõime on madalam ja puuvõrade sees esinevad varjud.
 
-_Viide: Becker, Sarah J., Craig S.T. Daughtry ja Andrew L. Russ. „Robust forest cover indices for multispectral images.” Photogrammetric Engineering &amp; Remote Sensing 84.8 (2018): 505–512._
+_Viide: Becker, Sarah J., Craig S.T. Daughtry ja Andrew L. Russ. „Robust forest cover indices for multispectral images.” Photogrammetric Engineering & Remote Sensing 84.8 (2018): 505–512._
 
 ***
 
@@ -223,7 +223,7 @@ $$
 
 Metsastatud aladel on madalamad FCI2-väärtused, kuna puude peegeldusvõime on madalam ja puuvõrade sees esinevad varjud.
 
-_Viide: Becker, Sarah J., Craig S.T. Daughtry ja Andrew L. Russ. „Robust forest cover indices for multispectral images.” Photogrammetric Engineering &amp; Remote Sensing 84.8 (2018): 505–512._
+_Viide: Becker, Sarah J., Craig S.T. Daughtry ja Andrew L. Russ. „Robust forest cover indices for multispectral images.” Photogrammetric Engineering & Remote Sensing 84.8 (2018): 505–512._
 
 ***
 
@@ -489,7 +489,7 @@ $$
 TDVI = 1.5 * {(NIR- Red) \over \sqrt{NIR^{2} + Red + 0.5}  }
 $$
 
-_Viide: Bannari, A., H. Asalhi ja P. Teillet. „Transformeeritud erinevuse taimestikuindeks (TDVI) taimkatte kaardistamiseks“ kogumikus „Proceedings of the Geoscience and Remote Sensing Symposium, IGARSS &#x27;02, IEEE International“, 5. köide (2002)._
+_Viide: Bannari, A., H. Asalhi ja P. Teillet. „Transformeeritud erinevuse taimestikuindeks (TDVI) taimkatte kaardistamiseks“ kogumikus „Proceedings of the Geoscience and Remote Sensing Symposium, IGARSS '02, IEEE International“, 5. köide (2002)._
 
 ***
 

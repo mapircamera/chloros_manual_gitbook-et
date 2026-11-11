@@ -43,9 +43,7 @@ Iga ühendatud andur saab oma rea (pluss üks rida iga „Ambient+Object“ rüh
 | Transpordimärk | `DAQ-U` / `DAQ-M` / `DAQ-E` või roheline märk `REF` „Ambient+Object“ peegeldusgrupi puhul. |
 | Seadme nimi | Vaikimisi on see anduri seerianumber (selle püsiv identiteet kalibreerimiseks, `.daq` failinimede jaoks ning impordi sobitamiseks); kohandatud nimed säilivad projekti kaupa. |
 | **Kalibreeritud** märge (roheline) | Kuvatakse, kui anduri tehase kalibreerimispakett on laaditud, st spektrid on tõelised W/m²/nm. |
-| **Uuendus saadaval** (merevaik, ainult DAQ-E) | Kasutusel olev püsivara on vanem kui selle Chloros
-
--koostisega kaasas olev pilt. Uuendamise ajal kuvatakse reaalajas edenemist (`Flashing… N%`, `Restarting sensor…`, seejärel `Updated X → Y` või `Failed`). |
+| **Uuendus saadaval** (merevaik, ainult DAQ-E) | Kasutusel olev püsivara on vanem kui selle Chloros-koostisega kaasas olev pilt. Uuendamise ajal kuvatakse reaalajas edenemist (`Flashing… N%`, `Restarting sensor…`, seejärel `Updated X → Y` või `Failed`). |
 | Silm | Lülitab selle anduri nähtavuse graafikul sisse või välja. |
 | Hammasratas | Avab anduri seadete akna (allpool). |
 | ✕ (punane) | Lülitab anduri lahti või eemaldab „Ambient+Object“ rühma. |
@@ -84,15 +82,9 @@ Avage hammasratta ikooniga anduri real. Sisu järjekorras:
 
 nupp</version\>
 
-**Uuenda versioonile \<version\>** ilmub, kui see Chloros
-
-i versioon sisaldab uuemat DAQ-E püsivara kujutist. Uuendus laaditakse võrgu kaudu umbes 30 sekundiga; andur taaskäivitub ja ühendub automaatselt uuesti, ning katkestatud ülekande korral jääb praegune püsivara muutumatuks. Progressiandmed edastatakse reaalajas (`Flashing… N%` → `Restarting sensor…` → `Updated X → Y`) ning lahtris kuvatakse `Up to date`, kui see on hetkeolukord.
-* **PTP-sünkroniseerimine** — reaalajas PTP-olek (langeb tagasi väärtusele `unknown`). DAQ-E püsivara versioon 1.2.0+ osaleb IEEE 1588 PTPv2-s ainult orja-kellana; Chloros
-
-i hosti backend on PTP grandmaster ning iga DAQ-E ja LATTICE kaamera LAN-võrgus on selle orjaks domeenis 0, hoides ajamärke ligikaudu 1 ms piires.
-* **Võrk**— seadme aadress ja selle saamise viis (DHCP, link-local või staatiline) ning salvestatud seade, mis kehtib pärast taaskäivitamist.**Muuda…**avab vormi:**Automaatne (DHCP)**või**Staatiline IP**koos IP-aadressi, alamvõrgu maskiga ja valikulise väravaga.**Kohalda ja taaskäivita** salvestab seaded, taaskäivitab anduri ja ühendab selle uuesti. Selle arvuti võrgust väljaspool asuv staatiline aadress lükatakse tagasi, kuna Chloros
-
-ei suutnud pärast taaskäivitamist anduriga ühendust saada; seejärel ilmub kasti, mis lubab seda siiski teha, kui arvuti aadress muudetakse või suunatakse sellesse võrku. **Ülekande alustamine sisselülitamisel**määrab, kas andur alustab ülekannet kohe pärast sisselülitamist, enne kui ükski tarkvara ühendust loob.**Restart sensor** taaskäivitab anduri ja ühendab selle uuesti praeguste seadistustega. Taaskäivitamine ei ole võimalik, kui andur salvestab andmeid. Uus versioonis 1.3.0.
+**Uuenda versioonile \<version\>** ilmub, kui see Chloros i versioon sisaldab uuemat DAQ-E püsivara kujutist. Uuendus laaditakse võrgu kaudu umbes 30 sekundiga; andur taaskäivitub ja ühendub automaatselt uuesti, ning katkestatud ülekande korral jääb praegune püsivara muutumatuks. Progressiandmed edastatakse reaalajas (`Flashing… N%` → `Restarting sensor…` → `Updated X → Y`) ning lahtris kuvatakse `Up to date`, kui see on hetkeolukord.
+* **PTP-sünkroniseerimine** — reaalajas PTP-olek (langeb tagasi väärtusele `unknown`). DAQ-E püsivara versioon 1.2.0+ osaleb IEEE 1588 PTPv2-s ainult orja-kellana; Chloros i hosti backend on PTP grandmaster ning iga DAQ-E ja LATTICE kaamera LAN-võrgus on selle orjaks domeenis 0, hoides ajamärke ligikaudu 1 ms piires.
+* **Võrk**— seadme aadress ja selle saamise viis (DHCP, link-local või staatiline) ning salvestatud seade, mis kehtib pärast taaskäivitamist.**Muuda…**avab vormi:**Automaatne (DHCP)**või**Staatiline IP**koos IP-aadressi, alamvõrgu maskiga ja valikulise väravaga.**Kohalda ja taaskäivita** salvestab seaded, taaskäivitab anduri ja ühendab selle uuesti. Selle arvuti võrgust väljaspool asuv staatiline aadress lükatakse tagasi, kuna Chloros ei suutnud pärast taaskäivitamist anduriga ühendust saada; seejärel ilmub kasti, mis lubab seda siiski teha, kui arvuti aadress muudetakse või suunatakse sellesse võrku. **Ülekande alustamine sisselülitamisel**määrab, kas andur alustab ülekannet kohe pärast sisselülitamist, enne kui ükski tarkvara ühendust loob.**Restart sensor** taaskäivitab anduri ja ühendab selle uuesti praeguste seadistustega. Taaskäivitamine ei ole võimalik, kui andur salvestab andmeid. Uus versioonis 1.3.0.
 
 Ambient+Object-grupi puhul kuvab hammasratta-aknas ainult grupi allikandurid, seadme nime ja graafiku joone värvi.
 
@@ -102,9 +94,7 @@ Ambient+Object-grupi puhul kuvab hammasratta-aknas ainult grupi allikandurid, se
 
 ### Katte valik
 
-Rippmenüü **Kate** näitab Chloros
-
-ele, milline füüsiline kate on paigaldatud anduri hajuti peale, ning rakendab selle katte tehases mõõdetud korrigeerimisprofiili igale spektrile. Valikud sõltuvad mudelist:
+Rippmenüü **Kate** näitab Chloros ele, milline füüsiline kate on paigaldatud anduri hajuti peale, ning rakendab selle katte tehases mõõdetud korrigeerimisprofiili igale spektrile. Valikud sõltuvad mudelist:
 
 | Mudel | Katevalikud |
 | --- | --- |
@@ -112,9 +102,7 @@ ele, milline füüsiline kate on paigaldatud anduri hajuti peale, ning rakendab 
 | DAQ-M | Puudub (paljas andur), Sunshine (kosinuskorrektor) |
 | DAQ-E | Puudub (paljas andur), vaateväli 15°, vaateväli 45°, vaateväli 90°, Sunshine (kosinuskorrektor) |
 
-**Kõigi mudelite vaikimisi seadistus on „Sunshine“ (kosinuskorrektor)** — MAPIR
-
-tarnib iga DAQ-seadme koos paigaldatud „Sunshine“-kapsliga ning see on standardne välistingimustes kasutatav konfiguratsioon: 180° poolkera vaateväli koos kosinusveaga ≤ ±4 % kuni 60° ja ≤ ±4,5 % kuni 70° (ei soovitata päikese kõrguse all ~15°), konstruktsioonist tulenev summutamine (~12×). Teie valik jääb projektis püsima.
+**Kõigi mudelite vaikimisi seadistus on „Sunshine“ (kosinuskorrektor)** — MAPIR tarnib iga DAQ-seadme koos paigaldatud „Sunshine“-kapsliga ning see on standardne välistingimustes kasutatav konfiguratsioon: 180° poolkera vaateväli koos kosinusveaga ≤ ±4 % kuni 60° ja ≤ ±4,5 % kuni 70° (ei soovitata päikese kõrguse all ~15°), konstruktsioonist tulenev summutamine (~12×). Teie valik jääb projektis püsima.
 
 {% hint style="warning" %}
 **Katte valik peab vastama füüsilisele katele.**Ei andur ega tarkvara suuda tuvastada, milline kate on paigaldatud. Valik mõjutab nii reaalajas korrigeerimist kui ka igasse `.daq`-faili kirjutatud märget — Sunshine-katte ~12× nõrgenduse tõttu muudab deklareerimata kate vahetus spektrit umbes sama teguriga valesti. (Sama katte eemaldamine ja uuesti paigaldamine kordab seda umbes 1,5 % ulatuses.) Valige**„None“ (paljas andur)** ainult siis, kui kate on füüsiliselt eemaldatud; DAQ-E puhul rakendab valik „None“ ikkagi tehase geomeetriaprofiili selle süvendatud klaasdiffuusori jaoks – see ei ole tühine toiming – ning paljas DAQ-E on laborikonfiguratsioon, mitte toetatud välitingimuste konfiguratsioon.
@@ -152,13 +140,7 @@ Iga anduri **spektrigraafik** näitab:
 Diagrammi all asub loendivaade, mida värskendatakse iga 500 ms järel:
 
 * **Kõik mudelid**: valguse värviproov (sRGB CIE XYZ-st), küllastunud (Jah/Ei), CIE 1931 X/Y/Z, kromaatilisus x/y, CIE u′/v′, CCT (K), CRI (Ra), domineeriv lainepikkus (nm), tipp-lainepikkus (nm), ergastuse puhtus, Duv, CIE L\*/a\*/b\* ja Munsell H/V/C.
-* **Ainult kalibreeritud andurid**(mis tahes DAQ-U / DAQ-M / DAQ-E, kui selle tehase kalibreerimispakett on laaditud – selle tunnuseks on roheline**Kalibreeritud** märgis anduri real): koguvõimsus (W/m²), fotopiline luks (lx), skotopiline luks (lx), S/P suhe, PPFD ning PPFD Red
-
-/Green
-
-/Blue
-
-(µmol/m²/s) ja opilised kiirgustihedused — S-koonus, melanopiline, rodopiline, M-koonus, L-koonus (kõik W/m²).
+* **Ainult kalibreeritud andurid**(mis tahes DAQ-U / DAQ-M / DAQ-E, kui selle tehase kalibreerimispakett on laaditud – selle tunnuseks on roheline**Kalibreeritud** märgis anduri real): koguvõimsus (W/m²), fotopiline luks (lx), skotopiline luks (lx), S/P suhe, PPFD ning PPFD Red /Green /Blue (µmol/m²/s) ja opilised kiirgustihedused — S-koonus, melanopiline, rodopiline, M-koonus, L-koonus (kõik W/m²).
 
 <!-- SCREENSHOT-NEEDED: list view live data table for a DAQ-E showing both the colorimetric rows and the power-calibrated rows (Total Power, Photopic/Scotopic Lux, PPFD, opic irradiances) -->
 
@@ -171,9 +153,7 @@ Kaks ühendatud andurit saab kombineerida reaalajas peegeldusnäidikuks — ilma
 1. Võrgustikuvaates klõpsake diagrammiruudul **+**ja valige**Kombineeri ümbritsev valgus + objekt**.
 2. Valige **Ambient Light Source**andur ja**Object Scanner**andur (kaks erinevat andurit), seejärel**Create**.
 
-Chloros
-
-arvutab kahe reaalajas voo põhjal iga lainepikkuse jaoks R(λ) = object(λ) / ambient(λ) (0, kui ambient ≤ 0). Rühma nimetus sõltub andurite kalibreerimisklassist:
+Chloros arvutab kahe reaalajas voo põhjal iga lainepikkuse jaoks R(λ) = object(λ) / ambient(λ) (0, kui ambient ≤ 0). Rühma nimetus sõltub andurite kalibreerimisklassist:
 
 * Mõlemad andurid on kalibreeritud (komplekt laaditud) → **„Näiv peegeldusvõime“**.
 * Kui mõni andur on kalibreerimata → **„Suhteline peegeldusvõime”**.
@@ -188,34 +168,10 @@ Menüü **+**pakub ka valikut**Lisa uus andur** kolme paigutusvõimalusega: *Kom
 
 ### Taimestikuindeksi tabel
 
-Loendivaates asub taimestikuindeksi tabel peegeldusgrupi graafiku all; see arvutatakse reaalajas peegeldusväärtuste põhjal lainepikkuste keskpunktides **sinine 450 / roheline 550 / punane 670 / NIR
+Loendivaates asub taimestikuindeksi tabel peegeldusgrupi graafiku all; see arvutatakse reaalajas peegeldusväärtuste põhjal lainepikkuste keskpunktides **sinine 450 / roheline 550 / punane 670 / NIR 800 nm** (väärtused 4 kümnendkohani, `---`, kui arvutamine ei ole võimalik; viige hiir indeksi nime kohale, et näha selle täisnime):
 
-800 nm** (väärtused 4 kümnendkohani, `---`, kui arvutamine ei ole võimalik; viige hiir indeksi nime kohale, et näha selle täisnime):
-
-* **Alati kuvatud** (skaalast sõltumatu, mis tahes andurite kombinatsioon): NDVI
-
-, GNDVI
-
-, ENDVI, WDRVI
-
-, GRVI
-
-, CVI
-
-, GCI
-
-, MSR.
-* **Ainult siis, kui mõlemad andurid on võimsuskalibreeritud** (mõlemad andurikomplektid laaditud): EVI
-
-, SAVI
-
-, OSAVI
-
-, GSAVI, GOSAVI, MSAVI2, RDVI, TDVI, LAI
-
-, NLI, MNLI, FCI, GEMI
-
-.
+* **Alati kuvatud** (skaalast sõltumatu, mis tahes andurite kombinatsioon): NDVI, GNDVI, ENDVI, WDRVI, GRVI, CVI, GCI, MSR.
+* **Ainult siis, kui mõlemad andurid on võimsuskalibreeritud** (mõlemad andurikomplektid laaditud): EVI, SAVI, OSAVI, GSAVI, GOSAVI, MSAVI2, RDVI, TDVI, LAI, NLI, MNLI, FCI, GEMI.
 
 <!-- SCREENSHOT-NEEDED: an Ambient+Object reflectance group in list view — reflectance chart labeled "Apparent Reflectance" with the vegetation index table below it showing live NDVI etc. -->
 
@@ -239,13 +195,9 @@ Kvantitatiivsete kiirgustiheduse väärtuste saamiseks arvutage keskmine vähema
 ## Mitme anduri paigutused ja projekti püsivus
 
 * Kombineerige mitu andurit ühele graafikule (ühised teljed), hoidke graafikuid eraldi (automaatne võrgustiku paigutus), liigutage andureid graafikute vahel, lohistage ridu/ruute ümber ja peidake üksikuid andureid silma ikooniga.
-* Chloros
-
-säilitab iga projekti puhul järgmised andmed: seadmete nimed, graafiku värvid, graafiku suurus, vaatamisrežiim ja iga anduri seaded (integreerimisaeg, kaadrite keskmistamine, AE-olek, kate valik).
+* Chloros säilitab iga projekti puhul järgmised andmed: seadmete nimed, graafiku värvid, graafiku suurus, vaatamisrežiim ja iga anduri seaded (integreerimisaeg, kaadrite keskmistamine, AE-olek, kate valik).
 * **Projekti uuesti avamisel ühendatakse selle andurid automaatselt** aadressi järgi – DAQ-U puhul COM-port, DAQ-M puhul BLE-seade, mDNS-hostinimi DAQ-E puhul (lahendatakse isegi siis, kui seadme IP-aadress on muutunud) — ning rakendab uuesti iga anduri salvestatud kateprofiili, kaadrite keskmistamist, AE-olekut ja käsitsi määratud integratsiooniaega.***
 
 ## Kaamera sidumine (DLS)
 
-Paarida pole midagi. Erinevalt droonide DLS-töövoogudest, mis seovad valgussensori kaameraga juba eelnevalt, sobitab Chloros
-
-DAQ-andmed piltidega hiljem: importimise/töötlemise ajal interpoleeritakse `.daq` näidud iga pildi säriaja ajamärgiga. Salvestage mis tahes ühendatud anduriga (`.daq` lisatakse projekti automaatselt) ja peegeldusvõimsuse töötlemine leiab õiged näidud aja järgi — vaadake [DAQ-valgusandureid](README.md), et teada saada, kuidas allapoole suunatud andmeid kasutatakse. **Reaalajas**LATTICE-pildistamiste puhul valige andur hoopis vahekaardi „Kaamerad“ rippmenüüst**Valgusandur**; iga salvestus salvestab seejärel kasutatud näidu, mis on seotud ainult selle salvestuse kaameratega (vaata [Peegeldusvoolud](reflectance.md)).</version\>
+Paarida pole midagi. Erinevalt droonide DLS-töövoogudest, mis seovad valgussensori kaameraga juba eelnevalt, sobitab Chloros DAQ-andmed piltidega hiljem: importimise/töötlemise ajal interpoleeritakse `.daq` näidud iga pildi säriaja ajamärgiga. Salvestage mis tahes ühendatud anduriga (`.daq` lisatakse projekti automaatselt) ja peegeldusvõimsuse töötlemine leiab õiged näidud aja järgi — vaadake [DAQ-valgusandureid](README.md), et teada saada, kuidas allapoole suunatud andmeid kasutatakse. **Reaalajas**LATTICE-pildistamiste puhul valige andur hoopis vahekaardi „Kaamerad“ rippmenüüst**Valgusandur**; iga salvestus salvestab seejärel kasutatud näidu, mis on seotud ainult selle salvestuse kaameratega (vaata [Peegeldusvoolud](reflectance.md)).</version\>

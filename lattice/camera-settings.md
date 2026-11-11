@@ -1,12 +1,8 @@
 # Kaamera seaded
 
-Vahekaart **Kaamerad** on Chloros
+Vahekaart **Kaamerad** on Chloros i LATTICE-kaamerate reaalajas juhtpaneel: peamine vooala, kus iga ühendatud kaamera kuvatakse reaalajas ruuduna, ning külgriba, mida saab liigutada kolme lehe vahel – **kaamerate nimekiri**,**seadete paneel**(kaamera-, massiivi- või salvestusseaded – üks korraga) ning**indeksikalkulaator**. Sellel lehel on kirjeldatud kõiki kaamerate nimekirjas, kaamera- ja massiivi seadete paneelides olevaid juhtnuppe. Salvestusrežiimid, eksporttüübi valik ja funktsioon „Capture All“ on kirjeldatud kaaslehel [Salvestusseaded ja režiimid](capture.md).
 
-i LATTICE-kaamerate reaalajas juhtpaneel: peamine vooala, kus iga ühendatud kaamera kuvatakse reaalajas ruuduna, ning külgriba, mida saab liigutada kolme lehe vahel – **kaamerate nimekiri**,**seadete paneel**(kaamera-, massiivi- või salvestusseaded – üks korraga) ning**indeksikalkulaator**. Sellel lehel on kirjeldatud kõiki kaamerate nimekirjas, kaamera- ja massiivi seadete paneelides olevaid juhtnuppe. Salvestusrežiimid, eksporttüübi valik ja funktsioon „Capture All“ on kirjeldatud kaaslehel [Salvestusseaded ja režiimid](capture.md).
-
-Vahekaart „Kaamerad“ ilmub külgribale, kui Chloros
-
-i taustsüsteem on valmis. Kõik allpool nimetatud juhtelemendid suhtlevad kohaliku taustsüsteemiga kaudu `127.0.0.1:5000` kaudu; muudatused rakenduvad kaamera reaalajas pildile kohe, kui pole märgitud teisiti.
+Vahekaart „Kaamerad“ ilmub külgribale, kui Chloros i taustsüsteem on valmis. Kõik allpool nimetatud juhtelemendid suhtlevad kohaliku taustsüsteemiga kaudu `127.0.0.1:5000` kaudu; muudatused rakenduvad kaamera reaalajas pildile kohe, kui pole märgitud teisiti.
 
 ## Sellel lehel kasutatavad kaameratüübid
 
@@ -14,40 +10,12 @@ Juhtelemendid kuvatakse või peidetakse sõltuvalt sellest, milline kaamera on v
 
 | Termin | Tähendus | Filtrikanalid |
 | --- | --- | --- |
-| **RGB
-
--kaamera** | LATTICE M3C koos FRGB-filtriga (mudel sisaldab `-FRGB`) | Red
-
-/ Green
-
-/ Blue
-
-|
-| **Bayer multispektraalne** | LATTICE M3C koos FRGN-, FOCN- või FNGB-filtriga | FRGN: Red
-
-/ Green
-
-/ NIR
-
-· FOCN: Orange
-
-/ Cyan
-
-/ NIR
-
-· FNGB: NIR
-
-/ Green
-
-/ Blue
-
-|
+| **RGB-kaamera** | LATTICE M3C koos FRGB-filtriga (mudel sisaldab `-FRGB`) | Red / Green / Blue |
+| **Bayer multispektraalne** | LATTICE M3C koos FRGN-, FOCN- või FNGB-filtriga | FRGN: Red / Green / NIR · FOCN: Orange / Cyan / NIR · FNGB: NIR / Green / Blue |
 | **Mono (M3M)** | LATTICE M3M — üks kitsasriba filter, üks kalibreeritud riba | Üks riba |
 | **Massiivi liige** | Kaamera, mis on ühendatud sünkroniseeritud massiivi osana (ühendatud või eraldi kuvamine) | Vastavalt oma filtrile |
 
- RGB
-
--kaamerad läbivad fotomeetrilise töötluse (valgebalanss, värviprofiilid, gamma); multispektraalsed ja mono-kaamerad läbivad radiomeetrilise ahela ning vahevad fotomeetrilised seadistused vahele. Massiivi liikmed edastavad voo tasandi seaded (pikseliformaat, resolutsioon, binning, päästik, kaadrisagedus) massiivile — need read muutuvad kaamera-paneelis ainult lugemiseks ja liiguvad massiivi seadete paneeli.
+ RGB-kaamerad läbivad fotomeetrilise töötluse (valgebalanss, värviprofiilid, gamma); multispektraalsed ja mono-kaamerad läbivad radiomeetrilise ahela ning vahevad fotomeetrilised seadistused vahele. Massiivi liikmed edastavad voo tasandi seaded (pikseliformaat, resolutsioon, binning, päästik, kaadrisagedus) massiivile — need read muutuvad kaamera-paneelis ainult lugemiseks ja liiguvad massiivi seadete paneeli.
 
 ## Peamine vooala
 
@@ -55,9 +23,7 @@ Juhtelemendid kuvatakse või peidetakse sõltuvalt sellest, milline kaamera on v
 
 
 
-Kui kaameraid pole ühendatud, kuvab vooala tervitusekraani **„Ühenda kaamera, et alustada“**koos kahe nupuga:**Ühenda kaamera**(roheline, avab ühe kaamera ühendamise dialoogi) ja**Ühenda kaamerarühm** (sinine, avab kaamerarühma ühendamise dialoogi). Ühendamise dialoogid on kirjeldatud jaotises [Kaamerate ühendamine](connecting.md); kaamerarühma põhimõtted (sünkroniseerimine, tasemed, ribalaius) on kirjeldatud jaotises [Mitme kaamera massiivid](arrays.md). Kui avate salvestatud projekti, milles on kaamerad, kuvatakse avalehel selle asemel pöörlev ikoon koos tekstiga „N salvestatud kaamerat avatakse uuesti…“, samal ajal kui Chloros
-
-taastab viimase seansi vooge.
+Kui kaameraid pole ühendatud, kuvab vooala tervitusekraani **„Ühenda kaamera, et alustada“**koos kahe nupuga:**Ühenda kaamera**(roheline, avab ühe kaamera ühendamise dialoogi) ja**Ühenda kaamerarühm** (sinine, avab kaamerarühma ühendamise dialoogi). Ühendamise dialoogid on kirjeldatud jaotises [Kaamerate ühendamine](connecting.md); kaamerarühma põhimõtted (sünkroniseerimine, tasemed, ribalaius) on kirjeldatud jaotises [Mitme kaamera massiivid](arrays.md). Kui avate salvestatud projekti, milles on kaamerad, kuvatakse avalehel selle asemel pöörlev ikoon koos tekstiga „N salvestatud kaamerat avatakse uuesti…“, samal ajal kui Chloros taastab viimase seansi vooge.
 
 <!-- SCREENSHOT-NEEDED: Cameras tab empty state — the "Connect a camera to get started" splash with the green Connect Camera and blue Connect Array buttons. -->
 
@@ -122,21 +88,11 @@ Avage need kaamera rea **hammasrattaga**. Paneel libiseb kaamerate nimekirja pea
 
 ### Reaalajas histogramm
 
-Paneeli ülaosas asub reaalajas luma-histogramm, mis arvutatakse ~8 Hz sagedusega JPEG
+Paneeli ülaosas asub reaalajas luma-histogramm, mis arvutatakse ~8 Hz sagedusega JPEG-eelvaate põhjal. Keskmine on Bayer-kaalutud — (R+2G+B)/4 — et see vastaks kaamera enda AE-mõõtmisele.
 
--eelvaate põhjal. Keskmine on Bayer-kaalutud — (R+2G+B)/4 — et see vastaks kaamera enda AE-mõõtmisele.
-
-* **Oranž Orange
-
-joon**= AE sihtmärk.**Lohistage seda horisontaalselt, et sihtmärki muuta** — vabastamisel saadetakse üks käsk ning lohistamine lülitab AE sihtmärgi režiimi käsitsi režiimile.
-* **Roheline Green
-
-joon** = tegelik keskmine heledus (mida AE hetkel annab).
-* **RGB
-
--nupp** (ülemine parem nurk): lülitab sisse kaamera filtri järgi värvitud ribapõhised pealekantavad histogrammid (nt FRGN-režiimis: hall NIR
-
-, roheline, punane). Mono (M3M) kaameratel on nupul kiri „MONO“ ja see on keelatud — mono režiimis kuvatakse alati üheribalist heleduse histogrammi.
+* **Oranž Orange joon**= AE sihtmärk.**Lohistage seda horisontaalselt, et sihtmärki muuta** — vabastamisel saadetakse üks käsk ning lohistamine lülitab AE sihtmärgi režiimi käsitsi režiimile.
+* **Roheline Green joon** = tegelik keskmine heledus (mida AE hetkel annab).
+* **RGB-nupp** (ülemine parem nurk): lülitab sisse kaamera filtri järgi värvitud ribapõhised pealekantavad histogrammid (nt FRGN-režiimis: hall NIR, roheline, punane). Mono (M3M) kaameratel on nupul kiri „MONO“ ja see on keelatud — mono režiimis kuvatakse alati üheribalist heleduse histogrammi.
 * X-telje märgistused järgivad praeguse pikseliformaadi anduri bittisügavust: 0..255, 0..1023, 0..4095 või 0..65535.
 
 ### Kaamera teabe read
@@ -148,54 +104,22 @@ joon** = tegelik keskmine heledus (mida AE hetkel annab).
 | Rida | Käitumine |
 | --- | --- |
 | **Mudel** | Ainult lugemiseks (nt `LATT-M3C-L87-FRGN`). |
-| **Radiomeetriline kalibreerimine** | Green**„Active“**märgis, mille allkirjas on näidatud kalibreerimistasand, hash, kalibreerimise kuupäev ja sagedusribade loend, mis on laaditud kaamera kalibreerimispaketist (vt [Tehase radiomeetriline kalibreerimine](https://mapir.gitbook.io/lattice-camera/calibration/factory-radiometric-calibration)).**RGB
-
--kaamerate puhul peidetud** — neil on fotomeetriline valgebalansi kalibreerimine, mitte sagedusribapõhine kiirgus. |
-| **Kalibreerimisaruanne**|**Lae alla** nupp — avab kaamera seerianumbri järgi koostatud NIST-kalibreerimissertifikaadi PDF-faili teie operatsioonisüsteemi vaatajas. Kui sertifikaati pole veel vahemällu salvestatud, näitab Chloros
-
-selle asemel vihjet. |
+| **Radiomeetriline kalibreerimine** | Green**„Active“**märgis, mille allkirjas on näidatud kalibreerimistasand, hash, kalibreerimise kuupäev ja sagedusribade loend, mis on laaditud kaamera kalibreerimispaketist (vt [Tehase radiomeetriline kalibreerimine](https://mapir.gitbook.io/lattice-camera/calibration/factory-radiometric-calibration)).**RGB-kaamerate puhul peidetud** — neil on fotomeetriline valgebalansi kalibreerimine, mitte sagedusribapõhine kiirgus. |
+| **Kalibreerimisaruanne**|**Lae alla** nupp — avab kaamera seerianumbri järgi koostatud NIST-kalibreerimissertifikaadi PDF-faili teie operatsioonisüsteemi vaatajas. Kui sertifikaati pole veel vahemällu salvestatud, näitab Chloros selle asemel vihjet. |
 | **Seerianumber** | Ainult lugemiseks. |
 | **Püsivara**| Näitab praegust versiooni, seejärel otsib selle mudeli jaoks saadaval oleva versiooni (puhverdatud mudeli kaupa — N-kaamerast koosnev massiiv kontrollib serverit üks kord). Seisundid: „Kontrollin…“ →**„Uuenda versioonile X“**nupp → „Uuendamine…“ → „Uuendatud A → B“ / „Ebaõnnestus: …“ / „Vahelet jäetud: …“ / roheline**„Ajakohane“**. Uuendamisnupu vihje: „Tehase seadete taastamine + tarkvara uuendamine + UserSet1 ümberprogrammeerimine. ~2–3 minutit; ühendust ei tohi katkestada.“ |
 | **IP** | Ainult lugemiseks. |
 | **Temperatuur** | Ainult lugemiseks, värskendatakse iga 3 sekundi järel. Muutub oranžiks temperatuuril ≥65 °C ja punaseks koos märkega ⚠ temperatuuril ≥75 °C. |
-| **Kalibreerimise sihtmärk** valikukast | Lülitab sisse ArUco peegeldusvõime sihtmärgi tuvastamise koos paneelipõhise NDVI
-
--valideerimistabeliga reaalaja pildi all (loendivaade) — vt [Kalibreerimise sihtmärgi tabelit](#the-calibration-target-table). Ainult seansiks — avatakse alati välja lülitatuna. |
+| **Kalibreerimise sihtmärk** valikukast | Lülitab sisse ArUco peegeldusvõime sihtmärgi tuvastamise koos paneelipõhise NDVI-valideerimistabeliga reaalaja pildi all (loendivaade) — vt [Kalibreerimise sihtmärgi tabelit](#the-calibration-target-table). Ainult seansiks — avatakse alati välja lülitatuna. |
 | **Valgusandur** rippmenüü | Seob DAQ-valgusanduri (DAQ-E/M/U, valikust „Valgusandurid”) selle kaameraga, et teha allapoole suunatud valguse (DLS) valgustuse korrigeerimist ja ennustavat automaatset säritust. „„Puudub“ tühistab seose. Kui andureid pole ühendatud, kuvab rippmenüü „(andureid pole ühendatud — ava DAQ-vahekaart)“. Seos salvestatakse koos projektiga. |
 
 #### Kalibreerimismärgi tabel
 
 Tabel on **ainult valideerimiseks** („ainult valideerimiseks — ei muuda kalibreerimist”). Selle pealkirjas on märgitud kaamera seerianumber, filter, märgi number ja märgi suurus pikslites ning igale paneelile vastab üks rida:
 
-* **Paneel**, seejärel üks veerg iga laineala kohta, milles on paneeli väärtus — Bayeri kaamera näitab oma kolme laineala nime ja lainepikkuse järgi (nt FRGN: Red
-
-660 nm / Green
-
-550 nm / NIR
-
-850 nm); **mono (M3M) kaamera näitab oma üht sagedusriba** (nt `F750`) ja sellel puuduvad NDVI
-
--veerud.
+* **Paneel**, seejärel üks veerg iga laineala kohta, milles on paneeli väärtus — Bayeri kaamera näitab oma kolme laineala nime ja lainepikkuse järgi (nt FRGN: Red 660 nm / Green 550 nm / NIR 850 nm); **mono (M3M) kaamera näitab oma üht sagedusriba** (nt `F750`) ja sellel puuduvad NDVI-veerud.
 * **Sat** — paneeli küllastunud pikslite osakaal (merevaik alates 1 %, punane alates 5 %).
-* **NDVI
-
-Meas**,**NDVI
-
-Theo** (paneeli võrdluspeegeldusvõime NDVI
-
-) ja **Δ**— ainult Bayeri multispektraalkaamerad. Väike märge „NDVI
-
-Meas“ järel näitab, mille alusel mõõdetud NDVI
-
-arvutati:**ρ**(peegeldusvõime — valgusanduri näidud on kättesaadavad),**L**(kiirgus – valgusanduri näitu pole) või**DN**(kaamera toorväärtused). Ainult**ρ**-NDVI
-
-on võrreldav NDVI
-
-Theo-ga: L ja DN puhul on veerg Δ halliks muudetud ja märkus selgitab seda („Valgusanduri näitu pole: NDVI
-
-on arvutatud kiirgusest, seega Δ ei ole kalibreerimiskontroll“ / „NDVI
-
-on arvutatud kaamera toorväärtustest, seega Δ ei ole kalibreerimiskontroll“). Väärtuse ρ puhul on Δ roheline, kui väärtus on alla 0,02, kollane, kui alla 0,05, muul juhul punane.
+* **NDVI Meas**,**NDVI Theo** (paneeli võrdluspeegeldusvõime NDVI) ja **Δ**— ainult Bayeri multispektraalkaamerad. Väike märge „NDVI Meas“ järel näitab, mille alusel mõõdetud NDVI arvutati:**ρ**(peegeldusvõime — valgusanduri näidud on kättesaadavad),**L**(kiirgus – valgusanduri näitu pole) või**DN**(kaamera toorväärtused). Ainult**ρ**-NDVI on võrreldav NDVI Theo-ga: L ja DN puhul on veerg Δ halliks muudetud ja märkus selgitab seda („Valgusanduri näitu pole: NDVI on arvutatud kiirgusest, seega Δ ei ole kalibreerimiskontroll“ / „NDVI on arvutatud kaamera toorväärtustest, seega Δ ei ole kalibreerimiskontroll“). Väärtuse ρ puhul on Δ roheline, kui väärtus on alla 0,02, kollane, kui alla 0,05, muul juhul punane.
 
 <!-- SCREENSHOT-NEEDED: a 1.3.0 Calibration Target table under a live feed in list view — a Bayer camera's table showing the band columns, Sat, and "NDVI Meas ρ" / NDVI Theo / Δ; ideally next to a mono camera's single-band table with no NDVI columns. -->
 
@@ -203,34 +127,24 @@ on arvutatud kaamera toorväärtustest, seega Δ ei ole kalibreerimiskontroll“
 
 <!-- SCREENSHOT-NEEDED: per-camera Exposure & Gain section — Exposure (us) and Gain (dB) rows with Auto/Manual toggles, AE Target Brightness, AE Smoothing slider, AE Region of Interest row with the Aim button, and (on an array camera) AE Tune Speed and Highlight Protection rows. -->
 
-Kõik siinsed numbrilised sisestusväljad kasutavad kiirendamiseks hoidmisega reguleeritavaid valikurattaid: puudutus = ±1, hoidmine &gt;1,5 s = ±10, hoidmine &gt;3 s = ±100. Väärtus saadetakse kaamerale, kui sõrme lahti lasete.
+Kõik siinsed numbrilised sisestusväljad kasutavad kiirendamiseks hoidmisega reguleeritavaid valikurattaid: puudutus = ±1, hoidmine >1,5 s = ±10, hoidmine >3 s = ±100. Väärtus saadetakse kaamerale, kui sõrme lahti lasete.
 
 | Seade | Vahemik / valikud | Vaikimisi | Kehtib | Mida teeb |
 | --- | --- | --- | --- | --- |
 | **Valgustusaeg (us)**| Kaamera reaalajas min/max | Auto | Kõik | Valgustusaeg mikrosekundites, koos**Auto/Käsitsi**lüliti. Auto = kaamera poolt pidevalt reguleeritav automaatne säritus. Käsitsi särituse seadistamisel jääb**võimendus** automaatrežiimile (kui see oli varem nii), võimaldades kasutada kaamera kogu võimendusvahemikku, kuni võimendust muudate või seadistate käsitsi režiimile. |
 | **Võimendus (dB)**| Kaamera reaalajas min/max (nt kuni 48 dB) | Käsitsi (väljas) | Kõik | Analoog-/digitaalne võimendus koos oma**Auto/Käsitsi** lülitiga. |
 | **AE sihtheledus**| 0–255 | 80, režiim**Auto**| Kõik (muudetav, kui AE või automaatne võimendus on sisse lülitatud) | Heledus, millele AE püüab saavutada.**Auto**(vaikimisi) režiimis valib histogrammipõhine taustkontroller sihtmärgi ise, hoides säritust 60–75 %-l anduri maksimumist. Väärtuse sisestamine või histogrammi oranži joone lohistamine lülitab selle üle**Käsitsi** režiimile. |
-| **AE silumine** | 0,5–40, samm 0,1 | 8,0 | Kõik | AE summutamine. Vihje: &quot;Madalam väärtus = AE reageerib kiiremini (võib kõrgel kaadrisagedusel pulseerida). Kõrgem väärtus = sujuvam / aeglasem.” Vaikimisi seadistusest oluliselt madalamad väärtused võivad põhjustada AE pulseerimist ja destabiliseerida voogedastust kõrgel kaadrisagedusel; 8,0 on stabiilne vaikimisi seadistus. |
+| **AE silumine** | 0,5–40, samm 0,1 | 8,0 | Kõik | AE summutamine. Vihje: "Madalam väärtus = AE reageerib kiiremini (võib kõrgel kaadrisagedusel pulseerida). Kõrgem väärtus = sujuvam / aeglasem.” Vaikimisi seadistusest oluliselt madalamad väärtused võivad põhjustada AE pulseerimist ja destabiliseerida voogedastust kõrgel kaadrisagedusel; 8,0 on stabiilne vaikimisi seadistus. |
 | **AE huvipiirkond**| Lülita sisse valikukast +**Sihtimine**nupp | Väljas | Kõik | Kui see on sisse lülitatud, mõõdab AE ainult rohelise katkendjoonega piiratud piirkonda, mitte kogu kaadrit.**Sihtimine** aktiveerib reaalajas pildil klõpsuga paigutamise: klõps keskendab piirkonna kaadri 30 %-le; klõps ja lohistamine joonistab kohandatud ristküliku (minimaalselt 5 % × 5 %). „Aim“ lülitub pärast ühte paigutamist ise välja. Piirkond kaardistatakse tagasi kaamera algsetele koordinaatidele vastavalt teie poolt seatud pööramisele/peegeldamisele ning salvestatakse koos projektiga. |
 | **AE Tune Speed** | 0,1–5, samm 0,1 | 1,0 | Ainult massiivi liikmetele | Kui kiiresti automaatne AE-sihtmärk jälgib stseeni heleduse muutusi; 1,0× kontrollib uuesti iga 2,5 sekundi järel. |
 | **Heledate alade kaitse** | Range (1 %) / Normaalne (5 %) / Leebe (15 %) | Range | Kaamerad, mis toetavad seda seadet | Kui suur osa kaadrist võib muutuda valgeks, enne kui AE pilti tumedamaks muudab. |
 
 {% hint style="info" %}
-**Valgustuse nõuded Bayeri multispektraalsetele kaameratele (RGN
-
-/ OCN
-
-/ NGB
-
-):** stseenis peab olema piisavalt valgust kõigis kolmes kanalit, vastasel juhul kalibreerimine ei tööta korrektselt — ühe anduri ekspositsioon hõlmab kõiki kolme spektrit. Kasutage valguse mõõtmiseks DAQ-valgusandurit või valige täielikult monokroomne režiim (M3M), et iga sagedusriba saaks oma ekspositsiooni. Kui pildistamine seda nõuet rikub, tuvastab Chloros
-
-selle ja hoiatab teid (unmix-clamp-teade). Reaalajas kuvab kanalite jagatud pilt **„Madala usaldusväärsusega sagedusriba andmed · N%”**, kui unmix on selle sagedusriba 25 % või enamal selle pikslitest klambriga piiranud.
+**Valgustuse nõuded Bayeri multispektraalsetele kaameratele (RGN / OCN / NGB):** stseenis peab olema piisavalt valgust kõigis kolmes kanalit, vastasel juhul kalibreerimine ei tööta korrektselt — ühe anduri ekspositsioon hõlmab kõiki kolme spektrit. Kasutage valguse mõõtmiseks DAQ-valgusandurit või valige täielikult monokroomne režiim (M3M), et iga sagedusriba saaks oma ekspositsiooni. Kui pildistamine seda nõuet rikub, tuvastab Chloros selle ja hoiatab teid (unmix-clamp-teade). Reaalajas kuvab kanalite jagatud pilt **„Madala usaldusväärsusega sagedusriba andmed · N%”**, kui unmix on selle sagedusriba 25 % või enamal selle pikslitest klambriga piiranud.
 {% endhint %}
 
 {% hint style="info" %}
-**Kuidas automaatne ekspositsioon ja võimendus toimivad (1.3.0).** Kui võimendus on automaatrežiimil, hoiab Chloros
-
-võimendust 0 dB tasemel, kuni ekspositsioon on saavutanud lubatud maksimaalse väärtuse (automaatse ekspositsiooni ülempiir, massiivi triggiperiood või DAQ ekspositsiooni ülempiir); alles siis tõuseb võimendus. Massiivis on triggisagedus esikohal: automaatne ekspositsioon täidab sageduse poolt määratud perioodi, seejärel tõstab võimendust, mistõttu pimenev stseen ei vähenda enam automaatse triggereerimissagedust (versioonis 1.2.0 see veel mõjutas). **Käsitsi**valgustusaeg massiivi liikmel, mis on pikem kui triggereerimisperiood, aeglustab massiivi triggereerimist, et see sobiks; automaatne sagedus taastub siis, kui kõik seda aeglustanud elemendid on tagasi automaatse ekspositsiooni režiimis. Kui**eksponatsioon**ja**AE sihtheledus** on mõlemad automaatrežiimis ning DAQ valgussensor annab näitu, hoitakse iga kaamera ekspositsiooni muutumatuna pärast automaatse ekspositsiooni stabiliseerumist, kuni mõõdetud valgus jääb vahemikku ±25 %; suurem ja püsiv valguse muutus, seadete taaskäivitamine (näiteks huvipiirkonna (ROI) muutus) või teie enda poolt tehtud ekspositsiooni muutus käivitab selle uuesti.
+**Kuidas automaatne ekspositsioon ja võimendus toimivad (1.3.0).** Kui võimendus on automaatrežiimil, hoiab Chloros võimendust 0 dB tasemel, kuni ekspositsioon on saavutanud lubatud maksimaalse väärtuse (automaatse ekspositsiooni ülempiir, massiivi triggiperiood või DAQ ekspositsiooni ülempiir); alles siis tõuseb võimendus. Massiivis on triggisagedus esikohal: automaatne ekspositsioon täidab sageduse poolt määratud perioodi, seejärel tõstab võimendust, mistõttu pimenev stseen ei vähenda enam automaatse triggereerimissagedust (versioonis 1.2.0 see veel mõjutas). **Käsitsi**valgustusaeg massiivi liikmel, mis on pikem kui triggereerimisperiood, aeglustab massiivi triggereerimist, et see sobiks; automaatne sagedus taastub siis, kui kõik seda aeglustanud elemendid on tagasi automaatse ekspositsiooni režiimis. Kui**eksponatsioon**ja**AE sihtheledus** on mõlemad automaatrežiimis ning DAQ valgussensor annab näitu, hoitakse iga kaamera ekspositsiooni muutumatuna pärast automaatse ekspositsiooni stabiliseerumist, kuni mõõdetud valgus jääb vahemikku ±25 %; suurem ja püsiv valguse muutus, seadete taaskäivitamine (näiteks huvipiirkonna (ROI) muutus) või teie enda poolt tehtud ekspositsiooni muutus käivitab selle uuesti.
 {% endhint %}
 
 {% hint style="info" %}
@@ -271,34 +185,18 @@ Kõik selles jaotises on **ainult kuvapoolne**— see muudab seda, mida näed re
 | --- | --- | --- | --- | --- |
 | **Renderdamise resolutsioon** | 360p (kiireim) / 480p / 720p / 1080p / Anduri algne resolutsioon (aeglaseim) | 720p | Kõik | Kõrgus, millel tagapõhi käitab radiomeetrilist eelvaateketi. Madalam väärtus tagab suurema kaadrisageduse, muutmata vaatevälja. |
 | **Indeks**| Valikukast „Luba“ + hammasratas | Väljas | Ainult Bayeri multispektraalne,**mitte** kombineeritud maatriksi liikmed | Reaalajas taimestikuindeksi eelvaade. Hammasratas avab jagatud [indeksi kalkulaatori](#index-calculator-pane), millesse on eelnevalt laaditud kaamera filtri loomulikud lainepikkused (nt `Red_660_RGN`, `Green_550_RGN`, `NIR_850_RGN`). Iga eelvaatekaadri puhul arvutatakse välja kohandatud avaldis koos LUT-iga (sisse/välja, vaikimisi tase 7-stop, vaikimisi miinimum 0,2, vaikimisi maksimum 1) arvutatakse iga eelvaatekaadri puhul. Kombineeritud massiivi liikmed peidavad selle rea — massiivil on üks jagatud indeks. |
-| **Valgebalanss** | Väljas / Üks kord / Pidev + uuesti salvestamise nupp | Pidev | Ainult RGB
-
-| Reaalajas valgebalanss. Värskendamisnupp salvestab valgebalansi uuesti praegusest DLS-spektrist (on välja lülitatud, kui režiim on „Väljas”). |
-| **Gamma** | Sisse / Väljas | Sisse | Ainult RGB
-
-| Näita gamma (γ = 2,2 LUT) reaalajas eelvaates. Salvestatud pildid jäävad lineaarseteks. |
+| **Valgebalanss** | Väljas / Üks kord / Pidev + uuesti salvestamise nupp | Pidev | Ainult RGB | Reaalajas valgebalanss. Värskendamisnupp salvestab valgebalansi uuesti praegusest DLS-spektrist (on välja lülitatud, kui režiim on „Väljas”). |
+| **Gamma** | Sisse / Väljas | Sisse | Ainult RGB | Näita gamma (γ = 2,2 LUT) reaalajas eelvaates. Salvestatud pildid jäävad lineaarseteks. |
 | **Müra vähendamine** | Valikukast + tugevus 0–100 | Väljas / 50 | Kõik (iga kaamera kohta, isegi massiivides) | Kahepoolne filter reaalajas eelvaates. Kõrgem väärtus = siledam, kuid pehmemad detailid. |
 | **Teravus** | Valikukast + tugevus 0–100 | Väljas / 30 | Kõik | Teravustamismaski kasutamine reaalajas eelvaates, rakendatakse viimasena. Võib müra võimendada. Ainult eelvaates. |
-| **Vignett**| Valikukast + tugevus 0–100 | Väljas / 0 | Kõik | Käsitsi jääkvigneti eemaldamine (heledamaks nurgad), mis lisatakse massiivi Smart Vignette&#x27;i hinnangu peale.**Radiomeetriline — mõjutab reaalaja vaadet JA eksporti**, erinevalt müra vähendamisest ja teravusest. |
-| **Värviprofiil** | Raw / Lineaarne / Looduslik / Täiustatud / Kohandatud temperatuur | Looduslik | Ainult RGB
-
-| Vaata allpool. |
-| **Värvitemperatuur** | 2000–10000 K, sammuga 100 | 5500 K | Ainult RGB
-
-, kohandatud temperatuuriprofiil | Seab valgebalansi kindlale korrelatsioonilisele värvitemperatuurile (DLS-sisendit ignoreeritakse). Viimati valitud Kelvini väärtus jääb meelde ka profiilide vahetamisel. |
-| **Heledamad alad** | −100 kuni 0, sammuga 1 | 0 (väljas) | Ainult RGB
-
-| Uus versioonis 1.3.0. Tumendab pildi kõige heledamaid ja valgeimaid alasid (0 = muutmata, −100 = tugevaim). Kehtib reaalajas eelvaatele **ja ekraanitasandi (eelvaate) piltide salvestamisele**, mis salvestavad selle seadistuse (`Chloros:DisplayHighlights`); see ei mõjuta kunagi kiirguse ja peegeldusvõime eksportimist. See ei suuda taastada üleklippunud andureid – selleks tuleb vähendada säritust. Zebra-kiht järgib tumendatud pilti. Keelatud Raw-värviprofiili puhul („Raw-värviprofiili korral ei rakendata.”). |
-| **Küllastus** | 0–200 (100 = neutraalne) | 100 | Ainult RGB
-
-| HSV-küllastus reaalajas eelvaates. |
-| **Kontrast** | 0–200 (100 = neutraalne) | 100 | Ainult RGB
-
-| Lineaarne kontrast keskmise halli ümbruses reaalajas eelvaates. |
+| **Vignett**| Valikukast + tugevus 0–100 | Väljas / 0 | Kõik | Käsitsi jääkvigneti eemaldamine (heledamaks nurgad), mis lisatakse massiivi Smart Vignette'i hinnangu peale.**Radiomeetriline — mõjutab reaalaja vaadet JA eksporti**, erinevalt müra vähendamisest ja teravusest. |
+| **Värviprofiil** | Raw / Lineaarne / Looduslik / Täiustatud / Kohandatud temperatuur | Looduslik | Ainult RGB | Vaata allpool. |
+| **Värvitemperatuur** | 2000–10000 K, sammuga 100 | 5500 K | Ainult RGB, kohandatud temperatuuriprofiil | Seab valgebalansi kindlale korrelatsioonilisele värvitemperatuurile (DLS-sisendit ignoreeritakse). Viimati valitud Kelvini väärtus jääb meelde ka profiilide vahetamisel. |
+| **Heledamad alad** | −100 kuni 0, sammuga 1 | 0 (väljas) | Ainult RGB | Uus versioonis 1.3.0. Tumendab pildi kõige heledamaid ja valgeimaid alasid (0 = muutmata, −100 = tugevaim). Kehtib reaalajas eelvaatele **ja ekraanitasandi (eelvaate) piltide salvestamisele**, mis salvestavad selle seadistuse (`Chloros:DisplayHighlights`); see ei mõjuta kunagi kiirguse ja peegeldusvõime eksportimist. See ei suuda taastada üleklippunud andureid – selleks tuleb vähendada säritust. Zebra-kiht järgib tumendatud pilti. Keelatud Raw-värviprofiili puhul („Raw-värviprofiili korral ei rakendata.”). |
+| **Küllastus** | 0–200 (100 = neutraalne) | 100 | Ainult RGB | HSV-küllastus reaalajas eelvaates. |
+| **Kontrast** | 0–200 (100 = neutraalne) | 100 | Ainult RGB | Lineaarne kontrast keskmise halli ümbruses reaalajas eelvaates. |
 | **Peegelda horisontaalselt / Peegelda vertikaalselt** | Valikukastid | Väljas | Kõik | Pöörab eelvaadet horisontaalselt / vertikaalselt. |
-| **Pööre**| 0° / 90° / 180° / 270° | 0° | Kõik | Pöörab eelvaadet. Suund rakendatakse eelvaate ahela lõpus.**Salvestatud pildid (1.3.0):**eraldiseisva kaamera eelvaate, kiirguse, peegelduse ja indeksi tooted pööratakse peegelduse/pööramise abil, samas kui**Raw ja Debayered jäävad kaamera algse orientatsiooni juurde**; iga pildifail salvestab seadistuse oma XMP-sse, nii et hilisem RAW-faili töötlemine rakendab seda samamoodi.**Massiivi liikmete failid jäävad algseks** (seadistus salvestatakse, kuid ei rakendata) ning massiivi komposiitvaated ignoreerivad seda. |**Värviprofiili semantik** (RGB
-
--kaamerad):
+| **Pööre**| 0° / 90° / 180° / 270° | 0° | Kõik | Pöörab eelvaadet. Suund rakendatakse eelvaate ahela lõpus.**Salvestatud pildid (1.3.0):**eraldiseisva kaamera eelvaate, kiirguse, peegelduse ja indeksi tooted pööratakse peegelduse/pööramise abil, samas kui**Raw ja Debayered jäävad kaamera algse orientatsiooni juurde**; iga pildifail salvestab seadistuse oma XMP-sse, nii et hilisem RAW-faili töötlemine rakendab seda samamoodi.**Massiivi liikmete failid jäävad algseks** (seadistus salvestatakse, kuid ei rakendata) ning massiivi komposiitvaated ignoreerivad seda. |**Värviprofiili semantik** (RGB-kaamerad):
 
 * **Raw** — töötlemisahel jäetakse täielikult vahele.
 * **Lineaarne** — tume signaal + tasandus + valgebalanss; ei värvimatriitsi ega gammat.
@@ -323,20 +221,12 @@ Need on ainult kasutajaliidese funktsioonid — joonistatakse video peale, puudu
 | **Võrgustik** | Väljas / 3 × 3 / 9 × 9 | Väljas | Kompositsioonivõrgustik. |
 | **Histogramm** | Valikukast + laius 0,10–0,90 kaadri laiusest | Väljas / 0,25 | Otseülekandes kuvatav histogrammiriba. |
 | **Fookuse tipp** | Valikukast + künnis 20–200 + värviproov | Väljas / 80 / `#ff5722` | Sobeli servade esiletõstmine fookustamiseks. |
-| **Kanali jagamised** | Nupp „Näita jagamisi (Red
-
-/ Green
-
-/ NIR
-
-)” / nupp „Peida jagamised“ | Peidetud | Lisab komposiitpildi kõrvale kolm sõltumatut halltoonilist kanalipõhist ruutu (nupu silt vastab kaamera filtrikanalitele). Iga jagatud ruutu saab lohistada ja see jagab kaamera raamivärvi. Ei ole saadaval monokroomkaameratel. Salvestatakse koos projektiga. |
+| **Kanali jagamised** | Nupp „Näita jagamisi (Red / Green / NIR)” / nupp „Peida jagamised“ | Peidetud | Lisab komposiitpildi kõrvale kolm sõltumatut halltoonilist kanalipõhist ruutu (nupu silt vastab kaamera filtrikanalitele). Iga jagatud ruutu saab lohistada ja see jagab kaamera raamivärvi. Ei ole saadaval monokroomkaameratel. Salvestatakse koos projektiga. |
 
 ### Punktmõõtur
 
 * **Klõpsa proovi võtmiseks**valikukast: klõpsa reaalajas pilti, et võtta proov ühest pikslist (seda märgib ristkülik), või klõpsa ja lohista piirkonda, et saada pikslite keskmine.**Tühjenda**kustutab proovi ja sihtimismärgi. Vastastikku välistav AE-ROI**Sihtimise** režiimiga.
-* **Näita**rippmenüü:**Raw (bitisügavus)**— anduri bitisügavusega algupärased digitaalarvud (nt 12-bitine → 0..4095) — või**Näita (8-bitine)** (vaikimisi). Kui reaalajas indeks on aktiivne, näitab „Display“ selle asemel arvutatud indeksväärtust (nt NDVI
-
-).
+* **Näita**rippmenüü:**Raw (bitisügavus)**— anduri bitisügavusega algupärased digitaalarvud (nt 12-bitine → 0..4095) — või**Näita (8-bitine)** (vaikimisi). Kui reaalajas indeks on aktiivne, näitab „Display“ selle asemel arvutatud indeksväärtust (nt NDVI).
 * Näidupaneelil on loetletud pikselikoordinaadid, kaadri suurus, pikseliformaat, bittisügavus ja kanalitabel (Chan / Value / %) koos lainepikkuste ja kanalite nimetustega; Bayeri rohelised paarid on keskmistatud; piirkonna proovid näitavad „N px avg“.
 
 Punktmõõturi olek kehtib ainult käesoleva seansi ajal.
@@ -358,18 +248,10 @@ See osa kuvatakse ainult siis, kui **on ühendatud vähemalt üks DAQ-valgusandu
 | **Stseeni peegeldusvõime**|**Kalibreeri ρ uuesti** nupp | — | Hinnab uuesti stseeni peegeldusvõime tegurit, mida lahendaja kasutab. |
 
 {% hint style="info" %}
-**Massiivi ühendamine lülitab ennustava AE vaikimisi välja** — massiivide puhul reguleerivad valgustust (koos küllastumiskaitsega) Chloros
-
-i nutikas AE ja kaamera poolne automaatne valgustuse reguleerimine, ning ennustava AE ühe stseenipeegeldusvõime hinnang ei ole segastseenide puhul usaldusväärne. Saate selle siin kaamera kaupa uuesti sisse lülitada, kui soovite konkreetselt DLS-põhist radiomeetrilist valgustust.
+**Massiivi ühendamine lülitab ennustava AE vaikimisi välja** — massiivide puhul reguleerivad valgustust (koos küllastumiskaitsega) Chloros i nutikas AE ja kaamera poolne automaatne valgustuse reguleerimine, ning ennustava AE ühe stseenipeegeldusvõime hinnang ei ole segastseenide puhul usaldusväärne. Saate selle siin kaamera kaupa uuesti sisse lülitada, kui soovite konkreetselt DLS-põhist radiomeetrilist valgustust.
 {% endhint %}
 
-**DAQ-põhine valgustuse ülempiir ja langeva valguse järgi fikseeritud AE.** Sõltumata eespool olevast valikukastist, kui DAQ-valgusandur on määratud RGB
-
--kaamerale, arvutab Chloros
-
-— mõõdetud absoluutse allapoole suunatud kiirguse alusel — maksimaalse ekspositsiooni×võimenduse, mille juures 100 %-peegeldusega pind jääb allapoole kärpimist, ja rakendab seda **ülempiirina**automaatse ekspositsiooni puhul. Alates versioonist 1.3.0 kehtib ülempiir ainult siis, kui kalibreerimismärk on selle kaamera vaateväljas (nähtav kaadri piires viimase 10 sekundi jooksul); kui sihtmärki vaateväljas pole, töötab selle asemel kaamera tavaline automaatne säritus koos oma heledate alade kaitsega, nii et ülejäänud stseeni ei hoita vajalikust tumedamana. Kui ülempiir on aktiivne, töötab kaamera**langeva valguse režiimis**: see töötab avatud ahelas langeva valguse mõõdetud ekspositsiooniga, võimendusega 0 dB — ekspositsioon järgib mõõdetud valgust, mitte stseeni sisu. Kuna ülempiir võib ekspositsiooni ainult lühendada, ei saa see ise tekitada ülevalgustust. Alates versioonist 1.3.0 arvutatakse ülepiir kaamera enda ekspositsioonikonstandi alusel, mis pärineb kalibreerimispakist (kui pakis seda väärtust pole, kasutatakse sõidukipargi keskmist väärtust). Ülepiir lülitub automaatselt välja – ja taastub tavaline stseeni automaatne ekspositsioon – kui kalibreerimissihik ei ole vaateväljas, DAQ-näidud puuduvad, on aegunud (&gt;30 s), tume või kui ≥15 % kaadrist lõikub fikseeritud säriajal (mis tähendab, et andur ja kaamera näevad erinevat valgustust). Graafilises kasutajaliideses puudub lüliti; see on standardne käitumine, kui RGB
-
--kaameral on DAQ seotud.
+**DAQ-põhine valgustuse ülempiir ja langeva valguse järgi fikseeritud AE.** Sõltumata eespool olevast valikukastist, kui DAQ-valgusandur on määratud RGB-kaamerale, arvutab Chloros — mõõdetud absoluutse allapoole suunatud kiirguse alusel — maksimaalse ekspositsiooni×võimenduse, mille juures 100 %-peegeldusega pind jääb allapoole kärpimist, ja rakendab seda **ülempiirina**automaatse ekspositsiooni puhul. Alates versioonist 1.3.0 kehtib ülempiir ainult siis, kui kalibreerimismärk on selle kaamera vaateväljas (nähtav kaadri piires viimase 10 sekundi jooksul); kui sihtmärki vaateväljas pole, töötab selle asemel kaamera tavaline automaatne säritus koos oma heledate alade kaitsega, nii et ülejäänud stseeni ei hoita vajalikust tumedamana. Kui ülempiir on aktiivne, töötab kaamera**langeva valguse režiimis**: see töötab avatud ahelas langeva valguse mõõdetud ekspositsiooniga, võimendusega 0 dB — ekspositsioon järgib mõõdetud valgust, mitte stseeni sisu. Kuna ülempiir võib ekspositsiooni ainult lühendada, ei saa see ise tekitada ülevalgustust. Alates versioonist 1.3.0 arvutatakse ülepiir kaamera enda ekspositsioonikonstandi alusel, mis pärineb kalibreerimispakist (kui pakis seda väärtust pole, kasutatakse sõidukipargi keskmist väärtust). Ülepiir lülitub automaatselt välja – ja taastub tavaline stseeni automaatne ekspositsioon – kui kalibreerimissihik ei ole vaateväljas, DAQ-näidud puuduvad, on aegunud (>30 s), tume või kui ≥15 % kaadrist lõikub fikseeritud säriajal (mis tähendab, et andur ja kaamera näevad erinevat valgustust). Graafilises kasutajaliideses puudub lüliti; see on standardne käitumine, kui RGB-kaameral on DAQ seotud.
 
 ### Andmete kogumine ja käivitamine
 
@@ -419,11 +301,7 @@ Näidatakse nii kombineeritud kui ka eraldi massiivide puhul:
 
 Omaette rühm vahetult pärast ümbritseva valguse andurit, nii kombineeritud kui ka eraldi massiivide puhul:
 
-* **Luba** valikukast — „MAPIR
-
-i ArUco-sihiku tuvastamine ja NDVI
-
--i valideerimine paneeli peegeldusastme LUT-i suhtes”; määrab kombineeritud plaadi sihtmärgi ülekatte ja valideerimistabelid. **Eraldi** massiivi puhul lülitab see sisse iga liikme oma [kalibreerimissihmärgi tabeli](#the-calibration-target-table) (üks iga kaamera rea kohta loendivaates).
+* **Luba** valikukast — „MAPIR i ArUco-sihiku tuvastamine ja NDVI-i valideerimine paneeli peegeldusastme LUT-i suhtes”; määrab kombineeritud plaadi sihtmärgi ülekatte ja valideerimistabelid. **Eraldi** massiivi puhul lülitab see sisse iga liikme oma [kalibreerimissihmärgi tabeli](#the-calibration-target-table) (üks iga kaamera rea kohta loendivaates).
 
 ### Pildistamine — ühtsed anduriseaded
 

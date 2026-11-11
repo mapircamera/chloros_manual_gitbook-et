@@ -2,25 +2,19 @@
 
 <figure><img src="../.gitbook/assets/image (37).png" alt=""><figcaption><p>Vahekaart „Kaamerad“ enne ühendamist</p></figcaption></figure>
 
-Chloros
-tuvastab LATTICE-kaamerad ühenduses automaatselt — kas kasutajaliidese vahekaardilt „Kaamerad”, `chloros-cli lattice` kaudu või Python
-i SDK
-kaudu. Kaamera mudeli string juhib kõiki järgnevaid toiminguid: Chloros
-määrab kindlaks anduri profiili, sagedusriba paigutuse ja tehase kalibreeringu kaamera `DeviceUserID` + `DeviceSerialNumber` andmete põhjal, seega **pole vaja ühtegi kaamerat eraldi konfigureerida**.
+Chloros tuvastab LATTICE-kaamerad ühenduses automaatselt — kas kasutajaliidese vahekaardilt „Kaamerad”, `chloros-cli lattice` kaudu või Python i SDK kaudu. Kaamera mudeli string juhib kõiki järgnevaid toiminguid: Chloros määrab kindlaks anduri profiili, sagedusriba paigutuse ja tehase kalibreeringu kaamera `DeviceUserID` + `DeviceSerialNumber` andmete põhjal, seega **pole vaja ühtegi kaamerat eraldi konfigureerida**.
 
-Enne ühendamist veenduge, et võrguühendus on seadistatud — link-local aadressimine, jumbo-raamid ja massiivide puhul võrgukaardi vastuvõtupuhvri seaded. See on riistvarapoolne seadistamine ja on kirjeldatud LATTICE&#x27;i kasutusjuhendis: [**Võrgu seadistamine**](https://mapir.gitbook.io/lattice-camera/setup/network-setup).
+Enne ühendamist veenduge, et võrguühendus on seadistatud — link-local aadressimine, jumbo-raamid ja massiivide puhul võrgukaardi vastuvõtupuhvri seaded. See on riistvarapoolne seadistamine ja on kirjeldatud LATTICE'i kasutusjuhendis: [**Võrgu seadistamine**](https://mapir.gitbook.io/lattice-camera/setup/network-setup).
 
 ## Ühendamine graafilise kasutajaliidese kaudu
 
-Avage Chloros
-i külgribal vahekaart **Kaamerad**(riistvara vahekaardid ilmuvad, kui taustsüsteem on käivitumise lõpetanud) või kasutage peamenüüd →**Ühenda kaameraga**. Mõlemad avavad dialoogakna**Ühenda kaamera(d)**.
+Avage Chloros i külgribal vahekaart **Kaamerad**(riistvara vahekaardid ilmuvad, kui taustsüsteem on käivitumise lõpetanud) või kasutage peamenüüd →**Ühenda kaameraga**. Mõlemad avavad dialoogakna**Ühenda kaamera(d)**.
 
 ### Dialoogaken „Ühenda kaamera(d)”
 
 Dialoogaken skaneerib võrku kohe avamisel („Võrgu skaneerimine...”) ja loetleb kõik leitud kaamerad. Igas reas on näidatud kaamera **mudel**(nt `LATT-M3M-L41-F550`),**seerianumber**ja**IP-aadress**.
 
-* **Klõpsake rida, et see valida**(roheline esiletõstmine). Võite valida**mitu kaamerat** ja ühendada need korraga — Chloros
-ühendab need järjest.
+* **Klõpsake rida, et see valida**(roheline esiletõstmine). Võite valida**mitu kaamerat** ja ühendada need korraga — Chloros ühendab need järjest.
 * Read, millel on märge **„Ühendatud”**, on juba ühendatud ja neid ei saa uuesti valida.
 * Read, millel on märge **„Massiivis”**, kuuluvad praegu ühendatud kaameramassiivi. Kui soovite seda kaamerat eraldi kasutada, ühendage esmalt rühm lahti.
 * **Ühenda** — ühendab valitud kaamera(d); kui on valitud rohkem kui üks kaamera, kuvab nupp arvu, nt „Ühenda (3)”.
@@ -32,8 +26,7 @@ Dialoogaken skaneerib võrku kohe avamisel („Võrgu skaneerimine...”) ja loe
 
 ### Esimene ühendamine: kalibreerimispaketi allalaadimine
 
-Kui antud kaamera ühendatakse arvutiga **esimest korda**, laadib Chloros
-kaamera tehase kalibreerimispaketi (\~3,8 MB) kaamerast endast GigE-võrgu kaudu alla. Selle käivitumise ajal kuvab dialoogaken rohelist paneeli **„Laadin kalibreerimisandmeid kaamerast”**koos seerianumbri kaupa edastatava edenemisribaga — arvestage umbes**70 sekundit** kaamera kohta. Kui kaameraid on rohkem kui kuus, kerivad edenemisribad paneeli sees. Pakett salvestatakse vahemällu, mistõttu sama kaamera hilisemad ühendamised jätavad allalaadimise täielikult vahele (ja paneeli ei kuvata kunagi).
+Kui antud kaamera ühendatakse arvutiga **esimest korda**, laadib Chloros kaamera tehase kalibreerimispaketi (\~3,8 MB) kaamerast endast GigE-võrgu kaudu alla. Selle käivitumise ajal kuvab dialoogaken rohelist paneeli **„Laadin kalibreerimisandmeid kaamerast”**koos seerianumbri kaupa edastatava edenemisribaga — arvestage umbes**70 sekundit** kaamera kohta. Kui kaameraid on rohkem kui kuus, kerivad edenemisribad paneeli sees. Pakett salvestatakse vahemällu, mistõttu sama kaamera hilisemad ühendamised jätavad allalaadimise täielikult vahele (ja paneeli ei kuvata kunagi).
 
 ### Süsteemi analüüs
 
@@ -49,19 +42,12 @@ Käivita see alati, kui avastamine või voogedastus käitub ootamatult — see t
 
 ### Kaamerate rühma ühendamine
 
-Kahe või enama kaamera ühendamiseks **sünkroniseeritud rühmaks**kasutage selle asemel rühma ühendamise viisardit (**Connect Camera Array**): see juhendab teid läbi master/slave valiku (eelnevalt täidetud sünkroniseerimiskaabli proovi abil — iga kaabliga ühendatud kaamera võib olla master, ning RGB
--kaamera `-FRGB` on eelvalitud, kui see on kaabliga ühendatud), kuvamisrežiimi valiku (eraldi vs. kombineeritud ruudud) ning massiivi seadete vaate, kus enne kinnitamist kuvatakse reaalajas saavutatav kaadrisagedus (fps) ja kaabli ribalaius. Viisardit ja kaamerarühma töövooge käsitletakse käesoleva juhendi mitme kaameraga kaamerarühmade jaotises; CLI
--vastand on „LATTICE Camera First-Connect Workflow“ [CLI
--viites](../reference/cli-reference.md).
+Kahe või enama kaamera ühendamiseks **sünkroniseeritud rühmaks**kasutage selle asemel rühma ühendamise viisardit (**Connect Camera Array**): see juhendab teid läbi master/slave valiku (eelnevalt täidetud sünkroniseerimiskaabli proovi abil — iga kaabliga ühendatud kaamera võib olla master, ning RGB-kaamera `-FRGB` on eelvalitud, kui see on kaabliga ühendatud), kuvamisrežiimi valiku (eraldi vs. kombineeritud ruudud) ning massiivi seadete vaate, kus enne kinnitamist kuvatakse reaalajas saavutatav kaadrisagedus (fps) ja kaabli ribalaius. Viisardit ja kaamerarühma töövooge käsitletakse käesoleva juhendi mitme kaameraga kaamerarühmade jaotises; CLI-vastand on „LATTICE Camera First-Connect Workflow“ [CLI-viites](../reference/cli-reference.md).
 
-## Ühendamine CLI
-ja SDK
+## Ühendamine CLI ja SDK
 kaudu
 
-CLI
-ja SDK
-juurdepääs eeldab tasulist Chloros
-+ taset ja sisselogimist; seda rakendatakse serveri poolel (`401 AUTH_REQUIRED`, kui pole sisse logitud, `403 PLAN_UPGRADE_REQUIRED` tasuta tasemel).
+CLI ja SDK juurdepääs eeldab tasulist Chloros+ taset ja sisselogimist; seda rakendatakse serveri poolel (`401 AUTH_REQUIRED`, kui pole sisse logitud, `403 PLAN_UPGRADE_REQUIRED` tasuta tasemel).
 
 ```bash
 # List cameras on the network (vendor, model, serial, IP, MAC)
@@ -86,21 +72,15 @@ with chloros_sdk.connect_array(["213800234", "214000533"]) as array:
     ...
 ```
 
-Täielikud allkirjad, valikud ja andmete kogumise töövood: [CLI
--viide](../reference/cli-reference.md) § `chloros-cli lattice`, [SDK
--viide](../reference/sdk-reference.md) § `connect_camera()` / `connect_array()`.
+Täielikud allkirjad, valikud ja andmete kogumise töövood: [CLI-viide](../reference/cli-reference.md) § `chloros-cli lattice`, [SDK-viide](../reference/sdk-reference.md) § `connect_camera()` / `connect_array()`.
 
 ## Kuidas kalibreerimine ühendamisel toimub
 
-Igal LATTICE-kaameral on **kaamerasiseselt** olemas tehase kalibreerimispakett ning Chloros
-kontrollib ka MAPIR
-i pilveteenust, kui kaamera ühendub:
+Igal LATTICE-kaameral on **kaamerasiseselt** olemas tehase kalibreerimispakett ning Chloros kontrollib ka MAPIR i pilveteenust, kui kaamera ühendub:
 
-| Olukord   | Mida Chloros
-kasutab                                                                                                                                                                                                          |
+| Olukord   | Mida Chloros kasutab                                                                                                                                                                                                          |
 | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Online**|**Selle seerianumbri jaoks avaldatud uusim kalibreerimine** — pilves olev koopia on kaamera sisemise koopia suhtes ülimuslik. Seega uuendab end MAPIR
-i poolt ümberkalibreeritud või uuendatud kaamera automaatselt; kasutaja sekkumist ei ole vaja. |
+| **Online**|**Selle seerianumbri jaoks avaldatud uusim kalibreerimine** — pilves olev koopia on kaamera sisemise koopia suhtes ülimuslik. Seega uuendab end MAPIR i poolt ümberkalibreeritud või uuendatud kaamera automaatselt; kasutaja sekkumist ei ole vaja. |
 | **Offline**|**Kaameras olev pakett**, sellisena nagu see on. Täielikult offline-töövood toimivad edasi; need lihtsalt ei võta kasutusele uuemaid kalibreeringuid enne, kui kaamera on kord võrgus olnud (või tehases uuesti programmeeritud).                                                  |
 
 Pildistamise hetkel „külmutatakse“ tegelikult rakendatud koefitsiendid **iga pildi XMP-metadata sisse**. Hilisem kalibreerimise uuendus ei muuda kunagi märkamatult juba pildistatud pilte — vana pildi uuesti töötlemisel kasutatakse selle XMP-s salvestatud koefitsiente, mitte neid, mis on täna kõige uuemad.

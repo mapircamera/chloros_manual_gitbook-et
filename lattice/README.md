@@ -10,7 +10,7 @@ Chloros 1.3.0 juhib LATTICE-kaameraid reaalajas – avastamine, reaalajas eelvaa
 | CLI        | `chloros-cli lattice`-käskude perekond                           | Windows 10/11 x64, Linux x86\_64, Linux aarch64 (Jetson) |
 | Pythoni SDK | `chloros_sdk.connect_camera()` / `chloros_sdk.connect_array()` | Windows 10/11 x64, Linux x86\_64, Linux aarch64 (Jetson) |
 
-> **Otsite riistvara?**Kaameramoodulid, objektiivid, filtrid ja lainepikkused, raamid ja kinnitused, kaablid, PoE ja päästemehhanismide juhtmestik on dokumenteeritud [**LATTICE&#x27;i kasutusjuhendis**](https://mapir.gitbook.io/lattice-camera). Käesolevas peatükis käsitletakse kaamerate juhtimist Chloros&#x27;i kaudu.
+> **Otsite riistvara?**Kaameramoodulid, objektiivid, filtrid ja lainepikkused, raamid ja kinnitused, kaablid, PoE ja päästemehhanismide juhtmestik on dokumenteeritud [**LATTICE'i kasutusjuhendis**](https://mapir.gitbook.io/lattice-camera). Käesolevas peatükis käsitletakse kaamerate juhtimist Chloros'i kaudu.
 
 LATTICE salvestused on standardse formaadiga `.tif`/`.tiff` failid ning Chloros töötleb neid alati algandmetest alates. Täieliku käskude ja API-liideste loetelu leiate [CLI-viitest](../reference/cli-reference.md) ja [SDK-viitest](../reference/sdk-reference.md).
 

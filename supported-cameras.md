@@ -6,23 +6,10 @@ metaLinks:
 
 # Toetatud kaamerad
 
-Chloros
-töötleb **kõikidel platvormidel** (Windows
-, Linux
-amd64 ja Linux
-arm64/Jetson) kahe MAPIR
--kaameraseeria pilte:
+Chloros töötleb **kõikidel platvormidel** (Windows, Linux amd64 ja Linux arm64/Jetson) kahe MAPIR-kaameraseeria pilte:
 
-* **Survey3** — Survey3W
-(laia vaateväljaga) ja Survey3N
-(kitsa vaateväljaga) kaamerad. Sisend: `RAW+JPG`.
-* **LATTICE**— M3C ja M3M multispektraalsed kaameramoodulid. Sisend: `.tif`/`.tiff` pildid. LATTICE-kaameraid saab**reaalajas juhtida** ka Chloros
-i kaudu — kasutajaliidese kaamerate vahekaardi (Windows
-) või `chloros-cli lattice` / Python
-i SDK
-i (Windows
-ja Linux
-) abil — sealhulgas sünkroniseeritud mitme kaameraga süsteeme. Vaata [LATTICE-juhendit](lattice/).
+* **Survey3** — Survey3W (laia vaateväljaga) ja Survey3N (kitsa vaateväljaga) kaamerad. Sisend: `RAW+JPG`.
+* **LATTICE**— M3C ja M3M multispektraalsed kaameramoodulid. Sisend: `.tif`/`.tiff` pildid. LATTICE-kaameraid saab**reaalajas juhtida** ka Chloros i kaudu — kasutajaliidese kaamerate vahekaardi (Windows) või `chloros-cli lattice` / Python i SDK i (Windows ja Linux) abil — sealhulgas sünkroniseeritud mitme kaameraga süsteeme. Vaata [LATTICE-juhendit](lattice/).
 
 Töötlemisprotsess toetab ka `.dng` sisendfaile.
 
@@ -36,9 +23,7 @@ LATTICE-seeria on modulaarne multispektraalne kaamerasüsteem, mis põhineb Sony
 <sensor>-<lens>-F<filter>        e.g.  M3C-L41-FRGN,  M3M-L87-F550
 ```.
 
-Chloros
-
-kuvab seda eesliitega `LATT-` (näiteks `LATT-M3M-L41-F550`), ning mudelistring juhib kõiki järgnevaid protsesse – anduri profiil, lainepikkuste paigutus ja kalibreerimine määratakse automaatselt; iga kaamera jaoks eraldi pole vaja midagi seadistada. Objektiivi number tähistab **horisontaalset vaatevälja kraadides**: `L41` = kitsas 41°, `L87` = lai 87°.
+Chloros kuvab seda eesliitega `LATT-` (näiteks `LATT-M3M-L41-F550`), ning mudelistring juhib kõiki järgnevaid protsesse – anduri profiil, lainepikkuste paigutus ja kalibreerimine määratakse automaatselt; iga kaamera jaoks eraldi pole vaja midagi seadistada. Objektiivi number tähistab **horisontaalset vaatevälja kraadides**: `L41` = kitsas 41°, `L87` = lai 87°.
 
 Andureid on kaks konfiguratsiooni:
 
@@ -49,52 +34,20 @@ Andureid on kaks konfiguratsiooni:
 
 ### M3C (Bayer) filtri valikud
 
-| Filter | Lained (nimi @ keskpunkt nm / FWHM
-
-nm)       |
+| Filter | Lained (nimi @ keskpunkt nm / FWHM nm)       |
 | ------ | ---------------------------------------- |
-| `FRGB` | Blue
+| `FRGB` | Blue 475/30 · Green 550/30 · Red 625/30  |
+| `FRGN` | Red 660/21 · Green 550/30 · NIR 850/30   |
+| `FOCN` | Orange 618,4/46 · Cyan 494,1/40 · NIR 821,6/54 (mõõdetud — vt allpool) |
+| `FNGB` | Blue 475/30 · Green 550/30 · NIR 850/30  |
 
-475/30 · Green
-
-550/30 · Red
-
-625/30  |
-| `FRGN` | Red
-
-660/21 · Green
-
-550/30 · NIR
-
-850/30   |
-| `FOCN` | Orange
-
-618,4/46 · Cyan
-
-494,1/40 · NIR
-
-821,6/54 (mõõdetud — vt allpool) |
-| `FNGB` | Blue
-
-475/30 · Green
-
-550/30 · NIR
-
-850/30  |
-
-`FOCN` puhul on väärtused filtri **mõõdetud** poolmaksimaalne lainepikkus (Chloros
-
-1.3.0 ja uuemad versioonid; varasemates versioonides kasutati tehniliste andmete väärtusi 615/21 · 490/38 · 808/14). Ribade nimed jäävad samaks: `Orange_615`, `Cyan_490` ja `NIR_808`, ning mõõdetud keskpunkt ja laius on need, mida Chloros
-
-märgib igasse kalibreeritud ekspordifaili.
+`FOCN` puhul on väärtused filtri **mõõdetud** poolmaksimaalne lainepikkus (Chloros 1.3.0 ja uuemad versioonid; varasemates versioonides kasutati tehniliste andmete väärtusi 615/21 · 490/38 · 808/14). Ribade nimed jäävad samaks: `Orange_615`, `Cyan_490` ja `NIR_808`, ning mõõdetud keskpunkt ja laius on need, mida Chloros märgib igasse kalibreeritud ekspordifaili.
 
 ### M3M (mono) filtri kataloog — 23 SKU-d
 
 F-number on SKU-märge; mõõdetud lainepikkus (mis on märgitud igale kalibreeritud ekspordile) on partii kohta tehtud filtri skaneering:
 
-| SKU    | Keskpunkt (nm, mõõdetud) | FWHM
-
-servad (nm) | Laius (nm) |
+| SKU    | Keskpunkt (nm, mõõdetud) | FWHM servad (nm) | Laius (nm) |
 | ------ | --------------------- | --------------- | ---------- |
 | F385   | 379,4                 | 367–392         | 25         |
 | F405   | 403,9                 | 390–417         | 27         |
@@ -120,14 +73,8 @@ servad (nm) | Laius (nm) |
 | F950   | 945,1                 | 929–961         | 32         |
 | F988 † | 985,3                 | 968–1003        | 35         |
 
-_„Ribade servad on mõõdetud poolmaksimumilise laiusena MAPIR
+_„Ribade servad on mõõdetud poolmaksimumilise laiusena MAPIR i partiipõhiste filtriskannide põhjal — need on samad väärtused, mida Chloros märgib igasse kalibreeritud ekspordisse.“_ „— (nominaalne)“ = partii skaneeringut pole veel tehtud; nende SKU-de puhul on märgitud keskpunktiks SKU-number ja laiuseks tootja poolt esitatud väärtus.
 
-i partiipõhiste filtriskannide põhjal — need on samad väärtused, mida Chloros
-
-märgib igasse kalibreeritud ekspordisse.“_ „— (nominaalne)“ = partii skaneeringut pole veel tehtud; nende SKU-de puhul on märgitud keskpunktiks SKU-number ja laiuseks tootja poolt esitatud väärtus.
-
-† „F988 peegeldusvõimet kalibreeritakse stseeni sees oleva peegeldusvõime paneeli abil: sagedusala jääb väljapoole DAQ-valgusanduri kalibreeritud vahemikku, seega kasutab Chloros
-
-teie viimast paneeli pildistust ja säilitab selle paneeli vaatluste vahel.“ Vaata [kalibreerimismärke](calibration-targets.md).
+† „F988 peegeldusvõimet kalibreeritakse stseeni sees oleva peegeldusvõime paneeli abil: sagedusala jääb väljapoole DAQ-valgusanduri kalibreeritud vahemikku, seega kasutab Chloros teie viimast paneeli pildistust ja säilitab selle paneeli vaatluste vahel.“ Vaata [kalibreerimismärke](calibration-targets.md).
 
 Kaamera reaalajas juhtimise, massiivide, võrguseadistuste ja radiomeetrilise töötlemisahela kohta vaata [LATTICE juhendit](lattice/).

@@ -27,15 +27,9 @@ Jah. Chloros 1.3.0 toetab LATTICE M3C ja M3M kaameramooduleid terviklikult: **re
 
 <summary>Kas ma saan oma pilte peegeldusvõime järgi kalibreerida ilma kalibreerimismärgita?</summary>
 
-**Survey3
+**Survey3:** Ei. Ilma kalibreerimismärgi pildita, mis on jäädvustatud samal ajal kui muud pildid, ei ole võimalik seostada pildi pikselväärtusi teadaoleva peegeldusprotsendiga. Kui te ei lisa ka MAPIR-valgusanduri logi, siis ümbritseva valguse spektrit ei mõõdeta ja peegeldusvõime tulemused ei ole täpsed.
 
-:** Ei. Ilma kalibreerimismärgi pildita, mis on jäädvustatud samal ajal kui muud pildid, ei ole võimalik seostada pildi pikselväärtusi teadaoleva peegeldusprotsendiga. Kui te ei lisa ka MAPIR
-
--valgusanduri logi, siis ümbritseva valguse spektrit ei mõõdeta ja peegeldusvõime tulemused ei ole täpsed.
-
-**LATTICE:** Jah. Peegeldusvõimet saab seostada DAQ-valgusanduri poolt mõõdetud allapoole suunatud kiirgusintensiivsusega paneeli asemel (ρ = π·L/E). Kui kaadris *on* olemas kvaliteedikontrolli läbinud sihtmärk, muutub see vaikimisi absoluutseks võrdlusaluseks (`--reflectance-source auto`), välja arvatud juhul, kui see läbib kontrolli lipuga, mil sihtmärk ja DAQ-ahelad konkureerivad mõõdetud tulemuse osas. Üks erand: „F988 peegeldusvõimet kalibreeritakse stseeni sees oleva peegeldusvõime paneeli abil: sagedusala jääb väljapoole DAQ-valgusanduri kalibreeritud vahemikku, seega kasutab Chloros
-
-i teie viimast paneeli salvestust ja säilitab seda paneeli vaatluste vahel.“ Vaata [Kalibreerimissihte](calibration-targets.md).
+**LATTICE:** Jah. Peegeldusvõimet saab seostada DAQ-valgusanduri poolt mõõdetud allapoole suunatud kiirgusintensiivsusega paneeli asemel (ρ = π·L/E). Kui kaadris *on* olemas kvaliteedikontrolli läbinud sihtmärk, muutub see vaikimisi absoluutseks võrdlusaluseks (`--reflectance-source auto`), välja arvatud juhul, kui see läbib kontrolli lipuga, mil sihtmärk ja DAQ-ahelad konkureerivad mõõdetud tulemuse osas. Üks erand: „F988 peegeldusvõimet kalibreeritakse stseeni sees oleva peegeldusvõime paneeli abil: sagedusala jääb väljapoole DAQ-valgusanduri kalibreeritud vahemikku, seega kasutab Chloros i teie viimast paneeli salvestust ja säilitab seda paneeli vaatluste vahel.“ Vaata [Kalibreerimissihte](calibration-targets.md).
 
 </details>
 
@@ -43,15 +37,13 @@ i teie viimast paneeli salvestust ja säilitab seda paneeli vaatluste vahel.“ 
 
 <summary>Kas mul on vaja DAQ-valgusandurit?</summary>
 
-Kiirguse puhul mitte: LATTICE’i kiirguse ekspordid põhinevad iga kaamera tehase radiomeetrilisel kalibreerimisel ega vaja ei DAQ-andurit ega sihtmärki. **Peegeldusvõime**puhul on vaja ümbritseva valguse võrdlusväärtust – kas DAQ-valgusanduri allapoole suunatud mõõtmist või kaadris olevat kalibreerimissihtmärki. DAQ-anduri abil saate kalibreeritud peegeldusvõimet**ilma, et peaksite stseeni mingeid paneele paigutama**. Salvestatud `.daq`-failid sobitatakse teie piltidega automaatselt ajamärgise järgi. Vaadake [kalibreerimismärke](calibration-targets.md) ja [CLI
-
--viidet](reference/cli-reference.md).
+Kiirguse puhul mitte: LATTICE’i kiirguse ekspordid põhinevad iga kaamera tehase radiomeetrilisel kalibreerimisel ega vaja ei DAQ-andurit ega sihtmärki. **Peegeldusvõime**puhul on vaja ümbritseva valguse võrdlusväärtust – kas DAQ-valgusanduri allapoole suunatud mõõtmist või kaadris olevat kalibreerimissihtmärki. DAQ-anduri abil saate kalibreeritud peegeldusvõimet**ilma, et peaksite stseeni mingeid paneele paigutama**. Salvestatud `.daq`-failid sobitatakse teie piltidega automaatselt ajamärgise järgi. Vaadake [kalibreerimismärke](calibration-targets.md) ja [CLI-viidet](reference/cli-reference.md).
 
 </details>
 
 <details>
 
-<summary>Kas ma saan kasutadChloros&#x27;i koos AI-assistendiga (Claude, ChatGPT jne)?</summary>
+<summary>Kas ma saan kasutadChloros'i koos AI-assistendiga (Claude, ChatGPT jne)?</summary>
 
 Jah — käesolev kasutusjuhend ning CLI ja SDK on selleks loodud:
 
@@ -143,9 +135,7 @@ Kui valite failibrauseri tabelis paremas veerus eelnevalt sihtmärgipildid, anna
 
 <summary>Kui ma laadin oma pildid üles <a href="https://www.mapir.camera/collections/software/products/mapir-cloud-subscription">MAPIR</a>i<a href="https://www.mapir.camera/collections/software/products/mapir-cloud-subscription"> pilve</a>, kas peaksin neid enne üleslaadimist Chloroses töötlema?</summary>
 
-Kui kavatsete pilte üles laadida meie veebipõhisele töötlemisplatvormile [MAPIR
-
-i pilv](https://www.mapir.camera/collections/software/products/mapir-cloud-subscription), ärge pilte enne üleslaadimist redigeerige. Pilv teostab kogu sama töötlemise ja veelgi enam.
+Kui kavatsete pilte üles laadida meie veebipõhisele töötlemisplatvormile [MAPIR i pilv](https://www.mapir.camera/collections/software/products/mapir-cloud-subscription), ärge pilte enne üleslaadimist redigeerige. Pilv teostab kogu sama töötlemise ja veelgi enam.
 
 </details>
 
@@ -167,7 +157,7 @@ Jah! Chloros 1.3.0 toetab Linuxi amd64 (x86_64) ja arm64 (NVIDIA Jetson JetPack 
 
 <details>
 
-<summary>Kas ma saan kasutadChloros&#x27;i NVIDIA Jetsonil?</summary>
+<summary>Kas ma saan kasutadChloros'i NVIDIA Jetsonil?</summary>
 
 Jah! Chloros toetab NVIDIA Jetsoni **Orin-seeria** seadmeid — Orin Nano, Orin NX ja AGX Orin —, millel töötab JetPack 6. Vanemad mudelid (Jetson Nano, TX2, Xavier NX) ei toeta JetPack 6-t ja neid ei toeta praegune pakett. Chloros tuvastab automaatselt teie Jetson-mudeli ja optimeerib selle töötlemisstrateegiat. Jetsoni pakett kasutab JetPack 6 CUDA-põhist PyTorchi versiooni, mistõttu töötlemine toimub Jetsoni GPU-l. Seadistamise ja kasutuselevõtu juhiseid leiate [NVIDIA Jetsoni juhendist](linux/nvidia-jetson-guide.md).
 
@@ -185,9 +175,7 @@ Jah! Chloros sisaldab [dünaamilist arvutusvõimsuse kohandamist](processing-arc
 
 <summary>Mis on 4-niitline töötlemispipeline?</summary>
 
-Chloros
-kasutab Chloros
-+ kasutajate jaoks 4-niitlist toruarhitektuuri: 1. niit (avastamine) laadib pildid ja tuvastab kalibreerimise sihtmärgid, 2. niit (kalibreerimine) arvutab peegelduskalibreeringu, 3. niit (töötlemine) teostab GPU-kiirendatud debayeringut ja indeksi arvutamist ning 4. niit (eksport) kirjutab väljundfailid. Maksimaalse läbilaskevõime saavutamiseks võivad mitu pilti olla samaaegselt erinevates niitides. Täpsemad üksikasjad leiate jaotisest [Töötlemispipeline](processing-architecture/processing-pipeline.md).
+Chloros kasutab Chloros+ kasutajate jaoks 4-niitlist toruarhitektuuri: 1. niit (avastamine) laadib pildid ja tuvastab kalibreerimise sihtmärgid, 2. niit (kalibreerimine) arvutab peegelduskalibreeringu, 3. niit (töötlemine) teostab GPU-kiirendatud debayeringut ja indeksi arvutamist ning 4. niit (eksport) kirjutab väljundfailid. Maksimaalse läbilaskevõime saavutamiseks võivad mitu pilti olla samaaegselt erinevates niitides. Täpsemad üksikasjad leiate jaotisest [Töötlemispipeline](processing-architecture/processing-pipeline.md).
 
 </details>
 

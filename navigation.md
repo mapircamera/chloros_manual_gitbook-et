@@ -1,6 +1,6 @@
 # Graafiline kasutajaliides: navigeerimine
 
-Kui käivitad Chloros&#x27;i esimest korda, alustab see oma töötlemisbackendi käivitamist. Kui backend on valmis, ilmub vasakule ülesossa peamenüü ikoon <img src=".gitbook/assets/image (1) (1) (1) (1).png" alt="" data-size="line"> ning vasakus külgribas avanevad vahekaardid „Kaamerad” ja „Valgusandurid” (seni on need hallid).
+Kui käivitad Chloros'i esimest korda, alustab see oma töötlemisbackendi käivitamist. Kui backend on valmis, ilmub vasakule ülesossa peamenüü ikoon <img src=".gitbook/assets/image (1) (1) (1) (1).png" alt="" data-size="line"> ning vasakus külgribas avanevad vahekaardid „Kaamerad” ja „Valgusandurid” (seni on need hallid).
 
 <figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
@@ -22,19 +22,7 @@ Kui käivitad Chloros&#x27;i esimest korda, alustab see oma töötlemisbackendi 
 * **Ühenda valgusanduriga** — hüppa [Valgusandurite vahelehele](daq/), et ühendada DAQ-valgusandur. Töötab ka ilma avatud projektita.
 
 {% hint style="info" %}
-**Ainult Windows**: Chloros
-
-i töölaua kasutajaliides on saadaval Windows
-
-is. Linux
-
-i kasutajad peaksid tutvuma [CLI
-
-](CLI.md) ja [Python
-
-SDK
-
-](api-python-sdk.md) dokumentatsiooniga, et teostada töötlemist ilma graafilise kasutajaliideseta.
+**Ainult Windows**: Chloros i töölaua kasutajaliides on saadaval Windowsis. Linux i kasutajad peaksid tutvuma [CLI](CLI.md) ja [Python SDK](api-python-sdk.md) dokumentatsiooniga, et teostada töötlemist ilma graafilise kasutajaliideseta.
 {% endhint %}
 
 ### <img src=".gitbook/assets/image (2) (1) (1).png" alt="" data-size="line">
@@ -49,15 +37,9 @@ Edusammude riba <img src=".gitbook/assets/image (5).png" alt="" data-size="line"
 
 
 
-Tasuta Chloros
+Tasuta Chloros-režiimis, mis töötleb kõiki faile järjestikku, kuvab edusammude riba kahte etappi: sihtmärgi tuvastamine ja töötlemine.
 
--režiimis, mis töötleb kõiki faile järjestikku, kuvab edusammude riba kahte etappi: sihtmärgi tuvastamine ja töötlemine.
-
-Tasulises Chloros
-
-+ litsentsitud režiimis, mis töötleb kõiki faile samaaegselt, kuvab edusammude riba nelja etappi: tuvastamine, analüüsimine, kalibreerimine, eksportimine. Kui viite hiirekursori „Chloros
-
-+“ edenemisriba kohale, avaneb laiendatud neljaosaline edenemisriba paneel, mille abil saate protsessi jälgida. Ülemise edenemisriba klõpsamine külmutab rippmenüü paneeli, uuesti klõpsamine vabastab selle.
+Tasulises Chloros+ litsentsitud režiimis, mis töötleb kõiki faile samaaegselt, kuvab edusammude riba nelja etappi: tuvastamine, analüüsimine, kalibreerimine, eksportimine. Kui viite hiirekursori „Chloros+“ edenemisriba kohale, avaneb laiendatud neljaosaline edenemisriba paneel, mille abil saate protsessi jälgida. Ülemise edenemisriba klõpsamine külmutab rippmenüü paneeli, uuesti klõpsamine vabastab selle.
 
 <figure><img src=".gitbook/assets/plus_prog.JPG" alt=""><figcaption></figcaption></figure>
 

@@ -148,7 +148,7 @@ Kui „Chloros” ei tuvasta teie sihtmärke õigesti, reguleerige neid seadeid 
 * **Vähendage**, kui värvimuutustega sihtmärke ei tuvastata täielikult
 
 {% hint style="info" %}
-**Näpunäide CLI&#x27;ile**: `chloros-cli process` toetab samu reguleerimisnuppe (`--min-target-size`, `--target-clustering`), ning selle lipukesed `--target`/`--targets` märgivad kogu sisendkausta sihtmärkide paneeliks. Vaata [CLI viidet](../reference/cli-reference.md).
+**Näpunäide CLI'ile**: `chloros-cli process` toetab samu reguleerimisnuppe (`--min-target-size`, `--target-clustering`), ning selle lipukesed `--target`/`--targets` märgivad kogu sisendkausta sihtmärkide paneeliks. Vaata [CLI viidet](../reference/cli-reference.md).
 {% endhint %}
 
 ***
@@ -160,7 +160,7 @@ Kui „Chloros” ei tuvasta teie sihtmärke õigesti, reguleerige neid seadeid 
 **Võimalikud põhjused:**
 
 * Sihtmärgipilte ei ole failibrauseris märgitud
-* Sihtmärk on kaadris liiga väike (&lt; 30% pildist)
+* Sihtmärk on kaadris liiga väike (< 30% pildist)
 * Halb valgustus (varjud, peegeldused)
 * Sihtmärgi tuvastamise seaded on liiga ranged
 

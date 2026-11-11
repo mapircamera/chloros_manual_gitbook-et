@@ -19,7 +19,7 @@ Pakettide failinimed sisaldavad versiooni ja arhitektuuri: `chloros_1.3.0_amd64.
 | **Distributsioon** | Ubuntu 22.04 LTS+ / Debian 12+ | Ubuntu 24.04 LTS |
 | **Protsessor** | x86_64 (Intel/AMD) | Intel Core i7 või parem |
 | **Mälu (RAM)** | 8 GB | 16 GB või rohkem |
-| **Graafikakaart** | Puudub (töötlemine protsessoris) | NVIDIA GPU, millel on vähemalt 4 GB VRAM-i (12 GB või rohkem avab `GPU_PARALLEL`, 7 GB või rohkem hoiab Texture Aware&#x27;i ühe pildi teelt eemal) |
+| **Graafikakaart** | Puudub (töötlemine protsessoris) | NVIDIA GPU, millel on vähemalt 4 GB VRAM-i (12 GB või rohkem avab `GPU_PARALLEL`, 7 GB või rohkem hoiab Texture Aware'i ühe pildi teelt eemal) |
 | **Salvestusruum** | 2 GB vaba ruumi | SSD, millel on vähemalt 10 GB vaba ruumi |
 | **Python** | Python 3.7 või uuem (SDK jaoks) | Python 3.10 või uuem |
 
@@ -97,7 +97,7 @@ python3 -c "import chloros_sdk; print(chloros_sdk.__version__)"
 ```
 
 {% hint style="info" %}
-Python&#x27;i SDK suhtleb tagapõhjaga, mille `.deb` installib kohaliku HTTP-API kaudu (`http://127.0.0.1:5000`). `ChlorosLocal` ja ühendusabiprogrammid käivitavad selle vajaduse korral automaatselt; salvestatud projekti `connect_all()` seda kunagi ei tee, seega käivita tagapõhja [teenusena](#always-on-ptp-for-headless-hosts). Kasutage alati otsest IPv4-aadressi, mitte `localhost`-i — `localhost` võib lahenduda `::1`-iks ja kulutada umbes kaks sekundit iga päringu kohta.
+Python'i SDK suhtleb tagapõhjaga, mille `.deb` installib kohaliku HTTP-API kaudu (`http://127.0.0.1:5000`). `ChlorosLocal` ja ühendusabiprogrammid käivitavad selle vajaduse korral automaatselt; salvestatud projekti `connect_all()` seda kunagi ei tee, seega käivita tagapõhja [teenusena](#always-on-ptp-for-headless-hosts). Kasutage alati otsest IPv4-aadressi, mitte `localhost`-i — `localhost` võib lahenduda `::1`-iks ja kulutada umbes kaks sekundit iga päringu kohta.
 {% endhint %}
 
 ***
@@ -274,7 +274,7 @@ sudo systemctl disable --now chloros-backend.service
 sudo systemctl enable --now chloros-backend@$USER.service
 ```
 
-**Teenuse backend on jagatud ja klient ei saa seda kunagi peatada.** `chloros-cli` ja SDK-skriptid kasutavad seda sellisena, nagu nad selle leiavad: `process` töötab selle peal, laadides oma projekti viimase asemele. Kui CLImuidu taaskäivitaks backend&#x27;i (`--restart` või `process`, mille importimisel midagi ei leitud), nimetab ta üksuse, kuvab `sudo systemctl restart <unit>` ja lõpetab `1`, sest sel viisil peatatud tagapõhi jääks seisma. Käivita see ise uuesti käsuga `sudo systemctl restart chloros-backend@$USER.service`. Teenuse tagapõhi ei peatu kunagi ise ooterežiimis ja `chloros-cli backend stop` keeldub seda tegemast, nimetades käsku `systemctl stop`.**Kuidas PTP oma pordid saab.** PTP kasutab UDP-pordid 319 ja 320, mis mõlemad asuvad tavapärase 1024-portilise privileegitud pordide alampiiri all. Paketi `postinst` kirjutab `/etc/sysctl.d/60-chloros-ptp.conf`-i koos `net.ipv4.ip_unprivileged_port_start = 319`-iga, mis võimaldab tagapõhjal neid siduda, töötades teie kasutajana. Alates versioonist 1.3.0 ei määra pakett tagapõhja jaoks ühtegi failiõigust (`setcap`) ning `libcap2-bin` ei ole enam sõltuvus: lahtipakitud tagapõhjas takistaks failiõigus selle käivitumist, seega ärge lisage seda ise.***
+**Teenuse backend on jagatud ja klient ei saa seda kunagi peatada.** `chloros-cli` ja SDK-skriptid kasutavad seda sellisena, nagu nad selle leiavad: `process` töötab selle peal, laadides oma projekti viimase asemele. Kui CLImuidu taaskäivitaks backend'i (`--restart` või `process`, mille importimisel midagi ei leitud), nimetab ta üksuse, kuvab `sudo systemctl restart <unit>` ja lõpetab `1`, sest sel viisil peatatud tagapõhi jääks seisma. Käivita see ise uuesti käsuga `sudo systemctl restart chloros-backend@$USER.service`. Teenuse tagapõhi ei peatu kunagi ise ooterežiimis ja `chloros-cli backend stop` keeldub seda tegemast, nimetades käsku `systemctl stop`.**Kuidas PTP oma pordid saab.** PTP kasutab UDP-pordid 319 ja 320, mis mõlemad asuvad tavapärase 1024-portilise privileegitud pordide alampiiri all. Paketi `postinst` kirjutab `/etc/sysctl.d/60-chloros-ptp.conf`-i koos `net.ipv4.ip_unprivileged_port_start = 319`-iga, mis võimaldab tagapõhjal neid siduda, töötades teie kasutajana. Alates versioonist 1.3.0 ei määra pakett tagapõhja jaoks ühtegi failiõigust (`setcap`) ning `libcap2-bin` ei ole enam sõltuvus: lahtipakitud tagapõhjas takistaks failiõigus selle käivitumist, seega ärge lisage seda ise.***
 
 ## Bash-skriptide näited
 
@@ -327,7 +327,7 @@ Kehtivaid `--format` väärtusi on täpselt neli ja need sisaldavad tühikuid �
 0 2 * ** /usr/bin/chloros-cli process /data/incoming --output /data/processed >> /var/log/chloros.log 2>&1
 ```
 
-### Python&#x27;i SDK&#x27;i näide
+### Python'i SDK'i näide
 
 ```python
 from chloros_sdk import process_folder
@@ -367,7 +367,7 @@ sudo chmod +x /usr/lib/chloros/chloros-backend /usr/lib/chloros/backend/chloros-
 
 ### Tagapõhi ei käivitu pärast failiõiguste lisamist
 
-Ärge käivitage `setcap` tagapõhis. Alates versioonist 1.3.0 ei määra pakett mingeid failivõimalusi ning PTP-i pordid 319/320 tulenevad seadistusest `sysctl`, mida on kirjeldatud jaotises [Kuidas PTP saab oma pordid](#always-on-ptp-for-headless-hosts). Failivõime paneb lahtipakitud backend&#x27;i turvalisse täitmisrežiimi, milles see ei leia oma raamatukogusid, mistõttu see ei käivitu. Kui olete selle lisanud, eemaldage see:
+Ärge käivitage `setcap` tagapõhis. Alates versioonist 1.3.0 ei määra pakett mingeid failivõimalusi ning PTP-i pordid 319/320 tulenevad seadistusest `sysctl`, mida on kirjeldatud jaotises [Kuidas PTP saab oma pordid](#always-on-ptp-for-headless-hosts). Failivõime paneb lahtipakitud backend'i turvalisse täitmisrežiimi, milles see ei leia oma raamatukogusid, mistõttu see ei käivitu. Kui olete selle lisanud, eemaldage see:
 
 ```bash
 sudo setcap -r /usr/lib/chloros/backend/chloros-backend

@@ -84,7 +84,7 @@ Iga GPS-andmetega pilt saab oma koordinaatidele märgise.
 
 Valige kaardikihti tüüp nuppude abil (vasakult paremale):
 
-![](&lt;../.gitbook/assets/image (14).png&gt;)
+![](<../.gitbook/assets/image (14).png>)
 
 | Tüüp                 | Näitab                                                                |
 | -------------------- | -------------------------------------------------------------------- |

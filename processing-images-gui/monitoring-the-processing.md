@@ -1,10 +1,6 @@
 # Töötlemise jälgimine
 
-Kui töötlemine on alanud, pakub Chloros
-
-mitmeid võimalusi protsessi kulgemise jälgimiseks, probleemide tuvastamiseks ja andmekogumi seisundi mõistmiseks. Sellel lehel selgitatakse, kuidas jälgida töötlemist ja tõlgendada Chloros
-
-i poolt pakutavat teavet.
+Kui töötlemine on alanud, pakub Chloros mitmeid võimalusi protsessi kulgemise jälgimiseks, probleemide tuvastamiseks ja andmekogumi seisundi mõistmiseks. Sellel lehel selgitatakse, kuidas jälgida töötlemist ja tõlgendada Chloros i poolt pakutavat teavet.
 
 ## Edasijõudmise riba ülevaade
 
@@ -12,9 +8,7 @@ i poolt pakutavat teavet.
 
 ### Vaba režiimi edusammude riba
 
-Chloros
-
-+ litsentsita kasutajatele:
+Chloros+ litsentsita kasutajatele:
 
 **2-etapiline edusammude kuvamine:**
 
@@ -25,13 +19,9 @@ Chloros
 * Praeguse etapi nimi
 * Lihtne horisontaalne riba
 
-### „Chloros
+### „Chloros+“ edenemisriba
 
-+“ edenemisriba
-
-Kasutajatele, kellel on „Chloros
-
-+“ litsents:
+Kasutajatele, kellel on „Chloros+“ litsents:
 
 **4-etapiline edenemise kuvamine:**
 
@@ -44,11 +34,7 @@ Kasutajatele, kellel on „Chloros
 * Iga etapp näitab individuaalset edenemist (0–100%)
 
 {% hint style="info" %}
-**Pariteet CLI
-
--ga**: `chloros-cli process` käivituse ajal kuvatakse samad neli protsessiniiti kui „Detecting“, „Analyzing“, „Processing“ ja „Exporting“, ning `chloros-cli export-status` näitab teise terminali kaudu reaalajas protsessiniidi 4 ekspordi edenemist. Vaata [CLI
-
--viidet](../reference/cli-reference.md).
+**Pariteet CLI-ga**: `chloros-cli process` käivituse ajal kuvatakse samad neli protsessiniiti kui „Detecting“, „Analyzing“, „Processing“ ja „Exporting“, ning `chloros-cli export-status` näitab teise terminali kaudu reaalajas protsessiniidi 4 ekspordi edenemist. Vaata [CLI-viidet](../reference/cli-reference.md).
 {% endhint %}
 
 ***
@@ -63,9 +49,7 @@ Kasutajatele, kellel on „Chloros
 
 **Mis toimub:**
 
-* Chloros
-
-skaneerib pilte, mille juures on märgitud valikukast „Sihtmärk“ (kõik pildid, kui ükski pole märgitud)
+* Chloros skaneerib pilte, mille juures on märgitud valikukast „Sihtmärk“ (kõik pildid, kui ükski pole märgitud)
 * Arvutinägemise algoritmid tuvastavad kalibreerimispaneelid
 * Iga paneeli peegeldusväärtused eraldatakse
 * Sihtmärkide ajamärgid salvestatakse õige kalibreerimise ajastamiseks
@@ -94,9 +78,7 @@ skaneerib pilte, mille juures on märgitud valikukast „Sihtmärk“ (kõik pil
 * Pildi EXIF-metadata lugemine (ajamärgid, säri seaded)
 * Kalibreerimisstrateegia kindlaksmääramine sihtmärkide ajamärkide ja kättesaadavate DAQ allapoole suunatud andmete põhjal
 * Pilditöötlusjärjekorra korraldamine
-* Paralleelse töötlemise töötajate ettevalmistamine (ainult Chloros
-
-+)
+* Paralleelse töötlemise töötajate ettevalmistamine (ainult Chloros+)
 
 **Kestus:** 5–30 sekundit**Edusammude näitaja:**
 
@@ -111,7 +93,7 @@ skaneerib pilte, mille juures on märgitud valikukast „Sihtmärk“ (kõik pil
 ### 3. etapp: Kalibreerimine
 
 **Mis toimub:*** **Debayering**: RAW-Bayer-mustri teisendamine 3 kanaliks (LATTICE mono-moodulite puhul jäetakse vahele, koos märkusega)
-* **Vignette&#x27;i korrigeerimine**: objektiivi servade tumenemise eemaldamine
+* **Vignette'i korrigeerimine**: objektiivi servade tumenemise eemaldamine
 * **Peegeldusvõime kalibreerimine**: normaliseerimine sihtväärtuste ja/või DAQ-i allapoole suunatud signaaliga
 * **Indeksi arvutamine**: multispektraalsete indeksite arvutamine
 * Iga pildi töötlemine kogu töötlusprotsessi vältel
@@ -123,9 +105,7 @@ skaneerib pilte, mille juures on märgitud valikukast „Sihtmärk“ (kõik pil
 * Töödeldud pildid / Piltide koguarv
 
 **Töötlemise režiimid:*** **Vaba režiim**: töötleb järjest ühte pilti korraga
-* **Režiim „Chloros
-
-+“**: kasutab riistvarale kohanduvat töötajate rühma – 1–4 samaaegset töötajat GPU-süsteemidel (sõltuvalt VRAM-ist), üks töötaja füüsilise tuuma kohta (miinus üks) ainult CPU-ga süsteemidel. Vaata [Dynamic Compute Adaptation](../processing-architecture/dynamic-compute-adaptation.md)
+* **Režiim „Chloros+“**: kasutab riistvarale kohanduvat töötajate rühma – 1–4 samaaegset töötajat GPU-süsteemidel (sõltuvalt VRAM-ist), üks töötaja füüsilise tuuma kohta (miinus üks) ainult CPU-ga süsteemidel. Vaata [Dynamic Compute Adaptation](../processing-architecture/dynamic-compute-adaptation.md)
 * **GPU-kiirendus**: kiirendab seda etappi märkimisväärselt**Mida jälgida:**
 
 * Piltide arvu järkjärguline vähenemine
@@ -171,17 +151,13 @@ Debug Log pakub üksikasjalikku teavet töötlemise edenemise ja tekkinud proble
 
 ### Logisõnumite mõistmine
 
-Chloros
-
-i logiridadele on eesliitena lisatud sulgudes märksõnad, mis nimetavad alamsüsteemi — näiteks `[PROCESSING]`, `[RUN-SUMMARY]`, `[LATTICE-EXPORT]`, `[EXPORT-CHECK]`, `[IMPORT-LEVEL]`. Kõige olulisem on teada **käivituse kokkuvõtet**, mis kuvatakse iga käivituse lõpus (sh peatatud käivitused):
+Chloros i logiridadele on eesliitena lisatud sulgudes märksõnad, mis nimetavad alamsüsteemi — näiteks `[PROCESSING]`, `[RUN-SUMMARY]`, `[LATTICE-EXPORT]`, `[EXPORT-CHECK]`, `[IMPORT-LEVEL]`. Kõige olulisem on teada **käivituse kokkuvõtet**, mis kuvatakse iga käivituse lõpus (sh peatatud käivitused):
 
 ```
 [RUN-SUMMARY] 49 image(s) in 2 camera group(s); 4 target(s) detected; 45 image(s) calibrated; 180 file(s) written.
 ```
 
-Lisaks järgnevad `[RUN-SUMMARY]` vihjed alati, kui midagi vajab selgitust — näiteks käivitus, mis ei andnud tulemust, või kaamera, mille taotletud tulemus jäeti kõrvale, kuna see ei olnud kohaldatav. `[EXPORT-CHECK]`-read selgitavad kaamerapõhiseid vahelejätmisi (nt miks RGB
-
--kaamera ei saanud kiirguse tulemust).
+Lisaks järgnevad `[RUN-SUMMARY]` vihjed alati, kui midagi vajab selgitust — näiteks käivitus, mis ei andnud tulemust, või kaamera, mille taotletud tulemus jäeti kõrvale, kuna see ei olnud kohaldatav. `[EXPORT-CHECK]`-read selgitavad kaamerapõhiseid vahelejätmisi (nt miks RGB-kaamera ei saanud kiirguse tulemust).
 
 Üldised sõnumite tõsiduse tasemed (allpool toodud näited on illustratiivsed, mitte sõna-sõnalt):
 
@@ -195,9 +171,7 @@ Mittekriitilised probleemid, mis ei peata töötlemist – nt puuduvad GPS-andme
 
 **Tegevus:** Vaadake hoiatused pärast töötlemist läbi, kuid ärge katkestage protsessi
 
-#### Veateated (värv Red
-
-)
+#### Veateated (värv Red)
 
 Kriitilised probleemid, mis võivad põhjustada töötlemise ebaõnnestumise – nt kõvaketas täis, rikutud pildifail või sihtmärkide tuvastamata jäämine, kui nõuti peegelduskalibreerimist.
 
@@ -212,17 +186,9 @@ Kriitilised probleemid, mis võivad põhjustada töötlemise ebaõnnestumise –
 | Sihtmärke ei leitud                      | Kalibreerimissihtmärke ei tuvastatud               | Märgi sihtmärgipildid või lülita peegelduskalibreerimine välja |
 | Ebapiisav kettaruum               | Väljundandmete salvestamiseks pole piisavalt ruumi                 | Vabasta kettaruumi                                    |
 | Rikutud faili vahelejätmine               | Pildifail on rikutud                         | Kopeerige fail uuesti SD-kaardilt                             |
-| `[IMPORT-LEVEL] Skipping ... no raw source` | Pildistust, millel puudub toorkaader, ei saa töödelda | Pildistage uuesti koos toorkaadriga, või kasutage CLI
-
--d `--input-level`  |
+| `[IMPORT-LEVEL] Skipping ... no raw source` | Pildistust, millel puudub toorkaader, ei saa töödelda | Pildistage uuesti koos toorkaadriga, või kasutage CLI-d `--input-level`  |
 | `[RUN-SUMMARY] ... 0 file(s) written` | Töötlemine ei andnud pilditooteid — teatati veana koos vihjetega | Lugege vihjeridu; kontrollige, mis jäeti vahele ja miks |
-| `[PROCESS] refused: The project folder is too deep for this computer…` | Windows
-
-i pikad teed on välja lülitatud ja projektikausta asukoht on 260-tähemärgilise teepiirangu jaoks liiga sügav; midagi ei töödeldud | Kasutage lühemat projektikausta (teates on näidatud pikim sobiv tee) või lülita sisse Windows
-
-i pikad teed ja käivita Chloros
-
-uuesti — vaata [Töötlemise alustamine](starting-the-processing.md#the-project-folder-is-too-deep-for-this-computer) |
+| `[PROCESS] refused: The project folder is too deep for this computer…` | Windows i pikad teed on välja lülitatud ja projektikausta asukoht on 260-tähemärgilise teepiirangu jaoks liiga sügav; midagi ei töödeldud | Kasutage lühemat projektikausta (teates on näidatud pikim sobiv tee) või lülita sisse Windows i pikad teed ja käivita Chloros uuesti — vaata [Töötlemise alustamine](starting-the-processing.md#the-project-folder-is-too-deep-for-this-computer) |
 | `[unmix-clamp-mask] …` | LATTICE-toote klambermaski ei õnnestunud kirjutada; toode ise on korras ja näitab `Chloros:UnmixClampMask=unavailable` | Kontrollige kettaruumi ja kausta õigusi, seejärel töötlege uuesti, kui maski vajate |
 
 ### Logiandmete kopeerimine
@@ -232,32 +198,18 @@ Logi kopeerimiseks veaotsinguks või tugiabi saamiseks:
 1. Avage paneel „Debug Log“
 2. Klõpsake nuppu **Kopeeri**(kopeerib logi lõikelauale) või**Laadi alla**, et salvestada see tekstifailina
 3. Kleepige tekstifaili või e-kirja
-4. Saada vajadusel MAPIR
-
-i tugiteenistusele
+4. Saada vajadusel MAPIR i tugiteenistusele
 
 ### Vea teatamine logi vahekaardilt
 
-Uus versioonis 1.3.0: veaikoon (**Teata veast**) „Debug Log“ vahekaardi ülaosas saadab aruande otse MAPIR
-
-ile.
+Uus versioonis 1.3.0: veaikoon (**Teata veast**) „Debug Log“ vahekaardi ülaosas saadab aruande otse MAPIRile.
 
 1. Klõpsa veaikoonil „Debug Log“ vahekaardi ülaosas
 2. Kirjeldage probleemi: mida te tegite, mida ootasite ja mis tegelikult juhtus (kohustuslik)
 3. Soovi korral märkige valik **Lisa mõned pildid (kuni 10)**ja valige pildid avatud projektist või kasutage nuppu**Sirvi...** muude pildifailide valimiseks
 4. Klõpsake nuppu **Saada**
 
-Aruanne sisaldab teie kirjeldust, kõiki lisatud pilte, Chloros
-
-i logifaile ja süsteemi andmeid (Chloros
-
-i versioon, operatsioonisüsteem, GPU ja projekti seaded). Aruande saatmiseks peate olema sisse logitud Chloros
-
-isse (vahekaart „User“). Saatmise ajal võite akna sulgeda; kui saatmine on lõppenud, kirjutatakse logisse viitenumber, näiteks `Bug report sent. Reference: BR-…` – märkige see ära, kui võtate ühendust MAPIR
-
-iga. Kui aruannet ei ole võimalik üles laadida (näiteks internetiühenduse puudumise tõttu), salvestab Chloros
-
-selle teie arvutisse ja näitab asukoha, et saaksite selle e-postiga saata aadressile support@mapir.camera.
+Aruanne sisaldab teie kirjeldust, kõiki lisatud pilte, Chloros i logifaile ja süsteemi andmeid (Chloros i versioon, operatsioonisüsteem, GPU ja projekti seaded). Aruande saatmiseks peate olema sisse logitud Chloros isse (vahekaart „User“). Saatmise ajal võite akna sulgeda; kui saatmine on lõppenud, kirjutatakse logisse viitenumber, näiteks `Bug report sent. Reference: BR-…` – märkige see ära, kui võtate ühendust MAPIR iga. Kui aruannet ei ole võimalik üles laadida (näiteks internetiühenduse puudumise tõttu), salvestab Chloros selle teie arvutisse ja näitab asukoha, et saaksite selle e-postiga saata aadressile support@mapir.camera.
 
 ***
 
@@ -271,33 +223,25 @@ selle teie arvutisse ja näitab asukoha, et saaksite selle e-postiga saata aadre
 * Ülejäänud tuumad on ooterežiimis või vabad
 * Süsteem reageerib endiselt kiiresti
 
-**„Chloros
-
-+“ paralleelrežiim:**
+**„Chloros+“ paralleelrežiim:**
 
 * Mitmed tuumad on suure koormusega – nende arv sõltub [dünaamilise arvutusvõimsuse kohandamise](../processing-architecture/dynamic-compute-adaptation.md) valitud strateegiast
 * Süsteem võib tunduda vähem reageeriv
 
 **Jälgimiseks:**
 
-* Windows
-
-i ülesannete haldur (Ctrl+Shift+Esc)
+* Windows i ülesannete haldur (Ctrl+Shift+Esc)
 * Vahekaart „Jõudlus“ → jaotis „Protsessor“
-* Otsi protsesse „Chloros
-
-“ või „chloros-backend“
+* Otsi protsesse „Chloros “ või „chloros-backend“
 
 ### Mälu (RAM) kasutamine
 
 **Tüüpiline kasutamine:**
 
-* Väikesed projektid (&lt; 100 pilti): 2–4 GB
+* Väikesed projektid (< 100 pilti): 2–4 GB
 * Keskmise suurusega projektid (100–500 pilti): 4–8 GB
 * Suured projektid (üle 500 pildi): 8–16 GB
-* „Chloros
-
-+“ paralleelrežiim kasutab rohkem RAM-i
+* „Chloros+“ paralleelrežiim kasutab rohkem RAM-i
 
 **Kui mälu on vähe:**
 
@@ -305,9 +249,7 @@ i ülesannete haldur (Ctrl+Shift+Esc)
 * Sulge teised rakendused
 * Suurenda RAM-mälu mahtu, kui töötled regulaarselt suuri andmekogumeid
 
-### GPU kasutamine (Chloros
-
-+ koos CUDA-ga)
+### GPU kasutamine (Chloros+ koos CUDA-ga)
 
 Kui GPU kiirendus on sisse lülitatud:
 
@@ -345,9 +287,7 @@ Kui GPU kiirendus on sisse lülitatud:
 
 * Kontrollige veateateid silumislogist
 * Kontrollige, kas kettal on piisavalt vaba ruumi
-* Kontrollige ülesannete haldurist, kas Chloros
-
-töötab
+* Kontrollige ülesannete haldurist, kas Chloros töötab
 
 **Veateated ilmuvad sageli:**
 
@@ -357,9 +297,7 @@ töötab
 
 **Süsteem ei reageeri:**
 
-* „Chloros
-
-+“ paralleelrežiim kasutab liiga palju ressursse
+* „Chloros+“ paralleelrežiim kasutab liiga palju ressursse
 * Kaaluge samaaegsete ülesannete arvu vähendamist või riistvara uuendamist
 * Vaba režiim on ressursisäästlikum
 
@@ -398,9 +336,7 @@ Peatage töötlemine, kui näete:
 
 1. Kui töötlemine on just alanud ja on tuvastamisetapis: peatage, märgistage sihtmärgid, alustage uuesti
 2. Edaspidiseks: kasutage SSD-d, vähendage indeksite arvu, uuendage riistvara
-3. Kaaluge CLI
-
--i kasutamist suurte andmekogumite partiitöötlemiseks
+3. Kaaluge CLI-i kasutamist suurte andmekogumite partiitöötlemiseks
 
 ### „Kettaruum” hoiatused
 
@@ -410,9 +346,7 @@ Peatage töötlemine, kui näete:
 2. Viige projekt kettale, kus on rohkem ruumi
 3. Vähendage eksporditavate indeksite arvu
 4. Lülitage välja LATTICE eksporditooted, mida te ei vaja (Project Settings → Processing)
-5. Kasutage JPG-vormingut TIFF
-
-i asemel (väiksemad failid)
+5. Kasutage JPG-vormingut TIFF i asemel (väiksemad failid)
 
 ### Sagedased „Corrupted File” teated
 
@@ -429,9 +363,7 @@ i asemel (väiksemad failid)
 
 1. Tagage piisav ventilatsioon
 2. Puhastage arvuti ventilatsiooniavad tolmust
-3. Vähendage töötlemiskoormust (kasutage „Free” režiimi asemel „Chloros
-
-+” režiimi)
+3. Vähendage töötlemiskoormust (kasutage „Free” režiimi asemel „Chloros+” režiimi)
 4. Töötlege pildid päeva jahedamatel aegadel
 
 ***
