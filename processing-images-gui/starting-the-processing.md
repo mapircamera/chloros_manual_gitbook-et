@@ -181,7 +181,9 @@ Käivitamisel töötab kogu protsess automaatselt:
 * Peatatud töötlemine annab ausa ülevaate sellest, mis on lõpule viidud (vaata logis ridu `[RUN-SUMMARY]`)
 * Uus käivitamine alustab töötlemisprotsessi algusest
 
-**Planeerimisnõuanne:** väga suurte projektide puhul kaaluge töötlemist partiidena või kasutage CLI-d parema kontrolli saavutamiseks.***
+**Planeerimisnõuanne:** väga suurte projektide puhul kaaluge töötlemist partiidena või kasutage CLI-d parema kontrolli saavutamiseks.
+
+***
 
 ## Töötlemise jälgimine
 

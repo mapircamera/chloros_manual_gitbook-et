@@ -10,7 +10,9 @@ Kasutage paremas ülemises nurgas asuvat suumiliugurit, et reguleerida piltide p
 * **Ctrl + `+`**/**Ctrl + `=`**ja**Ctrl + `−`** suurendavad või vähendavad suurust iga vajutuse kohta 4 px võrra. Klaviatuurikombinatsioonide abil saab suurust vähendada kuni 64 px-ni ja suurendada kuni suuruseni, mis mahutab praegusesse aknasse täpselt kaks pisipilti rea kohta.
 * Valitud suurus salvestatakse koos projektiga (`UI → Grid thumbnail size` kuni `project.json`, vaikimisi `160`), seega taastub see projekti uuesti avamisel.
 
-<figure><img src="../.gitbook/assets/chloros_grid_zoom.gif" alt=""><figcaption></figcaption></figure>Pisipildi *lahutusvõime* on pisipildi *suurusest* eraldi seade: vaata **Ekraan → Pisipildi lahutusvõime** [Projekti seaded](../project-settings/project-settings.md) (vaikimisi 512 pikselit pikemal serval). Suurus näitab, kui suureks ruut joonistatakse; eraldusvõime näitab, kui palju detaile selle täitmiseks laaditakse.***
+<figure><img src="../.gitbook/assets/chloros_grid_zoom.gif" alt=""><figcaption></figcaption></figure>Pisipildi *lahutusvõime* on pisipildi *suurusest* eraldi seade: vaata **Ekraan → Pisipildi lahutusvõime** [Projekti seaded](../project-settings/project-settings.md) (vaikimisi 512 pikselit pikemal serval). Suurus näitab, kui suureks ruut joonistatakse; eraldusvõime näitab, kui palju detaile selle täitmiseks laaditakse.
+
+***
 
 ## Võrgustiku tööriistariba
 

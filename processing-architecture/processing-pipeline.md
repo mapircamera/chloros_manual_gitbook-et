@@ -15,7 +15,9 @@ Images In → [Thread 1: Detection] → [Thread 2: Calibration] → [Thread 3: P
 
 Iga pilt läbib järjest kõik neli niiti. Chloros+ mitme niidiga töötlemise puhul hõivavad mitu pilti samaaegselt erinevaid niite – kui niit 3 töötleb ühte pilti, võib niit 1 tuvastada järgmist, niit 2 kalibreerida veel ühte ja niit 4 kirjutada valmis pilti kettale.
 
-Töö edenemist kajastatakse iga niidi kohta eraldi ning see edastatakse Server-Sent Eventsi kaudu (tagapõhi avaldab need `/api/events`-is). CLI reaalajas edenemise näidikus on neli etappi märgistatud **Tuvastamine, Analüüsimine, Töötlemine, Eksportimine**.***
+Töö edenemist kajastatakse iga niidi kohta eraldi ning see edastatakse Server-Sent Eventsi kaudu (tagapõhi avaldab need `/api/events`-is). CLI reaalajas edenemise näidikus on neli etappi märgistatud **Tuvastamine, Analüüsimine, Töötlemine, Eksportimine**.
+
+***
 
 ## Niiditeave
 

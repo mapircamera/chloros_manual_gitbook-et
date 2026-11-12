@@ -64,7 +64,9 @@ Täielik juhend: [Chloros e kasutamine AI-abistajatega](ai-assistants.md).
 * **Aus veasemantika.** `chloros-cli process` käivitus, mis taotles tooteid, kuid ühtegi ei salvestanud, annab nüüd selge veateate ja lõpetab töötamise nullist erineva tulemusega; edukad käivitused teatavad, kui palju pilditooteid nad salvestasid.
 * **Uus väljundpaigutus.** Tooted salvestatakse `<project>/<camera>/<format>/<Product>_Images/`-kaustadesse ja säilitavad allika failinime — toodet identifitseerib kaust, mitte failinime laiend. Vaata [Väljundpildiformaadid](output-image-formats.md).
 * **Rohkem sisendvõimalusi, plaane ja keeli.** `.dng` sisendite tugi; kõik 38 liidese keelt on täielikult täidetud; plaani kohta kehtivad riistvarapiirangud, mis võimaldavad tasuta (ilma sisselogimiseta) kasutada kuni 4 kaamerat ja 2 valgussensorit.
-* **Usaldusväärsus.** Töötlemise peatamine lõpeb korrektselt koos ausa töökokkuvõttega, mitme kaameraga projektid ekspordivad iga kaamera andmed ning installija uuendused ei logi teid enam välja.***
+* **Usaldusväärsus.** Töötlemise peatamine lõpeb korrektselt koos ausa töökokkuvõttega, mitme kaameraga projektid ekspordivad iga kaamera andmed ning installija uuendused ei logi teid enam välja.
+
+***
 
 Chloros on saadaval kolmes kasutajaliidese vormis:
 

@@ -136,7 +136,9 @@ Numbreid reguleerivad kaks reeglit:
 * **Ainus** aktiivne niit saab oma profiili maksimaalse eraldise.
 * Kui aktiivne on rohkem kui üks *raske* GPU-ülesanne, jagatakse iga raske ülesande baaseraldis nende vahel (mitte kunagi alla konfigureeritud miinimumväärtuse).
 
-Tegelikult kasutatakse käitamisel **väiksemat** väärtust platvormiprofiili eraldise ja GPU mälimonitori reaalajas soovituse vahel, seega võidab koormatud kaart alati optimistliku profiili üle.***
+Tegelikult kasutatakse käitamisel **väiksemat** väärtust platvormiprofiili eraldise ja GPU mälimonitori reaalajas soovituse vahel, seega võidab koormatud kaart alati optimistliku profiili üle.
+
+***
 
 ## Tekstuuriteadlik töötlemine
 

@@ -170,7 +170,9 @@ chloros-cli daq pool-reboot --sensor-id daq-e-def330
 chloros-cli daq pool-update-firmware --sensor-id daq-e-def330
 ```
 
-`pool-info` näitab anduri püsivara (ja seda, kas käesolev Chlorosi versioon sisaldab uuemat), selle aadressi ja selle saamise viisi, salvestatud võrguseadistusi, kui need erinevad hetkel kasutatavatest, sisselülitamisel toimuvat andmeedastust ja PTP-d. `pool-set-network` taaskäivitab anduri, et muudatus jõustuks, ja ühendab selle uuesti varasemate seadistustega; `--no-reboot` salvestab need vaid. Sellel arvutil peab olema staatiline aadress, vastasel juhul lükkab Chloros selle tagasi; `--force` tühistab selle piirangu, kuid ainult arvuti puhul, millele määratakse uus aadress või mis suunatakse sellele. Taaskäivitamine ei ole lubatud, kui andur salvestab andmeid. `pool-update-firmware` on graafilise kasutajaliidese (GUI) käsk **Update to \<version\>** vastand käskureale ning viis DAQ-E uuendamiseks Linuxis, kus graafilist kasutajaliidest pole. Uus versioonis 1.3.0.***
+`pool-info` näitab anduri püsivara (ja seda, kas käesolev Chlorosi versioon sisaldab uuemat), selle aadressi ja selle saamise viisi, salvestatud võrguseadistusi, kui need erinevad hetkel kasutatavatest, sisselülitamisel toimuvat andmeedastust ja PTP-d. `pool-set-network` taaskäivitab anduri, et muudatus jõustuks, ja ühendab selle uuesti varasemate seadistustega; `--no-reboot` salvestab need vaid. Sellel arvutil peab olema staatiline aadress, vastasel juhul lükkab Chloros selle tagasi; `--force` tühistab selle piirangu, kuid ainult arvuti puhul, millele määratakse uus aadress või mis suunatakse sellele. Taaskäivitamine ei ole lubatud, kui andur salvestab andmeid. `pool-update-firmware` on graafilise kasutajaliidese (GUI) käsk **Update to \<version\>** vastand käskureale ning viis DAQ-E uuendamiseks Linuxis, kus graafilist kasutajaliidest pole. Uus versioonis 1.3.0.
+
+***
 
 ## Käskude kokkuvõte
 

@@ -196,7 +196,9 @@ Kvantitatiivsete kiirgustiheduse väärtuste saamiseks arvutage keskmine vähema
 
 * Kombineerige mitu andurit ühele graafikule (ühised teljed), hoidke graafikuid eraldi (automaatne võrgustiku paigutus), liigutage andureid graafikute vahel, lohistage ridu/ruute ümber ja peidake üksikuid andureid silma ikooniga.
 * Chloros säilitab iga projekti puhul järgmised andmed: seadmete nimed, graafiku värvid, graafiku suurus, vaatamisrežiim ja iga anduri seaded (integreerimisaeg, kaadrite keskmistamine, AE-olek, kate valik).
-* **Projekti uuesti avamisel ühendatakse selle andurid automaatselt** aadressi järgi – DAQ-U puhul COM-port, DAQ-M puhul BLE-seade, mDNS-hostinimi DAQ-E puhul (lahendatakse isegi siis, kui seadme IP-aadress on muutunud) — ning rakendab uuesti iga anduri salvestatud kateprofiili, kaadrite keskmistamist, AE-olekut ja käsitsi määratud integratsiooniaega.***
+* **Projekti uuesti avamisel ühendatakse selle andurid automaatselt** aadressi järgi – DAQ-U puhul COM-port, DAQ-M puhul BLE-seade, mDNS-hostinimi DAQ-E puhul (lahendatakse isegi siis, kui seadme IP-aadress on muutunud) — ning rakendab uuesti iga anduri salvestatud kateprofiili, kaadrite keskmistamist, AE-olekut ja käsitsi määratud integratsiooniaega.
+
+***
 
 ## Kaamera sidumine (DLS)
 

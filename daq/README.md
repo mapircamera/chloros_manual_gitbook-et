@@ -17,7 +17,9 @@ MAPIRi **DAQ** valgussensorid mõõdavad ümbritsevat valgust radiomeetriliselt 
 | --- | --- | --- |
 | **DAQ-U** | USB (jadaport) | jadaporti skaneerimine |
 | **DAQ-M** | Bluetooth Low Energy | BLE-skaneerimine nime järgi |
-| **DAQ-E** | Ethernet (IPv4, PoE-toitega) | mDNS `_daq-e._tcp` (hostinimi `daq-e-<id>.local`) |**DAQ-E-S (uus versioonis 1.3.0).** DAQ-E, millel on püsiv hajuti ja kaldenurgaandur. Chloros loetleb seda nimetusega `DAQ-E-S` ja käitab seda täpselt nagu DAQ-E-d, välja arvatud see, et see ei vaja kattekorrektsiooni ja iga näiduga kaasneb seadme kaldenurk, pöörde- ja kallutusnurk. Vaata [DAQ-E-S: fikseeritud hajuti ja kaldenurk](caps-and-range.md#daq-e-s-fixed-diffuser-and-tilt).
+| **DAQ-E** | Ethernet (IPv4, PoE-toitega) | mDNS `_daq-e._tcp` (hostinimi `daq-e-<id>.local`) |
+
+**DAQ-E-S (uus versioonis 1.3.0).** DAQ-E, millel on püsiv hajuti ja kaldenurgaandur. Chloros loetleb seda nimetusega `DAQ-E-S` ja käitab seda täpselt nagu DAQ-E-d, välja arvatud see, et see ei vaja kattekorrektsiooni ja iga näiduga kaasneb seadme kaldenurk, pöörde- ja kallutusnurk. Vaata [DAQ-E-S: fikseeritud hajuti ja kaldenurk](caps-and-range.md#daq-e-s-fixed-diffuser-and-tilt).
 
 Kõik kolm kasutavad sama andmesideprotokolli ja edastavad identset andmestikku:
 

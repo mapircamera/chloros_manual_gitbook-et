@@ -196,7 +196,9 @@ Kõik selles jaotises on **ainult kuvapoolne**— see muudab seda, mida näed re
 | **Küllastus** | 0–200 (100 = neutraalne) | 100 | Ainult RGB | HSV-küllastus reaalajas eelvaates. |
 | **Kontrast** | 0–200 (100 = neutraalne) | 100 | Ainult RGB | Lineaarne kontrast keskmise halli ümbruses reaalajas eelvaates. |
 | **Peegelda horisontaalselt / Peegelda vertikaalselt** | Valikukastid | Väljas | Kõik | Pöörab eelvaadet horisontaalselt / vertikaalselt. |
-| **Pööre**| 0° / 90° / 180° / 270° | 0° | Kõik | Pöörab eelvaadet. Suund rakendatakse eelvaate ahela lõpus.**Salvestatud pildid (1.3.0):**eraldiseisva kaamera eelvaate, kiirguse, peegelduse ja indeksi tooted pööratakse peegelduse/pööramise abil, samas kui**Raw ja Debayered jäävad kaamera algse orientatsiooni juurde**; iga pildifail salvestab seadistuse oma XMP-sse, nii et hilisem RAW-faili töötlemine rakendab seda samamoodi.**Massiivi liikmete failid jäävad algseks** (seadistus salvestatakse, kuid ei rakendata) ning massiivi komposiitvaated ignoreerivad seda. |**Värviprofiili semantik** (RGB-kaamerad):
+| **Pööre**| 0° / 90° / 180° / 270° | 0° | Kõik | Pöörab eelvaadet. Suund rakendatakse eelvaate ahela lõpus.**Salvestatud pildid (1.3.0):**eraldiseisva kaamera eelvaate, kiirguse, peegelduse ja indeksi tooted pööratakse peegelduse/pööramise abil, samas kui**Raw ja Debayered jäävad kaamera algse orientatsiooni juurde**; iga pildifail salvestab seadistuse oma XMP-sse, nii et hilisem RAW-faili töötlemine rakendab seda samamoodi.**Massiivi liikmete failid jäävad algseks** (seadistus salvestatakse, kuid ei rakendata) ning massiivi komposiitvaated ignoreerivad seda. |
+
+**Värviprofiili semantik** (RGB-kaamerad):
 
 * **Raw** — töötlemisahel jäetakse täielikult vahele.
 * **Lineaarne** — tume signaal + tasandus + valgebalanss; ei värvimatriitsi ega gammat.

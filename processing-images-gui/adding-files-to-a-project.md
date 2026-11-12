@@ -62,7 +62,9 @@ output/
 * Hõivamiskausta, mis on salvestatud **ilma** toorkaadrite importimiseta, kuvatakse normaalselt, kuid töötlemine jätab selle vahele ja märgib seda logisse. (CLI-lipu `--input-level` abil saab sellisel juhul sisenemispunkti sundida — vt [CLI-viidet](../reference/cli-reference.md#what-a-captures-folder-looks-like).)
 * Alates versioonist 1.3.0 võib pildistamiskausta sisaldada ka `clamp_masks/`-kausta (pikslihaaval maske kiirguse ja peegeldusastmete jaoks — vt [väljundpildi formaadid](../output-image-formats.md#clamp-masks)). Maskid ei ole stseeni pildid ning Chloros jätab need importimisel kõrvale, olenemata nende asukohast.
 
-**LATTICE hubi seansid** imporditakse samamoodi: valige „Add Folder“ (Lisa kaust) ja osutage hubist kopeeritud seansikaustale (see sisaldab `raw/` ja `previews/`), koos mis tahes DAQ-M `.csv` allapoole suunatud logiga. Kui kaamera või DAQ-seadme kalibreerimisandmed pole teie arvutisse veel salvestatud, laadib Chloros need importimisel automaatselt seerianumbri järgi alla (nõuab ühekordset internetiühendust).***
+**LATTICE hubi seansid** imporditakse samamoodi: valige „Add Folder“ (Lisa kaust) ja osutage hubist kopeeritud seansikaustale (see sisaldab `raw/` ja `previews/`), koos mis tahes DAQ-M `.csv` allapoole suunatud logiga. Kui kaamera või DAQ-seadme kalibreerimisandmed pole teie arvutisse veel salvestatud, laadib Chloros need importimisel automaatselt seerianumbri järgi alla (nõuab ühekordset internetiühendust).
+
+***
 
 ## Failibrauseri tabeli mõistmine
 
@@ -103,7 +105,9 @@ Tabelist ülemises paremas nurgas asuva lülitusnupu klõpsamine kuvab valitud p
 
 * Failid `.daq` ja `.csv` kuvatakse failibrauseri nimekirjas, kuid neid ei saa klõpsata — need annavad peegelduskalibreerimiseks allapoole suunatud kiirgustiheduse.
 * Iga imporditud `.daq`/`.csv` on loetletud menüüs **Projekti seaded → DAQ valgusandur**, kus saate vaadata iga faili puhul kehtivat hajutikorki korrigeerimist. Vaata [Projekti seadete kohandamine](adjusting-project-settings.md).
-* **Valgusandurid**-vahekaardil tehtud salvestused lisatakse avatud projektile automaatselt – käsitsi importimist ei ole vaja.***
+* **Valgusandurid**-vahekaardil tehtud salvestused lisatakse avatud projektile automaatselt – käsitsi importimist ei ole vaja.
+
+***
 
 ## Failide haldamine projektis
 
@@ -220,7 +224,9 @@ Kui teie projekt sisaldab pilte mitmest MAPIR-kaamerast:
 
 ### Uuesti avatud projekt näitab puuduvaid faile
 
-Kui allikafaile on projekti viimase avamise järel teisaldatud või kustutatud, näitab Chloros teile, **millised**failid on kadunud, selle asemel et avada tühi raster. Kui projekti kaust ise on teisaldatud, suunab Chloros allikateed ümber kausta `project.json` uude asukohta ja säilitab varukoopia (`project.json.before-relink-<date>-<time>`). Kui faile ei leita, pakub aken**Allikafaile ei leitud**võimalust**Sirvida** uue asukoha leidmiseks, seejärel valida „Uus projekt” või „Kustuta projekt”. CLI-st kasutage `chloros-cli project open PATH --relink FOLDER`; SDK-st `open_project(path, relink=...)`.***
+Kui allikafaile on projekti viimase avamise järel teisaldatud või kustutatud, näitab Chloros teile, **millised**failid on kadunud, selle asemel et avada tühi raster. Kui projekti kaust ise on teisaldatud, suunab Chloros allikateed ümber kausta `project.json` uude asukohta ja säilitab varukoopia (`project.json.before-relink-<date>-<time>`). Kui faile ei leita, pakub aken**Allikafaile ei leitud**võimalust**Sirvida** uue asukoha leidmiseks, seejärel valida „Uus projekt” või „Kustuta projekt”. CLI-st kasutage `chloros-cli project open PATH --relink FOLDER`; SDK-st `open_project(path, relink=...)`.
+
+***
 
 ## Järgmised sammud
 

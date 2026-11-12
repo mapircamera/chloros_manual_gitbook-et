@@ -32,7 +32,9 @@ Projektiseadetele juurdepääsuks:
 * **Valikud**: `Default (512 px)`, `1024 px`, `2048 px`, `Full resolution`
 * **Vaikimisi**: Vaikimisi (512 px)
 * **Kirjeldus**: Eraldusvõime (pikim serv, pikslites), millega pildivõrgu pisipildid renderdatakse. Suuremad väärtused näevad suurendamisel teravamad välja, kuid laadivad aeglasemalt ja kasutavad rohkem mälu. Täisresolutsioon vastab originaalpildi suurusele.
-* **Märkus**: Ainult kuvamiseks — see ei mõjuta kunagi töötlemist ega eksporditud faile.***
+* **Märkus**: Ainult kuvamiseks — see ei mõjuta kunagi töötlemist ega eksporditud faile.
+
+***
 
 ## Sihtmärgi tuvastamine
 
@@ -188,7 +190,9 @@ Salvestatud väärtusega võrreldakse suurtähti arvestamata ning mõned kirjapi
   * Üks kaamera + üks pin: pin 2 seatakse automaatselt asendisse „Ära kasuta“
   * Üks kaamera + kaks pini: pin 2 seatakse automaatselt asendisse „Ära kasuta“
   * Mitu kaamerat: vajalik käsitsi valik
-* **Märkus**: Sama kaamerat ei saa määrata korraga nii kontaktile 1 kui ka kontaktile 2.***
+* **Märkus**: Sama kaamerat ei saa määrata korraga nii kontaktile 1 kui ka kontaktile 2.
+
+***
 
 ## DAQ valgusandur
 
@@ -209,7 +213,9 @@ Igas reas on näidatud fail, anduri mudel ja selle faili puhul tegelikult kehtiv
 * **Kirjeldus**: `Auto` kasutab iga faili salvestatud katet (kui midagi pole salvestatud, eeldatakse Sunshine'i katet, kuid DAQ-U, DAQ-M ja DAQ-E tarnitakse ilma kateta ning Chloros ei näe, milline on paigaldatud, seega annab töötlemine hoiatuse eeldatava piirangu kohta: valige paigaldatud piirang). Konkreetse piirangu valimine tühistab **kõik** projektis olevad allapoole suunatud failid, välja arvatud DAQ-E-S-i omad, mille hajuti on osa kalibreerimisest; ainult DAQ-E-S-i sisaldavas projektis ei kuvata rippmenüüd: tooresalvestusi korrigeeritakse sellega, ja salvestusi, millel on juba kate, viidatakse uuesti (salvestatud korrigeerimine tühistatakse ja rakendatakse valitud korrigeerimine).
 * **Oluline**: Valitud kate peab vastama salvestamise ajal füüsiliselt paigaldatud katele. Ei andur ega tarkvara suuda füüsilist katet tuvastada – vale kate-ID korrigeerib spektreid valesti.
 
-Siin on teadlikult kasutatud **üht** kogu projekti hõlmavat juhtimist, mitte failipõhiseid rippmenüüsid: see seade mõjutab kõiki projekti allapoole suunatud allikaid.***
+Siin on teadlikult kasutatud **üht** kogu projekti hõlmavat juhtimist, mitte failipõhiseid rippmenüüsid: see seade mõjutab kõiki projekti allapoole suunatud allikaid.
+
+***
 
 ## Maatriksi joondamine
 
@@ -280,7 +286,9 @@ Iga lisatud indeks kuvab oma valemi matemaatilise valemina, kus iga ribapesa juu
   * Operaatorid: `+`, `-`, `*`, `/`, `^` ja `()` rühmitamiseks
   * Funktsioonid: `sqrt()`, `log()`, `ln()`, `abs()`, `sign()`, `log1p()`, `log2()`
 * **Miks sümbolid, mitte bändinimed**: valem, mis on kirjutatud kujul `(y-x)/(y+x)`, töötab igal kaameral, sest lohistamisel määratakse, kas `y` on RGN-filtri 850 nm NIR või OCN-filtri 808 nm NIR. Sisseehitatud eelseadistused salvestatakse samamoodi — vaata [Multispektraalsete indeksite valemeid](multispectral-index-formulas.md), et näha kõigi 27 valemi täpset sümbolivormi.
-* **Kus need toimivad**: kohandatud valemid salvestatakse koos projekti seadetega ja neid saab kasutada nii [indeksi/LUT-liivakastis](../image-viewer-gui/index-lut-sandbox.md) kui ka töötlemisel. CLI- ja SDK-nimekiri `--indices` neid **ei** toeta, kuna see laiendab ainult 22 sisseehitatud eelseadistuse nime.***
+* **Kus need toimivad**: kohandatud valemid salvestatakse koos projekti seadetega ja neid saab kasutada nii [indeksi/LUT-liivakastis](../image-viewer-gui/index-lut-sandbox.md) kui ka töötlemisel. CLI- ja SDK-nimekiri `--indices` neid **ei** toeta, kuna see laiendab ainult 22 sisseehitatud eelseadistuse nime.
+
+***
 
 ## Eksport
 

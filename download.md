@@ -191,7 +191,9 @@ Avage täiustatud funktsioonid Chloros+ tellimusega:
 * **🐻 Täiustatud tekstuuritundlik debayering-meetod** – kõrgekvaliteediline servatundlik debayering, mis on kombineeritud AI/ML-müra eemaldamise mudeliga, mis kõrvaldab peaaegu kogu debayeringust tuleneva müra.
 * 🧮 **Kohandatud valemid** – loo kohandatud multispektraalsed indeksid
 
-<p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary">Vaata Chloros+ pakette ja hindu</a></p>***
+<p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary">Vaata Chloros+ pakette ja hindu</a></p>
+
+***
 
 ## Paigaldamisabi
 
@@ -230,7 +232,9 @@ Vajate abi paigaldamise või seadistamisega?
 * 📧 **E-post**: info@mapir.camera
 * 🌐 **Veebisait**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
 * 📚 **Dokumentatsioon**: [Alustamine](./)
-* ❓ **KKK**: [Korduma kippuvad küsimused](faq.md)***
+* ❓ **KKK**: [Korduma kippuvad küsimused](faq.md)
+
+***
 
 ## Tarkvarauuendused
 

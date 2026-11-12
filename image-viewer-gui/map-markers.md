@@ -78,7 +78,9 @@ Iga GPS-andmetega pilt saab oma koordinaatidele märgise.
 | Pakkuja        | Märkused                                                                                                                                                             |
 | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Google Maps** | Laiaulatuslik ülemaailmne katvus; toetab kõiki nelja kaarditüüpi                                                                                                            |
-| **Esri ArcGIS**| Sageli kõrgem resolutsiooniga õhufotod teatud piirkondades. Kaarditüüp**Terrain** ei ole Esri jaoks saadaval ja selle nupp on keelatud, kui Esri on valitud |***
+| **Esri ArcGIS**| Sageli kõrgem resolutsiooniga õhufotod teatud piirkondades. Kaarditüüp**Terrain** ei ole Esri jaoks saadaval ja selle nupp on keelatud, kui Esri on valitud |
+
+***
 
 ## Kaardiplaadiliigid
 
@@ -93,7 +95,9 @@ Valige kaardikihti tüüp nuppude abil (vasakult paremale):
 | **Satelliit**        | Detailne satelliidipilt, ilma siltideta — suurima andmeedastuskiirusega valik |
 | **Hübriid** (vaikimisi) | Satelliidipilt, millele on joonistatud teed ja sildid                |
 
-Kaardi vahekaart avatakse **Hübriid**-režiimis. Teie valik mõjutab teenusepakkuja vahetust, kui teenusepakkuja seda toetab.***
+Kaardi vahekaart avatakse **Hübriid**-režiimis. Teie valik mõjutab teenusepakkuja vahetust, kui teenusepakkuja seda toetab.
+
+***
 
 ## Kaardil navigeerimine
 
@@ -141,7 +145,9 @@ Kaardi vahekaart avatakse **Hübriid**-režiimis. Teie valik mõjutab teenusepak
 
 ### Kaart on tühi või kaarditükkide laadimine peatub
 
-Kaartiplaadipakkujad on veebipõhised teenused. Kui kaartiplaadid ei lae enam, kontrollige seadme võrguühendust ja proovige seejärel vahetada pakkujat. Kui olite väga suurelt suumitud, vajutage **×** taastamisnuppu, et naasta tavalisele suumitasemele ja lasta kaardil kaartiplaadid uuesti taotleda.***
+Kaartiplaadipakkujad on veebipõhised teenused. Kui kaartiplaadid ei lae enam, kontrollige seadme võrguühendust ja proovige seejärel vahetada pakkujat. Kui olite väga suurelt suumitud, vajutage **×** taastamisnuppu, et naasta tavalisele suumitasemele ja lasta kaardil kaartiplaadid uuesti taotleda.
+
+***
 
 ## Seotud leheküljed
 

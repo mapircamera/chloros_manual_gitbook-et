@@ -72,7 +72,9 @@ Täieliku valemite viite – kõik kolm eelseadistatud nimekirja ja millised nim
 
 ### Kui indeks on märgitud, kuid LUT puudub
 
-Pilt joonistatakse **halltoonides**, venitatuna kahe künnisväärtuse vahele. See on taotluslik: indeksipilt on skalaarandmed ja halltoonid on selle tõeline esitusviis. Lisage LUT, kui soovite värvi.***
+Pilt joonistatakse **halltoonides**, venitatuna kahe künnisväärtuse vahele. See on taotluslik: indeksipilt on skalaarandmed ja halltoonid on selle tõeline esitusviis. Lisage LUT, kui soovite värvi.
+
+***
 
 ## Töö LUT-idega (otsingutabelid)**Look-Up Table** seostab indeksiväärtused värvidega: sisendiks on NDVI 0,65, väljundiks konkreetne roheline värv. See ei muuda andmeid – see muudab seda, kuidas neid loetakse.
 
@@ -136,7 +138,9 @@ Näide NDVI akendest:
 | Ainult terve taimestik                 | 0,5  | 0,9 |
 | Rõhuta stressi                        | 0,2  | 0,5 |
 
-Vahemiku kitsendamine suurendab kontrasti huvipakkuval alal ja lükkab kõik muu vahemikust välja — kusjuures **lõikamisrežiim** otsustab, mis sellega juhtub.***
+Vahemiku kitsendamine suurendab kontrasti huvipakkuval alal ja lükkab kõik muu vahemikust välja — kusjuures **lõikamisrežiim** otsustab, mis sellega juhtub.
+
+***
 
 ## Lõikamisrežiimid
 

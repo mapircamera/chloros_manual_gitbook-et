@@ -57,7 +57,9 @@ Kui efektiivne suurendus ületab **60×**, joonistab Chloros kursori all oleva �
 | **←**                           | Täisekraan | Eelmine pilt                      |
 | **Ctrl + R**                    | Täisekraan | Indeksi/LUT-liivakasti tühjendamine         |
 | **Ctrl + `+`**/**Ctrl + `=`** | Võrgustik        | Suuremad pisipildid (4 pikselit vajutuse kohta)  |
-| **Ctrl + `−`**                  | Raster        | Väiksemad pisipildid (4 pikselit iga vajutuse kohta) |***
+| **Ctrl + `−`**                  | Raster        | Väiksemad pisipildid (4 pikselit iga vajutuse kohta) |
+
+***
 
 ## Kursori väärtused
 
@@ -100,7 +102,9 @@ Vaatur, indeks/LUT-liivakast ja indeksi eksport määravad skaala kindlaks ühe 
 Kaks olulist tagajärge:
 
 * **32-bitine protsent**TIFF salvestab DN/65535 ujukomana ja**8-bitine** PNG/JPG-eksport salvestab DN × 255/65535 — vaataja teisendab mõlemad tagasi enne protsendi kuvamist.
-* Üht juhtumit ei ole võimalik taastada: **8-bitise allika salvestuse 8-bitine TIFF-eksport** kärbitakse vahemikku 0–255, mitte ei skaalata ümber, ning sellel puudub tahtlikult skaalimärge. Nende failide puhul kuvab paneel ainult DN-väärtusi, protsendikolonn puudub. See on aus vastus, mitte viga.***
+* Üht juhtumit ei ole võimalik taastada: **8-bitise allika salvestuse 8-bitine TIFF-eksport** kärbitakse vahemikku 0–255, mitte ei skaalata ümber, ning sellel puudub tahtlikult skaalimärge. Nende failide puhul kuvab paneel ainult DN-väärtusi, protsendikolonn puudub. See on aus vastus, mitte viga.
+
+***
 
 ## Kihtide histogramm
 
@@ -126,7 +130,9 @@ Histogrammi kohal asuvad kolm nuppu:
 | **INDEX**| Sisse      | Ilmub ainult siis, kui indeks on aktiivne. Lülitab histogrammi allikakanalitelt üle**indeksväärtuste jaotusele**, kus kaks klippimiskünnist on joonistatud oranžide katkendjoontena ja kursori indeksväärtus valge joonena                                                          |
 | **RGB**| Väljas     | Lülitab ümber kombineeritud kõveralt kanalipõhistele kõveratele. Monosensoril on selle nupu tekstiks**MONO** ja see on keelatud — kuvada on vaid üks kanal                                                                                                                                  |
 
-Histogramm arvutatakse **nähtavate plokkide** põhjal, mitte nende taga olevate allikapikslite põhjal: GSD-ploki suuruse muutmisel arvutatakse jaotus uuesti, nii et histogramm, kursori märk ja kuvatav pilt on alati omavahel kooskõlas.***
+Histogramm arvutatakse **nähtavate plokkide** põhjal, mitte nende taga olevate allikapikslite põhjal: GSD-ploki suuruse muutmisel arvutatakse jaotus uuesti, nii et histogramm, kursori märk ja kuvatav pilt on alati omavahel kooskõlas.
+
+***
 
 ## GSD-ploki suurus
 
@@ -185,7 +191,9 @@ Rakendage multispektraalseid indekseid ja värvilisi Look-Up Tabeleid (LUT) kül
 
 3. Valige oma kaamera filter ja indeksivalem, seejärel lohistage kanaliringid valemi lahtritesse
 4. Lisage LUT ja valige gradient, künnisväärtused ja kärpimisrežiim
-5. Lugege väärtused kursori juures ja salvestage tulemus valikuga **Ekspordi/Salvesta pilt(id)**Täieliku juhendi leiate [Indeksi/LUT-i katsetuskastist](index-lut-sandbox.md).***
+5. Lugege väärtused kursori juures ja salvestage tulemus valikuga **Ekspordi/Salvesta pilt(id)**Täieliku juhendi leiate [Indeksi/LUT-i katsetuskastist](index-lut-sandbox.md).
+
+***
 
 ## Veaotsing
 

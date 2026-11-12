@@ -110,7 +110,9 @@ Peegeldusvõime salvestatakse täisarvuna DN ning **DN, mis tähendab ρ = 1,0, 
 | LATTICE (M3C/M3M) | **32768** (varu kuni ρ 2,0) | Failile on lisatud XMP-märge `Chloros:PixelScale=32768` |
 | Survey3          | **65535** (piiratud väärtusega ρ 1,0)     | `Chloros:PixelScale`-märget ei ole — selle puudumine ongi märk (Survey3 i tooted kannavad küll teisi `Chloros:*`-töötlemismärke) |
 
-**Loe `Chloros:PixelScale`-märget ja jaga sellega**, selle asemel et eeldada ühtset väärtust 65535 — LATTICE-peegeldusvõime jagamine 65535-ga vähendab vaikimisi iga väärtust poole võrra. Enne versiooni 1.3.0 loodud 8-bitisena salvestatud peegeldusfail on kärbitud, mitte ümberskaalatud, ja sellel puudub skaalamärge: ekspordige see uuesti 16-bitisena või 32-bitisena, selle asemel et seda jagada. Täieliku ülevaate leiate jaotisest [Väljundpildi formaadid](../output-image-formats.md).***
+**Loe `Chloros:PixelScale`-märget ja jaga sellega**, selle asemel et eeldada ühtset väärtust 65535 — LATTICE-peegeldusvõime jagamine 65535-ga vähendab vaikimisi iga väärtust poole võrra. Enne versiooni 1.3.0 loodud 8-bitisena salvestatud peegeldusfail on kärbitud, mitte ümberskaalatud, ja sellel puudub skaalamärge: ekspordige see uuesti 16-bitisena või 32-bitisena, selle asemel et seda jagada. Täieliku ülevaate leiate jaotisest [Väljundpildi formaadid](../output-image-formats.md).
+
+***
 
 ## Eksportimisel kaasa kantavad metaandmed
 
@@ -167,7 +169,9 @@ Töötlemise dokumenteerimiseks või MAPIR i tugiteenistusele saatmiseks:
 3. Lisa projekti dokumentatsiooni
 4. Saada MAPIR i tugiteenistusele, kui tekivad probleemid
 
-Probleemi otse MAPIRile saatmiseks kasuta veakuvandit (**Teata veast**) vahekaardi „Debug Log“ ülaosas — vaata [Veast teatamine vahekaardilt „Log“](monitoring-the-processing.md#reporting-a-bug-from-the-log-tab).***
+Probleemi otse MAPIRile saatmiseks kasuta veakuvandit (**Teata veast**) vahekaardi „Debug Log“ ülaosas — vaata [Veast teatamine vahekaardilt „Log“](monitoring-the-processing.md#reporting-a-bug-from-the-log-tab).
+
+***
 
 ## Tüüpilised väljundiga seotud probleemid ja lahendused
 

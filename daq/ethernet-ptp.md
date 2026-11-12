@@ -102,4 +102,4 @@ Täpsem teave ranget sünkroniseerimist nõudvatele kasutajatele:
 | Levidomeen | Host ja andur asuvad samas L2-segmendis; mDNS ei suuna |
 | Tulemüür | Windows: installiprogrammi reegel **Chloros Backend (UDP-In)** lubab sisse DAQ-E-voogu (UDP 5002), mDNS-i (5353) ja PTP-d (319/320); kolmanda osapoole tulemüür peab tegema sama. Linux: `.deb` avab need pordid `ufw` / `firewalld`-is ainult juhul, kui tulemüür oli paigaldamise ajal aktiivne — lubage need ise hiljem sisse lülitatud tulemüüris |
 | Mitme võrgukaardiga host | Avastamine otsib mDNS-i, kasutades ARP-d varuvõimalusena; `--eth-host <ip-or-hostname>` jätab avastamise vahele ja ühendub otse |
-| GUI uuestiotsing | Avastamine töötab ainult siis, kui ühendusdialoog on avatud; kasutage nuppu „Värskenda“ |</version>
+| GUI uuestiotsing | Avastamine töötab ainult siis, kui ühendusdialoog on avatud; kasutage nuppu „Värskenda“ |

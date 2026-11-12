@@ -10,7 +10,8 @@ Chloros 1.3.0 pakub **CLI**-le ja**Python SDK**-le natiivset Linuxi tuge – ekr
 
 ## Platvormide toetuse tabel
 
-| Funktsioon | Windows (GUI) | Windows (CLI/SDK) | Linux amd64 (CLI/ --- | --- | --- | --- |
+| Funktsioon | Windows (GUI) | Windows (CLI/SDK) | Linux amd64 (CLI/SDK) | Linux arm64 / Jetson (CLI/SDK) |
+| --- | --- | --- | --- | --- |
 | **Töölaua graafiline kasutajaliides (GUI)** | Jah | Ei kohaldata | Ei | Ei |
 | **Käsurealiides (CLI)** (`chloros-cli`) | Jah | Jah | Jah | Jah |
 | **Pythoni SDK** (`chloros-sdk`) | Jah | Jah | Jah | Jah |
@@ -22,7 +23,9 @@ Chloros 1.3.0 pakub **CLI**-le ja**Python SDK**-le natiivset Linuxi tuge – ekr
 | **Tekstuuritundlik debayer** (vajab CUDA-graafikakaarti) | Jah (Chloros+) | Jah (Chloros+) | Jah (Chloros+) | Jah (Chloros+) |
 | **Dünaamiline arvutusadapteerimine** | Jah | Jah | Jah | Jah |
 | **Tagapõhi süsteemiteenusena** (`chloros-backend@<user>.service`) | Ei | Ei | Jah (valikuline) | Jah (valikuline) |
-| **Kohapealne uuendaja** (`chloros-cli update`) | Ei (käivita paigaldaja) | Ei (käivita paigaldaja) | Jah | Jah |***
+| **Kohapealne uuendaja** (`chloros-cli update`) | Ei (käivita paigaldaja) | Ei (käivita paigaldaja) | Jah | Jah |
+
+***
 
 ## Toetatud arhitektuurid
 
@@ -35,7 +38,9 @@ Chloros 1.3.0 pakub **CLI**-le ja**Python SDK**-le natiivset Linuxi tuge – ekr
 
 * **Ubuntu 22.04 LTS või uuem** (amd64)
 * **Debian 12 või uuem** (amd64)
-* **NVIDIA JetPack 6** (arm64 — Jetson Orin platvormid)***
+* **NVIDIA JetPack 6** (arm64 — Jetson Orin platvormid)
+
+***
 
 ## Mida Linuxi kasutajad saavad
 
@@ -54,7 +59,9 @@ Chloros 1.3.0 pakub **CLI**-le ja**Python SDK**-le natiivset Linuxi tuge – ekr
 
 * **Töölaua graafiline kasutajaliides** — graafilist kasutajaliidest pole; kogu suhtlus toimub CLI- või Python-SDK kaudu
 * **Pildivaataja** — puudub interaktiivne pildivaataja, võrgustikvaade või kaardimärgid
-* **Visuaalne projektijuhtimine** — projekte luuakse ja juhitakse CLI-käskude ja SDK-kutsete kaudu (riistvara ise — kaamerad, andurid, pildistamine — jääb täielikult terminali kaudu juhitavaks)***
+* **Visuaalne projektijuhtimine** — projekte luuakse ja juhitakse CLI-käskude ja SDK-kutsete kaudu (riistvara ise — kaamerad, andurid, pildistamine — jääb täielikult terminali kaudu juhitavaks)
+
+***
 
 ## Litsentsinõuded
 

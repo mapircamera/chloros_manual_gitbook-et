@@ -153,7 +153,9 @@ See osa kuvatakse **ainult** siis, kui vähemalt üks projekti pilt sisaldab moo
 
 * **Rakenda massiivi joondamist** (vaikimisi: sisse lülitatud): joondab iga töödeldud toote (debayering / eelvaade / kiirgus / peegeldus / indeks) massiivi ühise viitegeomeetria järgi. Väljas = eksportimine anduri alggeomeetrias.
 * **Lõika ühisele kattuvale alale** (vaikimisi: sisse lülitatud): lõika joondatud ekspordid piirkonnale, mida kõik moodulid jagavad, nii et igal lainealal on sama pindala. Väljalülitamisel säilitatakse kogu anduri pind (allika välispoolne ala täidetakse mustaga).
-* **Ümberdiskrimineerimine**:**Bilineaarne (sile, vaikimisi)**,**Lähim (säilitab täpsed väärtused)**— pikslitevahelist segamist ei toimu, rangete radiomeetriliste analüüside jaoks — või**Kubiline (kõige teravam)**.***
+* **Ümberdiskrimineerimine**:**Bilineaarne (sile, vaikimisi)**,**Lähim (säilitab täpsed väärtused)**— pikslitevahelist segamist ei toimu, rangete radiomeetriliste analüüside jaoks — või**Kubiline (kõige teravam)**.
+
+***
 
 ## Seadete salvestamine ja laadimine
 
