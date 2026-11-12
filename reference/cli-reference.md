@@ -579,7 +579,7 @@ koos selle põhjusega:
 Salvestuste kaust, millest **ühtegi** ei ekspordita, ebaõnnestub: vt
 [Käivitus, mis ei kirjuta ühtegi pilti, ebaõnnestub](#a-run-that-writes-no-images-fails).
 
-Salvestus, mille nimi lõpeb `_calibrated` või `_raw` (`field_raw.daq`), **ei****: need on nimed, mille `process` annab oma väljunditele, ja väljundit, mida loetakse tagasi
+Salvestus, mille nimi lõpeb `_calibrated` või `_raw` (`field_raw.daq`), **ei**: need on nimed, mille `process` annab oma väljunditele, ja väljundit, mida loetakse tagasi
 salvestisena, loetaks kahekordselt. CLI näitab seda ja nimetab faili —
 `Not imported as a light-sensor recording: field_raw.daq … Rename the file to import it.`
 — selle asemel, et teatada tühjast kaustast. Nimetage selline salvestis ümber enne selle töötlemist.

@@ -685,7 +685,7 @@ False         # export in native sensor geometry / skip the common-overlap crop
 
 #### Radiomeetriline väljund (LATTICE multispektraalne töötlusketi)
 
-`process` töötlusketi LATTICE multispektraalne (M3C/M3M) eksporditase — `reflectance` (vaikimisi), `radiance`, `sensor-response` või `all` (iga pildi puhul vastav režiim) — määrab projekti **„Ekspordi kiirgus”**ja**„Ekspordi peegeldus”**** tooted: `radiance` ekspordib ainult kiirgust, `reflectance` ainult peegeldust, `sensor-response` ei ekspordi kumbagi (ainult debayered- ja eelvaatetooted), `all` ekspordib mõlemat. Debayered- ja eelvaate tooteid ei saa sellel tasandil muuta. `configure()`-il on selleks spetsiaalne märksõna:
+`process` töötlusketi LATTICE multispektraalne (M3C/M3M) eksporditase — `reflectance` (vaikimisi), `radiance`, `sensor-response` või `all` (iga pildi puhul vastav režiim) — määrab projekti **„Ekspordi kiirgus”** ja **„Ekspordi peegeldus”** tooted: `radiance` ekspordib ainult kiirgust, `reflectance` ainult peegeldust, `sensor-response` ei ekspordi kumbagi (ainult debayered- ja eelvaatetooted), `all` ekspordib mõlemat. Debayered- ja eelvaate tooteid ei saa sellel tasandil muuta. `configure()`-il on selleks spetsiaalne märksõna:
 
 ```python
 with chloros_sdk.ChlorosLocal() as cl:
