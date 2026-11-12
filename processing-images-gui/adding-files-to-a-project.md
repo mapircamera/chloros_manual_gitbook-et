@@ -57,7 +57,11 @@ output/
 └── *.daq          the downwelling reading matched to the capture
 ```
 
-**Valige kaust „Add Folder” piltide juurkataloogis** (ülalpool olev `output/`). Kui valitud kaustas pole ise pilte, kuid seal on alamkaustad, liigub Chloros neisse automaatselt — nii alamkaustade tase kui ka juurkaust `.daq` võetakse ühekorraga sisse.**Kuidas pildid imporditakse:*** Iga pilt imporditakse **ühe pildina**, rühmitatuna pildi järgi (mitte üks kirje iga taseme kohta). Sama pildi teised tasemed kuvatakse selle ühe pildi vaatamisrežiimidena.
+**Valige kaust „Add Folder” piltide juurkataloogis** (ülalpool olev `output/`). Kui valitud kaustas pole ise pilte, kuid seal on alamkaustad, liigub Chloros neisse automaatselt — nii alamkaustade tase kui ka juurkaust `.daq` võetakse ühekorraga sisse.
+
+**Kuidas pildid imporditakse:**
+
+* Iga pilt imporditakse **ühe pildina**, rühmitatuna pildi järgi (mitte üks kirje iga taseme kohta). Sama pildi teised tasemed kuvatakse selle ühe pildi vaatamisrežiimidena.
 * **Töötlemine algab alati toorkaadrist.** Teised tasemed on vaadeldavad, kuid töötlemisprotsessi läbib ainult `raw` — juba töödeldud toote uuesti töötlemine rakendaks parandusi kahekordselt, mistõttu Chloros seda ei tee. Uuesti imporditud eksport ei saa kunagi hõivamise toorkaadri kohta.
 * Hõivamiskausta, mis on salvestatud **ilma** toorkaadrite importimiseta, kuvatakse normaalselt, kuid töötlemine jätab selle vahele ja märgib seda logisse. (CLI-lipu `--input-level` abil saab sellisel juhul sisenemispunkti sundida — vt [CLI-viidet](../reference/cli-reference.md#what-a-captures-folder-looks-like).)
 * Alates versioonist 1.3.0 võib pildistamiskausta sisaldada ka `clamp_masks/`-kausta (pikslihaaval maske kiirguse ja peegeldusastmete jaoks — vt [väljundpildi formaadid](../output-image-formats.md#clamp-masks)). Maskid ei ole stseeni pildid ning Chloros jätab need importimisel kõrvale, olenemata nende asukohast.
@@ -91,7 +95,8 @@ Kui pildid on imporditud, kuvatakse need tabelis, millel on järgmised veerud:
 ### Sihtmärgi veerg (valikukast)
 
 * Märkige see kast piltide puhul, mis sisaldavad kalibreerimissihte
-* Kui vähemalt üks pilt on märgitud, **otsitakse sihtmärke ainult märgitud piltidest*** Täpsemad üksikasjad leiate jaotisest [Sihtmärgipiltide valimine](choosing-target-images.md)
+* Kui vähemalt üks pilt on märgitud, **otsitakse sihtmärke ainult märgitud piltidest**
+* Täpsemad üksikasjad leiate jaotisest [Sihtmärgipiltide valimine](choosing-target-images.md)
 
 ### Pildi metaandmete vaatamine
 

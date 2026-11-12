@@ -21,7 +21,7 @@ LATTICE-seeria on modulaarne multispektraalne kaamerasüsteem, mis põhineb Sony
 
 ```
 <sensor>-<lens>-F<filter>        e.g.  M3C-L41-FRGN,  M3M-L87-F550
-```.
+```
 
 Chloros kuvab seda eesliitega `LATT-` (näiteks `LATT-M3M-L41-F550`), ning mudelistring juhib kõiki järgnevaid protsesse – anduri profiil, lainepikkuste paigutus ja kalibreerimine määratakse automaatselt; iga kaamera jaoks eraldi pole vaja midagi seadistada. Objektiivi number tähistab **horisontaalset vaatevälja kraadides**: `L41` = kitsas 41°, `L87` = lai 87°.
 

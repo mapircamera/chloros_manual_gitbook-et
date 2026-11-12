@@ -81,7 +81,9 @@ Tooted salvestatakse **projekti kausta alla, rühmitatuna kaamera ja seejärel f
 
 ### Eelvaade välistes pildivaatajates
 
-**Soovitatavad vaatajad:*** **QGIS** – tasuta GIS-tarkvara (parim georefereeritud multispektraalanalüüsiks)
+**Soovitatavad vaatajad:**
+
+* **QGIS** – tasuta GIS-tarkvara (parim georefereeritud multispektraalanalüüsiks)
 * **IrfanView** – kiire ja kerge pildivaataja (toetab TIFF-vormingut)
 * **Adobe Photoshop** – professionaalne pilditöötlus (TIFF-tugi)
 * **GIMP** – tasuta alternatiiv Photoshopile
@@ -223,7 +225,9 @@ Probleemi otse MAPIRile saatmiseks kasuta veakuvandit (**Teata veast**) vahekaar
 
 ### Probleem: NDVI-väärtused tunduvad valed
 
-**Oodatavad NDVI-vahemikud:*** **Vesi, kivid, muld**: -0,1 kuni 0,2
+**Oodatavad NDVI-vahemikud:**
+
+* **Vesi, kivid, muld**: -0,1 kuni 0,2
 * **Hõre/ebaterve taimestik**: 0,2 kuni 0,4
 * **Mõõdukas taimestik**: 0,4 kuni 0,6
 * **Terve, tihe taimestik**: 0,6 kuni 0,9**Kui väärtused jäävad väljapoole neid vahemikke:**
@@ -277,12 +281,18 @@ Probleemi otse MAPIRile saatmiseks kasuta veakuvandit (**Teata veast**) vahekaar
 
 ### Soovitatav varundamisstrateegia
 
-**Mida salvestada:*** ✅ **Algupärased RAW/JPG-pildid või LATTICE-i toorpildid** – arhiveerige eraldi kettale/pilve; toorpildid on töötlemisprotsessi allikas ja kõik muu saab neist uuesti genereerida
+**Mida salvestada:**
+
+* ✅ **Algupärased RAW/JPG-pildid või LATTICE-i toorpildid** – arhiveerige eraldi kettale/pilve; toorpildid on töötlemisprotsessi allikas ja kõik muu saab neist uuesti genereerida
 * ✅ **`.daq` / `.csv` valgusanduri failid** – vajalikud peegeldusvõime hilisemaks uuesti arvutamiseks
 * ✅ **Töödeldud väljundid** – säilita kalibreeritud pildid ja indeksid
 * ✅ **Projekti kaust** (`project.json` ja sellega seotud failid) – Sisaldab kõiki seadeid vajadusel uuesti töötlemiseks
 * ✅ **Veakõrvalduslogi** – Dokumenteerib töötlemise üksikasju
-* ✅ **Kalibreerimise sihtmärgipildid** – Kontrollimiseks ja uuesti töötlemiseks**Salvestamise soovitused:*** **Viivitamatu varukoopia**: väline kõvaketas
+* ✅ **Kalibreerimise sihtmärgipildid** – Kontrollimiseks ja uuesti töötlemiseks
+
+**Salvestamise soovitused:**
+
+* **Viivitamatu varukoopia**: väline kõvaketas
 * **Pikaajaline arhiiv**: pilvesalvestus (Google Drive, Dropbox jne)
 * **Kriitilised andmed**: hoidke 2–3 koopiat erinevates asukohtades***
 

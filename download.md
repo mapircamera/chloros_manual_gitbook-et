@@ -252,10 +252,15 @@ i 1.3.0 uuendused”** lehel [Alustamine](./).**Versioon 1.2.0**— vaata**Chlor
 
 **Väljalaskekuupäev: 10. veebruar 2026**
 
-**Uued funktsioonid*** **Tekstuuritundlik debayer-meetod \[Ainult Chloros+] –** Tekstuuritundlik meetod kasutab kõrgekvaliteedilist servatundlikku debayerit koos AI/ML-müra vähendamise mudeliga, mis eemaldab peaaegu kogu debayerimisel tekkiva müra.
-* **T4P-kalibreerimismärkide tugi*** **Kiirem „Chloros+“ GPU-töötlus, parem mäluhaldus**
+**Uued funktsioonid**
 
-**Veaparandused*** Täiesti uus kasutajaliides (GUI), peaks nüüd töötama kõigil Windows-arvutitel.
+* **Tekstuuritundlik debayer-meetod \[Ainult Chloros+] –** Tekstuuritundlik meetod kasutab kõrgekvaliteedilist servatundlikku debayerit koos AI/ML-müra vähendamise mudeliga, mis eemaldab peaaegu kogu debayerimisel tekkiva müra.
+* **T4P-kalibreerimismärkide tugi**
+* **Kiirem „Chloros+“ GPU-töötlus, parem mäluhaldus**
+
+**Veaparandused**
+
+* Täiesti uus kasutajaliides (GUI), peaks nüüd töötama kõigil Windows-arvutitel.
 
 </details>
 
@@ -265,14 +270,18 @@ i 1.3.0 uuendused”** lehel [Alustamine](./).**Versioon 1.2.0**— vaata**Chlor
 
 **Väljalaskekuupäev: 5. jaanuar 2026**
 
-**Uued funktsioonid*** **Pildi/metadata lüliti**: failibrauserisse on lisatud lüliti, millega saab valitud pildi metadaate vaadata tabelis, mitte pildirestis
+**Uued funktsioonid**
+
+* **Pildi/metadata lüliti**: failibrauserisse on lisatud lüliti, millega saab valitud pildi metadaate vaadata tabelis, mitte pildirestis
 * **Pildiresti suumiliugur**: uus kasutajaliidese liugur pisipiltide suuruse reguleerimiseks (toetab ka klahvikombinatsiooni CTRL + hiirerattaga)
 * **Pildiresti ekspordiknopid**: Ülemises reas asuvad nupud, millega saab pisipilte vahetada JPG-vormingust töödeldud ekspordivorminguteks (Targets, Reflectance, Index, LUT)
 * **Kaart-vahekaart**: Uus interaktiivne 2D-kaart, mis kuvab piltide GPS-asukohamärke
   * Toetab Google Mapsi ja ESRI kaarditükke (valib automaatselt parima kaarditeenuse vastavalt suumitaseme kättesaadavusele)
   * Pildi pisipildi eelvaade kaardimärkide kohal hiirega üle libistamisel
 
-**Veaparandused*** Parandatud tugi Chloros installimiseks mitte-ingliskeelsetele arvutitele
+**Veaparandused**
+
+* Parandatud tugi Chloros installimiseks mitte-ingliskeelsetele arvutitele
 
 </details>
 
@@ -282,13 +291,21 @@ i 1.3.0 uuendused”** lehel [Alustamine](./).**Versioon 1.2.0**— vaata**Chlor
 
 **Väljalaskekuupäev: 20. detsember 2025**
 
-**Uued funktsioonid*** Esmane käivitamine
+**Uued funktsioonid**
 
-**Parandused*** Esmane käivitamine
+* Esmane käivitamine
 
-**Veaparandused*** Esmane käivitamine
+**Parandused**
 
-**Teadaolevad probleemid*** Esmane käivitamine
+* Esmane käivitamine
+
+**Veaparandused**
+
+* Esmane käivitamine
+
+**Teadaolevad probleemid**
+
+* Esmane käivitamine
 
 </details>
 

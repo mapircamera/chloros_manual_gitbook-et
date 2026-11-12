@@ -45,7 +45,11 @@ CPU-mahukas arvutusniit. Survey3- või segakäituse korral ootab niit 3 seda, ku
 
 ### Niit 3: Töötlemine (GPU)
 
-**Eesmärk**: rakendada parandusi ja arvutada taimestiku indeksid.**See on arvutusmahukaim niit.*** **Debayering**: teisendab RAW-Bayer-andmed mitmekanalilisteks piltideks
+**Eesmärk**: rakendada parandusi ja arvutada taimestiku indeksid.
+
+**See on arvutusmahukaim niit.**
+
+* **Debayering**: teisendab RAW-Bayer-andmed mitmekanalilisteks piltideks
   * Standard (kiire, keskmine kvaliteet) — vaikimisi, `--debayer standard`
   * Tekstuuritundlik (aeglane, kõrgeim kvaliteet) — ainult Chloros+, `--debayer texture-aware`, kasutab AI/ML müra eemaldamise mudelit
   * LATTICE mono (M3M) pildid on ühekanalilised: nende puhul jäetakse demosaik ja valgebalansi etappid vahele (koos üherealise logisõnumiga), samas kui samas töökäigus olevad M3C/Bayer-pildid läbivad need ikkagi

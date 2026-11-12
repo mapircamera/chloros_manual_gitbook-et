@@ -32,7 +32,9 @@ Kui **ühtegi** pilti ei ole märgitud, skannib „Chloros“ vaikimisi kõiki p
 
 Vaadake failibrauseris läbi imporditud pildid ja tuvastage, millised pildid sisaldavad kalibreerimise sihtmärke.
 
-**Tavalised stsenaariumid:*** **Enne pildistamist märgistatud sihtmärk**: Märgistatud enne seansi algust
+**Tavalised stsenaariumid:**
+
+* **Enne pildistamist märgistatud sihtmärk**: Märgistatud enne seansi algust
 * **Pärast pildistamist pildistatud sihtmärk**: pildistatud pärast seansi lõppu
 * **Välitingimustes asuvad sihtmärgid**: pildistamispiirkonnas paigutatud sihtmärgid
 * **Mitmed sihtmärgid**: 2–3 sihtmärgi pilti seansi kohta (soovitatav)
@@ -141,9 +143,17 @@ Kasutage seda veergu, et kontrollida, kas olete oma projektis märkinud sihtmär
 
 ### Tuvastamise tundlikkuse reguleerimine
 
-Kui „Chloros” ei tuvasta teie sihtmärke õigesti, reguleerige neid seadeid [Projekti seaded](adjusting-project-settings.md) all:**Minimaalne kalibreerimisproovi pindala (px):*** **Vaikimisi**: 25 pikslit
+Kui „Chloros” ei tuvasta teie sihtmärke õigesti, reguleerige neid seadeid [Projekti seaded](adjusting-project-settings.md) all:
+
+**Minimaalne kalibreerimisproovi pindala (px):**
+
+* **Vaikimisi**: 25 pikslit
 * **Suurendage**, kui väikeste objektide puhul tekivad valed tuvastused
-* **Vähendage**, kui sihtmärke ei tuvastata**Minimaalne sihtmärkide klastrite arv (0–100):*** **Vaikimisi**: 60
+* **Vähendage**, kui sihtmärke ei tuvastata
+
+**Minimaalne sihtmärkide klastrite arv (0–100):**
+
+* **Vaikimisi**: 60
 * **Suurendage**, kui sihtmärgid jagunevad mitmeks tuvastuseks
 * **Vähendage**, kui värvimuutustega sihtmärke ei tuvastata täielikult
 

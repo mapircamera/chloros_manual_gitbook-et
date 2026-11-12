@@ -375,7 +375,7 @@ Iga 5 sekundi järel uuendatav ainult lugemiseks mõeldud paneel:
 
 * **Taseme märge**: „Samaaegne salvestamine“ (roheline) · „Samaaegne salvestamine (FTD-järkjärguline väljastamine)“ (roheline) · „Järkjärguline salvestamine (100 ms nihke)“ (kollane) · „Konfiguratsioon liiga suur“ (punane).
 * **Kaadri tervis**: „x,xx % puudulik“ — roheline alla 1 %, kollane alla 5 %, punane 5 % või rohkem.
-* ****Ühendusliin**: „NIC {mbps} Mbps – püsiv {MB/s} MB/s”.
+* **Ühendusliin**: „NIC {mbps} Mbps – püsiv {MB/s} MB/s”.
 
 See on massiivi reaalajas ribalaiuse eelarve. Aluseks oleva kaadrisageduse (fps) ja võrgumudeli kohta — ning selle kohta, mida muuta, kui tase muutub kollaseks või punaseks — vaata [Mitme kaameraga massiivid](arrays.md) ja [CLI-viite](../reference/cli-reference.md).
 
@@ -401,7 +401,7 @@ Kiirviide selle kohta, mis asub kus, kui kaamera on massiivi liige:
 Muud üldised toimingud:
 
 * **Kombineeritud vs eraldi kuvamine** valitakse massiivi ühendamisel: kombineeritud = üks joondatud komposiitpaneel (liikmed edastavad pilti ainult jagatud vaate kaudu); eraldi = iga liige renderdab oma sünkroniseeritud paneeli. Kaamera ei näita kunagi korraga nii eraldiseisvat pilti kui ka massiivi paneeli.
-* ****Automaatne ühenduse taastamine**: salvestatud projekti avamisel taastatakse selle kaamerad ja massiivid ning kõik salvestatud seaded rakendatakse uuesti tagapõhjas enne voogude taastamist.
+* **Automaatne ühenduse taastamine**: salvestatud projekti avamisel taastatakse selle kaamerad ja massiivid ning kõik salvestatud seaded rakendatakse uuesti tagapõhjas enne voogude taastamist.
 * **Salvestamise piiramine**: peidetud või peatatud kaamerad jäetakse funktsioonist „Capture All” välja; massiiv blokeeritakse täielikult ainult siis, kui KÕIK liikmed on peidetud/peatatud. Vaata [Salvestusseaded ja režiimid](capture.md).
 
 ## Kuidas seaded säilivad

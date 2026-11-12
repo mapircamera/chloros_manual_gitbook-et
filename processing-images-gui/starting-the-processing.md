@@ -79,7 +79,11 @@ Chloros töötab sõltuvalt teie litsentsist kahes erinevas töötlemisrežiimis
 1. **Tuvastamine** (niit 1) – kalibreerimise sihtmärkide leidmine
 2. **Analüüs** (niit 2) – pildi metaandmete uurimine ja kalibreerimise arvutamine
 3. **Kalibreerimine** (niit 3) – debayering, vinjeti korrigeerimine, kalibreerimine, indeksi arvutamine
-4. **Eksportimine** (niit 4) – töödeldud piltide ja indeksite salvestamine**Edusammude riba kasutamine:*** **Viige hiir** riba kohale, et näha üksikasjalikku 4-etapilist rippmenüüd
+4. **Eksportimine** (niit 4) – töödeldud piltide ja indeksite salvestamine
+
+**Edusammude riba kasutamine:**
+
+* **Viige hiir** riba kohale, et näha üksikasjalikku 4-etapilist rippmenüüd
 * **Klõpsake** edusammude ribal, et rippmenüü paigale fikseerida
 * **Klõpsake uuesti**, et fikseeringut tühistada ja rippmenüü peita**Töötlemisaeg:**
 
@@ -117,7 +121,9 @@ Chloros töötab sõltuvalt teie litsentsist kahes erinevas töötlemisrežiimis
 
 ### 3. etapp: Kalibreerimine
 
-**Mida Chloros teeb:*** **Vignette-korrektsioon**: Eemaldab objektiivi poolt põhjustatud tumenemise servades
+**Mida Chloros teeb:**
+
+* **Vignette-korrektsioon**: Eemaldab objektiivi poolt põhjustatud tumenemise servades
 * **Peegeldusvõime kalibreerimine**: normaliseerib sihtmärgi peegeldusväärtuste ja/või DAQ allapoole suunatud andmete abil
 * Rakendab parandusi kõigile lainepikkustele/kanalitele
 * Kasutab iga pildi jaoks ajamärgise põhjal sobivat kalibreerimisviidet

@@ -28,7 +28,11 @@ Kasutajatele, kellel on „Chloros+“ litsents:
 1.**Tuvastamine** – kalibreerimise sihtmärkide leidmine
 2. **Analüüsimine** – piltide uurimine ja töötlemisprotsessi ettevalmistamine
 3. **Kalibreerimine** – vinjeti- ja peegeldusparanduste rakendamine
-4. **Eksportimine** – töödeldud failide salvestamine**Interaktiivsed funktsioonid:*** **Viige hiir** edastusriba kohale, et näha laiendatud 4-etapilist paneeli
+4. **Eksportimine** – töödeldud failide salvestamine
+
+**Interaktiivsed funktsioonid:**
+
+* **Viige hiir** edastusriba kohale, et näha laiendatud 4-etapilist paneeli
 * **Klõpsake** edastusribal, et laiendatud paneel fikseerida
 * **Klõpsake uuesti**, et lukustus tühistada ja paneel hiire eemaldamisel automaatselt peita
 * Iga etapp näitab individuaalset edenemist (0–100%)
@@ -92,7 +96,9 @@ Kasutajatele, kellel on „Chloros+“ litsents:
 
 ### 3. etapp: Kalibreerimine
 
-**Mis toimub:*** **Debayering**: RAW-Bayer-mustri teisendamine 3 kanaliks (LATTICE mono-moodulite puhul jäetakse vahele, koos märkusega)
+**Mis toimub:**
+
+* **Debayering**: RAW-Bayer-mustri teisendamine 3 kanaliks (LATTICE mono-moodulite puhul jäetakse vahele, koos märkusega)
 * **Vignette'i korrigeerimine**: objektiivi servade tumenemise eemaldamine
 * **Peegeldusvõime kalibreerimine**: normaliseerimine sihtväärtuste ja/või DAQ-i allapoole suunatud signaaliga
 * **Indeksi arvutamine**: multispektraalsete indeksite arvutamine
@@ -104,7 +110,9 @@ Kasutajatele, kellel on „Chloros+“ litsents:
 * Hetkel töödeldav pilt
 * Töödeldud pildid / Piltide koguarv
 
-**Töötlemise režiimid:*** **Vaba režiim**: töötleb järjest ühte pilti korraga
+**Töötlemise režiimid:**
+
+* **Vaba režiim**: töötleb järjest ühte pilti korraga
 * **Režiim „Chloros+“**: kasutab riistvarale kohanduvat töötajate rühma – 1–4 samaaegset töötajat GPU-süsteemidel (sõltuvalt VRAM-ist), üks töötaja füüsilise tuuma kohta (miinus üks) ainult CPU-ga süsteemidel. Vaata [Dynamic Compute Adaptation](../processing-architecture/dynamic-compute-adaptation.md)
 * **GPU-kiirendus**: kiirendab seda etappi märkimisväärselt**Mida jälgida:**
 

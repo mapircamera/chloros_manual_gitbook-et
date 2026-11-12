@@ -196,7 +196,7 @@ Massiivi plaadi kaadrisageduse näidik näitab ka voo seisundit:**„Rakendataks
 Kasulikud faktid kombineeritud režiimi kohta:
 
 * Komposiit on registreeritud **peakaamera**kaadri järgi. AE-ROI suunamine ja punktmõõtmine komposiidil on peakaamera puhul täpsed ja allkaamerate puhul ligikaudsed; kasutage**Split View** (massiivi seaded → „Show member cameras”), et saada pikselitäpsed kaamerapõhised plaadid ilma täiendavaid kaameraühendusi avamata.
-* ****Display Layers**(massiivi seaded; vaikimisi välja lülitatud) võimaldab valida esiplaani ja taustakihti — mis tahes liikmekamera või**Index**. Kui esiplaaniks on valitud**Index**, kuvatakse LUT-i miinimum- ja maksimumväärtustest väljaspool asuvad pikslid taustakihtina.
+* **Display Layers** (massiivi seaded; vaikimisi välja lülitatud) võimaldab valida esiplaani ja taustakihti — mis tahes liikmekamera või**Index**. Kui esiplaaniks on valitud**Index**, kuvatakse LUT-i miinimum- ja maksimumväärtustest väljaspool asuvad pikslid taustakihtina.
 * **Renderdamise resolutsioon** (vaikimisi 720p) määrab nii otseülekande kõrguse *kui ka* salvestatud komposiitpildi ekspordimõõtmed. Iga kaamera pildid eksporditakse alati täisresolutsioonis.
 * Joondamine arvutatakse iga seansi kohta eraldi ja seda ei salvestata kunagi. Chloros joondab **iga massiivi automaatselt pärast ühenduse loomist, mõlemas kuvamisrežiimis**, kui liikmete automaatne säritus on stabiliseerunud (seda proovitakse kuni 5 minutit). Massiivi seadete paneeli**Joondamine**-osas kuvatakse RMS-jäägid ja nupp**Joondamine uuesti kalibreerida** — ka eraldi massiivide puhul, millel pole komposiitpaneeli.
 

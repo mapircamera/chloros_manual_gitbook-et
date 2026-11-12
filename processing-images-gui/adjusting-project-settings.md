@@ -44,7 +44,9 @@ Projekti seaded on jagatud allpool toodud osadeks. Kaks lisajaotist — **DAQ va
 
 Määrab, kuidas Chloros tuvastab teie piltidel kalibreerimisihtmärke.
 
-**Peamised seaded:*** **Minimaalne kalibreerimisproovi pindala (px)**: Sihtmärgi tuvastamise suuruse künnis (vaikimisi:**25**, vahemik 0–10000)
+**Peamised seaded:**
+
+* **Minimaalne kalibreerimisproovi pindala (px)**: Sihtmärgi tuvastamise suuruse künnis (vaikimisi:**25**, vahemik 0–10000)
 * **Minimaalne sihtmärkide klastrite arv (0–100)**: sarnasuse künnis sihtmärkide piirkondade rühmitamiseks (vaikimisi:**60**)**Millal seadistada:**
 
 * Suurendage proovipinda, kui tekivad valed tuvastused
@@ -59,19 +61,26 @@ Need seaded on hallid, kui **peegelduskalibreerimine / valgebalanss** on välja 
 
 Peamised pilditöötlemise ja kalibreerimise valikud.
 
-**Olulisemad seaded:*** **Vignette correction**: Kompenseerib objektiivi servade tumenemist ✅ Soovitatav
+**Olulisemad seaded:**
+
+* **Vignette correction**: Kompenseerib objektiivi servade tumenemist ✅ Soovitatav
 * **Reflectance calibration / white balance**: Kalibreerib pilte tuvastatud sihtmärkide (Survey3) ja/või DAQ valgusanduri andmete (LATTICE) abil ✅ Soovitatav
 * **Debayeri meetod**: algoritm RAW-failide teisendamiseks 3-kanaliliseks multispektraalseks pildiks
 * **Minimaalne kalibreerimisintervall**: minimaalne aeg sekundites kalibreerimismärgi kasutamise vahel (vaikimisi:**0** = kasuta kõiki, vahemik 0–3600)**Kalibreerimata varutooted:**Kui kaadri peegeldusvõimet ei ole võimalik kalibreerida (sihtmärki pole saadaval või kalibreerimine on keelatud), eksporditakse see ühe kahest varutootest —**iga jooksu kohta on olemas täpselt üks neist kahest**, mille valib Vignette’i korrigeerimise lüliti:
 
-* **Ekspordi anduri vastus**: salvestab `Sensor_Response_Images` — kasutatakse, kui vignettkorrektsioon on**väljalülitatud*** **Ekspordi vignettkorrigeeritud**: salvestab `Vignette_Corrected_Images` — kasutatakse, kui vignettkorrektsioon on**sisse lülitatud**Valikukast, mis ei ole kasutusel, on halliks muudetud. Aktiivse valiku tühistamine peatab selle faili salvestamise täielikult.**LATTICE eksporditavad failid** (näidatakse iga projekti puhul; need kehtivad LATTICE-pildistuste kohta):
+* **Ekspordi anduri vastus**: salvestab `Sensor_Response_Images` — kasutatakse, kui vignettkorrektsioon on**väljalülitatud**
+* **Ekspordi vignettkorrigeeritud**: salvestab `Vignette_Corrected_Images` — kasutatakse, kui vignettkorrektsioon on**sisse lülitatud**Valikukast, mis ei ole kasutusel, on halliks muudetud. Aktiivse valiku tühistamine peatab selle faili salvestamise täielikult.**LATTICE eksporditavad failid** (näidatakse iga projekti puhul; need kehtivad LATTICE-pildistuste kohta):
 
 * **Ekspordi debayered**: lineaarne debayered-pilt (`Debayered_Images`): kalibreerimispaketi tume nihe on eemaldatud, seejärel teostatud demosaic, ilma tasapinnata või segamiseta — sama fail, mida salvestus salvestab debayered-tasemel — anduri algses orientatsioonis. Kehtib RGB- ja multispektraalsete moodulite puhul.
 * **Ekspordi eelvaade**: ekraanil kuvatav eelvaade (`Preview_Images`). RGB = valgebalanss (DAQ-valgusallikas, kui see on saadaval, muidu gray-world) + gamma; multispektraalne = valevärvide venitus.
 * **Kiirguse eksport**: float32 spektraalne kiirgus (`Radiance_Images`, W/m²/sr/nm). Ainult multispektraalsed moodulid – ei kehti RGB-põhifailide puhul.
 * **Ekspordi peegeldusvõime**: uint16 peegeldusvõime (`Reflectance_Calibrated_Images`, DN 32768 = ρ 1,0), kui `.daq` allapoole suunatud mõõtmistulemus või kaadri sees olev sihtmärk katab kogu kaadri. Ainult multispektraalsed moodulid.
 
-Kõik neli on **vaikimisi sisse lülitatud**— üks imporditud LATTICE toorkaader jaguneb ühe töötlemisvooru jooksul kõikidele aktiveeritud ja kohaldatavatele toodetele. Valikukast**Ekspordi peegeldusvõime** on halliks muudetud, kui peegeldusvõime kalibreerimine on välja lülitatud. Seaded, mille muutmist takistab ülemine lüliti, on alati halliks muudetud ja neile on lisatud abiteade, milles on nimetatud muudetav lüliti.**Täpsemad seaded:*** **Valgusanduri ajavööndi nihke**: Tunnid UTC-st valgusanduri aja ühtlustamiseks (vaikimisi: 0, vahemik −12 kuni +12)
+Kõik neli on **vaikimisi sisse lülitatud**— üks imporditud LATTICE toorkaader jaguneb ühe töötlemisvooru jooksul kõikidele aktiveeritud ja kohaldatavatele toodetele. Valikukast**Ekspordi peegeldusvõime** on halliks muudetud, kui peegeldusvõime kalibreerimine on välja lülitatud. Seaded, mille muutmist takistab ülemine lüliti, on alati halliks muudetud ja neile on lisatud abiteade, milles on nimetatud muudetav lüliti.
+
+**Täpsemad seaded:**
+
+* **Valgusanduri ajavööndi nihke**: Tunnid UTC-st valgusanduri aja ühtlustamiseks (vaikimisi: 0, vahemik −12 kuni +12)
 * **Rakenda PPK-korrektsioone**: kasutab `.daq`-failidest pärit GPS-/eksponatsioonipinnide andmeid (vaikimisi: välja lülitatud)
 * **Eksponatsioonipinnid 1/2**: määrab kaamerad eksponatsioonipinnidele kahekaameraliste seadistuste puhul
 
@@ -105,7 +114,9 @@ Määrake, milliseid taimestikuindekseid arvutada ja eksportida. Graafilise kasu
 3. Määrake visualiseerimise seaded (LUT-värvid, väärtuste vahemikud)
 4. Lisage vajaduse korral mitu indeksit
 
-**Populaarsed indeksid:*** **NDVI**: taimestiku üldine tervislik seisund (kõige levinum)
+**Populaarsed indeksid:**
+
+* **NDVI**: taimestiku üldine tervislik seisund (kõige levinum)
 * **NDRE**: RedEdge abil varajane stressi tuvastamine* **GNDVI**: tundlik klorofülli kontsentratsiooni suhtes
 * **OSAVI**: sobib hästi nähtava pinnasega
 * **EVI**: piirkonnad, kus lehepinna indeks (LAI) on kõrge
@@ -216,7 +227,11 @@ Kui kasutate täpse geolokatsiooni jaoks GPS-iga varustatud MAPIR i DAQ-salvesta
 3. Määrake vajadusel**„Valgusanduri ajavööndi nihke”** (vaikimisi: 0 UTC-le)
 4. Määrake kaamerad eksponeerimisviikudele:
    * **Üks kaamera**: määratakse automaatselt viigule 1
-   * **Kaks kaamerat**: määrake iga kaamera käsitsi õigele viigule**Eksponeerimisviikude määramine:*** **Eksponeerimisviik 1**: vali kaameramudel rippmenüüst
+   * **Kaks kaamerat**: määrake iga kaamera käsitsi õigele viigule
+
+**Eksponeerimisviikude määramine:**
+
+* **Eksponeerimisviik 1**: vali kaameramudel rippmenüüst
 * **Eksponeerimisviik 2**: vali teine kaamera või „Ära kasuta“
 * Ühte ja sama kaamerat ei saa määrata mõlemale viigule
 
